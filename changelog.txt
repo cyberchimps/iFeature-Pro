@@ -9,6 +9,8 @@ iFeature Pro Changelog\
 \
 ****************************\
 \
+test\
+\
 Version 1.1.5 (6-06-2011)\
 -Updated search.php to reflect support for custom backgrounds.\
 -Fixed bug related to custom slides and "blog pages show at most" setting.\
