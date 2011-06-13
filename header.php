@@ -68,12 +68,6 @@ $options = get_option('ifeature') ;
     
 	<?php wp_head(); ?>
 	
-	<script type="text/javascript">
-    $(document).ready(function(){
-        jQuery('ul.sf-menu').superfish();
-    });
-	</script>
-	
 </head>
 
 <body style="font-family:'<?php echo $fontstrip ?>'" <?php body_class(); ?> >

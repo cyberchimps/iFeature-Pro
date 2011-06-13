@@ -1,20 +1,23 @@
 <?php
 
-/*
+
+/**/
 // TEMP: Enable update check on every request. Normally you don't need this! This is for testing only!
-set_site_transient('update_themes', null);
-*/
+//set_site_transient('update_themes', null);
 
-add_filter('set_site_transient_update_themes', 'check_for_update');
 
+add_filter('pre_set_site_transient_update_themes', 'check_for_update');
+
+	$theme_data = get_theme_data( TEMPLATEPATH . '/style.css');
+	$theme_version = $theme_data['Version'];
+	$theme_base = get_option('stylesheet');
+	
+	/******************Change this*******************/
+	$api_url = 'http://cyberchimps.com/api/';
+	/************************************************/
+	
 function check_for_update($checked_data) {
-	global $wp_version;
-	
-	if (empty($checked_data->checked))
-		return $checked_data;
-	
-	$api_url = 'http://orangeola.com/api/';
-	$theme_base = basename(dirname(dirname(__FILE__)));
+	global $wp_version, $theme_version, $theme_base, $api_url;
 	
 	$request = array(
 		'slug' => $theme_base,
