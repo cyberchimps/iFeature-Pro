@@ -9,14 +9,9 @@ iFeature Pro Changelog\
 \
 ****************************\
 \
-<<<<<<< HEAD
 Version 1.1.6 (6-12-2011)\
 -API added for push updates.\
 -Added jQuery noconflict support to fix issues with plugins calling additional jQuery libraries.\
-\
-=======
-test\
->>>>>>> ecfa5a978d02ac0811db20a025373c2434e884be
 \
 Version 1.1.5 (6-06-2011)\
 -Updated search.php to reflect support for custom backgrounds.\
