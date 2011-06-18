@@ -1,14 +1,16 @@
 /*   
 Theme Name: iFeature Pro
 Theme URI: http://cyberchimps.com/ifeaturepro
-Description: iFeature Pro: A premium WordPress theme designed by CyberChimps.com featuring customizable theme options, an aesthetically pleasing design with five color choices, a feature slider, callout section, dynamic header for custom logo, social icons, and contact section, widgetized sidebar and footer, typography including Google Fonts, and multiple template choices.
+Description: iFeature Pro: A Premium WordPress Theme designed by CyberChimps.com featuring customizable theme options, an aesthetically pleasing design with five color choices, a feature slider, callout section, dynamic header for custom logo, social icons, and contact section, widgetized sidebar and footer, typography including Google Fonts, and multiple template choices.
 Author: CyberChimps
 Author URI: http://cyberchimps.com
-Version: 1.1.7
+Version: 1.2 beta
 Tags: white, light, silver, two-columns, fixed-width, custom-header, custom-menu, threaded-comments, sticky-post
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
+
+
 
 /* Body  */
 
@@ -127,6 +129,7 @@ code, tt { }
 
 .icons a:hover img { opacity:1; }
 
+
 /* Search Bar */
 
 #searchbar  {
@@ -168,6 +171,7 @@ code, tt { }
 /* Search Form */
 
 input[type=text] { width: 120px; }
+
    
 /* Content */   
 
@@ -331,6 +335,9 @@ blockquote p { }
 
 .share a:hover img { opacity:1; }
 
+.fb {
+
+}
  
 .comments {
 	float:right;
@@ -428,7 +435,50 @@ label[for="comment"] {display: block;}
 
 /* Lists */
 
-li { padding-left: 5px; 
+li { padding-left: 5px; }
+
+/* Twitter Section */
+
+#twitterbar {
+	background: #efefef;
+	width: 978px;
+	border-top: 1px solid #767676;
+	overflow: hidden;
+}
+
+.twittertext {
+	padding: 10px;
+	width: 978px;
+	font-size: 14px;
+}
+
+/* Callout Section */
+
+.calloutpadding {
+	padding: 10px;
+}
+
+.callout_text {
+	width: 740px;
+	float: left;
+	padding-left: 10px;
+	font-size: 14px;
+	color: #f5f5f5;
+	text-shadow: 1px 1px 1px #1d1d1d;
+}
+
+.callout_title {
+	font-size: 24px;
+	color: #fff;
+	font-weight: bolder;
+	text-shadow: 2px 2px 2px #1d1d1d;
+}
+
+.calloutimg{
+	padding-top: 10px;
+	width: 190px;
+	float:right;
+}
 
 /* Boxes */
 
@@ -623,34 +673,6 @@ li { padding-left: 5px;
 
 #afterfootermenu li {
 	display: inline; 
-}
-
-/* Callout Section */
-
-.calloutpadding {
-	padding: 10px;
-}
-
-.callout_text {
-	width: 740px;
-	float: left;
-	padding-left: 10px;
-	font-size: 14px;
-	color: #f5f5f5;
-	text-shadow: 1px 1px 1px #1d1d1d;
-}
-
-.callout_title {
-	font-size: 24px;
-	color: #fff;
-	font-weight: bolder;
-	text-shadow: 2px 2px 2px #1d1d1d;
-}
-
-.calloutimg{
-	padding-top: 10px;
-	width: 190px;
-	float:right;
 }
 
 /* Nav */
