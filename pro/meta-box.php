@@ -10,6 +10,8 @@
  * @usage: please read document at project homepage and meta-box-usage.php file
  * @version: 3.0.1
  */
+ 
+ 
 
 // Ajax delete files on the fly. Modified from a function used by "Verve Meta Boxes" plugin (http://goo.gl/LzYSq)
 add_action('wp_ajax_rw_delete_file', 'rw_delete_file');
@@ -124,8 +126,12 @@ class RW_Meta_Box {
 		global $post;
 
 		wp_nonce_field(basename(__FILE__), 'rw_meta_box_nonce');
+		echo '<div class="metabox-tabs-div">';
+		echo '<ul class="metabox-tabs" id="metabox-tabs">';
+		echo '<li class="active tab1"><a class="active" href="javascript:void(null);">Feature Slider</a></li>';
+		echo '<li class="tab2"><a href="javascript:void(null);">Sidebar</a></li>';
+		echo '<li class="tab3"><a href="javascript:void(null);">SEO</a></li>';
 		echo '<table class="form-table">';
-
 		foreach ($this->_fields as $field) {
 			$meta = get_post_meta($post->ID, $field['id'], !$field['multiple']);
 			$meta = !empty($meta) ? $meta : $field['std'];
@@ -136,6 +142,8 @@ class RW_Meta_Box {
 			echo '</tr>';
 		}
 		echo '</table>';
+		echo '</ul>';
+		echo '</div>';
 	}
 
 	/******************** END META BOX PAGE **********************/
@@ -538,77 +546,124 @@ class RW_Meta_Box_Taxonomy extends RW_Meta_Box {
 // prefix of meta keys, optional
 // use underscore (_) at the beginning to make keys hidden, for example $prefix = '_rw_';
 // you also can make prefix empty to disable it
-$prefix = 'slider_';
 
-$meta_boxes = array();
+add_action('init', 'ifeature_initialize_the_meta_boxes');
 
-$meta_boxes[] = array(
-	'id' => 'feature',
-	'title' => 'iFeature Slider Options',
-	'pages' => array('post'),
+function ifeature_initialize_the_meta_boxes() {
+	$prefix = 'slider_';
 
-	'fields' => array(
-	
-	array(
-			'name' => 'iFeature Slider Image',
-			'desc' => 'Upload your image here:',
-			'id' => $prefix . 'post_image',
-			'type' => 'image',
-			'std' => ''
-		),
+	$meta_boxes = array();
+
+	$meta_boxes[] = array(
+		'id' => 'feature',
+		'title' => 'iFeature Slider Options',
+		'pages' => array('post'),
+
+		'fields' => array(
+		
 		array(
-			'name' => 'iFeature Slider Text',
-			'desc' => 'Enter your slider text here (optional):',
-			'id' => $prefix . 'text',
-			'type' => 'text',
-			'std' => ''
-		),
+				'name' => 'iFeature Slider Image',
+				'desc' => 'Upload your image here:',
+				'id' => $prefix . 'post_image',
+				'type' => 'image',
+				'std' => ''
+			),
 			array(
-			'name' => 'Hide Title Bar',
-			'desc' => 'Click to disable the title bar on this slide:',
-			'id' => $prefix . 'hidetitle',
-			'type' => 'checkbox',
-			'std' => ''
-		),
+				'name' => 'iFeature Slider Text',
+				'desc' => 'Enter your slider text here (optional):',
+				'id' => $prefix . 'text',
+				'type' => 'text',
+				'std' => ''
+			),
+				array(
+				'name' => 'Hide Title Bar',
+				'desc' => 'Click to disable the title bar on this slide:',
+				'id' => $prefix . 'hidetitle',
+				'type' => 'checkbox',
+				'std' => ''
+			),
 
-	)
-);
+		)
+	);
 
+	$meta_boxes[] = array(
+		'id' => 'slides',
+		'title' => 'Custom Feature Slides',
+		'pages' => array('if_custom_slides'),
 
-$meta_boxes[] = array(
-	'id' => 'slides',
-	'title' => 'Custom Feature Slides',
-	'pages' => array('if_custom_slides'),
-
-	'fields' => array(
-	
-	array(
-			'name' => 'Custom Slide Link',
-			'desc' => 'Enter your link here',
-			'id' => $prefix . 'url',
-			'type' => 'text',
-			'std' => ''
-		),
+		'fields' => array(
+		
 		array(
-			'name' => 'Custom Slide Image',
-			'desc' => 'Upload your image here:',
-			'id' => $prefix . 'image',
-			'type' => 'image',
-			'std' => ''
-		),
-		array(
-			'name' => 'Hide Title Bar',
-			'desc' => 'Click to disable the title bar on this post:',
-			'id' => $prefix . 'hidetitle',
-			'type' => 'checkbox',
-			'std' => ''
-		),
-	)
-);
+				'name' => 'Custom Slide Link',
+				'desc' => 'Enter your link here',
+				'id' => $prefix . 'url',
+				'type' => 'text',
+				'std' => ''
+			),
+			array(
+				'name' => 'Custom Slide Image',
+				'desc' => 'Upload your image here:',
+				'id' => $prefix . 'image',
+				'type' => 'image',
+				'std' => ''
+			),
+			array(
+				'name' => 'Hide Title Bar',
+				'desc' => 'Click to disable the title bar on this post:',
+				'id' => $prefix . 'hidetitle',
+				'type' => 'checkbox',
+				'std' => ''
+			),
+		)
+	);
 
-foreach ($meta_boxes as $meta_box) {
-	$my_box = new RW_Meta_Box_Taxonomy($meta_box);
+	$terms = get_terms('slide_categories', 'hide_empty=0');
+
+	$options = array();
+
+	foreach($terms as $term) {
+
+	  $options[$term->slug] = $term->name;
+
+	}
+
+
+	$meta_boxes[] = array(
+		'id' => 'page',
+		'title' => 'Page Meta Options',
+		'pages' => array('page'),
+
+		'fields' => array(
+		
+		array(
+				'name' => 'Slide Category',
+				'desc' => 'Select the slide category you would like to use',
+				'id' => $prefix . 'category',
+				'type' => 'select',
+				'options' => $options,
+				'std' => ''
+			),
+			
+		)
+	);
+
+	foreach ($meta_boxes as $meta_box) {
+		$my_box = new RW_Meta_Box_Taxonomy($meta_box);
+	}
 }
+
+function enqueue() {
+		$path =  get_template_directory_uri()."/pro/";
+		$color = get_user_meta( get_current_user_id(), 'admin_color', true );
+
+		wp_register_style(  'metabox-tabs-css', $path. 'metabox-tabs.css');
+		wp_register_style(  'jf-color',       $path. 'metabox-fresh.css');
+		wp_register_script ( 'jf-metabox-tabs', $path. 'metabox-tabs.js');
+		
+		wp_enqueue_script('jf-metabox-tabs');
+		wp_enqueue_style('jf-color');
+		wp_enqueue_style('metabox-tabs-css');
+	}
 
 /********************* END DEFINITION OF META BOXES ***********************/
 

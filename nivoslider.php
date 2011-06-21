@@ -29,7 +29,7 @@
 	       
     	
 	    if (have_posts()) :
-	    	$out = "<div id='coin-slider'>"; 
+	    	$out = "<div id='slider' class='nivoSlider'>"; 
 	    	$i = 0;
 	    	
 	    	if ($options['if_slider_posts_number'] == '')
@@ -50,7 +50,7 @@
 	    		$permalink 			= get_permalink();
 	   			$text 				= get_post_meta($post->ID, 'slider_text' , true);
 	   			$image  			= get_post_meta($post->ID, 'slider_post_image' , true);
-	   			$title				= get_the_title(); 
+	   			$title				= get_the_title() ;
 	   			$hidetitlebar       = get_post_meta($post->ID, 'slider_hidetitle' , true);
 
 	    		
@@ -67,11 +67,14 @@
 	    			($customimage != '' && $usecustomslides != 'posts'  ){ 
 	    			$out .= "<a href='$customlink'>	
 	    						<img src='$root/library/tt/timthumb.php?src=$customimage&a=c&h=330&w=976' alt='iFeaturePro' />
-	    						<span>
+	    						
+	    					<div id='customcaption'>
+	    					<div class='captiontext'>
 	    							<strong>$title</strong><br />
-	    							$customtext
-	    						</span>
-	    					</a>
+	    							$customtext </div>
+	    						</div>
+	    						
+	    						</a>
 	    			";
 	    			
 	    			
@@ -86,11 +89,12 @@
 	       
 	       	elseif ($customimage == '' && $usecustomslides != 'posts') {
 	       		$out .= "<a href='$customlink'>	
-	    						<img src='$root/images/pro/ifeaturepro.jpg' alt='iFeaturePro' />
-	    						<span>
-	    							<strong>$title</strong><br />
-	    							$customtext
-	    						</span>
+	    						<img src='$root/images/pro/ifeaturepro.jpg' alt='iFeaturePro' title='#htmlcaption'/>
+	    						
+	    						<div id='htmlcaption' class='nivo-html-caption'>
+	    							<div class='captiontext'><strong>$title</strong><br />
+	    							$customtext </div>
+	    						</div>
 	    					</a>
 	    			";
 	       } 
@@ -177,16 +181,39 @@
 <script type="text/javascript">
 var $ = jQuery.noConflict();
 
-	$("#coin-slider").coinslider({
-		width  		: $csWidth,
-		height 		: $csHeight,
-		spw			: $csSpw,
-		sph			: $csSph,
-		delay		: $csDelay,
-		navigation	: $csNavigation,
-		effect		: '$csEffect'
-	
-	}); 
+$(window).load(function() {
+    $('#slider').nivoSlider({
+        effect:'slideInLeft', // Specify sets like: 'fold,fade,sliceDown'
+        slices:15, // For slice animations
+        boxCols: 8, // For box animations
+        boxRows: 4, // For box animations
+        animSpeed:500, // Slide transition speed
+        pauseTime:3000, // How long each slide will show
+        startSlide:0, // Set starting Slide (0 index)
+        directionNav:true, // Next & Prev navigation
+        directionNavHide:true, // Only show on hover
+        controlNav:true, // 1,2,3... navigation
+        controlNavThumbs:false, // Use thumbnails for Control Nav
+        controlNavThumbsFromRel:false, // Use image rel for thumbs
+        controlNavThumbsSearch: '.jpg', // Replace this with...
+        controlNavThumbsReplace: '_thumb.jpg', // ...this in thumb Image src
+        keyboardNav:true, // Use left & right arrows
+        pauseOnHover:true, // Stop animation while hovering
+        manualAdvance:false, // Force manual transitions
+        captionOpacity:0.7, // Universal caption opacity
+        prevText: 'Prev', // Prev directionNav text
+        nextText: 'Next', // Next directionNav text
+        beforeChange: function(){
+        $('.captiontext').fadeOut(500);
+        }, // Triggers before a slide transition
+        afterChange: function(){
+        $('.captiontext').fadeIn(500);
+        }, // Triggers after a slide transition
+        slideshowEnd: function(){}, // Triggers after all slides have been shown
+        lastSlide: function(){}, // Triggers when last slide is shown
+        afterLoad: function(){} // Triggers when slider has loaded
+    });
+});
 
 </script>
 

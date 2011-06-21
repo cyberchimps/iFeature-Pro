@@ -37,7 +37,7 @@ $template_url = get_template_directory_uri();
  
 function theme_options_add_page() {
 global $themename, $shortname, $options;
-  $page = add_object_page($themename." Settings", "".$themename."", 'edit_theme_options', 'theme_options', 'theme_options_do_page');  
+  $page = add_theme_page($themename." Settings", "".$themename."", 'edit_theme_options', 'theme_options', 'theme_options_do_page');  
 
   add_action('admin_print_scripts-' . $page, 'if_scripts');
   add_action('admin_print_styles-' . $page, 'if_styles');  

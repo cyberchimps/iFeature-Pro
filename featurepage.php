@@ -22,7 +22,9 @@ $options = get_option('ifeature') ;
 		<?php if ($hideslider != '1' && $sliderplacement != 'blog'):?>
 			<?php get_template_part('slider', 'featurepage' ); ?>
 		<?php endif;?>
-		
+		<?php if ($enable == '1') : ?>
+		<?php include (TEMPLATEPATH . '/pro/twitter.php' ); ?>
+		<?php endif ;?>
 		<?php $hidecallout = $options['if_hide_callout'] ?>
 		<?php if ($hidecallout != '1' ):?>
 			<?php include (TEMPLATEPATH . '/pro/callout.php' ); ?>

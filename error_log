@@ -1,0 +1,4 @@
+[20-Jun-2011 18:18:45] PHP Fatal error:  Call to undefined function get_option() in /home/orange/public_html/ifeaturepro/wp-content/themes/ifeaturepro/index.php on line 2
+[20-Jun-2011 18:20:27] PHP Fatal error:  Call to undefined function get_option() in /home/orange/public_html/ifeaturepro/wp-content/themes/ifeaturepro/index.php on line 2
+[20-Jun-2011 18:31:05] PHP Fatal error:  Call to undefined function get_option() in /home/orange/public_html/ifeaturepro/wp-content/themes/ifeaturepro/index.php on line 2
+[20-Jun-2011 18:34:15] PHP Fatal error:  Call to undefined function get_option() in /home/orange/public_html/ifeaturepro/wp-content/themes/ifeaturepro/index.php on line 2

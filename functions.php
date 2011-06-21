@@ -26,8 +26,6 @@ set_post_thumbnail_size( 100, 100, true );
 	
 // Load jQuery
 	if ( !is_admin() ) {
-	   wp_deregister_script('jquery');
-	   wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"), false);
 	   wp_enqueue_script('jquery');
 	}
 
@@ -168,15 +166,31 @@ function create_post_type() {
 				'singular_name' => __( 'Slides' )
 			),
 			'public' => true,
-			'show_ui' => true, // UI in admin panel
+			'show_ui' => true, 
 			'supports' => array('title', 'editor','custom-fields'),
-
+			'taxonomies' => array( 'slide_categories'),
 			'has_archive' => true,
 			'rewrite' => array('slug' => 'slides')
 		)
 	);
 }
 
+// Register custom category taxonomy for iFeature Slider
+
+function if_custom_taxonomies() {
+	register_taxonomy(
+		'slide_categories',		
+		'if_custom_slides',		
+		array(
+			'hierarchical' => true,
+			'label' => 'Categories',	
+			'query_var' => true,	
+			'rewrite' => array( 'slug' => 'slide_categories' ),	
+		)
+	);
+}
+
+add_action('init', 'if_custom_taxonomies', 0);
 
 	//Download Button Shortcode
 	
@@ -224,7 +238,7 @@ function cs_head(){
 	 
 	$path =  get_template_directory_uri() ."/library/cs/";
 
-	$script = "
+	$script = "   
 		
 		<script type=\"text/javascript\" src=\"".$path."scripts/coin-slider.min.js\"></script>
 		";
@@ -233,6 +247,20 @@ function cs_head(){
 }
 
 add_action('wp_head', 'cs_head');
+
+function nivoslider(){
+	 
+	$path =  get_template_directory_uri() ."/library/ns/";
+
+	$script = "
+		
+		<script type=\"text/javascript\" src=\"".$path."/jquery.nivo.slider.js\"></script>
+		";
+	
+	echo $script;
+}
+
+add_action('wp_head', 'nivoslider');
 
 
 	// Register superfish scripts
@@ -355,5 +383,6 @@ add_action( 'wp_head', 'ifeature_add_scripts',0);
 	
 require_once ( get_template_directory() . '/library/options/options.php' );
 require_once ( get_template_directory() . '/pro/meta-box.php' );
+require_once ( get_template_directory() . '/pro/jf-metabox-tabs.php' );
 require_once ( get_template_directory() . '/inc/update.php' ); // Include automatic updater
 ?>
