@@ -23,28 +23,28 @@ $options = get_option('ifeature') ;
     	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Footer") ) : ?>
 		
 		<div class="footer-widgets">
-			<h3>Recent Posts</h3>
+			<h3 class="footer-widget-title">Recent Posts</h3>
 			<ul>
 				<?php wp_get_archives('type=postbypost&limit=4'); ?>
 			</ul>
 		</div>
 		
 		<div class="footer-widgets">
-			<h3>Archives</h3>
+			<h3 class="footer-widget-title">Archives</h3>
 			<ul>
 				<?php wp_get_archives('type=monthly&limit=16'); ?>
 			</ul>
 		</div>
 
 		<div class="footer-widgets">
-			<h3>Links</h3>
+			<h3 class="footer-widget-title">Links</h3>
 			<ul>
 				<?php wp_list_bookmarks('categorize=0&title_li='); ?>
 			</ul>
 		</div>
 
 		<div class="footer-widgets">
-			<h3>WordPress</h3>
+			<h3 class="footer-widget-title">WordPress</h3>
 			<ul>
     		<?php wp_register(); ?>
     		<li><?php wp_loginout(); ?></li>
@@ -86,8 +86,8 @@ $options = get_option('ifeature') ;
 								$hidelink		= $options['if_hide_link'];
 							?>
 							<?php if ($hidelink == "0" ):?>
-					<div id="seomodule">
-						<?php include (TEMPLATEPATH . '/library/options/seomodule.php' ); ?>
+					<div id="credit">
+						<?php get_template_part('credit', 'footer' ); ?>
 					</div>
 			<?php endif;?>
 		</div>  <!--end afterfooterwrap-->	

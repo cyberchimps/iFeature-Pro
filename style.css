@@ -598,8 +598,8 @@ li { padding-left: 5px; }
 
 #footer { 
 	min-height: 200px;
-	background-color: #111111;
-	background: url(./images/footerbg.png) repeat-x left top;
+	background: #222 url(./images/footer.png) repeat-x center top;
+	border-top: 2px solid #ccc;
 }
 
 #footer_wrap {
@@ -618,6 +618,7 @@ li { padding-left: 5px; }
 
 .footer-widgets li {
 	list-style-type: none;
+	padding-left: 0;
 }
 
 .footer-widgets a {
@@ -625,13 +626,14 @@ li { padding-left: 5px; }
 }
 
 .footer-widgets a:hover {
-	color: #111;
+	color: #ccc;
 }
 
-.footer-widget-title{
-	color: #888;
-	font-size: 16px;
-	font-weight: bold;
+.footer-widget-title {
+	color: #ccc;
+	font-size: 18px;
+	font-weight: 300;
+	padding-bottom: 10px;
 }
 
 .footer-item ul {
@@ -642,12 +644,14 @@ li { padding-left: 5px; }
 	width: 100%; 
 	background: black; 
 	color: white;
+	border-top: 2px solid #333;
 }
 
 #afterfooterwrap {
 	width: 980px; 
 	height:40px; 
-	margin: auto; 
+	margin: auto;
+	margin-top: 10px;
 	padding: 3px;
 }
 
@@ -677,6 +681,8 @@ li { padding-left: 5px; }
 #afterfootermenu li {
 	display: inline; 
 }
+
+.credit { height: 22px; width: 148px; z-index: 99;margin: auto;	}
 
 /* Nav */
 
