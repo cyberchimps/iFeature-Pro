@@ -123,6 +123,24 @@ array( "name" => "Choose a font:",
     "type" => "select2",  
     "std" => ""),
     
+array( "name" => "Logo URL",  
+    "desc" => "Enter the link to your logo image (max-height 60px), or to use your site title text enter the word: hide.",  
+    "id" => $shortname."_logo",  
+    "type" => "text",  
+    "std" => ""),  
+    
+array( "name" => "Custom Menu Icon",  
+    "desc" => "Enter the link to your custom menu icon (optional).",  
+    "id" => $shortname."_menuicon",  
+    "type" => "text",  
+    "std" => ""),
+
+array( "name" => "Header Contact Area",  
+    "desc" => "Enter contact info such as phone number for the top right corner of the header. It can be HTML (to hide enter the word: hide).",  
+    "id" => $shortname."_header_contact",  
+    "type" => "textarea",
+    "std" => ""),
+    
 array( "name" => "Custom CSS",  
     "desc" => "Override default iFeature CSS here.",  
     "id" => $shortname."_css_options",  
@@ -153,30 +171,14 @@ array( "type" => "close-tab"),
 
 
 
-// Header
+// Social
 
 array( "id" => $shortname."-tab2",
 	"type" => "open-tab"),
  
 array( "type" => "open"),
 
-array( "name" => "Logo URL",  
-    "desc" => "Enter the link to your logo image (max-height 60px), or to use your site title text enter the word: hide.",  
-    "id" => $shortname."_logo",  
-    "type" => "text",  
-    "std" => ""),  
-    
-array( "name" => "Custom Menu Icon",  
-    "desc" => "Enter the link to your custom menu icon (optional).",  
-    "id" => $shortname."_menuicon",  
-    "type" => "text",  
-    "std" => ""),
 
-array( "name" => "Header Contact Area",  
-    "desc" => "Enter contact info such as phone number for the top right corner of the header. It can be HTML (to hide enter the word: hide).",  
-    "id" => $shortname."_header_contact",  
-    "type" => "textarea",
-    "std" => ""),
 
 array( "name" => "Facebook URL",  
     "desc" => "Enter your Facebook page URL to display the Facebook social icon (to hide enter the word: hide).",  
@@ -464,7 +466,7 @@ function theme_options_do_page() {
     <div id="tabs" style="clear:both;">   
     <ul class="tabNavigation">
         <li><a href="#if-tab1"><span>General</span></a></li>
-        <li><a href="#if-tab2"><span>Header</span></a></li>
+        <li><a href="#if-tab2"><span>Social</span></a></li>
         <li><a href="#if-tab3"><span>SEO</span></a></li>
         <li><a href="#if-tab4"><span>Callout Section</span></a></li>
         <li><a href="#if-tab5"><span>iFeature Slider</span></a></li>        

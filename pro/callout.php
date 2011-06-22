@@ -11,44 +11,35 @@
 
 
 ?>
-	<?php  
-				if ($options['if_menu_color'] == "")
-					$menucolor = 'Grey';
-				else
-				$menucolor = $options[('if_menu_color')]; ?>
-	<div style="height: 100px; width: 980px; float: left; display: block; margin-top: 5px; margin-bottom: 15px; background: url(<?php bloginfo('template_url'); ?>/images/pro/callout<?php echo $menucolor ?>.png) no-repeat top center;"><!--id="calloutwrap"-->
-	<div class="calloutpadding">
+
+<div id="calloutwrap"><!--id="calloutwrap"-->
 		<div class="callout_text">
 		<?php  
-				if ($options['if_callout_title'] == "")
+				if ($options['bu_callout_title'] == "")
 					$callouttitle = 'This is the Callout Section';
 				else
-				$callouttitle = $options[('if_callout_title')]; ?>
+				$callouttitle = $options[('bu_callout_title')]; ?>
 		<h2 class="callout_title"><?php echo $callouttitle ?></h2>
 		<?php  
-				if ($options['if_callout_text'] == "")
-					$callouttext = 'iFeature Pro comes with this callout section, five widgetized areas, typography with Google Font support, a customizable feature slider, a full shortcode library, five attractive color schemes and much more.';
+				if ($options['bu_callout_text'] == "")
+					$callouttext = 'Business Pro gives you the tools to turn WordPress into a modern feature rich Content Management System (CMS). ';
 				else
-				$callouttext = $options[('if_callout_text')]; ?>
+				$callouttext = $options[('bu_callout_text')]; ?>
 		<p class="calloutp"><?php echo $callouttext  ?></p>
 		</div>
-		<?php $calloutimg = $options['if_callout_img'] ; ?>
+		<?php if ($options['bu_callout_button_text'] == "")
+					$calloutbuttontext = 'BUY NOW';
+		else
+		$calloutbuttontext = $options['bu_callout_button_text'] ; ?>
+		
 		<?php  
-				if ($options['if_callout_image_link'] == "")
-					$calloutimglink = 'http://ifeaturepro.com';
+				if ($options['bu_callout_image_link'] == "")
+					$calloutimglink = 'http://cyberchimps.com';
 				else
-				$calloutimglink = $options['if_callout_image_link']; ?>
-		<?php if ($calloutimg != '' ):?>
-		<div class="calloutimg">
-		<a href="<?php echo $calloutimglink ?>"><img src="<?php echo $calloutimg ?>" alt="Callout"></a>
+				$calloutimglink = $options['bu_callout_image_link']; ?>
+	
+		
+		<div class="calloutbutton">
+		<a href="<?php echo $calloutimglink ?>"><?php echo $calloutbuttontext ;?></a>
 		</div>
-		<?php endif;?>
-		<?php if ($calloutimg == '' ):?>
-		<div class="calloutimg">
-		<a href="<?php echo $calloutimglink ?>"><img src="<?php bloginfo('template_url'); ?>/images/pro/callout.png? >" alt="Callout" /></a>
-		</div>
-		<?php endif;?>
-	<div>
-	</div>
-	</div>
 </div><!--end calloutwrap-->

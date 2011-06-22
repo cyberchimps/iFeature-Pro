@@ -6,6 +6,7 @@ Version 1.2 (6-15-11)
 - Now enqueueing WordPress jQuery library instead of Google's for offline compatibility.
 - TimThumb support added for automatic image resizing.
 - Cleaned up stylesheet.
+- Added proper featured image support, links to corresponding post.
 
 Version 1.1.6 (6-12-2011)
 -API added for push updates.

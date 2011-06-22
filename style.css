@@ -23,7 +23,7 @@ body { font-size: 14px;	}
 /* Page Layout  */
 
 #page-wrap { 
-	width: 982px; 
+	width: 980px; 
 	margin: auto;
 	margin-bottom: 10px;
 }
@@ -241,6 +241,7 @@ ol {
 .entry {
 	padding-top: 5px;
 	overflow:hidden;
+	min-height: 86px;
 }
 
 .meta { 
@@ -323,6 +324,14 @@ blockquote p { }
 .next-posts { float: left; }
 
 .prev-posts { float: right; }
+
+.featured-image {
+	margin-top: 14px; 
+	margin-right: 12px; 
+	margin-bottom: 10px; 
+	float: left;
+
+}
 
 /* Share and Comments Styling */
 
@@ -457,32 +466,59 @@ li { padding-left: 5px; }
 
 /* Callout Section */
 
-.calloutpadding {
-	padding: 10px;
+#calloutwrap {
+	height: 80px; 
+	width: 980px;
+	display: block;
+	margin: auto;
+	margin-bottom: 15px;
+	background: #f8f8f8 url(./images/widget-gradient.png) repeat-x left bottom;
+	border: 1px solid;
+	border-top: 1px solid #CCC;
+	border-left: 1px solid #CCC;
+	border-right: 1px solid #AAA;
+	border-bottom: 1px solid #AAA;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-webkit-border-radius: 5px;
 }
 
 .callout_text {
-	width: 740px;
+	width: 730px;
 	float: left;
 	padding-left: 10px;
 	font-size: 14px;
-	color: #f5f5f5;
-	text-shadow: 1px 1px 1px #1d1d1d;
+	color: #000;
 }
 
 .callout_title {
 	font-size: 24px;
-	color: #fff;
-	font-weight: bolder;
-	text-shadow: 2px 2px 2px #1d1d1d;
+	color: #000;
 }
 
-.calloutimg{
-	padding-top: 10px;
-	width: 190px;
+.calloutbutton {
+	padding: 10px 5px 10px 5px;
+	width: 200px;
 	float:right;
+	margin-top: 10px;
+	margin-right: 10px;
+	background: #333;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	color: #fff;
+	text-align: center;
 }
 
+.calloutbutton a{
+	color: #fff;
+	font-size: 18px;
+	font-weight: 800;
+}
+
+.calloutbutton a:hover{
+	color: #b7b7b7;
+}
 /* Boxes */
 
 #box_container {
@@ -490,7 +526,7 @@ li { padding-left: 5px; }
 	width: 980px;
 	float: left;
 	padding-top: 5px;
-	padding-bottom: 5px;
+	padding-bottom: 15px;
 }
 
 #box_container ul {
@@ -504,7 +540,7 @@ li { padding-left: 5px; }
 	padding: 5px;
 	margin-left: 0px;
 	margin-right: 14px;
-	padding-bottom: 10px;
+	padding-bottom: 15px;
 	color: #222;
 	background: #f8f8f8 url(./images/widget-gradient.png) repeat-x left bottom;
 	border: 1px solid;
@@ -519,10 +555,8 @@ li { padding-left: 5px; }
 }
 
 .box-widget-title {
-	color: #5a5a5a;
-	background: url(./images/wtitlebg.png) no-repeat center top;
+	color: #444;
 	height: 25px;
-	margin: -6px -5px 5px -5px;
 	padding: 0 5px 0 0px;
 	font-size: 16px;
 	font-weight: bold;
@@ -631,7 +665,7 @@ li { padding-left: 5px; }
 
 .footer-widget-title {
 	color: #ccc;
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 300;
 	padding-bottom: 10px;
 }
