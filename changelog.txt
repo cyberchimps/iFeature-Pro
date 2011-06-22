@@ -87,4 +87,4 @@ Version 1.0.1 (4-6-2011)
 -Updated Theme URI in style.css. 
 
 Version 1.0 (4-5-2011)
--Initial release.
+-Initial re
