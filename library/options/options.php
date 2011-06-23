@@ -20,10 +20,11 @@ function theme_options_init() {
 	
 	register_setting( 'if_options', 'ifeature', 'theme_options_validate' );
 	wp_register_script('ifjquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"), false, '1.4.4');
-  wp_register_script('ifjqueryui', get_template_directory_uri(). '/library/js/jquery-ui.js');
-  wp_register_script('ifjquerycookie', get_template_directory_uri(). '/library/js/jquery-cookie.js');
-  wp_register_script('ifcookie', get_template_directory_uri(). '/library/js/cookie.js');
-  wp_register_style('ifcss', get_template_directory_uri(). '/library/options/theme-options.css');
+    wp_register_script('ifjqueryui', get_template_directory_uri(). '/library/js/jquery-ui.js');
+    wp_register_script('ifjquerycookie', get_template_directory_uri(). '/library/js/jquery-cookie.js');
+    wp_register_script('ifcookie', get_template_directory_uri(). '/library/js/cookie.js');
+    wp_register_script('ifcolor', get_template_directory_uri(). '/library/js/jscolor/jscolor.js');
+    wp_register_style('ifcss', get_template_directory_uri(). '/library/options/theme-options.css');
 }
 
 
@@ -169,69 +170,138 @@ array( "type" => "close"),
 
 array( "type" => "close-tab"),
 
-
-
-// Social
+//Design
 
 array( "id" => $shortname."-tab2",
 	"type" => "open-tab"),
  
 array( "type" => "open"),
 
+array( "name" => "Site Title Color",  
+    "desc" => "Use the color picker to select the site title color",  
+    "id" => $shortname."_sitetitle_color",  
+      "type" => "color1",  
+    "std" => "false"),
 
-
-array( "name" => "Facebook URL",  
-    "desc" => "Enter your Facebook page URL to display the Facebook social icon (to hide enter the word: hide).",  
-    "id" => $shortname."_facebook",  
-    "type" => "text",  
-    "std" => ""),
-
-array( "name" => "Twitter URL",  
-    "desc" => "Enter your Twitter URL to display the Twitter social icon (to hide enter the word: hide).",  
-    "id" => $shortname."_twitter",  
-    "type" => "text",  
-    "std" => ""),
-    
-array( "name" => "LinkedIn URL",  
-    "desc" => "Enter your LinkedIn URL to display the LinkedIn social icon (to hide enter the word: hide).",  
-    "id" => $shortname."_linkedin",  
-    "type" => "text",  
-    "std" => ""),  
-    
-array( "name" => "YouTube URL",  
-    "desc" => "Enter your YouTube URL to display the YouTube social icon (to hide enter the word: hide).",  
-    "id" => $shortname."_youtube",  
-    "type" => "text",  
-    "std" => ""),  
-    
-array( "name" => "Google Maps URL",  
-    "desc" => "Enter your Google Maps URL to display the Google Maps social icon (to hide enter the word: hide).",  
-    "id" => $shortname."_googlemaps",  
-    "type" => "text",  
-    "std" => ""),  
-
-array( "name" => "Email",  
-    "desc" => "Enter your contact email address to display the email social icon (to hide enter the word: hide.",  
-    "id" => $shortname."_email",  
-    "type" => "text",  
-    "std" => ""),
-    
-array( "name" => "Custom RSS Link",  
-    "desc" => "Enter Feedburner URL, or leave blank for default RSS feed (to hide enter the word: hide).",  
-    "id" => $shortname."_rsslink",  
-    "type" => "text",  
-    "std" => ""),   
- 
 array( "type" => "close"),
-
 array( "type" => "close-tab"),
+
+
+// Social
 
 array( "id" => $shortname."-tab3",
 	"type" => "open-tab"),
  
 array( "type" => "open"),
 
+
+array( "name" => "Facebook URL",  
+    "desc" => "Enter your Facebook page URL for the Facebook social icon.",  
+    "id" => $shortname."_facebook",  
+    "type" => "facebook",  
+    "std" => "http://facebook.com"),
+
+array( "name" => "Twitter URL",  
+    "desc" => "Enter your Twitter URL for Twitter social icon.",  
+    "id" => $shortname."_twitter",  
+    "type" => "twitter",  
+    "std" => "http://twitter.com"),
+    
+array( "name" => "LinkedIn URL",  
+    "desc" => "Enter your LinkedIn URL for the LinkedIn social icon.",  
+    "id" => $shortname."_linkedin",  
+    "type" => "linkedin",  
+    "std" => "http://linkedin.com"),  
+    
+array( "name" => "YouTube URL",  
+    "desc" => "Enter your YouTube URL for the YouTube social icon.",  
+    "id" => $shortname."_youtube",  
+    "type" => "youtube",  
+    "std" => "http://youtube.com"),  
+    
+array( "name" => "Google Maps URL",  
+    "desc" => "Enter your Google Maps URL for the Google Maps social icon.",  
+    "id" => $shortname."_googlemaps",  
+    "type" => "googlemaps",  
+    "std" => "http://google.com/maps"),  
+
+array( "name" => "Email",  
+    "desc" => "Enter your contact email address for email social icon.",  
+    "id" => $shortname."_email",  
+    "type" => "email",  
+    "std" => "no@way.com"),
+    
+array( "name" => "Custom RSS Link",  
+    "desc" => "Enter Feedburner URL, or leave blank for default RSS feed.",  
+    "id" => $shortname."_rsslink",  
+    "type" => "rss",  
+    "std" => ""),   
+     
+array( "type" => "close"),
+
+array( "type" => "close-tab"),
+
+//Blog
+
+array( "id" => $shortname."-tab4",
+	"type" => "open-tab"),
+ 
+array( "type" => "open"),
+
+
+array( "name" => "Show Excerpts",  
+    "desc" => "Check this box to show post excerpts instead of full-length content.",  
+    "id" => $shortname."_show_excerpts",  
+      "type" => "checkbox",  
+    "std" => "false"),
+
+array( "name" => "Hide the Author",  
+    "desc" => "Check this box to hide the author link on posts.",  
+    "id" => $shortname."_hide_author",  
+      "type" => "checkbox",  
+    "std" => "false"),
+    
+array( "name" => "Hide the Categories",  
+    "desc" => "Check this box to hide the categories link on posts.",  
+    "id" => $shortname."_hide_categories",  
+      "type" => "checkbox",  
+    "std" => "false"),
+        
+array( "name" => "Hide the Date",  
+    "desc" => "Check this box to hide the date link on posts.",  
+    "id" => $shortname."_hide_date",  
+      "type" => "checkbox",  
+    "std" => "false"),
+    
+array( "name" => "Hide the Comments",  
+    "desc" => "Check this box to hide the comments link on posts.",  
+    "id" => $shortname."_hide_comments",  
+      "type" => "checkbox",  
+    "std" => "false"),
+    
+array( "name" => "Hide the Share Icons",  
+    "desc" => "Check this box to hide the share icons on posts.",  
+    "id" => $shortname."_hide_share",  
+      "type" => "checkbox",  
+    "std" => "false"),
+    
+array( "name" => "Hide the Tags",  
+    "desc" => "Check this box to hide the tags link on posts.",  
+    "id" => $shortname."_hide_tags",  
+      "type" => "checkbox",  
+    "std" => "false"),
+
+array( "type" => "close"),
+array( "type" => "close-tab"),
+
+
 //SEO
+
+array( "id" => $shortname."-tab5",
+	"type" => "open-tab"),
+ 
+array( "type" => "open"),
+
 
 array( "name" => "Home Description",  
     "desc" => "Enter the META description of your homepage here.",  
@@ -257,7 +327,7 @@ array( "type" => "close-tab"),
 
 // Callout Section
 
-array( "id" => $shortname."-tab4",
+array( "id" => $shortname."-tab6",
 	"type" => "open-tab"),
 
 array( "type" => "open"),
@@ -298,7 +368,7 @@ array( "type" => "close-tab"),
 
 // iFeature Slider
 
-array( "id" => $shortname."-tab5",
+array( "id" => $shortname."-tab7",
 	"type" => "open-tab"),
 
 array( "type" => "open"),
@@ -365,7 +435,7 @@ array( "type" => "close-tab"),
 
 // Footer
 
-array( "id" => $shortname."-tab6",
+array( "id" => $shortname."-tab8",
 	"type" => "open-tab"),
 
 array( "type" => "open"),
@@ -394,7 +464,7 @@ array( "type" => "close-tab"),
 
 // Import/Export
 
-array( "id" => $shortname."-tab7",
+array( "id" => $shortname."-tab9",
 	"type" => "open-tab"),
 
 array( "type" => "open"),
@@ -466,12 +536,14 @@ function theme_options_do_page() {
     <div id="tabs" style="clear:both;">   
     <ul class="tabNavigation">
         <li><a href="#if-tab1"><span>General</span></a></li>
-        <li><a href="#if-tab2"><span>Social</span></a></li>
-        <li><a href="#if-tab3"><span>SEO</span></a></li>
-        <li><a href="#if-tab4"><span>Callout Section</span></a></li>
-        <li><a href="#if-tab5"><span>iFeature Slider</span></a></li>        
-        <li><a href="#if-tab6"><span>Footer</span></a></li>
-        <li><a href="#if-tab7"><span>Import/Export</span></a></li>
+        <li><a href="#if-tab2"><span>Design</span></a></li>
+        <li><a href="#if-tab3"><span>Social</span></a></li>
+        <li><a href="#if-tab4"><span>Blog</span></a></li>
+        <li><a href="#if-tab5"><span>SEO</span></a></li>
+        <li><a href="#if-tab6"><span>Callout Section</span></a></li>
+        <li><a href="#if-tab7"><span>iFeature Slider</span></a></li>        
+        <li><a href="#if-tab8"><span>Footer</span></a></li>
+        <li><a href="#if-tab9"><span>Import/Export</span></a></li>
     
     </ul>
     
@@ -518,6 +590,209 @@ case "close-tab":
  
 <?php break; 
  
+case 'color1':  
+?>  
+  
+<tr>
+
+    <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
+    <td width="85%">
+    
+    <?php
+$options = get_option('ifeature');
+
+if (isset($options['if_sitetitle_color']) == "")
+			$picker = '111111';
+			
+		else
+			$picker = $options['if_sitetitle_color']; 
+?>
+
+<input type="text" class="color{required:false}" id="ifeature[if_sitetitle_color]" name="ifeature[if_sitetitle_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
+
+<br /><br />
+    
+    </td>
+
+  </tr>
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+
+<?php
+break; 
+ 
+ 
+case 'facebook':  
+?>  
+  
+<tr>
+
+    <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
+    <td width="85%"><input style="width:300px;" name="<?php echo 'business['.$value['id'].']'; ?>" id="<?php echo 'bu['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
+    
+    <br /><br />
+    <input type="checkbox" id="ifeature[if_hide_facebook]" name="ifeature[if_hide_facebook]" value="1" <?php checked( '1', $options['if_hide_facebook'] ); ?>> - Check this box to hide the Facebook icon. 
+    
+    </td>
+
+  </tr>
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+
+<?php
+break;
+
+
+case 'twitter':  
+?>  
+  
+<tr>
+
+    <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
+    <td width="85%"><input style="width:300px;" name="<?php echo 'business['.$value['id'].']'; ?>" id="<?php echo 'bu['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
+    
+    <br /><br />
+    <input type="checkbox" id="ifeature[if_hide_twitter]" name="ifeature[if_hide_twitter]" value="1" <?php checked( '1', $options['if_hide_twitter'] ); ?>> - Check this box to hide the Twitter icon. 
+    
+    </td>
+
+  </tr>
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+
+<?php
+break;
+
+case 'linkedin':  
+?>  
+  
+<tr>
+
+    <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
+    <td width="85%"><input style="width:300px;" name="<?php echo 'business['.$value['id'].']'; ?>" id="<?php echo 'bu['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
+    
+    <br /><br />
+    <input type="checkbox" id="ifeature[if_hide_linkedin]" name="ifeature[if_hide_linkedin]" value="1" <?php checked( '1', $options['if_hide_linkedin'] ); ?>> - Check this box to hide the LinkedIn icon. 
+    
+    </td>
+
+  </tr>
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+<?php
+break;
+
+
+case 'youtube':  
+?>  
+  
+<tr>
+
+    <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
+    <td width="85%"><input style="width:300px;" name="<?php echo 'business['.$value['id'].']'; ?>" id="<?php echo 'bu['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
+    
+    <br /><br />
+    <input type="checkbox" id="ifeature[if_hide_youtube]" name="ifeature[if_hide_youtube]" value="1" <?php checked( '1', $options['if_hide_youtube'] ); ?>> - Check this box to hide the YouTube icon. 
+    
+    </td>
+
+  </tr>
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+<?php
+break;
+
+
+case 'googlemaps':  
+?>  
+  
+<tr>
+
+    <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
+    <td width="85%"><input style="width:300px;" name="<?php echo 'business['.$value['id'].']'; ?>" id="<?php echo 'bu['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
+    
+    <br /><br />
+    <input type="checkbox" id="ifeature[if_hide_googlemaps]" name="ifeature[if_hide_googlemaps]" value="1" <?php checked( '1', $options['if_hide_googlemaps'] ); ?>> - Check this box to hide the Google Maps icon. 
+    
+    </td>
+
+  </tr>
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+<?php
+break;
+
+
+case 'email':  
+?>  
+  
+<tr>
+
+    <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
+    <td width="85%"><input style="width:300px;" name="<?php echo 'business['.$value['id'].']'; ?>" id="<?php echo 'bu['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
+    
+    <br /><br />
+    <input type="checkbox" id="ifeature[if_hide_email]" name="ifeature[if_hide_email]" value="1" <?php checked( '1', $options['if_hide_email'] ); ?>> - Check this box to hide the Email icon. 
+    
+    </td>
+
+  </tr>
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+<?php
+break;
+
+case 'rss':  
+?>  
+  
+<tr>
+
+    <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
+    <td width="85%"><input style="width:300px;" name="<?php echo 'business['.$value['id'].']'; ?>" id="<?php echo 'bu['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
+    
+    <br /><br />
+    <input type="checkbox" id="ifeature[if_hide_rss]" name="ifeature[if_hide_rss]" value="1" <?php checked( '1', $options['if_hide_rss'] ); ?>> - Check this box to hide the RSS icon. 
+    
+    </td>
+
+  </tr>
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+
+<?php
+break; 
 
  
 case 'textarea':
@@ -634,7 +909,16 @@ case 'select2':
 								echo $p . $r;   
 							?>    
 
-</select></td>
+</select>
+<br /> <br />
+
+Or enter your own font below (Google Fonts with more than one word format as follows: Maven+Pro)
+<br /> <br />
+
+<input style="width:300px;" name="ifeature[if_custom_font]" id="ifeature[if_custom_font]" type="text" value="<?php echo $options['if_custom_font'] ?>"  />
+
+
+</td>
 </tr> 
  
 <tr>
@@ -790,20 +1074,47 @@ function theme_options_validate( $input ) {
 	global  $select_menu_color, $select_font, $select_slider_effect, $select_slider_type, $select_slider_placement;
 
 	// Assign checkbox value
-  
-  if ( ! isset( $input['if_hide_callout'] ) )
+	
+	
+	if ( ! isset( $input['if_hide_facebook'] ) )
+		$input['if_hide_facebook'] = null;
+	$input['if_hide_facebook'] = ( $input['if_hide_facebook'] == 1 ? 1 : 0 ); 
+	
+	if ( ! isset( $input['if_hide_twitter'] ) )
+		$input['if_hide_twitter'] = null;
+	$input['if_hide_twitter'] = ( $input['if_hide_twitter'] == 1 ? 1 : 0 ); 
+	
+	if ( ! isset( $input['if_hide_linkedin'] ) )
+		$input['if_hide_linkedin'] = null;
+	$input['if_hide_linkedin'] = ( $input['if_hide_linkedin'] == 1 ? 1 : 0 ); 
+	
+	if ( ! isset( $input['if_hide_youtube'] ) )
+		$input['if_hide_youtube'] = null;
+	$input['if_hide_youtube'] = ( $input['if_hide_youtube'] == 1 ? 1 : 0 ); 
+	
+	if ( ! isset( $input['if_hide_googlemaps'] ) )
+		$input['if_hide_googlemaps'] = null;
+	$input['if_hide_googlemaps'] = ( $input['if_hide_googlemaps'] == 1 ? 1 : 0 ); 
+	
+	if ( ! isset( $input['if_hide_email'] ) )
+		$input['if_hide_email'] = null;
+	$input['if_hide_email'] = ( $input['if_hide_email'] == 1 ? 1 : 0 ); 
+	
+	if ( ! isset( $input['if_hide_rss'] ) )
+		$input['if_hide_rss'] = null;
+	$input['if_hide_rss'] = ( $input['if_hide_rss'] == 1 ? 1 : 0 ); 
+
+  	if ( ! isset( $input['if_hide_callout'] ) )
 		$input['if_hide_callout'] = null;
 	$input['if_hide_callout'] = ( $input['if_hide_callout'] == 1 ? 1 : 0 ); 
 	
-	  if ( ! isset( $input['if_show_fb_like'] ) )
+	if ( ! isset( $input['if_show_fb_like'] ) )
 		$input['if_show_fb_like'] = null;
 	$input['if_show_fb_like'] = ( $input['if_show_fb_like'] == 1 ? 1 : 0 ); 
-  
   
      if ( ! isset( $input['if_hide_slider'] ) )
 		$input['if_hide_slider'] = null;
 	$input['if_hide_slider'] = ( $input['if_hide_slider'] == 1 ? 1 : 0 ); 
-  
   
     if ( ! isset( $input['if_hide_boxes'] ) )
 		$input['if_hide_boxes'] = null;
@@ -816,6 +1127,34 @@ function theme_options_validate( $input ) {
 	  if ( ! isset( $input['if_slider_navigation'] ) )
 		$input['if_slider_navigation'] = null;
 	$input['if_slider_navigation'] = ( $input['if_slider_navigation'] == 1 ? 1 : 0 ); 
+	
+	if ( ! isset( $input['if_show_excerpts'] ) )
+		$input['if_show_excerpts'] = null;
+	$input['if_show_excerpts'] = ( $input['if_show_excerpts'] == 1 ? 1 : 0 ); 
+	
+	if ( ! isset( $input['if_hide_author'] ) )
+		$input['if_hide_author'] = null;
+	$input['if_hide_author'] = ( $input['if_hide_author'] == 1 ? 1 : 0 ); 
+	
+	 if ( ! isset( $input['if_hide_categories'] ) )
+		$input['if_hide_categories'] = null;
+	$input['if_hide_categories'] = ( $input['if_hide_categories'] == 1 ? 1 : 0 ); 
+	
+	 if ( ! isset( $input['if_hide_date'] ) )
+		$input['if_hide_date'] = null;
+	$input['if_hide_date'] = ( $input['if_hide_date'] == 1 ? 1 : 0 ); 
+	
+	 if ( ! isset( $input['if_hide_comments'] ) )
+		$input['if_hide_comments'] = null;
+	$input['if_hide_comments'] = ( $input['if_hide_comments'] == 1 ? 1 : 0 ); 
+	
+	 if ( ! isset( $input['if_hide_share'] ) )
+		$input['if_hide_share'] = null;
+	$input['if_hide_share'] = ( $input['if_hide_share'] == 1 ? 1 : 0 ); 
+	
+	 if ( ! isset( $input['if_hide_tags'] ) )
+		$input['if_hide_tags'] = null;
+	$input['if_hide_tags'] = ( $input['if_hide_tags'] == 1 ? 1 : 0 ); 
   
   	// Strip HTML from certain options
   	
@@ -890,6 +1229,7 @@ function register_my_menu() {
         wp_enqueue_script('ifjqueryui');
         wp_enqueue_script('ifjquerycookie');
         wp_enqueue_script('ifcookie');
+        wp_enqueue_script('ifcolor');
    }
     
  function if_styles() {

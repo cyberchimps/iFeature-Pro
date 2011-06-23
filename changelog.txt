@@ -1,15 +1,19 @@
-salt
-
 iFeature Pro Changelog
 
 ****************************
 
 Version 1.2 (6-15-11)
-- Now enqueueing WordPress jQuery library instead of Google's for offline compatibility.
-- TimThumb support added for automatic image resizing.
-- Cleaned up stylesheet.
-- iFeature Pro settings now found under Appearance tab in WP-Admin.
-- Added proper featured image support, links to corresponding post.
+-Now enqueueing WordPress jQuery library instead of Google's for offline compatibility.
+-TimThumb support added for automatic image resizing.
+-Cleaned up stylesheet.
+-iFeature Pro settings now found under Appearance tab in WP-Admin.
+-Added proper featured image support, links to corresponding post.
+-Added Design tab, adding user control over various visual elements of the theme.
+-Header options tab now called Social, moved several options to General and added check boxes to hide individual icons.
+-Added Blog options tab, includes support for post excerpts, ability to hide meta elements.
+-Replaced CoinSlider with Nivoslider, adds more animation effects and functionality options.
+-Added custom Google Font input option.
+-Added taxonomy structure to Custom Slides, users can now assign slides to custom categories to be called on a per-page basis.
 
 Version 1.1.6 (6-12-2011)
 -API added for push updates.
@@ -87,4 +91,4 @@ Version 1.0.1 (4-6-2011)
 -Updated Theme URI in style.css. 
 
 Version 1.0 (4-5-2011)
--Initial re
+-Initial release.

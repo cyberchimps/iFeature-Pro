@@ -58,6 +58,10 @@ $options = get_option('ifeature') ;
 		<?php  
 		if ($options['if_font'] == "")
 			$font = 'Cantarell';
+			
+		elseif ($options['if_custom_font'] != "")
+		$font = $options['if_custom_font'];	
+		
 		else
 			$font = $options[('if_font')]; 
 			$fontstrip =  ereg_replace("[^A-Za-z0-9]", " ", $font );?>

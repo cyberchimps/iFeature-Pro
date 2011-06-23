@@ -20,7 +20,9 @@ $options = get_option('ifeature') ;
 		$sliderplacement = $options['if_slider_placement'];
 	?>
 		<?php if ($hideslider != '1' && $sliderplacement != 'blog'):?>
-			<?php get_template_part('slider', 'featurepage' ); ?>
+		  <div id="slider-wrapper">
+			<?php get_template_part('nivoslider', 'featurepage' ); ?>
+			</div>
 		<?php endif;?>
 		<?php if ($enable == '1') : ?>
 		<?php include (TEMPLATEPATH . '/pro/twitter.php' ); ?>

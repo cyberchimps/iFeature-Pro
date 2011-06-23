@@ -1,7 +1,5 @@
 <?php
 
-
-
 /*
 	Functions
 	
@@ -9,6 +7,12 @@
 	
 	Copyright (C) 2011 CyberChimps
 */
+
+function new_excerpt_more($more) {
+       global $post;
+	return '<a href="'. get_permalink($post->ID) . '"> <br /><br /> (Read More...)</a>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
 
 add_theme_support('automatic-feed-links');
 	if ( ! isset( $content_width ) )

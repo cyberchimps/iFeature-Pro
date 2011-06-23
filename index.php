@@ -11,6 +11,10 @@ $options = get_option('ifeature') ;
 	<?php 
 		$hideslider = $options['if_hide_slider'];
 		$sliderplacement = $options['if_slider_placement'];
+		$share = $options['if_hide_share'];
+		$tags = $options['if_hide_tags'];
+		$comments = $options['if_hide_comments'];
+		$excerpts = $options['if_show_excerpts']
 	?>
 	
 		<?php if ($hideslider != '1' && $sliderplacement == 'blog'):?>
@@ -40,7 +44,16 @@ $options = get_option('ifeature') ;
 	?>	
 					
 							<div class="entry">
-								<?php the_content(); ?>
+								<?php if ($excerpts == '1' ) {
+								 the_excerpt();
+								 }
+								 else {
+								 
+								 the_content();
+								 }
+								 
+								 
+								 ?>
 							</div><!--end entry-->
 						<?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
 						
@@ -53,15 +66,21 @@ $options = get_option('ifeature') ;
 							</div>
 							<?php endif;?>
 							<!--end fb-->
-						
-							<div class="tags">
+													<div class="tags">
+							<?php if ($tags != '1'):?>
 								<?php the_tags('Tags: ', ', ', '<br />'); ?>
-							</div><!--end tags-->
+								<?php endif;?>
+							</div><!--end tags-->	
 
 							<div class="postmetadata">
-										<?php get_template_part('share', 'index' ); ?>
+										<?php if ($share != '1'):?>
+							<?php get_template_part('share', 'index' ); ?>
+							<?php endif;?>
+
 								<div class="comments">
+								<?php if ($comments != '1'):?>
 									<?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
+									<?php endif;?>
 								</div><!--end comments-->	
 							</div><!--end postmetadata-->
 							

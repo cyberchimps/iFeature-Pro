@@ -66,13 +66,12 @@
 	    			
 	    			($customimage != '' && $usecustomslides != 'posts'  ){ 
 	    			$out .= "<a href='$customlink'>	
-	    						<img src='$root/library/tt/timthumb.php?src=$customimage&a=c&h=330&w=976' alt='iFeaturePro' />
+	    						<img src='$root/library/tt/timthumb.php?src=$customimage&a=c&h=330&w=980' title='#caption$i' alt='iFeaturePro' />
 	    						
-	    					<div id='customcaption'>
-	    					<div class='captiontext'>
-	    							<strong>$title</strong><br />
-	    							$customtext </div>
-	    						</div>
+	    					<div id='caption$i' class='nivo-html-caption'>
+                				$title <br />
+                				$customtext 
+                				</div>
 	    						
 	    						</a>
 	    			";
@@ -89,7 +88,7 @@
 	       
 	       	elseif ($customimage == '' && $usecustomslides != 'posts') {
 	       		$out .= "<a href='$customlink'>	
-	    						<img src='$root/images/pro/ifeaturepro.jpg' alt='iFeaturePro' title='#htmlcaption'/>
+	    						<img src='$root/images/pro/ifeaturepro.jpg' alt='iFeaturePro' title='$title $customtext'/>
 	    						
 	    						<div id='htmlcaption' class='nivo-html-caption'>
 	    							<div class='captiontext'><strong>$title</strong><br />
@@ -193,7 +192,7 @@ $(window).load(function() {
         directionNav:true, // Next & Prev navigation
         directionNavHide:true, // Only show on hover
         controlNav:true, // 1,2,3... navigation
-        controlNavThumbs:false, // Use thumbnails for Control Nav
+        controlNavThumbs:true, // Use thumbnails for Control Nav
         controlNavThumbsFromRel:false, // Use image rel for thumbs
         controlNavThumbsSearch: '.jpg', // Replace this with...
         controlNavThumbsReplace: '_thumb.jpg', // ...this in thumb Image src
