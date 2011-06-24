@@ -1221,6 +1221,32 @@ a { text-decoration: none; color: black; }
     border: 1px solid white;
 }
 
+#slider .nivo-controlNav {
+	position:absolute;
+	bottom:-40px; /* Put the nav below the slider */
+	left: 47%;
+	
+	
+.nivo-controlNav a {
+	
+	z-index:9;
+	width:50px;
+	height:30px;
+	text-indent:-9999px;
+	border:0;
+	margin-right:3px;
+	float:left;
+	display:inline
+}
+
+
+}
+#slider .nivo-controlNav img {
+	display:inline; /* Unhide the thumbnails */
+	position:relative;
+	margin-right:10px;
+}
+
 #slider {
 	position:relative;
     width:980px;
@@ -1238,30 +1264,11 @@ a { text-decoration: none; color: black; }
 
 #slider a {
 	border:0;
-	display:block;
+	display:inline;
 }
 
-.nivo-controlNav {
-	position:absolute;
-	left: 50%;
-	bottom:-42px;
-	z-index:9;
-}
-
-.nivo-controlNav a {
-	display:block;
-	z-index:9;
-	width:22px;
-	height:22px;
-	background:url(images/slider/bullets.png) no-repeat;
-	text-indent:-9999px;
-	border:0;
-	margin-right:3px;
-	float:left;
-}
-
-.nivo-controlNav a.active {
-	background-position:0 -22px;
+#slider a.active img {
+	border: 1px solid black;
 }
 
 .nivo-directionNav a {

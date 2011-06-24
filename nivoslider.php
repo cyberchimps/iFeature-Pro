@@ -66,7 +66,7 @@
 	    			
 	    			($customimage != '' && $usecustomslides != 'posts'  ){ 
 	    			$out .= "<a href='$customlink'>	
-	    						<img src='$root/library/tt/timthumb.php?src=$customimage&a=c&h=330&w=980' title='#caption$i' alt='iFeaturePro' />
+	    						<img src='$root/library/tt/timthumb.php?src=$customimage&a=c&h=330&w=980' title='#caption$i' rel='$root/library/tt/timthumb.php?src=$customimage&a=c&h=30&w=50' alt='iFeaturePro' />
 	    						
 	    					<div id='caption$i' class='nivo-html-caption'>
                 				$title <br />
@@ -191,9 +191,9 @@ $(window).load(function() {
         startSlide:0, // Set starting Slide (0 index)
         directionNav:true, // Next & Prev navigation
         directionNavHide:true, // Only show on hover
-        controlNav:true, // 1,2,3... navigation
+        
         controlNavThumbs:true, // Use thumbnails for Control Nav
-        controlNavThumbsFromRel:false, // Use image rel for thumbs
+        controlNavThumbsFromRel:true, // Use image rel for thumbs
         controlNavThumbsSearch: '.jpg', // Replace this with...
         controlNavThumbsReplace: '_thumb.jpg', // ...this in thumb Image src
         keyboardNav:true, // Use left & right arrows

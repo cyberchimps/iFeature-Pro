@@ -126,26 +126,32 @@ class RW_Meta_Box {
 		global $post;
 
 		wp_nonce_field(basename(__FILE__), 'rw_meta_box_nonce');
-		echo '<div class="metabox-tabs-div">';
-		echo '<ul class="metabox-tabs" id="metabox-tabs">';
-		echo '<li class="active tab1"><a class="active" href="javascript:void(null);">Feature Slider</a></li>';
-		echo '<li class="tab2"><a href="javascript:void(null);">Sidebar</a></li>';
-		echo '<li class="tab3"><a href="javascript:void(null);">SEO</a></li>';
-		echo '<table class="form-table">';
+			echo '<div class="metabox-tabs-div">';
+				echo '<ul class="metabox-tabs" id="metabox-tabs">';
+					echo '<li class="active tab1"><a class="active" href="javascript:void(null);">Feature Slider</a></li>';
+					echo '<li class="tab2"><a href="javascript:void(null);">Sidebar</a></li>';
+					echo '<li class="tab3"><a href="javascript:void(null);">SEO</a></li>';
+				echo '</ul>';
+	
 		foreach ($this->_fields as $field) {
 			$meta = get_post_meta($post->ID, $field['id'], !$field['multiple']);
 			$meta = !empty($meta) ? $meta : $field['std'];
-
-			echo '<tr>';
-			// call separated methods for displaying each type of field
-			call_user_func(array(&$this, 'show_field_' . $field['type']), $field, $meta);
-			echo '</tr>';
+			$tab = 'tab1';
+			
+						echo '<div class="', $tab,'">';
+				echo '<table class="form-table">';
+					echo '<tr class="test">';
+						// call separated methods for displaying each type of field
+						call_user_func(array(&$this, 'show_field_' . $field['type']), $field, $meta);
+				echo '</tr>';
+			
+		
+				echo '</table>';
+			echo '</div>';
 		}
-		echo '</table>';
-		echo '</ul>';
-		echo '</div>';
+		
+			echo '</div>';
 	}
-
 	/******************** END META BOX PAGE **********************/
 
 	/******************** BEGIN META BOX FIELDS **********************/
@@ -629,7 +635,7 @@ function ifeature_initialize_the_meta_boxes() {
 
 
 	$meta_boxes[] = array(
-		'id' => 'page',
+		'id' => 'tab1',
 		'title' => 'Page Meta Options',
 		'pages' => array('page'),
 
@@ -642,6 +648,15 @@ function ifeature_initialize_the_meta_boxes() {
 				'type' => 'select',
 				'options' => $options,
 				'std' => ''
+			),
+			
+		array(
+			'name' => 'Test Field 1',
+			'desc' => 'This is a placeholder',
+			'id' => $prefix . 'test1',
+			'type' => 'text',
+			'options' => $options,
+			'std' => ''
 			),
 			
 		)
