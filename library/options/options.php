@@ -11,7 +11,7 @@ add_action( 'admin_init', 'theme_options_init' );
 add_action( 'admin_menu', 'theme_options_add_page' ); 
 
 
-$options = get_option('ifeature');
+$options = get_option($themename);
 
 /**
  * Init plugin options to white list our options
@@ -19,6 +19,9 @@ $options = get_option('ifeature');
 function theme_options_init() {
 	
 	register_setting( 'if_options', 'ifeature', 'theme_options_validate' );
+		add_settings_section('if_main', '', 'if_section_text', 'if');
+  		add_settings_field('if_filename', '', 'if_setting_filename', 'if', 'if_main');  
+
 	wp_register_script('ifjquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"), false, '1.4.4');
     wp_register_script('ifjqueryui', get_template_directory_uri(). '/library/js/jquery-ui.js');
     wp_register_script('ifjquerycookie', get_template_directory_uri(). '/library/js/jquery-cookie.js');
@@ -77,7 +80,8 @@ $select_font = array(
 );
 
 $select_slider_effect = array(
-	'0' => array('value' => 'random', 'label' => __( 'Random')), '1' => array('value' => 'rain', 'label' => __('Rain')), '2' => array('value' => 'straight', 'label' =>__('Straight')), '3' => array('value' => 'swirl', 'label' => __('Swirl')),
+	'0' => array('value' => 'random', 'label' => __( 'Random (default)')), '1' => array('value' => 'slideDown', 'label' => __( 'Slice Down')), '2' => array('value' => 'sliceDownLeft', 'label' => __('Slice Down-Left')), '3' => array('value' => 'sliceUp', 'label' =>__('Slice Up')), '4' => array('value' => 'sliceUpLeft', 'label' => __('Slice Up-Left')), '5' => array('value' => 'sliceUpDown', 'label' => __('Slice Up-Down')), '6' => array('value' => 'sliceUpDownLeft', 'label' => __('Slice Up-Down-Left')),'7' => array('value' => 'fold', 'label' => __('Fold')), '8' => array('value' => 'fade', 'label' => __('Fade')), '9' => array('value' => 'slideInRight', 'label' => __('Slide In-Right')), '10' => array('value' => 'slideInLeft', 'label' => __('Slide In-Left')), '11' => array('value' => 'boxRandom', 'label' => __('Box Random')), '12' => array('value' => 'boxRain', 'label' => __('Box Rain')), '13' => array('value' => 'boxRainReverse', 'label' => __('Box Rain-Reverse')), '14' => array('value' => 'boxRainGrow', 'label' => __('Box Rain-Grow')), '15' => array('value' => 'boxRainGrowReverse', 'label' => __('Box Rain-Grow-Reverse')),
+
   
 );
 
@@ -125,9 +129,9 @@ array( "name" => "Choose a font:",
     "std" => ""),
     
 array( "name" => "Logo URL",  
-    "desc" => "Enter the link to your logo image (max-height 60px), or to use your site title text enter the word: hide.",  
+    "desc" => "Use the image uploader or enter your own URL into the input field to use an image as your logo. To display the site title as text, leave blank.",  
     "id" => $shortname."_logo",  
-    "type" => "text",  
+    "type" => "upload",  
     "std" => ""),  
     
 array( "name" => "Custom Menu Icon",  
@@ -394,7 +398,7 @@ array( "name" => "Select the slider placement:",
 array( "name" => "Show posts from category:",  
     "desc" => "(Default is all - WARNING: do not enter a category that does not exist or slider will not display)",  
     "id" => $shortname."_slider_category",  
-    "type" => "text",  
+    "type" => "select6",  
     "std" => ""),
     
 array( "name" => "Number of featured posts:",  
@@ -587,6 +591,52 @@ case "close-tab":
 
 
 </div>
+
+<?php break; 
+
+case 'upload':
+?>   
+
+
+<tr>
+
+<td width="15%" rowspan="2" valign="middle"><strong>Custom logo</strong>
+
+
+ 
+<tr>
+<td width="85%">
+
+
+    <?php settings_fields('if_options'); ?>
+    <?php do_settings_sections('if'); 
+    
+    $file = $options['file'];
+    
+    echo "<input type='text' name='if_filename_text' size='72' value='{$file['url']}'/>";
+    echo "<br />" ;
+    echo "<br />" ;
+    echo "<input type='file' name='if_filename' size='30' />";?>
+
+    
+    <br />
+    <small>Upload a logo image to use</small>
+
+
+<?php
+	$options = get_option('ifeature');
+	$value = isset($options['file']) ? $options['file'] : '';
+?>
+
+</td>
+</tr>
+
+
+        
+        <tr>
+<td><small><?php echo $value['desc']; ?></small></td>
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
  
 <?php break; 
  
@@ -1025,6 +1075,55 @@ case 'select5':
 <?php
 break;
 
+case 'select6':
+?>
+<tr>
+<td width="15%" rowspan="2" valign="middle"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></td>
+<td width="85%"><select style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>">
+
+<?php
+								$selected = $options[$value['id']];
+								$p = '';
+								$r = '';
+								
+								$terms2 = get_terms('category', 'hide_empty=0');
+
+									$blogoptions = array();
+
+										foreach($terms2 as $term) {
+
+										$blogoptions[$term->slug] = $term->name;
+
+									}
+									
+
+								foreach ( $blogoptions as $option ) {
+									$label = $option['label'];
+									if ( $selected == $option ) // Make default first in list
+										$p = "\n\t<option style=\"padding-right: 10px;\" selected='selected' value='" . esc_attr( $option ) . "'>$option</option>";
+									else
+										$r .= "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option ) . "'>$option</option>";      
+								}
+								echo $p . $r;   
+							?>    
+
+
+</select>
+
+<br />
+Test: <?php echo $options['if_slider_category'] ; ?>
+</td>
+</tr> 
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+<?php
+break;
+
+
  
 case "checkbox":
 ?>
@@ -1173,6 +1272,18 @@ function theme_options_validate( $input ) {
    $input['if_email'] = wp_filter_nohtml_kses( $input['if_email'] );   
   
 
+	$options = get_option('ifeature');
+  if ($_FILES['if_filename']['name'] != '') {
+       $overrides = array('test_form' => false); 
+       $file = wp_handle_upload($_FILES['if_filename'], $overrides);
+       $input['file'] = $file;
+   } elseif(isset($_POST['if_filename_text']) && $_POST['if_filename_text'] != '') {
+	   $input['file'] = array('url' => $_POST['if_filename_text']);
+   } else {
+	   $input['file'] = null;
+   }
+
+
 	return $input;    
 
 }
@@ -1210,7 +1321,14 @@ function get_first_image() {
  }  
 }  
 
-function ud_setting_filename() {
+function if_section_text() {
+    $options = get_option('ifeature');
+    if ($file = $options['file']) {
+        echo "Logo preview<br /><br /><img src='{$file['url']}' /><br /><br />";
+    }
+}
+
+function if_setting_filename() {
   }
   
 /* Custom Menu */   

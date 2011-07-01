@@ -2,7 +2,7 @@
 /*
 Template Name: iFeature Pro Homepage
 */
-$options = get_option('ifeature') ;  
+ 
 ?>
 
 

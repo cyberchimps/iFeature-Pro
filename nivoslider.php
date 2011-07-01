@@ -12,6 +12,22 @@
 		$options = get_option('ifeature') ; 
 		$root = get_template_directory_uri(); 
 		$cat = 'about';
+		$size = get_post_meta($post->ID, 'page_slider_size' , true);
+		$size2 = get_post_meta($post->ID, 'page_sidebar' , true);
+		$type = get_post_meta($post->ID, 'page_slider_type' , true);
+		$category = get_post_meta($post->ID, 'slider_blog_category' , true);
+		
+		
+		if ($size == "0")
+			$timthumb = 'h=330&w=980';
+			
+		
+		elseif ($size2 == "2" OR $size2 == "3")
+			$timthumb = 'h=330&w=480';
+		
+		else 
+		
+			$timthumb = 'h=330&w=640';
 		
 		if ($options['if_slider_type'] == '')
 		
@@ -21,11 +37,11 @@
 		
 		$usecustomslides		= $options['if_slider_type'];
 		
-		if ($usecustomslides == 'custom')
+		if ( $type == '1')
     	query_posts( array ('post_type' => 'if_custom_slides', 'showposts' => 20,  'slide_categories' => get_post_meta($post->ID, 'slider_category' , true)  ) );
     	
     	else
-    	query_posts('category_name='.$options['if_slider_category'].'&showposts=50');
+    	query_posts('category_name='.$category.'&showposts=50');
 	       
     	
 	    if (have_posts()) :
@@ -66,7 +82,7 @@
 	    			
 	    			($customimage != '' && $usecustomslides != 'posts'  ){ 
 	    			$out .= "<a href='$customlink'>	
-	    						<img src='$root/library/tt/timthumb.php?src=$customimage&a=c&h=330&w=980' title='#caption$i' rel='$root/library/tt/timthumb.php?src=$customimage&a=c&h=30&w=50' alt='iFeaturePro' />
+	    						<img src='$root/library/tt/timthumb.php?src=$customimage&a=c&$timthumb' title='#caption$i' rel='$root/library/tt/timthumb.php?src=$customimage&a=c&h=30&w=50' alt='iFeaturePro' />
 	    						
 	    					<div id='caption$i' class='nivo-html-caption'>
                 				$title <br />
@@ -162,8 +178,13 @@
 	    	$csDelay = '3500';
 	    else $csDelay = $options['if_slider_delay'];
 	    
-	     if ($options['if_slider_placement'] == 'blog')
+	     if ($size == '1' && $size2 != '2' AND $size2 != '3')
 	  			$csWidth = '640';
+	  			
+	  	
+	  	elseif ($size2 == '3' && $size != '0' OR $size2 == '3' && $size != '0')
+			$csWidth = '480';
+
 	  	
 	  	else $csWidth = '976';
 	  	
@@ -172,7 +193,8 @@
 	    else $csNavigation = 'true';
 	    ?>
 	    <style type="text/css" media="screen">
-		#coin-slider-coin-slider { width: <?php echo $csWidth ?>px; margin: auto;}
+		#slider-wrapper { width: <?php echo $csWidth ?>px; margin: auto; margin-bottom: 45px;}
+		#slider { width: <?php echo $csWidth ?>px; margin: auto;}
 </style>
 <?php	    
 	     wp_reset_query();
@@ -182,7 +204,7 @@ var $ = jQuery.noConflict();
 
 $(window).load(function() {
     $('#slider').nivoSlider({
-        effect:'slideInLeft', // Specify sets like: 'fold,fade,sliceDown'
+        effect:'$csEffect', // Specify sets like: 'fold,fade,sliceDown'
         slices:15, // For slice animations
         boxCols: 8, // For box animations
         boxRows: 4, // For box animations
@@ -202,12 +224,8 @@ $(window).load(function() {
         captionOpacity:0.7, // Universal caption opacity
         prevText: 'Prev', // Prev directionNav text
         nextText: 'Next', // Next directionNav text
-        beforeChange: function(){
-        $('.captiontext').fadeOut(500);
-        }, // Triggers before a slide transition
-        afterChange: function(){
-        $('.captiontext').fadeIn(500);
-        }, // Triggers after a slide transition
+        beforeChange: function(){}, // Triggers before a slide transition
+        afterChange: function(){}, // Triggers after a slide transition
         slideshowEnd: function(){}, // Triggers after all slides have been shown
         lastSlide: function(){}, // Triggers when last slide is shown
         afterLoad: function(){} // Triggers when slider has loaded

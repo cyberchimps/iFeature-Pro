@@ -1161,20 +1161,19 @@ a { text-decoration: none; color: black; }
 	opacity:0.7; /* Overridden by captionOpacity setting */
 	width:100%;
 	z-index:8;
+	
 }
 
 .nivo-caption p {
 	padding:5px;
 	margin:0;
+	
 }
 
 .nivo-caption a {
 	display:inline !important;
 }
 
-.nivo-html-caption {
-    display:none;
-}
 
 /* Direction nav styles (e.g. Next & Prev) */
 
@@ -1211,7 +1210,7 @@ a { text-decoration: none; color: black; }
 
 
 #slider-wrapper {
-    width:980px;
+
     height:330px;
     margin: auto;
     margin-bottom: 50px;
@@ -1249,7 +1248,7 @@ a { text-decoration: none; color: black; }
 
 #slider {
 	position:relative;
-    width:980px;
+   
     height:330px;
     margin:auto;
 	background:url(images/slider/loading.gif) no-repeat 50% 50%;
@@ -1290,7 +1289,7 @@ a.nivo-prevNav {
 	left:15px;
 }
 
-.nivo-caption {
+.nivo-html-caption {
 	position:absolute;
 	left:0px;
 	bottom:0px;
@@ -1299,7 +1298,34 @@ a.nivo-prevNav {
 	opacity:0.7; /* Overridden by captionOpacity setting */
 	width:100%;
 	z-index:8;
+	display:none;
 }
+
+.nivo-html-caption-right {
+	position:relative;
+	float:right;
+	left:0px;
+	bottom:0px;
+	background:#000;
+	color:#fff;
+	opacity:0.7; /* Overridden by captionOpacity setting */
+	width:250px;
+	height: 330px;
+	z-index:8;
+}
+
+.nivo-html-caption-left {
+	position:absolute;
+	left:0px;
+	bottom:0px;
+	background:#000;
+	color:#fff;
+	opacity:0.7; /* Overridden by captionOpacity setting */
+	width:250px;
+	height: 330px;
+	z-index:8;
+}
+
 
 #customcaption {
 	position:absolute;
@@ -1314,5 +1340,5 @@ a.nivo-prevNav {
 
 .nivo-caption p {
 	padding:5px;
-	margin:0;
+	margin:0; 
 }

@@ -67,6 +67,7 @@ $options = get_option('ifeature') ;
 			$fontstrip =  ereg_replace("[^A-Za-z0-9]", " ", $font );?>
 	
 	<link href='http://fonts.googleapis.com/css?family=<?php echo $font ?>' rel='stylesheet' type='text/css' />
+	
 
 	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
     

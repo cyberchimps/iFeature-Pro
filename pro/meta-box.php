@@ -33,7 +33,7 @@ function rw_delete_file() {
 class RW_Meta_Box {
 
 	var $_meta_box;
-	var $_fields;
+	var $tabs;
 
 	// Create meta box based on given data
 	function __construct($meta_box) {
@@ -41,7 +41,7 @@ class RW_Meta_Box {
 
 		// assign meta box values to local variables and add it's missed values
 		$this->_meta_box = $meta_box;
-		$this->_fields = & $this->_meta_box['fields'];
+		$this->tabs = & $this->_meta_box['tabs'];
 		$this->add_missed_values();
 
 		add_action('admin_menu', array(&$this, 'add'));	// add meta box
@@ -126,31 +126,37 @@ class RW_Meta_Box {
 		global $post;
 
 		wp_nonce_field(basename(__FILE__), 'rw_meta_box_nonce');
-			echo '<div class="metabox-tabs-div">';
-				echo '<ul class="metabox-tabs" id="metabox-tabs">';
-					echo '<li class="active tab1"><a class="active" href="javascript:void(null);">Feature Slider</a></li>';
-					echo '<li class="tab2"><a href="javascript:void(null);">Sidebar</a></li>';
-					echo '<li class="tab3"><a href="javascript:void(null);">SEO</a></li>';
-				echo '</ul>';
 	
-		foreach ($this->_fields as $field) {
+		echo '<div class="metabox-tabs-div">';
+		echo '<ul class="metabox-tabs" id="metabox-tabs">';
+		foreach($this->tabs as $counter => $tab) {
+			$counter++;
+			echo '<li class="' . ($counter == 1 ? 'active ' : '') . 'tab' . $counter . '"><a class="' . ($counter == 1 ? 'active' : '') . '" href="javascript:void(null);">' . $tab['title'] . '</a></li>';
+		}
+		echo '</ul>';
+
+		foreach($this->_meta_box['tabs'] as $counter => $tab) {
+			$counter++;
+			$this->render_fields($tab['fields'], "tab{$counter}");
+		}
+		echo '</div>';
+	}
+
+	function render_fields($fields, $tab = '') {
+		global $post;
+		echo '<div class="', $tab,'">';
+		echo '<table class="form-table">';
+		foreach($fields as $field) {
 			$meta = get_post_meta($post->ID, $field['id'], !$field['multiple']);
 			$meta = !empty($meta) ? $meta : $field['std'];
-			$tab = 'tab1';
-			
-						echo '<div class="', $tab,'">';
-				echo '<table class="form-table">';
-					echo '<tr class="test">';
-						// call separated methods for displaying each type of field
-						call_user_func(array(&$this, 'show_field_' . $field['type']), $field, $meta);
-				echo '</tr>';
-			
-		
-				echo '</table>';
-			echo '</div>';
+
+			echo '<tr class="test">';
+			// call separated methods for displaying each type of field
+			call_user_func(array(&$this, 'show_field_' . $field['type']), $field, $meta);
+			echo '</tr>';
 		}
-		
-			echo '</div>';
+		echo '</table>';
+		echo '</div>';
 	}
 	/******************** END META BOX PAGE **********************/
 
@@ -340,23 +346,25 @@ class RW_Meta_Box {
 			return $post_id;
 		}
 
-		foreach ($this->_fields as $field) {
-			$name = $field['id'];
-			$type = $field['type'];
-			$old = get_post_meta($post_id, $name, !$field['multiple']);
-			$new = isset($_POST[$name]) ? $_POST[$name] : ($field['multiple'] ? array() : '');
+		foreach($this->tabs as $tab) {
+			foreach ($tab['fields'] as $field) {
+				$name = $field['id'];
+				$type = $field['type'];
+				$old = get_post_meta($post_id, $name, !$field['multiple']);
+				$new = isset($_POST[$name]) ? $_POST[$name] : ($field['multiple'] ? array() : '');
 
-			// validate meta value
-			if (class_exists('RW_Meta_Box_Validate') && method_exists('RW_Meta_Box_Validate', $field['validate_func'])) {
-				$new = call_user_func(array('RW_Meta_Box_Validate', $field['validate_func']), $new);
-			}
+				// validate meta value
+				if (class_exists('RW_Meta_Box_Validate') && method_exists('RW_Meta_Box_Validate', $field['validate_func'])) {
+					$new = call_user_func(array('RW_Meta_Box_Validate', $field['validate_func']), $new);
+				}
 
-			// call defined method to save meta value, if there's no methods, call common one
-			$save_func = 'save_field_' . $type;
-			if (method_exists($this, $save_func)) {
-				call_user_func(array(&$this, 'save_field_' . $type), $post_id, $field, $old, $new);
-			} else {
-				$this->save_field($post_id, $field, $old, $new);
+				// call defined method to save meta value, if there's no methods, call common one
+				$save_func = 'save_field_' . $type;
+				if (method_exists($this, $save_func)) {
+					call_user_func(array(&$this, 'save_field_' . $type), $post_id, $field, $old, $new);
+				} else {
+					$this->save_field($post_id, $field, $old, $new);
+				}
 			}
 		}
 	}
@@ -443,24 +451,28 @@ class RW_Meta_Box {
 		), $this->_meta_box);
 
 		// default values for fields
-		foreach ($this->_fields as $key => $field) {
-			$multiple = in_array($field['type'], array('checkbox_list', 'file', 'image')) ? true : false;
-			$std = $multiple ? array() : '';
-			$format = 'date' == $field['type'] ? 'yy-mm-dd' : ('time' == $field['type'] ? 'hh:mm' : '');
-			$this->_fields[$key] = array_merge(array(
-				'multiple' => $multiple,
-				'std' => $std,
-				'desc' => '',
-				'format' => $format,
-				'validate_func' => ''
-			), $field);
+		foreach($this->tabs as $tabkey => $tab) {
+			foreach ($tab['fields'] as $key => $field) {
+				$multiple = in_array($field['type'], array('checkbox_list', 'file', 'image')) ? true : false;
+				$std = $multiple ? array() : '';
+				$format = 'date' == $field['type'] ? 'yy-mm-dd' : ('time' == $field['type'] ? 'hh:mm' : '');
+				$this->tabs[$tabkey][$key] = array_merge(array(
+					'multiple' => $multiple,
+					'std' => $std,
+					'desc' => '',
+					'format' => $format,
+					'validate_func' => ''
+				), $field);
+			}
 		}
 	}
 
 	// Check if field with $type exists
 	function has_field($type) {
-		foreach ($this->_fields as $field) {
-			if ($type == $field['type']) return true;
+		foreach($this->_meta_box['tabs'] as $tab) {
+			foreach($tab['fields'] as $field) {
+				if ($type == $field['type']) return true;
+			}
 		}
 		return false;
 	}
@@ -507,9 +519,11 @@ class RW_Meta_Box_Taxonomy extends RW_Meta_Box {
 		parent::add_missed_values();
 		
 		// add 'multiple' option to taxonomy field with checkbox_list type
-		foreach ($this->_meta_box['fields'] as $key => $field) {
-			if ('taxonomy' == $field['type'] && 'checkbox_list' == $field['options']['type']) {
-				$this->_meta_box['fields'][$key]['multiple'] = true;
+		foreach($this->tabs as $keytab => $tab) {
+			foreach ($tab['fields'] as $key => $field) {
+				if ('taxonomy' == $field['type'] && 'checkbox_list' == $field['options']['type']) {
+					$this->tabs[$keytab]['fields'][$key]['multiple'] = true;
+				}
 			}
 		}
 	}
@@ -565,30 +579,34 @@ function ifeature_initialize_the_meta_boxes() {
 		'title' => 'iFeature Slider Options',
 		'pages' => array('post'),
 
-		'fields' => array(
-		
-		array(
-				'name' => 'iFeature Slider Image',
-				'desc' => 'Upload your image here:',
-				'id' => $prefix . 'post_image',
-				'type' => 'image',
-				'std' => ''
-			),
+		'tabs' => array(
 			array(
-				'name' => 'iFeature Slider Text',
-				'desc' => 'Enter your slider text here (optional):',
-				'id' => $prefix . 'text',
-				'type' => 'text',
-				'std' => ''
-			),
-				array(
-				'name' => 'Hide Title Bar',
-				'desc' => 'Click to disable the title bar on this slide:',
-				'id' => $prefix . 'hidetitle',
-				'type' => 'checkbox',
-				'std' => ''
-			),
+				'fields' => array(
 
+					array(
+						'name' => 'iFeature Slider Image',
+						'desc' => 'Upload your image here:',
+						'id' => $prefix . 'post_image',
+						'type' => 'image',
+						'std' => ''
+					),
+					array(
+						'name' => 'iFeature Slider Text',
+						'desc' => 'Enter your slider text here (optional):',
+						'id' => $prefix . 'text',
+						'type' => 'text',
+						'std' => ''
+					),
+					array(
+						'name' => 'Hide Title Bar',
+						'desc' => 'Click to disable the title bar on this slide:',
+						'id' => $prefix . 'hidetitle',
+						'type' => 'checkbox',
+						'std' => ''
+					),
+
+				)
+			)
 		)
 	);
 
@@ -597,88 +615,192 @@ function ifeature_initialize_the_meta_boxes() {
 		'title' => 'Custom Feature Slides',
 		'pages' => array('if_custom_slides'),
 
-		'fields' => array(
-		
-		array(
-				'name' => 'Custom Slide Link',
-				'desc' => 'Enter your link here',
-				'id' => $prefix . 'url',
-				'type' => 'text',
-				'std' => ''
-			),
+		'tabs' => array(
 			array(
-				'name' => 'Custom Slide Image',
-				'desc' => 'Upload your image here:',
-				'id' => $prefix . 'image',
-				'type' => 'image',
-				'std' => ''
-			),
-			array(
-				'name' => 'Hide Title Bar',
-				'desc' => 'Click to disable the title bar on this post:',
-				'id' => $prefix . 'hidetitle',
-				'type' => 'checkbox',
-				'std' => ''
-			),
+				'fields' => array(
+
+					array(
+						'name' => 'Custom Slide Link',
+						'desc' => 'Enter your link here',
+						'id' => $prefix . 'url',
+						'type' => 'text',
+						'std' => ''
+					),
+					array(
+						'name' => 'Custom Slide Image',
+						'desc' => 'Upload your image here:',
+						'id' => $prefix . 'image',
+						'type' => 'image',
+						'std' => ''
+					),
+					array(
+						'name' => 'Hide Title Bar',
+						'desc' => 'Click to disable the title bar on this post:',
+						'id' => $prefix . 'hidetitle',
+						'type' => 'checkbox',
+						'std' => ''
+					),
+				)
+			)
 		)
 	);
 
 	$terms = get_terms('slide_categories', 'hide_empty=0');
 
-	$options = array();
+	$slideroptions = array();
 
 	foreach($terms as $term) {
 
-	  $options[$term->slug] = $term->name;
+		$slideroptions[$term->slug] = $term->name;
+
+	}
+	
+	$terms2 = get_terms('category', 'hide_empty=0');
+
+	$blogoptions = array();
+
+	foreach($terms2 as $term) {
+
+		$blogoptions[$term->slug] = $term->name;
 
 	}
 
 
+
 	$meta_boxes[] = array(
-		'id' => 'tab1',
+		
 		'title' => 'Page Meta Options',
 		'pages' => array('page'),
 
-		'fields' => array(
+		'tabs' => array(
 		
 		array(
-				'name' => 'Slide Category',
+				'title' => 'Page Options',
+				'fields' => array(
+					array(
+						'name' => 'Hide Page Title',
+						'desc' => 'Check this box to hide the title on this page',
+						'id' => 'hide_page_title',
+						'type' => 'checkbox',
+						'std' => ''
+					),
+					
+			array(
+				'name' => 'Select Sidebar Type',
+				'desc' => 'Select your sidebar options',
+				'id' => 'page_sidebar',
+				'type' => 'select',
+				'options' => array('--Select One--', 'Right', 'Two Right', 'Right and Left', 'None'),
+				'std' => ''
+			 ),	
+
+			)),
+
+			array(
+				'title' => "Slide Categories",
+				'fields' => array(
+					array(
+				'name' => 'Enable Feature Slider',
+				'desc' => 'Check this box to enable the feature slider on this page',
+				'id' => 'page_enable_slider',
+				'type' => 'checkbox',
+				'std' => ''
+			  ),
+			  
+			array(
+				'name' => 'Select Slider Size',
+				'desc' => 'Select the size of the slider',
+				'id' => 'page_slider_size',
+				'type' => 'select',
+				'options' => array('Full-Width', 'Half-Width'),
+				'std' => ''
+			 ),
+			 
+			 array(
+				'name' => 'Select Slider Type',
+				'desc' => 'Select the type of slider',
+				'id' => 'page_slider_type',
+				'type' => 'select',
+				'options' => array('Blog Posts', 'Custom Slides'),
+				'std' => ''
+			 ),
+			
+			array(
+				'name' => 'Blog Post Category',
+				'desc' => 'Select the blog post category you would like to use',
+				'id' => 'slider_blog_category',
+				'type' => 'select',
+				'options' => $blogoptions,
+				'std' => ''
+			 ),
+			
+			array(
+				'name' => 'Custom Slide Category',
 				'desc' => 'Select the slide category you would like to use',
 				'id' => $prefix . 'category',
 				'type' => 'select',
-				'options' => $options,
+				'options' => $slideroptions,
 				'std' => ''
-			),
+			 ),		 
+
+
+				)),
 			
-		array(
-			'name' => 'Test Field 1',
-			'desc' => 'This is a placeholder',
-			'id' => $prefix . 'test1',
-			'type' => 'text',
-			'options' => $options,
-			'std' => ''
-			),
 			
+			
+			array(
+				'title' => 'SEO',
+				'fields' => array(
+					array(
+						'name' => 'Title',
+						'desc' => 'Enter your title',
+						'id' => 'seo_title',
+						'type' => 'text',
+						'std' => ''
+					),
+					array(
+						'name' => 'Description',
+						'desc' => 'Enter your description',
+						'id' => 'seo_description',
+						'type' => 'textarea',
+						'std' => ''
+					),
+					
+					array(
+						'name' => 'Keywords',
+						'desc' => 'Enter your keywords',
+						'id' => 'seo_keywords',
+						'type' => 'text',
+						'std' => ''
+					),
+			
+				)
+			)
 		)
 	);
+
 
 	foreach ($meta_boxes as $meta_box) {
 		$my_box = new RW_Meta_Box_Taxonomy($meta_box);
 	}
 }
 
-function enqueue() {
-		$path =  get_template_directory_uri()."/pro/";
-		$color = get_user_meta( get_current_user_id(), 'admin_color', true );
 
-		wp_register_style(  'metabox-tabs-css', $path. 'metabox-tabs.css');
-		wp_register_style(  'jf-color',       $path. 'metabox-fresh.css');
-		wp_register_script ( 'jf-metabox-tabs', $path. 'metabox-tabs.js');
-		
-		wp_enqueue_script('jf-metabox-tabs');
-		wp_enqueue_style('jf-color');
-		wp_enqueue_style('metabox-tabs-css');
-	}
+add_action( 'admin_print_styles-post-new.php', 'ifeaturepro_metabox_enqueue' );
+add_action( 'admin_print_styles-post.php', 'ifeaturepro_metabox_enqueue' );
+
+function ifeaturepro_metabox_enqueue() {
+	$path =  get_template_directory_uri()."/pro/";
+	$color = get_user_meta( get_current_user_id(), 'admin_color', true );
+
+	wp_register_style(  'metabox-tabs-css', $path. 'metabox-tabs.css');
+	wp_register_style(  'jf-color',       $path. 'metabox-fresh.css');
+	wp_register_script ( 'jf-metabox-tabs', $path. 'metabox-tabs.js');
+
+	wp_enqueue_script('jf-metabox-tabs');
+	wp_enqueue_style('jf-color');
+	wp_enqueue_style('metabox-tabs-css');
+}
 
 /********************* END DEFINITION OF META BOXES ***********************/
 

@@ -1,5 +1,13 @@
 <?php
-$options = get_option('ifeature') ;  
+
+ /*
+	Index
+	
+	Creates the iFeature default index page.
+	
+	Copyright (C) 2011 CyberChimps
+*/
+
 ?>
 
 <?php get_header(); ?>
@@ -17,7 +25,7 @@ $options = get_option('ifeature') ;
 		$excerpts = $options['if_show_excerpts']
 	?>
 	
-		<?php if ($hideslider != '1' && $sliderplacement == 'blog'):?>
+		<?php if ($options[$themeslug.'_hide_slider'] != '1' && $sliderplacement == 'blog'):?>
 			<?php get_template_part('slider', 'index' ); ?>
 		<?php endif;?>
 	
@@ -58,7 +66,9 @@ $options = get_option('ifeature') ;
 						<?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
 						
 							<?php 
-								$showfblike		= $options['if_show_fb_like'];
+							
+								$showfblike		= $options[$themeslug.'_show_fb_like'];
+								
 							?>
 							<?php if ($showfblike == "1" ):?>
 							<div class="fb" >

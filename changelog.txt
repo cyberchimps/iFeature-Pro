@@ -14,6 +14,9 @@ Version 1.2 (6-15-11)
 -Replaced CoinSlider with Nivoslider, adds more animation effects and functionality options.
 -Added custom Google Font input option.
 -Added taxonomy structure to Custom Slides, users can now assign slides to custom categories to be called on a per-page basis.
+-Added image uploader support for site logo and favicon in theme options.
+-Added category drop-down menu support for theme options page.
+-Added tabbed meta options for per-page options.
 
 Version 1.1.6 (6-12-2011)
 -API added for push updates.

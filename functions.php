@@ -8,6 +8,13 @@
 	Copyright (C) 2011 CyberChimps
 */
 
+
+// Define gloabl theme variables
+
+
+$themename = 'ifeature';
+$themeslug = 'if';
+
 function new_excerpt_more($more) {
        global $post;
 	return '<a href="'. get_permalink($post->ID) . '"> <br /><br /> (Read More...)</a>';
@@ -387,6 +394,6 @@ add_action( 'wp_head', 'ifeature_add_scripts',0);
 	
 require_once ( get_template_directory() . '/library/options/options.php' );
 require_once ( get_template_directory() . '/pro/meta-box.php' );
-require_once ( get_template_directory() . '/pro/jf-metabox-tabs.php' );
+
 require_once ( get_template_directory() . '/inc/update.php' ); // Include automatic updater
 ?>
