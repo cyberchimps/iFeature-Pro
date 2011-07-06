@@ -4,7 +4,7 @@
 	Section: Slider
 	Authors: Tyler Cunningham 
 	Description: Creates iFeature slider.
-	Version: 1.1.0	
+	Version: 2.0	
 	Portions of this code written by Ivan Lazarevic  (email : devet.sest@gmail.com) Copyright 2010    
 */
 
@@ -68,6 +68,7 @@
 	   			$image  			= get_post_meta($post->ID, 'slider_post_image' , true);
 	   			$title				= get_the_title() ;
 	   			$hidetitlebar       = get_post_meta($post->ID, 'slider_hidetitle' , true);
+	   			$customsized        = '$root/library/tt/timthumb.php?src=$customimage&a=c&$timthumb';
 
 	    		
 	    	if ($customimage != '' && $usecustomslides != 'posts' && $hidetitlebar == 'on') { 
@@ -117,7 +118,7 @@
 	       elseif ($image != '' && $usecustomslides == 'posts' && $hidetitlebar == 'on'){
 	     
 	    		$out .= "<a href='$permalink'>	
-	    						<img src='$root/library/tt/timthumb.php?src=$image&a=c&h=330&w=640' alt='iFeaturePro' />
+	    						<img src='$root/library/tt/timthumb.php?src=$image&a=c&$timthumb' alt='iFeaturePro' />
 	    						
 	    					</a>
 	    			";
@@ -126,11 +127,12 @@
 	       elseif ($image != '' && $usecustomslides == 'posts'){
 	     
 	    		$out .= "<a href='$permalink'>	
-	    						<img src='$root/library/tt/timthumb.php?src=$image&a=c&h=330&w=640' alt='iFeaturePro' />
-	    						<span>
-	    							<strong>$title</strong><br />
-	    							$text
-	    						</span>
+	    						<img src='$root/library/tt/timthumb.php?src=$image&a=c&$timthumb 'title='#caption$i' rel='$root/library/tt/timthumb.php?src=$image&a=c&h=30&w=50' alt='iFeaturePro' />
+	    						
+	    						<div id='htmlcaption' class='nivo-html-caption'>
+	    							<div class='captiontext'><strong>$title</strong><br />
+	    							$text </div>
+	    						</div>
 	    					</a>
 	    			";
 	       } 
@@ -138,7 +140,7 @@
 	         elseif ($image == '' && $usecustomslides == 'posts' && $hidetitlebar == 'on'){
 	     
 	    		$out .= "<a href='$permalink'>	
-	    						<img src='$root/images/pro/ifeaturepro.jpg' alt='iFeaturePro' />
+	    						<img src='$root/images/pro/ifeatureprosmall.png' alt='iFeaturePro' />
 	    						
 	    					</a>
 	    			";
@@ -148,10 +150,10 @@
 	     
 	    		$out .= "<a href='$permalink'>	
 	    						<img src='$root/images/pro/ifeaturepro.jpg' />
-	    						<span>
-	    							<strong>$title</strong><br />
-	    							$text
-	    						</span>
+	    						<div id='htmlcaption' class='nivo-html-caption'>
+	    							<div class='captiontext'><strong>$title</strong><br />
+	    							</div>
+	    						</div>
 	    					</a>
 	    			";
 	       } 

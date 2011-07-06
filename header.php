@@ -105,18 +105,13 @@ $options = get_option('ifeature') ;
 							</div><!-- end social -->
 					</div><!-- end header_right -->
 					<!-- Inserts Site Logo -->
-					<?php  $logo = $options['if_logo'] ; ?>
-						<?php if ($logo != 'hide'  and $logo != ''):?>
+					<?php  $logo = $options['file'] ; ?>
+						<?php if ($logo != ''):?>
 							<div id="logo">
-								<a href="<?php echo home_url(); ?>/"><img src="<?php echo stripslashes($logo); ?>" alt="logo"></a>
+								<a href="<?php echo home_url(); ?>/"><img src="<?php echo stripslashes($logo['url']); ?>" alt="logo"></a>
 							</div>
 						<?php endif;?>
 						<?php if ($logo == '' ):?>
-							<div id="logo">
-								<a href="<?php echo home_url(); ?>/"><img src="<?php echo get_template_directory_uri(); ?>/images/ifeaturelogo.png " alt="iFeature" /></a>
-							</div>
-						<?php endif;?>
-						<?php if ($logo == 'hide' ):?>
 							<div id="logo">
 								<a href="<?php echo home_url(); ?>/"><h1 class="sitename"><?php bloginfo('name'); ?> </h1></a>
 							</div>

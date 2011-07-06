@@ -2,7 +2,7 @@
 /*
 Template Name: iFeature Pro Homepage
 */
- 
+$enable = $options['if_enable_twitter'] 
 ?>
 
 

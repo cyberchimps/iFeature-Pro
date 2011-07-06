@@ -69,6 +69,191 @@ function ifeature_css_filter($_content) {
 		
 add_action ( 'wp_head', 'ifeature_add_css' );
 
+/*
+Site Title Color
+*/
+
+function ifeature_add_sitetitle_color() {
+
+$options = get_option('ifeature');
+
+if (isset($options['if_sitetitle_color']) == "") 
+			$sitetitle = '717171';
+
+
+		else 
+			$sitetitle = $options['if_sitetitle_color']; 
+			
+		
+		
+	
+echo '<style type="text/css">';
+		echo ".sitename {color: #$sitetitle;}";
+		echo '</style>';
+
+
+
+}
+add_action( 'wp_head', 'ifeature_add_sitetitle_color');
+
+/*
+Link Color
+*/
+
+function ifeature_add_link_color() {
+
+$options = get_option('ifeature');
+
+if (isset($options['if_link_color']) == "") 
+			$link = '717171';
+
+
+		else 
+			$link = $options['if_link_color']; 
+			
+		
+		
+	
+echo '<style type="text/css">';
+		echo "a {color: #$link;}";
+		echo '</style>';
+
+
+
+}
+add_action( 'wp_head', 'ifeature_add_link_color');
+
+
+/*
+Menu Link Color
+*/
+
+function ifeature_add_menulink_color() {
+
+$options = get_option('ifeature');
+
+if (isset($options['if_menulink_color']) == "") 
+			$sitelink = 'FFFFFF';
+
+
+		else 
+			$sitelink = $options['if_menulink_color']; 
+			
+		
+		
+	
+echo '<style type="text/css">';
+		echo ".sf-menu a {color: #$sitelink;}";
+		echo '</style>';
+
+
+
+}
+add_action( 'wp_head', 'ifeature_add_menulink_color');
+
+/*
+Post Title Color
+*/
+
+function ifeature_add_posttitle_color() {
+
+$options = get_option('ifeature');
+
+if (isset($options['if_posttitle_color']) == "") 
+			$posttitle = '717171';
+
+
+		else 
+			$posttitle = $options['if_posttitle_color']; 
+			
+		
+		
+	
+echo '<style type="text/css">';
+		echo ".posts_title a {color: #$posttitle;}";
+		echo '</style>';
+
+
+
+}
+add_action( 'wp_head', 'ifeature_add_posttitle_color');
+
+/*
+Callout BG Color
+*/
+
+function ifeature_add_calloutbg_color() {
+
+$options = get_option('ifeature');
+
+if (isset($options['if_callout_background_color']) == "") 
+			$callbg = 'F8F8F8';
+
+
+		else 
+			$callbg = $options['if_callout_background_color']; 
+			
+	
+echo '<style type="text/css">';
+		echo "#calloutwrap {background: #$callbg;}";
+		echo '</style>';
+
+
+
+}
+add_action( 'wp_head', 'ifeature_add_calloutbg_color');
+
+/*
+Callout Button Color
+*/
+
+function ifeature_add_calloutbutton_color() {
+
+$options = get_option('ifeature');
+
+if (isset($options['if_callout_button_color']) == "") 
+			$callbutton = '333';
+
+
+		else 
+			$callbutton = $options['if_callout_button_color']; 
+			
+	
+echo '<style type="text/css">';
+		echo ".calloutbutton {background: #$callbutton;}";
+		echo '</style>';
+
+
+
+}
+add_action( 'wp_head', 'ifeature_add_calloutbutton_color');
+
+/*
+Callout Text Color
+*/
+
+function ifeature_add_callouttext_color() {
+
+$options = get_option('ifeature');
+
+if (isset($options['if_callout_text_color']) == "") 
+			$calltext = '000';
+
+
+		else 
+			$calltext = $options['if_callout_text_color']; 
+			
+	
+echo '<style type="text/css">';
+		echo ".callout_text {color: #$calltext;}";
+		echo ".callout_title {color: #$calltext;}";
+		echo '</style>';
+
+
+
+}
+add_action( 'wp_head', 'ifeature_add_callouttext_color');
+
 
 $select_menu_color = array(
 	'0' => array('value' =>	'Grey','label' => __( 'Grey (default)' )),'1' => array('value' =>	'Blue','label' => __( 'Blue' )),'2' => array('value' =>	'Red','label' => __( 'Red' )),'3' => array('value' =>	'Orange','label' => __( 'Orange' )),'4' => array('value' =>	'Pink','label' => __( 'Pink' )),            
@@ -146,6 +331,12 @@ array( "name" => "Header Contact Area",
     "type" => "textarea",
     "std" => ""),
     
+array( "name" => "Twitter Bar",  
+    "desc" => "Enter your Twitter handle for the Twitter Bar",  
+    "id" => $shortname."_twitter_bar",  
+    "type" => "twitterbar",  
+    "std" => ""), 
+    
 array( "name" => "Custom CSS",  
     "desc" => "Override default iFeature CSS here.",  
     "id" => $shortname."_css_options",  
@@ -186,6 +377,25 @@ array( "name" => "Site Title Color",
     "id" => $shortname."_sitetitle_color",  
       "type" => "color1",  
     "std" => "false"),
+    
+array( "name" => "Link Color",  
+    "desc" => "Use the color picker to select the site link color",  
+    "id" => $shortname."_link_color",  
+      "type" => "color2",  
+    "std" => "false"),
+
+array( "name" => "Menu Link Color",  
+    "desc" => "Use the color picker to select the site menu link color",  
+    "id" => $shortname."_menulink_color",  
+      "type" => "color3",  
+    "std" => "false"),
+
+array( "name" => "Post Title Color",  
+    "desc" => "Use the color picker to select the post title color",  
+    "id" => $shortname."_posttitle_color",  
+      "type" => "color4",  
+    "std" => "false"),
+
 
 array( "type" => "close"),
 array( "type" => "close-tab"),
@@ -360,11 +570,29 @@ array( "name" => "Callout Image",
     "type" => "text",
     "std" => ""),
     
-array( "name" => "Callout Image Link",  
-    "desc" => "Enter a URL for the Callout Image's link.",  
-    "id" => $shortname."_callout_image_link",  
+array( "name" => "Callout Button Link",  
+    "desc" => "Enter a URL for the Callout Button's link.",  
+    "id" => $shortname."_callout_button_link",  
     "type" => "text",
     "std" => ""),
+    
+array( "name" => "Callout Background Color",  
+    "desc" => "Use the color picker to select the callout section background color",  
+    "id" => $shortname."_callout_background_color",  
+      "type" => "color5",  
+    "std" => "false"),
+    
+array( "name" => "Callout Text Color",  
+    "desc" => "Use the color picker to select the callout section text color",  
+    "id" => $shortname."_callout_text_color",  
+      "type" => "color7",  
+    "std" => "false"),
+
+array( "name" => "Callout Button Color",  
+    "desc" => "Use the color picker to select the callout button color",  
+    "id" => $shortname."_callout_button_color",  
+      "type" => "color6",  
+    "std" => "false"),
 
 array( "type" => "close"), 
 
@@ -637,9 +865,35 @@ case 'upload':
 <td><small><?php echo $value['desc']; ?></small></td>
 </tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
 
- 
 <?php break; 
  
+case 'twitterbar':  
+?>  
+  
+<tr>
+
+    <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
+    <td width="85%">
+    <br />
+    <input style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>" id="<?php echo 'if['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
+
+<br /><br />
+
+<input type="checkbox" id="ifeature[if_enable_twitter]" name="ifeature[if_enable_twitter]" value="1" <?php checked( '1', $options['if_enable_twitter'] ); ?>> - Check this box to enable the Twitter Bar on the iFeature Pro Homepage (Requires <a href="http://wordpress.org/extend/plugins/twitter-for-wordpress/">Twitter for WordPress Plugin</a>)
+</td>
+  </tr>
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+
+<?php
+break;
+
+
+
 case 'color1':  
 ?>  
   
@@ -658,7 +912,41 @@ if (isset($options['if_sitetitle_color']) == "")
 			$picker = $options['if_sitetitle_color']; 
 ?>
 
-<input type="text" class="color{required:false}" id="ifeature[if_sitetitle_color]" name="ifeature[if_sitetitle_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
+<input type="text" class="color" id="ifeature[if_sitetitle_color]" name="ifeature[if_sitetitle_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
+
+<br /><br />
+    </td>
+
+  </tr>
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+
+<?php
+break; 
+
+case 'color2':  
+?>  
+  
+<tr>
+
+    <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
+    <td width="85%">
+    
+    <?php
+$options = get_option('ifeature');
+
+if (isset($options['if_link_color']) == "")
+			$picker = '717171';
+			
+		else
+			$picker = $options['if_link_color']; 
+?>
+
+<input type="text" class="color{required:false}" id="ifeature[if_link_color]" name="ifeature[if_link_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
 
 <br /><br />
     
@@ -674,6 +962,185 @@ if (isset($options['if_sitetitle_color']) == "")
 
 <?php
 break; 
+
+
+case 'color3':  
+?>  
+  
+<tr>
+
+    <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
+    <td width="85%">
+    
+    <?php
+$options = get_option('ifeature');
+
+if (isset($options['if_menulink_color']) == "")
+			$picker = 'FFF';
+			
+		else
+			$picker = $options['if_menulink_color']; 
+?>
+
+<input type="text" class="color{required:false}" id="ifeature[if_menulink_color]" name="ifeature[if_menulink_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
+
+<br /><br />
+    
+    </td>
+
+  </tr>
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+
+<?php
+break; 
+
+case 'color4':  
+?>  
+  
+<tr>
+
+    <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
+    <td width="85%">
+    
+    <?php
+$options = get_option('ifeature');
+
+if (isset($options['if_posttitle_color']) == "")
+			$picker = '717171';
+			
+		else
+			$picker = $options['if_posttitle_color']; 
+?>
+
+<input type="text" class="color{required:false}" id="ifeature[if_posttitle_color]" name="ifeature[if_posttitle_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
+
+<br /><br />
+    
+    </td>
+
+  </tr>
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+
+<?php
+break; 
+
+case 'color5':  
+?>  
+  
+<tr>
+
+    <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
+    <td width="85%">
+    
+    <?php
+$options = get_option('ifeature');
+
+if (isset($options['if_callout_background_color']) == "")
+			$picker = 'F8F8F8';
+			
+		else
+			$picker = $options['if_callout_background_color']; 
+?>
+
+<input type="text" class="color{required:false}" id="ifeature[if_callout_background_color]" name="ifeature[if_callout_background_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
+
+<br /><br />
+    
+    </td>
+
+  </tr>
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+
+<?php
+break; 
+
+case 'color6':  
+?>  
+  
+<tr>
+
+    <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
+    <td width="85%">
+    
+    <?php
+$options = get_option('ifeature');
+
+if (isset($options['if_callout_button_color']) == "")
+			$picker = '333';
+			
+		else
+			$picker = $options['if_callout_button_color']; 
+?>
+
+<input type="text" class="color{required:false}" id="ifeature[if_callout_button_color]" name="ifeature[if_callout_button_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
+
+<br /><br />
+    
+    </td>
+
+  </tr>
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+
+<?php
+break; 
+
+
+case 'color7':  
+?>  
+  
+<tr>
+
+    <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
+    <td width="85%">
+    
+    <?php
+$options = get_option('ifeature');
+
+if (isset($options['if_callout_text_color']) == "")
+			$picker = '000';
+			
+		else
+			$picker = $options['if_callout_text_color']; 
+?>
+
+<input type="text" class="color{required:false}" id="ifeature[if_callout_text_color]" name="ifeature[if_callout_text_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
+
+<br /><br />
+    
+    </td>
+
+  </tr>
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+
+<?php
+break; 
+
+
  
  
 case 'facebook':  
@@ -1254,6 +1721,10 @@ function theme_options_validate( $input ) {
 	 if ( ! isset( $input['if_hide_tags'] ) )
 		$input['if_hide_tags'] = null;
 	$input['if_hide_tags'] = ( $input['if_hide_tags'] == 1 ? 1 : 0 ); 
+	
+	   if ( ! isset( $input['if_enable_twitter'] ) )
+		$input['if_enable_twitter'] = null;
+	$input['if_enable_twitter'] = ( $input['if_enable_twitter'] == 1 ? 1 : 0 ); 
   
   	// Strip HTML from certain options
   	

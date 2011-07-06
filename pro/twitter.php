@@ -8,7 +8,7 @@
 	
 */
 	$options = get_option('ifeature') ;  
-    $handle = $options['ne_twitter_bar'];
+    $handle = $options['if_twitter_bar'];
 	$tdurl = get_template_directory_uri();
 ?>
 	
