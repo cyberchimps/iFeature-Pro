@@ -20,6 +20,7 @@ function theme_options_init() {
 	
 	register_setting( 'if_options', 'ifeature', 'theme_options_validate' );
 		add_settings_section('if_main', '', 'if_section_text', 'if');
+		add_settings_section('if_main', '', 'if_section_text2', 'if');
   		add_settings_field('if_filename', '', 'if_setting_filename', 'if', 'if_main');  
 
 	wp_register_script('ifjquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"), false, '1.4.4');
@@ -322,7 +323,7 @@ array( "name" => "Logo URL",
 array( "name" => "Custom Menu Icon",  
     "desc" => "Enter the link to your custom menu icon (optional).",  
     "id" => $shortname."_menuicon",  
-    "type" => "text",  
+    "type" => "upload3",  
     "std" => ""),
 
 array( "name" => "Header Contact Area",  
@@ -346,7 +347,7 @@ array( "name" => "Custom CSS",
 array( "name" => "Custom Favicon",  
     "desc" => "A favicon is a 16x16 pixel icon that represents your site; paste the URL to a .ico image that you want to use as the image",  
     "id" => $shortname."_favicon",  
-    "type" => "text",  
+    "type" => "upload2",  
     "std" => ""),   
 
 array( "name" => "Google Analytics Code",  
@@ -567,7 +568,7 @@ array( "name" => "Callout Text",
 array( "name" => "Callout Image",  
     "desc" => "Enter HTML to display call out image (max-height: 60px, max-width 180px, you can use callout.psd).",  
     "id" => $shortname."_callout_img",  
-    "type" => "text",
+    "type" => "upload4",
     "std" => ""),
     
 array( "name" => "Callout Button Link",  
@@ -841,6 +842,7 @@ case 'upload':
     
     $file = $options['file'];
     
+    echo "Logo preview:<br /><br /><img src='{$file['url']}'><br /><br />";
     echo "<input type='text' name='if_filename_text' size='72' value='{$file['url']}'/>";
     echo "<br />" ;
     echo "<br />" ;
@@ -866,6 +868,150 @@ case 'upload':
 </tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
 
 <?php break; 
+
+case 'upload2':
+?>   
+
+
+<tr>
+
+<td width="15%" rowspan="2" valign="middle"><strong>Custom favicon</strong>
+
+
+ 
+<tr>
+<td width="85%">
+
+
+    <?php settings_fields('if_options'); ?>
+    <?php do_settings_sections('if'); 
+    
+    $file2 = $options['file2'];
+    
+    echo "Favicon preview:<br /><br /><img src='{$file2['url']}'><br /><br />";
+    echo "<input type='text' name='if_favfilename_text' size='72' value='{$file2['url']}'/>";
+    echo "<br />" ;
+    echo "<br />" ;
+    echo "<input type='file' name='if_favfilename' size='30' />";?>
+
+    
+    <br />
+    <small>Upload a favicon image to use</small>
+
+
+<?php
+	$options = get_option('ifeature');
+	$value = isset($options['file2']) ? $options['file2'] : '';
+?>
+
+</td>
+</tr>
+
+
+        
+        <tr>
+<td><small><?php echo $value['desc']; ?></small></td>
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+<?php break; 
+
+case 'upload3':
+?>   
+
+
+<tr>
+
+<td width="15%" rowspan="2" valign="middle"><strong>Custom home icon</strong>
+
+
+ 
+<tr>
+<td width="85%">
+
+
+    <?php settings_fields('if_options'); ?>
+    <?php do_settings_sections('if'); 
+    
+    $file3 = $options['file3'];
+    
+    if ($file3 != ''){
+    
+    echo "Home Button preview:<br /><br /><img src='{$file3['url']}'><br /><br />";}
+    echo "<input type='text' name='if_homefilename_text' size='72' value='{$file3['url']}'/>";
+    echo "<br />" ;
+    echo "<br />" ;
+    echo "<input type='file' name='if_homefilename' size='30' />";?>
+
+    
+    <br />
+    <small>Upload a home icon image to use</small>
+
+
+<?php
+	$options = get_option('ifeature');
+	$value = isset($options['file3']) ? $options['file3'] : '';
+?>
+
+</td>
+</tr>
+
+
+        
+        <tr>
+<td><small><?php echo $value['desc']; ?></small></td>
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+<?php break; 
+
+case 'upload4':
+?>   
+
+
+<tr>
+
+<td width="15%" rowspan="2" valign="middle"><strong>Custom callout image</strong>
+
+
+ 
+<tr>
+<td width="85%">
+
+
+    <?php settings_fields('if_options'); ?>
+    <?php do_settings_sections('if'); 
+    
+    $file3 = $options['file4'];
+    
+    if ($file4 != ''){
+    
+    echo "Callout Button preview:<br /><br /><img src='{$file4['url']}'><br /><br />";}
+    echo "<input type='text' name='if_calloutfilename_text' size='72' value='{$file4['url']}'/>";
+    echo "<br />" ;
+    echo "<br />" ;
+    echo "<input type='file' name='if_calloutfilename' size='30' />";?>
+
+    
+    <br />
+    <small>Upload a callout image to use</small>
+
+
+<?php
+	$options = get_option('ifeature');
+	$value = isset($options['file4']) ? $options['file4'] : '';
+?>
+
+</td>
+</tr>
+
+
+        
+        <tr>
+<td><small><?php echo $value['desc']; ?></small></td>
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+<?php break; 
+
+
  
 case 'twitterbar':  
 ?>  
@@ -1754,6 +1900,36 @@ function theme_options_validate( $input ) {
 	   $input['file'] = null;
    }
 
+if ($_FILES['if_favfilename']['name'] != '') {
+       $overrides = array('test_form' => false); 
+       $file2 = wp_handle_upload($_FILES['if_favfilename'], $overrides);
+       $input['file2'] = $file2;
+   } elseif(isset($_POST['if_favfilename_text']) && $_POST['if_favfilename_text'] != '') {
+	   $input['file2'] = array('url' => $_POST['if_favfilename_text']);
+   } else {
+	   $input['file2'] = null;
+   }
+   
+   if ($_FILES['if_homefilename']['name'] != '') {
+       $overrides = array('test_form' => false); 
+       $file3 = wp_handle_upload($_FILES['if_homefilename'], $overrides);
+       $input['file3'] = $file3;
+   } elseif(isset($_POST['if_homefilename_text']) && $_POST['if_homefilename_text'] != '') {
+	   $input['file3'] = array('url' => $_POST['if_homefilename_text']);
+   } else {
+	   $input['file3'] = null;
+   }
+   
+     if ($_FILES['if_calloutfilename']['name'] != '') {
+       $overrides = array('test_form' => false); 
+       $file3 = wp_handle_upload($_FILES['if_calloutfilename'], $overrides);
+       $input['file4'] = $file4;
+   } elseif(isset($_POST['if_calloutfilename_text']) && $_POST['if_calloutfilename_text'] != '') {
+	   $input['file4'] = array('url' => $_POST['if_calloutfilename_text']);
+   } else {
+	   $input['file4'] = null;
+   }
+
 
 	return $input;    
 
@@ -1793,11 +1969,13 @@ function get_first_image() {
 }  
 
 function if_section_text() {
-    $options = get_option('ifeature');
-    if ($file = $options['file']) {
-        echo "Logo preview<br /><br /><img src='{$file['url']}' /><br /><br />";
-    }
+    
 }
+
+function if_section_text2() {
+    
+}
+
 
 function if_setting_filename() {
   }
