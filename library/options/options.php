@@ -506,6 +506,18 @@ array( "name" => "Hide the Tags",
       "type" => "checkbox",  
     "std" => "false"),
 
+array( "name" => "Select the slider type:",  
+    "desc" => "(Choose between custom feature slides or a post category)",  
+    "id" => $shortname."_slider_type",  
+    "type" => "select4",  
+    "std" => ""), 
+    
+array( "name" => "Show posts from category:",  
+    "desc" => "(Default is all - WARNING: do not enter a category that does not exist or slider will not display)",  
+    "id" => $shortname."_slider_category",  
+    "type" => "select6",  
+    "std" => ""),
+
 array( "type" => "close"),
 array( "type" => "close-tab"),
 
@@ -607,28 +619,10 @@ array( "id" => $shortname."-tab7",
 array( "type" => "open"),
 
 array( "name" => "Hide iFeature Slider",  
-    "desc" => "Check this box to hide the Feature Slider on the homepage.",  
+    "desc" => "Check this box to hide the Feature Slider on the iFeature Pro homepage.",  
     "id" => $shortname."_hide_slider",  
     "type" => "checkbox",  
     "std" => "false"),
-    
-array( "name" => "Select the slider type:",  
-    "desc" => "(Choose between custom feature slides or a post category)",  
-    "id" => $shortname."_slider_type",  
-    "type" => "select4",  
-    "std" => ""), 
-    
-array( "name" => "Select the slider placement:",  
-    "desc" => "(Choose between the feature template or the posts page)",  
-    "id" => $shortname."_slider_placement",  
-    "type" => "select5",  
-    "std" => ""), 
-    
-array( "name" => "Show posts from category:",  
-    "desc" => "(Default is all - WARNING: do not enter a category that does not exist or slider will not display)",  
-    "id" => $shortname."_slider_category",  
-    "type" => "select6",  
-    "std" => ""),
     
 array( "name" => "Number of featured posts:",  
     "desc" => "(Default is 5)",  
@@ -1723,8 +1717,6 @@ case 'select6':
 
 </select>
 
-<br />
-Test: <?php echo $options['if_slider_category'] ; ?>
 </td>
 </tr> 
  

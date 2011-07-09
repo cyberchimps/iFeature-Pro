@@ -11,7 +11,6 @@
     	$tmp_query = $wp_query; 
 		$options = get_option('ifeature') ; 
 		$root = get_template_directory_uri(); 
-		$cat = 'about';
 		$size = get_post_meta($post->ID, 'page_slider_size' , true);
 		$size2 = get_post_meta($post->ID, 'page_sidebar' , true);
 		$type = get_post_meta($post->ID, 'page_slider_type' , true);
@@ -21,7 +20,6 @@
 		if ($size == "0")
 			$timthumb = 'h=330&w=980';
 			
-		
 		elseif ($size2 == "2" OR $size2 == "3")
 			$timthumb = 'h=330&w=480';
 		
@@ -37,12 +35,21 @@
 		
 		$usecustomslides		= $options['if_slider_type'];
 		
-		if ( $type == '1')
+		if ( $type == '1') {
     	query_posts( array ('post_type' => 'if_custom_slides', 'showposts' => 20,  'slide_categories' => get_post_meta($post->ID, 'slider_category' , true)  ) );
     	
-    	else
+    	}
+    	
+    	elseif ($type == '' && $usecustomslides = 'posts') {
+    	query_posts( array ('post_type' => 'if_custom_slides', 'showposts' => 20,  'slide_categories' => get_post_meta($post->ID, 'slider_category' , true)  ) );
+    	}
+    	else {
+    	
     	query_posts('category_name='.$category.'&showposts=50');
-	       
+	    
+	  
+	    
+	     }
     	
 	    if (have_posts()) :
 	    	$out = "<div id='slider' class='nivoSlider'>"; 
@@ -65,25 +72,53 @@
 	    		$customlink 		= get_post_meta($post->ID, 'slider_url' , true);
 	    		$permalink 			= get_permalink();
 	   			$text 				= get_post_meta($post->ID, 'slider_text' , true);
-	   			$image  			= get_post_meta($post->ID, 'slider_post_image' , true);
+	   		
 	   			$title				= get_the_title() ;
 	   			$hidetitlebar       = get_post_meta($post->ID, 'slider_hidetitle' , true);
-	   			$customsized        = '$root/library/tt/timthumb.php?src=$customimage&a=c&$timthumb';
+	   			$customsized        = "$root/library/tt/timthumb.php?src=$customimage&a=c&$timthumb";
 
+
+				if ($hidetitlebar != 'on') {
+	   			
+	   				$titlevar = "#caption$i";
+	   			
+	   			}
+	   			
+	   			else {
+	   			
+	   				$titlevar = '';
+	   			
+	   			}
 	    		
-	    	if ($customimage != '' && $usecustomslides != 'posts' && $hidetitlebar == 'on') { 
-	    			$out .= "<a href='$customlink'>	
-	    						<img src='$root/library/tt/timthumb.php?src=$customimage&a=c&h=330&w=976' alt='iFeaturePro' />
-	    						
-	    					</a>
-	    			";
-	       } 
+	    		if ( $type == '1') {
+	    		
+	    			$link = get_post_meta($post->ID, 'slider_url' , true);
+	    		
+	    		}
+	    		
+	    		else {
+	    		
+	    		  $link = get_permalink();
+	    		
+	    		}
+	    		
+	    		
+	    		if ($customimage != ''){
+	    		
+	    		$image = $customsized;
+	    		
+	    		}
 	       
-	       		elseif 
+	       		else {
+	       		
+	       		$image = "$root/images/pro/ifeaturepro.jpg";
+	       		
+	       		}
+	       		if 
 	    			
 	    			($customimage != '' && $usecustomslides != 'posts'  ){ 
-	    			$out .= "<a href='$customlink'>	
-	    						<img src='$root/library/tt/timthumb.php?src=$customimage&a=c&$timthumb' title='#caption$i' rel='$root/library/tt/timthumb.php?src=$customimage&a=c&h=30&w=50' alt='iFeaturePro' />
+	    			$out .= "<a href='$link'>	
+	    						<img src='$image' title='$titlevar' rel='$root/library/tt/timthumb.php?src=$customimage&a=c&h=30&w=50' alt='iFeaturePro' />
 	    						
 	    					<div id='caption$i' class='nivo-html-caption'>
                 				$title <br />
