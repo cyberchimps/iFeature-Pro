@@ -255,6 +255,10 @@ echo '<style type="text/css">';
 }
 add_action( 'wp_head', 'ifeature_add_callouttext_color');
 
+$select_sidebar_type = array(
+	'0' => array('value' => 'right','label' => __('Right (default)' )),'1' => array('value' => 'none','label' => __('None')), '2' => array('value' => 'Two Right','label' => __('Two Right')),'3' => array('value' => 'Right and Left','label' => __('Right and Left')),
+
+);
 
 $select_menu_color = array(
 	'0' => array('value' =>	'Grey','label' => __( 'Grey (default)' )),'1' => array('value' =>	'Blue','label' => __( 'Blue' )),'2' => array('value' =>	'Red','label' => __( 'Red' )),'3' => array('value' =>	'Orange','label' => __( 'Orange' )),'4' => array('value' =>	'Pink','label' => __( 'Pink' )),            
@@ -505,6 +509,19 @@ array( "name" => "Hide the Tags",
     "id" => $shortname."_hide_tags",  
       "type" => "checkbox",  
     "std" => "false"),
+    
+array( "name" => "Show the iFeature Slider",  
+    "desc" => "Check this box to display the iFeature Slider on your blog page.",  
+    "id" => $shortname."_show_slider_blog",  
+      "type" => "checkbox",  
+    "std" => "false"),
+
+array( "name" => "Select the sidebar type",  
+    "desc" => "Select the sidebar type for your blog page (default is Right).",  
+    "id" => $shortname."_blog_sidebar",  
+      "type" => "select8",  
+    "std" => "false"),
+
 
 array( "name" => "Select the slider type:",  
     "desc" => "(Choose between custom feature slides or a post category)",  
@@ -512,10 +529,16 @@ array( "name" => "Select the slider type:",
     "type" => "select4",  
     "std" => ""), 
     
-array( "name" => "Show posts from category:",  
+array( "name" => "Show posts from blog category:",  
     "desc" => "(Default is all - WARNING: do not enter a category that does not exist or slider will not display)",  
     "id" => $shortname."_slider_category",  
     "type" => "select6",  
+    "std" => ""),
+    
+array( "name" => "Show posts from custom slide category:",  
+    "desc" => "(Default is all - WARNING: do not enter a category that does not exist or slider will not display)",  
+    "id" => $shortname."_customslider_category",  
+    "type" => "select7",  
     "std" => ""),
 
 array( "type" => "close"),
@@ -720,7 +743,7 @@ array( "type" => "close-tab"),
  * Create the options page
  */
 function theme_options_do_page() {
-	global $themename, $shortname, $optionlist,  $select_menu_color, $select_font, $select_slider_effect, $select_slider_type, $select_slider_placement;
+	global $themename, $shortname, $optionlist,  $select_menu_color, $select_font, $select_slider_effect, $select_sidebar_type, $select_slider_type, $select_slider_placement;
   
 
 	if ( ! isset( $_REQUEST['updated'] ) ) {
@@ -1728,6 +1751,87 @@ case 'select6':
 <?php
 break;
 
+case 'select7':
+?>
+<tr>
+<td width="15%" rowspan="2" valign="middle"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></td>
+<td width="85%"><select style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>">
+
+<?php
+								$selected = $options[$value['id']];
+								$p = '';
+								$r = '';
+								
+								$terms2 = get_terms('slide_categories', 'hide_empty=0');
+
+									$blogoptions = array();
+
+										foreach($terms2 as $term) {
+
+										$blogoptions[$term->slug] = $term->name;
+
+									}
+									
+
+								foreach ( $blogoptions as $option ) {
+									$label = $option['label'];
+									if ( $selected == $option ) // Make default first in list
+										$p = "\n\t<option style=\"padding-right: 10px;\" selected='selected' value='" . esc_attr( $option ) . "'>$option</option>";
+									else
+										$r .= "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option ) . "'>$option</option>";      
+								}
+								echo $p . $r;   
+							?>    
+
+
+</select>
+
+</td>
+</tr> 
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+<?php
+break;
+
+case 'select8':
+?>
+<tr>
+<td width="15%" rowspan="2" valign="middle"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></td>
+<td width="85%"><select style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>">
+
+<?php
+								$selected = $options[$value['id']];
+								$p = '';
+								$r = '';
+
+								foreach ( $select_sidebar_type as $option ) {
+									$label = $option['label'];
+									if ( $selected == $option['value'] ) // Make default first in list
+										$p = "\n\t<option style=\"padding-right: 10px;\" selected='selected' value='" . esc_attr( $option['value'] ) . "'>$label</option>";
+									else
+										$r .= "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . "'>$label</option>";      
+								}
+								echo $p . $r;   
+							?>    
+
+</select>
+
+
+</td>
+</tr> 
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+<?php
+break;
+
 
  
 case "checkbox":
@@ -1775,7 +1879,7 @@ case "checkbox":
 
 
 function theme_options_validate( $input ) {
-	global  $select_menu_color, $select_font, $select_slider_effect, $select_slider_type, $select_slider_placement;
+	global  $select_menu_color, $select_font, $select_slider_effect, $select_slider_type, $select_sidebar_type, $select_slider_placement;
 
 	// Assign checkbox value
 	
@@ -1864,6 +1968,12 @@ function theme_options_validate( $input ) {
 		$input['if_enable_twitter'] = null;
 	$input['if_enable_twitter'] = ( $input['if_enable_twitter'] == 1 ? 1 : 0 ); 
   
+  
+     if ( ! isset( $input['if_show_slider_blog'] ) )
+		$input['if_show_slider_blog'] = null;
+	$input['if_show_slider_blog'] = ( $input['if_show_slider_blog'] == 1 ? 1 : 0 ); 
+	
+	
   	// Strip HTML from certain options
   	
    $input['if_logo'] = wp_filter_nohtml_kses( $input['if_logo'] );
