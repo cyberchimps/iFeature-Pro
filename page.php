@@ -20,7 +20,7 @@ $sidebar = get_post_meta($post->ID, 'page_sidebar' , true);
 
 	<?php if ($enable == "on" && $size == "0"): ?>
 		<div id = "slider-wrapper">
-			<?php get_template_part('nivoslider', 'page' ); ?> 
+			<center><?php get_template_part('nivoslider', 'page' ); ?> </center>
 			
 		</div>
 

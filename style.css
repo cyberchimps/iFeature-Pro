@@ -1194,15 +1194,24 @@ a { text-decoration: none; color: black; }
 
 /* Control nav styles (e.g. 1,2,3...) */
 
+
+
 .nivo-controlNav a {
-	position:relative;
-	z-index:9;
-	cursor:pointer;
+	display:block;
+	width:22px;
+	height:22px;
+	background:url(./images/bullets.png) no-repeat;
+	text-indent:-9999px;
+	border:0;
+	margin-right:3px;
+	float:left;
 }
 
 .nivo-controlNav a.active {
-	font-weight:bold;
+	background-position:0 -22px;
 }
+
+
 
 /*============================*/
 /*=== Custom Slider Styles ===*/

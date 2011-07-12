@@ -13,8 +13,11 @@
     $tmp_query = $wp_query; 
 	$options = get_option('ifeature') ; 
 	$root = get_template_directory_uri(); 
+	$enableblog = $options['if_show_slider_blog'];
 	$size = get_post_meta($post->ID, 'page_slider_size' , true);
 	$size2 = get_post_meta($post->ID, 'page_sidebar' , true);
+	$size3 = $options['if_blog_sidebar'];
+	$size4 = $options['if_slider_size'];
 	$type = get_post_meta($post->ID, 'page_slider_type' , true);
 	$category = get_post_meta($post->ID, 'slider_blog_category' , true);
 		
@@ -22,16 +25,18 @@
 		
 /* Define TimThumb default height and widths. */		
 
-	if ($size == "0") {
-		$timthumb = 'h=330&w=980';
+	if ($size != "0" AND $size4 = "half") {
+		$timthumb = 'h=330&w=640';
 	}
-			
+	
+		
 	elseif ($size2 == "2" OR $size2 == "3") {
 		$timthumb = 'h=330&w=480';
 	}
+	
 		
 	else {
-		$timthumb = 'h=330&w=640';
+		$timthumb = 'h=330&w=980';
 	}
 
 /* End define TimThumb. */
@@ -127,9 +132,24 @@
 	    	
 	    	/* Controls slide image and thumbnails */
 	    		
-	    	if ($customimage != ''){
+	    	if ($customimage != '' ){
 	    		$image = $customsized;
 	    		$thumbnail = "$root/library/tt/timthumb.php?src=$customimage&a=c&h=30&w=50";
+	    	}
+	    	
+	    	elseif ($customimage == '' && $size2 == "1" && $size != "0"){
+	    		$image = "$root/images/pro/ifeatureprosmall.png";
+	    		$thumbnail = "$root/images/pro/ifeatureprothumb.jpg";
+	    	}
+	    	
+	    	elseif ($customimage == '' && $size2 == '' OR $size4 == "half"){
+	    		$image = "$root/images/pro/ifeatureprosmall.png";
+	    		$thumbnail = "$root/images/pro/ifeatureprothumb.jpg";
+	    	}
+	    	
+	    	elseif ($customimage == '' && $size2 == "2" OR $customimage == '' && $size2 == "3"){
+	    		$image = "$root/images/pro/ifeaturepro480.png";
+	    		$thumbnail = "$root/images/pro/ifeatureprothumb.jpg";
 	    	}
 	       
 	   		else {
@@ -198,16 +218,20 @@
 
 /* Define slider width variable */ 
 	    
-	if ($size == '1' && $size2 != '2' AND $size2 != '3') {
+	if ($size4 == 'half') {
 	  	$csWidth = '640';
 	}		
-	  	
-	elseif ($size2 == '3' && $size != '0' OR $size2 == '3' && $size != '0') {
+	  	 
+	if ($size4 == 'full') {
+	  	$csWidth = '980';
+	}  	 
+	  	  	
+	elseif ($size2 == '3' && $size != '0' OR $size2 == '2' && $size != '0') {
 		$csWidth = '480';
 	}  	
 	
 	else {
-		$csWidth = '976';
+		$csWidth = '980';
 	}
 
 /* End slider width variable */ 
@@ -251,12 +275,11 @@
         boxCols: 8, // For box animations
         boxRows: 4, // For box animations
         animSpeed:500, // Slide transition speed
-        pauseTime:3000, // How long each slide will show
+        pauseTime:'$csDelay', // How long each slide will show
         startSlide:0, // Set starting Slide (0 index)
         directionNav:true, // Next & Prev navigation
         directionNavHide:true, // Only show on hover
-        
-        controlNavThumbs:true, // Use thumbnails for Control Nav
+        controlNavThumbs:false, // Use thumbnails for Control Nav
         controlNavThumbsFromRel:true, // Use image rel for thumbs
         controlNavThumbsSearch: '.jpg', // Replace this with...
         controlNavThumbsReplace: '_thumb.jpg', // ...this in thumb Image src

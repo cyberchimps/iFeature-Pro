@@ -153,6 +153,34 @@ echo '<style type="text/css">';
 add_action( 'wp_head', 'ifeature_add_menulink_color');
 
 /*
+Tagline Color
+*/
+
+function ifeature_add_tagline_color() {
+
+$options = get_option('ifeature');
+
+if (isset($options['if_tagline_color']) == "") 
+			$tagline = 'FFFFFF';
+
+
+		else 
+			$tagline = $options['if_tagline_color']; 
+			
+		
+		
+	
+echo '<style type="text/css">';
+		echo ".description {color: #$tagline;}";
+		echo '</style>';
+
+
+
+}
+add_action( 'wp_head', 'ifeature_add_tagline_color');
+
+
+/*
 Post Title Color
 */
 
@@ -255,9 +283,110 @@ echo '<style type="text/css">';
 }
 add_action( 'wp_head', 'ifeature_add_callouttext_color');
 
-$select_sidebar_type = array(
-	'0' => array('value' => 'right','label' => __('Right (default)' )),'1' => array('value' => 'none','label' => __('None')), '2' => array('value' => 'Two Right','label' => __('Two Right')),'3' => array('value' => 'Right and Left','label' => __('Right and Left')),
+/*
+Hide search
+*/
 
+function ifeature_fullwidth_nav() {
+
+$options = get_option('ifeature');
+
+if ($options['if_hide_search'] == "1" && $options['if_hide_home_icon'] == "") {
+		
+		echo '<style type="text/css">';
+		echo "#searchbar {display: none;}";
+		echo "#sfwrapper {width: 91%;}";
+		echo '</style>';
+
+}
+
+elseif ($options['if_hide_search'] == "" && $options['if_hide_home_icon'] == "1" ) {
+
+		echo '<style type="text/css">';
+		echo "#homebutton {display: none;}";
+		echo "#sfwrapper {width: 79%;}";
+		echo '</style>';
+}
+
+elseif ($options['if_hide_search'] == "1" && $options['if_hide_home_icon'] == "1" ) {
+
+		echo '<style type="text/css">';
+		echo "#homebutton {display: none;}";
+		echo "#searchbar {display: none;}";
+		echo "#sfwrapper {width: 100%;}";
+		echo '</style>';
+}
+
+}
+add_action( 'wp_head', 'ifeature_fullwidth_nav');
+
+
+/*
+Footer Color
+*/
+
+function ifeature_add_footer_color() {
+
+$options = get_option('ifeature');
+
+if (isset($options['if_footer_color']) != "" && $options['if_footer_color'] != "222222" ) {
+		
+			$footercolor = $options['if_footer_color']; 
+	}	
+	
+	
+echo '<style type="text/css">';
+		echo "#footer {background: #$footercolor;}";
+		echo '</style>';
+
+
+
+}
+add_action( 'wp_head', 'ifeature_add_footer_color');
+
+/*
+Menu Font
+*/
+ 
+ function ifeature_add_menu_font() {
+		
+	$options = get_option('ifeature');	
+		
+	if ($options['if_menu_font'] == "")
+			$font = 'Cantarell';
+			
+		elseif ($options['if_custom_menu_font'] != "")
+		$font = $options['if_custom_menu_font'];	
+		
+		else
+			$font = $options[('if_menu_font')]; 
+			$fontstrip =  ereg_replace("[^A-Za-z0-9]", " ", $font );
+	
+	echo "<link href='http://fonts.googleapis.com/css?family=$font' rel='stylesheet' type='text/css' />";
+	echo '<style type="text/css">';
+	echo ".sf-menu a {font-family: $fontstrip;}";
+		echo '</style>';
+
+}
+add_action( 'wp_head', 'ifeature_add_menu_font');
+
+$select_slider_caption = array(
+	'0' => array('value' => 'bottom','label' => __('Bottom (default)' )),'1' => array('value' => 'left','label' => __('Left')), '2' => array('value' => 'right','label' => __('Right')),
+
+);
+
+$select_sidebar_type = array(
+	'0' => array('value' => 'right','label' => __('Right (default)' )),'1' => array('value' => 'none','label' => __('None')), '2' => array('value' => 'two-right','label' => __('Two Right')),'3' => array('value' => 'right-left','label' => __('Right and Left')),
+
+);
+
+$select_slider_navigation = array(
+	'0' => array('value' => 'dots','label' => __('Dots (default)' )),'1' => array('value' => 'thumbs','label' => __('Thumbnails')), '2' => array('value' => 'none','label' => __('None')),
+
+);
+
+$select_slider_size = array(
+	'0' => array('value' => 'half','label' => __('Half-Width (default)' )),'1' => array('value' => 'full','label' => __('Full-Width')), 
 );
 
 $select_menu_color = array(
@@ -305,30 +434,13 @@ array( "id" => $shortname."-tab1",
 array( "type" => "open"),
 
 
-array(  "name" => "Choose iMenu Color",
-        "desc" => "(Default is Grey)",
-        "id" => $shortname."_menu_color",
-        "type" => "select1",
-        "std" => ""
-),
 
-array( "name" => "Choose a font:",  
-    "desc" => "(Default is Cantarell)",  
-    "id" => $shortname."_font",  
-    "type" => "select2",  
-    "std" => ""),
     
 array( "name" => "Logo URL",  
     "desc" => "Use the image uploader or enter your own URL into the input field to use an image as your logo. To display the site title as text, leave blank.",  
     "id" => $shortname."_logo",  
     "type" => "upload",  
     "std" => ""),  
-    
-array( "name" => "Custom Menu Icon",  
-    "desc" => "Enter the link to your custom menu icon (optional).",  
-    "id" => $shortname."_menuicon",  
-    "type" => "upload3",  
-    "std" => ""),
 
 array( "name" => "Header Contact Area",  
     "desc" => "Enter contact info such as phone number for the top right corner of the header. It can be HTML (to hide enter the word: hide).",  
@@ -342,17 +454,7 @@ array( "name" => "Twitter Bar",
     "type" => "twitterbar",  
     "std" => ""), 
     
-array( "name" => "Custom CSS",  
-    "desc" => "Override default iFeature CSS here.",  
-    "id" => $shortname."_css_options",  
-    "type" => "textarea",  
-    "std" => ""),  
-    
-array( "name" => "Custom Favicon",  
-    "desc" => "A favicon is a 16x16 pixel icon that represents your site; paste the URL to a .ico image that you want to use as the image",  
-    "id" => $shortname."_favicon",  
-    "type" => "upload2",  
-    "std" => ""),   
+   
 
 array( "name" => "Google Analytics Code",  
     "desc" => "You can paste your Google Analytics or other tracking code in this box. This will be automatically be added to the footer.",  
@@ -360,11 +462,7 @@ array( "name" => "Google Analytics Code",
     "type" => "textarea",  
     "std" => ""),  
 
-array(  "name" => "Show Facebook Like Button",
-        "desc" => "Check this box to show the Facebook Like Button on blog posts",
-        "id" => $shortname."_show_fb_like",
-        "type" => "checkbox",
-        "std" => "false"),  
+
         
 array( "type" => "close"),
 
@@ -377,11 +475,73 @@ array( "id" => $shortname."-tab2",
  
 array( "type" => "open"),
 
+
+array(  "name" => "Choose iMenu Color",
+        "desc" => "(Default is Grey)",
+        "id" => $shortname."_menu_color",
+        "type" => "select1",
+        "std" => ""),
+
+array( "name" => "Choose a font:",  
+    "desc" => "(Default is Cantarell)",  
+    "id" => $shortname."_font",  
+    "type" => "select2",  
+    "std" => ""),
+    
+array( "name" => "Choose a menu font:",  
+    "desc" => "(Default is Cantarell)",  
+    "id" => $shortname."_menu_font",  
+    "type" => "select12",  
+    "std" => ""),
+
+array( "name" => "Custom Menu Icon",  
+    "desc" => "Enter the link to your custom menu icon (optional).",  
+    "id" => $shortname."_menuicon",  
+    "type" => "upload3",  
+    "std" => ""),
+
+array( "name" => "Hide home icon",  
+    "desc" => "Check this box to hide the home icon in the navigation",  
+    "id" => $shortname."_hide_home_icon",  
+      "type" => "checkbox",  
+    "std" => "false"),
+
+array( "name" => "Hide menu search",  
+    "desc" => "Check this box to hide the search box in the navigation.",  
+    "id" => $shortname."_hide_search",  
+      "type" => "checkbox",  
+    "std" => "false"),
+
+array( "name" => "Custom CSS",  
+    "desc" => "Override default iFeature CSS here.",  
+    "id" => $shortname."_css_options",  
+    "type" => "textarea",  
+    "std" => ""),  
+    
+array( "name" => "Custom Favicon",  
+    "desc" => "A favicon is a 16x16 pixel icon that represents your site; paste the URL to a .ico image that you want to use as the image",  
+    "id" => $shortname."_favicon",  
+    "type" => "upload2",  
+    "std" => ""),
+
+array( "name" => "Hide the Boxes Section",  
+    "desc" => "Check this box to hide the widgetized Boxes Section on the homepage.",  
+    "id" => $shortname."_hide_boxes",  
+      "type" => "checkbox",  
+    "std" => "false"),
+
+
 array( "name" => "Site Title Color",  
     "desc" => "Use the color picker to select the site title color",  
     "id" => $shortname."_sitetitle_color",  
       "type" => "color1",  
     "std" => "false"),
+    
+array( "name" => "Site Description Color",  
+    "desc" => "Use the color picker to select the site description (tagline) color",  
+    "id" => $shortname."_tagline_color",  
+      "type" => "color9",  
+    "std" => "false"),    
     
 array( "name" => "Link Color",  
     "desc" => "Use the color picker to select the site link color",  
@@ -425,6 +585,12 @@ array( "name" => "Twitter URL",
     "id" => $shortname."_twitter",  
     "type" => "twitter",  
     "std" => "http://twitter.com"),
+    
+array( "name" => "Google Plus URL",  
+    "desc" => "Enter your Google Plus url (we recommend using the http://gplus.to/ shortener).",  
+    "id" => $shortname."_gplus",  
+    "type" => "gplus",  
+    "std" => "https://plus.google.com"),
     
 array( "name" => "LinkedIn URL",  
     "desc" => "Enter your LinkedIn URL for the LinkedIn social icon.",  
@@ -503,6 +669,12 @@ array( "name" => "Hide the Share Icons",
     "id" => $shortname."_hide_share",  
       "type" => "checkbox",  
     "std" => "false"),
+
+array(  "name" => "Show Facebook Like Button",
+        "desc" => "Check this box to show the Facebook Like Button on blog posts",
+        "id" => $shortname."_show_fb_like",
+        "type" => "checkbox",
+        "std" => "false"),  
     
 array( "name" => "Hide the Tags",  
     "desc" => "Check this box to hide the tags link on posts.",  
@@ -522,6 +694,11 @@ array( "name" => "Select the sidebar type",
       "type" => "select8",  
     "std" => "false"),
 
+array( "name" => "Select the sidebar size",  
+    "desc" => "Select the slider size for your blog page (default is Half-Width).",  
+    "id" => $shortname."_slider_size",  
+      "type" => "select9",  
+    "std" => "false"),
 
 array( "name" => "Select the slider type:",  
     "desc" => "(Choose between custom feature slides or a post category)",  
@@ -665,11 +842,23 @@ array( "name" => "Slider delay time (in milliseconds):",
     "type" => "text",  
     "std" => ""),
     
+array( "name" => "Choose the caption style:",  
+    "desc" => "(Default is Bottom)",  
+    "id" => $shortname."_caption_style",  
+    "type" => "select11",  
+    "std" => ""),
+
 array( "name" => "Choose the slider animation:",  
     "desc" => "(Default is random)",  
     "id" => $shortname."_slider_animation",  
     "type" => "select3",  
     "std" => ""), 
+    
+array( "name" => "Choose the slider navigation:",  
+    "desc" => "(Default is dots)",  
+    "id" => $shortname."_slider_nav",  
+    "type" => "select10",  
+    "std" => ""),    
     
 array( "name" => "Hide the navigation:",  
     "desc" => "Check to disable the slider navigation",  
@@ -690,17 +879,17 @@ array( "id" => $shortname."-tab8",
 
 array( "type" => "open"),
   
-array( "name" => "Hide the Boxes Section",  
-    "desc" => "Check this box to hide the widgetized Boxes Section on the homepage.",  
-    "id" => $shortname."_hide_boxes",  
-      "type" => "checkbox",  
-    "std" => "false"),
-  
 array( "name" => "Footer Copyright",  
     "desc" => "Enter Copyright text used on the right side of the footer. It can be HTML (default is your blog title)",  
     "id" => $shortname."_footer_text",  
     "type" => "textarea",  
     "std" => ""),
+    
+array( "name" => "Footer Color",  
+    "desc" => "Use the color picker to select a custom footer color (default is 222)",  
+    "id" => $shortname."_footer_color",  
+    "type" => "color8",  
+    "std" => ""),    
     
 array( "name" => "Hide our link",  
     "desc" => "Check this box to hide the link back to CyberChimps.com.",  
@@ -743,7 +932,7 @@ array( "type" => "close-tab"),
  * Create the options page
  */
 function theme_options_do_page() {
-	global $themename, $shortname, $optionlist,  $select_menu_color, $select_font, $select_slider_effect, $select_sidebar_type, $select_slider_type, $select_slider_placement;
+	global $themename, $shortname, $optionlist,  $select_menu_color, $select_font, $select_slider_effect, $select_sidebar_type, $select_slider_caption, $select_slider_navigation, $select_slider_size, $select_slider_type, $select_slider_placement;
   
 
 	if ( ! isset( $_REQUEST['updated'] ) ) {
@@ -1303,6 +1492,76 @@ if (isset($options['if_callout_text_color']) == "")
 <?php
 break; 
 
+case 'color8':  
+?>  
+  
+<tr>
+
+    <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
+    <td width="85%">
+    
+    <?php
+$options = get_option('ifeature');
+
+if (isset($options['if_footer_color']) == "")
+			$picker = '222';
+			
+		else
+			$picker = $options['if_footer_color']; 
+?>
+<br />
+<input type="text" class="color{required:false}" id="ifeature[if_footer_color]" name="ifeature[if_footer_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
+
+<br /><br />
+    
+    </td>
+
+  </tr>
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+
+<?php
+break; 
+
+case 'color9':  
+?>  
+  
+<tr>
+
+    <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
+    <td width="85%">
+    
+    <?php
+$options = get_option('ifeature');
+
+if (isset($options['if_tagline_color']) == "")
+			$picker = '000';
+			
+		else
+			$picker = $options['if_tagline_color']; 
+?>
+<br />
+<input type="text" class="color{required:false}" id="ifeature[if_tagline_color]" name="ifeature[if_tagline_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
+
+<br /><br />
+    
+    </td>
+
+  </tr>
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+
+<?php
+break; 
+
 
  
  
@@ -1354,6 +1613,31 @@ case 'twitter':
 
 <?php
 break;
+
+case 'gplus':  
+?>  
+  
+<tr>
+
+    <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
+    <td width="85%"><input style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>" id="<?php echo 'if['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
+    
+    <br /><br />
+    <input type="checkbox" id="ifeature[if_hide_gplus]" name="ifeature[if_hide_gplus]" value="1" <?php checked( '1', $options['if_hide_twitter'] ); ?>> - Check this box to hide the Google + icon. 
+    
+    </td>
+
+  </tr>
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+
+<?php
+break;
+
 
 case 'linkedin':  
 ?>  
@@ -1832,6 +2116,148 @@ case 'select8':
 <?php
 break;
 
+case 'select9':
+?>
+<tr>
+<td width="15%" rowspan="2" valign="middle"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></td>
+<td width="85%"><select style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>">
+
+<?php
+								$selected = $options[$value['id']];
+								$p = '';
+								$r = '';
+
+								foreach ( $select_slider_size as $option ) {
+									$label = $option['label'];
+									if ( $selected == $option['value'] ) // Make default first in list
+										$p = "\n\t<option style=\"padding-right: 10px;\" selected='selected' value='" . esc_attr( $option['value'] ) . "'>$label</option>";
+									else
+										$r .= "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . "'>$label</option>";      
+								}
+								echo $p . $r;   
+							?>    
+
+</select>
+
+</td>
+</tr> 
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+<?php
+break;
+ 
+case 'select10':
+?>
+<tr>
+<td width="15%" rowspan="2" valign="middle"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></td>
+<td width="85%"><select style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>">
+
+<?php
+								$selected = $options[$value['id']];
+								$p = '';
+								$r = '';
+
+								foreach ( $select_slider_navigation as $option ) {
+									$label = $option['label'];
+									if ( $selected == $option['value'] ) // Make default first in list
+										$p = "\n\t<option style=\"padding-right: 10px;\" selected='selected' value='" . esc_attr( $option['value'] ) . "'>$label</option>";
+									else
+										$r .= "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . "'>$label</option>";      
+								}
+								echo $p . $r;   
+							?>    
+
+</select>
+</td>
+</tr> 
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+<?php
+break;
+
+case 'select11':
+?>
+<tr>
+<td width="15%" rowspan="2" valign="middle"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></td>
+<td width="85%"><select style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>">
+
+<?php
+								$selected = $options[$value['id']];
+								$p = '';
+								$r = '';
+
+								foreach ( $select_slider_caption as $option ) {
+									$label = $option['label'];
+									if ( $selected == $option['value'] ) // Make default first in list
+										$p = "\n\t<option style=\"padding-right: 10px;\" selected='selected' value='" . esc_attr( $option['value'] ) . "'>$label</option>";
+									else
+										$r .= "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . "'>$label</option>";      
+								}
+								echo $p . $r;   
+							?>    
+
+</select>
+
+
+</td>
+</tr> 
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+<?php
+break;
+
+case 'select12':
+?>
+<tr>
+<td width="15%" rowspan="2" valign="middle"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></td>
+<td width="85%"><select style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>">
+
+<?php
+								$selected = $options[$value['id']];
+								$p = '';
+								$r = '';
+
+								foreach ( $select_font as $option ) {
+									$label = $option['label'];
+									if ( $selected == $option['value'] ) // Make default first in list
+										$p = "\n\t<option style=\"padding-right: 10px;\" selected='selected' value='" . esc_attr( $option['value'] ) . "'>$label</option>";
+									else
+										$r .= "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . "'>$label</option>";      
+								}
+								echo $p . $r;   
+							?>    
+
+</select>
+<br /> <br />
+
+Or enter your own font below (Google Fonts with more than one word format as follows: Maven+Pro)
+<br /> <br />
+
+<input style="width:300px;" name="ifeature[if_custom_menu_font]" id="ifeature[if_custom_menu_font]" type="text" value="<?php echo $options['if_custom_menu_font'] ?>"  />
+
+
+</td>
+</tr> 
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+<?php
+break;
 
  
 case "checkbox":
@@ -1879,7 +2305,7 @@ case "checkbox":
 
 
 function theme_options_validate( $input ) {
-	global  $select_menu_color, $select_font, $select_slider_effect, $select_slider_type, $select_sidebar_type, $select_slider_placement;
+	global  $select_menu_color, $select_font, $select_slider_effect, $select_slider_type, $select_sidebar_type, $select_slider_caption, $select_slider_navigation, $select_slider_size, $select_slider_placement;
 
 	// Assign checkbox value
 	
@@ -1891,6 +2317,10 @@ function theme_options_validate( $input ) {
 	if ( ! isset( $input['if_hide_twitter'] ) )
 		$input['if_hide_twitter'] = null;
 	$input['if_hide_twitter'] = ( $input['if_hide_twitter'] == 1 ? 1 : 0 ); 
+	
+		if ( ! isset( $input['if_hide_gplus'] ) )
+		$input['if_hide_gplus'] = null;
+	$input['if_hide_gplus'] = ( $input['if_hide_gplus'] == 1 ? 1 : 0 ); 
 	
 	if ( ! isset( $input['if_hide_linkedin'] ) )
 		$input['if_hide_linkedin'] = null;
@@ -1927,6 +2357,15 @@ function theme_options_validate( $input ) {
     if ( ! isset( $input['if_hide_boxes'] ) )
 		$input['if_hide_boxes'] = null;
 	$input['if_hide_boxes'] = ( $input['if_hide_boxes'] == 1 ? 1 : 0 ); 
+	
+	if ( ! isset( $input['if_hide_search'] ) )
+		$input['if_hide_search'] = null;
+	$input['if_hide_search'] = ( $input['if_hide_search'] == 1 ? 1 : 0 ); 
+  
+  if ( ! isset( $input['if_hide_home_icon'] ) )
+		$input['if_hide_home_icon'] = null;
+	$input['if_hide_home_icon'] = ( $input['if_hide_home_icon'] == 1 ? 1 : 0 ); 
+  
   
      if ( ! isset( $input['if_hide_link'] ) )
 		$input['if_hide_link'] = null;
