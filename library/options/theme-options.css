@@ -8,9 +8,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 */
 
+#footer {position: relative;}
 input.button-primary {font-size:15px !important;}
 
 /* Layout helpers
+
+
 
 ---------------------------------*/
 .ui-helper-hidden { display: none; }

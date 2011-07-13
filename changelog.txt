@@ -2,6 +2,10 @@ iFeature Pro Changelog
 
 ****************************
 
+Version 1.1.8 (7-13-11)
+-Added Google + social icon.
+-Fixed a WordPress 3.2 related bug in update.php.
+
 Version 1.1.7 (7-6-11)
 -Adjusted theme option CSS to eliminate WordPress 3.2 footer styling conflict.
 -Security fix in comments.php removing $_SERVER variable statement.
