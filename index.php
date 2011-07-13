@@ -16,7 +16,6 @@
 	
 	<?php 
 		$hideslider = $options['if_show_slider_blog'];
-		$sliderplacement = $options['if_slider_placement'];
 		$share = $options['if_hide_share'];
 		$tags = $options['if_hide_tags'];
 		$comments = $options['if_hide_comments'];
