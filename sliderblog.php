@@ -13,20 +13,21 @@
     $tmp_query = $wp_query; 
 	$options = get_option('ifeature') ; 
 	$root = get_template_directory_uri(); 
-	$size = get_post_meta($post->ID, 'page_slider_size' , true);
-	$size2 = get_post_meta($post->ID, 'page_sidebar' , true);
-	$type = get_post_meta($post->ID, 'page_slider_type' , true);
-	$category = get_post_meta($post->ID, 'slider_blog_category' , true);
+	$size = $options['if_slider_size'];
+	$size2 = $options['if_blog_sidebar'];
+	$type = $options['if_slider_type']; 
+	$blogcategory = $options['if_slider_category']; 
+	$customcategory = $options['if_customslider_category'];
 
 /* End define global variables. */	
 
 /* Define TimThumb default height and widths. */		
 
-	if ($size == "0") {
+	if ($size == "full") {
 		$timthumb = 'h=330&w=980';
 	}
 
-	elseif ($size2 == "2" OR $size2 == "3") {
+	elseif ($size2 == "two-right" OR $size2 == "right-left") {
 		$timthumb = 'h=330&w=480';
 	}
 
@@ -48,16 +49,12 @@
 
 /* Query posts based on theme/meta options */
 
-	if ( $type == '1') {
-    	query_posts( array ('post_type' => 'if_custom_slides', 'showposts' => 20,  'slide_categories' => get_post_meta($post->ID, 'slider_category' , true)  ) );
+	if ( $type == 'custom') {
+    	query_posts( array ('post_type' => 'if_custom_slides', 'showposts' => 20,  'slide_categories' => $customcategory  ) );
     }
     	
-    elseif ($type == '' && $usecustomslides = 'posts') {
-    	query_posts( array ('post_type' => 'if_custom_slides', 'showposts' => 20,  'slide_categories' => get_post_meta($post->ID, 'slider_category' , true)  ) );
-    }
-    
     else {
-    	query_posts('category_name='.$category.'&showposts=50');
+    	query_posts('category_name='.$options['if_slider_category'].'&showposts=50');
 	}
 
 /* End query posts based on theme/meta options */
@@ -115,7 +112,7 @@
 
 	    	/* Controls slide link */
 
-	    	if ( $type == '1') {
+	    	if ( $type == 'custom') {
 	    		$link = get_post_meta($post->ID, 'slider_url' , true);
 	    	}
 
@@ -127,7 +124,7 @@
 	    	
 	    	/* Establish slider text */
 	    	
-	    	if ($type == '1') {
+	    	if ($type == 'custom') {
 	    		$text = $customtext;
 	    	}
 	    	
@@ -144,17 +141,12 @@
 	    		$thumbnail = "$root/library/tt/timthumb.php?src=$customimage&a=c&h=30&w=50";
 	    	}
 
-	    	elseif ($customimage == '' && $size2 == "1" && $size != "0"){
+	    	elseif ($customimage == '' && $size2 == "right" && $size != "full"){
 	    		$image = "$root/images/pro/ifeatureprosmall.png";
 	    		$thumbnail = "$root/images/pro/ifeatureprothumb.jpg";
 	    	}
 
-	    	elseif ($customimage == '' && $size2 == '4' && $size != "0"){
-	    		$image = "$root/images/pro/ifeatureprosmall.png";
-	    		$thumbnail = "$root/images/pro/ifeatureprothumb.jpg";
-	    	}
-
-	    	elseif ($customimage == '' && $size2 == "2" && $size != "0" OR $customimage == '' && $size2 == "3" && $size != "0"){
+	    	elseif ($customimage == '' && $size2 == "two-right" OR $customimage == '' && $size2 == "right-left"){
 	    		$image = "$root/images/pro/ifeaturepro480.png";
 	    		$thumbnail = "$root/images/pro/ifeatureprothumb.jpg";
 	    	}
@@ -225,11 +217,11 @@
 
 /* Define slider width variable */ 
 
-	if ($size == '1' && $size2 != '2' AND $size2 != '3') {
+	if ($size == 'half' && $size2 != 'two-right' AND $size2 != 'right-left') {
 	  	$csWidth = '640';
 	}		
 
-	elseif ($size2 == '2' && $size != '0' OR $size2 == '3' && $size != '0') {
+	elseif ($size2 == 'right-left' && $size != 'full' OR $size2 == 'two-right' && $size != 'full') {
 		$csWidth = '480';
 	}  	
 

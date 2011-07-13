@@ -207,6 +207,7 @@ echo '<style type="text/css">';
 }
 add_action( 'wp_head', 'ifeature_add_posttitle_color');
 
+
 /*
 Callout BG Color
 */
@@ -214,23 +215,55 @@ Callout BG Color
 function ifeature_add_calloutbg_color() {
 
 $options = get_option('ifeature');
+$root = get_template_directory_uri(); 
 
-if (isset($options['if_callout_background_color']) == "") 
+if ($options['if_callout_background_color'] == "" OR $options['if_callout_background_color'] == 'default') { 
+			$calloutbg = 'F8F8F8';
+			
+		echo '<style type="text/css">';
+		echo "#calloutwrap {background: #F8F8F8;}";
+		echo '</style>';	
+		
+		}
+		
+		else {
+			$calloutbg = $options['if_callout_background_color']; 
+			
+	
+		echo '<style type="text/css">';
+		echo "#calloutwrap {background: url($root/images/pro/callout$calloutbg.png) no-repeat top center;}";
+		echo '</style>';
+		
+		}
+
+}
+add_action( 'wp_head', 'ifeature_add_calloutbg_color');
+
+
+/*
+Custom Callout BG Color
+*/
+
+function ifeature_add_custom_calloutbg_color() {
+
+$options = get_option('ifeature');
+
+if ($options['if_callout_custom_background_color'] == "" AND $options['if_enable_custom_calloutbg'] == '1') 
 			$callbg = 'F8F8F8';
 
 
-		else 
-			$callbg = $options['if_callout_background_color']; 
+		elseif  ($options['if_callout_custom_background_color'] != "" AND $options['if_enable_custom_calloutbg'] == '1')
+			$callbg = $options['if_callout_custom_background_color']; 
 			
 	
-echo '<style type="text/css">';
+		echo '<style type="text/css">';
 		echo "#calloutwrap {background: #$callbg;}";
 		echo '</style>';
 
 
 
 }
-add_action( 'wp_head', 'ifeature_add_calloutbg_color');
+add_action( 'wp_head', 'ifeature_add_custom_calloutbg_color');
 
 /*
 Callout Button Color
@@ -344,6 +377,8 @@ echo '<style type="text/css">';
 }
 add_action( 'wp_head', 'ifeature_add_footer_color');
 
+
+
 /*
 Menu Font
 */
@@ -369,6 +404,84 @@ Menu Font
 
 }
 add_action( 'wp_head', 'ifeature_add_menu_font');
+
+/*
+Menu Font
+*/
+ 
+ function ifeature_widget_titel_bg() {
+
+
+	$options = get_option('ifeature');	
+	$root = get_template_directory_uri();
+	
+	if ($options['if_widget_title_bg'] == "1") {
+		
+		echo '<style type="text/css">';
+		echo ".box-widget-title {background: url($root/images/wtitlebg.png) no-repeat center top; margin: -6px -5px 5px -5px;}";
+		echo ".sidebar-widget-title {background: url($root/images/wtitlebg.png) no-repeat center top; margin: -6px -5px 5px -5px;}";
+		echo '</style>';
+
+	
+	}
+}
+add_action( 'wp_head', 'ifeature_widget_titel_bg');
+
+/*
+Feature Caption Style
+*/
+
+function ifeature_slider_caption_style() {
+
+		$options = get_option('ifeature');
+		
+		if ($options['if_caption_style'] == "right")  {
+			
+
+		echo '<style type="text/css">';
+		echo ".nivo-caption {position: relative; float: right; height: 330px; width: 320px;}";
+		echo '</style>';
+
+		}
+		
+		if ($options['if_caption_style'] == "left") {
+			
+			
+		echo '<style type="text/css">';
+		echo ".nivo-caption {height: 330px; width: 320px;}";
+		echo '</style>';	
+
+		}
+
+
+}
+add_action( 'wp_head', 'ifeature_slider_caption_style');
+
+/*
+Hide Slider Navigation
+*/
+
+function ifeature_hide_slider_navigation() {
+
+		$options = get_option('ifeature');
+		
+		if ($options['if_slider_nav'] == "none")  {
+			
+
+		echo '<style type="text/css">';
+		echo ".nivo-controlNav {display: none;}";
+		echo '</style>';
+
+		}
+		
+
+}
+add_action( 'wp_head', 'ifeature_hide_slider_navigation');
+
+$select_callout_background = array(
+	'0' => array('value' => 'default','label' => __('iFeature 2.0 (default)' )),'1' => array('value' => 'Blue','label' => __('Blue')), '2' => array('value' => 'Grey','label' => __('Grey')),'3' => array('value' => 'Orange','label' => __('Orange')),'4' => array('value' => 'Pink','label' => __('Pink')),'5' => array('value' => 'Red','label' => __('Red')),
+
+);
 
 $select_slider_caption = array(
 	'0' => array('value' => 'bottom','label' => __('Bottom (default)' )),'1' => array('value' => 'left','label' => __('Left')), '2' => array('value' => 'right','label' => __('Right')),
@@ -530,6 +643,11 @@ array( "name" => "Hide the Boxes Section",
       "type" => "checkbox",  
     "std" => "false"),
 
+array( "name" => "Enable widget title background",  
+    "desc" => "Check this box to hide enable the classic widget title backgrounds.",  
+    "id" => $shortname."_widget_title_bg",  
+      "type" => "checkbox",  
+    "std" => "false"),
 
 array( "name" => "Site Title Color",  
     "desc" => "Use the color picker to select the site title color",  
@@ -775,23 +893,28 @@ array( "name" => "Callout Text",
     "desc" => "Enter callout text, you can use HTML.",  
     "id" => $shortname."_callout_text",  
     "type" => "textarea",
-    "std" => ""),
-
-array( "name" => "Callout Image",  
-    "desc" => "Enter HTML to display call out image (max-height: 60px, max-width 180px, you can use callout.psd).",  
-    "id" => $shortname."_callout_img",  
-    "type" => "upload4",
-    "std" => ""),
-    
+    "std" => ""),    
 array( "name" => "Callout Button Link",  
     "desc" => "Enter a URL for the Callout Button's link.",  
     "id" => $shortname."_callout_button_link",  
     "type" => "text",
     "std" => ""),
     
+array( "name" => "Custom Callout Button",  
+    "desc" => "Use the image uploader or enter your own URL into the input field to use a custom callout button.",  
+    "id" => $shortname."_custom_callout_button",  
+    "type" => "upload4",  
+    "std" => ""),     
+    
 array( "name" => "Callout Background Color",  
-    "desc" => "Use the color picker to select the callout section background color",  
+    "desc" => "Select your callout section background color (default is iFeature Pro 2.0)",  
     "id" => $shortname."_callout_background_color",  
+      "type" => "select13",  
+    "std" => "false"),
+    
+array( "name" => "Custom Callout Background Color",  
+    "desc" => "Use the color picker to select the callout section background color",  
+    "id" => $shortname."_callout_custom_background_color",  
       "type" => "color5",  
     "std" => "false"),
     
@@ -858,13 +981,7 @@ array( "name" => "Choose the slider navigation:",
     "desc" => "(Default is dots)",  
     "id" => $shortname."_slider_nav",  
     "type" => "select10",  
-    "std" => ""),    
-    
-array( "name" => "Hide the navigation:",  
-    "desc" => "Check to disable the slider navigation",  
-    "id" => $shortname."_slider_navigation",    
-   	"type" => "checkbox",
-        "std" => "false"),   
+    "std" => ""),     
   
 
 array( "type" => "close"),   
@@ -932,7 +1049,7 @@ array( "type" => "close-tab"),
  * Create the options page
  */
 function theme_options_do_page() {
-	global $themename, $shortname, $optionlist,  $select_menu_color, $select_font, $select_slider_effect, $select_sidebar_type, $select_slider_caption, $select_slider_navigation, $select_slider_size, $select_slider_type, $select_slider_placement;
+	global $themename, $shortname, $optionlist,  $select_menu_color, $select_font, $select_slider_effect, $select_sidebar_type, $select_slider_caption, $select_callout_background, $select_slider_navigation, $select_slider_size, $select_slider_type, $select_slider_placement;
   
 
 	if ( ! isset( $_REQUEST['updated'] ) ) {
@@ -1186,7 +1303,7 @@ case 'upload4':
     <?php settings_fields('if_options'); ?>
     <?php do_settings_sections('if'); 
     
-    $file3 = $options['file4'];
+    $file4 = $options['file4'];
     
     if ($file4 != ''){
     
@@ -1397,14 +1514,16 @@ case 'color5':
     <?php
 $options = get_option('ifeature');
 
-if (isset($options['if_callout_background_color']) == "")
+if (isset($options['if_callout_custom_background_color']) == "")
 			$picker = 'F8F8F8';
 			
 		else
-			$picker = $options['if_callout_background_color']; 
+			$picker = $options['if_callout_custom_background_color']; 
 ?>
 
-<input type="text" class="color{required:false}" id="ifeature[if_callout_background_color]" name="ifeature[if_callout_background_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
+<input type="checkbox" id="ifeature[if_enable_custom_calloutbg]" name="ifeature[if_enable_custom_calloutbg]" value="1" <?php checked( '1', $options['if_enable_custom_calloutbg'] ); ?>> - Check this box to enable custom callout section background color.
+<br /><br />
+<input type="text" class="color{required:false}" id="ifeature[if_callout_custom_background_color]" name="ifeature[if_callout_custom_background_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
 
 <br /><br />
     
@@ -2259,6 +2378,43 @@ Or enter your own font below (Google Fonts with more than one word format as fol
 <?php
 break;
 
+case 'select13':
+?>
+<tr>
+<td width="15%" rowspan="2" valign="middle"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></td>
+<td width="85%"><select style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>">
+
+<?php
+								$selected = $options[$value['id']];
+								$p = '';
+								$r = '';
+
+								foreach ( $select_callout_background  as $option ) {
+									$label = $option['label'];
+									if ( $selected == $option['value'] ) // Make default first in list
+										$p = "\n\t<option style=\"padding-right: 10px;\" selected='selected' value='" . esc_attr( $option['value'] ) . "'>$label</option>";
+									else
+										$r .= "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . "'>$label</option>";      
+								}
+								echo $p . $r;   
+							?>    
+
+</select>
+
+
+</td>
+</tr> 
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+<?php
+break;
+
+ 
+
  
 case "checkbox":
 ?>
@@ -2305,7 +2461,7 @@ case "checkbox":
 
 
 function theme_options_validate( $input ) {
-	global  $select_menu_color, $select_font, $select_slider_effect, $select_slider_type, $select_sidebar_type, $select_slider_caption, $select_slider_navigation, $select_slider_size, $select_slider_placement;
+	global  $select_menu_color, $select_font, $select_slider_effect, $select_slider_type, $select_sidebar_type, $select_slider_caption, $select_callout_background, $select_slider_navigation, $select_slider_size, $select_slider_placement;
 
 	// Assign checkbox value
 	
@@ -2408,10 +2564,17 @@ function theme_options_validate( $input ) {
 	$input['if_enable_twitter'] = ( $input['if_enable_twitter'] == 1 ? 1 : 0 ); 
   
   
+	  if ( ! isset( $input['if_enable_custom_calloutbg'] ) )
+		$input['if_enable_custom_calloutbg'] = null;
+	$input['if_enable_custom_calloutbg'] = ( $input['if_enable_custom_calloutbg'] == 1 ? 1 : 0 );   
+  
      if ( ! isset( $input['if_show_slider_blog'] ) )
 		$input['if_show_slider_blog'] = null;
 	$input['if_show_slider_blog'] = ( $input['if_show_slider_blog'] == 1 ? 1 : 0 ); 
 	
+	     if ( ! isset( $input['if_widget_title_bg'] ) )
+		$input['if_widget_title_bg'] = null;
+	$input['if_widget_title_bg'] = ( $input['if_widget_title_bg'] == 1 ? 1 : 0 ); 
 	
   	// Strip HTML from certain options
   	
@@ -2463,7 +2626,7 @@ if ($_FILES['if_favfilename']['name'] != '') {
    
      if ($_FILES['if_calloutfilename']['name'] != '') {
        $overrides = array('test_form' => false); 
-       $file3 = wp_handle_upload($_FILES['if_calloutfilename'], $overrides);
+       $file4 = wp_handle_upload($_FILES['if_calloutfilename'], $overrides);
        $input['file4'] = $file4;
    } elseif(isset($_POST['if_calloutfilename_text']) && $_POST['if_calloutfilename_text'] != '') {
 	   $input['file4'] = array('url' => $_POST['if_calloutfilename_text']);

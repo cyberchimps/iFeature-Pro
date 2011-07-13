@@ -48,8 +48,8 @@ $options = get_option('ifeature') ;
 		         echo ' - page '. $paged; }
 		   ?>
 	</title>	
-	<?php  $favicon = $options['if_favicon']; ?>
-	<link rel="shortcut icon" href="<?php echo stripslashes($favicon); ?>" type="image/x-icon" />
+	<?php  $favicon = $options['file2']; ?>
+	<link rel="shortcut icon" href="<?php echo stripslashes($favicon['url']); ?>" type="image/x-icon" />
 	
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
 	

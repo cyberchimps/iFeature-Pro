@@ -4,7 +4,7 @@ Theme URI: http://cyberchimps.com/ifeaturepro
 Description: iFeature Pro: A Premium WordPress Theme designed by CyberChimps.com featuring customizable theme options, an aesthetically pleasing design with five color choices, a feature slider, callout section, dynamic header for custom logo, social icons, and contact section, widgetized sidebar and footer, typography including Google Fonts, and multiple template choices.
 Author: CyberChimps
 Author URI: http://cyberchimps.com
-Version: 1.2 beta
+Version: 2.0 RC1
 Tags: white, light, silver, two-columns, fixed-width, custom-header, custom-menu, threaded-comments, sticky-post
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -381,10 +381,8 @@ label[for="comment"] {display: block;}
 }
 
 .sidebar-widget-title {
-	color: #5a5a5a;
-	background: url(./images/wtitlebg.png) no-repeat center top;
+	color: #444;
 	height: 25px;
-	margin: -6px -5px 5px -5px;
 	padding: 0 5px 0 5px;
 	font-size: 16px;
 	font-weight: bold;
@@ -512,6 +510,12 @@ li { padding-left: 5px; }
 	text-align: center;
 }
 
+.calloutimg{
+	padding-top: 10px;
+	width: 190px;
+	float:right;
+}
+
 .calloutbutton:hover{
 	background: #222;
 }
@@ -556,6 +560,7 @@ li { padding-left: 5px; }
 	-khtml-border-radius: 5px;
 	-webkit-border-radius: 5px;
 }
+
 
 .box-widget-title {
 	color: #444;

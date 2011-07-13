@@ -8,7 +8,7 @@
 	
 */
 	$options = get_option('ifeature') ;  
-
+	$customcalloutbutton = $options['file4'];
 
 ?>
 
@@ -38,8 +38,14 @@
 				else
 				$calloutimglink = $options['if_callout_image_link']; ?>
 	
-		
+		<?php if ($customcalloutbutton == ''): ?>
 		<div class="calloutbutton">
 		<a href="<?php echo $calloutimglink ?>"><?php echo $calloutbuttontext ;?></a>
 		</div>
+		<?php endif;?>
+		<?php if ($customcalloutbutton != ''): ?>
+		<div class="calloutimg">
+		<a href="<?php echo $calloutimglink ?>"><img src="<?php echo stripslashes($customcalloutbutton['url']);?>" alt="Callout" /></a>
+		</div>
+		<?php endif;?>
 </div><!--end calloutwrap-->

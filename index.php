@@ -36,7 +36,7 @@
 	
 		<?php if ($options[$themeslug.'_show_slider_blog'] == '1' && $blogslidersize == "full"): ?>
 		<div id = "slider-wrapper">
-			<?php get_template_part('nivoslider', 'index' ); ?>
+			<?php get_template_part('sliderblog', 'index' ); ?>
 			</div>
 		<?php endif;?>
 		
@@ -65,7 +65,7 @@
 	<?php if ($options[$themeslug.'_show_slider_blog'] == '1' && $blogslidersize == "half"): ?>
 
 		<div id = "slider-wrapper">
-			<?php get_template_part('nivoslider', 'page' ); ?>
+			<?php get_template_part('sliderblog', 'page' ); ?>
 		</div>
 	<?php endif;?>
 

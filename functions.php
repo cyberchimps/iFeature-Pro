@@ -37,6 +37,8 @@ set_post_thumbnail_size( 100, 100, true );
 	
 // Load jQuery
 	if ( !is_admin() ) {
+	   wp_deregister_script('jquery');
+	   wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"), false);
 	   wp_enqueue_script('jquery');
 	}
 
@@ -358,7 +360,7 @@ add_action( 'wp_head', 'ifeature_add_scripts',0);
     	
     	if ( function_exists('register_sidebar') )
 	register_sidebar(array(
-	'name' => 'Box1',
+	'name' => 'Box Left',
 	'before_widget' => '<div class="box1">',
 	'after_widget' => '</div>',
 	'before_title' => '<h3 class="box-widget-title">',
@@ -366,7 +368,7 @@ add_action( 'wp_head', 'ifeature_add_scripts',0);
 	));
 	if ( function_exists('register_sidebar') )
 	register_sidebar(array(
-	'name' => 'Box2',
+	'name' => 'Box Middle',
 	'before_widget' => '<div class="box2">',
 	'after_widget' => '</div>',
 	'before_title' => '<h3 class="box-widget-title">',
@@ -374,7 +376,7 @@ add_action( 'wp_head', 'ifeature_add_scripts',0);
 	));
 	if ( function_exists('register_sidebar') )
 	register_sidebar(array(
-	'name' => 'Box3',
+	'name' => 'Box Right',
 	'before_widget' => '<div class="box3">',
 	'after_widget' => '</div>',
 	'before_title' => '<h3 class="box-widget-title">',
