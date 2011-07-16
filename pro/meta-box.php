@@ -27,6 +27,7 @@ function rw_delete_file() {
 	die();
 }
 
+
 /**
  * Meta Box class
  */
@@ -49,6 +50,7 @@ class RW_Meta_Box {
 
 		// check for some special fields and add needed actions for them
 		$this->check_field_upload();
+		$this->check_field_color();
 	
 	}
 
@@ -110,6 +112,46 @@ class RW_Meta_Box {
 	}
 
 	/******************** END UPLOAD **********************/
+	
+	/******************** BEGIN COLOR PICKER **********************/
+
+	// Check field color
+	function check_field_color() {
+		if ($this->has_field('color') && $this->is_edit_page()) {
+			wp_enqueue_style('farbtastic');									// enqueue built-in script and style for color picker
+			wp_enqueue_script('farbtastic');
+			add_action('admin_head', array(&$this, 'add_script_color'));	// add our custom script for color picker
+		}
+	}
+
+	// Custom script for color picker
+	function add_script_color() {
+		$ids = array();
+		foreach ($this->_fields as $field) {
+			if ('color' == $field['type']) {
+				$ids[] = $field['id'];
+			}
+		}
+		echo '
+		<script type="text/javascript">
+		jQuery(document).ready(function($){
+		';
+		foreach ($ids as $id) {
+			echo "
+			$('#picker-$id').farbtastic('#$id');
+			$('#select-$id').click(function(){
+				$('#picker-$id').toggle();
+				return false;
+			});
+			";
+		}
+		echo '
+		});
+		</script>
+		';
+	}
+
+	/******************** END COLOR PICKER **********************/
 
 	
 	/******************** BEGIN META BOX PAGE **********************/
@@ -604,6 +646,7 @@ function ifeature_initialize_the_meta_boxes() {
 						'type' => 'checkbox',
 						'std' => ''
 					),
+					
 
 				)
 			)
@@ -639,6 +682,14 @@ function ifeature_initialize_the_meta_boxes() {
 						'id' => $prefix . 'hidetitle',
 						'type' => 'checkbox',
 						'std' => ''
+					),
+					
+					
+					array(
+						'name' => 'Color test',
+						'desc' => 'Color picker',
+						'id' => 'colortest',
+						'type' => 'color'
 					),
 				)
 			)
@@ -693,6 +744,14 @@ function ifeature_initialize_the_meta_boxes() {
 				'options' => array('--Select One--', 'Right', 'Two Right', 'Right and Left', 'None'),
 				'std' => ''
 			 ),	
+			 
+			 
+			array(
+				'name' => 'Color test',
+				'desc' => 'Color picker',
+				'id' => 'colortest',
+				'type' => 'color'
+			),
 
 			)),
 
@@ -773,6 +832,7 @@ function ifeature_initialize_the_meta_boxes() {
 						'type' => 'text',
 						'std' => ''
 					),
+					
 			
 				)
 			)

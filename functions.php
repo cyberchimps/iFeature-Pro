@@ -48,7 +48,7 @@ set_post_thumbnail_size( 100, 100, true );
 */   
 function ifeature_render_ie_pie() { ?>
 <style type="text/css" media="screen">
-#header li a, .postmetadata, .post_container, .wp-caption, .sidebar-widget-style, .sidebar-widget-title, .boxes, .box1, .box2, .box3, .box-widget-title  {
+#header li a, .postmetadata, .post_container, .wp-caption, .sidebar-widget-style, .sidebar-widget-title, .boxes, .box1, .box2, .box3, .box-widget-title, #calloutwrap, .calloutbutton  {
   behavior: url('<?php bloginfo('stylesheet_directory'); ?>/library/pie/PIE.htc');
 }
 </style>
