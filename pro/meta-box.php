@@ -217,7 +217,7 @@ class RW_Meta_Box {
 
 	function show_field_text($field, $meta) {
 		$this->show_field_begin($field, $meta);
-		echo "<input type='text' name='{$field['id']}' id='{$field['id']}' value='$meta' size='30' style='width:97%' />";
+		echo "<input type='text' name='{$field['id']}' id='{$field['id']}' value='$meta' size='30' style='width:60%' />";
 		$this->show_field_end($field, $meta);
 	}
 
@@ -771,14 +771,14 @@ function ifeature_initialize_the_meta_boxes() {
 				'std' => ''
 			 ),
 
-			 array(
+			array(
 				'name' => 'Select Slider Type',
 				'desc' => 'Select the type of slider',
 				'id' => 'page_slider_type',
 				'type' => 'select',
 				'options' => array('Blog Posts', 'Custom Slides'),
 				'std' => ''
-			 ),
+			),
 
 			array(
 				'name' => 'Blog Post Category',
@@ -787,7 +787,7 @@ function ifeature_initialize_the_meta_boxes() {
 				'type' => 'select',
 				'options' => $blogoptions,
 				'std' => ''
-			 ),
+			),
 
 			array(
 				'name' => 'Custom Slide Category',
@@ -796,8 +796,58 @@ function ifeature_initialize_the_meta_boxes() {
 				'type' => 'select',
 				'options' => $slideroptions,
 				'std' => ''
-			 ),		 
-
+			),		
+			 
+			array(
+				'name' => 'Number of featured blog posts',
+				'desc' => 'Default is 5 (for blog posts only)',
+				'id' => 'slider_blog_posts_number',
+				'type' => 'text',
+				'std' => ''
+			), 
+	
+			array(
+				'name' => 'Slider Height',
+				'desc' => 'Default is 300',
+				'id' => 'slider_height',
+				'type' => 'text',
+				'std' => ''
+			),
+			
+			array(
+				'name' => 'Slider Delay Time (in milliseconds)',
+				'desc' => 'Default is 3500',
+				'id' => 'slider_delay',
+				'type' => 'text',
+				'std' => ''
+			),
+			
+			array(
+				'name' => 'Select Slider Animation Type',
+				'desc' => 'Default is random',
+				'id' => 'page_slider_animation',
+				'type' => 'select',
+				'options' => array('Random (default)', 'Slice Down', 'Slice Down-Left', 'Slice Up', 'Slice Up-Left', 'Slice Up-Down', 'Slice Up-Down-Left', 'Fold', 'Fade', 'Slide In-Right', 'Slide In-Left', 'Box Random', 'Box Rain', 'Box Rain-Reverse', 'Box Rain-Grow', 'Box Rain-Grow-Reverse'),
+				'std' => ''
+			 ),
+			 
+			 array(
+				'name' => 'Select Slider Navigation Style',
+				'desc' => 'Default is dots',
+				'id' => 'page_slider_navigation_style',
+				'type' => 'select',
+				'options' => array('Dots (default)', 'Thumbnails', 'None'),
+				'std' => ''
+			 ),
+			 
+			 array(
+				'name' => 'Select Slider Caption Style',
+				'desc' => 'Default is bottom',
+				'id' => 'page_slider_caption_style',
+				'type' => 'select',
+				'options' => array('Bottom (default)', 'Left', 'Right'),
+				'std' => ''
+			 ),
 
 				)),
 
