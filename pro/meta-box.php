@@ -723,7 +723,7 @@ function ifeature_initialize_the_meta_boxes() {
 
 	$meta_boxes[] = array(
 
-		'title' => 'Page Meta Options',
+		'title' => 'iFeature Pro Page Options',
 		'pages' => array('page'),
 
 		'tabs' => array(
@@ -740,26 +740,19 @@ function ifeature_initialize_the_meta_boxes() {
 					),
 
 			array(
-				'name' => 'Select Sidebar Type',
+				'name' => 'Select Page Layout',
 				'desc' => 'Select your sidebar options',
 				'id' => 'page_sidebar',
 				'type' => 'select',
-				'options' => array('--Select One--', 'Right', 'Two Right', 'Right and Left', 'None'),
+				'options' => array('--Select One--', 'Sidebar Right (default)', 'Two Sidebar Right', 'Sidebar Right and Left', 'Full-Width', 'iFeature Pro Homepage'),
 				'std' => ''
 			 ),	
 
 
-			array(
-				'name' => 'Color test',
-				'desc' => 'Color picker',
-				'id' => 'colortest',
-				'type' => 'color'
-			),
-
 			)),
 
 			array(
-				'title' => "Slide Categories",
+				'title' => "iFeature Slider Options",
 				'fields' => array(
 					array(
 				'name' => 'Enable Feature Slider',
@@ -809,11 +802,10 @@ function ifeature_initialize_the_meta_boxes() {
 				)),
 
 
-
 			array(
-				'title' => 'SEO',
+				'title' => "SEO",
 				'fields' => array(
-					array(
+				array(
 						'name' => 'Title',
 						'desc' => 'Enter your title',
 						'id' => 'seo_title',
@@ -834,6 +826,75 @@ function ifeature_initialize_the_meta_boxes() {
 						'id' => 'seo_keywords',
 						'type' => 'text',
 						'std' => ''
+					),	 
+
+
+				)),
+
+
+			array(
+				'title' => 'Callout Section',
+				'fields' => array(
+				
+				array(
+						'name' => 'Enable Callout Section',
+						'desc' => 'Check this box to enable the Callout Section on this page',
+						'id' => 'enable_callout_section',
+						'type' => 'checkbox',
+						'std' => ''
+					),
+					
+				array(
+						'name' => 'Title',
+						'desc' => 'Enter your Callout Section title',
+						'id' => 'callout_title',
+						'type' => 'text',
+						'std' => ''
+					),
+					
+				array(
+						'name' => 'Callout Text',
+						'desc' => 'Enter your Callout Section text',
+						'id' => 'callout_text',
+						'type' => 'textarea',
+						'std' => ''
+					),
+					
+				array(
+						'name' => 'Callout Button URL',
+						'desc' => 'Enter the link for your Callout Button',
+						'id' => 'callout_url',
+						'type' => 'text',
+						'std' => ''
+					),
+				
+				array(
+						'name' => 'Custom Callout Button Image',
+						'desc' => 'Upload a custom Callout Buttom image here:',
+						'id' => $prefix . 'callout_image',
+						'type' => 'image',
+						'std' => ''
+					),
+				
+				array(
+						'name' => 'Custom Background Color',
+						'desc' => 'Use the color picker to select a custom background color for the Callout Section',
+						'id' => 'custom_callout_color',
+						'type' => 'color'
+					),
+
+				array(
+						'name' => 'Callout Text Color',
+						'desc' => 'Use the color picker to select the callout section text color',
+						'id' => 'custom_callout_text_color',
+						'type' => 'color'
+					),
+					
+				array(
+						'name' => 'Callout Button Color',
+						'desc' => 'Use the color picker to select the callout button color',
+						'id' => 'custom_callout_button_color',
+						'type' => 'color'
 					),
 
 
