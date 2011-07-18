@@ -51,7 +51,7 @@ class RW_Meta_Box {
 		// check for some special fields and add needed actions for them
 		$this->check_field_upload();
 		$this->check_field_color();
-	
+
 	}
 
 	/******************** BEGIN UPLOAD **********************/
@@ -112,7 +112,7 @@ class RW_Meta_Box {
 	}
 
 	/******************** END UPLOAD **********************/
-	
+
 	/******************** BEGIN COLOR PICKER **********************/
 
 	// Check field color
@@ -120,16 +120,17 @@ class RW_Meta_Box {
 		if ($this->has_field('color') && $this->is_edit_page()) {
 			wp_enqueue_style('farbtastic');									// enqueue built-in script and style for color picker
 			wp_enqueue_script('farbtastic');
-			add_action('admin_head', array(&$this, 'add_script_color'));	// add our custom script for color picker
 		}
 	}
 
 	// Custom script for color picker
 	function add_script_color() {
 		$ids = array();
-		foreach ($this->_fields as $field) {
-			if ('color' == $field['type']) {
-				$ids[] = $field['id'];
+		foreach($this->tabs as $tab) {
+			foreach ($tab['fields'] as $field) {
+				if ('color' == $field['type']) {
+					$ids[] = $field['id'];
+				}
 			}
 		}
 		echo '
@@ -153,7 +154,7 @@ class RW_Meta_Box {
 
 	/******************** END COLOR PICKER **********************/
 
-	
+
 	/******************** BEGIN META BOX PAGE **********************/
 
 	// Add meta box for multiple post types
@@ -168,7 +169,7 @@ class RW_Meta_Box {
 		global $post;
 
 		wp_nonce_field(basename(__FILE__), 'rw_meta_box_nonce');
-	
+
 		echo '<div class="metabox-tabs-div">';
 		echo '<ul class="metabox-tabs" id="metabox-tabs">';
 		foreach($this->tabs as $counter => $tab) {
@@ -182,6 +183,8 @@ class RW_Meta_Box {
 			$this->render_fields($tab['fields'], "tab{$counter}");
 		}
 		echo '</div>';
+
+		$this->add_script_color();
 	}
 
 	function render_fields($fields, $tab = '') {
@@ -258,7 +261,7 @@ class RW_Meta_Box {
 		global $post;
 
 		if (!is_array($meta)) $meta = (array) $meta;
-		
+
 		$this->show_field_begin($field, $meta);
 		echo "{$field['desc']}<br />";
 
@@ -269,7 +272,7 @@ class RW_Meta_Box {
 				'post_type' => 'attachment',
 				'post_parent' => $post->ID
 			));
-			
+
 			$nonce = wp_create_nonce('rw_ajax_delete_file');
 
 			echo '<div style="margin-bottom: 10px"><strong>' . _('Uploaded files') . '</strong></div>';
@@ -370,14 +373,14 @@ class RW_Meta_Box {
 
 	// Save data from meta box
 	function save($post_id) {
-	
+
 		if (isset($_POST['post_type'])) {
 			$post_type = $_POST['post_type'];
 		}
 		else {
 		$post_type = 'null';
 		}
-		
+
 		$post_type_object = get_post_type_object($post_type);
 
 		if ((defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)						// check autosave
@@ -556,10 +559,10 @@ class RW_Meta_Box {
  * Add field type: 'taxonomy'
  */
 class RW_Meta_Box_Taxonomy extends RW_Meta_Box {
-	
+
 	function add_missed_values() {
 		parent::add_missed_values();
-		
+
 		// add 'multiple' option to taxonomy field with checkbox_list type
 		foreach($this->tabs as $keytab => $tab) {
 			foreach ($tab['fields'] as $key => $field) {
@@ -569,18 +572,18 @@ class RW_Meta_Box_Taxonomy extends RW_Meta_Box {
 			}
 		}
 	}
-	
+
 	// show taxonomy list
 	function show_field_taxonomy($field, $meta) {
 		global $post;
-		
+
 		if (!is_array($meta)) $meta = (array) $meta;
-		
+
 		$this->show_field_begin($field, $meta);
-		
+
 		$options = $field['options'];
 		$terms = get_terms($options['taxonomy'], $options['args']);
-		
+
 		// checkbox_list
 		if ('checkbox_list' == $options['type']) {
 			foreach ($terms as $term) {
@@ -590,13 +593,13 @@ class RW_Meta_Box_Taxonomy extends RW_Meta_Box {
 		// select
 		else {
 			echo "<select name='{$field['id']}" . ($field['multiple'] ? "[]' multiple='multiple' style='height:auto'" : "'") . ">";
-		
+
 			foreach ($terms as $term) {
 				echo "<option value='$term->slug'" . selected(in_array($term->slug, $meta), true, false) . ">$term->name</option>";
 			}
 			echo "</select>";
 		}
-		
+
 		$this->show_field_end($field, $meta);
 	}
 }
@@ -646,7 +649,7 @@ function ifeature_initialize_the_meta_boxes() {
 						'type' => 'checkbox',
 						'std' => ''
 					),
-					
+
 
 				)
 			)
@@ -683,8 +686,8 @@ function ifeature_initialize_the_meta_boxes() {
 						'type' => 'checkbox',
 						'std' => ''
 					),
-					
-					
+
+
 					array(
 						'name' => 'Color test',
 						'desc' => 'Color picker',
@@ -705,7 +708,7 @@ function ifeature_initialize_the_meta_boxes() {
 		$slideroptions[$term->slug] = $term->name;
 
 	}
-	
+
 	$terms2 = get_terms('category', 'hide_empty=0');
 
 	$blogoptions = array();
@@ -719,12 +722,12 @@ function ifeature_initialize_the_meta_boxes() {
 
 
 	$meta_boxes[] = array(
-		
+
 		'title' => 'Page Meta Options',
 		'pages' => array('page'),
 
 		'tabs' => array(
-		
+
 		array(
 				'title' => 'Page Options',
 				'fields' => array(
@@ -735,7 +738,7 @@ function ifeature_initialize_the_meta_boxes() {
 						'type' => 'checkbox',
 						'std' => ''
 					),
-					
+
 			array(
 				'name' => 'Select Sidebar Type',
 				'desc' => 'Select your sidebar options',
@@ -744,8 +747,8 @@ function ifeature_initialize_the_meta_boxes() {
 				'options' => array('--Select One--', 'Right', 'Two Right', 'Right and Left', 'None'),
 				'std' => ''
 			 ),	
-			 
-			 
+
+
 			array(
 				'name' => 'Color test',
 				'desc' => 'Color picker',
@@ -765,7 +768,7 @@ function ifeature_initialize_the_meta_boxes() {
 				'type' => 'checkbox',
 				'std' => ''
 			  ),
-			  
+
 			array(
 				'name' => 'Select Slider Size',
 				'desc' => 'Select the size of the slider',
@@ -774,7 +777,7 @@ function ifeature_initialize_the_meta_boxes() {
 				'options' => array('Full-Width', 'Half-Width'),
 				'std' => ''
 			 ),
-			 
+
 			 array(
 				'name' => 'Select Slider Type',
 				'desc' => 'Select the type of slider',
@@ -783,7 +786,7 @@ function ifeature_initialize_the_meta_boxes() {
 				'options' => array('Blog Posts', 'Custom Slides'),
 				'std' => ''
 			 ),
-			
+
 			array(
 				'name' => 'Blog Post Category',
 				'desc' => 'Select the blog post category you would like to use',
@@ -792,7 +795,7 @@ function ifeature_initialize_the_meta_boxes() {
 				'options' => $blogoptions,
 				'std' => ''
 			 ),
-			
+
 			array(
 				'name' => 'Custom Slide Category',
 				'desc' => 'Select the slide category you would like to use',
@@ -804,9 +807,9 @@ function ifeature_initialize_the_meta_boxes() {
 
 
 				)),
-			
-			
-			
+
+
+
 			array(
 				'title' => 'SEO',
 				'fields' => array(
@@ -824,7 +827,7 @@ function ifeature_initialize_the_meta_boxes() {
 						'type' => 'textarea',
 						'std' => ''
 					),
-					
+
 					array(
 						'name' => 'Keywords',
 						'desc' => 'Enter your keywords',
@@ -832,8 +835,8 @@ function ifeature_initialize_the_meta_boxes() {
 						'type' => 'text',
 						'std' => ''
 					),
-					
-			
+
+
 				)
 			)
 		)
