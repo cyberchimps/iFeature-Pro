@@ -14,12 +14,40 @@
 
 $themename = 'ifeature';
 $themeslug = 'if';
+$options = get_option($themename);
 
 function new_excerpt_more($more) {
-       global $post;
-	return '<a href="'. get_permalink($post->ID) . '"> <br /><br /> (Read More...)</a>';
+
+	global $themename, $themeslug, $options;
+    
+    if ($options[$themeslug.'_excerpt_link_text'] == '') {
+    	$linktext = '(Read More...)';
+    }
+    
+    else {
+    	$linktext = $options[$themeslug.'_excerpt_link_text'];
+    }
+    
+    global $post;
+	return '<a href="'. get_permalink($post->ID) . '"> <br /><br /> '.$linktext.'</a>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
+
+function new_excerpt_length($length) {
+
+	global $themename, $themeslug, $options;
+	
+	if ($options[$themeslug.'_excerpt_length'] == '') {
+    	$length = '55';
+    }
+    
+    else {
+    	$length = $options[$themeslug.'_excerpt_length'];
+    }
+
+	return $length;
+}
+add_filter('excerpt_length', 'new_excerpt_length');
 
 add_theme_support('automatic-feed-links');
 	if ( ! isset( $content_width ) )

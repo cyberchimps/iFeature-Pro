@@ -90,7 +90,7 @@ $sidebar = get_post_meta($post->ID, 'page_sidebar' , true);
 		</div><!--end content_padding-->
 		
 	</div><!--end content_left-->
-<?php if ($sidebar == "1"): ?>
+<?php if ($sidebar == "0"): ?>
 	<?php get_sidebar(); ?>
 	<?php endif;?>
 	<?php if ($sidebar == "2"): ?>

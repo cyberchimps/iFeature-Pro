@@ -731,20 +731,46 @@ function ifeature_initialize_the_meta_boxes() {
 		array(
 				'title' => 'Page Options',
 				'fields' => array(
-					array(
-						'name' => 'Hide Page Title',
-						'desc' => 'Check this box to hide the title on this page',
-						'id' => 'hide_page_title',
-						'type' => 'checkbox',
-						'std' => ''
-					),
+					
+			array(
+				'name' => 'Hide Page Title',
+				'desc' => 'Check this box to hide the title on this page',
+				'id' => 'hide_page_title',
+				'type' => 'checkbox',
+				'std' => ''
+			),
+			
+				
+			array(
+				'name' => 'Enable Callout Section',
+				'desc' => 'Check this box to enable the Callout Section on this page',
+				'id' => 'enable_callout_section',
+				'type' => 'checkbox',
+				'std' => ''
+			),
+			
+			array(
+				'name' => 'Enable Twitter Bar',
+				'desc' => 'Check this box to enable the Twitter Bar on this page',
+				'id' => 'enable_twitter_bar',
+				'type' => 'checkbox',
+				'std' => ''
+			),
 
+			array(
+				'name' => 'Enable Box Section',
+				'desc' => 'Check this box to enable the Box Section on this page',
+				'id' => 'enable_box_section',
+				'type' => 'checkbox',
+				'std' => ''
+			),
+			
 			array(
 				'name' => 'Select Page Layout',
 				'desc' => 'Select your sidebar options',
 				'id' => 'page_sidebar',
 				'type' => 'select',
-				'options' => array('--Select One--', 'Sidebar Right (default)', 'Two Sidebar Right', 'Sidebar Right and Left', 'Full-Width', 'iFeature Pro Homepage'),
+				'options' => array('Sidebar Right (default)', 'Two Sidebar Right', 'Sidebar Right and Left', 'Full-Width', 'iFeature Pro Homepage'),
 				'std' => ''
 			 ),	
 
@@ -885,14 +911,7 @@ function ifeature_initialize_the_meta_boxes() {
 			array(
 				'title' => 'Callout Section',
 				'fields' => array(
-				
-				array(
-						'name' => 'Enable Callout Section',
-						'desc' => 'Check this box to enable the Callout Section on this page',
-						'id' => 'enable_callout_section',
-						'type' => 'checkbox',
-						'std' => ''
-					),
+			
 					
 				array(
 						'name' => 'Title',

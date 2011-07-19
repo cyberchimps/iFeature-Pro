@@ -706,40 +706,16 @@ array( "id" => $shortname."-tab4",
 array( "type" => "open"),
 
 
-array( "name" => "Show Excerpts",  
-    "desc" => "Check this box to show post excerpts instead of full-length content.",  
-    "id" => $shortname."_show_excerpts",  
-      "type" => "checkbox",  
+array( "name" => "Post Excerpts",  
+    "desc" => "Use the following options to control excerpts.",  
+    "id" => $shortname."_excerpts",  
+      "type" => "excerpts",  
     "std" => "false"),
 
-array( "name" => "Hide the Author",  
-    "desc" => "Check this box to hide the author link on posts.",  
-    "id" => $shortname."_hide_author",  
-      "type" => "checkbox",  
-    "std" => "false"),
-    
-array( "name" => "Hide the Categories",  
-    "desc" => "Check this box to hide the categories link on posts.",  
-    "id" => $shortname."_hide_categories",  
-      "type" => "checkbox",  
-    "std" => "false"),
-        
-array( "name" => "Hide the Date",  
-    "desc" => "Check this box to hide the date link on posts.",  
-    "id" => $shortname."_hide_date",  
-      "type" => "checkbox",  
-    "std" => "false"),
-    
-array( "name" => "Hide the Comments",  
-    "desc" => "Check this box to hide the comments link on posts.",  
-    "id" => $shortname."_hide_comments",  
-      "type" => "checkbox",  
-    "std" => "false"),
-    
-array( "name" => "Hide the Share Icons",  
-    "desc" => "Check this box to hide the share icons on posts.",  
-    "id" => $shortname."_hide_share",  
-      "type" => "checkbox",  
+array( "name" => "Hide Post Elements",  
+    "desc" => "Use the following checkboxes to hide various post elements.",  
+    "id" => $shortname."_hide_post_elements",  
+    "type" => "post",  
     "std" => "false"),
 
 array(  "name" => "Show Facebook Like Button",
@@ -747,12 +723,6 @@ array(  "name" => "Show Facebook Like Button",
         "id" => $shortname."_show_fb_like",
         "type" => "checkbox",
         "std" => "false"),  
-    
-array( "name" => "Hide the Tags",  
-    "desc" => "Check this box to hide the tags link on posts.",  
-    "id" => $shortname."_hide_tags",  
-      "type" => "checkbox",  
-    "std" => "false"),
     
 array( "name" => "Show the iFeature Slider",  
     "desc" => "Check this box to display the iFeature Slider on your blog page.",  
@@ -789,19 +759,7 @@ array( "name" => "Show posts from custom slide category:",
     "id" => $shortname."_customslider_category",  
     "type" => "select7",  
     "std" => ""),
-
-array( "type" => "close"),
-array( "type" => "close-tab"),
-
-
-//SEO
-
-array( "id" => $shortname."-tab5",
-	"type" => "open-tab"),
- 
-array( "type" => "open"),
-
-
+    
 array( "name" => "Home Description",  
     "desc" => "Enter the META description of your homepage here.",  
     "id" => $shortname."_home_description",  
@@ -819,6 +777,20 @@ array( "name" => "Optional Home Title",
     "id" => "if_home_title",  
     "type" => "text",  
     "std" => ""),
+
+array( "type" => "close"),
+array( "type" => "close-tab"),
+
+
+//SEO
+
+array( "id" => $shortname."-tab5",
+	"type" => "open-tab"),
+ 
+array( "type" => "open"),
+
+
+
 
 
 array( "type" => "close"),
@@ -1293,7 +1265,92 @@ case 'upload4':
 <?php break; 
 
 
+case 'excerpts':  
+?>  
+  
+<tr>
+
+    <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
+    <td width="85%">
+    <br />
+    <input type="checkbox" id="ifeature[if_show_excerpts]" name="ifeature[if_show_excerpts]" value="1" <?php checked( '1', $options['if_show_excerpts'] ); ?>> - Show Excerpts
+<br /><br />
+
+	<?php
+		if (isset($options['if_excerpt_link_text']) == "")
+			$textlink = '(Read More...)';
+			
+		else
+			$textlink = $options['if_excerpt_link_text']; 
+	?>
+	
+   <input type="text" id="ifeature[if_excerpt_link_text]" name="ifeature[if_excerpt_link_text]" value="<?php echo $textlink ;?>"> - Excerpt Link Text
+<br /><br />
+
+	<?php
+		if (isset($options['if_excerpt_length']) == "")
+			$length = '80';
+			
+		else
+			$length = $options['if_excerpt_length']; 
+	?>
+
+     <input type="text" id="ifeature[if_excerpt_length]" name="ifeature[if_excerpt_length]" value="<?php echo $length ;?>" > - Excerpt Character Length
+<br /><br />
+
+</td>
+  </tr>
  
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+
+<?php
+break;
+
+
+case 'post':  
+?>  
+  
+<tr>
+
+    <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
+    <td width="85%">
+    <br />
+    <input type="checkbox" id="ifeature[if_hide_author]" name="ifeature[if_hide_author]" value="1" <?php checked( '1', $options['if_hide_author'] ); ?>> - Author
+<br /><br />
+
+   <input type="checkbox" id="ifeature[if_hide_categories]" name="ifeature[if_hide_categories]" value="1" <?php checked( '1', $options['if_hide_categories'] ); ?>> - Categories
+<br /><br />
+
+   <input type="checkbox" id="ifeature[if_hide_date]" name="ifeature[if_hide_date]" value="1" <?php checked( '1', $options['if_hide_date'] ); ?>> - Date
+<br /><br />
+
+   <input type="checkbox" id="ifeature[if_hide_comments]" name="ifeature[if_hide_comments]" value="1" <?php checked( '1', $options['if_hide_comments'] ); ?>> - Comments
+<br /><br />
+
+   <input type="checkbox" id="ifeature[if_hide_share]" name="ifeature[if_hide_share]" value="1" <?php checked( '1', $options['if_hide_share'] ); ?>> - Share
+<br /><br />
+
+   <input type="checkbox" id="ifeature[if_hide_tags]" name="ifeature[if_hide_tags]" value="1" <?php checked( '1', $options['if_hide_tags'] ); ?>> - Tags
+<br /><br />
+
+</td>
+  </tr>
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+
+<?php
+break;
+ 
+
+
 case 'twitterbar':  
 ?>  
   
