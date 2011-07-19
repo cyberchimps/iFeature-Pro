@@ -3,7 +3,7 @@
 
 	Section: Callout
 	Authors: Trent Lapinski, Tyler Cunningham
-	Description: Creates the call out section.
+	Description: Creates the Callout Section.
 	Version: 2.0
 	
 */
@@ -14,6 +14,13 @@
 	$root = get_template_directory_uri();  
 	$customcalloutbutton = $options['file4'];
 	$calloutbgcolor = get_post_meta($post->ID, 'callout_background_color' , true);
+	$bcolor = get_post_meta($post->ID, 'custom_callout_button_color' , true);
+	$tcolor = get_post_meta($post->ID, 'custom_callout_text_color' , true);
+	$title = get_post_meta($post->ID, 'callout_title' , true);
+	$text = get_post_meta($post->ID, 'callout_text' , true);
+	$btext = get_post_meta($post->ID, 'callout_button_text' , true);
+	$link = get_post_meta($post->ID, 'callout_url' , true);
+	$image = get_post_meta($post->ID, 'callout_image' , true);
 	$customcalloutbgcolor = get_post_meta($post->ID, 'custom_callout_color' , true);
 
 /* End global variable definition. */	
@@ -46,6 +53,33 @@
 	
 /* End define background colors. */		
 
+/* Echo custom button color. */
+
+	if ($bcolor != "") {
+	
+		echo '<style type="text/css" media="screen">';
+		echo ".calloutbutton {background: $bcolor ;}";
+		echo '</style>';
+	
+	}
+	
+
+/* End custom button color. */
+
+/* Echo custom text color. */
+
+	if ($tcolor != "") {
+	
+		echo '<style type="text/css" media="screen">';
+		echo ".callout_text {color: $tcolor ;}";
+		echo ".callout_title {color: $tcolor ;}";
+		echo '</style>';
+	
+	}
+	
+
+/* End custom text color. */
+
 /* Echo background color CSS. */	
 
 	if ($calloutbgcolor != '6' AND $calloutbgcolor != '0'){
@@ -65,44 +99,79 @@
 		
 /* End CSS. */	
 
+/* Define Callout title. */	
+
+	if ($title == '') {
+		$callouttitle = 'This is the Callout Section';
+	}
+
+	else {
+		$callouttitle = $title;
+	}
+	
+/* End define Callout title. */	
+
+/* Define Callout text. */	
+
+	if ($text == '') {
+		$callouttext = 'iFeature Pro gives you the tools to turn WordPress into a modern feature rich Content Management System (CMS)';
+	}
+
+	else {
+		$callouttext = $text;
+	}
+	
+/* End define Callout title. */	
+
+/* Define Callout button text. */
+
+	if ($btext == '') {
+		$calloutbuttontext = 'Buy Now';
+	}
+
+	else {
+		$calloutbuttontext = $btext;
+	}
+
+/* End define Callout button text. */	
+
+/* Define Callout button image. */
+
+	if ($image != '') {
+		$calloutimage = $image;
+	}
+
+/* End define Callout button image. */
+
+/* Define Callout button link. */
+
+	if ($link == '') {
+		$calloutlink = 'http://cyberchimps.com';
+	}
+
+	else {
+		$calloutlink = $link;
+	}
+
+/* End define Callout button link. */	
+
 ?>
 
-
-
 <div id="calloutwrap"><!--id="calloutwrap"-->
-		<div class="callout_text">
-		<?php  
-				if ($options['if_callout_title'] == "")
-					$callouttitle = 'This is the Callout Section';
-				else
-				$callouttitle = $options[('if_callout_title')]; ?>
+	<div class="callout_text">
 		<h2 class="callout_title"><?php echo $callouttitle ?></h2>
-		<?php  
-				if ($options['if_callout_text'] == "")
-					$callouttext = 'Business Pro gives you the tools to turn WordPress into a modern feature rich Content Management System (CMS). ';
-				else
-				$callouttext = $options[('if_callout_text')]; ?>
 		<p class="calloutp"><?php echo $callouttext  ?></p>
-		</div>
-		<?php if ($options['if_callout_button_text'] == "")
-					$calloutbuttontext = 'BUY NOW';
-		else
-		$calloutbuttontext = $options['if_callout_button_text'] ; ?>
+	</div>
 		
-		<?php  
-				if ($options['if_callout_image_link'] == "")
-					$calloutimglink = 'http://cyberchimps.com';
-				else
-				$calloutimglink = $options['if_callout_image_link']; ?>
-	
-		<?php if ($customcalloutbutton == ''): ?>
+		
+		<?php if ($image == ''): ?>
 		<div class="calloutbutton">
-		<a href="<?php echo $calloutimglink ?>"><?php echo $calloutbuttontext ;?></a>
+		<a href="<?php echo $calloutlink ?>"><?php echo $calloutbuttontext ;?></a>
 		</div>
 		<?php endif;?>
-		<?php if ($customcalloutbutton != ''): ?>
+		<?php if ($image != ''): ?>
 		<div class="calloutimg">
-		<a href="<?php echo $calloutimglink ?>"><img src="<?php echo stripslashes($customcalloutbutton['url']);?>" alt="Callout" /></a>
+		<a href="<?php echo $calloutlink ?>"><img src="<?php echo $image?>" alt="Callout" /></a>
 		</div>
 		<?php endif;?>
 </div><!--end calloutwrap-->

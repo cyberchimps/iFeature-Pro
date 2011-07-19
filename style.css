@@ -465,7 +465,7 @@ li { padding-left: 5px; }
 /* Callout Section */
 
 #calloutwrap {
-	height: 100%;
+	min-height: 80px;
 	overflow: hidden;
 	position:relative;
 	width: 980px;

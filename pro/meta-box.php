@@ -937,6 +937,14 @@ function ifeature_initialize_the_meta_boxes() {
 					),
 					
 				array(
+						'name' => 'Callout Button Text',
+						'desc' => 'Enter the text for your Callout Button',
+						'id' => 'callout_button_text',
+						'type' => 'text',
+						'std' => ''
+					),
+				
+				array(
 						'name' => 'Callout Button URL',
 						'desc' => 'Enter the link for your Callout Button',
 						'id' => 'callout_url',
@@ -947,7 +955,7 @@ function ifeature_initialize_the_meta_boxes() {
 				array(
 						'name' => 'Custom Callout Button Image',
 						'desc' => 'Upload a custom Callout Buttom image here:',
-						'id' => $prefix . 'callout_image',
+						'id' => 'callout_image',
 						'type' => 'image',
 						'std' => ''
 					),

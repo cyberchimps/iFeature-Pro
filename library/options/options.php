@@ -208,7 +208,6 @@ echo '<style type="text/css">';
 add_action( 'wp_head', 'ifeature_add_posttitle_color');
 
 
-
 /*
 Callout Button Color
 */
@@ -680,7 +679,7 @@ array( "name" => "Select the sidebar type",
       "type" => "select8",  
     "std" => "false"),
 
-array( "name" => "Select the s size",  
+array( "name" => "Select the sidebar size",  
     "desc" => "Select the slider size for your blog page (default is Half-Width).",  
     "id" => $shortname."_slider_size",  
       "type" => "select9",  
