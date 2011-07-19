@@ -4,13 +4,70 @@
 	Section: Callout
 	Authors: Trent Lapinski, Tyler Cunningham
 	Description: Creates the call out section.
-	Version: 0.1
+	Version: 2.0
 	
 */
-	$options = get_option('ifeature') ;  
+
+/* Define global variables. */	
+
+	$options = get_option('ifeature') ; 
+	$root = get_template_directory_uri();  
 	$customcalloutbutton = $options['file4'];
+	$calloutbgcolor = get_post_meta($post->ID, 'callout_background_color' , true);
+	$customcalloutbgcolor = get_post_meta($post->ID, 'custom_callout_color' , true);
+
+/* End global variable definition. */	
+
+/* Define background colors. */	
+
+	if ($calloutbgcolor == '1') {
+		$calloutbg = 'calloutBlue.png';
+	}
+	
+	elseif ($calloutbgcolor == '2') {
+		$calloutbg = 'calloutGrey.png';
+	}
+	
+	elseif ($calloutbgcolor == '3') {
+		$calloutbg = 'calloutOrange.png';
+	}
+
+	elseif ($calloutbgcolor == '4') {
+		$calloutbg = 'calloutPink.png';
+	}
+	
+	elseif ($calloutbgcolor == '5') {
+		$calloutbg = 'calloutRed.png';
+	}
+	
+	else {
+		$calloutbg = $customcalloutbgcolor;
+	}
+	
+/* End define background colors. */		
+
+/* Echo background color CSS. */	
+
+	if ($calloutbgcolor != '6' AND $calloutbgcolor != '0'){
+	
+		echo '<style type="text/css" media="screen">';
+		echo "#calloutwrap {background: url($root/images/pro/$calloutbg) no-repeat top center;}";
+		echo '</style>';
+	}
+	
+	elseif ($calloutbgcolor == '6'){
+	
+		echo '<style type="text/css" media="screen">';
+		echo "#calloutwrap {background: $calloutbg ;}";
+		echo '</style>';
+	
+	}
+		
+/* End CSS. */	
 
 ?>
+
+
 
 <div id="calloutwrap"><!--id="calloutwrap"-->
 		<div class="callout_text">

@@ -951,6 +951,15 @@ function ifeature_initialize_the_meta_boxes() {
 						'type' => 'image',
 						'std' => ''
 					),
+					
+				array(
+				'name' => 'Select Callout Section Background',
+				'desc' => 'Default is iFeature Pro 2.0, select "color picker" to use the color picker option below',
+				'id' => 'callout_background_color',
+				'type' => 'select',
+				'options' => array('iFeature Pro 2.0 (default)', 'Blue', 'Grey', 'Orange', 'Pink', 'Red', 'Color Picker'),
+				'std' => ''
+			 		),
 				
 				array(
 						'name' => 'Custom Background Color',

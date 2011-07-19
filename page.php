@@ -13,7 +13,14 @@ $callout = get_post_meta($post->ID, 'enable_callout_section' , true);
 $twitterbar = get_post_meta($post->ID, 'enable_twitter_bar' , true);
 $enableboxes = get_post_meta($post->ID, 'enable_box_section' , true);
 $pagecontent = get_post_meta($post->ID, 'hide_page_content' , true);
+
+
 ?>
+
+
+
+
+
 <!-- iFeature Pro Page SEO options -->
 <meta name="title" content="<?php echo $title ?>" />
 <meta name="description" content="<?php echo $pagedescription ?>" />

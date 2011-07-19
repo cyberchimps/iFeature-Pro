@@ -208,62 +208,6 @@ echo '<style type="text/css">';
 add_action( 'wp_head', 'ifeature_add_posttitle_color');
 
 
-/*
-Callout BG Color
-*/
-
-function ifeature_add_calloutbg_color() {
-
-$options = get_option('ifeature');
-$root = get_template_directory_uri(); 
-
-if ($options['if_callout_background_color'] == "" OR $options['if_callout_background_color'] == 'default') { 
-			$calloutbg = 'F8F8F8';
-			
-		echo '<style type="text/css">';
-		echo "#calloutwrap {background: #F8F8F8;}";
-		echo '</style>';	
-		
-		}
-		
-		else {
-			$calloutbg = $options['if_callout_background_color']; 
-			
-	
-		echo '<style type="text/css">';
-		echo "#calloutwrap {background: url($root/images/pro/callout$calloutbg.png) no-repeat top center;}";
-		echo '</style>';
-		
-		}
-
-}
-add_action( 'wp_head', 'ifeature_add_calloutbg_color');
-
-
-/*
-Custom Callout BG Color
-*/
-
-function ifeature_add_custom_calloutbg_color() {
-
-$options = get_option('ifeature');
-
-if ($options['if_callout_custom_background_color'] == "" AND $options['if_enable_custom_calloutbg'] == '1') 
-			$callbg = 'F8F8F8';
-
-
-		elseif  ($options['if_callout_custom_background_color'] != "" AND $options['if_enable_custom_calloutbg'] == '1')
-			$callbg = $options['if_callout_custom_background_color']; 
-			
-	
-		echo '<style type="text/css">';
-		echo "#calloutwrap {background: #$callbg;}";
-		echo '</style>';
-
-
-
-}
-add_action( 'wp_head', 'ifeature_add_custom_calloutbg_color');
 
 /*
 Callout Button Color
@@ -736,7 +680,7 @@ array( "name" => "Select the sidebar type",
       "type" => "select8",  
     "std" => "false"),
 
-array( "name" => "Select the slider size",  
+array( "name" => "Select the s size",  
     "desc" => "Select the slider size for your blog page (default is Half-Width).",  
     "id" => $shortname."_slider_size",  
       "type" => "select9",  
