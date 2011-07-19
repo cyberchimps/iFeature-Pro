@@ -740,6 +740,13 @@ function ifeature_initialize_the_meta_boxes() {
 				'std' => ''
 			),
 			
+			array(
+				'name' => 'Hide Page Content',
+				'desc' => 'Check this box to hide the content on this page',
+				'id' => 'hide_page_content',
+				'type' => 'checkbox',
+				'std' => ''
+			),
 				
 			array(
 				'name' => 'Enable Callout Section',

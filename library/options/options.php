@@ -736,7 +736,7 @@ array( "name" => "Select the sidebar type",
       "type" => "select8",  
     "std" => "false"),
 
-array( "name" => "Select the sidebar size",  
+array( "name" => "Select the slider size",  
     "desc" => "Select the slider size for your blog page (default is Half-Width).",  
     "id" => $shortname."_slider_size",  
       "type" => "select9",  
@@ -759,6 +759,42 @@ array( "name" => "Show posts from custom slide category:",
     "id" => $shortname."_customslider_category",  
     "type" => "select7",  
     "std" => ""),
+    
+array( "name" => "Number of featured posts:",  
+    "desc" => "(Default is 5)",  
+    "id" => $shortname."_slider_posts_number",  
+    "type" => "text",  
+    "std" => ""),  
+    
+array( "name" => "Slider height:",  
+    "desc" => "(Default is 330)",  
+    "id" => $shortname."_slider_height",  
+    "type" => "text",  
+    "std" => ""),
+
+array( "name" => "Slider delay time (in milliseconds):",  
+    "desc" => "(Default is 3500)",  
+    "id" => $shortname."_slider_delay",  
+    "type" => "text",  
+    "std" => ""),
+    
+array( "name" => "Choose the caption style:",  
+    "desc" => "(Default is Bottom)",  
+    "id" => $shortname."_caption_style",  
+    "type" => "select11",  
+    "std" => ""),
+
+array( "name" => "Choose the slider animation:",  
+    "desc" => "(Default is random)",  
+    "id" => $shortname."_slider_animation",  
+    "type" => "select3",  
+    "std" => ""), 
+    
+array( "name" => "Choose the slider navigation:",  
+    "desc" => "(Default is dots)",  
+    "id" => $shortname."_slider_nav",  
+    "type" => "select10",  
+    "std" => ""),   
     
 array( "name" => "Home Description",  
     "desc" => "Enter the META description of your homepage here.",  
@@ -873,41 +909,7 @@ array( "name" => "Hide iFeature Slider",
     "type" => "checkbox",  
     "std" => "false"),
     
-array( "name" => "Number of featured posts:",  
-    "desc" => "(Default is 5)",  
-    "id" => $shortname."_slider_posts_number",  
-    "type" => "text",  
-    "std" => ""),  
-    
-array( "name" => "Slider height:",  
-    "desc" => "(Default is 330)",  
-    "id" => $shortname."_slider_height",  
-    "type" => "text",  
-    "std" => ""),
-
-array( "name" => "Slider delay time (in milliseconds):",  
-    "desc" => "(Default is 3500)",  
-    "id" => $shortname."_slider_delay",  
-    "type" => "text",  
-    "std" => ""),
-    
-array( "name" => "Choose the caption style:",  
-    "desc" => "(Default is Bottom)",  
-    "id" => $shortname."_caption_style",  
-    "type" => "select11",  
-    "std" => ""),
-
-array( "name" => "Choose the slider animation:",  
-    "desc" => "(Default is random)",  
-    "id" => $shortname."_slider_animation",  
-    "type" => "select3",  
-    "std" => ""), 
-    
-array( "name" => "Choose the slider navigation:",  
-    "desc" => "(Default is dots)",  
-    "id" => $shortname."_slider_nav",  
-    "type" => "select10",  
-    "std" => ""),     
+  
   
 
 array( "type" => "close"),   
@@ -1289,7 +1291,7 @@ case 'excerpts':
 
 	<?php
 		if (isset($options['if_excerpt_length']) == "")
-			$length = '80';
+			$length = '55';
 			
 		else
 			$length = $options['if_excerpt_length']; 
