@@ -8,7 +8,7 @@
 	
 */
 
-/* Define global variables. */	
+/* Define variables. */	
 
 	$options = get_option('ifeature') ; 
 	$root = get_template_directory_uri();  
@@ -23,7 +23,7 @@
 	$image = get_post_meta($post->ID, 'callout_image' , true);
 	$customcalloutbgcolor = get_post_meta($post->ID, 'custom_callout_color' , true);
 
-/* End global variable definition. */	
+/* End variable definition. */	
 
 /* Define background colors. */	
 
@@ -158,20 +158,22 @@
 ?>
 
 <div id="calloutwrap"><!--id="calloutwrap"-->
+
 	<div class="callout_text">
 		<h2 class="callout_title"><?php echo $callouttitle ?></h2>
 		<p class="calloutp"><?php echo $callouttext  ?></p>
 	</div>
 		
-		
-		<?php if ($image == ''): ?>
-		<div class="calloutbutton">
+<?php if ($image == ''): ?>
+	<div class="calloutbutton">
 		<a href="<?php echo $calloutlink ?>"><?php echo $calloutbuttontext ;?></a>
-		</div>
-		<?php endif;?>
-		<?php if ($image != ''): ?>
-		<div class="calloutimg">
+	</div>
+<?php endif;?>
+
+<?php if ($image != ''): ?>
+	<div class="calloutimg">
 		<a href="<?php echo $calloutlink ?>"><img src="<?php echo $image?>" alt="Callout" /></a>
-		</div>
-		<?php endif;?>
+	</div>
+<?php endif;?>
+
 </div><!--end calloutwrap-->

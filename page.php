@@ -1,31 +1,43 @@
-<?php get_header(); ?>
+<?php 
 
-<?php
+/*
+	Page
+	Establishes the core iFeature page tempate.
+	Version: 2.0
+	Copyright (C) 2011 CyberChimps
 
-$title = get_post_meta($post->ID, 'seo_title' , true);
-$pagedescription = get_post_meta($post->ID, 'seo_description' , true);
-$keywords = get_post_meta($post->ID, 'seo_keywords' , true);
-$enable = get_post_meta($post->ID, 'page_enable_slider' , true);
-$size = get_post_meta($post->ID, 'page_slider_size' , true);
-$hidetitle = get_post_meta($post->ID, 'hide_page_title' , true);
-$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);
-$callout = get_post_meta($post->ID, 'enable_callout_section' , true);
-$twitterbar = get_post_meta($post->ID, 'enable_twitter_bar' , true);
-$enableboxes = get_post_meta($post->ID, 'enable_box_section' , true);
-$pagecontent = get_post_meta($post->ID, 'hide_page_content' , true);
+*/
 
+/* Header call. */
+
+	get_header(); 
+	
+/* End header. */	
+
+/* Define global variables. */
+
+	$title = get_post_meta($post->ID, 'seo_title' , true);
+	$pagedescription = get_post_meta($post->ID, 'seo_description' , true);
+	$keywords = get_post_meta($post->ID, 'seo_keywords' , true);
+	$enable = get_post_meta($post->ID, 'page_enable_slider' , true);
+	$size = get_post_meta($post->ID, 'page_slider_size' , true);
+	$hidetitle = get_post_meta($post->ID, 'hide_page_title' , true);
+	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);
+	$callout = get_post_meta($post->ID, 'enable_callout_section' , true);
+	$twitterbar = get_post_meta($post->ID, 'enable_twitter_bar' , true);
+	$enableboxes = get_post_meta($post->ID, 'enable_box_section' , true);
+	$pagecontent = get_post_meta($post->ID, 'hide_page_content' , true);
+
+/* End define global variables. */
 
 ?>
 
-
-
-
-
 <!-- iFeature Pro Page SEO options -->
-<meta name="title" content="<?php echo $title ?>" />
-<meta name="description" content="<?php echo $pagedescription ?>" />
-<meta name="keywords" content="<?php echo $keywords ?>" />
+	<meta name="title" content="<?php echo $title ?>" />
+	<meta name="description" content="<?php echo $pagedescription ?>" />
+	<meta name="keywords" content="<?php echo $keywords ?>" />
 <!-- /iFeature Pro Page SEO options -->
+
 <div id="content_wrap">
 
 	<?php if ($enable == "on" && $size == "0"): ?>

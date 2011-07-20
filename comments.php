@@ -2,14 +2,10 @@
 
 /*
 	Comments
-	
 	Creates the iFeature comments section.
-	
 	Copyright (C) 2011 CyberChimps
+	Version 2.0
 */
-
-	if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
-		die ('Please do not load this page directly. Thanks!');
 
 	if ( post_password_required() ) { ?>
 		This post is password protected. Enter the password to view comments.

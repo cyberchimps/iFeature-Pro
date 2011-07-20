@@ -2,13 +2,18 @@
 
 /*
 	Archive
-	
 	Creates the iFeature archive pages.
-	
 	Copyright (C) 2011 CyberChimps
+	Version 2.0
 */
 
-get_header(); ?>
+/* Header call. */
+
+	get_header(); 
+	
+/* End header. */
+
+?>
 
 <div id="content_wrap">
 
@@ -56,16 +61,21 @@ get_header(); ?>
 						<div class="entry">
 							<?php the_content(); ?>
 						</div>
+						
 				<div class="tags">
-								<?php the_tags('Tags: ', ', ', '<br />'); ?>
-							</div><!--end tags-->
+						<?php the_tags('Tags: ', ', ', '<br />'); ?>
+				</div><!--end tags-->
 
-							<div class="postmetadata">
-										<?php get_template_part('share', 'index' ); ?>
-								<div class="comments">
-									<?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
-								</div><!--end comments-->	
-							</div><!--end postmetadata-->
+				<div class="postmetadata">
+				
+						<?php get_template_part('share', 'index' ); ?>
+						
+							<div class="comments">
+								<?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
+							
+							</div><!--end comments-->	
+							
+				</div><!--end postmetadata-->
 							
 				</div><!--end post-->
 			</div><!--end post_container-->
@@ -80,10 +90,15 @@ get_header(); ?>
 
 	<?php endif; ?>
 		</div><!--end content_padding-->
+		
 	</div><!--end content_left-->
 
-	<div id="sidebar_right"><?php get_sidebar(); ?></div>
+	<div id="sidebar_right">
+		<?php get_sidebar(); ?>
+	</div>
+	
 </div><!--end content_wrap-->
 
 <div style=clear:both;></div>
+
 <?php get_footer(); ?>

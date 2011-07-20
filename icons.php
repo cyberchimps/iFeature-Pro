@@ -3,25 +3,35 @@
 	Section: Icons
 	Authors: Trent Lapinski, Tyler Cunningham 
 	Description: Creates header icons.
-	Version: 1.2	
+	Version: 2.0	
 */
-	$options = get_option('ifeature') ;  
-	$facebook		= $options['if_facebook'];
-	$hidefacebook   = $options['if_hide_facebook'];
-	$twitter		= $options['if_twitter'] ;
-	$hidetwitter   = $options['if_hide_twitter'];
-	$gplus		= $options['if_gplus'] ;
-	$hidegplus   = $options['if_hide_gplus'];
-	$linkedin		= $options['if_linkedin'] ;
-	$hidelinkedin   = $options['if_hide_linkedin'];
-	$youtube		= $options['if_youtube'];
-	$hideyoutube   = $options['if_hide_youtube'];
-	$googlemaps		= $options['if_googlemaps'];
-	$hidegooglemaps   = $options['if_hide_googlemaps'];
-	$email			= $options['if_email'];
-	$hideemail   = $options['if_hide_email'];
-	$rss			= $options['if_rsslink'] ;
-	$hiderss   = $options['if_hide_rss'];
+
+/* Call globals. */	
+
+	global $themename, $themeslug, $options;
+
+/* End globals. */	
+
+/* Define variables. */	
+ 
+	$facebook		= $options[$themeslug.'_facebook'];
+	$hidefacebook   = $options[$themeslug.'_hide_facebook'];
+	$twitter		= $options[$themeslug.'_twitter'] ;
+	$hidetwitter    = $options[$themeslug.'_hide_twitter'];
+	$gplus		    = $options[$themeslug.'_gplus'] ;
+	$hidegplus      = $options[$themeslug.'_hide_gplus'];
+	$linkedin		= $options[$themeslug.'_linkedin'] ;
+	$hidelinkedin   = $options[$themeslug.'_hide_linkedin'];
+	$youtube		= $options[$themeslug.'_youtube'];
+	$hideyoutube    = $options[$themeslug.'_hide_youtube'];
+	$googlemaps		= $options[$themeslug.'_googlemaps'];
+	$hidegooglemaps = $options[$themeslug.'_hide_googlemaps'];
+	$email			= $options[$themeslug.'_email'];
+	$hideemail      = $options[$themeslug.'_hide_email'];
+	$rss			= $options[$themeslug.'_rsslink'] ;
+	$hiderss   		= $options[$themeslug.'_hide_rss'];
+
+/* Define variables. */	
 
 ?>
 

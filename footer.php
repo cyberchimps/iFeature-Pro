@@ -3,16 +3,28 @@
 /*
 	
 	Footer
-	
 	Establishes the widgetized footer and static post-footer section of iFeature. 
-	
 	Copyright (C) 2011 CyberChimps
+	Version 2.0
 	
 */
-$options = get_option('ifeature') ;  
+
+/* Call globals. */	
+
+	global $themename, $themeslug, $options;
+
+/* End globals. */	
+
+/* Define variables. */	
+
+	$analytics = $options[$themeslug.'_ga_code'];
+	$copyright = $options[$themeslug.'_footer_text'];
+	$hidelink  = $options[$themeslug.'_hide_link'];
+
+/* End variable definition. */	
+
 ?>
-	
-	
+
 	</div><!--end main-->
 </div><!--end page_wrap-->			
 	
@@ -56,43 +68,52 @@ $options = get_option('ifeature') ;
 		<div class="clear"></div>
 
 		<!--Inserts Google Analytics Code-->
-		<?php  $analytics = $options['if_ga_code']; ?>
+		
 		<?php echo stripslashes($analytics); ?>
 			   
-		<?php wp_footer(); ?>
 	</div><!--end footer_wrap-->
 </div><!--end footer-->
 	
 	<div id="afterfooter">
+	
 		<div id="afterfooterwrap">
-			<!--Inserts Copyright Text-->
-			<?php  $copyright = $options['if_footer_text']; ?>
+		
+				<!--Inserts Copyright Text-->
 				<?php if ($copyright == ''): ?> 
+				
 					<div id="afterfootercopyright">
 						&copy; <?php echo bloginfo ( 'name' );  ?>
 					</div>
+					
 				<?php endif;?>
+				
 				<?php if ($copyright != ''):?> 
+				
 					<div id="afterfootercopyright">
 						&copy; <?php echo $copyright; ?>
 					</div>
+					
 				<?php endif;?>
+				
 			<!--Inserts Afterfooter Menu-->
+			
 			<div id="afterfootermenu">
 				<?php wp_nav_menu('depth=1'); ?>
 			</div>
+			
 			<!--Inserts iFeature SEO Module-->
-			<?php 
-								$hidelink		= $options['if_hide_link'];
-							?>
-							<?php if ($hidelink == "0" ):?>
+			
+				<?php if ($hidelink == "0" ):?>
+				
 					<div id="credit">
 						<?php get_template_part('credit', 'footer' ); ?>
 					</div>
-			<?php endif;?>
+			
+				<?php endif;?>
 		</div>  <!--end afterfooterwrap-->	
+		
 	</div> <!--end afterfooter-->	
-	
+	<?php wp_footer(); ?>	
 </body>
 
 </html>

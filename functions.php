@@ -2,31 +2,34 @@
 
 /*
 	Functions
-	
-	Establishes the core iFeature functions.
-	
+	Author: Tyler Cunningham
+	Establishes the core theme functions.
 	Copyright (C) 2011 CyberChimps
+	Version 2.0
 */
 
 
-// Define gloabl theme variables
+/* Define global variables. */	
 
+	$themename = 'ifeature';
+	$themeslug = 'if';
+	$options = get_option($themename);
 
-$themename = 'ifeature';
-$themeslug = 'if';
-$options = get_option($themename);
+/* End global variables. */	
+
+/* Begin custom excerpt functions. */	
 
 function new_excerpt_more($more) {
 
 	global $themename, $themeslug, $options;
     
-    if ($options[$themeslug.'_excerpt_link_text'] == '') {
-    	$linktext = '(Read More...)';
-    }
+    	if ($options[$themeslug.'_excerpt_link_text'] == '') {
+    		$linktext = '(Read More...)';
+   		}
     
-    else {
-    	$linktext = $options[$themeslug.'_excerpt_link_text'];
-    }
+    	else {
+    		$linktext = $options[$themeslug.'_excerpt_link_text'];
+   		}
     
     global $post;
 	return '<a href="'. get_permalink($post->ID) . '"> <br /><br /> '.$linktext.'</a>';
@@ -37,25 +40,26 @@ function new_excerpt_length($length) {
 
 	global $themename, $themeslug, $options;
 	
-	if ($options[$themeslug.'_excerpt_length'] == '') {
-    	$length = '55';
-    }
+		if ($options[$themeslug.'_excerpt_length'] == '') {
+    		$length = '55';
+    	}
     
-    else {
-    	$length = $options[$themeslug.'_excerpt_length'];
-    }
+    	else {
+    		$length = $options[$themeslug.'_excerpt_length'];
+    	}
 
 	return $length;
 }
 add_filter('excerpt_length', 'new_excerpt_length');
 
-add_theme_support('automatic-feed-links');
-	if ( ! isset( $content_width ) )
-	$content_width = 600;
-	
-add_theme_support( 'post-thumbnails' ); 
-set_post_thumbnail_size( 100, 100, true );
+/* End excerpt functions. */
 
+/* Add auto-feed links support. */	
+	add_theme_support('automatic-feed-links');
+	
+/* Add post-thumb support. */
+	add_theme_support( 'post-thumbnails' ); 
+	set_post_thumbnail_size( 100, 100, true );
 
 // This theme allows users to set a custom background
 	add_custom_background();
@@ -74,40 +78,40 @@ set_post_thumbnail_size( 100, 100, true );
 * Attach CSS3PIE behavior to elements
 * Add elements here that need PIE applied
 */   
-function ifeature_render_ie_pie() { ?>
-<style type="text/css" media="screen">
-#header li a, .postmetadata, .post_container, .wp-caption, .sidebar-widget-style, .sidebar-widget-title, .boxes, .box1, .box2, .box3, .box-widget-title, #calloutwrap, .calloutbutton  {
-  behavior: url('<?php bloginfo('stylesheet_directory'); ?>/library/pie/PIE.htc');
-}
-</style>
+function render_ie_pie() { ?>
+	
+	<style type="text/css" media="screen">
+		#header li a, .postmetadata, .post_container, .wp-caption, .sidebar-widget-style, .sidebar-widget-						    title, .boxes, .box1, .box2, .box3, .box-widget-title, #calloutwrap, .calloutbutton  
+  		
+  			{
+  				behavior: url('<?php bloginfo('stylesheet_directory'); ?>/library/pie/PIE.htc');
+			}
+	</style>
 <?php
 }
 
-add_action('wp_head', 'ifeature_render_ie_pie', 8);
+add_action('wp_head', 'render_ie_pie', 8);
 	
 //Checklist Shortcode
 	
-	function checklist($atts, $content = null) {
-    	return '<div class="checklist">'.$content.'</div>' ;
+function checklist($atts, $content = null) {
+    return '<div class="checklist">'.$content.'</div>' ;
 }
-
 add_shortcode('checklist', 'checklist');
 
 
-	//Box Shortcode
+//Box Shortcode
 	
-	function box($atts, $content = null) {
-   		return '<div class="boxcode">'.$content.'</div>' ;  
+function box($atts, $content = null) {
+   	return '<div class="boxcode">'.$content.'</div>' ;  
 }
-	
 add_shortcode('box', 'box');
 
-	//Column Shortcode
+//Column Shortcode
 	
-	function one_third( $atts, $content = null ) {
+function one_third( $atts, $content = null ) {
    return '<div class="one_third">' . do_shortcode($content) . '</div>';
 }
-
 add_shortcode('one_third', 'one_third');
  
 function one_third_last( $atts, $content = null ) {
@@ -196,11 +200,15 @@ function four_fifth_last( $atts, $content = null ) {
 add_shortcode('four_fifth_last', 'four_fifth_last');
 
 
-// Create custom post type for iFeature Slider
+// Create custom post type for Slider
 
 add_action( 'init', 'create_post_type' );
+
 function create_post_type() {
-	register_post_type( 'if_custom_slides',
+
+	global $themename, $themeslug, $options;
+	
+	register_post_type( $themeslug.'_custom_slides',
 		array(
 			'labels' => array(
 				'name' => __( 'Custom Slides' ),
@@ -216,12 +224,15 @@ function create_post_type() {
 	);
 }
 
-// Register custom category taxonomy for iFeature Slider
+// Register custom category taxonomy for Slider
 
-function if_custom_taxonomies() {
+function custom_taxonomies() {
+
+	global $themename, $themeslug, $options;
+	
 	register_taxonomy(
 		'slide_categories',		
-		'if_custom_slides',		
+		$themeslug.'_custom_slides',		
 		array(
 			'hierarchical' => true,
 			'label' => 'Categories',	
@@ -231,9 +242,9 @@ function if_custom_taxonomies() {
 	);
 }
 
-add_action('init', 'if_custom_taxonomies', 0);
+add_action('init', 'custom_taxonomies', 0);
 
-	//Download Button Shortcode
+//Download Button Shortcode
 	
 function button( $atts, $content = null ) {
     extract(shortcode_atts(array(
@@ -253,13 +264,11 @@ function button( $atts, $content = null ) {
 
     return $out;
 }
-
-
 add_shortcode('button', 'button');
 
-	//Slide Shortcode
+//Slide Shortcode
 	
-	function slide($atts, $content = null) {
+function slide($atts, $content = null) {
 	extract(shortcode_atts(array(
 		"title" => ''
 	), $atts));
@@ -272,22 +281,7 @@ add_shortcode('button', 'button');
 add_shortcode('slide', 'slide');
 
 
-
-// Coin Slider 
-
-function cs_head(){
-	 
-	$path =  get_template_directory_uri() ."/library/cs/";
-
-	$script = "   
-		
-		<script type=\"text/javascript\" src=\"".$path."scripts/coin-slider.min.js\"></script>
-		";
-	
-	echo $script;
-}
-
-add_action('wp_head', 'cs_head');
+// Nivo Slider 
 
 function nivoslider(){
 	 
@@ -300,13 +294,12 @@ function nivoslider(){
 	
 	echo $script;
 }
-
 add_action('wp_head', 'nivoslider');
 
 
-	// Register superfish scripts
+// Register superfish scripts
 	
-function ifeature_add_scripts() {
+function add_scripts() {
  
     if (!is_admin()) { // Add the scripts, but not to the wp-admin section.
     // Adjust the below path to where scripts dir is, if you must.
@@ -325,16 +318,16 @@ function ifeature_add_scripts() {
 } //end add_our_scripts function
  
 //Add our function to the wp_head. You can also use wp_print_scripts.
-add_action( 'wp_head', 'ifeature_add_scripts',0);
+add_action( 'wp_head', 'add_scripts',0);
 	
 	// Register menu names
 	
-	function register_ifeature_menus() {
+	function register_menus() {
 	register_nav_menus(
 	array( 'header-menu' => __( 'Header Menu' ), 'extra-menu' => __( 'Extra Menu' ))
   );
 }
-	add_action( 'init', 'register_ifeature_menus' );
+	add_action( 'init', 'register_menus' );
 	
 	// Menu fallback
 	
@@ -346,15 +339,6 @@ add_action( 'wp_head', 'ifeature_add_scripts',0);
 	</ul><?php
 }
 
-	// Clean up the <head>
-	function removeHeadLinks() {
-    	remove_action('wp_head', 'rsd_link');
-    	remove_action('wp_head', 'wlwmanifest_link');
-    }
-    add_action('init', 'removeHeadLinks');
-    remove_action('wp_head', 'wp_generator');
-    
-    if (function_exists('register_sidebar')) {
     	register_sidebar(array(
     		'name' => 'Sidebar Widgets',
     		'id'   => 'sidebar-widgets',
@@ -364,8 +348,7 @@ add_action( 'wp_head', 'ifeature_add_scripts',0);
     		'before_title'  => '<h2 class="sidebar-widget-title">',
     		'after_title'   => '</h2>'
     	));
-    	 if (function_exists('register_sidebar')) 
-    	register_sidebar(array(
+    	    	register_sidebar(array(
     		'name' => 'Sidebar Left',
     		'id'   => 'sidebar-left',
     		'description'   => 'These are widgets for the left sidebar.',
@@ -375,7 +358,7 @@ add_action( 'wp_head', 'ifeature_add_scripts',0);
     		'after_title'   => '</h2>'
     	));
     	
-    	    	 if (function_exists('register_sidebar')) 
+    	    	
     	register_sidebar(array(
     		'name' => 'Sidebar Right',
     		'id'   => 'sidebar-right',
@@ -386,7 +369,7 @@ add_action( 'wp_head', 'ifeature_add_scripts',0);
     		'after_title'   => '</h2>'
     	));
     	
-    	if ( function_exists('register_sidebar') )
+    	
 	register_sidebar(array(
 	'name' => 'Box Left',
 	'before_widget' => '<div class="box1">',
@@ -394,7 +377,7 @@ add_action( 'wp_head', 'ifeature_add_scripts',0);
 	'before_title' => '<h3 class="box-widget-title">',
 	'after_title' => '</h3>',
 	));
-	if ( function_exists('register_sidebar') )
+	
 	register_sidebar(array(
 	'name' => 'Box Middle',
 	'before_widget' => '<div class="box2">',
@@ -402,15 +385,14 @@ add_action( 'wp_head', 'ifeature_add_scripts',0);
 	'before_title' => '<h3 class="box-widget-title">',
 	'after_title' => '</h3>',
 	));
-	if ( function_exists('register_sidebar') )
-	register_sidebar(array(
+		register_sidebar(array(
 	'name' => 'Box Right',
 	'before_widget' => '<div class="box3">',
 	'after_widget' => '</div>',
 	'before_title' => '<h3 class="box-widget-title">',
 	'after_title' => '</h3>',
 	));
-	if ( function_exists('register_sidebar') )
+	
 	register_sidebar(array(
 	'name' => 'Footer',
 	'before_widget' => '<div class="footer-widgets">',
@@ -418,12 +400,11 @@ add_action( 'wp_head', 'ifeature_add_scripts',0);
 	'before_title' => '<h3 class="footer-widget-title">',
 	'after_title' => '</h3>',
 	));
-    }
+    
 
 	//iFeature theme options file
 	
 require_once ( get_template_directory() . '/library/options/options.php' );
 require_once ( get_template_directory() . '/pro/meta-box.php' );
-
 require_once ( get_template_directory() . '/inc/update.php' ); // Include automatic updater
 ?>
