@@ -53,49 +53,46 @@ global $name, $shortname, $options;
 Custom CSS
 */
 
-function ifeature_add_css() {
-	$options = get_option('ifeature');
-	$ifeature_css_css = $options['if_css_options'];
+function custom_css() {
+
+	global $themename, $themeslug, $options;
+	
+	$custom = $options[$themeslug.'_css_options'];
 	echo '<style type="text/css">' . "\n";
-	echo ifeature_css_filter ( $ifeature_css_css ) . "\n";
+	echo custom_css_filter ( $custom ) . "\n";
 	echo '</style>' . "\n";
 }
 
-function ifeature_css_filter($_content) {
+function custom_css_filter($_content) {
 	$_return = preg_replace ( '/@import.+;( |)|((?:\/\*(?:[^*]|(?:\*+[^*\/]))*\*+\/))/i', '', $_content );
 	$_return = htmlspecialchars ( strip_tags($_return), ENT_NOQUOTES, 'UTF-8' );
 	return $_return;
 }
-
 		
-add_action ( 'wp_head', 'ifeature_add_css' );
+add_action ( 'wp_head', 'custom_css' );
 
 /*
 Site Title Color
 */
 
-function ifeature_add_sitetitle_color() {
+function add_sitetitle_color() {
 
-$options = get_option('ifeature');
+	global $themename, $themeslug, $options;
 
-if (isset($options['if_sitetitle_color']) == "") 
-			$sitetitle = '717171';
-
-
-		else 
-			$sitetitle = $options['if_sitetitle_color']; 
-			
-		
-		
+	if (isset($options[$themeslug.'_sitetitle_color']) == "") {
+		$sitetitle = '717171';
+	}
 	
-echo '<style type="text/css">';
+	else {
+		$sitetitle = $options[$themeslug.'_sitetitle_color']; 
+	}		
+	
+		echo '<style type="text/css">';
 		echo ".sitename {color: #$sitetitle;}";
 		echo '</style>';
-
-
-
+		
 }
-add_action( 'wp_head', 'ifeature_add_sitetitle_color');
+add_action( 'wp_head', 'add_sitetitle_color');
 
 /*
 Link Color
