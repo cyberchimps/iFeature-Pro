@@ -1,4 +1,7 @@
 <?php 
+
+	
+	
 /* 
 	Options	Case
 	Author: Tyler Cuningham
@@ -8,7 +11,8 @@
 	
 */
 
-
+	global  $themename, $themeslug, $options;		
+		
 foreach ($optionlist as $value) {  
 switch ( $value['type'] ) {
  
@@ -54,7 +58,6 @@ case 'upload':
 <td width="15%" rowspan="2" valign="middle"><strong>Custom logo</strong>
 
 
- 
 <tr>
 <td width="85%">
 
@@ -67,10 +70,10 @@ case 'upload':
     if ($file != ''){
     
     echo "Logo preview:<br /><br /><img src='{$file['url']}'><br /><br />";}
-    echo "<input type='text' name='if_filename_text' size='72' value='{$file['url']}'/>";
+    echo "<input type='text' name='logo_filename_text' size='72' value='{$file['url']}'/>";
     echo "<br />" ;
     echo "<br />" ;
-    echo "<input type='file' name='if_filename' size='30' />";?>
+    echo "<input type='file' name='logo_filename' size='30' />";?>
 
     
     <br />
@@ -78,7 +81,6 @@ case 'upload':
 
 
 <?php
-	$options = get_option('ifeature');
 	$value = isset($options['file']) ? $options['file'] : '';
 ?>
 
@@ -107,18 +109,18 @@ case 'upload2':
 <td width="85%">
 
 
-    <?php settings_fields('if_options'); ?>
-    <?php do_settings_sections('if'); 
+    <?php settings_fields($themeslug.'_options'); ?>
+    <?php do_settings_sections(''.$themeslug.'');  
     
     $file2 = $options['file2'];
     
     if ($file2 != ''){
     
     echo "Favicon preview:<br /><br /><img src='{$file2['url']}'><br /><br />";}
-    echo "<input type='text' name='if_favfilename_text' size='72' value='{$file2['url']}'/>";
+    echo "<input type='text' name='favicon_filename_text' size='72' value='{$file2['url']}'/>";
     echo "<br />" ;
     echo "<br />" ;
-    echo "<input type='file' name='if_favfilename' size='30' />";?>
+    echo "<input type='file' name='favicon_filename' size='30' />";?>
 
     
     <br />
@@ -126,15 +128,12 @@ case 'upload2':
 
 
 <?php
-	$options = get_option('ifeature');
 	$value = isset($options['file2']) ? $options['file2'] : '';
 ?>
 
 </td>
 </tr>
-
-
-        
+ 
         <tr>
 <td><small></small></td>
 </tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
@@ -155,18 +154,18 @@ case 'upload3':
 <td width="85%">
 
 
-    <?php settings_fields('if_options'); ?>
-    <?php do_settings_sections('if'); 
+    <?php settings_fields($themeslug.'_options'); ?>
+    <?php do_settings_sections(''.$themeslug.'');  
     
     $file3 = $options['file3'];
     
     if ($file3 != ''){
     
     echo "Home Button preview:<br /><br /><img src='{$file3['url']}'><br /><br />";}
-    echo "<input type='text' name='if_homefilename_text' size='72' value='{$file3['url']}'/>";
+    echo "<input type='text' name='homebutton_filename_text' size='72' value='{$file3['url']}'/>";
     echo "<br />" ;
     echo "<br />" ;
-    echo "<input type='file' name='if_homefilename' size='30' />";?>
+    echo "<input type='file' name='homebutton_filename' size='30' />";?>
 
     
     <br />
@@ -174,7 +173,6 @@ case 'upload3':
 
 
 <?php
-	$options = get_option('ifeature');
 	$value = isset($options['file3']) ? $options['file3'] : '';
 ?>
 
@@ -203,18 +201,18 @@ case 'upload4':
 <td width="85%">
 
 
-    <?php settings_fields('if_options'); ?>
-    <?php do_settings_sections('if'); 
+ 	<?php settings_fields($themeslug.'_options'); ?>
+    <?php do_settings_sections(''.$themeslug.'');  
     
     $file4 = $options['file4'];
     
     if ($file4 != ''){
     
     echo "Callout Button preview:<br /><br /><img src='{$file4['url']}'><br /><br />";}
-    echo "<input type='text' name='if_calloutfilename_text' size='72' value='{$file4['url']}'/>";
+    echo "<input type='text' name='callout_filename_text' size='72' value='{$file4['url']}'/>";
     echo "<br />" ;
     echo "<br />" ;
-    echo "<input type='file' name='if_calloutfilename' size='30' />";?>
+    echo "<input type='file' name='callout_filename' size='30' />";?>
 
     
     <br />
@@ -222,15 +220,12 @@ case 'upload4':
 
 
 <?php
-	$options = get_option('ifeature');
 	$value = isset($options['file4']) ? $options['file4'] : '';
 ?>
 
 </td>
 </tr>
-
-
-        
+    
         <tr>
 <td><small></small></td>
 </tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
@@ -246,29 +241,29 @@ case 'excerpts':
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
     <td width="85%">
     <br />
-    <input type="checkbox" id="ifeature[if_show_excerpts]" name="ifeature[if_show_excerpts]" value="1" <?php checked( '1', $options['if_show_excerpts'] ); ?>> - Show Excerpts
+    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_show_excerpts]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_show_excerpts]" value="1" <?php checked( '1', $options['if_show_excerpts'] ); ?>> - Show Excerpts
 <br /><br />
 
 	<?php
-		if (isset($options['if_excerpt_link_text']) == "")
+		if (isset($options[$themeslug.'_excerpt_link_text']) == "")
 			$textlink = '(Read More...)';
 			
 		else
-			$textlink = $options['if_excerpt_link_text']; 
+			$textlink = $options[$themeslug.'_excerpt_link_text']; 
 	?>
 	
-   <input type="text" id="ifeature[if_excerpt_link_text]" name="ifeature[if_excerpt_link_text]" value="<?php echo $textlink ;?>"> - Excerpt Link Text
+   <input type="text" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_excerpt_link_text]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_excerpt_link_text]" value="<?php echo $textlink ;?>"> - Excerpt Link Text
 <br /><br />
 
 	<?php
-		if (isset($options['if_excerpt_length']) == "")
+		if (isset($options[$themeslug.'_excerpt_length']) == "")
 			$length = '55';
 			
 		else
-			$length = $options['if_excerpt_length']; 
+			$length = $options[$themeslug.'_excerpt_length']; 
 	?>
 
-     <input type="text" id="ifeature[if_excerpt_length]" name="ifeature[if_excerpt_length]" value="<?php echo $length ;?>" > - Excerpt Character Length
+     <input type="text" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_excerpt_length]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_excerpt_length]" value="<?php echo $length ;?>" > - Excerpt Character Length
 <br /><br />
 
 </td>
@@ -292,22 +287,22 @@ case 'post':
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
     <td width="85%">
     <br />
-    <input type="checkbox" id="ifeature[if_hide_author]" name="ifeature[if_hide_author]" value="1" <?php checked( '1', $options['if_hide_author'] ); ?>> - Author
+    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_author]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_author]" value="1" <?php checked( '1', $options[$themeslug.'_hide_author'] ); ?>> - Author
 <br /><br />
 
-   <input type="checkbox" id="ifeature[if_hide_categories]" name="ifeature[if_hide_categories]" value="1" <?php checked( '1', $options['if_hide_categories'] ); ?>> - Categories
+   <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_categories]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_categories]" value="1" <?php checked( '1', $options[$themeslug.'_hide_categories'] ); ?>> - Categories
 <br /><br />
 
-   <input type="checkbox" id="ifeature[if_hide_date]" name="ifeature[if_hide_date]" value="1" <?php checked( '1', $options['if_hide_date'] ); ?>> - Date
+   <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_date]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_date]" value="1" <?php checked( '1', $options[$themeslug.'_hide_date'] ); ?>> - Date
 <br /><br />
 
-   <input type="checkbox" id="ifeature[if_hide_comments]" name="ifeature[if_hide_comments]" value="1" <?php checked( '1', $options['if_hide_comments'] ); ?>> - Comments
+   <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_comments]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_comments]" value="1" <?php checked( '1', $options[$themeslug.'_hide_comments'] ); ?>> - Comments
 <br /><br />
 
-   <input type="checkbox" id="ifeature[if_hide_share]" name="ifeature[if_hide_share]" value="1" <?php checked( '1', $options['if_hide_share'] ); ?>> - Share
+   <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_share]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_share]" value="1" <?php checked( '1', $options[$themeslug.'_hide_share'] ); ?>> - Share
 <br /><br />
 
-   <input type="checkbox" id="ifeature[if_hide_tags]" name="ifeature[if_hide_tags]" value="1" <?php checked( '1', $options['if_hide_tags'] ); ?>> - Tags
+   <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_tags]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_tags]" value="1" <?php checked( '1', $options[$themeslug.'_hide_tags'] ); ?>> - Tags
 <br /><br />
 
 </td>
@@ -317,13 +312,9 @@ case 'post':
 
 </tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
 
-
-
 <?php
 break;
  
-
-
 case 'twitterbar':  
 ?>  
   
@@ -332,11 +323,11 @@ case 'twitterbar':
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
     <td width="85%">
     <br />
-    <input style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>" id="<?php echo 'if['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
+    <input style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>" id="<?php echo $themeslug.'['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
 
 <br /><br />
 
-<input type="checkbox" id="ifeature[if_enable_twitter]" name="ifeature[if_enable_twitter]" value="1" <?php checked( '1', $options['if_enable_twitter'] ); ?>> - Check this box to enable the Twitter Bar on the iFeature Pro Homepage (Requires <a href="http://wordpress.org/extend/plugins/twitter-for-wordpress/">Twitter for WordPress Plugin</a>)
+<input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_enable_twitter]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_enable_twitter]" value="1" <?php checked( '1', $options[$themeslug.'_enable_twitter'] ); ?>> - Check this box to enable the Twitter Bar on the iFeature Pro Homepage (Requires <a href="http://wordpress.org/extend/plugins/twitter-for-wordpress/">Twitter for WordPress Plugin</a>)
 </td>
   </tr>
  
@@ -359,17 +350,19 @@ case 'color1':
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
     <td width="85%">
     
-    <?php
-$options = get_option('ifeature');
+<?php
 
-if (isset($options['if_sitetitle_color']) == "")
+	if (isset($options[$themeslug.'_sitetitle_color']) == "") {
 			$picker = '111111';
-			
-		else
-			$picker = $options['if_sitetitle_color']; 
+	}		
+	
+	else {
+		$picker = $options[$themeslug.'_sitetitle_color']; 
+	}
+	
 ?>
 
-<input type="text" class="color" id="ifeature[if_sitetitle_color]" name="ifeature[if_sitetitle_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
+<input type="text" class="color" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_sitetitle_color]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_sitetitle_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
 
 <br /><br />
     </td>

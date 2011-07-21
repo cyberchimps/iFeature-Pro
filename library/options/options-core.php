@@ -12,7 +12,6 @@
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html  
 */
 
-
 add_action( 'admin_init', 'theme_options_init' );
 add_action( 'admin_menu', 'theme_options_add_page' ); 
 
@@ -72,7 +71,7 @@ global $name, $shortname, $options;
 
 /* Include select arrays */
 
-	require_once ( get_template_directory() . '/library/options/select.php' );
+	require_once ( get_template_directory() . '/library/options/options-select.php' );
 
 /* End select arrays */
 
@@ -177,9 +176,8 @@ function theme_options_do_page() {
 </p>
 </form> 
 
-
-
 	</div>
+	
 	<?php
 }
 
@@ -213,5 +211,4 @@ if ( isset( $_REQUEST['updated'] ))
 			$options_array = (unserialize($import));
   			update_option( ''.$themename.'', $options_array );
 		}   		
-  
 ?>

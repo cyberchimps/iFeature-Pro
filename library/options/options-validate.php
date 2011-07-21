@@ -140,56 +140,56 @@ function theme_options_validate( $input ) {
 	
 	/* Handle file uploads */
 	
-	if ($_FILES[$themeslug.'if_filename']['name'] != '') {
+	if ($_FILES['logo_filename']['name'] != '') {
        $overrides = array('test_form' => false); 
-       $file = wp_handle_upload($_FILES[$themeslug.'_filename'], $overrides);
+       $file = wp_handle_upload($_FILES['logo_filename'], $overrides);
        $input['file'] = $file;
 	} 
    
-	elseif(isset($_POST[$themeslug.'_filename_text']) && $_POST[$themeslug.'_filename_text'] != '') {
-		$input['file'] = array('url' => $_POST[$themeslug.'_filename_text']);
+	elseif(isset($_POST['logo_filename_text']) && $_POST['logo_filename_text'] != '') {
+		$input['file'] = array('url' => $_POST['logo_filename_text']);
     } 
     
     else {
 		$input['file'] = null;
 	}
 
-	if ($_FILES[$themeslug.'_favfilename']['name'] != '') {
+	if ($_FILES['favicon_filename']['name'] != '') {
 		$overrides = array('test_form' => false); 
-        $file2 = wp_handle_upload($_FILES[$themeslug.'_favfilename'], $overrides);
+        $file2 = wp_handle_upload($_FILES['favicon_filename'], $overrides);
        	$input['file2'] = $file2;
     } 
     
-    elseif(isset($_POST[$themeslug.'_favfilename_text']) && $_POST[$themeslug.'_favfilename_text'] != '') {
-	    $input['file2'] = array('url' => $_POST[$themeslug.'_favfilename_text']);
+    elseif(isset($_POST['favicon_filename_text']) && $_POST['favicon_filename_text'] != '') {
+	    $input['file2'] = array('url' => $_POST['_favicon_filename_text']);
     }
     
     else {
 	    $input['file2'] = null;
 	}
    
-	if ($_FILES[$themeslug.'_homefilename']['name'] != '') {
+	if ($_FILES['homebutton_filename']['name'] != '') {
        $overrides = array('test_form' => false); 
-       $file3 = wp_handle_upload($_FILES[$themeslug.'_homefilename'], $overrides);
+       $file3 = wp_handle_upload($_FILES['homebutton_filename'], $overrides);
        $input['file3'] = $file3;
     } 
    
-    elseif(isset($_POST[$themeslug.'_homefilename_text']) && $_POST[$themeslug.'_homefilename_text'] != '') {
-	   $input['file3'] = array('url' => $_POST[$themeslug.'_homefilename_text']);
+    elseif(isset($_POST['homebutton_filename_text']) && $_POST['homebutton_filename_text'] != '') {
+	   $input['file3'] = array('url' => $_POST['homebutton_filename_text']);
     } 
    
     else {
 	   $input['file3'] = null;
     }
    
-    if ($_FILES[$themeslug.'_calloutfilename']['name'] != '') {
+    if ($_FILES['callout_filename']['name'] != '') {
        $overrides = array('test_form' => false); 
-       $file4 = wp_handle_upload($_FILES[$themeslug.'_calloutfilename'], $overrides);
+       $file4 = wp_handle_upload($_FILES['callout_filename'], $overrides);
        $input['file4'] = $file4;
     } 
     
-    elseif(isset($_POST[$themeslug.'_calloutfilename_text']) && $_POST[$themeslug.'_calloutfilename_text'] != '') {
-	   $input['file4'] = array('url' => $_POST[$themeslug.'_calloutfilename_text']);
+    elseif(isset($_POST['callout_filename_text']) && $_POST['callout_filename_text'] != '') {
+	   $input['file4'] = array('url' => $_POST['callout_filename_text']);
     } 
    
     else {
