@@ -1,9 +1,15 @@
 <?php   
 
 /* 
-Portions of this code written by Blogatize http://blogatize.net
-License: GNU General Public License v2.0
-License URI: http://www.gnu.org/licenses/gpl-2.0.html  
+	Options	
+	Author: Tyler Cunningham
+	Establishes the theme options settings.
+	Copyright (C) 2011 CyberChimps
+	Version 2.0
+	
+	Portions of this code written by Blogatize http://blogatize.net
+	License: GNU General Public License v2.0
+	License URI: http://www.gnu.org/licenses/gpl-2.0.html  
 */
 
 
@@ -11,14 +17,12 @@ add_action( 'admin_init', 'theme_options_init' );
 add_action( 'admin_menu', 'theme_options_add_page' ); 
 
 
-$options = get_option($themename);
-
-/**
- * Init plugin options to white list our options
- */  
+/* Initialize plugin options to white list our options */  
 function theme_options_init() {
+
+	global $themename, $themeslug, $options;
 	
-	register_setting( 'if_options', 'ifeature', 'theme_options_validate' );
+	register_setting( $themeslug.'_options', ''.$themename.'', 'theme_options_validate' );
 		add_settings_section('if_main', '', 'if_section_text', 'if');
 		add_settings_section('if_main', '', 'if_section_text2', 'if');
   		add_settings_field('if_filename', '', 'if_setting_filename', 'if', 'if_main');  
@@ -98,327 +102,231 @@ add_action( 'wp_head', 'add_sitetitle_color');
 Link Color
 */
 
-function ifeature_add_link_color() {
+function add_link_color() {
 
-$options = get_option('ifeature');
+	global $themename, $themeslug, $options;
 
-if (isset($options['if_link_color']) == "") 
-			$link = '717171';
+	if (isset($options[$themeslug.'_link_color']) == "") {
+		$link = '717171';
+	}
 
-
-		else 
-			$link = $options['if_link_color']; 
-			
-		
-		
+	else { 
+		$link = $options[$themeslug.'_link_color']; 
+	}				
 	
-echo '<style type="text/css">';
+		echo '<style type="text/css">';
 		echo "a {color: #$link;}";
 		echo '</style>';
-
-
-
+		
 }
-add_action( 'wp_head', 'ifeature_add_link_color');
+add_action( 'wp_head', 'add_link_color');
 
 
-/*
-Menu Link Color
-*/
+/* Menu Link Color */
 
-function ifeature_add_menulink_color() {
+function add_menulink_color() {
 
-$options = get_option('ifeature');
+	global $themename, $themeslug, $options;
 
-if (isset($options['if_menulink_color']) == "") 
-			$sitelink = 'FFFFFF';
-
-
-		else 
-			$sitelink = $options['if_menulink_color']; 
-			
-		
-		
+	if (isset($options[$themeslug.'_menulink_color']) == "") {
+		$sitelink = 'FFFFFF';
+	}
 	
-echo '<style type="text/css">';
+	else{ 
+		$sitelink = $options[$themeslug.'_menulink_color']; 
+	}	
+		
+		echo '<style type="text/css">';
 		echo ".sf-menu a {color: #$sitelink;}";
 		echo '</style>';
-
-
-
 }
-add_action( 'wp_head', 'ifeature_add_menulink_color');
-
-/*
-Tagline Color
-*/
-
-function ifeature_add_tagline_color() {
-
-$options = get_option('ifeature');
-
-if (isset($options['if_tagline_color']) == "") 
-			$tagline = 'FFFFFF';
+add_action( 'wp_head', 'add_menulink_color');
 
 
-		else 
-			$tagline = $options['if_tagline_color']; 
-			
-		
-		
+/* Tagline Color */
+
+function add_tagline_color() {
+
+	global $themename, $themeslug, $options;
+
+	if (isset($options[$themeslug.'_tagline_color']) == "") {
+		$tagline = 'FFFFFF';
+	}
 	
-echo '<style type="text/css">';
+	else { 
+		$tagline = $options[$themeslug.'_tagline_color']; 
+	}		
+		
+		echo '<style type="text/css">';
 		echo ".description {color: #$tagline;}";
 		echo '</style>';
 
-
-
 }
-add_action( 'wp_head', 'ifeature_add_tagline_color');
+add_action( 'wp_head', 'add_tagline_color');
 
 
-/*
-Post Title Color
-*/
+/* Post Title Color */
 
-function ifeature_add_posttitle_color() {
+function add_posttitle_color() {
 
-$options = get_option('ifeature');
+	global $themename, $themeslug, $options;
 
-if (isset($options['if_posttitle_color']) == "") 
-			$posttitle = '717171';
-
-
-		else 
-			$posttitle = $options['if_posttitle_color']; 
-			
+	if (isset($options[$themeslug.'_posttitle_color']) == "") {
+		$posttitle = '717171';
+	}
+	else {
+		$posttitle = $options[$themeslug.'_posttitle_color']; 
+	}		
 		
-		
-	
-echo '<style type="text/css">';
+		echo '<style type="text/css">';
 		echo ".posts_title a {color: #$posttitle;}";
 		echo '</style>';
 
-
-
 }
-add_action( 'wp_head', 'ifeature_add_posttitle_color');
+add_action( 'wp_head', 'add_posttitle_color');
 
+/* Hide search/home button */
 
-/*
-Callout Button Color
-*/
+function fullwidth_nav() {
 
-function ifeature_add_calloutbutton_color() {
+	global $themename, $themeslug, $options;
 
-$options = get_option('ifeature');
-
-if (isset($options['if_callout_button_color']) == "") 
-			$callbutton = '333';
-
-
-		else 
-			$callbutton = $options['if_callout_button_color']; 
-			
-	
-echo '<style type="text/css">';
-		echo ".calloutbutton {background: #$callbutton;}";
-		echo '</style>';
-
-
-
-}
-add_action( 'wp_head', 'ifeature_add_calloutbutton_color');
-
-/*
-Callout Text Color
-*/
-
-function ifeature_add_callouttext_color() {
-
-$options = get_option('ifeature');
-
-if (isset($options['if_callout_text_color']) == "") 
-			$calltext = '000';
-
-
-		else 
-			$calltext = $options['if_callout_text_color']; 
-			
-	
-echo '<style type="text/css">';
-		echo ".callout_text {color: #$calltext;}";
-		echo ".callout_title {color: #$calltext;}";
-		echo '</style>';
-
-
-
-}
-add_action( 'wp_head', 'ifeature_add_callouttext_color');
-
-/*
-Hide search
-*/
-
-function ifeature_fullwidth_nav() {
-
-$options = get_option('ifeature');
-
-if ($options['if_hide_search'] == "1" && $options['if_hide_home_icon'] == "") {
+	if ($options[$themeslug.'_hide_search'] == "1" && $options[$themeslug.'_hide_home_icon'] == "") {
 		
 		echo '<style type="text/css">';
 		echo "#searchbar {display: none;}";
 		echo "#sfwrapper {width: 91%;}";
 		echo '</style>';
+	}
 
-}
-
-elseif ($options['if_hide_search'] == "" && $options['if_hide_home_icon'] == "1" ) {
+	elseif ($options[$themeslug.'_hide_search'] == "" && $options[$themeslug.'_hide_home_icon'] == "1" ) {
 
 		echo '<style type="text/css">';
 		echo "#homebutton {display: none;}";
 		echo "#sfwrapper {width: 79%;}";
 		echo '</style>';
-}
+	}
 
-elseif ($options['if_hide_search'] == "1" && $options['if_hide_home_icon'] == "1" ) {
+	elseif ($options[$themeslug.'_hide_search'] == "1" && $options[$themeslug.'_hide_home_icon'] == "1" ) {
 
 		echo '<style type="text/css">';
 		echo "#homebutton {display: none;}";
 		echo "#searchbar {display: none;}";
 		echo "#sfwrapper {width: 100%;}";
 		echo '</style>';
-}
+	}
 
 }
-add_action( 'wp_head', 'ifeature_fullwidth_nav');
+add_action( 'wp_head', 'fullwidth_nav');
 
 
-/*
-Footer Color
-*/
+/* Footer Color */
 
-function ifeature_add_footer_color() {
+function add_footer_color() {
 
-$options = get_option('ifeature');
+	global $themename, $themeslug, $options;
 
-if (isset($options['if_footer_color']) != "" && $options['if_footer_color'] != "222222" ) {
-		
-			$footercolor = $options['if_footer_color']; 
+	if (isset($options[$themeslug.'_footer_color']) != "" && $options[$themeslug.'_footer_color'] != "222222" ) {
+		$footercolor = $options[$themeslug.'_footer_color']; 
 	}	
 	
-	
-echo '<style type="text/css">';
+		echo '<style type="text/css">';
 		echo "#footer {background: #$footercolor;}";
 		echo '</style>';
 
-
-
 }
-add_action( 'wp_head', 'ifeature_add_footer_color');
+add_action( 'wp_head', 'add_footer_color');
 
-
-
-/*
-Menu Font
-*/
+/* Menu Font */
  
- function ifeature_add_menu_font() {
+function add_menu_font() {
 		
-	$options = get_option('ifeature');	
+	global $themename, $themeslug, $options;	
 		
-	if ($options['if_menu_font'] == "")
-			$font = 'Cantarell';
-			
-		elseif ($options['if_custom_menu_font'] != "")
-		$font = $options['if_custom_menu_font'];	
+	if ($options[$themeslug.'_menu_font'] == "") {
+		$font = 'Cantarell';
+	}		
 		
-		else
-			$font = $options[('if_menu_font')]; 
-			$fontstrip =  ereg_replace("[^A-Za-z0-9]", " ", $font );
+	elseif ($options[$themeslug.'_custom_menu_font'] != "") {
+		$font = $options[$themeslug.'_custom_menu_font'];	
+	}
 	
-	echo "<link href='http://fonts.googleapis.com/css?family=$font' rel='stylesheet' type='text/css' />";
-	echo '<style type="text/css">';
-	echo ".sf-menu a {font-family: $fontstrip;}";
+	else {
+		$font = $options[($themeslug.'_menu_font')]; 
+	}
+	
+		$fontstrip =  ereg_replace("[^A-Za-z0-9]", " ", $font );
+	
+		echo "<link href='http://fonts.googleapis.com/css?family=$font' rel='stylesheet' type='text/css' />";
+		echo '<style type="text/css">';
+		echo ".sf-menu a {font-family: $fontstrip;}";
 		echo '</style>';
-
 }
-add_action( 'wp_head', 'ifeature_add_menu_font');
+add_action( 'wp_head', 'add_menu_font');
 
-/*
-Menu Font
-*/
+/* Widget title background */
  
- function ifeature_widget_titel_bg() {
+function widget_title_bg() {
 
-
-	$options = get_option('ifeature');	
+	global $themename, $themeslug, $options;
 	$root = get_template_directory_uri();
 	
-	if ($options['if_widget_title_bg'] == "1") {
+	if ($options[$themeslug.'_widget_title_bg'] == "1") {
 		
 		echo '<style type="text/css">';
 		echo ".box-widget-title {background: url($root/images/wtitlebg.png) no-repeat center top; margin: -6px -5px 5px -5px;}";
 		echo ".sidebar-widget-title {background: url($root/images/wtitlebg.png) no-repeat center top; margin: -6px -5px 5px -5px;}";
 		echo '</style>';
 
-	
 	}
 }
-add_action( 'wp_head', 'ifeature_widget_titel_bg');
+add_action( 'wp_head', 'widget_title_bg');
 
-/*
-Feature Caption Style
-*/
+/* Feature Caption Style */
 
-function ifeature_slider_caption_style() {
+function slider_caption_style() {
 
-		$options = get_option('ifeature');
+	global $themename, $themeslug, $options;
 		
-		if ($options['if_caption_style'] == "right")  {
-			
+	if ($options[$themeslug.'_caption_style'] == "right")  {
 
 		echo '<style type="text/css">';
 		echo ".nivo-caption {position: relative; float: right; height: 330px; width: 320px;}";
 		echo '</style>';
 
-		}
+	}
 		
-		if ($options['if_caption_style'] == "left") {
-			
+	elseif ($options[$themeslug.'_caption_style'] == "left") {	
 			
 		echo '<style type="text/css">';
 		echo ".nivo-caption {height: 330px; width: 320px;}";
 		echo '</style>';	
 
-		}
-
-
+	}
 }
-add_action( 'wp_head', 'ifeature_slider_caption_style');
+add_action( 'wp_head', 'slider_caption_style');
 
-/*
-Hide Slider Navigation
-*/
+/* Hide Slider Navigation */
 
-function ifeature_hide_slider_navigation() {
+function hide_slider_navigation() {
 
-		$options = get_option('ifeature');
+	global $themename, $themeslug, $options;
 		
-		if ($options['if_slider_nav'] == "none")  {
+	if ($options[$themeslug.'_slider_nav'] == "none")  {
 			
-
 		echo '<style type="text/css">';
 		echo ".nivo-controlNav {display: none;}";
 		echo '</style>';
 
-		}
-		
-
+	}	
 }
-add_action( 'wp_head', 'ifeature_hide_slider_navigation');
+add_action( 'wp_head', 'hide_slider_navigation');
+
+/* Include select arrays */
 
 require_once ( get_template_directory() . '/library/options/select.php' );
+
+/* End select arrays */
 
 $shortname = "if";
 
