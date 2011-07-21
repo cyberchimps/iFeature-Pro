@@ -59,8 +59,8 @@ case 'upload':
 <td width="85%">
 
 
-    <?php settings_fields('if_options'); ?>
-    <?php do_settings_sections('if'); 
+    <?php settings_fields($themeslug.'_options'); ?>
+    <?php do_settings_sections(''.$themeslug.''); 
     
     $file = $options['file'];
     

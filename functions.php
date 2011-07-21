@@ -404,7 +404,7 @@ add_action( 'wp_head', 'add_scripts',0);
 
 	//iFeature theme options file
 	
-require_once ( get_template_directory() . '/library/options/options.php' );
+require_once ( get_template_directory() . '/library/options/options-core.php' );
 require_once ( get_template_directory() . '/pro/meta-box.php' );
 require_once ( get_template_directory() . '/inc/update.php' ); // Include automatic updater
 ?>
