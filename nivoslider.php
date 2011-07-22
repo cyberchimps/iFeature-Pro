@@ -44,6 +44,27 @@
 
 /* End slider caption */ 
 
+/* Define slider navigation style */      
+
+	if ($navigationstyle == '0') {
+		
+		echo '<style type="text/css">';
+		echo ".nivo-controlNav a {background: url($root/images/bullets.png) no-repeat; display:block; width:22px; height:22px; 	text-indent:-9999px; border:0; margin-right:3px; float:left;}";
+		echo ".nivo-controlNav a.active {background-position:0 -22px;} ";
+		echo '</style>';
+		
+	}
+	
+	elseif ($navigationstyle == '2') {
+		
+			echo '<style type="text/css">';
+			echo '.nivo-controlNav {display: none;}';
+			echo '</style>';
+	}    
+
+/* End slider navigation */ 
+
+
 /* Define slider height variable */      
 
 	if ($captionstyle == '1') {
@@ -62,7 +83,7 @@
 		?>
 		
 			<style type="text/css">
-			.nivo-caption {position: relative; float: right; height: <?php echo $height ?>px; width: 320px;}
+			.nivo-caption {position: relative; float: right; height: <?php echo $height ?>px; width: 220px;}
 			</style>
 		
 		<?php
@@ -157,7 +178,7 @@
 		$timthumb = "h=$height&w=980";
 	}
 
-	elseif ($size2 == "2" OR $size2 == "3") {
+	elseif ($size2 == "1" OR $size2 == "2") {
 		$timthumb = "h=$height&w=480";
 	}
 
@@ -189,8 +210,10 @@
 	    $out = "<div id='slider' class='nivoSlider'>"; 
 	    $i = 0;
 
+
+	
 	if ($options['if_slider_posts_number'] == '') {
-	    $no = '5';    	
+	    $no = '20';    	
 	}   	
 
 	elseif ($usecustomslides == 'custom') {
@@ -265,7 +288,7 @@
 	    		$thumbnail = "$root/library/tt/timthumb.php?src=$customimage&a=c&h=30&w=50";
 	    	}
 
-	    	elseif ($customimage == '' && $size2 == "1" && $size != "0"){
+	    	elseif ($customimage == '' && $size2 == "0" && $size != "0"){
 	    		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/ifeatureprosmall.png&a=c&h=$height&w=640";
 	    		$thumbnail = "$root/images/pro/ifeatureprothumb.jpg";
 	    	}
@@ -275,7 +298,7 @@
 	    		$thumbnail = "$root/images/pro/ifeatureprothumb.jpg";
 	    	}
 
-	    	elseif ($customimage == '' && $size2 == "2" && $size != "0" OR $customimage == '' && $size2 == "3" && $size != "0"){
+	    	elseif ($customimage == '' && $size2 == "1" && $size != "0" OR $customimage == '' && $size2 == "2" && $size != "0"){
 	    		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/ifeaturepro480.png&a=c&h=$height&w=480";
 	    		$thumbnail = "$root/images/pro/ifeatureprothumb.jpg";
 	    	}
@@ -300,7 +323,17 @@
 
 	    	/* End slide markup */		
 
+	
+
 	      	$i++;
+	      	
+	      	if ($i == '4'){
+	
+			echo '<style type="text/css">';
+			echo '.nivo-controlNav {left: 34%;}';
+			echo '</style>';
+	
+	}
 	      	endwhile;
 	      	$out .= "</div>";
 	endif; 	    
@@ -310,11 +343,11 @@
 
 /* Define slider width variable */ 
 
-	if ($size == '1' && $size2 != '2' AND $size2 != '3') {
+	if ($size == '1' && $size2 != '1' AND $size2 != '2') {
 	  	$csWidth = '640';
 	}		
 
-	elseif ($size2 == '2' && $size != '0' OR $size2 == '3' && $size != '0') {
+	elseif ($size2 == '1' && $size != '0' OR $size2 == '2' && $size != '0') {
 		$csWidth = '480';
 	}  	
 

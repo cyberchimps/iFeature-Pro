@@ -777,7 +777,7 @@ function ifeature_initialize_the_meta_boxes() {
 				'desc' => 'Select your sidebar options',
 				'id' => 'page_sidebar',
 				'type' => 'select',
-				'options' => array('Sidebar Right (default)', 'Two Sidebar Right', 'Sidebar Right and Left', 'Full-Width', 'iFeature Pro Homepage'),
+				'options' => array('Sidebar Right (default)', 'Two Sidebar Right', 'Sidebar Right and Left', 'Full-Width'),
 				'std' => ''
 			 ),	
 

@@ -1198,25 +1198,6 @@ a { text-decoration: none; color: black; }
 	right:0px;
 }
 
-/* Control nav styles (e.g. 1,2,3...) */
-
-
-
-.nivo-controlNav a {
-	display:block;
-	width:22px;
-	height:22px;
-	background:url(./images/bullets.png) no-repeat;
-	text-indent:-9999px;
-	border:0;
-	margin-right:3px;
-	float:left;
-}
-
-.nivo-controlNav a.active {
-	background-position:0 -22px;
-}
-
 
 
 /*============================*/
@@ -1234,11 +1215,12 @@ a { text-decoration: none; color: black; }
     border: 1px solid white;
 }
 
-#slider .nivo-controlNav {
+.nivo-controlNav {
 	position:absolute;
 	bottom:-40px; /* Put the nav below the slider */
-	left: 47%;
+
 	
+/* Slider Thumbnail Nav Style */
 	
 .nivo-controlNav a {
 	
@@ -1249,7 +1231,7 @@ a { text-decoration: none; color: black; }
 	border:0;
 	margin-right:3px;
 	float:left;
-	display:inline
+	display: block;
 }
 
 
@@ -1259,6 +1241,8 @@ a { text-decoration: none; color: black; }
 	position:relative;
 	margin-right:10px;
 }
+
+/* End slider thumbs */
 
 #slider {
 	position:relative;
