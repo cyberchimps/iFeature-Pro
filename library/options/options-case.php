@@ -374,7 +374,6 @@ case 'color1':
 </tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
 
 
-
 <?php
 break; 
 
@@ -386,17 +385,18 @@ case 'color2':
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
     <td width="85%">
     
-    <?php
-$options = get_option('ifeature');
+<?php
 
-if (isset($options['if_link_color']) == "")
-			$picker = '717171';
+	if (isset($options[$themeslug.'_link_color']) == "") {
+		$picker = '717171';
+	}
 			
-		else
-			$picker = $options['if_link_color']; 
+	else {
+		$picker = $options[$themeslug.'_link_color']; 
+	}
 ?>
 
-<input type="text" class="color{required:false}" id="ifeature[if_link_color]" name="ifeature[if_link_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
+<input type="text" class="color{required:false}" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_link_color]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_link_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
 
 <br /><br />
     
@@ -407,7 +407,6 @@ if (isset($options['if_link_color']) == "")
 <tr>
 
 </tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
-
 
 
 <?php
@@ -422,17 +421,17 @@ case 'color3':
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
     <td width="85%">
     
-    <?php
-$options = get_option('ifeature');
+<?php
 
-if (isset($options['if_menulink_color']) == "")
-			$picker = 'FFF';
-			
-		else
-			$picker = $options['if_menulink_color']; 
+	if (isset($options[$themeslug.'_menulink_color']) == "") {
+		$picker = 'FFF';
+	}		
+	else {
+		$picker = $options[$themeslug.'_menulink_color']; 
+	}
 ?>
 
-<input type="text" class="color{required:false}" id="ifeature[if_menulink_color]" name="ifeature[if_menulink_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
+<input type="text" class="color{required:false}" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_menulink_color]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_menulink_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
 
 <br /><br />
     
@@ -443,7 +442,6 @@ if (isset($options['if_menulink_color']) == "")
 <tr>
 
 </tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
-
 
 
 <?php
@@ -457,17 +455,17 @@ case 'color4':
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
     <td width="85%">
     
-    <?php
-$options = get_option('ifeature');
+<?php
 
-if (isset($options['if_posttitle_color']) == "")
-			$picker = '717171';
-			
-		else
-			$picker = $options['if_posttitle_color']; 
+	if (isset($options[$themeslug.'_posttitle_color']) == "") {
+		$picker = '717171';
+	}		
+	else {
+		$picker = $options[$themeslug.'_posttitle_color']; 
+	}
 ?>
 
-<input type="text" class="color{required:false}" id="ifeature[if_posttitle_color]" name="ifeature[if_posttitle_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
+<input type="text" class="color{required:false}" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_posttitle_color]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_posttitle_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
 
 <br /><br />
     
@@ -478,7 +476,6 @@ if (isset($options['if_posttitle_color']) == "")
 <tr>
 
 </tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
-
 
 
 <?php
@@ -492,20 +489,19 @@ case 'color5':
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
     <td width="85%">
     
-    <?php
-$options = get_option('ifeature');
+<?php
 
-if (isset($options['if_callout_custom_background_color']) == "")
-			$picker = 'F8F8F8';
-			
-		else
-			$picker = $options['if_callout_custom_background_color']; 
+	if (isset($options[$themeslug.'_callout_custom_background_color']) == "") {
+		$picker = 'F8F8F8';
+	}		
+	else {
+		$picker = $options[$themeslug.'_callout_custom_background_color']; 
+	}
 ?>
 
-<input type="checkbox" id="ifeature[if_enable_custom_calloutbg]" name="ifeature[if_enable_custom_calloutbg]" value="1" <?php checked( '1', $options['if_enable_custom_calloutbg'] ); ?>> - Check this box to enable custom callout section background color.
+<input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_enable_custom_calloutbg]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_enable_custom_calloutbg]" value="1" <?php checked( '1', $options[$themeslug.'_enable_custom_calloutbg'] ); ?>> - Check this box to enable custom callout section background color.
 <br /><br />
-<input type="text" class="color{required:false}" id="ifeature[if_callout_custom_background_color]" name="ifeature[if_callout_custom_background_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
-
+<input type="text" class="color{required:false}" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_callout_custom_background_color]" name="ifeature[if<?php echo $themename ;?>[<?php echo $themeslug ;?>
 <br /><br />
     
     </td>
@@ -515,7 +511,6 @@ if (isset($options['if_callout_custom_background_color']) == "")
 <tr>
 
 </tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
-
 
 
 <?php
@@ -529,17 +524,17 @@ case 'color6':
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
     <td width="85%">
     
-    <?php
-$options = get_option('ifeature');
+<?php
 
-if (isset($options['if_callout_button_color']) == "")
-			$picker = '333';
-			
-		else
-			$picker = $options['if_callout_button_color']; 
+	if (isset($options[$themeslug.'_callout_button_color']) == "") {
+		$picker = '333';
+	}		
+	else {
+		$picker = $options[$themeslug.'_callout_button_color']; 
+	}
 ?>
 
-<input type="text" class="color{required:false}" id="ifeature[if_callout_button_color]" name="ifeature[if_callout_button_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
+<input type="text" class="color{required:false}" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_callout_button_color]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_callout_button_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
 
 <br /><br />
     
@@ -550,7 +545,6 @@ if (isset($options['if_callout_button_color']) == "")
 <tr>
 
 </tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
-
 
 
 <?php
@@ -565,17 +559,17 @@ case 'color7':
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
     <td width="85%">
     
-    <?php
-$options = get_option('ifeature');
+<?php
 
-if (isset($options['if_callout_text_color']) == "")
-			$picker = '000';
-			
-		else
-			$picker = $options['if_callout_text_color']; 
+	if (isset($options[$themeslug.'_callout_text_color']) == "") {
+		$picker = '000';
+	}		
+	else {
+		$picker = $options['if_callout_text_color']; 
+	}
 ?>
 
-<input type="text" class="color{required:false}" id="ifeature[if_callout_text_color]" name="ifeature[if_callout_text_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
+<input type="text" class="color{required:false}" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_callout_text_color]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_callout_text_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
 
 <br /><br />
     
@@ -586,7 +580,6 @@ if (isset($options['if_callout_text_color']) == "")
 <tr>
 
 </tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
-
 
 
 <?php
@@ -600,17 +593,18 @@ case 'color8':
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
     <td width="85%">
     
-    <?php
-$options = get_option('ifeature');
+<?php
 
-if (isset($options['if_footer_color']) == "")
-			$picker = '222';
-			
-		else
-			$picker = $options['if_footer_color']; 
+	if (isset($options[$themeslug.'_footer_color']) == "") {
+		$picker = '222';
+	}		
+	else {
+		$picker = $options[$themeslug.'_footer_color']; 
+	}
 ?>
+
 <br />
-<input type="text" class="color{required:false}" id="ifeature[if_footer_color]" name="ifeature[if_footer_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
+<input type="text" class="color{required:false}" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_footer_color]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_footer_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
 
 <br /><br />
     
@@ -621,7 +615,6 @@ if (isset($options['if_footer_color']) == "")
 <tr>
 
 </tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
-
 
 
 <?php
@@ -635,17 +628,18 @@ case 'color9':
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
     <td width="85%">
     
-    <?php
-$options = get_option('ifeature');
+<?php
 
-if (isset($options['if_tagline_color']) == "")
-			$picker = '000';
-			
-		else
-			$picker = $options['if_tagline_color']; 
+	if (isset($options[$themeslug.'_tagline_color']) == "") {
+		$picker = '000';
+	}		
+	else {
+		$picker = $options[$themeslug.'_tagline_color']; 
+	}		
 ?>
+
 <br />
-<input type="text" class="color{required:false}" id="ifeature[if_tagline_color]" name="ifeature[if_tagline_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
+<input type="text" class="color{required:false}" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_tagline_color]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_tagline_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
 
 <br /><br />
     
@@ -658,12 +652,8 @@ if (isset($options['if_tagline_color']) == "")
 </tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
 
 
-
 <?php
 break; 
-
-
- 
  
 case 'facebook':  
 ?>  
@@ -671,10 +661,10 @@ case 'facebook':
 <tr>
 
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
-    <td width="85%"><input style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>" id="<?php echo 'if['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
+    <td width="85%"><input style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>" id="<?php echo $themeslug.'['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
     
     <br /><br />
-    <input type="checkbox" id="ifeature[if_hide_facebook]" name="ifeature[if_hide_facebook]" value="1" <?php checked( '1', $options['if_hide_facebook'] ); ?>> - Check this box to hide the Facebook icon. 
+    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_facebook]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_facebook]" value="1" <?php checked( '1', $options[$themeslug.'_hide_facebook'] ); ?>> - Check this box to hide the Facebook icon. 
     
     </td>
 
@@ -683,8 +673,6 @@ case 'facebook':
 <tr>
 
 </tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
-
-
 
 <?php
 break;
@@ -696,10 +684,10 @@ case 'twitter':
 <tr>
 
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
-    <td width="85%"><input style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>" id="<?php echo 'if['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
+    <td width="85%"><input style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>" id="<?php echo $themeslug.'['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
     
     <br /><br />
-    <input type="checkbox" id="ifeature[if_hide_twitter]" name="ifeature[if_hide_twitter]" value="1" <?php checked( '1', $options['if_hide_twitter'] ); ?>> - Check this box to hide the Twitter icon. 
+    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_twitter]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_twitter]" value="1" <?php checked( '1', $options[$themeslug.'_hide_twitter'] ); ?>> - Check this box to hide the Twitter icon. 
     
     </td>
 
@@ -708,7 +696,6 @@ case 'twitter':
 <tr>
 
 </tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
-
 
 
 <?php
@@ -720,10 +707,10 @@ case 'gplus':
 <tr>
 
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
-    <td width="85%"><input style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>" id="<?php echo 'if['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
+    <td width="85%"><input style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>" id="<?php echo $themeslug.'['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
     
     <br /><br />
-    <input type="checkbox" id="ifeature[if_hide_gplus]" name="ifeature[if_hide_gplus]" value="1" <?php checked( '1', $options['if_hide_twitter'] ); ?>> - Check this box to hide the Google + icon. 
+    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_gplus]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_gplus]" value="1" <?php checked( '1', $options[$themeslug.'_hide_gplus'] ); ?>> - Check this box to hide the Google + icon. 
     
     </td>
 
@@ -732,7 +719,6 @@ case 'gplus':
 <tr>
 
 </tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
-
 
 
 <?php
@@ -745,10 +731,10 @@ case 'linkedin':
 <tr>
 
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
-    <td width="85%"><input style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>" id="<?php echo 'if['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
+    <td width="85%"><input style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>" id="<?php echo $themeslug.'['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
     
     <br /><br />
-    <input type="checkbox" id="ifeature[if_hide_linkedin]" name="ifeature[if_hide_linkedin]" value="1" <?php checked( '1', $options['if_hide_linkedin'] ); ?>> - Check this box to hide the LinkedIn icon. 
+    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_linkedin]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_linkedin]" value="1" <?php checked( '1', $options[$themeslug.'_hide_linkedin'] ); ?>> - Check this box to hide the LinkedIn icon. 
     
     </td>
 
@@ -769,10 +755,10 @@ case 'youtube':
 <tr>
 
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
-    <td width="85%"><input style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>" id="<?php echo 'if['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
+    <td width="85%"><input style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>" id="<?php echo $themeslug.'['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
     
     <br /><br />
-    <input type="checkbox" id="ifeature[if_hide_youtube]" name="ifeature[if_hide_youtube]" value="1" <?php checked( '1', $options['if_hide_youtube'] ); ?>> - Check this box to hide the YouTube icon. 
+    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_youtube]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_youtube]" value="1" <?php checked( '1', $options[$themeslug.'_hide_youtube'] ); ?>> - Check this box to hide the YouTube icon. 
     
     </td>
 
@@ -793,10 +779,10 @@ case 'googlemaps':
 <tr>
 
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
-    <td width="85%"><input style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>" id="<?php echo 'if['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
+    <td width="85%"><input style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>" id="<?php echo $themeslug.'['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
     
     <br /><br />
-    <input type="checkbox" id="ifeature[if_hide_googlemaps]" name="ifeature[if_hide_googlemaps]" value="1" <?php checked( '1', $options['if_hide_googlemaps'] ); ?>> - Check this box to hide the Google Maps icon. 
+    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_googlemaps]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_googlemaps]" value="1" <?php checked( '1', $options[$themeslug.'_hide_googlemaps'] ); ?>> - Check this box to hide the Google Maps icon. 
     
     </td>
 
@@ -817,10 +803,10 @@ case 'email':
 <tr>
 
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
-    <td width="85%"><input style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>" id="<?php echo 'if['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
+    <td width="85%"><input style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>" id="<?php echo $themeslug.'['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
     
     <br /><br />
-    <input type="checkbox" id="ifeature[if_hide_email]" name="ifeature[if_hide_email]" value="1" <?php checked( '1', $options['if_hide_email'] ); ?>> - Check this box to hide the Email icon. 
+    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_email]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_email]" value="1" <?php checked( '1', $options[$themeslug.'_hide_email'] ); ?>> - Check this box to hide the Email icon. 
     
     </td>
 
@@ -840,10 +826,10 @@ case 'rss':
 <tr>
 
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
-    <td width="85%"><input style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>" id="<?php echo 'if['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
+    <td width="85%"><input style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>" id="<?php echo $themeslug.'['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
     
     <br /><br />
-    <input type="checkbox" id="ifeature[if_hide_rss]" name="ifeature[if_hide_rss]" value="1" <?php checked( '1', $options['if_hide_rss'] ); ?>> - Check this box to hide the RSS icon. 
+    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_rss]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_rss]" value="1" <?php checked( '1', $options[$themeslug.'_hide_rss'] ); ?>> - Check this box to hide the RSS icon. 
     
     </td>
 
@@ -852,7 +838,6 @@ case 'rss':
 <tr>
 
 </tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
-
 
 
 <?php
@@ -865,7 +850,7 @@ case 'textarea':
 <tr>
 
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong></label> <br /><small><?php echo $value['desc']; ?></small> </td> 
-    <td width="85%"><textarea id="<?php echo 'ifeature['.$value['id'].']'; ?>" name="<?php echo 'ifeature['.$value['id'].']'; ?>" style="width:400px; height:200px;" type="<?php echo $value['type']; ?>" cols="" rows=""><?php echo stripslashes( $options[$value['id']] ); ?></textarea></td>  
+    <td width="85%"><textarea id="<?php echo $themename.'['.$value['id'].']'; ?>" name="<?php echo $themename.'['.$value['id'].']'; ?>" style="width:400px; height:200px;" type="<?php echo $value['type']; ?>" cols="" rows=""><?php echo stripslashes( $options[$value['id']] ); ?></textarea></td>  
  
   
  </tr>
@@ -879,7 +864,7 @@ case 'import':
 <tr>
 
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong></label> <br /><small><?php echo $value['desc']; ?></small> </td> 
-    <td width="85%"><textarea id="<?php echo 'ifeature['.$value['id'].']'; ?>" name="<?php echo 'ifeature['.$value['id'].']'; ?>" style="width:600px; height:300px;" type="<?php echo $value['type']; ?>" cols="" rows=""></textarea></td>  
+    <td width="85%"><textarea id="<?php echo $themename.'['.$value['id'].']'; ?>" name="<?php echo $themename.'['.$value['id'].']'; ?>" style="width:600px; height:300px;" type="<?php echo $value['type']; ?>" cols="" rows=""></textarea></td>  
  
   
  </tr>
@@ -893,7 +878,7 @@ case 'export':
 <tr>
 
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong></label> <br /><small><?php echo $value['desc']; ?></small> </td> 
-    <td width="85%"><textarea id="<?php echo 'ifeature['.$value['id'].']'; ?>" name="<?php echo 'ifeature['.$value['id'].']'; ?>" style="width:600px; height:300px;" type="<?php echo $value['type']; ?>" cols="" rows=""><?php echo (serialize($options));?></textarea></td>  
+    <td width="85%"><textarea id="<?php echo $themename.'['.$value['id'].']'; ?>" name="<?php echo $themename.'['.$value['id'].']'; ?>" style="width:600px; height:300px;" type="<?php echo $value['type']; ?>" cols="" rows=""><?php echo (serialize($options));?></textarea></td>  
 
  </tr>
  <tr>
@@ -906,14 +891,13 @@ case 'text':
 <tr>
 
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
-    <td width="85%"><input style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>" id="<?php echo 'if['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" /></td>
+    <td width="85%"><input style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>" id="<?php echo $themeslug.'['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" /></td>
 
   </tr>
  
 <tr>
 
 </tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
-
 
 
 <?php
@@ -923,7 +907,7 @@ case 'select1':
 ?>
 <tr>
 <td width="15%" rowspan="2" valign="middle"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></td>
-<td width="85%"><select style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>">
+<td width="85%"><select style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>">
 
 <?php
 								$selected = $options[$value['id']];
@@ -956,7 +940,7 @@ case 'select2':
 ?>
 <tr>
 <td width="15%" rowspan="2" valign="middle"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></td>
-<td width="85%"><select style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>">
+<td width="85%"><select style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>">
 
 <?php
 								$selected = $options[$value['id']];
@@ -979,7 +963,7 @@ case 'select2':
 Or enter your own font below (Google Fonts with more than one word format as follows: Maven+Pro)
 <br /> <br />
 
-<input style="width:300px;" name="ifeature[if_custom_font]" id="ifeature[if_custom_font]" type="text" value="<?php echo $options['if_custom_font'] ?>"  />
+<input style="width:300px;" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_custom_font]" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_custom_font]" type="text" value="<?php echo $options[$themeslug.'_custom_font'] ?>"  />
 
 
 </td>
@@ -997,7 +981,7 @@ case 'select3':
 ?>
 <tr>
 <td width="15%" rowspan="2" valign="middle"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></td>
-<td width="85%"><select style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>">
+<td width="85%"><select style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>">
 
 <?php
 								$selected = $options[$value['id']];
@@ -1029,7 +1013,7 @@ case 'select4':
 ?>
 <tr>
 <td width="15%" rowspan="2" valign="middle"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></td>
-<td width="85%"><select style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>">
+<td width="85%"><select style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>">
 
 <?php
 								$selected = $options[$value['id']];
@@ -1061,7 +1045,7 @@ case 'select5':
 ?>
 <tr>
 <td width="15%" rowspan="2" valign="middle"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></td>
-<td width="85%"><select style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>">
+<td width="85%"><select style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>">
 
 <?php
 								$selected = $options[$value['id']];
@@ -1093,7 +1077,7 @@ case 'select6':
 ?>
 <tr>
 <td width="15%" rowspan="2" valign="middle"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></td>
-<td width="85%"><select style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>">
+<td width="85%"><select style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>">
 
 <?php
 								$selected = $options[$value['id']];
@@ -1139,7 +1123,7 @@ case 'select7':
 ?>
 <tr>
 <td width="15%" rowspan="2" valign="middle"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></td>
-<td width="85%"><select style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>">
+<td width="85%"><select style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>">
 
 <?php
 								$selected = $options[$value['id']];
@@ -1185,7 +1169,7 @@ case 'select8':
 ?>
 <tr>
 <td width="15%" rowspan="2" valign="middle"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></td>
-<td width="85%"><select style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>">
+<td width="85%"><select style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>">
 
 <?php
 								$selected = $options[$value['id']];
@@ -1220,7 +1204,7 @@ case 'select9':
 ?>
 <tr>
 <td width="15%" rowspan="2" valign="middle"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></td>
-<td width="85%"><select style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>">
+<td width="85%"><select style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>">
 
 <?php
 								$selected = $options[$value['id']];
@@ -1254,7 +1238,7 @@ case 'select10':
 ?>
 <tr>
 <td width="15%" rowspan="2" valign="middle"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></td>
-<td width="85%"><select style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>">
+<td width="85%"><select style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>">
 
 <?php
 								$selected = $options[$value['id']];
@@ -1287,7 +1271,7 @@ case 'select11':
 ?>
 <tr>
 <td width="15%" rowspan="2" valign="middle"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></td>
-<td width="85%"><select style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>">
+<td width="85%"><select style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>">
 
 <?php
 								$selected = $options[$value['id']];
@@ -1322,7 +1306,7 @@ case 'select12':
 ?>
 <tr>
 <td width="15%" rowspan="2" valign="middle"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></td>
-<td width="85%"><select style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>">
+<td width="85%"><select style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>">
 
 <?php
 								$selected = $options[$value['id']];
@@ -1345,7 +1329,7 @@ case 'select12':
 Or enter your own font below (Google Fonts with more than one word format as follows: Maven+Pro)
 <br /> <br />
 
-<input style="width:300px;" name="ifeature[if_custom_menu_font]" id="ifeature[if_custom_menu_font]" type="text" value="<?php echo $options['if_custom_menu_font'] ?>"  />
+<input style="width:300px;" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_custom_menu_font]" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_custom_menu_font]" type="text" value="<?php echo $options[$themeslug.'_custom_menu_font'] ?>"  />
 
 
 </td>
@@ -1363,7 +1347,7 @@ case 'select13':
 ?>
 <tr>
 <td width="15%" rowspan="2" valign="middle"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></td>
-<td width="85%"><select style="width:300px;" name="<?php echo 'ifeature['.$value['id'].']'; ?>">
+<td width="85%"><select style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>">
 
 <?php
 								$selected = $options[$value['id']];
@@ -1402,7 +1386,7 @@ case "checkbox":
 <tr>
 <td width="15%" rowspan="2" valign="middle"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></td>
 <td width="85%">
-<input type="checkbox" name="<?php echo 'ifeature['.$value['id'].']'; ?>" id="<?php echo 'ifeature['.$value['id'].']'; ?>" value="1" <?php checked( '1', $options[$value['id']] ); ?>/>
+<input type="checkbox" name="<?php echo $themename.'['.$value['id'].']'; ?>" id="<?php echo $themename.'['.$value['id'].']'; ?>" value="1" <?php checked( '1', $options[$value['id']] ); ?>/>
 </td>
 </tr>
  
