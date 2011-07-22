@@ -25,12 +25,14 @@
 	$category = get_post_meta($post->ID, 'slider_blog_category' , true);
 	$postnumber  = get_post_meta($post->ID, 'slider_blog_posts_number' , true);
 	$sliderheight = get_post_meta($post->ID, 'slider_height' , true);
-	$delay = get_post_meta($post->ID, 'slider_delay' , true);
+	$sliderdelay = get_post_meta($post->ID, 'slider_delay' , true);
 	$slideranimation = get_post_meta($post->ID, 'page_slider_animation' , true);
+	$captionstyle = get_post_meta($post->ID, 'page_slider_caption_style' , true);
+	$navigationstyle = get_post_meta($post->ID, 'page_slider_navigation_style' , true);
 	
 /* End define variables. */	
 
-/* Define slider height variable */      
+/* Define slider caption style */      
 
 	if ($sliderheight == '') {
 	    $height = '330';
@@ -39,6 +41,33 @@
 	else {
 		$height = $sliderheight;
 	}
+
+/* End slider caption */ 
+
+/* Define slider height variable */      
+
+	if ($captionstyle == '1') {
+		
+		?>
+		
+			<style type="text/css">
+			.nivo-caption {height: <?php echo $height ?>px; width: 320px;}
+			</style>
+		
+		<?php
+	}
+	
+	elseif ($captionstyle == '2') {
+		
+		?>
+		
+			<style type="text/css">
+			.nivo-caption {position: relative; float: right; height: <?php echo $height ?>px; width: 320px;}
+			</style>
+		
+		<?php
+	}    
+
 
 /* End slider height */ 
 
@@ -109,6 +138,18 @@
 	}
 
 /* End animation styles. */	
+
+/* Define slider delay variable */ 
+    
+	if ($sliderdelay == '') {
+	    $delay = '3500';
+	}    
+
+	else {
+		$delay = $sliderdelay;
+	}
+
+/* End slider delay variable */ 
 
 /* Define TimThumb default height and widths. */		
 
@@ -265,21 +306,7 @@
 	endif; 	    
 	$wp_query = $tmp_query;    
 
-/* End slide creation */	
-
-	
-
-/* Define slider delay variable */ 
-    
-	if ($options['if_slider_delay'] == '') {
-	    $csDelay = '3500';
-	}    
-
-	else {
-		$csDelay = $options['if_slider_delay'];
-	}
-
-/* End slider delay variable */ 	
+/* End slide creation */		
 
 /* Define slider width variable */ 
 
@@ -336,7 +363,7 @@
         boxCols: 8, // For box animations
         boxRows: 4, // For box animations
         animSpeed:500, // Slide transition speed
-        pauseTime:3000, // How long each slide will show
+        pauseTime:'$delay', // How long each slide will show
         startSlide:0, // Set starting Slide (0 index)
         directionNav:true, // Next & Prev navigation
         directionNavHide:true, // Only show on hover
