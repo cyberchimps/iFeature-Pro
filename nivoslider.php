@@ -8,7 +8,13 @@
 	Portions of this code written by Ivan Lazarevic  (email : devet.sest@gmail.com) Copyright 2010    
 */
 
-/* Define global variables. */	
+/* Call globals. */	
+
+	global $themename, $themeslug, $options;
+
+/* End globals. */	
+
+/* Define variables. */	
 
     $tmp_query = $wp_query; 
 	$options = get_option('ifeature') ; 
@@ -17,34 +23,108 @@
 	$size2 = get_post_meta($post->ID, 'page_sidebar' , true);
 	$type = get_post_meta($post->ID, 'page_slider_type' , true);
 	$category = get_post_meta($post->ID, 'slider_blog_category' , true);
+	$postnumber  = get_post_meta($post->ID, 'slider_blog_posts_number' , true);
+	$sliderheight = get_post_meta($post->ID, 'slider_height' , true);
+	$delay = get_post_meta($post->ID, 'slider_delay' , true);
+	$slideranimation = get_post_meta($post->ID, 'page_slider_animation' , true);
+	
+/* End define variables. */	
 
-/* End define global variables. */	
+/* Define slider height variable */      
+
+	if ($sliderheight == '') {
+	    $height = '330';
+	}    
+
+	else {
+		$height = $sliderheight;
+	}
+
+/* End slider height */ 
+
+/* Define animation styles. */	
+
+	if ($slideranimation == '1') {
+		$animation = 'sliceDown';
+	}
+	
+	elseif ($slideranimation == '2') {
+		$animation = 'sliceDownLeft' ;
+	}
+
+	elseif ($slideranimation == '3') {
+		$animation = 'sliceUp' ;
+	}
+
+	elseif ($slideranimation == '4') {
+		$animation = 'sliceUpLeft' ;
+	}
+
+	elseif ($slideranimation == '5') {
+		$animation = 'sliceUpDown' ;
+	}
+
+	elseif ($slideranimation == '6') {
+		$animation = 'sliceUpDownLeft' ;
+	}
+
+	elseif ($slideranimation == '7') {
+		$animation = 'fold' ;
+	}
+
+	elseif ($slideranimation == '8') {
+		$animation = 'fade' ;
+	}
+
+	elseif ($slideranimation == '9') {
+		$animation = 'slideInRight' ;
+	}
+
+	elseif ($slideranimation == '10') {
+		$animation = 'slideInLeft' ;
+	}
+
+	elseif ($slideranimation == '11') {
+		$animation = 'boxRandom' ;
+	}
+
+	elseif ($slideranimation == '12') {
+		$animation = 'boxRain' ;
+	}
+
+	elseif ($slideranimation == '13') {
+		$animation = 'boxRainReverse' ;
+	}
+
+	elseif ($slideranimation == '14') {
+		$animation = 'boxRainGrow' ;
+	}
+	
+	elseif ($slideranimation == '15') {
+		$animation = 'boxRainGrowReverse' ;
+	}
+	
+	else {
+		$animation = 'random';
+	}
+
+/* End animation styles. */	
 
 /* Define TimThumb default height and widths. */		
 
 	if ($size == "0") {
-		$timthumb = 'h=330&w=980';
+		$timthumb = "h=$height&w=980";
 	}
 
 	elseif ($size2 == "2" OR $size2 == "3") {
-		$timthumb = 'h=330&w=480';
+		$timthumb = "h=$height&w=480";
 	}
 
 	else {
-		$timthumb = 'h=330&w=640';
+		$timthumb = "h=$height&w=640";
 	}
 
 /* End define TimThumb. */
-
-/* Query posts based on theme/meta options */
-
-	if ($options['if_slider_type'] == '') {
-		$usecustomslides = 'posts';
-	}	
-
-	else {
-		$usecustomslides = $options['if_slider_type'];
-	}
 
 /* Query posts based on theme/meta options */
 
@@ -145,22 +225,22 @@
 	    	}
 
 	    	elseif ($customimage == '' && $size2 == "1" && $size != "0"){
-	    		$image = "$root/images/pro/ifeatureprosmall.png";
+	    		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/ifeatureprosmall.png&a=c&h=$height&w=640";
 	    		$thumbnail = "$root/images/pro/ifeatureprothumb.jpg";
 	    	}
 
 	    	elseif ($customimage == '' && $size2 == '4' && $size != "0"){
-	    		$image = "$root/images/pro/ifeatureprosmall.png";
+	    		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/ifeatureprosmall.png&a=c&h=$height&w=640";
 	    		$thumbnail = "$root/images/pro/ifeatureprothumb.jpg";
 	    	}
 
 	    	elseif ($customimage == '' && $size2 == "2" && $size != "0" OR $customimage == '' && $size2 == "3" && $size != "0"){
-	    		$image = "$root/images/pro/ifeaturepro480.png";
+	    		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/ifeaturepro480.png&a=c&h=$height&w=480";
 	    		$thumbnail = "$root/images/pro/ifeatureprothumb.jpg";
 	    	}
 
 	   		else {
-	       		$image = "$root/images/pro/ifeaturepro.jpg";
+	       		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/ifeaturepro.jpg&a=c&h=$height&w=980";
 	       		$thumbnail = "$root/images/pro/ifeatureprothumb.jpg";
 	       	}
 
@@ -187,29 +267,7 @@
 
 /* End slide creation */	
 
-/* Define slider animation variable */
-
-	if ($options['if_slider_animation'] == '') {
-		$csEffect = 'random';	
-	}
-
-	else {
-		$csEffect = $options['if_slider_animation'];
-	}
-
-/* End slider animation */	
-
-/* Define slider height variable */      
-
-	if ($options['if_slider_height'] == '') {
-	    $csHeight = '330';
-	}    
-
-	else {
-		$csHeight = $options['if_slider_height'];
-	}
-
-/* End slider height */ 	
+	
 
 /* Define slider delay variable */ 
     
@@ -256,8 +314,8 @@
 <!-- Apply slider CSS based on user settings -->
 
 	<style type="text/css" media="screen">
-		#slider-wrapper { width: <?php echo $csWidth ?>px; margin: auto; margin-bottom: 45px;}
-		#slider { width: <?php echo $csWidth ?>px; margin: auto;}
+		#slider-wrapper { width: <?php echo $csWidth ?>px; height: <?php echo $height ?>px; margin: auto; margin-bottom: 45px;}
+		#slider { width: <?php echo $csWidth ?>px; height: <?php echo $height ?>px; margin: auto;}
 	</style>
 
 <!-- End style -->
@@ -273,7 +331,7 @@
 
 	$(window).load(function() {
     $('#slider').nivoSlider({
-        effect:'$csEffect', // Specify sets like: 'fold,fade,sliceDown'
+        effect:'$animation', // Specify sets like: 'fold,fade,sliceDown'
         slices:15, // For slice animations
         boxCols: 8, // For box animations
         boxRows: 4, // For box animations

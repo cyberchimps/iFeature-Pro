@@ -1225,7 +1225,6 @@ a { text-decoration: none; color: black; }
 
 #slider-wrapper {
 
-    height:330px;
     margin: auto;
     margin-bottom: 50px;
     -moz-box-shadow:0 0 5px #AAAAAA;
@@ -1262,8 +1261,6 @@ a { text-decoration: none; color: black; }
 
 #slider {
 	position:relative;
-   
-    height:330px;
     margin:auto;
 	background:url(images/slider/loading.gif) no-repeat 50% 50%;
 }
