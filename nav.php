@@ -7,18 +7,29 @@
 	Version: 0.1
 	
 */
+/* Call globals. */	
 
-	$options = get_option('ifeature') ;  
+	global $themename, $themeslug, $options;
+
+/* End globals. */	
+
+/* Define variables. */	
+
 	$homeimage		= $options['file3'];
+
+/* End variable definition. */
 
 ?>
 
-<?php $options = get_option('ifeature') ;  
-				if ($options['if_menu_color'] == "")
-					$menucolor = 'Grey';
-				else
-				$menucolor = $options[('if_menu_color')]; ?>
+<?php 
 				
+	if ($options[$themeslug.'_menu_color'] == "") {
+		$menucolor = 'Grey';
+	}
+	else {
+		$menucolor = $options[($themeslug.'_menu_color')]; 
+	}	
+?>		
 				<div style ="height: 38px;width: 980px;display: block; background: url(<?php bloginfo('template_url'); ?>/images/menu/<?php echo $menucolor?>.png) no-repeat left top">
 
 <div id="navcontainer">

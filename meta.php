@@ -4,19 +4,23 @@
 	Section: Meta
 	Authors: Trent Lapinski, Tyler Cunningham 
 	Description: Creates post meta content.
-	Version: 1.2	
+	Version: 2.0	
 */
 
-$options = get_option('ifeature') ;  
+/* Call globals. */	
+
+	global $themename, $themeslug, $options;
+
+/* End globals. */		 
 
 ?>
 
 <?php 
-		$author = $options['if_hide_author'];
-		$category = $options['if_hide_categories'];
-		$date = $options['if_hide_date'];
-		$comments = $options['if_hide_comments'];
-	?>
+		$author = $options[$themeslug.'_hide_author'];
+		$category = $options[$themeslug.'_hide_categories'];
+		$date = $options[$themeslug.'_hide_date'];
+		$comments = $options[$themeslug.'_hide_comments'];
+?>
 
 
 <div class="meta">

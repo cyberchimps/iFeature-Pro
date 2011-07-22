@@ -8,6 +8,19 @@
 	Copyright (C) 2011 CyberChimps
 */
 
+/* Call globals. */	
+
+	global $themename, $themeslug, $options;
+
+/* End globals. */	
+
+/* Define variables. */	
+
+	$showfblike	= $options[$themeslug.'_show_fb_like'];
+
+/* End variable definition. */	
+
+
 get_header(); ?>
 
 <div id="content_wrap">
@@ -33,9 +46,6 @@ get_header(); ?>
 							</div><!--end entry-->
 						<?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
 						
-							<?php 
-								$showfblike		= $options['if_show_fb_like'];
-							?>
 							<?php if ($showfblike == "1" ):?>
 							<div class="fb" >
 								<iframe src="http://www.facebook.com/plugins/like.php?href=<?php the_permalink() ?>&layout=standard&show_faces=true&width=450&action=like&colorscheme=light" scrolling="no" frameborder="0"  allowTransparency="true" style="border:none; overflow:hidden; width:530px; height:28px"></iframe>
