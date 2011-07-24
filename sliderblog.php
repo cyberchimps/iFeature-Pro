@@ -265,16 +265,15 @@
 
 	$(window).load(function() {
     $('#slider').nivoSlider({
-        effect:'$csEffect', // Specify sets like: 'fold,fade,sliceDown'
+        effect:'$animation', // Specify sets like: 'fold,fade,sliceDown'
         slices:15, // For slice animations
         boxCols: 8, // For box animations
         boxRows: 4, // For box animations
         animSpeed:500, // Slide transition speed
-        pauseTime:3000, // How long each slide will show
+        pauseTime:5000, // How long each slide will show
         startSlide:0, // Set starting Slide (0 index)
         directionNav:true, // Next & Prev navigation
         directionNavHide:true, // Only show on hover
-        
         controlNavThumbs:true, // Use thumbnails for Control Nav
         controlNavThumbsFromRel:true, // Use image rel for thumbs
         controlNavThumbsSearch: '.jpg', // Replace this with...
@@ -291,9 +290,14 @@
         lastSlide: function(){}, // Triggers when last slide is shown
         afterLoad: function(){} // Triggers when slider has loaded
     });
+	$('#slider').each(function(){
+    var \$this = $(this), \$control = $(".nivo-controlNav", this);
+    \$control.css({left: (\$this.width() - \$control.width()) / 2}); 
+});
 });
 
 </script>
+
 
 OUT;
 

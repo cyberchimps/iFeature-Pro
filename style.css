@@ -1218,6 +1218,7 @@ a { text-decoration: none; color: black; }
 .nivo-controlNav {
 	position:absolute;
 	bottom:-40px; /* Put the nav below the slider */
+	
 
 	
 /* Slider Thumbnail Nav Style */

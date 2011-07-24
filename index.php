@@ -12,6 +12,14 @@
 
 <?php get_header(); ?>
 
+<script type="text/javascript">
+
+$('.nivoSlider').each(function(){
+    var $this = $(this), $control = $(".nivo-controlNav", this);
+    $control.css({left: ($this.width() - $control.width()) / 2}); 
+});
+</script>
+
 <div id="content_wrap">
 	
 	<?php 

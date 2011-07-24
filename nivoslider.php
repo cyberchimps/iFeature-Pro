@@ -321,19 +321,9 @@
 	    				</a>
 	    			";
 
-	    	/* End slide markup */		
-
-	
+	    	/* End slide markup */	
 
 	      	$i++;
-	      	
-	      	if ($i == '4'){
-	
-			echo '<style type="text/css">';
-			echo '.nivo-controlNav {left: 34%;}';
-			echo '</style>';
-	
-	}
 	      	endwhile;
 	      	$out .= "</div>";
 	endif; 	    
@@ -370,6 +360,7 @@
 /* End slider navigation variable */ 
 
 	?>
+
 	
 <!-- Apply slider CSS based on user settings -->
 
@@ -400,7 +391,6 @@
         startSlide:0, // Set starting Slide (0 index)
         directionNav:true, // Next & Prev navigation
         directionNavHide:true, // Only show on hover
-        
         controlNavThumbs:true, // Use thumbnails for Control Nav
         controlNavThumbsFromRel:true, // Use image rel for thumbs
         controlNavThumbsSearch: '.jpg', // Replace this with...
@@ -417,6 +407,10 @@
         lastSlide: function(){}, // Triggers when last slide is shown
         afterLoad: function(){} // Triggers when slider has loaded
     });
+	$('#slider').each(function(){
+    var \$this = $(this), \$control = $(".nivo-controlNav", this);
+    \$control.css({left: (\$this.width() - \$control.width()) / 2}); 
+});
 });
 
 </script>
