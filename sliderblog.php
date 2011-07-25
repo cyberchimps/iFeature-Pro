@@ -23,7 +23,6 @@
 	$type = $options[$themeslug.'_slider_type']; 
 	$blogcategory = $options[$themeslug.'_slider_category']; 
 	$customcategory = $options[$themeslug.'_customslider_category'];
-	$customthumb = get_post_meta($post->ID, 'slider_custom_thumb' , true);
 	$captionstyle = $options[$themeslug.'_caption_style'];
 	$sliderheight = $options[$themeslug.'_slider_height'];
 	
@@ -140,6 +139,7 @@
 	   		$title				= get_the_title() ; /* Gets slide title from post/custom slide title */
 	   		$hidetitlebar       = get_post_meta($post->ID, 'slider_hidetitle' , true); /* Gets page/post meta option for disabling slide title bar */
 	   		$customsized        = "$root/library/tt/timthumb.php?src=$customimage&a=c&$timthumb"; /* Gets custom image from page/post meta option, applies timthumb code  */
+	   		$customthumb 		= get_post_meta($post->ID, 'slider_custom_thumb' , true); /* Gets custom thumbnail from page/post meta option */
 
 			/* End variables */	
 

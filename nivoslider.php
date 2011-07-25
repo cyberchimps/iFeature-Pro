@@ -17,7 +17,6 @@
 /* Define variables. */	
 
     $tmp_query = $wp_query; 
-	$options = get_option('ifeature') ; 
 	$root = get_template_directory_uri(); 
 	$size = get_post_meta($post->ID, 'page_slider_size' , true);
 	$size2 = get_post_meta($post->ID, 'page_sidebar' , true);
@@ -29,7 +28,7 @@
 	$slideranimation = get_post_meta($post->ID, 'page_slider_animation' , true);
 	$captionstyle = get_post_meta($post->ID, 'page_slider_caption_style' , true);
 	$navigationstyle = get_post_meta($post->ID, 'page_slider_navigation_style' , true);
-	$customthumb = get_post_meta($post->ID, 'slider_custom_thumb' , true);
+	
 	
 /* End define variables. */	
 
@@ -243,6 +242,7 @@
 	   		$title				= get_the_title() ; /* Gets slide title from post/custom slide title */
 	   		$hidetitlebar       = get_post_meta($post->ID, 'slider_hidetitle' , true); /* Gets page/post meta option for disabling slide title bar */
 	   		$customsized        = "$root/library/tt/timthumb.php?src=$customimage&a=c&$timthumb"; /* Gets custom image from page/post meta option, applies timthumb code  */
+	   		$customthumb = get_post_meta($post->ID, 'slider_custom_thumb' , true);
 
 			/* End variables */	
 
@@ -284,7 +284,7 @@
 
 	    	/* Controls slide image and thumbnails */
 
-	    	if ($customimage != '' ){
+	    	if ($customimage != '' && $customthumb == '' ){
 	    		$image = $customsized;
 	    		$thumbnail = "$root/library/tt/timthumb.php?src=$customimage&a=c&h=30&w=50";
 	    	}
