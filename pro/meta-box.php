@@ -1013,11 +1013,12 @@ add_action( 'admin_print_styles-post-new.php', 'ifeaturepro_metabox_enqueue' );
 add_action( 'admin_print_styles-post.php', 'ifeaturepro_metabox_enqueue' );
 
 function ifeaturepro_metabox_enqueue() {
-	$path =  get_template_directory_uri()."/pro/";
+	$path =  get_template_directory_uri()."/library/js/";
+	$path2 = get_template_directory_uri()."/library/css/";
 	$color = get_user_meta( get_current_user_id(), 'admin_color', true );
 
-	wp_register_style(  'metabox-tabs-css', $path. 'metabox-tabs.css');
-	wp_register_style(  'jf-color',       $path. 'metabox-fresh.css');
+	wp_register_style(  'metabox-tabs-css', $path2. 'metabox-tabs.css');
+	wp_register_style(  'jf-color',       $path2. 'metabox-fresh.css');
 	wp_register_script ( 'jf-metabox-tabs', $path. 'metabox-tabs.js');
 
 	wp_enqueue_script('jf-metabox-tabs');

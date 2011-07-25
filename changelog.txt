@@ -2,7 +2,7 @@ iFeature Pro Changelog
 
 ****************************
 
-Version 2.0 (6-15-11)
+Version 2.0 (7-25-11)
 -Now enqueueing WordPress jQuery library instead of Google's for offline compatibility.
 -TimThumb support added for automatic image resizing.
 -Cleaned up stylesheet.
@@ -10,7 +10,7 @@ Version 2.0 (6-15-11)
 -Added proper featured image support, links to corresponding post.
 -Added Design tab, adding user control over various visual elements of the theme.
 -Header options tab now called Social, moved several options to General and added check boxes to hide individual icons.
--Added Blog options tab, includes support for post excerpts, ability to hide meta elements.
+-Added Blog options tab, includes support for post excerpts, featured images, ability to hide meta elements.
 -Replaced CoinSlider with Nivoslider, adds more animation effects and functionality options.
 -Added custom Google Font input option.
 -Added taxonomy structure to Custom Slides, users can now assign slides to custom categories to be called on a per-page basis.
@@ -18,6 +18,8 @@ Version 2.0 (6-15-11)
 -Added category drop-down menu support for theme options page.
 -Added tabbed meta options for per-page options.
 -Security fix in comments.php removing $_SERVER variable statement.
+-Slider, SEO, and Callout options tabs removed, moved options to page meta options.
+-Added Loop file.
 
 Version 1.1.6 (6-12-2011)
 -API added for push updates.

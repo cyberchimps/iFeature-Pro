@@ -85,7 +85,7 @@
 	if ($calloutbgcolor != '6' AND $calloutbgcolor != '0'){
 	
 		echo '<style type="text/css" media="screen">';
-		echo "#calloutwrap {background: url($root/images/pro/$calloutbg) no-repeat top center;}";
+		echo "#calloutwrap {background: url($root/images/pro/$calloutbg) no-repeat top center; height: 100px; border: none;}";
 		echo '</style>';
 	}
 	
