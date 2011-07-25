@@ -8,7 +8,25 @@
 	
 */
 
-/* Site Title Color */
+/* Post Meta Data width */
+
+function post_meta_data_width() {
+
+	global $themename, $themeslug, $options;
+
+	if ($options[$themeslug.'_blog_sidebar'] == "two-right" OR $options[$themeslug.'_blog_sidebar'] == "right-left") {
+
+		echo '<style type="text/css">';
+		echo ".postmetadata {width: 480px;}";
+		echo '</style>';
+		
+	}
+	
+}
+add_action( 'wp_head', 'post_meta_data_width');
+
+
+/* Menu Color */
 
 function add_menu_color() {
 
@@ -36,6 +54,8 @@ function add_menu_color() {
 	
 }
 add_action( 'wp_head', 'add_menu_color');
+
+/* Site Title Color */
 
 function add_sitetitle_color() {
 
@@ -236,36 +256,23 @@ function widget_title_bg() {
 }
 add_action( 'wp_head', 'widget_title_bg');
 
-/* Feature Caption Style */
-
-function slider_caption_style() {
-
-	global $themename, $themeslug, $options;
-		
-	if ($options[$themeslug.'_caption_style'] == "right")  {
-
-		echo '<style type="text/css">';
-		echo ".nivo-caption {position: relative; float: right; height: 330px; width: 320px;}";
-		echo '</style>';
-
-	}
-		
-	elseif ($options[$themeslug.'_caption_style'] == "left") {	
-			
-		echo '<style type="text/css">';
-		echo ".nivo-caption {height: 330px; width: 320px;}";
-		echo '</style>';	
-
-	}
-}
-add_action( 'wp_head', 'slider_caption_style');
 
 /* Hide Slider Navigation */
 
 function hide_slider_navigation() {
 
 	global $themename, $themeslug, $options;
+	$root = get_template_directory_uri();
+
+	if ($options[$themeslug.'_slider_nav'] == 'dots') {
 		
+		echo '<style type="text/css">';
+		echo ".nivo-controlNav a {background: url($root/images/bullets.png) no-repeat; display:block; width:22px; height:22px; 	text-indent:-9999px; border:0; margin-right:3px; float:left;}";
+		echo ".nivo-controlNav a.active {background-position:0 -22px;} ";
+		echo '</style>';
+		
+	}
+ 
 	if ($options[$themeslug.'_slider_nav'] == "none")  {
 			
 		echo '<style type="text/css">';

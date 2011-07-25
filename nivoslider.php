@@ -33,7 +33,7 @@
 	
 /* End define variables. */	
 
-/* Define slider caption style */      
+/* Define slider height */      
 
 	if ($sliderheight == '') {
 	    $height = '330';
@@ -43,7 +43,7 @@
 		$height = $sliderheight;
 	}
 
-/* End slider caption */ 
+/* End slider height */ 
 
 /* Define slider navigation style */      
 
@@ -66,7 +66,7 @@
 /* End slider navigation */ 
 
 
-/* Define slider height variable */      
+/* Define slider caption style */      
 
 	if ($captionstyle == '1') {
 		
@@ -91,7 +91,7 @@
 	}    
 
 
-/* End slider height */ 
+/* End slider caption */ 
 
 /* Define animation styles. */	
 
@@ -310,7 +310,7 @@
 	    	}
 
 	   		else {
-	       		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/ifeaturepro.jpg&a=c&h=$height&w=980";
+	       		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/ifeatureprolarge.jpg&a=c&h=$height&w=980";
 	       		$thumbnail = "$root/images/pro/ifeatureprothumb.jpg";
 	       	}
 
@@ -348,7 +348,7 @@
 	}  	
 
 	else {
-		$csWidth = '976';
+		$csWidth = '980';
 	}
 
 /* End slider width variable */ 

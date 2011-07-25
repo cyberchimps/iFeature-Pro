@@ -824,7 +824,7 @@ function ifeature_initialize_the_meta_boxes() {
 				'desc' => 'Select the blog post category you would like to use',
 				'id' => 'slider_blog_category',
 				'type' => 'select',
-				'options' => $blogoptions,
+				'options' => $blogoptions, 'all',
 				'std' => ''
 			),
 

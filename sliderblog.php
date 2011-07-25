@@ -8,53 +8,98 @@
 	Portions of this code written by Ivan Lazarevic  (email : devet.sest@gmail.com) Copyright 2010    
 */
 
-/* Define global variables. */	
+/* Call globals. */	
+
+	global $themename, $themeslug, $options;
+
+/* End globals. */
+
+/* Define variables. */	
 
     $tmp_query = $wp_query; 
-	$options = get_option('ifeature') ; 
 	$root = get_template_directory_uri(); 
-	$size = $options['if_slider_size'];
-	$size2 = $options['if_blog_sidebar'];
-	$type = $options['if_slider_type']; 
-	$blogcategory = $options['if_slider_category']; 
-	$customcategory = $options['if_customslider_category'];
+	$size = $options[$themeslug.'_slider_size'];
+	$size2 = $options[$themeslug.'_blog_sidebar'];
+	$type = $options[$themeslug.'_slider_type']; 
+	$blogcategory = $options[$themeslug.'_slider_category']; 
+	$customcategory = $options[$themeslug.'_customslider_category'];
+	$customthumb = get_post_meta($post->ID, 'slider_custom_thumb' , true);
+	$captionstyle = $options[$themeslug.'_caption_style'];
+	$sliderheight = $options[$themeslug.'_slider_height'];
+	
+/* End define variables. */	
 
-/* End define global variables. */	
+/* Define slider height */      
+
+	if ($sliderheight == '') {
+	    $height = '330';
+	}    
+
+	else {
+		$height = $sliderheight;
+	}
+
+/* End slider height */ 
+
+/* Define slider caption style */      
+
+	if ($captionstyle == 'left') {
+		
+		?>
+		
+			<style type="text/css">
+			.nivo-caption {height: <?php echo $height ?>px; width: 320px;}
+			</style>
+		
+		<?php
+	}
+	
+	elseif ($captionstyle == 'right') {
+		
+		?>
+		
+			<style type="text/css">
+			.nivo-caption {position: relative; float: right; height: <?php echo $height ?>px; width: 220px;}
+			</style>
+		
+		<?php
+	}    
+
 
 /* Define TimThumb default height and widths. */		
 
 	if ($size == "full") {
-		$timthumb = 'h=330&w=980';
+		$timthumb = "h=$height&w=980";
 	}
 
 	elseif ($size2 == "two-right" OR $size2 == "right-left") {
-		$timthumb = 'h=330&w=480';
+		$timthumb = "h=$height&w=480";
 	}
 
 	else {
-		$timthumb = 'h=330&w=640';
+		$timthumb = "h=$height&w=640";
 	}
 
 /* End define TimThumb. */
 
 /* Query posts based on theme/meta options */
 
-	if ($options['if_slider_type'] == '') {
+	if ($options[$themeslug.'_slider_type'] == '') {
 		$usecustomslides = 'posts';
 	}	
 
 	else {
-		$usecustomslides = $options['if_slider_type'];
+		$usecustomslides = $options[$themeslug.'_slider_type'];
 	}
 
 /* Query posts based on theme/meta options */
 
 	if ( $type == 'custom') {
-    	query_posts( array ('post_type' => 'if_custom_slides', 'showposts' => 20,  'slide_categories' => $customcategory  ) );
+    	query_posts( array ('post_type' => $themeslug.'_custom_slides', 'showposts' => 20,  'slide_categories' => $customcategory  ) );
     }
     	
     else {
-    	query_posts('category_name='.$options['if_slider_category'].'&showposts=50');
+    	query_posts('category_name='.$options[$themeslug.'_slider_category'].'&showposts=50');
 	}
 
 /* End query posts based on theme/meta options */
@@ -65,7 +110,7 @@
 	    $out = "<div id='slider' class='nivoSlider'>"; 
 	    $i = 0;
 
-	if ($options['if_slider_posts_number'] == '') {
+	if ($options[$themeslug.'_slider_posts_number'] == '') {
 	    $no = '5';    	
 	}   	
 
@@ -74,7 +119,7 @@
 	}
 
 	else {
-		$no = $options['if_slider_posts_number'];
+		$no = $options[$themeslug.'_slider_posts_number'];
 	}
 
 /* End post counter */	    	
@@ -140,19 +185,24 @@
 	    		$image = $customsized;
 	    		$thumbnail = "$root/library/tt/timthumb.php?src=$customimage&a=c&h=30&w=50";
 	    	}
+	    	
+	    	elseif ($customimage != '' && $customthumb != '' ){
+	    		$image = $customsized;
+	    		$thumbnail = "$root/library/tt/timthumb.php?src=$customthumb&a=c&h=30&w=50";
+	    	}
 
 	    	elseif ($customimage == '' && $size2 == "right" && $size != "full"){
-	    		$image = "$root/images/pro/ifeatureprosmall.png";
+	    		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/ifeatureprosmall.png&a=c&h=$height&w=640";
 	    		$thumbnail = "$root/images/pro/ifeatureprothumb.jpg";
 	    	}
 
-	    	elseif ($customimage == '' && $size2 == "two-right" OR $customimage == '' && $size2 == "right-left"){
-	    		$image = "$root/images/pro/ifeaturepro480.png";
+	    	elseif ($customimage == '' && $size2 == "two-right" && $size != "full" OR $customimage == '' && $size2 == "right-left" && $size != "full"){
+	    		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/ifeaturepro480.png&a=c&h=$height&w=480";
 	    		$thumbnail = "$root/images/pro/ifeatureprothumb.jpg";
 	    	}
 
 	   		else {
-	       		$image = "$root/images/pro/ifeaturepro.jpg";
+	       		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/ifeatureprolarge.jpg&a=c&h=$height&w=980";
 	       		$thumbnail = "$root/images/pro/ifeatureprothumb.jpg";
 	       	}
 
@@ -181,36 +231,24 @@
 
 /* Define slider animation variable */
 
-	if ($options['if_slider_animation'] == '') {
-		$csEffect = 'random';	
+	if ($options[$themeslug.'_slider_animation'] == '') {
+		$animation = 'random';	
 	}
 
 	else {
-		$csEffect = $options['if_slider_animation'];
+		$animation = $options[$themeslug.'_slider_animation'];
 	}
 
-/* End slider animation */	
-
-/* Define slider height variable */      
-
-	if ($options['if_slider_height'] == '') {
-	    $csHeight = '330';
-	}    
-
-	else {
-		$csHeight = $options['if_slider_height'];
-	}
-
-/* End slider height */ 	
+/* End slider animation */		
 
 /* Define slider delay variable */ 
     
-	if ($options['if_slider_delay'] == '') {
-	    $csDelay = '3500';
+	if ($options[$themeslug.'_slider_delay'] == '') {
+	    $delay = '3500';
 	}    
 
 	else {
-		$csDelay = $options['if_slider_delay'];
+		$delay = $options[$themeslug.'_slider_delay'];
 	}
 
 /* End slider delay variable */ 	
@@ -226,14 +264,14 @@
 	}  	
 
 	else {
-		$csWidth = '976';
+		$csWidth = '980';
 	}
 
 /* End slider width variable */ 
 
 /* Define slider navigation variable */ 
   	
-	if ($options['if_slider_navigation'] == '1') {
+	if ($options[$themeslug.'_slider_navigation'] == '1') {
 	    $csNavigation = 'false';
 	}
 
@@ -248,8 +286,8 @@
 <!-- Apply slider CSS based on user settings -->
 
 	<style type="text/css" media="screen">
-		#slider-wrapper { width: <?php echo $csWidth ?>px; margin: auto; margin-bottom: 45px;}
-		#slider { width: <?php echo $csWidth ?>px; margin: auto;}
+		#slider-wrapper { width: <?php echo $csWidth ?>px; height: <?php echo $height ?>px; margin: auto; margin-bottom: 45px;}
+		#slider { width: <?php echo $csWidth ?>px; height: <?php echo $height ?>px; margin: auto;}
 	</style>
 
 <!-- End style -->
@@ -270,7 +308,7 @@
         boxCols: 8, // For box animations
         boxRows: 4, // For box animations
         animSpeed:500, // Slide transition speed
-        pauseTime:5000, // How long each slide will show
+        pauseTime:'$delay', // How long each slide will show
         startSlide:0, // Set starting Slide (0 index)
         directionNav:true, // Next & Prev navigation
         directionNavHide:true, // Only show on hover

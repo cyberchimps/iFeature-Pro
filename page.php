@@ -30,6 +30,16 @@
 
 /* End define global variables. */
 
+/* Adjust Post Meta Data bar width. */
+
+if ($sidebar == "1" OR $sidebar == "2") {
+	
+		echo '<style type="text/css">';
+		echo ".postmetadata {width: 480px;}";
+		echo '</style>';
+		
+	}
+
 ?>
 
 <!-- iFeature Pro Page SEO options -->
