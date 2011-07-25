@@ -29,6 +29,7 @@
 	$slideranimation = get_post_meta($post->ID, 'page_slider_animation' , true);
 	$captionstyle = get_post_meta($post->ID, 'page_slider_caption_style' , true);
 	$navigationstyle = get_post_meta($post->ID, 'page_slider_navigation_style' , true);
+	$customthumb = get_post_meta($post->ID, 'slider_custom_thumb' , true);
 	
 /* End define variables. */	
 
@@ -286,6 +287,11 @@
 	    	if ($customimage != '' ){
 	    		$image = $customsized;
 	    		$thumbnail = "$root/library/tt/timthumb.php?src=$customimage&a=c&h=30&w=50";
+	    	}
+	    	
+	    	elseif ($customimage != '' && $customthumb != '' ){
+	    		$image = $customsized;
+	    		$thumbnail = "$root/library/tt/timthumb.php?src=$customthumb&a=c&h=30&w=50";
 	    	}
 
 	    	elseif ($customimage == '' && $size2 == "0" && $size != "0"){

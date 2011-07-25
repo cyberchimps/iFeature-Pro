@@ -15,7 +15,7 @@ function add_menu_color() {
 	global $themename, $themeslug, $options;
 	$root = get_template_directory_uri(); 
 
-	if (isset($options[$themeslug.'_menu_color']) != "picker") {
+	if ($options[$themeslug.'_menu_color'] != "picker") {
 	
 		$menucolor = $options[$themeslug.'_menu_color'];
 		
@@ -25,7 +25,7 @@ function add_menu_color() {
 		
 	}
 	
-	else {
+	elseif ($options[$themeslug.'_menu_color'] == "picker") {
 	
 		$menucolor = $options[$themeslug.'_custom_menu_color']; 
 			
@@ -33,6 +33,7 @@ function add_menu_color() {
 		echo "#navbackground {height: 35px; border: 1px solid #333; -moz-border-radius: 3px; border-radius: 3px; -moz-box-shadow:0 0 3px #444; -webkit-box-shadow:0 0 3px #444; box-shadow:0 0 3px #444;background-color: #$menucolor;}";
 		echo '</style>';
 	}
+	
 }
 add_action( 'wp_head', 'add_menu_color');
 
@@ -179,13 +180,14 @@ function add_footer_color() {
 	global $themename, $themeslug, $options;
 
 	if (isset($options[$themeslug.'_footer_color']) != "" && $options[$themeslug.'_footer_color'] != "222222" ) {
+	
 		$footercolor = $options[$themeslug.'_footer_color']; 
-	}	
+	
 	
 		echo '<style type="text/css">';
 		echo "#footer {background: #$footercolor;}";
 		echo '</style>';
-
+	}
 }
 add_action( 'wp_head', 'add_footer_color');
 

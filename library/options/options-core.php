@@ -135,12 +135,9 @@ function theme_options_do_page() {
         <li><a href="#tab1"><span>General</span></a></li>
         <li><a href="#tab2"><span>Design</span></a></li>
         <li><a href="#tab3"><span>Social</span></a></li>
-        <li><a href="#tab4"><span>Blog</span></a></li>
-        <li><a href="#tab5"><span>SEO</span></a></li>
-        <li><a href="#tab6"><span>Callout Section</span></a></li>
-        <li><a href="#tab7"><span>iFeature Slider</span></a></li>        
-        <li><a href="#tab8"><span>Footer</span></a></li>
-        <li><a href="#tab9"><span>Import/Export</span></a></li>
+        <li><a href="#tab4"><span>Blog</span></a></li>       
+        <li><a href="#tab5"><span>Footer</span></a></li>
+        <li><a href="#tab6"><span>Import/Export</span></a></li>
     
     </ul>
     

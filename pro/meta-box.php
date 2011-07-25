@@ -649,6 +649,13 @@ function ifeature_initialize_the_meta_boxes() {
 						'type' => 'checkbox',
 						'std' => ''
 					),
+					
+					array(
+						'name' => 'Custom Thumbnail',
+						'desc' => 'Use the image uploader to upload a custom navigation thumbnail',
+						'id' => $prefix . 'custom_thumb',
+						'type' => 'image'
+					),
 
 
 				)
@@ -687,12 +694,11 @@ function ifeature_initialize_the_meta_boxes() {
 						'std' => ''
 					),
 
-
 					array(
-						'name' => 'Color test',
-						'desc' => 'Color picker',
-						'id' => 'colortest',
-						'type' => 'color'
+						'name' => 'Custom Thumbnail',
+						'desc' => 'Use the image uploader to upload a custom navigation thumbnail',
+						'id' => $prefix . 'custom_thumb',
+						'type' => 'image'
 					),
 				)
 			)

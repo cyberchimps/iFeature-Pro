@@ -339,102 +339,9 @@ array( "name" => "Optional Home Title",
 array( "type" => "close"),
 array( "type" => "close-tab"),
 
-
-//SEO
-
-array( "id" => "tab5",
-	"type" => "open-tab"),
- 
-array( "type" => "open"),
-
-array( "type" => "close"),
-array( "type" => "close-tab"),
-
-// Callout Section
-
-array( "id" => "tab6",
-	"type" => "open-tab"),
-
-array( "type" => "open"),
-  
-array( "name" => "Hide Callout Section",  
-    "desc" => "Check this box to hide the Callout Section on the homepage.",  
-    "id" => $shortname."_hide_callout",  
-     "type" => "checkbox",  
-    "std" => "false"), 
-  
-array( "name" => "Callout Title",  
-    "desc" => "Enter callout title, you can use HTML.",  
-    "id" => $shortname."_callout_title",  
-    "type" => "text",
-    "std" => ""),
-
-array( "name" => "Callout Text",  
-    "desc" => "Enter callout text, you can use HTML.",  
-    "id" => $shortname."_callout_text",  
-    "type" => "textarea",
-    "std" => ""),    
-array( "name" => "Callout Button Link",  
-    "desc" => "Enter a URL for the Callout Button's link.",  
-    "id" => $shortname."_callout_button_link",  
-    "type" => "text",
-    "std" => ""),
-    
-array( "name" => "Custom Callout Button",  
-    "desc" => "Use the image uploader or enter your own URL into the input field to use a custom callout button.",  
-    "id" => $shortname."_custom_callout_button",  
-    "type" => "upload4",  
-    "std" => ""),     
-    
-array( "name" => "Callout Background Color",  
-    "desc" => "Select your callout section background color (default is iFeature Pro 2.0)",  
-    "id" => $shortname."_callout_background_color",  
-      "type" => "select13",  
-    "std" => "false"),
-    
-array( "name" => "Custom Callout Background Color",  
-    "desc" => "Use the color picker to select the callout section background color",  
-    "id" => $shortname."_callout_custom_background_color",  
-      "type" => "color5",  
-    "std" => "false"),
-    
-array( "name" => "Callout Text Color",  
-    "desc" => "Use the color picker to select the callout section text color",  
-    "id" => $shortname."_callout_text_color",  
-      "type" => "color7",  
-    "std" => "false"),
-
-array( "name" => "Callout Button Color",  
-    "desc" => "Use the color picker to select the callout button color",  
-    "id" => $shortname."_callout_button_color",  
-      "type" => "color6",  
-    "std" => "false"),
-
-array( "type" => "close"), 
-
-array( "type" => "close-tab"),
-
-// iFeature Slider
-
-array( "id" => "tab7",
-	"type" => "open-tab"),
-
-array( "type" => "open"),
-
-array( "name" => "Hide iFeature Slider",  
-    "desc" => "Check this box to hide the Feature Slider on the iFeature Pro homepage.",  
-    "id" => $shortname."_hide_slider",  
-    "type" => "checkbox",  
-    "std" => "false"),
-    
-array( "type" => "close"),   
-
-array( "type" => "close-tab"),
-
-
 // Footer
 
-array( "id" => "tab8",
+array( "id" => "tab5",
 	"type" => "open-tab"),
 
 array( "type" => "open"),
@@ -463,7 +370,7 @@ array( "type" => "close-tab"),
 
 // Import/Export
 
-array( "id" => "tab9",
+array( "id" => "tab6",
 	"type" => "open-tab"),
 
 array( "type" => "open"),
