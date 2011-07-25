@@ -192,12 +192,12 @@
 	    	}
 
 	    	elseif ($customimage == '' && $size2 == "right" && $size != "full"){
-	    		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/ifeatureprosmall.png&a=c&h=$height&w=640";
+	    		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
 	    		$thumbnail = "$root/images/pro/ifeatureprothumb.jpg";
 	    	}
 
 	    	elseif ($customimage == '' && $size2 == "two-right" && $size != "full" OR $customimage == '' && $size2 == "right-left" && $size != "full"){
-	    		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/ifeaturepro480.png&a=c&h=$height&w=480";
+	    		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/iFeaturePro2-480.jpg&a=c&h=$height&w=480";
 	    		$thumbnail = "$root/images/pro/ifeatureprothumb.jpg";
 	    	}
 

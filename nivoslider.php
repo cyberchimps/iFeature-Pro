@@ -295,17 +295,17 @@
 	    	}
 
 	    	elseif ($customimage == '' && $size2 == "0" && $size != "0"){
-	    		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/ifeatureprosmall.png&a=c&h=$height&w=640";
+	    		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
 	    		$thumbnail = "$root/images/pro/ifeatureprothumb.jpg";
 	    	}
 
 	    	elseif ($customimage == '' && $size2 == '4' && $size != "0"){
-	    		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/ifeatureprosmall.png&a=c&h=$height&w=640";
+	    		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
 	    		$thumbnail = "$root/images/pro/ifeatureprothumb.jpg";
 	    	}
 
 	    	elseif ($customimage == '' && $size2 == "1" && $size != "0" OR $customimage == '' && $size2 == "2" && $size != "0"){
-	    		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/ifeaturepro480.png&a=c&h=$height&w=480";
+	    		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/iFeaturePro2-480.jpg&a=c&h=$height&w=480";
 	    		$thumbnail = "$root/images/pro/ifeatureprothumb.jpg";
 	    	}
 

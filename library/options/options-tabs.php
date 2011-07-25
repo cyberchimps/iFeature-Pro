@@ -282,7 +282,7 @@ array( "name" => "Show posts from custom slide category:",
     "type" => "select7",  
     "std" => ""),
     
-array( "name" => "Number of featured posts:",  
+array( "name" => "Number of featured blog posts:",  
     "desc" => "(Default is 5)",  
     "id" => $shortname."_slider_posts_number",  
     "type" => "text",  
