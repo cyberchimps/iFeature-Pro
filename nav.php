@@ -30,18 +30,8 @@
 		$menucolor = $options[($themeslug.'_menu_color')]; 
 	}	
 ?>		
-				<div style ="height: 35px;
-				width: 980px;
-				display: block;
-				background-color: #2770ca;
-				border: 1px solid #333;
-				-moz-border-radius: 3px;
-				border-radius: 3px;
-				-moz-box-shadow:0 0 3px #444;
-   			 	-webkit-box-shadow:0 0 3px #444;
-   				box-shadow:0 0 3px #444;
-				) no-repeat left top">
-
+				
+<div id ="navbackground">
 <div id="navcontainer">
 
 <?php if ($homeimage == '' ):?>

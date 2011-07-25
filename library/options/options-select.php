@@ -33,7 +33,7 @@ $select_slider_size = array(
 );
 
 $select_menu_color = array(
-	'0' => array('value' =>	'Grey','label' => __( 'Grey (default)' )),'1' => array('value' =>	'Blue','label' => __( 'Blue' )),'2' => array('value' =>	'Red','label' => __( 'Red' )),'3' => array('value' =>	'Orange','label' => __( 'Orange' )),'4' => array('value' =>	'Pink','label' => __( 'Pink' )),            
+	'0' => array('value' =>	'Grey','label' => __( 'Grey (default)' )),'1' => array('value' =>	'Blue','label' => __( 'Blue' )),'2' => array('value' =>	'Red','label' => __( 'Red' )),'3' => array('value' =>	'Orange','label' => __( 'Orange' )),'4' => array('value' =>	'Pink','label' => __( 'Pink' )),'5' => array('value' =>	'picker','label' => __( 'Color Picker' )),            
 );
 
 $select_font = array(

@@ -924,7 +924,27 @@ case 'select1':
 								echo $p . $r;   
 							?>    
 
-</select></td>
+</select><br /></br>
+
+Or, select "color picker" from the drop down menu and choose your own custom menu color below:
+
+<br /><br />
+
+<?php
+
+	if (isset($options[$themeslug.'_custom_menu_color']) == "") {
+			$picker = '111111';
+	}		
+	
+	else {
+		$picker = $options[$themeslug.'_custom_menu_color']; 
+	}
+	
+?>
+
+<input type="text" class="color" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_custom_menu_color]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_custom_menu_color]"  value="<?php echo $picker ;?>" style="width: 300px;"> 
+
+</td>
 </tr> 
  
 <tr>

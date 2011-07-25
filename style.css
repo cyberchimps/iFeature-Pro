@@ -728,13 +728,18 @@ li { padding-left: 5px; }
 
 /* Nav */
 
+#navbackground {
+	height:38px;
+	width: 980px;
+	display: block;
+}
+
 #homebutton {
 	float: left; 
 	border-right: 1px solid #444;
 	width: 80px;
 	border-right: 1px solid #444;
 	height: 35px;
-
 }
 
 #homebutton a:hover img { opacity:.6; }

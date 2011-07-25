@@ -10,6 +10,32 @@
 
 /* Site Title Color */
 
+function add_menu_color() {
+
+	global $themename, $themeslug, $options;
+	$root = get_template_directory_uri(); 
+
+	if (isset($options[$themeslug.'_menu_color']) != "picker") {
+	
+		$menucolor = $options[$themeslug.'_menu_color'];
+		
+		echo '<style type="text/css">';
+		echo "#navbackground {background: url($root/images/menu/$menucolor.png) no-repeat left top}";
+		echo '</style>';
+		
+	}
+	
+	else {
+	
+		$menucolor = $options[$themeslug.'_custom_menu_color']; 
+			
+		echo '<style type="text/css">';
+		echo "#navbackground {height: 35px; border: 1px solid #333; -moz-border-radius: 3px; border-radius: 3px; -moz-box-shadow:0 0 3px #444; -webkit-box-shadow:0 0 3px #444; box-shadow:0 0 3px #444;background-color: #$menucolor;}";
+		echo '</style>';
+	}
+}
+add_action( 'wp_head', 'add_menu_color');
+
 function add_sitetitle_color() {
 
 	global $themename, $themeslug, $options;
