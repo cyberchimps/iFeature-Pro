@@ -158,10 +158,9 @@ ul, ol { margin: 0 0 10px 0; }
 .searchform .s{	
 	margin:0;
 	border: none;
-	padding: 1px 2px 3px 4px;
 	margin: 4px 2px 3px 28px;
 	margin: 2px 2px 3px 28px\9;
-	height: 10px;
+	height: 14px;
 	width:140px;
 	color: #333;
 	overflow: hidden;
