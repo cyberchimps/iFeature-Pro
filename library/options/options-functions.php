@@ -8,6 +8,41 @@
 	
 */
 
+/* Featured Image Alignment */
+
+function featured_image_alignment() {
+
+	global $themename, $themeslug, $options;
+
+	if ($options[$themeslug.'_featured_images'] == "left" ) {
+
+		echo '<style type="text/css">';
+		echo ".featured-image {float: left;}";
+		echo '</style>';
+		
+	}
+	
+	elseif ($options[$themeslug.'_featured_images'] == "right" ) {
+
+		echo '<style type="text/css">';
+		echo ".featured-image {float: right;}";
+		echo '</style>';
+		
+	}
+	
+	elseif ($options[$themeslug.'_featured_images'] == "center" ) {
+
+		echo '<style type="text/css">';
+		echo ".featured-image {text-align: center;}";
+		echo '</style>';
+		
+	}
+	
+}
+add_action( 'wp_head', 'featured_image_alignment');
+
+
+
 /* Post Meta Data width */
 
 function post_meta_data_width() {

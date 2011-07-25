@@ -50,36 +50,9 @@
 
 			<?php while (have_posts()) : the_post(); ?>
 			
-			<div class="post_container">
-
-				<div <?php post_class() ?>>
-				
-						<h2 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-					
-						<?php get_template_part('meta', 'archive'); ?>
-
-						<div class="entry">
-							<?php the_content(); ?>
-						</div>
-						
-				<div class="tags">
-						<?php the_tags('Tags: ', ', ', '<br />'); ?>
-				</div><!--end tags-->
-
-				<div class="postmetadata">
-				
-						<?php get_template_part('share', 'index' ); ?>
-						
-							<div class="comments">
-								<?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
-							
-							</div><!--end comments-->	
-							
-				</div><!--end postmetadata-->
-							
-				</div><!--end post-->
-			</div><!--end post_container-->
-
+			<!--Call the Loop-->
+				<?php get_template_part('loop', 'index' ); ?>
+			
 			<?php endwhile; ?>
 
 			<?php get_template_part('pagination', 'archive' ); ?>

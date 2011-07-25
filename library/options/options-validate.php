@@ -9,7 +9,7 @@
 */
 
 function theme_options_validate( $input ) {
-	global  $themename, $themeslug, $options, $select_menu_color, $select_font, $select_slider_effect, $select_slider_type, $select_sidebar_type, $select_slider_caption, $select_callout_background, $select_slider_navigation, $select_slider_size, $select_slider_placement;
+	global  $themename, $themeslug, $options, $select_menu_color, $select_font, $select_slider_effect, $select_slider_type, $select_sidebar_type, $select_slider_caption, $select_callout_background, $select_slider_navigation, $select_slider_size, $select_slider_placement, $select_featured_images;
 
 	/* Assign checkbox value */
 

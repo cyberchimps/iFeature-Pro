@@ -49,6 +49,115 @@ case "close-tab":
 
 <?php break; 
 
+case 'general_faq':  
+?>  
+  
+<tr>
+
+    <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
+    <td width="85%">Stuck? Read our General Options FAQ <a href="http://cyberchimps.com/question/general-options/" target="_blank">here.</a></td>
+
+  </tr>
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+<?php
+break;
+
+case 'design_faq':  
+?>  
+  
+<tr>
+
+    <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
+    <td width="85%">Stuck? Read our Design Options FAQ <a href="http://cyberchimps.com/question/general-options/" target="_blank">here.</a></td>
+
+  </tr>
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+<?php
+break;
+
+case 'social_faq':  
+?>  
+  
+<tr>
+
+    <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
+    <td width="85%">Stuck? Read our Social Options FAQ <a href="http://cyberchimps.com/question/general-options/" target="_blank">here.</a></td>
+
+  </tr>
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+<?php
+break;
+
+case 'blog_faq':  
+?>  
+  
+<tr>
+
+    <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
+    <td width="85%">Stuck? Read our Blog Options FAQ <a href="http://cyberchimps.com/question/general-options/" target="_blank">here.</a></td>
+
+  </tr>
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+<?php
+break;
+
+case 'footer_faq':  
+?>  
+  
+<tr>
+
+    <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
+    <td width="85%">Stuck? Read our Footer Options FAQ <a href="http://cyberchimps.com/question/general-options/" target="_blank">here.</a></td>
+
+  </tr>
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+<?php
+break;
+
+case 'import_faq':  
+?>  
+  
+<tr>
+
+    <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
+    <td width="85%">Stuck? Read our Import/Export Options FAQ <a href="http://cyberchimps.com/question/general-options/" target="_blank">here.</a></td>
+
+  </tr>
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+<?php
+break;
+
+
 case 'upload':
 ?>   
 
@@ -894,6 +1003,70 @@ case 'text':
     <td width="85%"><input style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>" id="<?php echo $themeslug.'['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" /></td>
 
   </tr>
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+<?php
+break;
+
+case 'featured':
+?>
+<tr>
+<td width="15%" rowspan="2" valign="middle"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></td>
+<td width="85%"><select style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>">
+
+<?php
+								$selected = $options[$value['id']];
+								$p = '';
+								$r = '';
+
+								foreach ( $select_featured_images as $option ) {
+									$label = $option['label'];
+									if ( $selected == $option['value'] ) // Make default first in list
+										$p = "\n\t<option style=\"padding-right: 10px;\" selected='selected' value='" . esc_attr( $option['value'] ) . "'>$label</option>";
+									else
+										$r .= "\n\t<option style=\"padding-right: 10px;\" value='" . esc_attr( $option['value'] ) . "'>$label</option>";      
+								}
+								echo $p . $r;   
+							?>    
+
+</select><br /></br>
+
+Define a custom Featured Image size below (default is 100 by 100):
+
+<br /><br />
+
+<?php
+
+	if (isset($options[$themeslug.'_featured_image_height']) == "") {
+			$featureheight = '100';
+	}		
+	
+	else {
+		$featureheight = $options[$themeslug.'_featured_image_height']; 
+	}
+	
+		if (isset($options[$themeslug.'_featured_image_width']) == "") {
+			$featurewidth = '100';
+	}		
+	
+	else {
+		$featurewidth = $options[$themeslug.'_featured_image_width']; 
+	}
+	
+?>
+
+<input type="text" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_featured_image_height]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_featured_image_height]"  value="<?php echo $featureheight ;?>" style="width: 300px;"> - Height
+
+<br /><br />
+
+<input type="text" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_featured_image_width]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_featured_image_width]"  value="<?php echo $featurewidth ;?>" style="width: 300px;"> - Width
+
+</td>
+</tr> 
  
 <tr>
 

@@ -8,40 +8,38 @@
 	Copyright (C) 2011 CyberChimps
 */
 
+/* Call globals. */	
+
+	global $themename, $themeslug, $options;
+
+/* End globals. */	
+
+/* Define Variables. */	
+
+	$hideslider = $options['if_show_slider_blog'];
+	$blogsidebar = $options['if_blog_sidebar'];
+	$blogslidersize = $options['if_slider_size'];
+	$title = get_post_meta($post->ID, 'seo_title' , true);
+	$pagedescription = get_post_meta($post->ID, 'seo_description' , true);
+	$keywords = get_post_meta($post->ID, 'seo_keywords' , true);
+	$enable = get_post_meta($post->ID, 'page_enable_slider' , true);
+	$size = get_post_meta($post->ID, 'page_slider_size' , true);
+	$hidetitle = get_post_meta($post->ID, 'hide_page_title' , true);
+	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);
+
 ?>
 
 <?php get_header(); ?>
 
-
-
 <div id="content_wrap">
-	
-	<?php 
-		$hideslider = $options['if_show_slider_blog'];
-		$share = $options['if_hide_share'];
-		$tags = $options['if_hide_tags'];
-		$comments = $options['if_hide_comments'];
-		$excerpts = $options['if_show_excerpts'];
 		
-		$blogsidebar = $options['if_blog_sidebar'];
-		$blogslidersize = $options['if_slider_size'];
-		
-		$title = get_post_meta($post->ID, 'seo_title' , true);
-		$pagedescription = get_post_meta($post->ID, 'seo_description' , true);
-		$keywords = get_post_meta($post->ID, 'seo_keywords' , true);
-		$enable = get_post_meta($post->ID, 'page_enable_slider' , true);
-		$size = get_post_meta($post->ID, 'page_slider_size' , true);
-		$hidetitle = get_post_meta($post->ID, 'hide_page_title' , true);
-		$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);
-	?>
-	
-		<?php if ($options[$themeslug.'_show_slider_blog'] == '1' && $blogslidersize == "full"): ?>
+	<?php if ($options[$themeslug.'_show_slider_blog'] == '1' && $blogslidersize == "full"): ?>
 		<div id = "slider-wrapper">
 			<?php get_template_part('sliderblog', 'index' ); ?>
-			</div>
-		<?php endif;?>
+		</div>
+	<?php endif;?>
 		
-		<?php if ($sidebar == "4" OR $blogsidebar == 'none'): ?>
+	<?php if ($sidebar == "4" OR $blogsidebar == 'none'): ?>
 		<div id="content_fullwidth">
 	<?php endif;?>
 	
@@ -54,92 +52,28 @@
 	<?php endif;?>
 	
 	<?php if ($sidebar == "3" OR $blogsidebar == 'right-left' ): ?>
-	<?php get_sidebar('left'); ?>
-	<?php get_sidebar('right'); ?>
+		<?php get_sidebar('left'); ?>
+		<?php get_sidebar('right'); ?>
 	<?php endif;?>
 	
 	<?php if ($sidebar == "2"  OR $sidebar == "3" OR $blogsidebar == "two-right" OR $blogsidebar == "left-right"): ?>
-	<?php get_sidebar('right'); ?>
-	<div class="content_half">
+		<?php get_sidebar('right'); ?>
+		<div class="content_half">
 	<?php endif;?>
 	
 	<?php if ($options[$themeslug.'_show_slider_blog'] == '1' && $blogslidersize == "half"): ?>
-
 		<div id = "slider-wrapper">
 			<?php get_template_part('sliderblog', 'page' ); ?>
 		</div>
 	<?php endif;?>
 
-		
 		<div class="content_padding">
 		
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			
-				<div class="post_container">
-			
-					<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
-
-						<h2 class="posts_title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-
-						<?php get_template_part('meta', 'index' ); ?>
-						
-												<?php
-	if ( has_post_thumbnail()) {
- 		 echo '<div class="featured-image">';
- 		 echo '<a href="' . get_permalink($post->ID) . '" >';
- 		 the_post_thumbnail();
-  		echo '</a>';
-  		echo '</div>';
-	}
-	?>	
-					
-							<div class="entry">
-								<?php if ($excerpts == '1' ) {
-								 the_excerpt();
-								 }
-								 else {
-								 
-								 the_content();
-								 }
-								 
-								 
-								 ?>
-							</div><!--end entry-->
-						<?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
-						
-							<?php 
-							
-								$showfblike		= $options[$themeslug.'_show_fb_like'];
-								
-							?>
-							<?php if ($showfblike == "1" ):?>
-							<div class="fb" >
-								<iframe src="http://www.facebook.com/plugins/like.php?href=<?php the_permalink() ?>&layout=standard&show_faces=true&width=450&action=like&colorscheme=light" scrolling="no" frameborder="0"  allowTransparency="true" style="border:none; overflow:hidden; width:530px; height:28px"></iframe>
-							</div>
-							<?php endif;?>
-							<!--end fb-->
-													<div class="tags">
-							<?php if ($tags != '1'):?>
-								<?php the_tags('Tags: ', ', ', '<br />'); ?>
-								<?php endif;?>
-							</div><!--end tags-->	
-
-							<div class="postmetadata">
-										<?php if ($share != '1'):?>
-							<?php get_template_part('share', 'index' ); ?>
-							<?php endif;?>
-
-								<div class="comments">
-								<?php if ($comments != '1'):?>
-									<?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
-									<?php endif;?>
-								</div><!--end comments-->	
-							</div><!--end postmetadata-->
-							
-				</div><!--end post_class-->
+			<!--Call the Loop-->
+			<?php get_template_part('loop', 'index' ); ?>
 				
-		</div><!--end post_container-->
-
 		<?php endwhile; ?>
 
 		<?php get_template_part('pagination', 'index' ); ?>
@@ -163,7 +97,6 @@
 	<?php get_sidebar('left'); ?>
 	<?php endif;?>
 
-	
 </div><!--end content_wrap-->
 <div style="clear:both;"></div>
 

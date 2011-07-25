@@ -28,6 +28,12 @@ array( "id" => "tab1",
 
 array( "type" => "open"),
     
+array( "name" => "Help",  
+    "desc" => "",  
+    "id" => $shortname."_general_faq",  
+    "type" => "general_faq",  
+    "std" => ""),  
+
 array( "name" => "Logo URL",  
     "desc" => "Use the image uploader or enter your own URL into the input field to use an image as your logo. To display the site title as text, leave blank.",  
     "id" => $shortname."_logo",  
@@ -64,6 +70,11 @@ array( "id" => "tab2",
  
 array( "type" => "open"),
 
+array( "name" => "Help",  
+    "desc" => "",  
+    "id" => $shortname."_design_faq",  
+    "type" => "design_faq",  
+    "std" => ""),
 
 array( "name" => "Choose iMenu Color",
 	"desc" => "(Default is Grey)",
@@ -167,6 +178,11 @@ array( "id" => "tab3",
  
 array( "type" => "open"),
 
+array( "name" => "Help",  
+    "desc" => "",  
+    "id" => $shortname."_social_faq",  
+    "type" => "social_faq",  
+    "std" => ""),
 
 array( "name" => "Facebook URL",  
     "desc" => "Enter your Facebook page URL for the Facebook social icon.",  
@@ -227,11 +243,22 @@ array( "id" => "tab4",
  
 array( "type" => "open"),
 
+array( "name" => "Help",  
+    "desc" => "",  
+    "id" => $shortname."_blog_faq",  
+    "type" => "blog_faq",  
+    "std" => ""),
 
 array( "name" => "Post Excerpts",  
     "desc" => "Use the following options to control excerpts.",  
     "id" => $shortname."_excerpts",  
       "type" => "excerpts",  
+    "std" => "false"),
+
+array( "name" => "Featured Images",  
+    "desc" => "Use the following options to control featured image alignment and size.",  
+    "id" => $shortname."_featured_images",  
+      "type" => "featured",  
     "std" => "false"),
 
 array( "name" => "Hide Post Elements",  
@@ -346,6 +373,12 @@ array( "id" => "tab5",
 
 array( "type" => "open"),
   
+array( "name" => "Help",  
+    "desc" => "",  
+    "id" => $shortname."_footer_faq",  
+    "type" => "footer_faq",  
+    "std" => ""),
+
 array( "name" => "Footer Copyright",  
     "desc" => "Enter Copyright text used on the right side of the footer. It can be HTML (default is your blog title)",  
     "id" => $shortname."_footer_text",  
@@ -374,6 +407,12 @@ array( "id" => "tab6",
 	"type" => "open-tab"),
 
 array( "type" => "open"),
+
+array( "name" => "Help",  
+    "desc" => "",  
+    "id" => $shortname."_import_faq",  
+    "type" => "import_faq",  
+    "std" => ""),
   
 array( "name" => "Import iFeature Settings",  
     "desc" => "To import your settings, Paste the iFeature Pro export code here and press Save Settings.",  

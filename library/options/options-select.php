@@ -8,6 +8,11 @@
 	
 */
 
+$select_featured_images = array(
+'0' => array('value' => 'left','label' => __('Left (default)' )),'1' => array('value' => 'center','label' => __('Center')), '2' => array('value' => 'right','label' => __('Right')),
+
+);
+
 $select_callout_background = array(
 	'0' => array('value' => 'default','label' => __('iFeature 2.0 (default)' )),'1' => array('value' => 'Blue','label' => __('Blue')), '2' => array('value' => 'Grey','label' => __('Grey')),'3' => array('value' => 'Orange','label' => __('Orange')),'4' => array('value' => 'Pink','label' => __('Pink')),'5' => array('value' => 'Red','label' => __('Red')),
 

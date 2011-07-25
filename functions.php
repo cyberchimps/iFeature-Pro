@@ -58,9 +58,32 @@ add_filter('excerpt_length', 'new_excerpt_length');
 	add_theme_support('automatic-feed-links');
 	
 /* Add post-thumb support. */
-	add_theme_support( 'post-thumbnails' ); 
-	set_post_thumbnail_size( 100, 100, true );
 
+	
+if ( function_exists( 'add_theme_support' ) ) {
+
+	global $themename, $themeslug, $options;
+	
+		if($options[$themeslug.'_featured_image_height'] == "") {
+			$featureheight = '100';
+	}		
+	
+	else {
+		$featureheight = $options[$themeslug.'_featured_image_height']; 
+		
+	}
+	
+		if ($options[$themeslug.'_featured_image_width'] == "") {
+			$featurewidth = '100';
+	}		
+	
+	else {
+		$featurewidth = $options[$themeslug.'_featured_image_width']; 
+	}
+	add_theme_support( 'post-thumbnails' ); 
+	set_post_thumbnail_size( $featureheight, $featurewidth, true );
+}	
+	
 // This theme allows users to set a custom background
 	add_custom_background();
 	

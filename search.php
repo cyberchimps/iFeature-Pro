@@ -16,30 +16,14 @@ get_header(); ?>
 		
 		<div class="content_padding">
 
-	<?php if (have_posts()) : ?>
+		<?php if (have_posts()) : ?>
 
 		<h2>Search Results</h2>
 
-		
-
 		<?php while (have_posts()) : the_post(); ?>
 		
-		<div class="post_container">
-
-			<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
-
-				<h2 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-				<?php get_template_part('meta', 'search' ); ?>
-
-				<div class="entry">
-
-					<?php the_excerpt(); ?>
-
-				</div>
-
-			</div>
-	</div><!--end post_container-->
-		<?php endwhile; ?>
+		<!--Call the Loop-->
+			<?php get_template_part('loop', 'index' ); ?>		<?php endwhile; ?>
 
 		<?php get_template_part('pagination', 'search'); ?>
 

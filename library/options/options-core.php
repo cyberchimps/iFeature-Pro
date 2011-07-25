@@ -90,7 +90,7 @@ global $name, $shortname, $options;
 /* Create the options page */
 
 function theme_options_do_page() {
-	global $name, $shortname, $optionlist,  $select_menu_color, $select_font, $select_slider_effect, $select_sidebar_type, $select_slider_caption, $select_callout_background, $select_slider_navigation, $select_slider_size, $select_slider_type, $select_slider_placement;
+	global $name, $shortname, $optionlist,  $select_menu_color, $select_font, $select_slider_effect, $select_sidebar_type, $select_slider_caption, $select_callout_background, $select_slider_navigation, $select_slider_size, $select_slider_type, $select_slider_placement, $select_featured_images;
   
 
 	if ( ! isset( $_REQUEST['updated'] ) ) {

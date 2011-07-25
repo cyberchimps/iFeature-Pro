@@ -240,7 +240,6 @@ ol {
 
 .entry {
 	padding-top: 5px;
-	overflow:hidden;
 	min-height: 90px;
 }
 
@@ -329,7 +328,6 @@ blockquote p { }
 	margin-top: 14px; 
 	margin-right: 12px; 
 	margin-bottom: 10px; 
-	float: left;
 
 }
 
