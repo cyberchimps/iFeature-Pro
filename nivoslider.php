@@ -41,6 +41,8 @@
 	else {
 		$blogcategory = "";
 	}
+	
+/* End blog category */
 
 /* Define slider height */      
 

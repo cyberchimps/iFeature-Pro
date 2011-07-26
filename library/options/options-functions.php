@@ -13,16 +13,8 @@
 function featured_image_alignment() {
 
 	global $themename, $themeslug, $options;
-
-	if ($options[$themeslug.'_featured_images'] == "left" ) {
-
-		echo '<style type="text/css">';
-		echo ".featured-image {float: left;}";
-		echo '</style>';
-		
-	}
 	
-	elseif ($options[$themeslug.'_featured_images'] == "right" ) {
+	if ($options[$themeslug.'_featured_images'] == "right" ) {
 
 		echo '<style type="text/css">';
 		echo ".featured-image {float: right;}";
@@ -37,6 +29,15 @@ function featured_image_alignment() {
 		echo '</style>';
 		
 	}
+	
+	else {
+
+		echo '<style type="text/css">';
+		echo ".featured-image {float: left;}";
+		echo '</style>';
+		
+	}
+
 	
 }
 add_action( 'wp_head', 'featured_image_alignment');
