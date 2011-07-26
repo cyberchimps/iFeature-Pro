@@ -273,7 +273,7 @@ function custom_taxonomy_default( $post_id, $post ) {
 
 	global $themename, $themeslug, $options;	
 
-if( 'publish' === $post->post_status ) {
+	if( 'publish' === $post->post_status ) {
 
 		$defaults = array(
 
