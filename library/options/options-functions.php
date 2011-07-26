@@ -43,6 +43,23 @@ function featured_image_alignment() {
 add_action( 'wp_head', 'featured_image_alignment');
 
 
+/* Hide Header*/
+
+function hide_header() {
+
+	global $themename, $themeslug, $options;
+
+	if ($options[$themeslug.'_hide_header'] == "1") {
+
+		echo '<style type="text/css">';
+		echo "#headerwrap {display: none;}";
+		echo "#header {height: 40px; margin-top: 10px;}";
+		echo '</style>';
+		
+	}
+	
+}
+add_action( 'wp_head', 'hide_header');
 
 /* Post Meta Data width */
 

@@ -132,6 +132,10 @@ function theme_options_validate( $input ) {
 	if ( ! isset( $input[$themeslug.'_disable_nav_autohide'] ) )
 		$input[$themeslug.'_disable_nav_autohide'] = null;
 	$input[$themeslug.'_disable_nav_autohide'] = ( $input[$themeslug.'_disable_nav_autohide'] == 1 ? 1 : 0 ); 
+	
+	if ( ! isset( $input[$themeslug.'_hide_header'] ) )
+		$input[$themeslug.'_hide_header'] = null;
+	$input[$themeslug.'_hide_header'] = ( $input[$themeslug.'_hide_header'] == 1 ? 1 : 0 ); 
   	/* Strip HTML from certain options */
   	
 	$input[$themeslug.'_logo'] = wp_filter_nohtml_kses( $input[$themeslug.'_logo'] );

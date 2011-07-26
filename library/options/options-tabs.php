@@ -27,13 +27,15 @@ array( "id" => "tab1",
 	"type" => "open-tab"),
 
 array( "type" => "open"),
-    
+   
+
 array( "name" => "Help",  
     "desc" => "",  
     "id" => $shortname."_general_faq",  
     "type" => "general_faq",  
-    "std" => ""),  
-
+    "std" => ""),
+    
+    
 array( "name" => "Logo URL",  
     "desc" => "Use the image uploader or enter your own URL into the input field to use an image as your logo. To display the site title as text, leave blank.",  
     "id" => $shortname."_logo",  
@@ -94,6 +96,12 @@ array( "name" => "Custom Menu Icon",
     "id" => $shortname."_menuicon",  
     "type" => "upload3",  
     "std" => ""),
+    
+array( "name" => "Disable Header",  
+    "desc" => "Check this box to disable the header",  
+    "id" => $shortname."_hide_header",  
+      "type" => "checkbox",  
+    "std" => "false"),
 
 array( "name" => "Hide home icon",  
     "desc" => "Check this box to hide the home icon in the navigation",  
@@ -245,6 +253,12 @@ array( "name" => "Help",
     "type" => "blog_faq",  
     "std" => ""),
 
+array( "name" => "",  
+    "desc" => "",  
+    "id" => $shortname."_blog_title",  
+    "type" => "blog_title",  
+    "std" => ""),
+
 array( "name" => "Post Excerpts",  
     "desc" => "Use the following options to control excerpts.",  
     "id" => $shortname."_excerpts",  
@@ -274,6 +288,12 @@ array(  "name" => "Show Google +1 button",
 	"id" => $shortname."_show_gplus",
 	"type" => "checkbox",
 	"std" => "false"),  
+	
+array( "name" => "",  
+    "desc" => "",  
+    "id" => $shortname."_slider_title",  
+    "type" => "slider_title",  
+    "std" => ""),
     
 array( "name" => "Hide the iFeature Slider",  
     "desc" => "Check this box to hide the iFeature Slider on your blog page.",  
@@ -358,6 +378,12 @@ array( "name" => "Disable slider navigation auto-hide",
     "id" => $shortname."_disable_nav_autohide",  
 	"type" => "checkbox",  
     "std" => "false"),
+    
+array( "name" => "",  
+    "desc" => "",  
+    "id" => $shortname."_seo_title",  
+    "type" => "seo_title",  
+    "std" => ""),
     
 array( "name" => "Home Description",  
     "desc" => "Enter the META description of your homepage here.",  

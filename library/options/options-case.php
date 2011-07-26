@@ -49,6 +49,60 @@ case "close-tab":
 
 <?php break; 
 
+case 'blog_title':  
+?>  
+  
+<tr>
+
+    <td width="15%" rowspan="2" valign="middle"><font size="5"><b>BLOG OPTIONS</b></font> </td>
+    <td width="85%"></td>
+
+  </tr>
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+<?php
+break;
+
+case 'slider_title':  
+?>  
+  
+<tr>
+
+    <td width="15%" rowspan="2" valign="middle"><font size="5"><b>SLIDER OPTIONS</b></font> </td>
+    <td width="85%"></td>
+
+  </tr>
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+<?php
+break;
+
+case 'seo_title':  
+?>  
+  
+<tr>
+
+    <td width="15%" rowspan="2" valign="middle"><font size="5"><b>SEO OPTIONS</b></font> </td>
+    <td width="85%"></td>
+
+  </tr>
+ 
+<tr>
+
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
+
+
+<?php
+break;
+
 case 'general_faq':  
 ?>  
   
