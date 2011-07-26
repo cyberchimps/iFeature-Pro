@@ -447,16 +447,28 @@ li { padding-left: 5px; }
 /* Twitter Section */
 
 #twitterbar {
-	background: #efefef;
-	width: 978px;
-	border-top: 1px solid #767676;
+	background: #f8f8f8;
+	width: 980px;
+	border: 1px solid;
+	border-top: 1px solid #CCC;
+	border-left: 1px solid #CCC;
+	border-right: 1px solid #AAA;
+	border-bottom: 1px solid #AAA;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-webkit-border-radius: 5px;
 	overflow: hidden;
+	margin-bottom: 10px;
+	
 }
 
 .twittertext {
 	padding: 10px;
-	width: 978px;
+	
 	font-size: 14px;
+	padding-right: 10px;
+	padding-left: 10px;
 }
 
 /* Callout Section */
