@@ -25,18 +25,19 @@
 
 /* Establish fonts. */	
 
-	if ($options[$themeslug.'_font'] == "") {
+	if ($options[$themeslug.'_font'] == "" AND $options[$themeslug.'_custom_font'] == "") {
 		$font = 'Cantarell';
 	}
 			
 	elseif ($options[$themeslug.'_custom_font'] != "") {
-		$font = $options['if_custom_font'];	
+		$font = $options[$themeslug.'_custom_font'];	
 	}
 		
 	else {
-		$font = $options[($themeslug.'_font')]; 
-		$fontstrip =  ereg_replace("[^A-Za-z0-9]", " ", $font );
+		$font = $options[$themeslug.'_font']; 
 	}
+	
+	$fontstrip =  ereg_replace("[^A-Za-z0-9]", " ", $font );
 /* End fonts. */	
 
 ?>

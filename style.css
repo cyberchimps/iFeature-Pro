@@ -70,7 +70,7 @@ ul, ol { margin: 0 0 10px 0; }
 	max-height: 60px;	
 	margin-left: 5px;	
 	bottom: 10px;
-	padding-top: 14px;
+	padding-top: 5px;
 	z-index: 1;
 }
 
@@ -353,13 +353,13 @@ blockquote p { }
 
 .share a:hover img { opacity:1; }
 
-.fb {
-width: 200px;
+#fb {
+width: 440px;
 }
 
 .gplusone {
-	float: right;
-	margin-right: -38px;
+
+	margin-bottom: 6px;
 }
  
 .comments {
@@ -665,7 +665,7 @@ li { padding-left: 5px; }
 #footer { 
 	min-height: 200px;
 	background: #222 url(./images/footerbg.png) repeat-x center top;
-	border-top: 2px solid #ccc;
+
 }
 
 #footer_wrap {
@@ -710,15 +710,14 @@ li { padding-left: 5px; }
 	width: 100%; 
 	background: black; 
 	color: white;
-	border-top: 2px solid #333;
+
 }
 
 #afterfooterwrap {
 	width: 980px; 
-	height:40px; 
+	height:35px; 
 	margin: auto;
-	margin-top: 10px;
-	padding: 3px;
+	padding-top: 15px;
 }
 
 #afterfootercopyright {

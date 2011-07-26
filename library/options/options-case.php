@@ -54,7 +54,7 @@ case 'blog_title':
   
 <tr>
 
-    <td width="15%" rowspan="2" valign="middle"><font size="5"><b>BLOG OPTIONS</b></font> </td>
+    <td width="15%" rowspan="2" valign="middle"><font size="4"><b>BLOG OPTIONS</b></font> </td>
     <td width="85%"></td>
 
   </tr>
@@ -72,7 +72,7 @@ case 'slider_title':
   
 <tr>
 
-    <td width="15%" rowspan="2" valign="middle"><font size="5"><b>SLIDER OPTIONS</b></font> </td>
+    <td width="15%" rowspan="2" valign="middle"><font size="4"><b>SLIDER OPTIONS</b></font> </td>
     <td width="85%"></td>
 
   </tr>
@@ -90,7 +90,7 @@ case 'seo_title':
   
 <tr>
 
-    <td width="15%" rowspan="2" valign="middle"><font size="5"><b>SEO OPTIONS</b></font> </td>
+    <td width="15%" rowspan="2" valign="middle"><font size="4"><b>SEO OPTIONS</b></font> </td>
     <td width="85%"></td>
 
   </tr>
@@ -525,7 +525,7 @@ case 'color1':
 	
 ?>
 
-<input type="text" class="color" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_sitetitle_color]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_sitetitle_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
+<input type="text" class="color" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_sitetitle_color]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_sitetitle_color]"  value="<?php echo $picker ;?>" style="width: 300px;" maxlength="6">>   
 
 <br /><br />
     </td>
@@ -559,7 +559,7 @@ case 'color2':
 	}
 ?>
 
-<input type="text" class="color{required:false}" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_link_color]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_link_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
+<input type="text" class="color{required:false}" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_link_color]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_link_color]"  value="<?php echo $picker ;?>" style="width: 300px;" maxlength="6">   
 
 <br /><br />
     
@@ -594,7 +594,7 @@ case 'color3':
 	}
 ?>
 
-<input type="text" class="color{required:false}" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_menulink_color]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_menulink_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
+<input type="text" class="color{required:false}" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_menulink_color]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_menulink_color]"  value="<?php echo $picker ;?>" style="width: 300px;" maxlength="6">   
 
 <br /><br />
     
@@ -628,7 +628,7 @@ case 'color4':
 	}
 ?>
 
-<input type="text" class="color{required:false}" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_posttitle_color]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_posttitle_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
+<input type="text" class="color{required:false}" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_posttitle_color]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_posttitle_color]"  value="<?php echo $picker ;?>" style="width: 300px;" maxlength="6">   
 
 <br /><br />
     
@@ -767,7 +767,7 @@ case 'color8':
 ?>
 
 <br />
-<input type="text" class="color{required:false}" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_footer_color]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_footer_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
+<input type="text" class="color{required:false}" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_footer_color]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_footer_color]"  value="<?php echo $picker ;?>" style="width: 300px;" maxlength="6">   
 
 <br /><br />
     
@@ -802,7 +802,7 @@ case 'color9':
 ?>
 
 <br />
-<input type="text" class="color{required:false}" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_tagline_color]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_tagline_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
+<input type="text" class="color{required:false}" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_tagline_color]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_tagline_color]"  value="<?php echo $picker ;?>" style="width: 300px;" maxlength="6">   
 
 <br /><br />
     
@@ -1169,7 +1169,7 @@ Or, select "color picker" from the drop down menu and choose your own custom men
 	
 ?>
 
-<input type="text" class="color" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_custom_menu_color]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_custom_menu_color]"  value="<?php echo $picker ;?>" style="width: 300px;"> 
+<input type="text" class="color" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_custom_menu_color]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_custom_menu_color]"  value="<?php echo $picker ;?>" style="width: 300px;" maxlength="6"> 
 
 </td>
 </tr> 
