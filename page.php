@@ -50,12 +50,6 @@ if ($sidebar == "1" OR $sidebar == "2") {
 
 <div id="content_wrap">
 
-	<?php if ($showgplus == "1"):?>
-				<div class="gplusone" >	
-					<g:plusone size="standard" count="true"></g:plusone>
-				</div >
-			<?php endif;?>
-
 	<?php if ($enable == "on" && $size == "0"): ?>
 		<div id = "slider-wrapper">
 			<center><?php get_template_part('nivoslider', 'page' ); ?> </center>
@@ -84,7 +78,7 @@ if ($sidebar == "1" OR $sidebar == "2") {
 		<div id="content_left">
 	<?php endif;?>
 	
-	<?php if ($sidebar == "0"): ?>
+	<?php if ($sidebar == "0" OR $sidebar == ""): ?>
 		<div id="content_left">
 	<?php endif;?>
 	
@@ -141,7 +135,7 @@ if ($sidebar == "1" OR $sidebar == "2") {
 		
 	</div><!--end content_left-->
 	
-	<?php if ($sidebar == "0" && $pagecontent != "on"): ?>
+	<?php if ($sidebar == "0" && $pagecontent != "on"  OR $sidebar == ""): ?>
 	<?php get_sidebar(); ?>
 	<?php endif;?>
 	<?php if ($sidebar == "1" && $pagecontent != "on"): ?>
