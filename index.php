@@ -61,7 +61,7 @@
 		<div class="content_half">
 	<?php endif;?>
 	
-	<?php if ($options[$themeslug.'_hide_slider_blog'] != '1' && $blogslidersize == "half"): ?>
+	<?php if ($options[$themeslug.'_hide_slider_blog'] != '1' && $blogslidersize != "full"): ?>
 		<div id = "slider-wrapper">
 			<?php get_template_part('sliderblog', 'page' ); ?>
 		</div>

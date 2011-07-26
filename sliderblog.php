@@ -202,6 +202,11 @@
 	    		$image = $customsized;
 	    		$thumbnail = "$root/library/tt/timthumb.php?src=$customthumb&a=c&h=30&w=50";
 	    	}
+	    	
+	    	elseif ($customimage == '' && $size == "full" ) {
+	       		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/ifeatureprolarge.jpg&a=c&h=$height&w=980";
+	       		$thumbnail = "$root/images/pro/ifeatureprothumb.jpg";
+	       	}
 
 	    	elseif ($customimage == '' && $size2 == "right" && $size != "full"){
 	    		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
@@ -214,7 +219,7 @@
 	    	}
 
 	   		else {
-	       		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/ifeatureprolarge.jpg&a=c&h=$height&w=980";
+	       		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
 	       		$thumbnail = "$root/images/pro/ifeatureprothumb.jpg";
 	       	}
 
@@ -267,8 +272,8 @@
 
 /* Define slider width variable */ 
 
-	if ($size == 'half' && $size2 != 'two-right' AND $size2 != 'right-left') {
-	  	$csWidth = '640';
+	if ($size == 'full' && $size2 != 'two-right' AND $size2 != 'right-left') {
+	  	$csWidth = '980';
 	}		
 
 	elseif ($size2 == 'right-left' && $size != 'full' OR $size2 == 'two-right' && $size != 'full') {
@@ -276,7 +281,7 @@
 	}  	
 
 	else {
-		$csWidth = '980';
+		$csWidth = '640';
 	}
 
 /* End slider width variable */ 
