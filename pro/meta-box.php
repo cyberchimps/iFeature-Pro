@@ -715,9 +715,12 @@ function ifeature_initialize_the_meta_boxes() {
 
 	}
 
+	
 	$terms2 = get_terms('category', 'hide_empty=0');
 
 	$blogoptions = array();
+	
+	$blogoptions['all'] = "All";
 
 	foreach($terms2 as $term) {
 
@@ -725,7 +728,7 @@ function ifeature_initialize_the_meta_boxes() {
 
 	}
 
-
+	
 
 	$meta_boxes[] = array(
 

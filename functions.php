@@ -267,6 +267,40 @@ function custom_taxonomies() {
 
 add_action('init', 'custom_taxonomies', 0);
 
+// Define default category for custom category taxonomy
+
+function custom_taxonomy_default( $post_id, $post ) {
+
+	global $themename, $themeslug, $options;	
+
+if( 'publish' === $post->post_status ) {
+
+		$defaults = array(
+
+			'slide_categories' => array( 'default' ),
+
+			);
+
+		$taxonomies = get_object_taxonomies( $post->post_type );
+
+		foreach( (array) $taxonomies as $taxonomy ) {
+
+			$terms = wp_get_post_terms( $post_id, $taxonomy );
+
+			if( empty( $terms ) && array_key_exists( $taxonomy, $defaults ) ) {
+
+				wp_set_object_terms( $post_id, $defaults[$taxonomy], $taxonomy );
+
+			}
+
+		}
+
+	}
+
+}
+
+add_action( 'save_post', 'custom_taxonomy_default', 100, 2 );
+
 //Download Button Shortcode
 	
 function button( $atts, $content = null ) {

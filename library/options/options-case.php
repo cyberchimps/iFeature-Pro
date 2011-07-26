@@ -1280,6 +1280,8 @@ case 'select6':
 								$terms2 = get_terms('category', 'hide_empty=0');
 
 									$blogoptions = array();
+									
+									$blogoptions['all'] = "All";
 
 										foreach($terms2 as $term) {
 

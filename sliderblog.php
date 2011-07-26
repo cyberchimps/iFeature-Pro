@@ -21,12 +21,24 @@
 	$size = $options[$themeslug.'_slider_size'];
 	$size2 = $options[$themeslug.'_blog_sidebar'];
 	$type = $options[$themeslug.'_slider_type']; 
-	$blogcategory = $options[$themeslug.'_slider_category']; 
+	$category = $options[$themeslug.'_slider_category']; 
 	$customcategory = $options[$themeslug.'_customslider_category'];
 	$captionstyle = $options[$themeslug.'_caption_style'];
 	$sliderheight = $options[$themeslug.'_slider_height'];
 	
 /* End define variables. */	
+
+/* Define blog category */
+
+	if ($category != 'All') {
+		$blogcategory = $category;
+	}
+	
+	else {
+		$blogcategory = "";
+	}
+	
+/* End blog category */
 
 /* Define slider height */      
 
@@ -98,7 +110,7 @@
     }
     	
     else {
-    	query_posts('category_name='.$options[$themeslug.'_slider_category'].'&showposts=50');
+    	query_posts('category_name='.$blogcategory.'&showposts=50');
 	}
 
 /* End query posts based on theme/meta options */

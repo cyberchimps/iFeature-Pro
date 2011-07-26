@@ -32,6 +32,16 @@
 	
 /* End define variables. */	
 
+/* Define blog category */
+
+	if ($category != 'all') {
+		$blogcategory = $category;
+	}
+	
+	else {
+		$blogcategory = "";
+	}
+
 /* Define slider height */      
 
 	if ($sliderheight == '') {
@@ -199,7 +209,7 @@
     }
     
     else {
-    	query_posts('category_name='.$category.'&showposts=50');
+    	query_posts('category_name='.$blogcategory.'&showposts=50');
 	}
 
 /* End query posts based on theme/meta options */
