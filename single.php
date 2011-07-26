@@ -44,7 +44,7 @@ get_header(); ?>
 							<div class="entry">
 								<?php the_content(); ?>
 							</div><!--end entry-->
-						<?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
+						<?php edit_post_link('Edit', '<p>', '</p>'); ?>
 						
 							<?php if ($showfblike == "1" ):?>
 							<div class="fb" >
