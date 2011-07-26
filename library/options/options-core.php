@@ -22,9 +22,7 @@ function theme_options_init() {
 	global $themename, $themeslug, $options;
 	
 	register_setting( $themeslug.'_options', ''.$themename.'', 'theme_options_validate' );
-		add_settings_section($themeslug.'_main', '', $themeslug.'_section_text', ''.$themeslug.'');
-		add_settings_section($themeslug.'_main', '', $themeslug.'_section_text2', ''.$themeslug.'');
-  		add_settings_field($themeslug.'_filename', '', $themeslug.'_setting_filename', ''.$themeslug.'', $themeslug.'_main');  
+	 
 
 	wp_register_script($themeslug.'jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"), false, '1.4.4');
     wp_register_script($themeslug.'jqueryui', get_template_directory_uri(). '/library/js/jquery-ui.js');
