@@ -371,7 +371,7 @@
 <!-- Apply slider CSS based on user settings -->
 
 	<style type="text/css" media="screen">
-		#slider-wrapper { width: <?php echo $csWidth ?>px; height: <?php echo $height ?>px; margin: auto; margin-bottom: 45px;}
+		#slider-wrapper { width: <?php echo $csWidth ?>px; height: <?php echo $height ?>px; margin: auto; margin-bottom: 50px;}
 		#slider { width: <?php echo $csWidth ?>px; height: <?php echo $height ?>px; margin: auto;}
 	</style>
 

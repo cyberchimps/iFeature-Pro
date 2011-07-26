@@ -48,29 +48,22 @@
 				</div><!--end entry-->
 				
 			<?php edit_post_link('Edit', '<p>', '</p>'); ?>
+			
+			<?php if ($showgplus == "1"):?>
+				<div class="gplusone" >	
+					<g:plusone size="standard" count="true"></g:plusone>
+				</div >
+			<?php endif;?>
 						
-			<?php if ($showfblike == "1" && $showgplus == "1" ):?>
+			<?php if ($showfblike == "1"):?>
 					
 				<div class="fb" >
 					<iframe src="http://www.facebook.com/plugins/like.php?href=<?php the_permalink() ?>&layout=standard&show_faces=true&width=450&action=like&colorscheme=light" scrolling="no" frameborder="0"  allowTransparency="true" style="border:none; overflow:hidden; width:530px; height:28px"></iframe>
-					<div class="g-plusone" data-size="standard" data-count="true"></div>
 				</div>
 			
 			<?php endif;?>
 			
-			<?php if ($showfblike == "1" && $showgplus != "1" ):?>
-					
-				<div class="fb" >
-					<iframe src="http://www.facebook.com/plugins/like.php?href=<?php the_permalink() ?>&layout=standard&show_faces=true&width=450&action=like&colorscheme=light" scrolling="no" frameborder="0"  allowTransparency="true" style="border:none; overflow:hidden; width:530px; height:28px"></iframe>
-					
-				</div>
-			
-			<?php endif;?>
-				<?php if ($showgplus == "1" && $showfblike != "1"):?>
-					
-				<div class="g-plusone" data-size="standard" data-count="true"></div>
-				
-				<?php endif;?>
+		
 			<!--end fb-->
 				<div class="tags">
 					<?php if ($tags != '1'):?>

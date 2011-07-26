@@ -354,7 +354,12 @@ blockquote p { }
 .share a:hover img { opacity:1; }
 
 .fb {
+width: 200px;
+}
 
+.gplusone {
+	float: right;
+	margin-right: -38px;
 }
  
 .comments {
@@ -1244,7 +1249,7 @@ a { text-decoration: none; color: black; }
 .nivo-controlNav {
 	position:absolute;
 	bottom:-40px; /* Put the nav below the slider */
-	margin-bottom: 5px;
+
 	
 
 	
