@@ -186,7 +186,7 @@ case 'upload':
 
     
     <br />
-    <small>Upload a logo image to use</small>
+    <small>Upload a logo image to use, press "save settings" to save image.</small>
 
 
 <?php
@@ -233,7 +233,7 @@ case 'upload2':
 
     
     <br />
-    <small>Upload a favicon image to use</small>
+    <small>Upload a favicon image to use, press "save settings" to save image.</small>
 
 
 <?php
@@ -278,7 +278,7 @@ case 'upload3':
 
     
     <br />
-    <small>Upload a home icon image to use</small>
+    <small>Upload a home icon image to use, press "save settings" to save image.</small>
 
 
 <?php
@@ -325,7 +325,7 @@ case 'upload4':
 
     
     <br />
-    <small>Upload a callout image to use</small>
+    <small>Upload a callout image to use, press "save settings" to save image.</small>
 
 
 <?php
@@ -436,7 +436,7 @@ case 'twitterbar':
 
 <br /><br />
 
-<input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_enable_twitter]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_enable_twitter]" value="1" <?php checked( '1', $options[$themeslug.'_enable_twitter'] ); ?>> - Check this box to enable the Twitter Bar on the iFeature Pro Homepage (Requires <a href="http://wordpress.org/extend/plugins/twitter-for-wordpress/">Twitter for WordPress Plugin</a>)
+Requires <a href="http://wordpress.org/extend/plugins/twitter-for-wordpress/">Twitter for WordPress Plugin</a>
 </td>
   </tr>
  
