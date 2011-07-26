@@ -122,7 +122,7 @@ if ($sidebar == "1" OR $sidebar == "2") {
 
 					</div><!--end entry-->
 
-				<?php edit_post_link('Edit this entry.', '<p>', '</p>'); ?>
+				<?php edit_post_link('Edit', '<p>', '</p>'); ?>
 
 				</div><!--end post-->
 		
