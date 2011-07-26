@@ -17,6 +17,7 @@
 /* Define variables. */	
 
 	$showfblike	= $options[$themeslug.'_show_fb_like'];
+	$showgplus		= $options[$themeslug.'_show_gplus'];
 
 /* End variable definition. */	
 
@@ -46,11 +47,17 @@ get_header(); ?>
 							</div><!--end entry-->
 						<?php edit_post_link('Edit', '<p>', '</p>'); ?>
 						
-							<?php if ($showfblike == "1" ):?>
+						<?php if ($showgplus == "1"):?>
+							<div class="gplusone" >	
+								<g:plusone size="standard" count="true"></g:plusone>
+							</div >
+						<?php endif;?>
+						
+						<?php if ($showfblike == "1" ):?>
 							<div class="fb" >
 								<iframe src="http://www.facebook.com/plugins/like.php?href=<?php the_permalink() ?>&layout=standard&show_faces=true&width=450&action=like&colorscheme=light" scrolling="no" frameborder="0"  allowTransparency="true" style="border:none; overflow:hidden; width:530px; height:28px"></iframe>
 							</div>
-							<?php endif;?>
+						<?php endif;?>
 							<!--end fb-->
 						
 							<div class="tags">
