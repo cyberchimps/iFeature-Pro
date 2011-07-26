@@ -347,6 +347,18 @@ array( "name" => "Choose the slider navigation:",
     "type" => "select10",  
     "std" => ""),   
     
+array( "name" => "Disable slider navigation",  
+    "desc" => "Check this box to hide the navigation arrows.",  
+    "id" => $shortname."_hide_slider_arrows",  
+	"type" => "checkbox",  
+    "std" => "false"),
+    
+array( "name" => "Disable slider navigation auto-hide",  
+    "desc" => "Check this box to keep the navigation arrows active at all times.",  
+    "id" => $shortname."_disable_nav_autohide",  
+	"type" => "checkbox",  
+    "std" => "false"),
+    
 array( "name" => "Home Description",  
     "desc" => "Enter the META description of your homepage here.",  
     "id" => $shortname."_home_description",  

@@ -28,9 +28,31 @@
 	$slideranimation = get_post_meta($post->ID, 'page_slider_animation' , true);
 	$captionstyle = get_post_meta($post->ID, 'page_slider_caption_style' , true);
 	$navigationstyle = get_post_meta($post->ID, 'page_slider_navigation_style' , true);
+	$navautohide = get_post_meta($post->ID, 'disable_autohide' , true);
+	$hidenav = get_post_meta($post->ID, 'hide_arrows' , true);
 	
 	
 /* End define variables. */	
+
+/* Slider navigation options */
+
+	if ($hidenav == 'on') {
+		$hidenavigation = 'false';
+	}
+
+	else {
+		$hidenavigation = 'true';
+	}
+	
+	if ($navautohide == 'on') {
+		$autohide = 'false';
+	}
+	
+	else {
+		$autohide = 'true';
+	}
+
+/* End navigation options */
 
 /* Define blog category */
 
@@ -308,22 +330,22 @@
 
 	    	elseif ($customimage == '' && $size2 == "0" && $size != "0"){
 	    		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
-	    		$thumbnail = "$root/images/pro/ifeatureprothumb.jpg";
+	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	    	}
 
 	    	elseif ($customimage == '' && $size2 == '4' && $size != "0"){
 	    		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
-	    		$thumbnail = "$root/images/pro/ifeatureprothumb.jpg";
+	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	    	}
 
 	    	elseif ($customimage == '' && $size2 == "1" && $size != "0" OR $customimage == '' && $size2 == "2" && $size != "0"){
 	    		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/iFeaturePro2-480.jpg&a=c&h=$height&w=480";
-	    		$thumbnail = "$root/images/pro/ifeatureprothumb.jpg";
+	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	    	}
 
 	   		else {
 	       		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/ifeatureprolarge.jpg&a=c&h=$height&w=980";
-	       		$thumbnail = "$root/images/pro/ifeatureprothumb.jpg";
+	       		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	       	}
 
 	     	/* End image/thumb */	
@@ -407,8 +429,8 @@
         animSpeed:500, // Slide transition speed
         pauseTime:'$delay', // How long each slide will show
         startSlide:0, // Set starting Slide (0 index)
-        directionNav:true, // Next & Prev navigation
-        directionNavHide:true, // Only show on hover
+        directionNav:$hidenavigation, // Next & Prev navigation
+        directionNavHide:$autohide, // Only show on hover
         controlNavThumbs:true, // Use thumbnails for Control Nav
         controlNavThumbsFromRel:true, // Use image rel for thumbs
         controlNavThumbsSearch: '.jpg', // Replace this with...

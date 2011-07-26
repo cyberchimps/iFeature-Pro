@@ -25,8 +25,44 @@
 	$customcategory = $options[$themeslug.'_customslider_category'];
 	$captionstyle = $options[$themeslug.'_caption_style'];
 	$sliderheight = $options[$themeslug.'_slider_height'];
+	$navautohide = $options[$themeslug.'_disable_nav_autohide'];
+	$hidenav = $options[$themeslug.'_hide_slider_arrows'];
+
 	
 /* End define variables. */	
+
+/* Define slider animation variable */
+
+	if ($options[$themeslug.'_slider_animation'] == '') {
+		$animation = 'random';	
+	}
+
+	else {
+		$animation = $options[$themeslug.'_slider_animation'];
+	}
+
+/* End slider animation */		
+
+/* Slider navigation options */
+
+	if ($hidenav == '1') {
+		$hidenavigation = 'false';
+	}
+
+	else {
+		$hidenavigation = 'true';
+	}
+	
+	if ($navautohide == '1') {
+		$autohide = 'false';
+	}
+	
+	else {
+		$autohide = 'true';
+	}
+
+/* End navigation options */
+
 
 /* Define blog category */
 
@@ -205,22 +241,22 @@
 	    	
 	    	elseif ($customimage == '' && $size == "full" ) {
 	       		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/ifeatureprolarge.jpg&a=c&h=$height&w=980";
-	       		$thumbnail = "$root/images/pro/ifeatureprothumb.jpg";
+	       		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	       	}
 
 	    	elseif ($customimage == '' && $size2 == "right" && $size != "full"){
 	    		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
-	    		$thumbnail = "$root/images/pro/ifeatureprothumb.jpg";
+	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	    	}
 
 	    	elseif ($customimage == '' && $size2 == "two-right" && $size != "full" OR $customimage == '' && $size2 == "right-left" && $size != "full"){
 	    		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/iFeaturePro2-480.jpg&a=c&h=$height&w=480";
-	    		$thumbnail = "$root/images/pro/ifeatureprothumb.jpg";
+	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	    	}
 
 	   		else {
 	       		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
-	       		$thumbnail = "$root/images/pro/ifeatureprothumb.jpg";
+	       		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	       	}
 
 	     	/* End image/thumb */	
@@ -245,18 +281,6 @@
 	$wp_query = $tmp_query;    
 
 /* End slide creation */	
-
-/* Define slider animation variable */
-
-	if ($options[$themeslug.'_slider_animation'] == '') {
-		$animation = 'random';	
-	}
-
-	else {
-		$animation = $options[$themeslug.'_slider_animation'];
-	}
-
-/* End slider animation */		
 
 /* Define slider delay variable */ 
     
@@ -298,6 +322,7 @@
 
 /* End slider navigation variable */ 
 
+
 	?>
 	
 <!-- Apply slider CSS based on user settings -->
@@ -327,8 +352,8 @@
         animSpeed:500, // Slide transition speed
         pauseTime:'$delay', // How long each slide will show
         startSlide:0, // Set starting Slide (0 index)
-        directionNav:true, // Next & Prev navigation
-        directionNavHide:true, // Only show on hover
+        directionNav:$hidenavigation, // Next & Prev navigation
+        directionNavHide:$autohide, // Only show on hover
         controlNavThumbs:true, // Use thumbnails for Control Nav
         controlNavThumbsFromRel:true, // Use image rel for thumbs
         controlNavThumbsSearch: '.jpg', // Replace this with...

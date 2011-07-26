@@ -890,6 +890,22 @@ function ifeature_initialize_the_meta_boxes() {
 				'options' => array('Bottom (default)', 'Left', 'Right'),
 				'std' => ''
 			 ),
+			 
+			 array(
+				'name' => 'Hide Navigation Arrows',
+				'desc' => 'Check this box to hide the navigation arrows on the slider',
+				'id' => 'hide_arrows',
+				'type' => 'checkbox',
+				'std' => ''
+			),
+			
+			array(
+				'name' => 'Disable Navigation Auto-Hide',
+				'desc' => 'Check this box to disable the navigation arrow auto-hide',
+				'id' => 'disable_autohide',
+				'type' => 'checkbox',
+				'std' => ''
+			),
 
 				)),
 
