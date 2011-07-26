@@ -738,22 +738,16 @@ function ifeature_initialize_the_meta_boxes() {
 				'title' => 'Page Options',
 				'fields' => array(
 					
-			array(
-				'name' => 'Hide Page Title',
-				'desc' => 'Check this box to hide the title on this page',
-				'id' => 'hide_page_title',
-				'type' => 'checkbox',
-				'std' => ''
-			),
-			
-			array(
-				'name' => 'Hide Page Content',
-				'desc' => 'Check this box to hide the content on this page',
-				'id' => 'hide_page_content',
-				'type' => 'checkbox',
-				'std' => ''
-			),
 				
+			array(
+				'name' => 'Select Page Layout',
+				'desc' => 'Select your sidebar options',
+				'id' => 'page_sidebar',
+				'type' => 'select',
+				'options' => array('Sidebar Right (default)', 'Two Sidebar Right', 'Sidebar Right and Left', 'Full-Width'),
+				'std' => ''
+			 ),	
+			
 			array(
 				'name' => 'Enable Callout Section',
 				'desc' => 'Check this box to enable the Callout Section on this page',
@@ -777,16 +771,22 @@ function ifeature_initialize_the_meta_boxes() {
 				'type' => 'checkbox',
 				'std' => ''
 			),
+		
+			array(
+				'name' => 'Hide Page Title',
+				'desc' => 'Check this box to hide the title on this page',
+				'id' => 'hide_page_title',
+				'type' => 'checkbox',
+				'std' => ''
+			),
 			
 			array(
-				'name' => 'Select Page Layout',
-				'desc' => 'Select your sidebar options',
-				'id' => 'page_sidebar',
-				'type' => 'select',
-				'options' => array('Sidebar Right (default)', 'Two Sidebar Right', 'Sidebar Right and Left', 'Full-Width'),
+				'name' => 'Hide Page Content',
+				'desc' => 'Check this box to hide the content on this page',
+				'id' => 'hide_page_content',
+				'type' => 'checkbox',
 				'std' => ''
-			 ),	
-
+			),
 
 			)),
 
@@ -892,36 +892,6 @@ function ifeature_initialize_the_meta_boxes() {
 
 
 			array(
-				'title' => "SEO",
-				'fields' => array(
-				array(
-						'name' => 'Title',
-						'desc' => 'Enter your title',
-						'id' => 'seo_title',
-						'type' => 'text',
-						'std' => ''
-					),
-					array(
-						'name' => 'Description',
-						'desc' => 'Enter your description',
-						'id' => 'seo_description',
-						'type' => 'textarea',
-						'std' => ''
-					),
-
-					array(
-						'name' => 'Keywords',
-						'desc' => 'Enter your keywords',
-						'id' => 'seo_keywords',
-						'type' => 'text',
-						'std' => ''
-					),	 
-
-
-				)),
-
-
-			array(
 				'title' => 'Callout Section',
 				'fields' => array(
 			
@@ -981,6 +951,13 @@ function ifeature_initialize_the_meta_boxes() {
 						'id' => 'custom_callout_color',
 						'type' => 'color'
 					),
+					
+				array(
+						'name' => 'Callout Title Color',
+						'desc' => 'Use the color picker to select the callout section title color',
+						'id' => 'custom_callout_title_color',
+						'type' => 'color'
+					),
 
 				array(
 						'name' => 'Callout Text Color',
@@ -997,8 +974,38 @@ function ifeature_initialize_the_meta_boxes() {
 					),
 
 
-				)
-			)
+				)),
+				
+				
+				array(
+				'title' => "SEO",
+				'fields' => array(
+				array(
+						'name' => 'Title',
+						'desc' => 'Enter your title',
+						'id' => 'seo_title',
+						'type' => 'text',
+						'std' => ''
+					),
+					array(
+						'name' => 'Description',
+						'desc' => 'Enter your description',
+						'id' => 'seo_description',
+						'type' => 'textarea',
+						'std' => ''
+					),
+
+					array(
+						'name' => 'Keywords',
+						'desc' => 'Enter your keywords',
+						'id' => 'seo_keywords',
+						'type' => 'text',
+						'std' => ''
+					),	 
+
+
+				)),
+
 		)
 	);
 

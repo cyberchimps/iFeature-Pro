@@ -321,7 +321,7 @@
 	    	$out .= "<a href='$link'>	
 	    				<img src='$image' title='$titlevar' rel='$thumbnail' alt='iFeaturePro' />
 	    					<div id='caption$i' class='nivo-html-caption'>
-                				$title <br />
+                				<font size='4'>$title </font> <br />
                 				$text 
                 			</div>
 	    				</a>

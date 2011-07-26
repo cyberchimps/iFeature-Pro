@@ -41,13 +41,7 @@
 
 ?>
 
-<script type="text/javascript">
-
-$('.nivoSlider').each(function(){
-    var $this = $(this), $control = $(".nivo-controlNav", this);
-    $control.css({left: ($this.width() - $control.width()) / 2}); 
-});
-</script>
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 

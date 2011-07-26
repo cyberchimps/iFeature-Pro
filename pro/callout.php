@@ -16,6 +16,7 @@
 	$calloutbgcolor = get_post_meta($post->ID, 'callout_background_color' , true);
 	$bcolor = get_post_meta($post->ID, 'custom_callout_button_color' , true);
 	$tcolor = get_post_meta($post->ID, 'custom_callout_text_color' , true);
+	$ticolor = get_post_meta($post->ID, 'custom_callout_title_color' , true);
 	$title = get_post_meta($post->ID, 'callout_title' , true);
 	$text = get_post_meta($post->ID, 'callout_text' , true);
 	$btext = get_post_meta($post->ID, 'callout_button_text' , true);
@@ -72,7 +73,16 @@
 	
 		echo '<style type="text/css" media="screen">';
 		echo ".callout_text {color: $tcolor ;}";
-		echo ".callout_title {color: $tcolor ;}";
+		echo '</style>';
+	
+	}
+	
+/* Echo custom title color. */
+
+	if ($ticolor != "") {
+	
+		echo '<style type="text/css" media="screen">';
+		echo ".callout_title {color: $ticolor ;}";
 		echo '</style>';
 	
 	}

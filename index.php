@@ -16,7 +16,7 @@
 
 /* Define Variables. */	
 
-	$hideslider = $options['if_show_slider_blog'];
+	$hideslider = $options['if_hide_slider_blog'];
 	$blogsidebar = $options['if_blog_sidebar'];
 	$blogslidersize = $options['if_slider_size'];
 	$title = get_post_meta($post->ID, 'seo_title' , true);
@@ -33,7 +33,7 @@
 
 <div id="content_wrap">
 		
-	<?php if ($options[$themeslug.'_show_slider_blog'] == '1' && $blogslidersize == "full"): ?>
+	<?php if ($options[$themeslug.'_hide_slider_blog'] != '1' && $blogslidersize == "full"): ?>
 		<div id = "slider-wrapper">
 			<?php get_template_part('sliderblog', 'index' ); ?>
 		</div>
@@ -56,12 +56,12 @@
 		<?php get_sidebar('right'); ?>
 	<?php endif;?>
 	
-	<?php if ($sidebar == "2"  OR $sidebar == "3" OR $blogsidebar == "two-right" OR $blogsidebar == "left-right"): ?>
+	<?php if ($sidebar == "2"  OR $sidebar == "3" OR $blogsidebar == "two-right" OR $blogsidebar == "right-left"): ?>
 		<?php get_sidebar('right'); ?>
 		<div class="content_half">
 	<?php endif;?>
 	
-	<?php if ($options[$themeslug.'_show_slider_blog'] == '1' && $blogslidersize == "half"): ?>
+	<?php if ($options[$themeslug.'_hide_slider_blog'] != '1' && $blogslidersize == "half"): ?>
 		<div id = "slider-wrapper">
 			<?php get_template_part('sliderblog', 'page' ); ?>
 		</div>

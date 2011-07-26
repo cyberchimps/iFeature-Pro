@@ -47,7 +47,7 @@
 		?>
 		
 			<style type="text/css">
-			.nivo-caption {height: <?php echo $height ?>px; width: 320px;}
+			.nivo-caption {height: <?php echo $height ?>px; width: 30%;}
 			</style>
 		
 		<?php
@@ -58,7 +58,7 @@
 		?>
 		
 			<style type="text/css">
-			.nivo-caption {position: relative; float: right; height: <?php echo $height ?>px; width: 220px;}
+			.nivo-caption {position: relative; float: right; height: <?php echo $height ?>px; width: 30%;}
 			</style>
 		
 		<?php
@@ -213,7 +213,7 @@
 	    	$out .= "<a href='$link'>	
 	    				<img src='$image' title='$titlevar' rel='$thumbnail' alt='iFeaturePro' />
 	    					<div id='caption$i' class='nivo-html-caption'>
-                				$title <br />
+                				<font size='4'>$title </font> <br />
                 				$text 
                 			</div>
 	    				</a>

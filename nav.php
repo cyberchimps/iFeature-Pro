@@ -38,7 +38,7 @@
 <div id="homebutton"><a href="<?php echo home_url(); ?>/"><img src="<?php echo get_template_directory_uri(); ?>/images/menu/home.png?>" alt="Home" /></a></div>
 <?php endif;?>
 <?php if ($homeimage != '' ):?>
-<div id="homebutton"><a href="<?php echo home_url(); ?>/"><img src="<?php echo stripslashes($favicon['url']) ;?>" alt="Home" /></a></div>
+<div id="homebutton"><a href="<?php echo home_url(); ?>/"><img src="<?php echo stripslashes($homeimage['url']) ;?>" alt="Home" /></a></div>
 <?php endif;?>
     <div id="sfwrapper">
         <?php wp_nav_menu( array(

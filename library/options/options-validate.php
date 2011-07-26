@@ -113,14 +113,17 @@ function theme_options_validate( $input ) {
 		$input[$themeslug.'_enable_custom_calloutbg'] = null;
 	$input[$themeslug.'_enable_custom_calloutbg'] = ( $input[$themeslug.'_enable_custom_calloutbg'] == 1 ? 1 : 0 );   
   
-	if ( ! isset( $input[$themeslug.'_show_slider_blog'] ) )
-		$input[$themeslug.'_show_slider_blog'] = null;
-	$input[$themeslug.'_show_slider_blog'] = ( $input[$themeslug.'_show_slider_blog'] == 1 ? 1 : 0 ); 
+	if ( ! isset( $input[$themeslug.'_hide_slider_blog'] ) )
+		$input[$themeslug.'_hide_slider_blog'] = null;
+	$input[$themeslug.'_hide_slider_blog'] = ( $input[$themeslug.'_hide_slider_blog'] == 1 ? 1 : 0 ); 
 	
 	 if ( ! isset( $input[$themeslug.'_widget_title_bg'] ) )
 		$input[$themeslug.'_widget_title_bg'] = null;
 	$input[$themeslug.'_widget_title_bg'] = ( $input[$themeslug.'_widget_title_bg'] == 1 ? 1 : 0 ); 
 	
+		 if ( ! isset( $input[$themeslug.'_show_gplus'] ) )
+		$input[$themeslug.'_show_gplus'] = null;
+	$input[$themeslug.'_show_gplus'] = ( $input[$themeslug.'_show_gplus'] == 1 ? 1 : 0 ); 
   	/* Strip HTML from certain options */
   	
 	$input[$themeslug.'_logo'] = wp_filter_nohtml_kses( $input[$themeslug.'_logo'] );

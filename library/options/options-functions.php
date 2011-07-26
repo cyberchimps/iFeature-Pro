@@ -68,7 +68,16 @@ function add_menu_color() {
 	global $themename, $themeslug, $options;
 	$root = get_template_directory_uri(); 
 
-	if ($options[$themeslug.'_menu_color'] != "picker") {
+	if  ($options[$themeslug.'_menu_color'] == "") {
+		
+		echo '<style type="text/css">';
+		echo "#navbackground {background: url($root/images/menu/Grey.png) no-repeat left top}";
+		echo '</style>';
+		
+	}
+
+	
+	elseif ($options[$themeslug.'_menu_color'] != "picker" && $options[$themeslug.'_menu_color'] != "") {
 	
 		$menucolor = $options[$themeslug.'_menu_color'];
 		
@@ -212,7 +221,7 @@ function fullwidth_nav() {
 
 		echo '<style type="text/css">';
 		echo "#homebutton {display: none;}";
-		echo "#sfwrapper {width: 79%;}";
+		echo "#sfwrapper {width: 79%; padding-left: 5px;}";
 		echo '</style>';
 	}
 
@@ -221,7 +230,7 @@ function fullwidth_nav() {
 		echo '<style type="text/css">';
 		echo "#homebutton {display: none;}";
 		echo "#searchbar {display: none;}";
-		echo "#sfwrapper {width: 100%;}";
+		echo "#sfwrapper {width: 100%; padding-left: 5px;}";
 		echo '</style>';
 	}
 
