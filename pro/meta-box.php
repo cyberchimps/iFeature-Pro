@@ -217,7 +217,7 @@ class RW_Meta_Box {
 
 	function show_field_text($field, $meta) {
 		$this->show_field_begin($field, $meta);
-		echo "<input type='text' name='{$field['id']}' id='{$field['id']}' value='$meta' size='30' style='width:60%' />";
+		echo "<input type='text' name='{$field['id']}' id='{$field['id']}' value='$meta' size='30' style='width:40%' />";
 		$this->show_field_end($field, $meta);
 	}
 
@@ -255,6 +255,27 @@ class RW_Meta_Box {
 		$this->show_field_begin($field, $meta);
 		echo "<textarea name='{$field['id']}' class='theEditor' cols='60' rows='15' style='width:97%'>$meta</textarea>";
 		$this->show_field_end($field, $meta);
+	}
+	
+	
+	function show_field_pagehelp($field, $meta) {
+		$this->show_field_begin($field, $meta);
+		echo "Visit our Page Options help page here: <a href='http://cyberchimps.com'>Page Options Documentation</a></td>";
+	}
+	
+	function show_field_sliderhelp($field, $meta) {
+		$this->show_field_begin($field, $meta);
+		echo "Visit our iFeature Slider Options help page here: <a href='http://cyberchimps.com'>Page Options Documentation</a></td>";
+	}
+	
+	function show_field_callouthelp($field, $meta) {
+		$this->show_field_begin($field, $meta);
+		echo "Visit our Callout Section Options help page here: <a href='http://cyberchimps.com'>Page Options Documentation</a></td>";
+	}
+	
+	function show_field_seohelp($field, $meta) {
+		$this->show_field_begin($field, $meta);
+		echo "Visit our SEO Section Options help page here: <a href='http://cyberchimps.com'>Page Options Documentation</a></td>";
 	}
 
 	function show_field_file($field, $meta) {
@@ -761,12 +782,20 @@ function ifeature_initialize_the_meta_boxes() {
 			
 			array(
 				'name' => 'Enable Twitter Bar',
-				'desc' => 'Check this box to enable the Twitter Bar on this page',
+				'desc' => 'Check this box to enable the Twitter Bar on this page - Requires <a href="http://wordpress.org/extend/plugins/twitter-for-wordpress/">Twitter for WordPress Plugin',
 				'id' => 'enable_twitter_bar',
 				'type' => 'checkbox',
 				'std' => ''
 			),
-
+			
+			array(
+				'name' => 'Twitter Handle',
+				'desc' => 'Enter your Twitter handle if using the Twitter bar - Requires <a href="http://wordpress.org/extend/plugins/twitter-for-wordpress/">Twitter for WordPress Plugin',
+				'id' => 'twitter_handle',
+				'type' => 'text',
+				'std' => ''
+			),
+			
 			array(
 				'name' => 'Enable Box Section',
 				'desc' => 'Check this box to enable the Box Section on this page',
@@ -788,6 +817,14 @@ function ifeature_initialize_the_meta_boxes() {
 				'desc' => 'Check this box to hide the content on this page',
 				'id' => 'hide_page_content',
 				'type' => 'checkbox',
+				'std' => ''
+			),
+			
+				array(
+				'name' => 'Need help?',
+				'desc' => '',
+				'id' => '',
+				'type' => 'pagehelp',
 				'std' => ''
 			),
 
@@ -887,7 +924,7 @@ function ifeature_initialize_the_meta_boxes() {
 				'desc' => 'Default is bottom',
 				'id' => 'page_slider_caption_style',
 				'type' => 'select',
-				'options' => array('Bottom (default)', 'Left', 'Right'),
+				'options' => array('Bottom (default)', 'Left', 'Right', 'None'),
 				'std' => ''
 			 ),
 			 
@@ -904,6 +941,14 @@ function ifeature_initialize_the_meta_boxes() {
 				'desc' => 'Check this box to disable the navigation arrow auto-hide',
 				'id' => 'disable_autohide',
 				'type' => 'checkbox',
+				'std' => ''
+			),
+			
+			array(
+				'name' => 'Need help?',
+				'desc' => '',
+				'id' => '',
+				'type' => 'sliderhelp',
 				'std' => ''
 			),
 
@@ -992,6 +1037,13 @@ function ifeature_initialize_the_meta_boxes() {
 						'type' => 'color'
 					),
 
+				array(
+					'name' => 'Need help?',
+					'desc' => '',
+					'id' => '',
+					'type' => 'callouthelp',
+					'std' => ''
+					),
 
 				)),
 				
@@ -1021,7 +1073,14 @@ function ifeature_initialize_the_meta_boxes() {
 						'type' => 'text',
 						'std' => ''
 					),	 
-
+				
+					array(
+						'name' => 'Need help?',
+						'desc' => '',
+						'id' => '',
+						'type' => 'seohelp',
+						'std' => ''
+			),
 
 				)),
 

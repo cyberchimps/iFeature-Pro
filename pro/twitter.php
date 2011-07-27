@@ -8,7 +8,7 @@
 	
 */
 	$options = get_option('ifeature') ;  
-    $handle = $options['if_twitter_bar'];
+    $handle = get_post_meta($post->ID, 'twitter_handle' , true);
 	$tdurl = get_template_directory_uri();
 ?>
 	

@@ -19,7 +19,7 @@ $select_callout_background = array(
 );
 
 $select_slider_caption = array(
-	'0' => array('value' => 'bottom','label' => __('Bottom (default)' )),'1' => array('value' => 'left','label' => __('Left')), '2' => array('value' => 'right','label' => __('Right')),
+	'0' => array('value' => 'bottom','label' => __('Bottom (default)' )),'1' => array('value' => 'left','label' => __('Left')), '2' => array('value' => 'right','label' => __('Right')),'3' => array('value' => 'none','label' => __('None')),
 
 );
 

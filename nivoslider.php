@@ -78,27 +78,6 @@
 
 /* End slider height */ 
 
-/* Define slider navigation style */      
-
-	if ($navigationstyle == '0') {
-		
-		echo '<style type="text/css">';
-		echo ".nivo-controlNav a {background: url($root/images/bullets.png) no-repeat; display:block; width:22px; height:22px; 	text-indent:-9999px; border:0; margin-right:3px; float:left;}";
-		echo ".nivo-controlNav a.active {background-position:0 -22px;} ";
-		echo '</style>';
-		
-	}
-	
-	elseif ($navigationstyle == '2') {
-		
-			echo '<style type="text/css">';
-			echo '.nivo-controlNav {display: none;}';
-			echo '</style>';
-	}    
-
-/* End slider navigation */ 
-
-
 /* Define slider caption style */      
 
 	if ($captionstyle == '1') {
@@ -106,7 +85,7 @@
 		?>
 		
 			<style type="text/css">
-			.nivo-caption {height: <?php echo $height ?>px; width: 320px;}
+			.nivo-caption {height: <?php echo $height ?>px; width: 30%;}
 			</style>
 		
 		<?php
@@ -117,11 +96,22 @@
 		?>
 		
 			<style type="text/css">
-			.nivo-caption {position: relative; float: right; height: <?php echo $height ?>px; width: 220px;}
+			.nivo-caption {position: relative; float: right; height: <?php echo $height ?>px; width: 30%;}
 			</style>
 		
 		<?php
 	}    
+	
+	elseif ($captionstyle == '3') {
+		
+		?>
+		
+			<style type="text/css">
+			.nivo-html-caption {display: none;}
+			</style>
+		
+		<?php
+	} 
 
 
 /* End slider caption */ 
@@ -246,16 +236,16 @@
 
 
 	
-	if ($options['if_slider_posts_number'] == '') {
-	    $no = '20';    	
+	if ($postnumber == '') {
+	    $no = '5';    	
 	}   	
 
-	elseif ($usecustomslides == 'custom') {
+	elseif ($type == '1') {
 	    $no = '20';
 	}
 
 	else {
-		$no = $options['if_slider_posts_number'];
+		$no = $postnumber;
 	}
 
 /* End post counter */	    	
@@ -282,11 +272,11 @@
 
 			/* Controls slide title based on page meta setting */	
 
-			if ($hidetitlebar != 'on') {
+			if ($hidetitlebar != 'on' AND $captionstyle != '3') {
 	   			$titlevar = "#caption$i";
 	   		}
 
-	   		else {
+	   		elseif ($captionstyle == '3') {
 	   			$titlevar = '';
 	   		}
 
@@ -412,6 +402,28 @@
 <!-- End style -->
 
 	<?php	
+
+/* Define slider navigation style */      
+
+	if ($navigationstyle == '0') {
+		
+		echo '<style type="text/css">';
+		echo ".nivo-controlNav a {background: url($root/images/bullets.png) no-repeat; display:block; width:22px; height:22px; 	text-indent:-9999px; border:0; margin-right:3px; float:left;}";
+		echo ".nivo-controlNav a.active {background-position:0 -22px;} ";
+		echo '</style>';
+		
+	}
+	
+	elseif ($navigationstyle == '2') {
+		
+			echo '<style type="text/css">';
+			echo '.nivo-controlNav {display: none;}';
+			echo '#slider-wrapper {margin-bottom: 0px;}';
+			echo '</style>';
+	}    
+
+/* End slider navigation */ 
+
 	    wp_reset_query(); /* Reset post query */ 
 
 /* Begin NivoSlider javascript */ 

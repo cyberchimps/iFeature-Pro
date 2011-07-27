@@ -47,13 +47,7 @@ array( "name" => "Header Contact Area",
     "id" => $shortname."_header_contact",  
     "type" => "textarea",
     "std" => ""),
-    
-array( "name" => "Twitter Bar",  
-    "desc" => "Enter your Twitter handle for the Twitter Bar",  
-    "id" => $shortname."_twitter_bar",  
-    "type" => "twitterbar",  
-    "std" => ""), 
-    
+
 array( "name" => "Google Analytics Code",  
     "desc" => "You can paste your Google Analytics or other tracking code in this box. This will be automatically be added to the footer.",  
     "id" => $shortname."_ga_code",  

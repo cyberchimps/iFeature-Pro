@@ -525,7 +525,7 @@ case 'color1':
 	
 ?>
 
-<input type="text" class="color" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_sitetitle_color]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_sitetitle_color]"  value="<?php echo $picker ;?>" style="width: 300px;" maxlength="6">>   
+<input type="text" class="color" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_sitetitle_color]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_sitetitle_color]"  value="<?php echo $picker ;?>" style="width: 300px;" maxlength="6">
 
 <br /><br />
     </td>
