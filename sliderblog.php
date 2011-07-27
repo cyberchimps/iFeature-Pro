@@ -197,7 +197,7 @@
 	   			$titlevar = "#caption$i";
 	   		}
 
-	   		elseif ($captionstyle == 'none') {
+	   		else {
 	   			$titlevar = '';
 	   		}
 

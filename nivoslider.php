@@ -276,7 +276,7 @@
 	   			$titlevar = "#caption$i";
 	   		}
 
-	   		elseif ($captionstyle == '3') {
+	   		else{
 	   			$titlevar = '';
 	   		}
 
