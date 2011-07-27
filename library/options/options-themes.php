@@ -11,12 +11,12 @@
 add_action('admin_menu', 'cyberchimps_themes_add_menu');
 
 
-// Add sub page to the Settings Menu
+// Add page to the menu
 function cyberchimps_themes_add_menu() {
 	add_theme_page('CyberChimps Themes Page', 'CyberChimps Themes', 'administrator', 'themes', 'cyberchimps_themes_page');
 }
 
-// Display the admin options page
+// Create the page
 function cyberchimps_themes_page() {
 	$root = get_template_directory_uri(); 
 ?>
