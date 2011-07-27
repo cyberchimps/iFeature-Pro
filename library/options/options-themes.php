@@ -11,19 +11,19 @@
 
 
 // Add page to the menu
-function cyberchimps_themes_add_menu() {
-	add_theme_page('CyberChimps Themes Page', 'CyberChimps Themes', 'administrator', 'themes', 'cyberchimps_themes_page_init');
+function cyberchimps_store_add_menu() {
+	add_theme_page('CyberChimps Store Page', 'CyberChimps Store', 'administrator', 'themes', 'cyberchimps_store_page_init');
 }
 
-add_action('admin_menu', 'cyberchimps_themes_add_menu');
+add_action('admin_menu', 'cyberchimps_store_add_menu');
 
 // Create the page
-function cyberchimps_themes_page_init() {
+function cyberchimps_store_page_init() {
 	$root = get_template_directory_uri(); 
 ?>
 	<div class="wrap" style="margin-left: 10px;">
 	<br />
-		<font size="5"><b>CyberChimps Themes</b></font>
+		<font size="5"><b>CyberChimps Store</b></font>
 		<br /><br />
 		<div style="width: 30%; float: left; margin-right: 15px;">
 		<font size="3"><b>Business Pro</b></font>
