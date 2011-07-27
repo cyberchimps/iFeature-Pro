@@ -353,6 +353,21 @@ function nivoslider(){
 }
 add_action('wp_head', 'nivoslider');
 
+// + 1 Button 
+
+function plusone(){
+	
+	$path =  get_template_directory_uri() ."/library/js/";
+
+	$script = "
+		
+		<script type=\"text/javascript\" src=\"".$path."/plusone.js\"></script>
+		";
+	
+	echo $script;
+}
+add_action('wp_head', 'plusone');
+
 
 // Register superfish scripts
 	
