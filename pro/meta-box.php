@@ -1105,8 +1105,12 @@ function ifeaturepro_metabox_enqueue() {
 	wp_register_style(  'metabox-tabs-css', $path2. 'metabox-tabs.css');
 	wp_register_style(  'jf-color',       $path2. 'metabox-fresh.css');
 	wp_register_script ( 'jf-metabox-tabs', $path. 'metabox-tabs.js');
+	wp_register_script ( 'jf-cookie', $path. 'jquery-cookie.js');
+	wp_register_script ( 'cookie', $path. 'cookie-tabs.js');
 
 	wp_enqueue_script('jf-metabox-tabs');
+	wp_enqueue_script('jf-cookie');
+	wp_enqueue_script('cookie');
 	wp_enqueue_style('jf-color');
 	wp_enqueue_style('metabox-tabs-css');
 }
