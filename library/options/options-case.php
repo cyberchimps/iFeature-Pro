@@ -478,33 +478,6 @@ case 'post':
 <?php
 break;
  
-case 'twitterbar':  
-?>  
-  
-<tr>
-
-    <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
-    <td width="85%">
-    <br />
-    <input style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>" id="<?php echo $themeslug.'['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
-
-<br /><br />
-
-Requires <a href="http://wordpress.org/extend/plugins/twitter-for-wordpress/">Twitter for WordPress Plugin</a>
-</td>
-  </tr>
- 
-<tr>
-
-</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
-
-
-
-<?php
-break;
-
-
-
 case 'color1':  
 ?>  
   
@@ -525,7 +498,7 @@ case 'color1':
 	
 ?>
 
-<input type="text" class="color" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_sitetitle_color]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_sitetitle_color]"  value="<?php echo $picker ;?>" style="width: 300px;" maxlength="6">>   
+<input type="text" class="color" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_sitetitle_color]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_sitetitle_color]"  value="<?php echo $picker ;?>" style="width: 300px;" maxlength="6">
 
 <br /><br />
     </td>
@@ -629,110 +602,6 @@ case 'color4':
 ?>
 
 <input type="text" class="color{required:false}" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_posttitle_color]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_posttitle_color]"  value="<?php echo $picker ;?>" style="width: 300px;" maxlength="6">   
-
-<br /><br />
-    
-    </td>
-
-  </tr>
- 
-<tr>
-
-</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
-
-
-<?php
-break; 
-
-case 'color5':  
-?>  
-  
-<tr>
-
-    <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
-    <td width="85%">
-    
-<?php
-
-	if (isset($options[$themeslug.'_callout_custom_background_color']) == "") {
-		$picker = 'F8F8F8';
-	}		
-	else {
-		$picker = $options[$themeslug.'_callout_custom_background_color']; 
-	}
-?>
-
-<input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_enable_custom_calloutbg]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_enable_custom_calloutbg]" value="1" <?php checked( '1', $options[$themeslug.'_enable_custom_calloutbg'] ); ?>> - Check this box to enable custom callout section background color.
-<br /><br />
-<input type="text" class="color{required:false}" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_callout_custom_background_color]" name="ifeature[if<?php echo $themename ;?>[<?php echo $themeslug ;?>
-<br /><br />
-    
-    </td>
-
-  </tr>
- 
-<tr>
-
-</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
-
-
-<?php
-break; 
-
-case 'color6':  
-?>  
-  
-<tr>
-
-    <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
-    <td width="85%">
-    
-<?php
-
-	if (isset($options[$themeslug.'_callout_button_color']) == "") {
-		$picker = '333';
-	}		
-	else {
-		$picker = $options[$themeslug.'_callout_button_color']; 
-	}
-?>
-
-<input type="text" class="color{required:false}" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_callout_button_color]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_callout_button_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
-
-<br /><br />
-    
-    </td>
-
-  </tr>
- 
-<tr>
-
-</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>
-
-
-<?php
-break; 
-
-
-case 'color7':  
-?>  
-  
-<tr>
-
-    <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
-    <td width="85%">
-    
-<?php
-
-	if (isset($options[$themeslug.'_callout_text_color']) == "") {
-		$picker = '000';
-	}		
-	else {
-		$picker = $options['if_callout_text_color']; 
-	}
-?>
-
-<input type="text" class="color{required:false}" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_callout_text_color]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_callout_text_color]"  value="<?php echo $picker ;?>" style="width: 300px;">   
 
 <br /><br />
     

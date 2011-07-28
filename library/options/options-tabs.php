@@ -9,7 +9,7 @@
 	
 */
 
-$shortname = "if";
+$shortname = $themeslug;
 
 $optionlist = array (
 
@@ -47,13 +47,7 @@ array( "name" => "Header Contact Area",
     "id" => $shortname."_header_contact",  
     "type" => "textarea",
     "std" => ""),
-    
-array( "name" => "Twitter Bar",  
-    "desc" => "Enter your Twitter handle for the Twitter Bar",  
-    "id" => $shortname."_twitter_bar",  
-    "type" => "twitterbar",  
-    "std" => ""), 
-    
+
 array( "name" => "Google Analytics Code",  
     "desc" => "You can paste your Google Analytics or other tracking code in this box. This will be automatically be added to the footer.",  
     "id" => $shortname."_ga_code",  
@@ -164,7 +158,7 @@ array( "name" => "Enable widget title background",
     "std" => "false"),
 
 array( "name" => "Custom CSS",  
-    "desc" => "Override default iFeature CSS here.",  
+    "desc" => "Override default CSS here.",  
     "id" => $shortname."_css_options",  
     "type" => "textarea",  
     "std" => ""),  
@@ -295,8 +289,8 @@ array( "name" => "",
     "type" => "slider_title",  
     "std" => ""),
     
-array( "name" => "Hide the iFeature Slider",  
-    "desc" => "Check this box to hide the iFeature Slider on your blog page.",  
+array( "name" => "Hide the Slider",  
+    "desc" => "Check this box to hide the Slider on your blog page.",  
     "id" => $shortname."_hide_slider_blog",  
 	"type" => "checkbox",  
     "std" => "false"),
@@ -454,15 +448,14 @@ array( "name" => "Help",
     "type" => "import_faq",  
     "std" => ""),
   
-array( "name" => "Import iFeature Settings",  
-    "desc" => "To import your settings, Paste the iFeature Pro export code here and press Save Settings.",  
+array( "name" => "Import Options Settings",  
+    "desc" => "To import your settings, Paste the export code here and press Save Settings.",  
     "id" => $shortname."_import_code",  
     "type" => "import",  
-    "process" => "ifeature_import_options",
     "std" => ""), 
     
-array( "name" => "Export iFeature Settings",  
-    "desc" => "Copy the following code, Paste it into a text file and save it. This code can be used to import your settings into another iFeature Pro site.",  
+array( "name" => "Export Options Settings",  
+    "desc" => "Copy the following code, Paste it into a text file and save it. This code can be used to import your settings into another site.",  
     "id" => $shortname."_export_code",  
     "type" => "export",  
     "std" => ""), 

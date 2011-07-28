@@ -193,7 +193,7 @@
 
 			/* Controls slide title based on page meta setting */	
 
-			if ($hidetitlebar != 'on') {
+			if ($hidetitlebar != 'on' AND $captionstyle != 'none') {
 	   			$titlevar = "#caption$i";
 	   		}
 
@@ -334,7 +334,30 @@
 
 <!-- End style -->
 
-	<?php	
+	<?php
+	
+/* Define slider navigation style */ 		
+	
+	if ($options[$themeslug.'_slider_nav'] == 'dots') {
+		
+		echo '<style type="text/css">';
+		echo ".nivo-controlNav a {background: url($root/images/bullets.png) no-repeat; display:block; width:22px; height:22px; 	text-indent:-9999px; border:0; margin-right:3px; float:left;}";
+		echo ".nivo-controlNav a.active {background-position:0 -22px;} ";
+		echo '</style>';
+		
+	}
+ 
+	if ($options[$themeslug.'_slider_nav'] == "none")  {
+			
+		echo '<style type="text/css">';
+		echo ".nivo-controlNav {display: none;}";
+		echo '#slider-wrapper {margin-bottom: 0px;}';
+		echo '</style>';
+
+	}	
+
+/* End slider navigation style */ 
+	
 	    wp_reset_query(); /* Reset post query */ 
 
 /* Begin NivoSlider javascript */ 

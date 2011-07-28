@@ -337,32 +337,6 @@ function widget_title_bg() {
 add_action( 'wp_head', 'widget_title_bg');
 
 
-/* Hide Slider Navigation */
-
-function hide_slider_navigation() {
-
-	global $themename, $themeslug, $options;
-	$root = get_template_directory_uri();
-
-	if ($options[$themeslug.'_slider_nav'] == 'dots') {
-		
-		echo '<style type="text/css">';
-		echo ".nivo-controlNav a {background: url($root/images/bullets.png) no-repeat; display:block; width:22px; height:22px; 	text-indent:-9999px; border:0; margin-right:3px; float:left;}";
-		echo ".nivo-controlNav a.active {background-position:0 -22px;} ";
-		echo '</style>';
-		
-	}
- 
-	if ($options[$themeslug.'_slider_nav'] == "none")  {
-			
-		echo '<style type="text/css">';
-		echo ".nivo-controlNav {display: none;}";
-		echo '</style>';
-
-	}	
-}
-add_action( 'wp_head', 'hide_slider_navigation');
-
 /* Custom CSS */
 
 function custom_css() {
