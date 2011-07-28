@@ -11,7 +11,7 @@
  * @version: 3.0.1
  */
  
- 
+	global  $themename, $themeslug, $options;
 
 // Ajax delete files on the fly. Modified from a function used by "Verve Meta Boxes" plugin (http://goo.gl/LzYSq)
 add_action('wp_ajax_rw_delete_file', 'rw_delete_file');
@@ -260,22 +260,23 @@ class RW_Meta_Box {
 	
 	function show_field_pagehelp($field, $meta) {
 		$this->show_field_begin($field, $meta);
-		echo "Visit our Page Options help page here: <a href='http://cyberchimps.com'>Page Options Documentation</a></td>";
+		echo "Visit our Page Options help page here: <a href='http://cyberchimps.com' target='_blank'>Page Options Documentation</a></td>";
 	}
 	
 	function show_field_sliderhelp($field, $meta) {
+		global $themenamefull;
 		$this->show_field_begin($field, $meta);
-		echo "Visit our iFeature Slider Options help page here: <a href='http://cyberchimps.com'>Page Options Documentation</a></td>";
+		echo "Visit our $themenamefull Slider Options help page here: <a href='http://cyberchimps.com' target='_blank'>Page Options Documentation</a></td>";
 	}
 	
 	function show_field_callouthelp($field, $meta) {
 		$this->show_field_begin($field, $meta);
-		echo "Visit our Callout Section Options help page here: <a href='http://cyberchimps.com'>Page Options Documentation</a></td>";
+		echo "Visit our Callout Section Options help page here: <a href='http://cyberchimps.com' target='_blank'>Page Options Documentation</a></td>";
 	}
 	
 	function show_field_seohelp($field, $meta) {
 		$this->show_field_begin($field, $meta);
-		echo "Visit our SEO Section Options help page here: <a href='http://cyberchimps.com'>Page Options Documentation</a></td>";
+		echo "Visit our SEO Section Options help page here: <a href='http://cyberchimps.com' target='_blank'>Page Options Documentation</a></td>";
 	}
 
 	function show_field_file($field, $meta) {
@@ -633,16 +634,19 @@ class RW_Meta_Box_Taxonomy extends RW_Meta_Box {
 // use underscore (_) at the beginning to make keys hidden, for example $prefix = '_rw_';
 // you also can make prefix empty to disable it
 
-add_action('init', 'ifeature_initialize_the_meta_boxes');
+add_action('init', 'initialize_the_meta_boxes');
 
-function ifeature_initialize_the_meta_boxes() {
+function initialize_the_meta_boxes() {
+
+	global  $themename, $themeslug, $themenamefull, $options;
+	
 	$prefix = 'slider_';
 
 	$meta_boxes = array();
 
 	$meta_boxes[] = array(
 		'id' => 'feature',
-		'title' => 'iFeature Slider Options',
+		'title' => $themenamefull.' Slider Options',
 		'pages' => array('post'),
 
 		'tabs' => array(
@@ -650,14 +654,14 @@ function ifeature_initialize_the_meta_boxes() {
 				'fields' => array(
 
 					array(
-						'name' => 'iFeature Slider Image',
+						'name' => $themenamefull.' Slider Image',
 						'desc' => 'Upload your image here:',
 						'id' => $prefix . 'image',
 						'type' => 'image',
 						'std' => ''
 					),
 					array(
-						'name' => 'iFeature Slider Text',
+						'name' => $themenamefull.' Slider Text',
 						'desc' => 'Enter your slider text here (optional):',
 						'id' => $prefix . 'text',
 						'type' => 'text',
@@ -687,7 +691,7 @@ function ifeature_initialize_the_meta_boxes() {
 	$meta_boxes[] = array(
 		'id' => 'slides',
 		'title' => 'Custom Feature Slides',
-		'pages' => array('if_custom_slides'),
+		'pages' => array($themeslug.'_custom_slides'),
 
 		'tabs' => array(
 			array(
@@ -753,7 +757,7 @@ function ifeature_initialize_the_meta_boxes() {
 
 	$meta_boxes[] = array(
 
-		'title' => 'iFeature Pro Page Options',
+		'title' => $themenamefull.' Pro Page Options',
 		'pages' => array('page'),
 
 		'tabs' => array(
@@ -771,6 +775,14 @@ function ifeature_initialize_the_meta_boxes() {
 				'options' => array('Sidebar Right (default)', 'Two Sidebar Right', 'Sidebar Right and Left', 'Full-Width'),
 				'std' => ''
 			 ),	
+			 
+			 array(
+				'name' => 'Enable Feature Slider',
+				'desc' => 'Check this box to enable the Feature Slider on this page',
+				'id' => 'page_enable_slider',
+				'type' => 'checkbox',
+				'std' => ''
+			  ),
 			
 			array(
 				'name' => 'Enable Callout Section',
@@ -782,7 +794,7 @@ function ifeature_initialize_the_meta_boxes() {
 			
 			array(
 				'name' => 'Enable Twitter Bar',
-				'desc' => 'Check this box to enable the Twitter Bar on this page - Requires <a href="http://wordpress.org/extend/plugins/twitter-for-wordpress/">Twitter for WordPress Plugin',
+				'desc' => 'Check this box to enable the Twitter Bar on this page - Requires <a href="http://wordpress.org/extend/plugins/twitter-for-wordpress/" target="_blank">Twitter for WordPress Plugin',
 				'id' => 'enable_twitter_bar',
 				'type' => 'checkbox',
 				'std' => ''
@@ -790,7 +802,7 @@ function ifeature_initialize_the_meta_boxes() {
 			
 			array(
 				'name' => 'Twitter Handle',
-				'desc' => 'Enter your Twitter handle if using the Twitter bar - Requires <a href="http://wordpress.org/extend/plugins/twitter-for-wordpress/">Twitter for WordPress Plugin',
+				'desc' => 'Enter your Twitter handle if using the Twitter bar - Requires <a href="http://wordpress.org/extend/plugins/twitter-for-wordpress/" target="_blank">Twitter for WordPress Plugin',
 				'id' => 'twitter_handle',
 				'type' => 'text',
 				'std' => ''
@@ -831,15 +843,8 @@ function ifeature_initialize_the_meta_boxes() {
 			)),
 
 			array(
-				'title' => "iFeature Slider Options",
+				'title' => $themenamefull." Slider Options",
 				'fields' => array(
-					array(
-				'name' => 'Enable Feature Slider',
-				'desc' => 'Check this box to enable the feature slider on this page',
-				'id' => 'page_enable_slider',
-				'type' => 'checkbox',
-				'std' => ''
-			  ),
 
 			array(
 				'name' => 'Select Slider Size',
@@ -887,7 +892,7 @@ function ifeature_initialize_the_meta_boxes() {
 	
 			array(
 				'name' => 'Slider Height',
-				'desc' => 'Default is 300',
+				'desc' => 'Default is 330',
 				'id' => 'slider_height',
 				'type' => 'text',
 				'std' => ''
@@ -1002,10 +1007,10 @@ function ifeature_initialize_the_meta_boxes() {
 					
 				array(
 				'name' => 'Select Callout Section Background',
-				'desc' => 'Default is iFeature Pro 2.0, select "color picker" to use the color picker option below',
+				'desc' => 'Default is ' .$themenamefull.' Pro 2.0, select "color picker" to use the color picker option below',
 				'id' => 'callout_background_color',
 				'type' => 'select',
-				'options' => array('iFeature Pro 2.0 (default)', 'Blue', 'Grey', 'Orange', 'Pink', 'Red', 'Color Picker'),
+				'options' => array($themenamefull.' Pro 2.0 (default)', 'Blue', 'Grey', 'Orange', 'Pink', 'Red', 'Color Picker'),
 				'std' => ''
 			 		),
 				
@@ -1094,10 +1099,10 @@ function ifeature_initialize_the_meta_boxes() {
 }
 
 
-add_action( 'admin_print_styles-post-new.php', 'ifeaturepro_metabox_enqueue' );
-add_action( 'admin_print_styles-post.php', 'ifeaturepro_metabox_enqueue' );
+add_action( 'admin_print_styles-post-new.php', 'metabox_enqueue' );
+add_action( 'admin_print_styles-post.php', 'metabox_enqueue' );
 
-function ifeaturepro_metabox_enqueue() {
+function metabox_enqueue() {
 	$path =  get_template_directory_uri()."/library/js/";
 	$path2 = get_template_directory_uri()."/library/css/";
 	$color = get_user_meta( get_current_user_id(), 'admin_color', true );

@@ -9,7 +9,7 @@
 	
 */
 
-$shortname = "if";
+$shortname = $themeslug;
 
 $optionlist = array (
 
