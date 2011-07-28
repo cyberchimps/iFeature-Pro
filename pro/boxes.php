@@ -10,7 +10,7 @@
 ?>
 
 <div id="box_container">
-		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box1") ) : ?>
+		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box Left") ) : ?>
 			<div class="box1">
 				<h2 class="box-widget-title">Apple-like Design</h2>
 					<ul>
@@ -20,7 +20,7 @@
 					</ul>
 			</div><!--end box1-->
 			<?php endif; ?>
-			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box2") ) : ?>
+			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box Middle") ) : ?>
 			<div class="box2">
 				<h2 class="box-widget-title">iFeature Slider</h2>
 					<ul>
@@ -28,7 +28,7 @@
 					</ul>
 			</div><!--end box2-->
 			<?php endif; ?>
-			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box3") ) : ?>
+			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box Right") ) : ?>
 			<div class="box3">			
 				<h2 class="box-widget-title">User Friendly</h2>
 					<ul>
