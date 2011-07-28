@@ -52,9 +52,37 @@ input.button-primary {font-size:14px !important;}
 	float: right;text-decoration: none;padding: 5px;
 }
 
+/* CyberChimps Themes CSS
+----------------------------------*/
+
+#contain {
+	text-align: left;margin: 10px 0 10px 10px;padding: 0px;border:0;width: 850px;
+}
+
+#themesheader {
+	margin: 0 0 30px 0;	
+}
+
+.pro {
+	font-size: 19px;
+}
+
+.theme_images {
+	float: left;width: 294px;height: 250px;margin-bottom: 15px;
+}
+
+.theme_desciptions {
+	margin: 0;float: right;width: 540px;height: 250px;margin-bottom: 15px;
+}
+
+.theme_titles a{
+	font-size: 18px;
+	text-decoration: none !important;
+	font-weight: bold;
+	color: #333;
+}
+
 /* Layout helpers
-
-
 ---------------------------------*/
 
 #footer {position: relative;}
