@@ -104,16 +104,12 @@ function theme_options_do_page() {
    
 ?>
 
-	<div class="wrap">
-  
+<div class="wrap">
 
-<?php if ( function_exists('screen_icon') ) screen_icon(); ?>
-
-      
-<h2><?php echo $name; ?> Settings</h2><br />
-
-<p>Need help? Follow the links below to visit our support forum and documentation pages:</p>
-<a href="http://cyberchimps.com/ifeaturepro/docs"><img src="<?php echo get_template_directory_uri();?>/images/docs.png?>" alt="Docs"></a> <a href="http://cyberchimps.com/forum"><img src="<?php echo get_template_directory_uri(); ?>/images/forum.png?>" alt="Forum"></a> 
+<br />
+<img src="<?php echo get_template_directory_uri() ;?>/images/options/ifeaturepro.png" />
+<br />
+<br />
 
 		<?php if ( false !== $_REQUEST['updated'] ) { ?>
 		<?php echo '<div id="message" class="updated fade" style="float:left;"><p><strong>'.$name.' settings saved</strong></p></div>'; ?>
@@ -124,9 +120,20 @@ function theme_options_do_page() {
 
   <form method="post" action="options.php" enctype="multipart/form-data">
   
-    <p class="submit" style="clear:left;">
+    <p class="submit" style="clear:left;float: right;">
 				<input type="submit" class="button-primary" value="Save Settings" />   
-			</p>  
+	</p>
+	
+	<div class="menu">
+	<ul>
+		<li><a href="http://cyberchimps.com/support" target="_blank">Support</a></li>
+		<li><a href="http://cyberchimps.com/ifeaturepro/docs/">Documentation</a></li>
+		<li><a href="http://cyberchimps.com/forum/" target="_blank">Forum</a></li>
+		<li><a href="http://twitter.com/#!/cyberchimps" target="_blank">Twitter</a></li>
+		<li><a href="http://cyberchimps.com/store/" target="_blank">CyberChimps Store</a></li>
+	</ul>
+	</div>
+
       
     <div id="tabs" style="clear:both;">   
     <ul class="tabNavigation">
@@ -155,22 +162,17 @@ function theme_options_do_page() {
 ?>       
 
       </div>  
+      <div id="top"><a href='#TOP'><img src="<?php echo get_template_directory_uri() ;?>/images/options/top.png" /></a></div>
     </div>    
-
-			<p class="submit">
-				<input type="submit" class="button-primary" value="Save Settings" />   
-			</p>
-		</form>
-
+</form>
     
-    <form method="post">
+<form method="post">
 <p class="submit">
 <input name="reset" type="submit" value="Reset" />
 <input type="hidden" name="action" value="reset" />
 &nbsp;&nbsp;&nbsp;<small>WARNING, THIS RESTORES TO DEFAULT</small>
 </p>
 </form> 
-
 	</div>
 	
 	<?php
