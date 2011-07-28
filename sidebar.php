@@ -20,7 +20,9 @@
 		
 		<div class="sidebar-widget-style">    
 		<h2 class="sidebar-widget-title">Pages</h2>
+		<ul>
     	<?php wp_list_pages('title_li=' ); ?>
+    	</ul>
     	</div>
     
     	<div class="sidebar-widget-style">

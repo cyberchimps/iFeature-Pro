@@ -105,7 +105,7 @@ if ( function_exists( 'add_theme_support' ) ) {
 function render_ie_pie() { ?>
 	
 	<style type="text/css" media="screen">
-		#header li a, .postmetadata, .post_container, #navbackground, .wp-caption, .sidebar-widget-style, .sidebar-widget-title, .boxes, .box1, .box2, .box3, .box-widget-title, #calloutwrap, .calloutbutton  
+		#header li a, .postmetadata, .post_container, #navbackground, .wp-caption, .sidebar-widget-style, .sidebar-widget-title, .boxes, .box1, .box2, .box3, .box-widget-title, #calloutwrap, .calloutbutton, #twitterbar 
   		
   			{
   				behavior: url('<?php bloginfo('stylesheet_directory'); ?>/library/pie/PIE.htc');

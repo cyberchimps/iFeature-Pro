@@ -533,6 +533,7 @@ li { padding-left: 5px; }
 	-moz-border-radius: 5px;
 	color: #fff;
 	text-align: center;
+	position: relative;
 }
 
 .calloutimg{
@@ -555,7 +556,7 @@ li { padding-left: 5px; }
 
 #box_container {
 	min-height: 220px;
-	width: 980px;
+	width: 983px;
 	float: left;
 	padding-top: 5px;
 	padding-bottom: 15px;
@@ -619,7 +620,7 @@ li { padding-left: 5px; }
 
 .box2 {
 	float: left;
-	width: 300px;
+	width: 301px;
 	min-height: 200px;
 	padding: 5px;
 	margin-left: 0px;
@@ -640,7 +641,7 @@ li { padding-left: 5px; }
 
 .box3 {
 	float: left;
-	width: 300px;
+	width: 302px;
 	min-height: 200px;
 	padding: 5px;
 	margin-left: 0px;

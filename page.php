@@ -142,12 +142,12 @@ if ($sidebar == "1" OR $sidebar == "2") {
 	<?php get_sidebar('left'); ?>
 	<?php endif;?>
 	
-
-</div><!--end content_wrap-->
-
 	<?php if ($enableboxes == 'on' ):?>
 		<?php include (TEMPLATEPATH . '/pro/boxes.php' ); ?>
 	<?php endif;?>
+</div><!--end content_wrap-->
+
+
 
 <div style=clear:both;></div>
 <?php get_footer(); ?>
