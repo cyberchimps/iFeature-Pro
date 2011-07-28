@@ -38,7 +38,7 @@
 <div class="icons">
 
 	<?php if ($hidefacebook != '1' AND $facebook != '' ):?>
-		<a href="<?php echo $facebook ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/facebook.png"  target="_blank"alt="Facebook" /></a>
+		<a href="<?php echo $facebook ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/facebook.png" alt="Facebook" /></a>
 		<?php endif;?>
 	<?php if ($hidefacebook != '1' AND $facebook == '' ):?>
 		<a href="http://facebook.com" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/facebook.png" alt="Facebook" /></a>

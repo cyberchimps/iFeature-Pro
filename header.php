@@ -124,7 +124,7 @@
 						<?php endif;?>
 						<?php if ($logo == '' ):?>
 							<div id="logo">
-								<a href="<?php echo home_url(); ?>/"><h1 class="sitename"><?php bloginfo('name'); ?> </h1></a>
+								<h1 class="sitename"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?> </a></h1>
 							</div>
 						<?php endif;?>
 					<div id="description">
