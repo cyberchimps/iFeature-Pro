@@ -57,16 +57,16 @@ if ($sidebar == "1" OR $sidebar == "2") {
 
 	<?php endif;?>
 	
-	<?php if ($twitterbar == "on"): ?>
-	
-			<?php include (TEMPLATEPATH . '/pro/twitter.php' ); ?> 
-	
-	<?php endif;?>
-	
 	<?php if ($callout == "on"): ?>
 	
 			<?php include (TEMPLATEPATH . '/pro/callout.php' ); ?> 
 			
+	<?php endif;?>
+	
+	<?php if ($twitterbar == "on"): ?>
+	
+			<?php include (TEMPLATEPATH . '/pro/twitter.php' ); ?> 
+	
 	<?php endif;?>
 	
 	<?php if ($sidebar == "4"): ?>
