@@ -41,16 +41,18 @@ function cyberchimps_store_page_init() {
 		<a href="http://cyberchimps.com" target="_blank"><img src="<?php echo $root ;?>/images/themes/cyberchimps.png" /></a>
 		<br />
 		<font size="4"><b>Professional WordPress Themes</b></font>
-		<br />
-	<div class="menu">
-	<ul>
-		<li><a href="http://cyberchimps.com/support" target="_blank">Support</a></li>
-		<li><a href="http://cyberchimps.com/ifeaturepro/docs/">Documentation</a></li>
-		<li><a href="http://cyberchimps.com/forum/" target="_blank">Forum</a></li>
-		<li><a href="http://twitter.com/#!/cyberchimps" target="_blank">Twitter</a></li>
-		<li><a href="http://cyberchimps.com/store/" target="_blank">CyberChimps Store</a></li>
-	</ul>
+		<br /><br />
+		<div class="menu">
+		<ul>
+			<li><a href="http://cyberchimps.com/support" target="_blank">Support</a></li>
+			<li><a href="http://cyberchimps.com/ifeaturepro/docs/">Documentation</a></li>
+			<li><a href="http://cyberchimps.com/forum/" target="_blank">Forum</a></li>
+			<li><a href="http://twitter.com/#!/cyberchimps" target="_blank">Twitter</a></li>
+			<li><a href="http://cyberchimps.com/store/" target="_blank">CyberChimps Store</a></li>
+		</ul>
 	</div>
+	<div style="clear: both;"></div>
+
 	</div>
 	<div id="container">
 		<div style="float: left;width: 300px;margin-right: 10px;">
