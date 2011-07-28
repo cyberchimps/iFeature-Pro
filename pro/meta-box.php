@@ -11,7 +11,7 @@
  * @version: 3.0.1
  */
  
-	global  $themename, $themeslug, $options;
+ 
 
 // Ajax delete files on the fly. Modified from a function used by "Verve Meta Boxes" plugin (http://goo.gl/LzYSq)
 add_action('wp_ajax_rw_delete_file', 'rw_delete_file');
@@ -192,7 +192,7 @@ class RW_Meta_Box {
 		echo '<div class="', $tab,'">';
 		echo '<table class="form-table">';
 		foreach($fields as $field) {
-			$meta = get_post_meta($post->ID, $field['id'], !$field['multiple']);
+			$meta = get_post_meta($post->ID, $field['id'], !(isset($field['multiple']) && $field['multiple']));
 			$meta = !empty($meta) ? $meta : $field['std'];
 
 			echo '<tr class="test">';
@@ -217,7 +217,7 @@ class RW_Meta_Box {
 
 	function show_field_text($field, $meta) {
 		$this->show_field_begin($field, $meta);
-		echo "<input type='text' name='{$field['id']}' id='{$field['id']}' value='$meta' size='30' style='width:40%' />";
+		echo "<input type='text' name='{$field['id']}' id='{$field['id']}' value='$meta' size='30' style='width:60%' />";
 		$this->show_field_end($field, $meta);
 	}
 
@@ -230,7 +230,7 @@ class RW_Meta_Box {
 	function show_field_select($field, $meta) {
 		if (!is_array($meta)) $meta = (array) $meta;
 		$this->show_field_begin($field, $meta);
-		echo "<select name='{$field['id']}" . ($field['multiple'] ? "[]' multiple='multiple' style='height:auto'" : "'") . ">";
+		echo "<select name='{$field['id']}" . ((isset($field['multiple']) && $field['multiple']) ? "[]' multiple='multiple' style='height:auto'" : "'") . ">";
 		foreach ($field['options'] as $key => $value) {
 			echo "<option value='$key'" . selected(in_array($key, $meta), true, false) . ">$value</option>";
 		}
@@ -260,23 +260,22 @@ class RW_Meta_Box {
 	
 	function show_field_pagehelp($field, $meta) {
 		$this->show_field_begin($field, $meta);
-		echo "Visit our Page Options help page here: <a href='http://cyberchimps.com' target='_blank'>Page Options Documentation</a></td>";
+		echo "Visit our Page Options help page here: <a href='http://cyberchimps.com'>Page Options Documentation</a></td>";
 	}
 	
 	function show_field_sliderhelp($field, $meta) {
-		global $themenamefull;
 		$this->show_field_begin($field, $meta);
-		echo "Visit our $themenamefull Slider Options help page here: <a href='http://cyberchimps.com' target='_blank'>Page Options Documentation</a></td>";
+		echo "Visit our iFeature Slider Options help page here: <a href='http://cyberchimps.com'>Page Options Documentation</a></td>";
 	}
 	
 	function show_field_callouthelp($field, $meta) {
 		$this->show_field_begin($field, $meta);
-		echo "Visit our Callout Section Options help page here: <a href='http://cyberchimps.com' target='_blank'>Page Options Documentation</a></td>";
+		echo "Visit our Callout Section Options help page here: <a href='http://cyberchimps.com'>Page Options Documentation</a></td>";
 	}
 	
 	function show_field_seohelp($field, $meta) {
 		$this->show_field_begin($field, $meta);
-		echo "Visit our SEO Section Options help page here: <a href='http://cyberchimps.com' target='_blank'>Page Options Documentation</a></td>";
+		echo "Visit our SEO Section Options help page here: <a href='http://cyberchimps.com'>Page Options Documentation</a></td>";
 	}
 
 	function show_field_file($field, $meta) {
@@ -634,9 +633,9 @@ class RW_Meta_Box_Taxonomy extends RW_Meta_Box {
 // use underscore (_) at the beginning to make keys hidden, for example $prefix = '_rw_';
 // you also can make prefix empty to disable it
 
-add_action('init', 'initialize_the_meta_boxes');
+add_action('init', 'ifeature_initialize_the_meta_boxes');
 
-function initialize_the_meta_boxes() {
+function ifeature_initialize_the_meta_boxes() {
 
 	global  $themename, $themeslug, $themenamefull, $options;
 	
@@ -646,7 +645,7 @@ function initialize_the_meta_boxes() {
 
 	$meta_boxes[] = array(
 		'id' => 'feature',
-		'title' => $themenamefull.' Slider Options',
+		'title' => 'iFeature Slider Options',
 		'pages' => array('post'),
 
 		'tabs' => array(
@@ -654,14 +653,14 @@ function initialize_the_meta_boxes() {
 				'fields' => array(
 
 					array(
-						'name' => $themenamefull.' Slider Image',
+						'name' => 'iFeature Slider Image',
 						'desc' => 'Upload your image here:',
 						'id' => $prefix . 'image',
 						'type' => 'image',
 						'std' => ''
 					),
 					array(
-						'name' => $themenamefull.' Slider Text',
+						'name' => 'iFeature Slider Text',
 						'desc' => 'Enter your slider text here (optional):',
 						'id' => $prefix . 'text',
 						'type' => 'text',
@@ -691,7 +690,7 @@ function initialize_the_meta_boxes() {
 	$meta_boxes[] = array(
 		'id' => 'slides',
 		'title' => 'Custom Feature Slides',
-		'pages' => array($themeslug.'_custom_slides'),
+		'pages' => array('if_custom_slides'),
 
 		'tabs' => array(
 			array(
@@ -756,8 +755,8 @@ function initialize_the_meta_boxes() {
 	
 
 	$meta_boxes[] = array(
-
-		'title' => $themenamefull.' Pro Page Options',
+		'id' => 'pages',
+		'title' => 'iFeature Pro Page Options',
 		'pages' => array('page'),
 
 		'tabs' => array(
@@ -766,7 +765,6 @@ function initialize_the_meta_boxes() {
 				'title' => 'Page Options',
 				'fields' => array(
 					
-				
 			array(
 				'name' => 'Select Page Layout',
 				'desc' => 'Select your sidebar options',
@@ -775,8 +773,8 @@ function initialize_the_meta_boxes() {
 				'options' => array('Sidebar Right (default)', 'Two Sidebar Right', 'Sidebar Right and Left', 'Full-Width'),
 				'std' => ''
 			 ),	
-			 
-			 array(
+			
+					 array(
 				'name' => 'Enable Feature Slider',
 				'desc' => 'Check this box to enable the ' .$themenamefull. ' Slider on this page',
 				'id' => 'page_enable_slider',
@@ -807,7 +805,6 @@ function initialize_the_meta_boxes() {
 				'type' => 'text',
 				'std' => ''
 			),
-			
 			array(
 				'name' => 'Enable Box Section',
 				'desc' => 'Check this box to enable the Box Section on this page',
@@ -843,7 +840,7 @@ function initialize_the_meta_boxes() {
 			)),
 
 			array(
-				'title' => $themenamefull." Slider Options",
+				'title' => "iFeature Slider Options",
 				'fields' => array(
 
 			array(
@@ -892,7 +889,7 @@ function initialize_the_meta_boxes() {
 	
 			array(
 				'name' => 'Slider Height',
-				'desc' => 'Default is 330',
+				'desc' => 'Default is 300',
 				'id' => 'slider_height',
 				'type' => 'text',
 				'std' => ''
@@ -929,7 +926,7 @@ function initialize_the_meta_boxes() {
 				'desc' => 'Default is bottom',
 				'id' => 'page_slider_caption_style',
 				'type' => 'select',
-				'options' => array('Bottom (default)', 'Left', 'Right', 'None'),
+				'options' => array('Bottom (default)', 'Left', 'Right'),
 				'std' => ''
 			 ),
 			 
@@ -1007,10 +1004,10 @@ function initialize_the_meta_boxes() {
 					
 				array(
 				'name' => 'Select Callout Section Background',
-				'desc' => 'Default is ' .$themenamefull.' Pro 2.0, select "color picker" to use the color picker option below',
+				'desc' => 'Default is iFeature Pro 2.0, select "color picker" to use the color picker option below',
 				'id' => 'callout_background_color',
 				'type' => 'select',
-				'options' => array($themenamefull.' Pro 2.0 (default)', 'Blue', 'Grey', 'Orange', 'Pink', 'Red', 'Color Picker'),
+				'options' => array('iFeature Pro 2.0 (default)', 'Blue', 'Grey', 'Orange', 'Pink', 'Red', 'Color Picker'),
 				'std' => ''
 			 		),
 				
@@ -1099,10 +1096,10 @@ function initialize_the_meta_boxes() {
 }
 
 
-add_action( 'admin_print_styles-post-new.php', 'metabox_enqueue' );
-add_action( 'admin_print_styles-post.php', 'metabox_enqueue' );
+add_action( 'admin_print_styles-post-new.php', 'ifeaturepro_metabox_enqueue' );
+add_action( 'admin_print_styles-post.php', 'ifeaturepro_metabox_enqueue' );
 
-function metabox_enqueue() {
+function ifeaturepro_metabox_enqueue() {
 	$path =  get_template_directory_uri()."/library/js/";
 	$path2 = get_template_directory_uri()."/library/css/";
 	$color = get_user_meta( get_current_user_id(), 'admin_color', true );
@@ -1110,12 +1107,8 @@ function metabox_enqueue() {
 	wp_register_style(  'metabox-tabs-css', $path2. 'metabox-tabs.css');
 	wp_register_style(  'jf-color',       $path2. 'metabox-fresh.css');
 	wp_register_script ( 'jf-metabox-tabs', $path. 'metabox-tabs.js');
-	wp_register_script ( 'jf-cookie', $path. 'jquery-cookie.js');
-	wp_register_script ( 'cookie', $path. 'cookie-tabs.js');
 
 	wp_enqueue_script('jf-metabox-tabs');
-	wp_enqueue_script('jf-cookie');
-	wp_enqueue_script('cookie');
 	wp_enqueue_style('jf-color');
 	wp_enqueue_style('metabox-tabs-css');
 }

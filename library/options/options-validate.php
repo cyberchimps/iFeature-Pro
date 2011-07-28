@@ -137,9 +137,7 @@ function theme_options_validate( $input ) {
 		$input[$themeslug.'_hide_header'] = null;
 	$input[$themeslug.'_hide_header'] = ( $input[$themeslug.'_hide_header'] == 1 ? 1 : 0 ); 
   	/* Strip HTML from certain options */
-  	
-	$input[$themeslug.'_logo'] = wp_filter_nohtml_kses( $input[$themeslug.'_logo'] );
-  
+  	  
 	$input[$themeslug.'_facebook'] = wp_filter_nohtml_kses( $input[$themeslug.'_facebook'] ); 
     
 	$input[$themeslug.'_twitter'] = wp_filter_nohtml_kses( $input[$themeslug.'_twitter'] ); 
@@ -197,20 +195,6 @@ function theme_options_validate( $input ) {
 	   $input['file3'] = null;
     }
    
-    if ($_FILES['callout_filename']['name'] != '') {
-       $overrides = array('test_form' => false); 
-       $file4 = wp_handle_upload($_FILES['callout_filename'], $overrides);
-       $input['file4'] = $file4;
-    } 
-    
-    elseif(isset($_POST['callout_filename_text']) && $_POST['callout_filename_text'] != '') {
-	   $input['file4'] = array('url' => $_POST['callout_filename_text']);
-    } 
-   
-    else {
-	   $input['file4'] = null;
-    }
-
 	return $input;    
 }
 
