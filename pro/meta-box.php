@@ -778,7 +778,7 @@ function initialize_the_meta_boxes() {
 			 
 			 array(
 				'name' => 'Enable Feature Slider',
-				'desc' => 'Check this box to enable the Feature Slider on this page',
+				'desc' => 'Check this box to enable the ' .$themenamefull. ' Slider on this page',
 				'id' => 'page_enable_slider',
 				'type' => 'checkbox',
 				'std' => ''
