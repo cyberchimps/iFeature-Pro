@@ -9,10 +9,24 @@
 */
 
 
+// Add scripts and stylesheet
+
+function enqueue_store_styles() {
+ 
+ 	global $themename, $themeslug, $options;
+ 	wp_register_style($themeslug.'storecss', get_template_directory_uri(). '/library/options/theme-options.css');
+
+      
+    wp_enqueue_style($themeslug.'storecss');  
+}
 
 // Add page to the menu
 function cyberchimps_store_add_menu() {
-	add_theme_page('CyberChimps Store Page', 'CyberChimps Themes', 'administrator', 'themes', 'cyberchimps_store_page_init');
+	$page = add_theme_page('CyberChimps Store Page', 'CyberChimps Themes', 'administrator', 'themes', 'cyberchimps_store_page_init');
+	
+	
+  add_action('admin_print_styles-' . $page, 'enqueue_store_styles');  
+
 }
 
 add_action('admin_menu', 'cyberchimps_store_add_menu');
