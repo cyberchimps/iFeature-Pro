@@ -72,8 +72,8 @@ case 'slider_title':
   
 <tr>
 
-    <td width="15%" rowspan="2" valign="middle"><font size="4"><b>SLIDER OPTIONS</b></font> </td>
-    <td width="85%"></td>
+    <td width="20%" rowspan="2" valign="middle"><font size="4"><b>SLIDER OPTIONS</b></font> </td>
+    <td width="80%"></td>
 
   </tr>
  
@@ -109,7 +109,7 @@ case 'general_faq':
 <tr>
 
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
-    <td width="85%">Stuck? Read our General Options FAQ <a href="http://cyberchimps.com/question/general-options/" target="_blank">here.</a></td>
+    <td width="85%">Read the <a href="http://cyberchimps.com/question/general-options/" target="_blank">General Options FAQ</a></td>
 
   </tr>
  
@@ -127,7 +127,7 @@ case 'design_faq':
 <tr>
 
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
-    <td width="85%">Stuck? Read our Design Options FAQ <a href="http://cyberchimps.com/question/general-options/" target="_blank">here.</a></td>
+    <td width="85%">Read the <a href="http://cyberchimps.com/question/general-options/" target="_blank">Design Options FAQ</a></td>
 
   </tr>
  
@@ -145,7 +145,7 @@ case 'social_faq':
 <tr>
 
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
-    <td width="85%">Stuck? Read our Social Options FAQ <a href="http://cyberchimps.com/question/general-options/" target="_blank">here.</a></td>
+    <td width="85%">Read the <a href="http://cyberchimps.com/question/general-options/" target="_blank">Social Options FAQ</a></td>
 
   </tr>
  
@@ -163,7 +163,7 @@ case 'blog_faq':
 <tr>
 
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
-    <td width="85%">Stuck? Read our Blog Options FAQ <a href="http://cyberchimps.com/question/general-options/" target="_blank">here.</a></td>
+    <td width="85%">Read the <a href="http://cyberchimps.com/question/general-options/" target="_blank">Blog Options FAQ</a></td>
 
   </tr>
  
@@ -181,7 +181,7 @@ case 'footer_faq':
 <tr>
 
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
-    <td width="85%">Stuck? Read our Footer Options FAQ <a href="http://cyberchimps.com/question/general-options/" target="_blank">here.</a></td>
+    <td width="85%">Read the <a href="http://cyberchimps.com/question/general-options/" target="_blank">Footer Options FAQ</a></td>
 
   </tr>
  
@@ -199,7 +199,7 @@ case 'import_faq':
 <tr>
 
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
-    <td width="85%">Stuck? Read our Import/Export Options FAQ <a href="http://cyberchimps.com/question/general-options/" target="_blank">here.</a></td>
+    <td width="85%">Read the <a href="http://cyberchimps.com/question/general-options/" target="_blank">Import/Export Options FAQ</a></td>
 
   </tr>
  
