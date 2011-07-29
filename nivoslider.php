@@ -80,7 +80,7 @@
 
 /* Define slider caption style */      
 
-	if ($captionstyle == '1') {
+	if ($captionstyle == '2') {
 		
 		?>
 		
@@ -91,7 +91,7 @@
 		<?php
 	}
 	
-	elseif ($captionstyle == '2') {
+	elseif ($captionstyle == '3') {
 		
 		?>
 		
@@ -102,18 +102,6 @@
 		<?php
 	}    
 	
-	elseif ($captionstyle == '3') {
-		
-		?>
-		
-			<style type="text/css">
-			.nivo-html-caption {display: none;}
-			</style>
-		
-		<?php
-	} 
-
-
 /* End slider caption */ 
 
 /* Define animation styles. */	
@@ -272,7 +260,7 @@
 
 			/* Controls slide title based on page meta setting */	
 
-			if ($hidetitlebar != 'on' AND $captionstyle != '3') {
+			if ($hidetitlebar != 'on' AND $captionstyle != '0') {
 	   			$titlevar = "#caption$i";
 	   		}
 
