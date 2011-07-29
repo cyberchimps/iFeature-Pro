@@ -91,15 +91,15 @@
 	<title>
 		   <?php
 		      if (function_exists('is_tag') && is_tag()) {
-		         single_tag_title("Tag Archive for &quot;"); echo '&quot; - '; }
+		         bloginfo('name'); echo ' - '; single_tag_title("Tag Archive for &quot;"); echo '&quot;  '; }
 		      elseif (is_archive()) {
-		         wp_title(''); echo ' Archive - '; }
+		          bloginfo('name'); echo ' - '; wp_title(''); echo ' Archive '; }
 		      elseif (is_search()) {
-		         echo 'Search for &quot;'.wp_specialchars($s).'&quot; - '; }
+		         bloginfo('name'); echo ' - '; echo 'Search for &quot;'.wp_specialchars($s).'&quot;  '; }
 		      elseif ($title == '' AND !(is_404()) && (is_single()) || (is_page())) {
 		          bloginfo('name'); echo ' - '; wp_title('');  }
 		      elseif (is_404()) {
-		         echo 'Not Found - '; }
+		          bloginfo('name'); echo ' - '; echo 'Not Found '; }
 		      if (is_front_page() AND $hometitle == '') {
 		         bloginfo('name'); echo ' - '; bloginfo('description'); }
 		      elseif (!is_front_page() AND $title != '') {
