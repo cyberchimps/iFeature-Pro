@@ -10,7 +10,6 @@
 
 /* Define variables. */	
 
-	$options = get_option('ifeature') ; 
 	$root = get_template_directory_uri();  
 	$calloutbgcolor = get_post_meta($post->ID, 'callout_background_color' , true);
 	$bcolor = get_post_meta($post->ID, 'custom_callout_button_color' , true);

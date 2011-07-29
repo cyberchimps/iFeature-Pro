@@ -16,9 +16,9 @@
 
 /* Define Variables. */	
 
-	$hideslider = $options['if_hide_slider_blog'];
-	$blogsidebar = $options['if_blog_sidebar'];
-	$blogslidersize = $options['if_slider_size'];
+	$hideslider = $options[$themeslug.'_hide_slider_blog'];
+	$blogsidebar = $options[$themeslug.'_blog_sidebar'];
+	$blogslidersize = $options[$themeslug.'_slider_size'];
 	$title = get_post_meta($post->ID, 'seo_title' , true);
 	$pagedescription = get_post_meta($post->ID, 'seo_description' , true);
 	$keywords = get_post_meta($post->ID, 'seo_keywords' , true);

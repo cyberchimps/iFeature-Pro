@@ -6,8 +6,7 @@
 	Description: Creates the call out section.
 	Version: 0.1
 	
-*/
-	$options = get_option('ifeature') ;  
+*/ 
     $handle = get_post_meta($post->ID, 'twitter_handle' , true);
 	$tdurl = get_template_directory_uri();
 ?>
