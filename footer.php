@@ -98,7 +98,9 @@
 			<!--Inserts Afterfooter Menu-->
 			
 			<div id="afterfootermenu">
-				<?php wp_nav_menu('depth=1'); ?>
+			<?php wp_nav_menu( array(
+	   			'theme_location' => 'footer-menu', // Setting up the location for the main-menu, Main Navigation.
+	    	)); ?>
 			</div>
 			
 			<!--Inserts iFeature SEO Module-->
