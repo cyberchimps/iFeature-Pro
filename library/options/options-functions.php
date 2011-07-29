@@ -150,7 +150,7 @@ function add_sitetitle_color() {
 	}		
 	
 		echo '<style type="text/css">';
-		echo ".sitename {color: #$sitetitle;}";
+		echo ".sitename a {color: #$sitetitle;}";
 		echo '</style>';
 		
 }
