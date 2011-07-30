@@ -48,6 +48,7 @@ function cyberchimps_store_page_init() {
 			<li><a href="http://cyberchimps.com/ifeaturepro/docs/">Documentation</a></li>
 			<li><a href="http://cyberchimps.com/forum/" target="_blank">Forum</a></li>
 			<li><a href="http://twitter.com/#!/cyberchimps" target="_blank">Twitter</a></li>
+			<li><a href="http://www.facebook.com/CyberChimps" target="_blank">Facebook</a></li>
 			<li><a href="http://cyberchimps.com/store/" target="_blank">CyberChimps Store</a></li>
 		</ul>
 	</div>
