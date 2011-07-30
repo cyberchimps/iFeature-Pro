@@ -139,8 +139,8 @@ function theme_options_do_page() {
     <ul class="tabNavigation">
         <li><a href="#tab1"><span>General</span></a></li>
         <li><a href="#tab2"><span>Design</span></a></li>
-        <li><a href="#tab3"><span>Social</span></a></li>
-        <li><a href="#tab4"><span>Blog</span></a></li>       
+        <li><a href="#tab3"><span>Blog</span></a></li>
+        <li><a href="#tab4"><span>Social</span></a></li>       
         <li><a href="#tab5"><span>Footer</span></a></li>
         <li><a href="#tab6"><span>Import/Export</span></a></li>
     
