@@ -393,7 +393,7 @@
 
 /* Define slider navigation style */      
 
-	if ($navigationstyle == '0') {
+	if ($navigationstyle == '0' OR $navigationstyle == '') {
 		
 		echo '<style type="text/css">';
 		echo ".nivo-controlNav a {background: url($root/images/bullets.png) no-repeat; display:block; width:22px; height:22px; 	text-indent:-9999px; border:0; margin-right:3px; float:left;}";
