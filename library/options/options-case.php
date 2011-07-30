@@ -218,7 +218,7 @@ case 'upload':
 
 <tr>
 
-<td width="15%" rowspan="2" valign="middle"><strong>Custom logo</strong>
+<td width="15%" rowspan="2" valign="middle"><strong>Custom Logo</strong>
 
 
 <tr>
@@ -264,14 +264,14 @@ case 'upload2':
 
 <tr>
 
-<td width="15%" rowspan="2" valign="middle"><strong>Custom favicon</strong>
+<td width="15%" rowspan="2" valign="middle"><strong>Custom Favicon</strong>
 
 
  
 <tr>
 <td width="85%">
 
-
+<br />
     <?php settings_fields($themeslug.'_options'); ?>
     <?php do_settings_sections(''.$themeslug.'');  
     
@@ -279,7 +279,7 @@ case 'upload2':
     
     if ($file2 != ''){
     
-    echo "Favicon preview:<br /><br /><img src='{$file2['url']}'><br /><br />";}
+    echo "Favicon preview:<br /><br /><img src='{$file2['url']}'><br /><br /><br />";}
     echo "<input type='text' name='favicon_filename_text' size='72' value='{$file2['url']}'/>";
     echo "<br />" ;
     echo "<br />" ;
@@ -309,7 +309,7 @@ case 'upload3':
 
 <tr>
 
-<td width="15%" rowspan="2" valign="middle"><strong>Custom home icon</strong>
+<td width="15%" rowspan="2" valign="middle"><strong>Custom Home Icon</strong>
 
 
  
@@ -356,7 +356,7 @@ case 'upload4':
 
 <tr>
 
-<td width="15%" rowspan="2" valign="middle"><strong>Custom callout image</strong>
+<td width="15%" rowspan="2" valign="middle"><strong>Custom Callout Image</strong>
 
 
  
@@ -489,7 +489,7 @@ case 'color1':
 <?php
 
 	if (isset($options[$themeslug.'_sitetitle_color']) == "") {
-			$picker = '111111';
+			$picker = '717171';
 	}		
 	
 	else {
@@ -890,6 +890,20 @@ case 'textarea':
 </tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr>
 <?php break; 
 
+case 'textarea2':
+?>
+ 
+<tr>
+
+    <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong></label> <br /><small><?php echo $value['desc']; ?></small> </td> 
+    <td width="85%"><br /><textarea id="<?php echo $themename.'['.$value['id'].']'; ?>" name="<?php echo $themename.'['.$value['id'].']'; ?>" style="width:400px; height:200px;" type="<?php echo $value['type']; ?>" cols="" rows=""><?php echo stripslashes( $options[$value['id']] ); ?></textarea></td>  
+ 
+  
+ </tr>
+ <tr>
+</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr>
+<?php break;
+
 case 'import':
 ?>
  
@@ -910,7 +924,7 @@ case 'export':
 <tr>
 
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong></label> <br /><small><?php echo $value['desc']; ?></small> </td> 
-    <td width="85%"><textarea id="<?php echo $themename.'['.$value['id'].']'; ?>" name="<?php echo $themename.'['.$value['id'].']'; ?>" style="width:600px; height:300px;" type="<?php echo $value['type']; ?>" cols="" rows=""><?php echo (serialize($options));?></textarea></td>  
+    <td width="85%"><br /><textarea id="<?php echo $themename.'['.$value['id'].']'; ?>" name="<?php echo $themename.'['.$value['id'].']'; ?>" style="width:600px; height:300px;" type="<?php echo $value['type']; ?>" cols="" rows=""><?php echo (serialize($options));?></textarea></td>  
 
  </tr>
  <tr>

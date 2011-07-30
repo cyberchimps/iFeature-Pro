@@ -16,9 +16,6 @@
 
 /* Define global variables. */
 
-	$title = get_post_meta($post->ID, 'seo_title' , true);
-	$pagedescription = get_post_meta($post->ID, 'seo_description' , true);
-	$keywords = get_post_meta($post->ID, 'seo_keywords' , true);
 	$enable = get_post_meta($post->ID, 'page_enable_slider' , true);
 	$size = get_post_meta($post->ID, 'page_slider_size' , true);
 	$hidetitle = get_post_meta($post->ID, 'hide_page_title' , true);
@@ -42,11 +39,7 @@ if ($sidebar == "1" OR $sidebar == "2") {
 
 ?>
 
-<!-- iFeature Pro Page SEO options -->
-	<meta name="title" content="<?php echo $title ?>" />
-	<meta name="description" content="<?php echo $pagedescription ?>" />
-	<meta name="keywords" content="<?php echo $keywords ?>" />
-<!-- /iFeature Pro Page SEO options -->
+
 
 <div id="content_wrap">
 

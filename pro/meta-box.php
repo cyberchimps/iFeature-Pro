@@ -936,10 +936,10 @@ function initialize_the_meta_boxes() {
 			 
 			 array(
 				'name' => 'Select Slider Caption Style',
-				'desc' => 'Default is bottom',
+				'desc' => 'Default is none',
 				'id' => 'page_slider_caption_style',
 				'type' => 'select',
-				'options' => array('Bottom (default)', 'Left', 'Right'),
+				'options' => array('None (default)', 'Bottom', 'Left', 'Right'),
 				'std' => ''
 			 ),
 			 

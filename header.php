@@ -17,9 +17,15 @@
 /* Define variables. */	
 
 	$hometitle = $options[$themeslug.'_home_title'];
+	$homekeywords = $options[$themeslug.'_home_keywords'];
+	$homedescription = $options[$themeslug.'_home_description'];
 	$logo = $options['file'] ;
 	$favicon = $options['file2'];
 	$headercontact = $options[$themeslug.'_header_contact'] ;
+	$title = get_post_meta($post->ID, 'seo_title' , true);
+	$pagedescription = get_post_meta($post->ID, 'seo_description' , true);
+	$keywords = get_post_meta($post->ID, 'seo_keywords' , true);
+
 
 /* End variable definition. */	
 
@@ -51,27 +57,57 @@
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <meta name="distribution" content="global" />
 <meta name="language" content="en" />
+
+<!-- iFeature Blog Page SEO options -->
+	<?php if ($hometitle != '' AND is_front_page()): ?>
+		<meta name="title" content="<?php echo $hometitle ?>" />
+	<?php endif; ?> 
+	
+	<?php if ($homedescription != '' AND is_front_page()): ?>
+		<meta name="description" content="<?php echo $homedescription ?>" />
+	<?php endif; ?>	
+	
+	<?php if ($homekeywords != '' AND is_front_page()): ?>
+		<meta name="keywords" content="<?php echo $homekeywords ?>" />
+	<?php endif; ?>
+<!-- /iFeature Blog Page SEO options -->
+
+
+<!-- iFeature Page SEO options -->
+	<?php if ($title != '' AND !is_front_page()): ?>
+		<meta name="title" content="<?php echo $title ?>" />
+	<?php endif; ?> 
+	
+	<?php if ($pagedescription != '' AND !is_front_page()): ?>
+		<meta name="description" content="<?php echo $pagedescription ?>" />
+	<?php endif; ?>	
+	
+	<?php if ($keywords != '' AND !is_front_page()): ?>
+		<meta name="keywords" content="<?php echo $keywords ?>" />
+	<?php endif; ?>
+<!-- /iFeature Page SEO options -->
 	
 <!-- Page title -->
 	<title>
 		   <?php
 		      if (function_exists('is_tag') && is_tag()) {
-		         single_tag_title("Tag Archive for &quot;"); echo '&quot; - '; }
+		         bloginfo('name'); echo ' - '; single_tag_title("Tag Archive for &quot;"); echo '&quot;  '; }
 		      elseif (is_archive()) {
-		         wp_title(''); echo ' Archive - '; }
+		          bloginfo('name'); echo ' - '; wp_title(''); echo ' Archive '; }
 		      elseif (is_search()) {
-		         echo 'Search for &quot;'.wp_specialchars($s).'&quot; - '; }
-		      elseif (!(is_404()) && (is_single()) || (is_page())) {
-		         wp_title('');  }
+		         bloginfo('name'); echo ' - '; echo 'Search for &quot;'.wp_specialchars($s).'&quot;  '; }
+		      elseif ($title == '' AND !(is_404()) && (is_single()) || (is_page())) {
+		          bloginfo('name'); echo ' - '; wp_title('');  }
 		      elseif (is_404()) {
-		         echo 'Not Found - '; }
+		          bloginfo('name'); echo ' - '; echo 'Not Found '; }
 		      if (is_front_page() AND $hometitle == '') {
 		         bloginfo('name'); echo ' - '; bloginfo('description'); }
+		      elseif (!is_front_page() AND $title != '') {
+		         bloginfo('name'); echo ' - '; echo $title ; }
 		      elseif (is_front_page() AND $hometitle != '') {
 		         bloginfo('name'); echo ' - '; echo $hometitle ; }
-		      else {
-		         echo ' - '; bloginfo('name'); }
-		      if ($paged>1) {
+		    
+		      if ($paged>1 ) {
 		         echo ' - page '. $paged; }
 		   ?>
 	</title>	

@@ -18,12 +18,27 @@ get_header(); ?>
 
 		<?php if (have_posts()) : ?>
 
-		<h2>Search Results</h2>
+		<h2><font size="5"><?php printf( __( 'Search Results For: %s' ), '<span>' . get_search_query() . '</span>' ); ?></font></h2><br />
 
 		<?php while (have_posts()) : the_post(); ?>
 		
-		<!--Call the Loop-->
-			<?php get_template_part('loop', 'index' ); ?>		<?php endwhile; ?>
+		<div class="post_container">
+
+			<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
+
+				<h2 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+				<?php get_template_part('meta', 'search' ); ?>
+
+				<div class="entry">
+
+					<?php the_excerpt(); ?>
+
+				</div>
+
+			</div>
+
+	</div><!--end post_container-->
+		<?php endwhile; ?>
 
 		<?php get_template_part('pagination', 'search'); ?>
 
