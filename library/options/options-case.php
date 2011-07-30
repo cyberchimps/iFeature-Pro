@@ -489,7 +489,7 @@ case 'color1':
 <?php
 
 	if (isset($options[$themeslug.'_sitetitle_color']) == "") {
-			$picker = '111111';
+			$picker = '717171';
 	}		
 	
 	else {

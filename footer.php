@@ -105,7 +105,7 @@
 			
 			<!--Inserts iFeature SEO Module-->
 			
-				<?php if ($hidelink == "0" ):?>
+				<?php if ($hidelink != "1" ):?>
 				
 					<div id="credit">
 						<?php get_template_part('credit', 'footer' ); ?>
