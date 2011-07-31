@@ -229,7 +229,7 @@
 
 	    	/* Controls slide image and thumbnails */
 
-	    	if ($customimage != '' ){
+	    	if ($customimage != '' && $customthumb == ''){
 	    		$image = $customsized;
 	    		$thumbnail = "$root/library/tt/timthumb.php?src=$customimage&a=c&h=30&w=50";
 	    	}
