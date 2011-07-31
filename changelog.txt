@@ -2,12 +2,10 @@ iFeature Pro Changelog
 
 ****************************
 
-Version 2.0 (7-25-11)
--Now enqueueing WordPress jQuery library instead of Google's for offline compatibility.
--TimThumb support added for automatic image resizing.
+Version 2.0 (8-01-11)
+-TimThumb support added for automatic slider image resizing.
 -Cleaned up stylesheet.
 -iFeature Pro settings now found under Appearance tab in WP-Admin.
--Added proper featured image support, links to corresponding post.
 -Added Design tab, adding user control over various visual elements of the theme.
 -Header options tab now called Social, moved several options to General and added check boxes to hide individual icons.
 -Added Blog options tab, includes support for post excerpts, featured images, ability to hide meta elements.
@@ -20,6 +18,7 @@ Version 2.0 (7-25-11)
 -Security fix in comments.php removing $_SERVER variable statement.
 -Slider, SEO, and Callout options tabs removed, moved options to page meta options.
 -Added Loop file.
+-General bug fixes.
 
 Version 1.1.6 (6-12-2011)
 -API added for push updates.
