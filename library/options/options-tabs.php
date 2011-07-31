@@ -160,7 +160,7 @@ array( "name" => "Enable Widget Title Background",
 array( "name" => "Custom CSS",  
     "desc" => "Override default CSS here.",  
     "id" => $shortname."_css_options",  
-    "type" => "textarea",  
+    "type" => "customcss",  
     "std" => ""),  
     
 
@@ -328,7 +328,7 @@ array( "name" => "Home Keywords",
 array( "name" => "Optional Home Title",  
     "desc" => "Enter an alternative title of your homepage here (default is site tagline).",  
     "id" => "if_home_title",  
-    "type" => "text",  
+    "type" => "text2",  
     "std" => ""),
 
 array( "type" => "close"),
