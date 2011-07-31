@@ -160,7 +160,7 @@ array( "name" => "Enable Widget Title Background",
 array( "name" => "Custom CSS",  
     "desc" => "Override default CSS here.",  
     "id" => $shortname."_css_options",  
-    "type" => "textarea",  
+    "type" => "customcss",  
     "std" => ""),  
     
 
