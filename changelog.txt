@@ -3,7 +3,7 @@ iFeature Pro Changelog
 ****************************
 
 Version 2.0 (8-01-11)
--TimThumb support added for automatic image resizing.
+-TimThumb support added for automatic slider image resizing.
 -Cleaned up stylesheet.
 -iFeature Pro settings now found under Appearance tab in WP-Admin.
 -Added Design tab, adding user control over various visual elements of the theme.
