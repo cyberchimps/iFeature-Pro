@@ -648,14 +648,14 @@ function initialize_the_meta_boxes() {
 				'fields' => array(
 
 					array(
-						'name' => $themenamefull.' Slider Image',
+						'name' => $themenamefull.' Pro Slider Image',
 						'desc' => 'Upload your image here:',
 						'id' => $prefix . 'image',
 						'type' => 'image',
 						'std' => ''
 					),
 					array(
-						'name' => $themenamefull.' Slider Text',
+						'name' => $themenamefull.' Pro Slider Text',
 						'desc' => 'Enter your slider text here (optional):',
 						'id' => $prefix . 'text',
 						'type' => 'text',
