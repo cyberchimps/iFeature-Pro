@@ -136,6 +136,11 @@ function theme_options_validate( $input ) {
 	if ( ! isset( $input[$themeslug.'_hide_header'] ) )
 		$input[$themeslug.'_hide_header'] = null;
 	$input[$themeslug.'_hide_header'] = ( $input[$themeslug.'_hide_header'] == 1 ? 1 : 0 ); 
+	
+	if ( ! isset( $input[$themeslug.'_disable_timthumb'] ) )
+		$input[$themeslug.'_disable_timthumb'] = null;
+	$input[$themeslug.'_disable_timthumb'] = ( $input[$themeslug.'_disable_timthumb'] == 1 ? 1 : 0 ); 
+	
   	/* Strip HTML from certain options */
   	  
 	$input[$themeslug.'_facebook'] = wp_filter_nohtml_kses( $input[$themeslug.'_facebook'] ); 

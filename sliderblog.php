@@ -27,6 +27,7 @@
 	$sliderheight = $options[$themeslug.'_slider_height'];
 	$navautohide = $options[$themeslug.'_disable_nav_autohide'];
 	$hidenav = $options[$themeslug.'_hide_slider_arrows'];
+	$timdisable = $options[$themeslug.'_disable_timthumb'];
 
 	
 /* End define variables. */	
@@ -129,6 +130,22 @@
 
 /* End define TimThumb. */
 
+/* Define slider width variable */ 
+
+	if ($size == 'full' && $size2 != 'two-right' AND $size2 != 'right-left') {
+	  	$csWidth = '980';
+	}		
+
+	elseif ($size2 == 'right-left' && $size != 'full' OR $size2 == 'two-right' && $size != 'full') {
+		$csWidth = '480';
+	}  	
+
+	else {
+		$csWidth = '640';
+	}
+
+/* End slider width variable */ 
+
 /* Query posts based on theme/meta options */
 
 	if ($options[$themeslug.'_slider_type'] == '') {
@@ -227,44 +244,56 @@
 	    	
 	    	/* End slider text */	
 
-	    	/* Controls slide image and thumbnails */
+	    	  	/* Controls slide image and thumbnails */
 
-	    	if ($customimage != '' && $customthumb == ''){
+	    	if ($customimage != '' && $customthumb == '' && $timdisable != '1'){
 	    		$image = $customsized;
 	    		$thumbnail = "$root/library/tt/timthumb.php?src=$customimage&a=c&h=30&w=50";
 	    	}
 	    	
-	    	elseif ($customimage != '' && $customthumb != '' ){
+	    	elseif ($customimage != '' && $timdisable == '1'){
+	    		$image = $customimage;
+	    		$thumbnail = $customthumb;
+	    	}
+	    	
+	    	elseif ($customimage == '' && $timdisable == '1'){
+	    		$image = "$root/images/pro/ifeatureprolarge.jpg";
+	    		$thumbnail = $customthumb;
+	    	}
+	    	
+	    	elseif ($customimage != '' && $customthumb != '' && $timdisable != '1' ){
 	    		$image = $customsized;
 	    		$thumbnail = "$root/library/tt/timthumb.php?src=$customthumb&a=c&h=30&w=50";
 	    	}
-	    	
-	    	elseif ($customimage == '' && $size == "full" ) {
-	       		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/ifeatureprolarge.jpg&a=c&h=$height&w=980";
-	       		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
-	       	}
 
-	    	elseif ($customimage == '' && $size2 == "right" && $size != "full"){
+	    	elseif ($customimage == '' && $size2 == "0" && $size != "0" && $timdisable != '1'){
 	    		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
 	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	    	}
 
-	    	elseif ($customimage == '' && $size2 == "two-right" && $size != "full" OR $customimage == '' && $size2 == "right-left" && $size != "full"){
+	    	elseif ($customimage == '' && $size2 == '4' && $size != "0" && $timdisable != '1'){
+	    		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
+	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
+	    	}
+
+	    	elseif ($customimage == '' && $size2 == "1" && $size != "0" && $timdisable != '1' OR $customimage == '' && $size2 == "2" && $size != "0" && $timdisable != '1'){
 	    		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/iFeaturePro2-480.jpg&a=c&h=$height&w=480";
 	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	    	}
 
-	   		else {
-	       		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
+	   		elseif ($timdisable != '1') {
+	       		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/ifeatureprolarge.jpg&a=c&h=$height&w=980";
 	       		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	       	}
+	       	
+	      
 
 	     	/* End image/thumb */	
 
 	     	/* Markup for slides */
 
 	    	$out .= "<a href='$link'>	
-	    				<img src='$image' title='$titlevar' rel='$thumbnail' alt='iFeaturePro' />
+	    				<img src='$image' height='$height' width='$csWidth' title='$titlevar' rel='$thumbnail' alt='iFeaturePro' />
 	    					<div id='caption$i' class='nivo-html-caption'>
                 				<font size='4'>$title </font> <br />
                 				$text 
@@ -272,8 +301,7 @@
 	    				</a>
 	    			";
 
-	    	/* End slide markup */		
-
+	    	/* End slide markup */
 	      	$i++;
 	      	endwhile;
 	      	
@@ -308,22 +336,6 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 	}
 
 /* End slider delay variable */ 	
-
-/* Define slider width variable */ 
-
-	if ($size == 'full' && $size2 != 'two-right' AND $size2 != 'right-left') {
-	  	$csWidth = '980';
-	}		
-
-	elseif ($size2 == 'right-left' && $size != 'full' OR $size2 == 'two-right' && $size != 'full') {
-		$csWidth = '480';
-	}  	
-
-	else {
-		$csWidth = '640';
-	}
-
-/* End slider width variable */ 
 
 /* Define slider navigation variable */ 
   	
