@@ -21,7 +21,7 @@
 		<div class="content_padding">
 
 			<div class="error">Error 404<br />
-				These aren't the droids you're looking for.
+				<center></center><img src="<?php echo get_template_directory_uri() ;?>/images/confusedchimp.png" height="400" width="400" /></center>
 			</div>
 		
 		</div><!--end content_padding-->
