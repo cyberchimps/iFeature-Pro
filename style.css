@@ -398,6 +398,11 @@ label[for="comment"] {display: block;}
 	padding: 2px;
 }
 
+.textwidget {
+	margin-left: 4px;
+	margin-right: 4px;
+}
+
 .sidebar-widget-title {
 	color: #444;
 	height: 25px;
