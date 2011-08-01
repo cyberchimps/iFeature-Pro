@@ -259,7 +259,7 @@ function custom_taxonomies() {
 		$themeslug.'_custom_slides',		
 		array(
 			'hierarchical' => true,
-			'label' => 'Categories',	
+			'label' => 'Slide Categories',	
 			'query_var' => true,	
 			'rewrite' => array( 'slug' => 'slide_categories' ),	
 		)
