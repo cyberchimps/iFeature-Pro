@@ -260,22 +260,12 @@ class RW_Meta_Box {
 	
 	function show_field_pagehelp($field, $meta) {
 		$this->show_field_begin($field, $meta);
-		echo "Visit our Page Options help page here: <a href='http://cyberchimps.com'>Page Options Documentation</a></td>";
+		echo "Visit our iFeature Pro 2 Page Options help page here: <a href='http://cyberchimps.com/question/using-the-ifeature-pro-page-meta-options/' target='_blank'>Page Options Documentation</a></td>";
 	}
-	
+		
 	function show_field_sliderhelp($field, $meta) {
 		$this->show_field_begin($field, $meta);
-		echo "Visit our iFeature Slider Options help page here: <a href='http://cyberchimps.com'>Page Options Documentation</a></td>";
-	}
-	
-	function show_field_callouthelp($field, $meta) {
-		$this->show_field_begin($field, $meta);
-		echo "Visit our Callout Section Options help page here: <a href='http://cyberchimps.com'>Page Options Documentation</a></td>";
-	}
-	
-	function show_field_seohelp($field, $meta) {
-		$this->show_field_begin($field, $meta);
-		echo "Visit our SEO Section Options help page here: <a href='http://cyberchimps.com'>Page Options Documentation</a></td>";
+		echo "Visit our iFeature Pro Slider help page here: <a href='http://cyberchimps.com/question/using-the-ifeature-pro-2-slider' target='_blank'>Page Options Documentation</a></td>";
 	}
 	
 	function show_field_reorder($field, $meta) {
@@ -650,7 +640,7 @@ function initialize_the_meta_boxes() {
 
 	$meta_boxes[] = array(
 		'id' => 'feature',
-		'title' => $themenamefull.' Slider Options',
+		'title' => $themenamefull.' Pro Slider Options',
 		'pages' => array('post'),
 
 		'tabs' => array(
@@ -685,6 +675,14 @@ function initialize_the_meta_boxes() {
 						'id' => $prefix . 'custom_thumb',
 						'type' => 'image'
 					),
+					
+					array(
+						'name' => 'Need help?',
+						'desc' => '',
+						'id' => '',
+						'type' => 'sliderhelp',
+						'std' => ''
+			),
 
 
 				)
@@ -729,6 +727,14 @@ function initialize_the_meta_boxes() {
 						'id' => $prefix . 'custom_thumb',
 						'type' => 'image'
 					),
+					
+					array(
+						'name' => 'Need help?',
+						'desc' => '',
+						'id' => '',
+						'type' => 'sliderhelp',
+						'std' => ''
+			),
 					
 					array(
 						'name' => 'Want to re-order your slides?',
@@ -853,7 +859,7 @@ function initialize_the_meta_boxes() {
 			)),
 
 			array(
-				'title' => $themenamefull." Slider Options",
+				'title' => $themenamefull." Pro Slider Options",
 				'fields' => array(
 
 			array(
@@ -870,10 +876,19 @@ function initialize_the_meta_boxes() {
 				'desc' => 'Select the type of slider',
 				'id' => 'page_slider_type',
 				'type' => 'select',
-				'options' => array('Blog Posts', 'Custom Slides'),
+				'options' => array('Custom Slides', 'Blog Posts'),
 				'std' => ''
 			),
 
+				array(
+				'name' => 'Custom Slide Category',
+				'desc' => 'Select the slide category you would like to use',
+				'id' => $prefix . 'category',
+				'type' => 'select',
+				'options' => $slideroptions,
+				'std' => ''
+			),	
+			
 			array(
 				'name' => 'Blog Post Category',
 				'desc' => 'Select the blog post category you would like to use',
@@ -881,16 +896,7 @@ function initialize_the_meta_boxes() {
 				'type' => 'select',
 				'options' => $blogoptions, 'all',
 				'std' => ''
-			),
-
-			array(
-				'name' => 'Custom Slide Category',
-				'desc' => 'Select the slide category you would like to use',
-				'id' => $prefix . 'category',
-				'type' => 'select',
-				'options' => $slideroptions,
-				'std' => ''
-			),		
+			),	
 			 
 			array(
 				'name' => 'Number of featured blog posts',
@@ -963,7 +969,7 @@ function initialize_the_meta_boxes() {
 				'name' => 'Need help?',
 				'desc' => '',
 				'id' => '',
-				'type' => 'sliderhelp',
+				'type' => 'pagehelp',
 				'std' => ''
 			),
 
@@ -1017,10 +1023,10 @@ function initialize_the_meta_boxes() {
 					
 				array(
 				'name' => 'Select Callout Section Background',
-				'desc' => 'Default is ' .$themenamefull.' Pro 2.0, select "color picker" to use the color picker option below',
+				'desc' => 'Default is ' .$themenamefull.' Pro 2, select "color picker" to use the color picker option below',
 				'id' => 'callout_background_color',
 				'type' => 'select',
-				'options' => array($themenamefull.' Pro 2.0 (default)', 'Blue', 'Grey', 'Orange', 'Pink', 'Red', 'Color Picker'),
+				'options' => array($themenamefull.' Pro 2 (default)', 'Blue', 'Grey', 'Orange', 'Pink', 'Red', 'Color Picker'),
 				'std' => ''
 			 		),
 				
@@ -1056,7 +1062,7 @@ function initialize_the_meta_boxes() {
 					'name' => 'Need help?',
 					'desc' => '',
 					'id' => '',
-					'type' => 'callouthelp',
+					'type' => 'pagehelp',
 					'std' => ''
 					),
 
@@ -1093,7 +1099,7 @@ function initialize_the_meta_boxes() {
 						'name' => 'Need help?',
 						'desc' => '',
 						'id' => '',
-						'type' => 'seohelp',
+						'type' => 'pagehelp',
 						'std' => ''
 			),
 
