@@ -6,11 +6,11 @@
         <!-- All this stuff in here only shows up if you DON'T have any widgets active in this zone -->
     
 		<div class="sidebar-widget-style">    
-		<h2 class="sidebar-widget-title">Welcome to iFeature Pro</h2>
+		<h2 class="sidebar-widget-title">Welcome to iFeature Pro 2</h2>
     	<ul>
-						<li>Thank you for purchasing iFeature Pro.</li>
+						<li>Thank you for purchasing iFeature Pro 2.</li>
 						<li>&nbsp;</li>
-						<li>We designed iFeature Pro to be as user friendly as possible, if you do run into trouble we provide a <a href="http://cyberchimps.com/forum">free support forum</a>, and <a href="http://www.cyberchimps.com/ifeature-pro/docs/">precise documentation</a>.</li>
+						<li>We designed iFeature Pro 2 to be as user friendly as possible, if you do run into trouble we provide a <a href="http://cyberchimps.com/forum">free support forum</a>, and <a href="http://www.cyberchimps.com/ifeature-pro/docs/">precise documentation</a>.</li>
 						<li>&nbsp;</li>
 						<li>If we were all designers then every WordPress theme would look this good.</li>
 						<li>&nbsp;</li>

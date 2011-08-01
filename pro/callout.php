@@ -122,7 +122,7 @@
 /* Define Callout text. */	
 
 	if ($text == '') {
-		$callouttext = 'iFeature Pro gives you the tools to turn WordPress into a modern feature rich Content Management System (CMS)';
+		$callouttext = 'iFeature Pro 2 gives you the tools to turn WordPress into a modern feature rich Content Management System (CMS)';
 	}
 
 	else {
