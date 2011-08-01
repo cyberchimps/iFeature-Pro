@@ -159,7 +159,7 @@
 							</div>
 						<?php endif;?>
 						<?php if ($logo == '' ):?>
-							<div id="logo">
+							<div id="sitename">
 								<h1 class="sitename"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?> </a></h1>
 							</div>
 						<?php endif;?>

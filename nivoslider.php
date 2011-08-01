@@ -202,7 +202,7 @@
 
 /* Query posts based on theme/meta options */
 
-	if ( $type == '1') {
+	if ( $type == '0') {
     	query_posts( array ('post_type' => 'if_custom_slides', 'showposts' => 20,  'slide_categories' => get_post_meta($post->ID, 'slider_category' , true)  ) );
     }
     	
@@ -224,11 +224,11 @@
 
 
 	
-	if ($postnumber == '') {
+	if ($postnumber == '' && $type != '0') {
 	    $no = '5';    	
 	}   	
 
-	elseif ($type == '1') {
+	elseif ($type == '0') {
 	    $no = '20';
 	}
 
@@ -272,7 +272,7 @@
 
 	    	/* Controls slide link */
 
-	    	if ( $type == '1') {
+	    	if ( $type == '0') {
 	    		$link = get_post_meta($post->ID, 'slider_url' , true);
 	    	}
 
@@ -284,7 +284,7 @@
 	    	
 	    	/* Establish slider text */
 	    	
-	    	if ($type == '1') {
+	    	if ($type == '0') {
 	    		$text = $customtext;
 	    	}
 	    	
