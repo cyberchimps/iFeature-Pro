@@ -34,17 +34,17 @@ body { font-size: 14px;	}
 
 h1 { 
 	font-size: 18px;
-	font-weight: bold;
+	font-weight: 700;
 }
 
 h2 { 
 	font-size: 16px;
-	font-weight: bold;
+	font-weight: 700;
 }
 
 h3 { 
 	font-size: 14px;
-	font-weight: bold;
+	font-weight: 700;
 }
 
 .error { font-size: 28px; text-align: center; }
@@ -237,7 +237,7 @@ ol {
 
 .posts_title {
 	font-size: 24px;
-	font-weight: bold;
+	font-weight: 700;
 }
 
 .post { 
@@ -346,6 +346,27 @@ blockquote p { }
 
 }
 
+/* WP Gallery */
+
+.gallery {
+	margin: auto;
+}
+
+.gallery-item {
+	float: left;
+	margin-top: 10px;
+	text-align: center;
+	width: 33%;
+}
+
+.gallery-icon {
+	border: 2px solid #cfcfcf;
+}
+
+.gallery-caption {
+	margin-left: 0;
+}
+
 /* Share and Comments Styling */
 
 .share {
@@ -408,7 +429,7 @@ label[for="comment"] {display: block;}
 	height: 25px;
 	padding: 0 3px 0 4px;
 	font-size: 16px;
-	font-weight: bold;
+	font-weight: 700;
 }
 
 .sidebar-widget-style {
@@ -605,7 +626,7 @@ li { padding-left: 5px; }
 	height: 25px;
 	padding: 0 5px 0 0px;
 	font-size: 16px;
-	font-weight: bold;
+	font-weight: 700;
 	text-align: center;
 }
 
@@ -1003,7 +1024,7 @@ ol.commentlist li.comment div.comment-meta a { color: #ccc; }
 ol.commentlist li.comment p { }
 ol.commentlist li.comment ul { }
 ol.commentlist li.comment div.reply { font-size: 11px; }
-ol.commentlist li.comment div.reply a { font-weight: bold; }
+ol.commentlist li.comment div.reply a { font-weight: 700; }
 ol.commentlist li.comment ul.children { list-style: none; margin: 10px 0 0; }
 ol.commentlist li.comment ul.children li { }
 ol.commentlist li.comment ul.children li.alt { }
@@ -1043,7 +1064,7 @@ blockquote { margin: 1.3em; padding: 1em; }
 img { display: block; margin: 1em 0; }
 a img { border: none; }
 table { margin: 1px; text-align:left; }
-th { border-bottom: 1px solid #333;  font-weight: bold; }
+th { border-bottom: 1px solid #333;  font-weight: 700; }
 td { border-bottom: 1px solid #333; }
 th, td { padding: 4px 10px 4px 0; }
 caption { background: #fff; margin-bottom: 2em; text-align: left; }
@@ -1098,7 +1119,7 @@ a { text-decoration: none; color: black; }
 
 .download {
 	display: inline-block;color:#fff;
-	font-weight:bold;
+	font-weight:700;
 	font-size:1.2em;
 	background: -webkit-gradient(linear, left top, left bottom, from(#88c841), to(#73b338));
 	background: -moz-linear-gradient(center top, #88c841, #73b338);
