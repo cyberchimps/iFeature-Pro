@@ -97,15 +97,20 @@
 		      elseif (is_search()) {
 		         bloginfo('name'); echo ' - '; echo 'Search for &quot;'.wp_specialchars($s).'&quot;  '; }
 		      elseif ($title == '' AND !(is_404()) && (is_single()) || (is_page())) {
-		          bloginfo('name'); echo ' - '; wp_title('');  }
+		          bloginfo('name'); echo ' - '; bloginfo('description');  }
 		      elseif (is_404()) {
 		          bloginfo('name'); echo ' - '; echo 'Not Found '; }
-		      if (is_front_page() AND $hometitle == '') {
+		      if (is_front_page() AND $hometitle == '' AND !(is_page())) {
 		         bloginfo('name'); echo ' - '; bloginfo('description'); }
 		      elseif (!is_front_page() AND $title != '') {
 		         bloginfo('name'); echo ' - '; echo $title ; }
+		         elseif (is_front_page() AND $title != '') {
+		         bloginfo('name'); echo ' - '; echo $title ; }
 		      elseif (is_front_page() AND $hometitle != '') {
 		         bloginfo('name'); echo ' - '; echo $hometitle ; }
+		      else {
+		      		bloginfo('name'); echo ' - '; wp_title('');
+		      }
 		    
 		      if ($paged>1 ) {
 		         echo ' - page '. $paged; }

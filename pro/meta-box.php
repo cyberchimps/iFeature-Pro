@@ -456,11 +456,6 @@ class RW_Meta_Box {
 		}
 	}
 
-	function save_field_textarea($post_id, $field, $old, $new) {
-		$new = htmlspecialchars($new);
-		$this->save_field($post_id, $field, $old, $new);
-	}
-
 	function save_field_wysiwyg($post_id, $field, $old, $new) {
 		$new = wpautop($new);
 		$this->save_field($post_id, $field, $old, $new);
