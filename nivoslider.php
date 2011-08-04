@@ -269,7 +269,7 @@
 	   		$blogtext 				= get_post_meta($post->ID, 'slider_text' , true); /* Gets slide caption from post meta option */  		
 	   		$title				= get_the_title() ; /* Gets slide title from post/custom slide title */
 	   		$hidetitlebar       = get_post_meta($post->ID, 'slider_hidetitle' , true); /* Gets page/post meta option for disabling slide title bar */
-	   		$customsized        = "$root/library/tt/timthumb.php?src=$customimage&a=c&$timthumb"; /* Gets custom image from page/post meta option, applies timthumb code  */
+	   		$customsized 		= vt_resize( '' , $customimage , $csWidth, $height, true );
 	   		$customthumb 		= get_post_meta($post->ID, 'slider_custom_thumb' , true); /* Gets custom thumbnail from page/post meta option */
 	   		
 
@@ -314,54 +314,32 @@
 
 	    	/* Controls slide image and thumbnails */
 
-	    	if ($customimage != '' && $customthumb == '' && $timdisable != 'on'){
-	    		$image = $customsized;
-	    		$thumbnail = "$root/library/tt/timthumb.php?src=$customimage&a=c&h=30&w=50";
+	    	if ($customimage != '' && $customthumb == ''){
+	    		$image = $customsized['url'];
+	    		$thumbsized = vt_resize( '' , $customimage , 50, 30, true );
+	    		$thumbnail = $thumbsized['url'];
 	    	}
 	    	
-	    	elseif ($customimage != '' && $timdisable == 'on'){
-	    		$image = $customimage;
-	    		$thumbnail = $customthumb;
+	    	elseif ($customimage == '' ){
+	    		
+	    		$defaultimage = vt_resize( '' , "$root/images/pro/ifeatureprolarge.jpg" , $csWidth, $height, true );
+	    		$image = $defaultimage['url'];
+	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	    	}
 	    	
-	    	elseif ($customimage == '' && $timdisable == 'on'){
-	    		$image = "$root/images/pro/ifeatureprolarge.jpg";
-	    		$thumbnail = $customthumb;
+	    	elseif ($customimage != '' && $customthumb != '' ){
+	    		$image = $customsized['url'];
+	    		$thumbsized = vt_resize( '' , $customthumb , 50, 30, true );
+	    		$thumbnail = $thumbsized['url'];
 	    	}
-	    	
-	    	elseif ($customimage != '' && $customthumb != '' && $timdisable != 'on' ){
-	    		$image = $customsized;
-	    		$thumbnail = "$root/library/tt/timthumb.php?src=$customthumb&a=c&h=30&w=50";
-	    	}
-
-	    	elseif ($customimage == '' && $size2 == "0" && $size != "0" && $timdisable != 'on'){
-	    		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
-	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
-	    	}
-
-	    	elseif ($customimage == '' && $size2 == '4' && $size != "0" && $timdisable != 'on'){
-	    		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
-	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
-	    	}
-
-	    	elseif ($customimage == '' && $size2 == "1" && $size != "0" && $timdisable != 'on' OR $customimage == '' && $size2 == "2" && $size != "0" && $timdisable != 'on'){
-	    		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/iFeaturePro2-480.jpg&a=c&h=$height&w=480";
-	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
-	    	}
-
-	   		elseif ($timdisable != 'on') {
-	       		$image = "$root/library/tt/timthumb.php?src=$root/images/pro/ifeatureprolarge.jpg&a=c&h=$height&w=980";
-	       		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
-	       	}
 	       	
-	      
 
 	     	/* End image/thumb */	
 
 	     	/* Markup for slides */
 
 	    	$out .= "<a href='$link'>	
-	    				<img src='$image' height='$height' width='$csWidth' title='$titlevar' rel='$thumbnail' alt='iFeaturePro' />
+	    				<img src='$image' title='$titlevar' rel='$thumbnail' alt='iFeaturePro' />
 	    					<div id='caption$i' class='nivo-html-caption'>
                 				<font size='4'>$title </font> <br />
                 				$text 
