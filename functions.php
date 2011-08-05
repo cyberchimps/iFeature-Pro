@@ -94,7 +94,7 @@ if ( function_exists( 'add_theme_support' ) ) {
 // Load jQuery
 	if ( !is_admin() ) {
 	   wp_deregister_script('jquery');
-	   wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"), false);
+	   wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"), false);
 	   wp_enqueue_script('jquery');
 	}
 
@@ -481,5 +481,4 @@ require_once ( get_template_directory() . '/library/options/options-core.php' );
 require_once ( get_template_directory() . '/library/options/options-themes.php' );
 require_once ( get_template_directory() . '/pro/meta-box.php' );
 require_once ( get_template_directory() . '/inc/update.php' ); // Include automatic updater
-require_once ( get_template_directory() . '/inc/resize.php' ); 
 ?>

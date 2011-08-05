@@ -24,7 +24,7 @@ define ('FILE_CACHE_TIME_BETWEEN_CLEANS', 86400);	// Minimum time between checki
 define ('FILE_CACHE_SIZE', 1000);			// Number of files to store before clearing cache (once time betweeen cleans has elapsed)
 define ('FILE_CACHE_MAX_FILE_AGE', 86400);		// How old does a file have to be to be deleted from the cache
 define ('FILE_CACHE_SUFFIX', '.wordthumb.txt');		// What to put at the end of all files in the cache directory so we can identify them
-define ('FILE_CACHE_DIRECTORY', './cache');		// Directory where images are cached. Left blank it will use the system temporary directory (which is better for security)
+define ('FILE_CACHE_DIRECTORY', '');		// Directory where images are cached. Left blank it will use the system temporary directory (which is better for security)
 define ('MAX_FILE_SIZE', 10485760);			// 10 Megs is 10485760. This is the max internal or external file size that we'll process.  
 define ('CURL_TIMEOUT', 10);				// Timeout duration for Curl. This only applies if you have Curl installed and aren't using PHP's default URL fetching mechanism.
 

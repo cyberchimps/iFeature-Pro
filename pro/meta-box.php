@@ -961,9 +961,9 @@ function initialize_the_meta_boxes() {
 			),
 			
 			array(
-				'name' => 'Disable TimThumb Image Resizing',
-				'desc' => 'Check this box to disable the use of TimThumb image resizing.',
-				'id' => 'disable_timthumb',
+				'name' => 'Disable WordThumb Image Resizing',
+				'desc' => 'Check this box to disable the use of WordThumb image resizing.',
+				'id' => 'disable_wordthumb',
 				'type' => 'checkbox',
 				'std' => ''
 			),

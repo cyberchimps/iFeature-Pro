@@ -27,7 +27,7 @@
 	$sliderheight = $options[$themeslug.'_slider_height'];
 	$navautohide = $options[$themeslug.'_disable_nav_autohide'];
 	$hidenav = $options[$themeslug.'_hide_slider_arrows'];
-	$timdisable = $options[$themeslug.'_disable_timthumb'];
+	$timdisable = $options[$themeslug.'_disable_wordthumb'];
 
 	
 /* End define variables. */	
@@ -114,21 +114,21 @@
 	}    
 
 
-/* Define TimThumb default height and widths. */		
+/* Define wordthumb default height and widths. */		
 
 	if ($size == "full") {
-		$timthumb = "h=$height&w=980";
+		$wordthumb = "h=$height&w=980";
 	}
 
 	elseif ($size2 == "two-right" OR $size2 == "right-left") {
-		$timthumb = "h=$height&w=480";
+		$wordthumb = "h=$height&w=480";
 	}
 
 	else {
-		$timthumb = "h=$height&w=640";
+		$wordthumb = "h=$height&w=640";
 	}
 
-/* End define TimThumb. */
+/* End define wordthumb. */
 
 /* Define slider width variable */ 
 
@@ -203,7 +203,7 @@
 	   		$blogtext 				= get_post_meta($post->ID, 'slider_text' , true); /* Gets slide caption from post meta option */  		
 	   		$title				= get_the_title() ; /* Gets slide title from post/custom slide title */
 	   		$hidetitlebar       = get_post_meta($post->ID, 'slider_hidetitle' , true); /* Gets page/post meta option for disabling slide title bar */
-	   		$customsized        = "$root/library/wt/wordthumb.php?src=$customimage&a=c&$timthumb"; /* Gets custom image from page/post meta option, applies timthumb code  */
+	   		$customsized        = "$root/library/wt/wordthumb.php?src=$customimage&a=c&$wordthumb"; /* Gets custom image from page/post meta option, applies wordthumb code  */
 	   		$customthumb 		= get_post_meta($post->ID, 'slider_custom_thumb' , true); /* Gets custom thumbnail from page/post meta option */
 
 			/* End variables */	

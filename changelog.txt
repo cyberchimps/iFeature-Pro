@@ -3,9 +3,9 @@ iFeature Pro Changelog
 ****************************
 
 Version 2.0.1 (8-05-11)
--Removed TimThumb, replaced with image resizing using standard WP functions.
+-Removed TimThumb, replaced with WordThumb for increased security.
 -Removed function stripping special characters from callout text value.
--Fixed TITLE value bug related to homepage that is also a static page. 
+-Fixed title conditionals in header.php. 
 
 Version 2.0 (8-01-11)
 -TimThumb support added for automatic slider image resizing.

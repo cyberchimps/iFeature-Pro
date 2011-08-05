@@ -30,7 +30,7 @@
 	$navigationstyle = get_post_meta($post->ID, 'page_slider_navigation_style' , true);
 	$navautohide = get_post_meta($post->ID, 'disable_autohide' , true);
 	$hidenav = get_post_meta($post->ID, 'hide_arrows' , true);
-	$timdisable = get_post_meta($post->ID, 'disable_timthumb' , true);
+	$timdisable = get_post_meta($post->ID, 'disable_wordthumb' , true);
 	
 /* End define variables. */	
 
@@ -200,21 +200,21 @@
 
 /* End slider delay variable */ 
 
-/* Define TimThumb default height and widths. */		
+/* Define WordThumb default height and widths. */		
 
 	if ($size == "0") {
-		$timthumb = "h=$height&w=980";
+		$wordthumb = "h=$height&w=980";
 	}
 
 	elseif ($size2 == "1" OR $size2 == "2") {
-		$timthumb = "h=$height&w=480";
+		$wordthumb = "h=$height&w=480";
 	}
 
 	else {
-		$timthumb = "h=$height&w=640";
+		$wordthumb = "h=$height&w=640";
 	}
 
-/* End define TimThumb. */
+/* End define WordThumb. */
 
 /* Query posts based on theme/meta options */
 
@@ -269,7 +269,7 @@
 	   		$blogtext 				= get_post_meta($post->ID, 'slider_text' , true); /* Gets slide caption from post meta option */  		
 	   		$title				= get_the_title() ; /* Gets slide title from post/custom slide title */
 	   		$hidetitlebar       = get_post_meta($post->ID, 'slider_hidetitle' , true); /* Gets page/post meta option for disabling slide title bar */
-	   		$customsized        = "$root/library/wt/wordthumb.php?src=$customimage&a=c&$timthumb"; /* Gets custom image from page/post meta option, applies timthumb code  */
+	   		$customsized        = "$root/library/wt/wordthumb.php?src=$customimage&a=c&$wordthumb"; /* Gets custom image from page/post meta option, applies word thumb code  */
 	   		$customthumb 		= get_post_meta($post->ID, 'slider_custom_thumb' , true); /* Gets custom thumbnail from page/post meta option */
 	   		
 

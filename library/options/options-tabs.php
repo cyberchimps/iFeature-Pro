@@ -307,9 +307,9 @@ array( "name" => "Disable Slider Navigation Auto-Hide",
 	"type" => "checkbox",  
     "std" => "false"),
     
-array( "name" => "Disable TimThumb Image Resizing",  
+array( "name" => "Disable WordThumb Image Resizing",  
     "desc" => "Check this box to disable the use of TimThumb Image Resizing on the slider",  
-    "id" => $shortname."_disable_timthumb",  
+    "id" => $shortname."_disable_wordthumb",  
 	"type" => "checkbox",  
     "std" => "false"),
     
