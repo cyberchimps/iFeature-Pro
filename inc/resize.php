@@ -1,6 +1,6 @@
 <?php 
 
-/*
+/* dgdg
 
  * Resize images dynamically using wp built in functions
 
