@@ -1,9 +1,0 @@
-/*   
-PIE CSS
-Add any IDs or classes that need to have rounded corners in IE
-*/
-
-
-#header li a, .postmetadata, .post_container, #navbackground, .wp-caption, .sidebar-widget-style, .sidebar-widget-title, .boxes, .box1, .box2, .box3, .box-widget-title, #calloutwrap, .calloutbutton, #twitterbar {
-  	behavior: url(./pie/PIE.htc');
-}

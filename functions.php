@@ -58,10 +58,6 @@ add_filter('excerpt_length', 'new_excerpt_length');
 /* Add auto-feed links support. */	
 	add_theme_support('automatic-feed-links');
 	
-/* Define content-width */
-
-if ( ! isset( $content_width ) ) $content_width = 640;
-	
 /* Add post-thumb support. */
 
 	
@@ -98,20 +94,27 @@ if ( function_exists( 'add_theme_support' ) ) {
 // Load jQuery
 	if ( !is_admin() ) {
 	   wp_deregister_script('jquery');
-	   wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"), false);
+	   wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"), false);
 	   wp_enqueue_script('jquery');
 	}
 
-
-// This function removes inline styles set by WordPress gallery.
-
-function shell_remove_gallery_css($css) {
-
-    return preg_replace("#<style type='text/css'>(.*?)</style>#s", '', $css);
-
+/**
+* Attach CSS3PIE behavior to elements
+* Add elements here that need PIE applied
+*/   
+function render_ie_pie() { ?>
+	
+	<style type="text/css" media="screen">
+		#header li a, .postmetadata, .post_container, #navbackground, .wp-caption, .sidebar-widget-style, .sidebar-widget-title, .boxes, .box1, .box2, .box3, .box-widget-title, #calloutwrap, .calloutbutton, #twitterbar 
+  		
+  			{
+  				behavior: url('<?php bloginfo('stylesheet_directory'); ?>/library/pie/PIE.htc');
+			}
+	</style>
+<?php
 }
 
-add_filter('gallery_style', 'shell_remove_gallery_css');
+add_action('wp_head', 'render_ie_pie', 8);
 	
 //Checklist Shortcode
 	
@@ -344,7 +347,7 @@ function nivoslider(){
 
 	$script = "
 		
-		<script type=\"text/javascript\" src=\"".$path."jquery.nivo.slider.js\"></script>
+		<script type=\"text/javascript\" src=\"".$path."/jquery.nivo.slider.js\"></script>
 		";
 	
 	echo $script;
@@ -359,7 +362,7 @@ function plusone(){
 
 	$script = "
 		
-		<script type=\"text/javascript\" src=\"".$path."plusone.js\"></script>
+		<script type=\"text/javascript\" src=\"".$path."/plusone.js\"></script>
 		";
 	
 	echo $script;
@@ -478,5 +481,4 @@ require_once ( get_template_directory() . '/library/options/options-core.php' );
 require_once ( get_template_directory() . '/library/options/options-themes.php' );
 require_once ( get_template_directory() . '/pro/meta-box.php' );
 require_once ( get_template_directory() . '/inc/update.php' ); // Include automatic updater
-require_once ( get_template_directory() . '/inc/resize.php' ); // Image resizing script
 ?>
