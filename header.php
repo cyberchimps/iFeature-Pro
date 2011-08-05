@@ -16,7 +16,7 @@
 
 /* Define variables. */	
 
-	$hometitle = $options[$themeslug.'_home_title'];
+	$blogtitle = $options[$themeslug.'_home_title'];
 	$homekeywords = $options[$themeslug.'_home_keywords'];
 	$homedescription = $options[$themeslug.'_home_description'];
 	$logo = $options['file'] ;
@@ -59,8 +59,8 @@
 <meta name="language" content="en" />
 
 <!-- iFeature Blog Page SEO options -->
-	<?php if ($hometitle != '' AND is_front_page()): ?>
-		<meta name="title" content="<?php echo $hometitle ?>" />
+	<?php if ($blogtitle != '' AND is_front_page()): ?>
+		<meta name="title" content="<?php echo $blogtitle ?>" />
 	<?php endif; ?> 
 	
 	<?php if ($homedescription != '' AND is_front_page()): ?>
