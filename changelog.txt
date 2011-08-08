@@ -4,6 +4,7 @@ iFeature Pro Changelog
 
 Version 2.0.1 (8-05-11)
 -Removed TimThumb, replaced with WordThumb for increased security.
+-Added option to disable image resizing on iFeature Pro Slider. 
 -Removed function stripping special characters from callout text value.
 -Fixed title conditionals in header.php. 
 
