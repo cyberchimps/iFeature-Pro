@@ -138,11 +138,9 @@
 
 <link rel="shortcut icon" href="<?php echo stripslashes($favicon['url']); ?>" type="image/x-icon" />
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/library/css/pie.css" type="text/css" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <link href='http://fonts.googleapis.com/css?family=<?php echo $font ?>' rel='stylesheet' type='text/css' />
 	
-
 	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
     
 	<?php wp_head(); ?>

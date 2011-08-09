@@ -3,7 +3,7 @@
 
 	Section: Twitter
 	Authors: Trent Lapinski, Tyler Cunningham
-	Description: Creates the call out section.
+	Description: Creates the Twitter Bar section.
 	Version: 0.1
 	
 */ 

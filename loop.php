@@ -8,10 +8,10 @@
 
 /* Define variables. */	
 
-	$share = $options['if_hide_share'];
-	$tags = $options['if_hide_tags'];
-	$comments = $options['if_hide_comments'];
-	$excerpts = $options['if_show_excerpts'];
+	$share = $options[$themeslug.'_hide_share'];
+	$tags = $options[$themeslug.'_hide_tags'];
+	$comments = $options[$themeslug.'_hide_comments'];
+	$excerpts = $options[$themeslug.'_show_excerpts'];
 	$showfblike		= $options[$themeslug.'_show_fb_like'];
 	$showgplus		= $options[$themeslug.'_show_gplus'];
 	
