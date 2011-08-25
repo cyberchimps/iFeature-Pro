@@ -1180,7 +1180,7 @@ case 'select4':
 ?>
 <tr>
 <td width="15%" rowspan="2" valign="middle"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></td>
-<td width="85%"><select id="if_slider_type" style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>">
+<td width="85%"><select id="<?php echo $themeslug; ?>_slider_type" style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>">
 
 <?php
 								$selected = $options[$value['id']];
@@ -1242,7 +1242,7 @@ break;
 
 case 'select6':
 ?>
-<tr class="if_row_posts">
+<tr class="<?php echo $themeslug; ?>_row_posts">
 <td width="15%" rowspan="2" valign="middle"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></td>
 <td width="85%"><select style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>">
 
@@ -1280,8 +1280,8 @@ case 'select6':
 </td>
 </tr> 
  
-<tr class="if_row_posts"></tr>
-<tr class="if_row_posts"><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr class="if_row_posts"><td colspan="2">&nbsp;</td></tr>
+<tr class="<?php echo $themeslug; ?>_row_posts"></tr>
+<tr class="<?php echo $themeslug; ?>_row_posts"><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr class="<?php echo $themeslug; ?>_row_posts"><td colspan="2">&nbsp;</td></tr>
 
 
 <?php
@@ -1289,7 +1289,7 @@ break;
 
 case 'select7':
 ?>
-<tr class="if_row_custom">
+<tr class="<?php echo $themeslug; ?>_row_custom">
 <td width="15%" rowspan="2" valign="middle"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></td>
 <td width="85%"><select style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>">
 
@@ -1323,8 +1323,8 @@ case 'select7':
 </td>
 </tr> 
  
-<tr class="if_row_custom"></tr>
-<tr class="if_row_custom"><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr class="if_row_custom"><td colspan="2">&nbsp;</td></tr>
+<tr class="<?php echo $themeslug; ?>_row_custom"></tr>
+<tr class="<?php echo $themeslug; ?>_row_custom"><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #ddd;">&nbsp;</td></tr><tr class="<?php echo $themeslug; ?>_row_custom"><td colspan="2">&nbsp;</td></tr>
 
 <?php
 break;
