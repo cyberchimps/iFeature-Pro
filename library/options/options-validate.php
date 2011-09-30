@@ -25,6 +25,14 @@ function theme_options_validate( $input ) {
 		$input[$themeslug.'_hide_gplus'] = null;
 	$input[$themeslug.'_hide_gplus'] = ( $input[$themeslug.'_hide_gplus'] == 1 ? 1 : 0 ); 
 	
+	if ( ! isset( $input[$themeslug.'_hide_flickr'] ) )
+		$input[$themeslug.'_hide_flickr'] = null;
+	$input[$themeslug.'_hide_flickr'] = ( $input[$themeslug.'_hide_flickr'] == 1 ? 1 : 0 ); 
+	
+	if ( ! isset( $input[$themeslug.'_hide_myspace'] ) )
+		$input[$themeslug.'_hide_myspace'] = null;
+	$input[$themeslug.'_hide_myspace'] = ( $input[$themeslug.'_hide_myspace'] == 1 ? 1 : 0 ); 
+	
 	if ( ! isset( $input[$themeslug.'_hide_linkedin'] ) )
 		$input[$themeslug.'_hide_linkedin'] = null;
 	$input[$themeslug.'_hide_linkedin'] = ( $input[$themeslug.'_hide_linkedin'] == 1 ? 1 : 0 ); 
@@ -146,6 +154,12 @@ function theme_options_validate( $input ) {
 	$input[$themeslug.'_facebook'] = wp_filter_nohtml_kses( $input[$themeslug.'_facebook'] ); 
     
 	$input[$themeslug.'_twitter'] = wp_filter_nohtml_kses( $input[$themeslug.'_twitter'] ); 
+	
+	$input[$themeslug.'_gplus'] = wp_filter_nohtml_kses( $input[$themeslug.'_gplus'] ); 
+	
+	$input[$themeslug.'_mypsace'] = wp_filter_nohtml_kses( $input[$themeslug.'_myspace'] );
+	
+	$input[$themeslug.'_flickr'] = wp_filter_nohtml_kses( $input[$themeslug.'_flickr'] );
   
 	$input[$themeslug.'_linkedin'] = wp_filter_nohtml_kses( $input[$themeslug.'_linkedin'] );   
   

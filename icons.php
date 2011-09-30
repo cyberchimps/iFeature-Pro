@@ -20,6 +20,10 @@
 	$hidetwitter    = $options[$themeslug.'_hide_twitter'];
 	$gplus		    = $options[$themeslug.'_gplus'] ;
 	$hidegplus      = $options[$themeslug.'_hide_gplus'];
+	$flickr		    = $options[$themeslug.'_flickr'] ;
+	$hideflickr      = $options[$themeslug.'_hide_flickr'];
+	$myspace	    = $options[$themeslug.'_myspace'] ;
+	$hidemyspace        = $options[$themeslug.'_hide_myspace'];
 	$linkedin		= $options[$themeslug.'_linkedin'] ;
 	$hidelinkedin   = $options[$themeslug.'_hide_linkedin'];
 	$youtube		= $options[$themeslug.'_youtube'];
@@ -49,11 +53,23 @@
 	<?php if ($hidetwitter != '1' AND $twitter == '' ):?>
 		<a href="http://twitter.com" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/twitter.png" alt="Twitter" /></a>
 	<?php endif;?>
-		<?php if ($hidegplus != '1' AND $gplus != '' ):?>
+	<?php if ($hidegplus != '1' AND $gplus != '' ):?>
 		<a href="<?php echo $gplus ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/gplus.png" alt="Gplus" /></a>
 	<?php endif;?>
 	<?php if ($hidegplus != '1' AND $gplus == '' ):?>
 		<a href="https://plus.google.com" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/gplus.png" alt="Gplus" /></a>
+	<?php endif;?>
+	<?php if ($hideflickr != '1' AND $flickr != '' ):?>
+		<a href="<?php echo $flickr ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/flickr.png" alt="Flickr" /></a>
+	<?php endif;?>
+	<?php if ($hideflickr != '1' AND $flickr == '' ):?>
+		<a href="https://flickr.com" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/flickr.png" alt="Flickr" /></a>
+	<?php endif;?>
+	<?php if ($hidemyspace != '1' AND $myspace != '' ):?>
+		<a href="<?php echo $myspace ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/myspace.png" alt="Gplus" /></a>
+	<?php endif;?>
+	<?php if ($hidemyspace != '1' AND $myspace == '' ):?>
+		<a href="https://myspace.com" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/myspace.png" alt="Gplus" /></a>
 	<?php endif;?>
 	<?php if ($hidelinkedin != '1' AND $linkedin != '' ):?>
 		<a href="<?php echo $linkedin ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/linkedin.png" alt="LinkedIn" /></a>
@@ -85,5 +101,7 @@
 	<?php if ($hiderss != '1' and $rss == ''  ):?>
 		<a href="<?php bloginfo('rss2_url'); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/rss.png" alt="RSS" /></a>
 	<?php endif;?>
+	
+	
 	
 </div>
