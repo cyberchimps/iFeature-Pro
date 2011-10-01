@@ -53,6 +53,12 @@ array( "name" => "Custom Favicon",
     "id" => $shortname."_favicon",  
     "type" => "upload2",  
     "std" => ""),
+    
+array( "name" => "Disable Breadcrumbs",  
+    "desc" => "Check this box to disable breadcrumb links.",  
+    "id" => $shortname."_disable_breadcrumbs",  
+      "type" => "checkbox",  
+    "std" => "false"),
 
 array( "name" => "Google Analytics Code",  
     "desc" => "You can paste your Google Analytics or other tracking code in this box. This will be automatically be added to the footer.",  

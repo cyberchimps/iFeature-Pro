@@ -25,6 +25,10 @@ function theme_options_validate( $input ) {
 		$input[$themeslug.'_hide_gplus'] = null;
 	$input[$themeslug.'_hide_gplus'] = ( $input[$themeslug.'_hide_gplus'] == 1 ? 1 : 0 ); 
 	
+		if ( ! isset( $input[$themeslug.'_disable_breadcrumbs'] ) )
+		$input[$themeslug.'_disable_breadcrumbs'] = null;
+	$input[$themeslug.'_disable_breadcrumbs'] = ( $input[$themeslug.'_disable_breadcrumbs'] == 1 ? 1 : 0 ); 
+	
 	if ( ! isset( $input[$themeslug.'_hide_flickr'] ) )
 		$input[$themeslug.'_hide_flickr'] = null;
 	$input[$themeslug.'_hide_flickr'] = ( $input[$themeslug.'_hide_flickr'] == 1 ? 1 : 0 ); 
