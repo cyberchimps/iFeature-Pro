@@ -116,6 +116,7 @@ if ($sidebar == "1" OR $sidebar == "2") {
 						
 
 					</div><!--end entry-->
+					<div style=clear:both;></div>
 					<?php wp_link_pages(array('before' => 'Pages: ', 'next_or_number' => 'number')); ?>
 
 

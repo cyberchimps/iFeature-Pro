@@ -32,20 +32,7 @@ body { font-size: 14px;	}
 
 /* Fonts  */
 
-h1 { 
-	font-size: 18px;
-	font-weight: bold;
-}
 
-h2 { 
-	font-size: 16px;
-	font-weight: bold;
-}
-
-h3 { 
-	font-size: 14px;
-	font-weight: bold;
-}
 
 .error { font-size: 28px; text-align: center; }
 
@@ -60,6 +47,10 @@ a img {border: none; }
 ul, ol { margin: 0 0 10px 0; }
 
 #crumbs {margin-bottom: 5px;}
+
+dt {font-weight: bold; margin-top: 10px;}
+
+dd {margin-bottom: 15px; }
 
 /* Header  */
 
@@ -304,9 +295,7 @@ img.size-full {
 	height: auto;
 }
 
-p {
-     clear: both;
-}
+
 
 .aligncenter, div.aligncenter {
 	display: block;
@@ -737,10 +726,11 @@ li { padding-left: 5px; }
 }
 
 .footer-widget-title {
-	color: #ccc;
-	font-size: 16px;
-	font-weight: 300;
-	padding-bottom: 10px;
+	color: #888;
+	font-size: 18px;
+	font-weight: bold;
+	margin-bottom: 10px;
+	margin-left: -1px;
 }
 
 .footer-item ul {

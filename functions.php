@@ -514,70 +514,75 @@ add_action( 'wp_head', 'add_scripts',0);
 	</ul><?php
 }
 
-    	register_sidebar(array(
-    		'name' => 'Sidebar Widgets',
-    		'id'   => 'sidebar-widgets',
-    		'description'   => 'These are widgets for the sidebar.',
-    		'before_widget' => '<div id="%1$s" class="sidebar-widget-style">',
-    		'after_widget'  => '</div>',
-    		'before_title'  => '<h2 class="sidebar-widget-title">',
-    		'after_title'   => '</h2>'
-    	));
-    	    	register_sidebar(array(
-    		'name' => 'Sidebar Left',
-    		'id'   => 'sidebar-left',
-    		'description'   => 'These are widgets for the left sidebar.',
-    		'before_widget' => '<div id="%1$s" class="sidebar-left-widget-style">',
-    		'after_widget'  => '</div>',
-    		'before_title'  => '<h2 class="sidebar-left-widget-title">',
-    		'after_title'   => '</h2>'
-    	));
+function ifp_widgets_init() {
+    register_sidebar(array(
+    	'name' => 'Sidebar Widgets',
+    	'id'   => 'sidebar-widgets',
+    	'description'   => 'These are widgets for the sidebar.',
+    	'before_widget' => '<div id="%1$s" class="sidebar-widget-style">',
+    	'after_widget'  => '</div>',
+    	'before_title'  => '<h2 class="sidebar-widget-title">',
+    	'after_title'   => '</h2>'
+    ));
+    register_sidebar(array(
+    	'name' => 'Sidebar Left',
+    	'id'   => 'sidebar-left',
+    	'description'   => 'These are widgets for the left sidebar.',
+    	'before_widget' => '<div id="%1$s" class="sidebar-left-widget-style">',
+    	'after_widget'  => '</div>',
+    	'before_title'  => '<h2 class="sidebar-left-widget-title">',
+    	'after_title'   => '</h2>'
+    ));    	
+    register_sidebar(array(
+    	'name' => 'Sidebar Right',
+    	'id'   => 'sidebar-right',
+    	'description'   => 'These are widgets for the right sidebar.',
+    	'before_widget' => '<div id="%1$s" class="sidebar-right-widget-style">',
+    	'after_widget'  => '</div>',
+    	'before_title'  => '<h2 class="sidebar-right-widget-title">',
+    	'after_title'   => '</h2>'
+   	));
     	
-    	    	
-    	register_sidebar(array(
-    		'name' => 'Sidebar Right',
-    		'id'   => 'sidebar-right',
-    		'description'   => 'These are widgets for the right sidebar.',
-    		'before_widget' => '<div id="%1$s" class="sidebar-right-widget-style">',
-    		'after_widget'  => '</div>',
-    		'before_title'  => '<h2 class="sidebar-right-widget-title">',
-    		'after_title'   => '</h2>'
-    	));
-    	
-    	
+    register_sidebar(array(
+		'name' => 'Box Left',
+		'id' => 'box-left',
+		'description' => 'This is the left widget of the three-box section',
+		'before_widget' => '<div class="box1">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="box-widget-title">',
+		'after_title' => '</h3>',
+	));
 	register_sidebar(array(
-	'name' => 'Box Left',
-	'before_widget' => '<div class="box1">',
-	'after_widget' => '</div>',
-	'before_title' => '<h3 class="box-widget-title">',
-	'after_title' => '</h3>',
+		'name' => 'Box Middle',
+		'id' => 'box-middle',
+		'description' => 'This is the middle widget of the three-box section',
+		'before_widget' => '<div class="box2">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="box-widget-title">',
+		'after_title' => '</h3>',
 	));
-	
 	register_sidebar(array(
-	'name' => 'Box Middle',
-	'before_widget' => '<div class="box2">',
-	'after_widget' => '</div>',
-	'before_title' => '<h3 class="box-widget-title">',
-	'after_title' => '</h3>',
+		'name' => 'Box Right',
+		'id' => 'box-right',
+		'description' => 'This is the right widget of the three-box section',
+		'before_widget' => '<div class="box3">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="box-widget-title">',
+		'after_title' => '</h3>',
 	));
-		register_sidebar(array(
-	'name' => 'Box Right',
-	'before_widget' => '<div class="box3">',
-	'after_widget' => '</div>',
-	'before_title' => '<h3 class="box-widget-title">',
-	'after_title' => '</h3>',
-	));
-	
 	register_sidebar(array(
-	'name' => 'Footer',
-	'before_widget' => '<div class="footer-widgets">',
-	'after_widget' => '</div>',
-	'before_title' => '<h3 class="footer-widget-title">',
-	'after_title' => '</h3>',
+		'name' => 'Footer',
+		'id' => 'footer',
+		'description' => 'These are the footer widgets',
+		'before_widget' => '<div class="footer-widgets">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="footer-widget-title">',
+		'after_title' => '</h3>',
 	));
-    
+}
+add_action ('widgets_init', 'ifp_widgets_init');
 
-	//iFeature theme options file
+// Call additional template files
 	
 require_once ( get_template_directory() . '/library/options/options-core.php' );
 require_once ( get_template_directory() . '/library/options/options-themes.php' );
