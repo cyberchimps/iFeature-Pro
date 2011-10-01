@@ -43,6 +43,8 @@ if ($sidebar == "1" OR $sidebar == "2") {
 
 <div id="content_wrap">
 
+<?php if (function_exists('ifeature_breadcrumbs')) ifeature_breadcrumbs(); ?>
+
 	<?php if ($enable == "on" && $size == "0"): ?>
 		<div id = "slider-wrapper">
 			<center><?php get_template_part('nivoslider', 'page' ); ?> </center>
@@ -98,6 +100,8 @@ if ($sidebar == "1" OR $sidebar == "2") {
 		
 			<div class="post_container">
 			
+			
+			
 				<div class="post" id="post-<?php the_ID(); ?>">
 				<?php if ($hidetitle == ""): ?>
 				
@@ -111,9 +115,9 @@ if ($sidebar == "1" OR $sidebar == "2") {
 						<?php the_content(); ?>
 						
 
-						<?php wp_link_pages(array('before' => 'Pages: ', 'next_or_number' => 'number')); ?>
-
 					</div><!--end entry-->
+					<?php wp_link_pages(array('before' => 'Pages: ', 'next_or_number' => 'number')); ?>
+
 
 				<?php edit_post_link('Edit', '<p>', '</p>'); ?>
 

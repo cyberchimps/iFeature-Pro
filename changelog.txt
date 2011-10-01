@@ -3,7 +3,11 @@ iFeature Pro Changelog
 ****************************
 
 Version 2.0.2 (9-30-11)
--
+-Added Flickr and Myspace social icons. 
+-Added breadcrumb links to single post, page, archive, and search templates. 
+-Added max-width and height:auto to full-size images to fix blowout issue. 
+-Floats now properly clearing. 
+-Post pagination added to main blog index page. 
 
 Version 2.0.1 (8-05-11)
 -Removed TimThumb, replaced with WordThumb for increased security.

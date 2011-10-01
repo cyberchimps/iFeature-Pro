@@ -21,6 +21,8 @@
 		
 		<div class="content_padding">
 		
+		<?php if (function_exists('ifeature_breadcrumbs')) ifeature_breadcrumbs(); ?>
+		
 		<?php if (have_posts()) : ?>
 
  			<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>

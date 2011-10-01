@@ -12,6 +12,8 @@ get_header(); ?>
 
 <div id="content_wrap">
 
+<?php if (function_exists('ifeature_breadcrumbs')) ifeature_breadcrumbs(); ?>
+
 	<div id="content_left">
 		
 		<div class="content_padding">
