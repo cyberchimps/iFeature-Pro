@@ -137,7 +137,17 @@
 	</title>	
 
 <link rel="shortcut icon" href="<?php echo stripslashes($favicon['url']); ?>" type="image/x-icon" />
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
+
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/ifeature.css" type="text/css" />
+
+	<!-- 1140px Grid styles for IE -->
+	<!--[if lte IE 9]><link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/ie.css" type="text/css" media="screen" /><![endif]-->
+	
+	<!-- The 1140px Grid - http://cssgrid.net/ -->
+	<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/1140.css" type="text/css" media="screen" />
+
+	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <link href='http://fonts.googleapis.com/css?family=<?php echo $font ?>' rel='stylesheet' type='text/css' />
 	
@@ -149,48 +159,41 @@
 
 <body style="font-family:'<?php echo $fontstrip ?>'" <?php body_class(); ?> >
 	
-	<div id="page-wrap">
-		
-		<div id="main">
+<div id="container">
 
-			<div id="header">
-				<div id="headerwrap">
-					<div id="header_right">
+				<div class="row">
+					<div class="sevencol">
+						<!-- Inserts Site Logo -->
+						<?php if ($logo != ''):?>
+								<a href="<?php echo home_url(); ?>/"><img src="<?php echo stripslashes($logo['url']); ?>" alt="logo"></a>
+						<?php endif;?>
+						<?php if ($logo == '' ):?>
+								<h1 class="sitename"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?> </a></h1>
+						<?php endif;?>
+					</div>
+					<div class="fivecol last" style="text-align:right;">
 						<!-- Inserts Header Contact Area -->
 		
 							<?php if ($headercontact == '' ):?>
-							<div id="header_contact">
 								Enter Contact Information Here
-							</div>
 							<?php endif;?>
 							<?php if ($headercontact != 'hide' ):?>
-							<div id="header_contact1">
 								<?php echo stripslashes ($headercontact); ?></div> 
 							<?php endif;?>
 							<?php if ($headercontact == 'hide' ):?>
-								<div style ="height: 10%;">&nbsp;</div> 
 							<?php endif;?>
-						<br />
-							<div id="social">
-								<?php get_template_part('icons', 'header'); ?>
-							</div><!-- end social -->
-					</div><!-- end header_right -->
-					<!-- Inserts Site Logo -->
-						<?php if ($logo != ''):?>
-							<div id="logo">
-								<a href="<?php echo home_url(); ?>/"><img src="<?php echo stripslashes($logo['url']); ?>" alt="logo"></a>
-							</div>
-						<?php endif;?>
-						<?php if ($logo == '' ):?>
-							<div id="sitename">
-								<h1 class="sitename"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?> </a></h1>
-							</div>
-						<?php endif;?>
-					<div id="description">
-						<h1 class="description"><?php bloginfo('description'); ?></h1>
+							<br />
 					</div>
-				</div><!-- end headerwrap -->
+				</div>
+				
+				<div class="row">
+					<div class="sevencol">
+							<h1 class="description"><?php bloginfo('description'); ?></h1>
+					</div>
+					<div class="fivecol last" style="text-align:right;">
+								<?php get_template_part('icons', 'header'); ?>
+					</div>
+				</div>
 				
 				<?php get_template_part('nav', 'header' ); ?>
-				
-			</div><!-- end header -->
+	

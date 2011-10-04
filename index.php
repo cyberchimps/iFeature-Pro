@@ -1,4 +1,4 @@
- <?php
+<?php
 
  /*
 	Index
@@ -31,24 +31,24 @@
 
 <?php get_header(); ?>
 
-<div id="content_wrap">
+<div class="row">
 		
 	<?php if ($options[$themeslug.'_hide_slider_blog'] != '1' && $blogslidersize == "full"): ?>
-		<div id = "slider-wrapper">
+		<div class="eightcol">
 			<?php get_template_part('sliderblog', 'index' ); ?>
 		</div>
 	<?php endif;?>
 		
 	<?php if ($sidebar == "4" OR $blogsidebar == 'none'): ?>
-		<div id="content_fullwidth">
+		<div class="row">
 	<?php endif;?>
 	
 	<?php if ($sidebar == "1" OR $blogsidebar == "right"): ?>
-		<div id="content_left">
+		<div class="eightcol">
 	<?php endif;?>
 	
 	<?php if ($sidebar == '' AND $blogsidebar == ''): ?>
-		<div id="content_left">
+		<div class="eightcol">
 	<?php endif;?>
 	
 	<?php if ($sidebar == "3" OR $blogsidebar == 'right-left' ): ?>
@@ -58,17 +58,16 @@
 	
 	<?php if ($sidebar == "2"  OR $sidebar == "3" OR $blogsidebar == "two-right" OR $blogsidebar == "right-left"): ?>
 		<?php get_sidebar('right'); ?>
-		<div class="content_half">
+		<div class="sixcol">
 	<?php endif;?>
 	
 	<?php if ($options[$themeslug.'_hide_slider_blog'] != '1' && $blogslidersize != "full"): ?>
-		<div id = "slider-wrapper">
+		<div class="eightcol" height="330px">
 			<?php get_template_part('sliderblog', 'page' ); ?>
 		</div>
 	<?php endif;?>
 
-		<div class="content_padding">
-		
+
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			
 			<!--Call the Loop-->
@@ -83,9 +82,8 @@
 			<h2>Not Found</h2>
 
 		<?php endif; ?>
-		</div> <!--end content_padding-->
-	</div> <!--end content_left-->
-
+		</div>
+		<div class="fourcol last">
 	<?php if ($sidebar == '' AND $blogsidebar == ''): ?>
 	<?php get_sidebar(); ?>
 	<?php endif;?>
@@ -96,8 +94,11 @@
 	<?php if ($sidebar == "2" OR $blogsidebar == 'two-right' ): ?>
 	<?php get_sidebar('left'); ?>
 	<?php endif;?>
+		</div>
+	</div>
+</div>
 
-</div><!--end content_wrap-->
+
 <div style="clear:both;"></div>
 
 <?php get_footer(); ?>

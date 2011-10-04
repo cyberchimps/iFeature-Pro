@@ -30,17 +30,10 @@
 		$menucolor = $options[($themeslug.'_menu_color')]; 
 	}	
 ?>		
-				
-<div id ="navbackground">
-<div id="navcontainer">
 
-<?php if ($homeimage == '' ):?>
-<div id="homebutton"><a href="<?php echo home_url(); ?>/"><img src="<?php echo get_template_directory_uri(); ?>/images/menu/home.png?>" alt="Home" /></a></div>
-<?php endif;?>
-<?php if ($homeimage != '' ):?>
-<div id="homebutton"><a href="<?php echo home_url(); ?>/"><img src="<?php echo stripslashes($homeimage['url']) ;?>" alt="Home" /></a></div>
-<?php endif;?>
-    <div id="sfwrapper">
+<div class="row" style="background-color: #000;">
+
+  	<div class="ninecol">
         <?php wp_nav_menu( array(
 	    'theme_location' => 'header-menu', // Setting up the location for the main-menu, Main Navigation.
 	    'menu_class' => 'sf-menu', //Adding the class for dropdowns
@@ -50,11 +43,11 @@
 	);
     ?>
     </div>
-<div id="searchbar">
-<?php get_search_form(); ?>
+	
+	<div class="threecol last">
+				<?php get_search_form(); ?>
+		</div>
+	
 </div>
-
-</div><!--end navcontainer-->
-
-</div>    
+ 
 <!--end nav.php-->

@@ -1,4 +1,4 @@
- <?php
+<?php
 
 /* Call globals. */	
 
@@ -18,8 +18,6 @@
 /* End define variables. */	
 	
 ?>
-
-<div class="post_container">
 			
 	<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 
@@ -83,5 +81,3 @@
 				</div><!--end postmetadata-->
 							
 	</div><!--end post_class-->
-				
-</div><!--end post_container-->

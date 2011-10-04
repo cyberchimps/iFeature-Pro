@@ -25,11 +25,11 @@
 
 ?>
 
-	</div><!--end main-->
-</div><!--end page_wrap-->			
+	</div><!--end container-->
+		
 	
 		
-<div id="footer">
+<div class="container" id="footer">
     <div id="footer_wrap">
     	
     	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Footer") ) : ?>
