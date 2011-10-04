@@ -32,7 +32,7 @@
 /* Establish fonts. */	
 
 	if ($options[$themeslug.'_font'] == "" AND $options[$themeslug.'_custom_font'] == "") {
-		$font = 'Cantarell';
+		$font = 'Lucida Grande';
 	}
 			
 	elseif ($options[$themeslug.'_custom_font'] != "") {
@@ -147,7 +147,8 @@
 	
 </head>
 
-<body style="font-family:'<?php echo $fontstrip ?>'" <?php body_class(); ?> >
+<body style="font-family:'<?php echo $fontstrip ?>', Arial, serif" <?php body_class(); ?> >
+
 	
 	<div id="page-wrap">
 		

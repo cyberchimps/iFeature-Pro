@@ -582,6 +582,18 @@ function ifp_widgets_init() {
 }
 add_action ('widgets_init', 'ifp_widgets_init');
 
+//Add link to theme settings in Admin bar
+
+function admin_link() {
+
+	global $wp_admin_bar;
+
+	$wp_admin_bar->add_menu( array( 'id' => 'iFeature', 'title' => 'iFeature Pro Settings', 'href' => admin_url('themes.php?page=theme_options')  ) ); 
+  
+}
+add_action( 'admin_bar_menu', 'admin_link', 113 );
+
+
 // Call additional template files
 	
 require_once ( get_template_directory() . '/library/options/options-core.php' );
