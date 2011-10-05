@@ -2,7 +2,10 @@ iFeature Pro Changelog
 
 ****************************
 
-Version 2.0.2 (9-30-11)
+Version 2.0.2 (10-05-11)
+-Small patch related to footer widgetized area.
+
+Version 2.0.2 (10-04-11)
 -Added Flickr and Myspace social icons. 
 -Added breadcrumb links to single post, page, archive, and search templates. 
 -Added max-width and height:auto to full-size images to fix blowout issue. 
