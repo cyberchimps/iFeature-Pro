@@ -30,8 +30,11 @@
 ?>
 
 <?php get_header(); ?>
+	<div id="content_containment" class="container">
+	
+		<div id="main" class="container">
 
-<div class="row">
+		<div class="row">
 		
 	<?php if ($options[$themeslug.'_hide_slider_blog'] != '1' && $blogslidersize == "full"): ?>
 		<div class="eightcol">

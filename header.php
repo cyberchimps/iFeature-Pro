@@ -159,8 +159,10 @@
 
 <body style="font-family:'<?php echo $fontstrip ?>'" <?php body_class(); ?> >
 	
-<div id="container">
-
+	<header id="header" class="container">
+		
+		<div class="container">
+		
 				<div class="row">
 					<div class="sevencol">
 						<!-- Inserts Site Logo -->
@@ -185,7 +187,9 @@
 							<br />
 					</div>
 				</div>
-				
+			</div>	
+			
+		<div class="container"> 
 				<div class="row">
 					<div class="sevencol">
 							<h1 class="description"><?php bloginfo('description'); ?></h1>
@@ -194,6 +198,10 @@
 								<?php get_template_part('icons', 'header'); ?>
 					</div>
 				</div>
+		</div>
+		
+		<?php get_template_part('nav', 'header' ); ?>
 				
-				<?php get_template_part('nav', 'header' ); ?>
-	
+		</div>
+		
+	</header>
