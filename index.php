@@ -76,7 +76,7 @@
 				
 		<?php endwhile; ?>
 
-		<?php get_template_part('pagination', 'index' ); ?>
+		<?php chimps_pagination(); ?>
 
 		<?php else : ?>
 
