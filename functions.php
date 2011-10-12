@@ -595,11 +595,11 @@ add_action( 'admin_bar_menu', 'admin_link', 113 );
 
 //test filter
 
-function previous_post_text(){
-	$previous_text = 'Older Post: ';
-	return $previous_text;
-}
-add_filter('chimps_previous_posts_text','previous_post_text');
+//function previous_post_text(){
+	//$previous_text = 'Older Post: ';
+	//return $previous_text;
+//}
+//add_filter('chimps_previous_posts_text','previous_post_text');
 
 //hooks
 

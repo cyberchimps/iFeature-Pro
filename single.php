@@ -46,7 +46,7 @@ get_header(); ?>
 								<?php the_content(); ?>
 							</div><!--end entry-->
 							<div style=clear:both;></div>
-							<?php wp_link_pages(array('before' => 'Pages: ', 'next_or_number' => 'number')); ?>
+							<?php chimps_links_pages(); ?>
 
 						<?php edit_post_link('Edit', '<p>', '</p>'); ?>
 						

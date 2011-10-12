@@ -48,7 +48,7 @@
 				</div><!--end entry-->
 				
 			<?php edit_post_link('Edit', '<p>', '</p>'); ?>	
-			<?php wp_link_pages(array('before' => 'Pages: ', 'next_or_number' => 'number')); ?>
+			<?php chimps_links_pages(); ?>
 					
 			<?php if ($showgplus == "1"):?>
 				<div class="gplusone" >	

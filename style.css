@@ -242,6 +242,10 @@ ol {
 
 }
 
+.entry p {
+	clear: none;
+}
+
 .meta { 
 	color: #ababab;
 	font-size: 12px;
@@ -293,6 +297,10 @@ img.aligncenter {
 img.size-full {
 	max-width: 640px;
 	height: auto;
+}
+
+p {
+     clear: both;
 }
 
 

@@ -183,13 +183,8 @@
 							</div>
 						<?php endif;?>
 						<?php if ($logo == '' ):?>
-							<div id="sitename">
-								<h1 class="sitename"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?> </a></h1>
-							</div>
+							<?php chimps_header_left(); ?>
 						<?php endif;?>
-					<div id="description">
-						<h1 class="description"><?php bloginfo('description'); ?></h1>
-					</div>
 				</div><!-- end headerwrap -->
 				
 				<?php get_template_part('nav', 'header' ); ?>
