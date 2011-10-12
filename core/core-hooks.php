@@ -60,6 +60,18 @@ function chimps_after_content() {
 }
 
 /** 
+* Entry 
+*/
+
+function chimps_before_entry(){
+	do_action('chimps_before_entry');
+}
+
+function chimps_after_entry(){
+	do_action('chimps_after_entry');
+}
+
+/** 
 * Pagination 
 */
 function chimps_main_index_pagination() { 
