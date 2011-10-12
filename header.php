@@ -122,6 +122,7 @@
 <link rel="shortcut icon" href="<?php echo stripslashes($favicon['url']); ?>" type="image/x-icon" />
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+<? $font='arial'; // Is this supposed to be something? ?>
 <link href='http://fonts.googleapis.com/css?family=<?php echo $font ?>' rel='stylesheet' type='text/css' />
 	
 	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>

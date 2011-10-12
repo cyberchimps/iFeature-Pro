@@ -18,28 +18,28 @@
 
     $tmp_query = $wp_query; 
 	$root = get_template_directory_uri(); 
-	$size = $options[$themeslug.'_slider_size'];
-	$size2 = $options[$themeslug.'_blog_sidebar'];
-	$type = $options[$themeslug.'_slider_type']; 
-	$category = $options[$themeslug.'_slider_category']; 
-	$customcategory = $options[$themeslug.'_customslider_category'];
-	$captionstyle = $options[$themeslug.'_caption_style'];
-	$sliderheight = $options[$themeslug.'_slider_height'];
-	$navautohide = $options[$themeslug.'_disable_nav_autohide'];
-	$hidenav = $options[$themeslug.'_hide_slider_arrows'];
-	$timdisable = $options[$themeslug.'_disable_wordthumb'];
+	$size = v($options, $themeslug.'_slider_size');
+	$size2 = v($options, $themeslug.'_blog_sidebar');
+	$type = v($options, $themeslug.'_slider_type'); 
+	$category = v($options, $themeslug.'_slider_category'); 
+	$customcategory = v($options, $themeslug.'_customslider_category');
+	$captionstyle = v($options, $themeslug.'_caption_style');
+	$sliderheight = v($options, $themeslug.'_slider_height');
+	$navautohide = v($options, $themeslug.'_disable_nav_autohide');
+	$hidenav = v($options, $themeslug.'_hide_slider_arrows');
+	$timdisable = v($options, $themeslug.'_disable_wordthumb');
 
 	
 /* End define variables. */	
 
 /* Define slider animation variable */
 
-	if ($options[$themeslug.'_slider_animation'] == '') {
+	if (v($options, $themeslug.'_slider_animation') == '') {
 		$animation = 'random';	
 	}
 
 	else {
-		$animation = $options[$themeslug.'_slider_animation'];
+		$animation = v($options, $themeslug.'_slider_animation');
 	}
 
 /* End slider animation */		
@@ -148,12 +148,12 @@
 
 /* Query posts based on theme/meta options */
 
-	if ($options[$themeslug.'_slider_type'] == '') {
+	if (v($options, $themeslug.'_slider_type') == '') {
 		$usecustomslides = 'posts';
 	}	
 
 	else {
-		$usecustomslides = $options[$themeslug.'_slider_type'];
+		$usecustomslides = v($options, $themeslug.'_slider_type');
 	}
 
 /* Query posts based on theme/meta options */
@@ -174,7 +174,7 @@
 	    $out = "<div id='slider' class='nivoSlider'>"; 
 	    $i = 0;
 
-	if ($options[$themeslug.'_slider_posts_number'] == '') {
+	if (v($options, $themeslug.'_slider_posts_number') == '') {
 	    $no = '5';    	
 	}   	
 
@@ -183,7 +183,7 @@
 	}
 
 	else {
-		$no = $options[$themeslug.'_slider_posts_number'];
+		$no = v($options, $themeslug.'_slider_posts_number');
 	}
 
 /* End post counter */	    	
@@ -327,19 +327,19 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 
 /* Define slider delay variable */ 
     
-	if ($options[$themeslug.'_slider_delay'] == '') {
+	if (v($options, $themeslug.'_slider_delay') == '') {
 	    $delay = '3500';
 	}    
 
 	else {
-		$delay = $options[$themeslug.'_slider_delay'];
+		$delay = v($options, $themeslug.'_slider_delay');
 	}
 
 /* End slider delay variable */ 	
 
 /* Define slider navigation variable */ 
   	
-	if ($options[$themeslug.'_slider_navigation'] == '1') {
+	if (v($options, $themeslug.'_slider_navigation') == '1') {
 	    $csNavigation = 'false';
 	}
 
@@ -365,7 +365,7 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 	
 /* Define slider navigation style */ 		
 	
-	if ($options[$themeslug.'_slider_nav'] == 'dots' OR $options[$themeslug.'_slider_nav'] == '') {
+	if (v($options, $themeslug.'_slider_nav') == 'dots' OR v($options, $themeslug.'_slider_nav') == '') {
 		
 		echo '<style type="text/css">';
 		echo ".nivo-controlNav a {background: url($root/images/bullets.png) no-repeat; display:block; width:22px; height:22px; 	text-indent:-9999px; border:0; margin-right:3px; float:left;}";
@@ -374,7 +374,7 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 		
 	}
  
-	if ($options[$themeslug.'_slider_nav'] == "none")  {
+	if (v($options, $themeslug.'_slider_nav') == "none")  {
 			
 		echo '<style type="text/css">';
 		echo ".nivo-controlNav {display: none;}";

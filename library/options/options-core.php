@@ -204,15 +204,16 @@ if ( isset( $_REQUEST['reset'] ))
 /* Update theme options after saving the import code */
   
 if ( isset( $_REQUEST['updated'] ))
-
+{
 	$options = get_option($themename);
-  	$checkimport = $options[$themeslug.'_import_code'];
+	
+  if(!isset($options[$themeslug.'_import_code'])) $options[$themeslug.'_import_code']='';  
+	$checkimport = $options[$themeslug.'_import_code'];
 
-		if ($checkimport != '' ) {
-		
-			$import = $options[$themeslug.'_import_code'];
-
-			$options_array = (unserialize($import));
-  			update_option( ''.$themename.'', $options_array );
-		}   		
-?>
+	if ($checkimport != '' ) 
+	{
+		$import = $options[$themeslug.'_import_code'];
+		$options_array = (unserialize($import));
+		update_option( ''.$themename.'', $options_array );
+	}   		
+}

@@ -15,7 +15,7 @@ function disable_breadcrumbs() {
 	global $options;
 	$root = get_template_directory_uri();
 	
-	if ($options['if_disable_breadcrumbs'] == "1") {
+	if (v($options, 'if_disable_breadcrumbs') == "1") {
 		
 		echo '<style type="text/css">';
 		echo "#crumbs {display: none;}";
@@ -31,7 +31,7 @@ function plusone_alignment() {
 
 	global $themename, $themeslug, $options;
 	
-	if ($options[$themeslug.'_show_fb_like'] == "1" AND $options[$themeslug.'_show_gplus'] == "1" ) {
+	if (v($options, $themeslug.'_show_fb_like') == "1" AND v($options, $themeslug.'_show_gplus') == "1" ) {
 
 		echo '<style type="text/css">';
 		echo ".gplusone {float: right; margin-right: -38px;}";
@@ -49,7 +49,7 @@ function featured_image_alignment() {
 
 	global $themename, $themeslug, $options;
 	
-	if ($options[$themeslug.'_featured_images'] == "right" ) {
+	if (v($options, $themeslug.'_featured_images') == "right" ) {
 
 		echo '<style type="text/css">';
 		echo ".featured-image {float: right;}";
@@ -57,7 +57,7 @@ function featured_image_alignment() {
 		
 	}
 	
-	elseif ($options[$themeslug.'_featured_images'] == "center" ) {
+	elseif (v($options, $themeslug.'_featured_images') == "center" ) {
 
 		echo '<style type="text/css">';
 		echo ".featured-image {text-align: center;}";
@@ -84,7 +84,7 @@ function hide_header() {
 
 	global $themename, $themeslug, $options;
 
-	if ($options[$themeslug.'_hide_header'] == "1") {
+	if (v($options, $themeslug.'_hide_header') == "1") {
 
 		echo '<style type="text/css">';
 		echo "#headerwrap {display: none;}";
@@ -102,7 +102,7 @@ function post_meta_data_width() {
 
 	global $themename, $themeslug, $options;
 
-	if ($options[$themeslug.'_blog_sidebar'] == "two-right" OR $options[$themeslug.'_blog_sidebar'] == "right-left") {
+	if (v($options, $themeslug.'_blog_sidebar') == "two-right" OR v($options, $themeslug.'_blog_sidebar') == "right-left") {
 
 		echo '<style type="text/css">';
 		echo ".postmetadata {width: 480px;}";
@@ -121,7 +121,7 @@ function add_menu_color() {
 	global $themename, $themeslug, $options;
 	$root = get_template_directory_uri(); 
 
-	if  ($options[$themeslug.'_menu_color'] == "") {
+	if  (v($options, $themeslug.'_menu_color') == "") {
 		
 		echo '<style type="text/css">';
 		echo "#navbackground {background: url($root/images/menu/Grey.png) no-repeat left top}";
@@ -130,9 +130,9 @@ function add_menu_color() {
 	}
 
 	
-	elseif ($options[$themeslug.'_menu_color'] != "picker" && $options[$themeslug.'_menu_color'] != "") {
+	elseif (v($options, $themeslug.'_menu_color') != "picker" && v($options, $themeslug.'_menu_color') != "") {
 	
-		$menucolor = $options[$themeslug.'_menu_color'];
+		$menucolor = v($options, $themeslug.'_menu_color');
 		
 		echo '<style type="text/css">';
 		echo "#navbackground {background: url($root/images/menu/$menucolor.png) no-repeat left top}";
@@ -140,9 +140,9 @@ function add_menu_color() {
 		
 	}
 	
-	elseif ($options[$themeslug.'_menu_color'] == "picker") {
+	elseif (v($options, $themeslug.'_menu_color') == "picker") {
 	
-		$menucolor = $options[$themeslug.'_custom_menu_color']; 
+		$menucolor = v($options, $themeslug.'_custom_menu_color'); 
 			
 		echo '<style type="text/css">';
 		echo "#navbackground {height: 35px; border: 1px solid #333; -moz-border-radius: 3px; border-radius: 3px; -moz-box-shadow:0 0 3px #444; -webkit-box-shadow:0 0 3px #444; box-shadow:0 0 3px #444;background-color: #$menucolor;}";
@@ -158,12 +158,12 @@ function add_sitetitle_color() {
 
 	global $themename, $themeslug, $options;
 
-	if (isset($options[$themeslug.'_sitetitle_color']) == "") {
+	if (v($options, $themeslug.'_sitetitle_color') == "") {
 		$sitetitle = '717171';
 	}
 	
 	else {
-		$sitetitle = $options[$themeslug.'_sitetitle_color']; 
+		$sitetitle = v($options, $themeslug.'_sitetitle_color'); 
 	}		
 	
 		echo '<style type="text/css">';
@@ -179,12 +179,12 @@ function add_link_color() {
 
 	global $themename, $themeslug, $options;
 
-	if (isset($options[$themeslug.'_link_color']) == "") {
+	if (!v($options, $themeslug.'_link_color')) {
 		$link = '717171';
 	}
 
 	else { 
-		$link = $options[$themeslug.'_link_color']; 
+		$link = v($options, $themeslug.'_link_color'); 
 	}				
 	
 		echo '<style type="text/css">';
@@ -201,12 +201,12 @@ function add_menulink_color() {
 
 	global $themename, $themeslug, $options;
 
-	if (isset($options[$themeslug.'_menulink_color']) == "") {
+	if (!v($options, $themeslug.'_menulink_color')) {
 		$sitelink = 'FFFFFF';
 	}
 	
 	else{ 
-		$sitelink = $options[$themeslug.'_menulink_color']; 
+		$sitelink = v($options, $themeslug.'_menulink_color'); 
 	}	
 		
 		echo '<style type="text/css">';
@@ -221,12 +221,12 @@ function add_tagline_color() {
 
 	global $themename, $themeslug, $options;
 
-	if (isset($options[$themeslug.'_tagline_color']) == "") {
+	if (v($options, $themeslug.'_tagline_color')) {
 		$tagline = '000';
 	}
 	
 	else { 
-		$tagline = $options[$themeslug.'_tagline_color']; 
+		$tagline = v($options, $themeslug.'_tagline_color'); 
 	}		
 		
 		echo '<style type="text/css">';
@@ -242,11 +242,11 @@ function add_posttitle_color() {
 
 	global $themename, $themeslug, $options;
 
-	if (isset($options[$themeslug.'_posttitle_color']) == "") {
+	if (!v($options, $themeslug.'_posttitle_color')) {
 		$posttitle = '717171';
 	}
 	else {
-		$posttitle = $options[$themeslug.'_posttitle_color']; 
+		$posttitle = v($options, $themeslug.'_posttitle_color'); 
 	}		
 		
 		echo '<style type="text/css">';
@@ -262,7 +262,7 @@ function fullwidth_nav() {
 
 	global $themename, $themeslug, $options;
 
-	if ($options[$themeslug.'_hide_search'] == "1" && $options[$themeslug.'_hide_home_icon'] == "") {
+	if (v($options, $themeslug.'_hide_search') == "1" && v($options, $themeslug.'_hide_home_icon') == "") {
 		
 		echo '<style type="text/css">';
 		echo "#searchbar {display: none;}";
@@ -270,7 +270,7 @@ function fullwidth_nav() {
 		echo '</style>';
 	}
 
-	elseif ($options[$themeslug.'_hide_search'] == "" && $options[$themeslug.'_hide_home_icon'] == "1" ) {
+	elseif (v($options, $themeslug.'_hide_search') == "" && v($options, $themeslug.'_hide_home_icon') == "1" ) {
 
 		echo '<style type="text/css">';
 		echo "#homebutton {display: none;}";
@@ -278,7 +278,7 @@ function fullwidth_nav() {
 		echo '</style>';
 	}
 
-	elseif ($options[$themeslug.'_hide_search'] == "1" && $options[$themeslug.'_hide_home_icon'] == "1" ) {
+	elseif (v($options, $themeslug.'_hide_search') == "1" && v($options, $themeslug.'_hide_home_icon') == "1" ) {
 
 		echo '<style type="text/css">';
 		echo "#homebutton {display: none;}";
@@ -296,9 +296,9 @@ function add_footer_color() {
 
 	global $themename, $themeslug, $options;
 
-	if (isset($options[$themeslug.'_footer_color']) != "" && $options[$themeslug.'_footer_color'] != "222222" ) {
+	if (v($options, $themeslug.'_footer_color') && v($options, $themeslug.'_footer_color') != "222222" ) {
 	
-		$footercolor = $options[$themeslug.'_footer_color']; 
+		$footercolor = v($options, $themeslug.'_footer_color'); 
 	
 	
 		echo '<style type="text/css">';
@@ -314,16 +314,16 @@ function add_menu_font() {
 		
 	global $themename, $themeslug, $options;	
 		
-	if ($options[$themeslug.'_menu_font'] == "") {
+	if (v($options, $themeslug.'_menu_font') == "") {
 		$font = 'Cantarell';
 	}		
 		
-	elseif ($options[$themeslug.'_custom_menu_font'] != "") {
-		$font = $options[$themeslug.'_custom_menu_font'];	
+	elseif (v($options, $themeslug.'_custom_menu_font') != "") {
+		$font = v($options, $themeslug.'_custom_menu_font');	
 	}
 	
 	else {
-		$font = $options[($themeslug.'_menu_font')]; 
+		$font = v($options, ($themeslug.'_menu_font')); 
 	}
 	
 		$fontstrip =  ereg_replace("[^A-Za-z0-9]", " ", $font );
@@ -342,7 +342,7 @@ function widget_title_bg() {
 	global $themename, $themeslug, $options;
 	$root = get_template_directory_uri();
 	
-	if ($options[$themeslug.'_widget_title_bg'] == "1") {
+	if (v($options, $themeslug.'_widget_title_bg') == "1") {
 		
 		echo '<style type="text/css">';
 		echo ".box-widget-title {background: url($root/images/wtitlebg.png) no-repeat center top; margin: -6px -5px 5px -5px;}";
@@ -360,7 +360,7 @@ function custom_css() {
 
 	global $themename, $themeslug, $options;
 	
-	$custom = $options[$themeslug.'_css_options'];
+	$custom = v($options, $themeslug.'_css_options');
 	echo '<style type="text/css">' . "\n";
 	echo custom_css_filter ( $custom ) . "\n";
 	echo '</style>' . "\n";

@@ -15,7 +15,7 @@
 
 /* Define variables. */	
 
-	$homeimage		= $options['file3'];
+	$homeimage		= v($options, 'file3');
 
 /* End variable definition. */
 
@@ -23,11 +23,11 @@
 
 <?php 
 				
-	if ($options[$themeslug.'_menu_color'] == "") {
+	if (v($options, $themeslug.'_menu_color') == "") {
 		$menucolor = 'Grey';
 	}
 	else {
-		$menucolor = $options[($themeslug.'_menu_color')]; 
+		$menucolor = v($options, ($themeslug.'_menu_color')); 
 	}	
 ?>		
 				

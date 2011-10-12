@@ -158,7 +158,7 @@ add_filter('excerpt_length', 'new_excerpt_length');
 /* End excerpt functions. */
 
 /* Add auto-feed links support. */	
-	add_theme_support('automatic-feed-links');
+add_theme_support('automatic-feed-links');
 	
 /* Add post-thumb support. */
 
@@ -188,17 +188,21 @@ if ( function_exists( 'add_theme_support' ) ) {
 }	
 	
 // This theme allows users to set a custom background
-	add_custom_background();
-	
+add_custom_background();
+
 // This theme styles the visual editor with editor-style.css to match the theme style.
-	add_editor_style();
-	
+add_editor_style();
+
 // Load jQuery
-	if ( !is_admin() ) {
+if ( !is_admin() ) {
+  function ifeature_frontend_scripts()
+  {
 	   wp_deregister_script('jquery');
 	   wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"), false);
 	   wp_enqueue_script('jquery');
-	}
+  }
+  add_action('wp_enqueue_scripts', 'ifeature_frontend_scripts');
+}
 
 /**
 * Attach CSS3PIE behavior to elements
