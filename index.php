@@ -77,7 +77,7 @@
 		<?php endwhile; ?>
 		
 		<!--Call @Core pagination-->
-		<?php chimps_pagination(); ?>
+		<?php chimps_main_index_pagination(); ?>
 
 		<?php else : ?>
 

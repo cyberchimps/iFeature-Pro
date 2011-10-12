@@ -18,15 +18,52 @@
 /** 
 * Header 
 */
+
+function chimps_before_header() {
+	do_action('chimps_before_header');
+}
+
+function chimps_after_header() {
+	do_action('chimps_after_header');
+}
+
 function chimps_header_left() {
 	do_action('chimps_header_left');
+}
+
+function chimps_header_left_logo() {
+	do_action('chimps_header_left_logo');
+}
+
+function chimps_header_right_contact_area() {
+	do_action('chimps_header_right_contact_area');
+}
+
+function chimps_header_right_social_icons() {
+	do_action('chimps_header_right_social_icons');
+}
+
+function chimps_navigation() {
+	do_action('chimps_navigation');
+}
+
+/** 
+* Content 
+*/
+
+function chimps_before_content() {
+	do_action('chimps_before_content');
+}
+
+function chimps_after_content() {
+	do_action('chimps_after_content');
 }
 
 /** 
 * Pagination 
 */
-function chimps_pagination() { 
-	do_action('chimps_pagination');
+function chimps_main_index_pagination() { 
+	do_action('chimps_main_index_pagination');
 }
 
 function chimps_links_pages() { 
