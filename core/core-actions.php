@@ -18,7 +18,8 @@
 /**
 * Core header actions
 */
-add_action('chimps_header', 'chimps_title_tag');
+add_action('chimps_after_head_tag', 'chimps_font_family');
+add_action('chimps_head_tag', 'chimps_title_tag');
 add_action('chimps_header_left', 'chimps_header_sitename');
 add_action('chimps_header_left', 'chimps_header_description');
 add_action('chimps_header_left_logo', 'chimps_header_logo');
@@ -42,7 +43,7 @@ function chimps_font_family(){
 	global $themeslug, $options; //Call global variables
 
 	if ($options[$themeslug.'_font'] == "" AND $options[$themeslug.'_custom_font'] == "") {
-		$font = 'Lucida Grande';
+		$font = 'Arial';
 	}		
 	elseif ($options[$themeslug.'_custom_font'] != "") {
 		$font = $options[$themeslug.'_custom_font'];	
@@ -53,7 +54,7 @@ function chimps_font_family(){
 	
 	$fontstrip =  ereg_replace("[^A-Za-z0-9]", " ", $font ); //Strip + from between font values with two names ?>
 	
-	<body style="font-family:'<?php echo $fontstrip ?>', Arial, serif" <?php body_class(); ?> >
+	<body style="font-family:'<?php echo $fontstrip ?>', Helvetica, serif" <?php body_class(); ?> >
 	<?php
 }
 

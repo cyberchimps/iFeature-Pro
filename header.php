@@ -28,24 +28,7 @@
 
 
 /* End variable definition. */	
-
-/* Establish fonts. */	
-
-	if ($options[$themeslug.'_font'] == "" AND $options[$themeslug.'_custom_font'] == "") {
-		$font = 'Lucida Grande';
-	}
-			
-	elseif ($options[$themeslug.'_custom_font'] != "") {
-		$font = $options[$themeslug.'_custom_font'];	
-	}
-		
-	else {
-		$font = $options[$themeslug.'_font']; 
-	}
 	
-	$fontstrip =  ereg_replace("[^A-Za-z0-9]", " ", $font );
-/* End fonts. */	
-
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -147,7 +130,7 @@
 	
 </head>
 
-<body style="font-family:'<?php echo $fontstrip ?>', Arial, serif" <?php body_class(); ?> >
+<?php chimps_after_head_tag(); ?>
 
 	
 	<div id="page-wrap">

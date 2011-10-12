@@ -18,13 +18,16 @@
 /** 
 * Header 
 */
+function chimps_after_head_tag() {
+	do_action('chimps_after_head_tag');
+}
 
 function chimps_before_header() {
 	do_action('chimps_before_header');
 }
 
-function chimps_header(){
-	do_action('chimps_header');
+function chimps_head_tag(){
+	do_action('chimps_head_tag');
 }
 
 function chimps_after_header() {
