@@ -18,7 +18,8 @@
 /**
 * Core header actions
 */
-add_action('chimps_header_left', 'chimps_header_title');
+add_action('chimps_header', 'chimps_title_tag');
+add_action('chimps_header_left', 'chimps_header_sitename');
 add_action('chimps_header_left', 'chimps_header_description');
 add_action('chimps_header_left_logo', 'chimps_header_logo');
 add_action('chimps_header_right_contact_area', 'chimps_header_contact_area');
@@ -36,8 +37,88 @@ add_action('chimps_links_pages', 'chimps_wp_link_pages');
 * Core header functions
 */
 
+//Fonts
+function chimps_font_family(){
+	global $themeslug, $options; //Call global variables
+
+	if ($options[$themeslug.'_font'] == "" AND $options[$themeslug.'_custom_font'] == "") {
+		$font = 'Lucida Grande';
+	}		
+	elseif ($options[$themeslug.'_custom_font'] != "") {
+		$font = $options[$themeslug.'_custom_font'];	
+	}	
+	else {
+		$font = $options[$themeslug.'_font']; 
+	}
+	
+	$fontstrip =  ereg_replace("[^A-Za-z0-9]", " ", $font ); //Strip + from between font values with two names ?>
+	
+	<body style="font-family:'<?php echo $fontstrip ?>', Arial, serif" <?php body_class(); ?> >
+	<?php
+}
+
+
+//Controls header title elements
+function chimps_title_tag(){
+	if ($paged>1 ) {
+		echo ' - page '. $paged;
+	}
+	/*Title for tags */
+	elseif (function_exists('is_tag') && is_tag()) {
+		bloginfo('name'); echo ' - '; single_tag_title("Tag Archive for &quot;"); echo '&quot;  ';
+	}
+	/*Title for archives */   
+	elseif (is_archive()) {
+		bloginfo('name'); echo ' - '; wp_title(''); echo ' Archive '; 
+	}
+	/*Title for search */     
+	elseif (is_search()) {
+		bloginfo('name'); echo ' - '; echo 'Search for &quot;'.wp_specialchars($s).'&quot;  '; 
+	}
+	/*Title for 404 */    
+	elseif (is_404()) {
+		bloginfo('name'); echo ' - '; echo 'Not Found '; 
+	}
+	/*Title if front page is latest posts and no custom title */
+	elseif (is_front_page() AND !is_page() AND $blogtitle == '') {
+		bloginfo('name'); echo ' - '; bloginfo('description'); 
+	}
+	/*Title if front page is latest posts with custom title */
+	elseif (is_front_page() AND !is_page() AND $blogtitle != '') {
+		bloginfo('name'); echo ' - '; echo $blogtitle ; 
+	}
+	/*Title if front page is static page and no custom title */
+	elseif (is_front_page() AND is_page() AND $title == '') {
+		bloginfo('name'); echo ' - '; bloginfo('description'); 
+	}
+	/*Title if front page is static page with custom title */
+	elseif (is_front_page() AND is_page() AND $title != '') {
+		bloginfo('name'); echo ' - '; echo $title ; 
+	}
+	/*Title if static page is static page with no custom title */
+	elseif (is_page() AND $title == '') {
+		bloginfo('name'); echo ' - '; wp_title(''); 
+	}
+	/*Title if static page is static page with custom title */
+	elseif (is_page() AND $title != '') {
+		bloginfo('name'); echo ' - '; echo $title ; 
+	}
+	/*Title if blog page with no custom title */
+	elseif (is_page() AND is_front_page() AND $blogtitle == '') {
+		bloginfo('name'); echo ' - '; wp_title(''); 
+	}
+	/*Title if blog page with custom title */ 
+	elseif ($blogtitle != '') {
+		bloginfo('name'); echo ' - '; echo $blogtitle ; 
+	}
+	/*Title if blog page without custom title */
+	else {
+		bloginfo('name'); echo ' - '; wp_title(''); 
+	}		    
+}
+
 //Controls header_left title
-function chimps_header_title(){ ?>
+function chimps_header_sitename(){ ?>
 	<div id="sitename">
 		<h1 class="sitename"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?> </a></h1>
 	</div>
