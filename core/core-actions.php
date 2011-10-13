@@ -20,6 +20,7 @@
 */
 add_action('chimps_after_head_tag', 'chimps_font_family');
 add_action('chimps_head_tag', 'chimps_title_tag');
+add_action('chimps_head_tag', 'chimps_meta_tags');
 add_action('chimps_header_left', 'chimps_header_sitename');
 add_action('chimps_header_left', 'chimps_header_description');
 add_action('chimps_header_left_logo', 'chimps_header_logo');
@@ -39,7 +40,7 @@ add_action('chimps_links_pages', 'chimps_wp_link_pages');
 */
 
 //Fonts
-function chimps_font_family(){
+function chimps_font_family() {
 	global $themeslug, $options; //Call global variables
 
 	if ($options[$themeslug.'_font'] == "" AND $options[$themeslug.'_custom_font'] == "") {
@@ -56,6 +57,40 @@ function chimps_font_family(){
 	
 	<body style="font-family:'<?php echo $fontstrip ?>', Helvetica, serif" <?php body_class(); ?> >
 	<?php
+}
+
+//Meta tags
+function chimps_meta_tags() {
+	global $themeslug, $options; //Call global variables
+
+	$blogtitle = $options[$themeslug.'_home_title'];
+	$homekeywords = $options[$themeslug.'_home_keywords'];
+	$homedescription = $options[$themeslug.'_home_description'];
+
+	$title = get_post_meta($post->ID, 'seo_title' , true);
+	$pagedescription = get_post_meta($post->ID, 'seo_description' , true);
+	$keywords = get_post_meta($post->ID, 'seo_keywords' , true); 
+	
+	
+	if ($blogtitle != '' AND is_front_page()) {
+		echo "<meta name='title' content='$blogtitle'/>";
+	}
+	if ($homedescription != '' AND is_front_page()) {
+		echo "<meta name='description' content='$homedescription' />";
+	}
+	if ($homekeywords != '' AND is_front_page()) {
+		echo "<meta name='keywords' content=' $homekeywords' />";
+	}
+	
+	if ($title != '' AND !is_front_page()) {
+		echo "<meta name='title' content='$title' />";
+	}
+	if ($pagedescription != '' AND !is_front_page()) {
+		echo "<meta name='description' content='echo $pagedescription'/>";
+	}
+	if ($keywords != '' AND !is_front_page()) {
+		echo "<meta name='keywords' content='$keywords'/>";
+	}	
 }
 
 
