@@ -16,17 +16,11 @@
 
 /* Define variables. */	
 
-	$blogtitle = $options[$themeslug.'_home_title'];
-	$homekeywords = $options[$themeslug.'_home_keywords'];
-	$homedescription = $options[$themeslug.'_home_description'];
+
 	$logo = $options['file'] ;
 	$favicon = $options['file2'];
 	$headercontact = $options[$themeslug.'_header_contact'] ;
-	$title = get_post_meta($post->ID, 'seo_title' , true);
-	$pagedescription = get_post_meta($post->ID, 'seo_description' , true);
-	$keywords = get_post_meta($post->ID, 'seo_keywords' , true);
-
-
+	
 /* End variable definition. */	
 	
 ?>
@@ -34,24 +28,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes('xhtml'); ?>>
-
 <head profile="http://gmpg.org/xfn/11">
-	
-<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
-<meta name="distribution" content="global" />
-<meta name="language" content="en" />
 
 <?php chimps_head_tag(); ?>
 
-<link rel="shortcut icon" href="<?php echo stripslashes($favicon['url']); ?>" type="image/x-icon" />
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
-<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-<? $font='arial'; // Is this supposed to be something? ?>
-<link href='http://fonts.googleapis.com/css?family=<?php echo $font ?>' rel='stylesheet' type='text/css' />
-	
-	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
-    
-	<?php wp_head(); ?>
+<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
+<?php wp_head(); ?>
 	
 </head>
 

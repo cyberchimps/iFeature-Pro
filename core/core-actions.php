@@ -19,8 +19,9 @@
 * Core header actions
 */
 add_action('chimps_after_head_tag', 'chimps_font_family');
-add_action('chimps_head_tag', 'chimps_title_tag');
 add_action('chimps_head_tag', 'chimps_meta_tags');
+add_action('chimps_head_tag', 'chimps_link_rel');
+add_action('chimps_head_tag', 'chimps_title_tag');
 add_action('chimps_header_left', 'chimps_header_sitename');
 add_action('chimps_header_left', 'chimps_header_description');
 add_action('chimps_header_left_logo', 'chimps_header_logo');
@@ -43,43 +44,51 @@ add_action('chimps_links_pages', 'chimps_wp_link_pages');
 function chimps_font_family() {
 	global $themeslug, $options; //Call global variables
 
-	if (v($options, $themeslug.'_font') == "" AND v($options, $themeslug.'_custom_font') == "") {
+	if (v($options, $themeslug.'_font') == "" AND v($options, $themeslug.'_custom_font') == "") 
+	{
 		$font = 'Arial';
 	}		
-	elseif (v($options, $themeslug.'_custom_font') != "") {
+	elseif (v($options, $themeslug.'_custom_font') != "") 
+	{
 		$font = v($options, $themeslug.'_custom_font');	
 	}	
-	else {
+	else 
+	{
 		$font = v($options, $themeslug.'_font'); 
 	}
 	
-	$fontstrip =  ereg_replace("[^A-Za-z0-9]", " ", $font ); //Strip + from between font values with two names ?>
+ ?>
 	
-	<body style="font-family:'<?php echo $fontstrip ?>', Helvetica, serif" <?php body_class(); ?> >
+	<body style="font-family:'<?php echo ereg_replace("[^A-Za-z0-9]", " ", $font ); ?>', Helvetica, serif" <?php body_class(); ?> >
 	<?php
 }
 
 //Meta tags
 function chimps_meta_tags() {
 	global $themeslug, $options; //Call global variables
-
-	$blogtitle = $options[$themeslug.'_home_title'];
-	$homekeywords = $options[$themeslug.'_home_keywords'];
-	$homedescription = $options[$themeslug.'_home_description'];
-
 	$title = get_post_meta($post->ID, 'seo_title' , true);
 	$pagedescription = get_post_meta($post->ID, 'seo_description' , true);
 	$keywords = get_post_meta($post->ID, 'seo_keywords' , true); 
-	
-	
-	if ($blogtitle != '' AND is_front_page()) {
-		echo "<meta name='title' content='$blogtitle'/>";
+	if (v($options, $themeslug.'_home_title') != '' AND is_front_page()) 
+	{ 
+?>
+<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+<meta name="distribution" content="global" />
+<meta name="language" content="en" />
+<meta name='title' content='<?php echo v($options, $themeslug.'_home_title') ;?>'/> 
+<?php
 	}
-	if ($homedescription != '' AND is_front_page()) {
-		echo "<meta name='description' content='$homedescription' />";
+	if (v($options, $themeslug.'_home_description') != '' AND is_front_page()) 
+	{ 
+?>
+<meta name='description' content='<?php echo v($options, $themeslug.'_home_description') ;?>' />
+<?php
 	}
-	if ($homekeywords != '' AND is_front_page()) {
-		echo "<meta name='keywords' content=' $homekeywords' />";
+	if (v($options, $themeslug.'_home_keywords') != '' AND is_front_page()) 
+	{ 
+?>
+<meta name='keywords' content=' <?php echo v($options, $themeslug.'_home_keywords') ; ?>' /> 
+<?php
 	}
 	
 	if ($title != '' AND !is_front_page()) {
@@ -95,52 +104,65 @@ function chimps_meta_tags() {
 
 
 //Controls header title elements
-function chimps_title_tag(){
-	if ($paged>1 ) {
+function chimps_title_tag(){?>
+	<title><?php
+	if ($paged>1 ) 
+	{
 		echo ' - page '. $paged;
 	}
 	/*Title for tags */
-	elseif (function_exists('is_tag') && is_tag()) {
+	elseif (function_exists('is_tag') && is_tag()) 
+	{
 		bloginfo('name'); echo ' - '; single_tag_title("Tag Archive for &quot;"); echo '&quot;  ';
 	}
 	/*Title for archives */   
-	elseif (is_archive()) {
+	elseif (is_archive()) 
+	{
 		bloginfo('name'); echo ' - '; wp_title(''); echo ' Archive '; 
 	}
 	/*Title for search */     
-	elseif (is_search()) {
+	elseif (is_search()) 
+	{
 		bloginfo('name'); echo ' - '; echo 'Search for &quot;'.wp_specialchars($s).'&quot;  '; 
 	}
 	/*Title for 404 */    
-	elseif (is_404()) {
+	elseif (is_404()) 
+	{
 		bloginfo('name'); echo ' - '; echo 'Not Found '; 
 	}
 	/*Title if front page is latest posts and no custom title */
-	elseif (is_front_page() AND !is_page() AND $blogtitle == '') {
+	elseif (is_front_page() AND !is_page() AND $blogtitle == '') 
+	{
 		bloginfo('name'); echo ' - '; bloginfo('description'); 
 	}
 	/*Title if front page is latest posts with custom title */
-	elseif (is_front_page() AND !is_page() AND $blogtitle != '') {
+	elseif (is_front_page() AND !is_page() AND $blogtitle != '') 
+	{
 		bloginfo('name'); echo ' - '; echo $blogtitle ; 
 	}
 	/*Title if front page is static page and no custom title */
-	elseif (is_front_page() AND is_page() AND $title == '') {
+	elseif (is_front_page() AND is_page() AND $title == '') 
+	{
 		bloginfo('name'); echo ' - '; bloginfo('description'); 
 	}
 	/*Title if front page is static page with custom title */
-	elseif (is_front_page() AND is_page() AND $title != '') {
+	elseif (is_front_page() AND is_page() AND $title != '') 
+	{
 		bloginfo('name'); echo ' - '; echo $title ; 
 	}
 	/*Title if static page is static page with no custom title */
-	elseif (is_page() AND $title == '') {
+	elseif (is_page() AND $title == '') 
+	{
 		bloginfo('name'); echo ' - '; wp_title(''); 
 	}
 	/*Title if static page is static page with custom title */
-	elseif (is_page() AND $title != '') {
+	elseif (is_page() AND $title != '') 
+	{
 		bloginfo('name'); echo ' - '; echo $title ; 
 	}
 	/*Title if blog page with no custom title */
-	elseif (is_page() AND is_front_page() AND $blogtitle == '') {
+	elseif (is_page() AND is_front_page() AND $blogtitle == '') 
+	{
 		bloginfo('name'); echo ' - '; wp_title(''); 
 	}
 	/*Title if blog page with custom title */ 
@@ -148,9 +170,22 @@ function chimps_title_tag(){
 		bloginfo('name'); echo ' - '; echo $blogtitle ; 
 	}
 	/*Title if blog page without custom title */
-	else {
+	else 
+	{
 		bloginfo('name'); echo ' - '; wp_title(''); 
-	}		    
+	}?>
+	</title><?php	    
+}
+
+//Link rel
+function chimps_link_rel(){
+?>
+<link rel="shortcut icon" href="<?php echo stripslashes($favicon['url']); ?>" type="image/x-icon" />
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
+<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+<link href='http://fonts.googleapis.com/css?family=<?php echo v($options, $themeslug.'_font'); ?>' rel='stylesheet' type='text/css' />
+
+<?php
 }
 
 //Controls header_left title

@@ -16,11 +16,7 @@
 
 /* Define Variables. */	
 
-  function v($arr,$key, $default='')
-  {
-    if(!isset($arr[$key])) return $default;
-    return $arr[$key];
-  }
+
 
 	$hideslider = v($options, $themeslug.'_hide_slider_blog');
 	$blogsidebar = v($options,$themeslug.'_blog_sidebar');

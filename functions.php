@@ -15,6 +15,12 @@
 	$themenamefull = 'iFeature';
 	$themeslug = 'if';
 	$options = get_option($themename);
+	
+function v($arr,$key, $default='')
+  {
+    if(!isset($arr[$key])) return $default;
+    return $arr[$key];
+  }
 
 /* End global variables. */	
 
