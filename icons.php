@@ -14,26 +14,26 @@
 
 /* Define variables. */	
  
-	$facebook		= $options[$themeslug.'_facebook'];
-	$hidefacebook   = $options[$themeslug.'_hide_facebook'];
-	$twitter		= $options[$themeslug.'_twitter'] ;
-	$hidetwitter    = $options[$themeslug.'_hide_twitter'];
-	$gplus		    = $options[$themeslug.'_gplus'] ;
-	$hidegplus      = $options[$themeslug.'_hide_gplus'];
-	$flickr		    = $options[$themeslug.'_flickr'] ;
-	$hideflickr      = $options[$themeslug.'_hide_flickr'];
-	$myspace	    = $options[$themeslug.'_myspace'] ;
-	$hidemyspace        = $options[$themeslug.'_hide_myspace'];
-	$linkedin		= $options[$themeslug.'_linkedin'] ;
-	$hidelinkedin   = $options[$themeslug.'_hide_linkedin'];
-	$youtube		= $options[$themeslug.'_youtube'];
-	$hideyoutube    = $options[$themeslug.'_hide_youtube'];
-	$googlemaps		= $options[$themeslug.'_googlemaps'];
-	$hidegooglemaps = $options[$themeslug.'_hide_googlemaps'];
-	$email			= $options[$themeslug.'_email'];
-	$hideemail      = $options[$themeslug.'_hide_email'];
-	$rss			= $options[$themeslug.'_rsslink'] ;
-	$hiderss   		= $options[$themeslug.'_hide_rss'];
+	$facebook		= v($options, $themeslug.'_facebook');
+	$hidefacebook   = v($options, $themeslug.'_hide_facebook');
+	$twitter		= v($options, $themeslug.'_twitter') ;
+	$hidetwitter    = v($options, $themeslug.'_hide_twitter');
+	$gplus		    = v($options, $themeslug.'_gplus') ;
+	$hidegplus      = v($options, $themeslug.'_hide_gplus');
+	$flickr		    = v($options, $themeslug.'_flickr') ;
+	$hideflickr      = v($options, $themeslug.'_hide_flickr');
+	$myspace	    = v($options, $themeslug.'_myspace') ;
+	$hidemyspace        = v($options, $themeslug.'_hide_myspace');
+	$linkedin		= v($options, $themeslug.'_linkedin') ;
+	$hidelinkedin   = v($options, $themeslug.'_hide_linkedin');
+	$youtube		= v($options, $themeslug.'_youtube');
+	$hideyoutube    = v($options, $themeslug.'_hide_youtube');
+	$googlemaps		= v($options, $themeslug.'_googlemaps');
+	$hidegooglemaps = v($options, $themeslug.'_hide_googlemaps');
+	$email			= v($options, $themeslug.'_email');
+	$hideemail      = v($options, $themeslug.'_hide_email');
+	$rss			= v($options, $themeslug.'_rsslink') ;
+	$hiderss   		= v($options, $themeslug.'_hide_rss');
 
 /* Define variables. */	
 

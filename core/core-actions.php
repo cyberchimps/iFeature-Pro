@@ -43,14 +43,14 @@ add_action('chimps_links_pages', 'chimps_wp_link_pages');
 function chimps_font_family() {
 	global $themeslug, $options; //Call global variables
 
-	if ($options[$themeslug.'_font'] == "" AND $options[$themeslug.'_custom_font'] == "") {
+	if (v($options, $themeslug.'_font') == "" AND v($options, $themeslug.'_custom_font') == "") {
 		$font = 'Arial';
 	}		
-	elseif ($options[$themeslug.'_custom_font'] != "") {
-		$font = $options[$themeslug.'_custom_font'];	
+	elseif (v($options, $themeslug.'_custom_font') != "") {
+		$font = v($options, $themeslug.'_custom_font');	
 	}	
 	else {
-		$font = $options[$themeslug.'_font']; 
+		$font = v($options, $themeslug.'_font'); 
 	}
 	
 	$fontstrip =  ereg_replace("[^A-Za-z0-9]", " ", $font ); //Strip + from between font values with two names ?>
@@ -182,7 +182,7 @@ function chimps_header_contact_area(){
 	global $themeslug, $options; ?>
 	
 	<div id="header_contact1">
-		<?php echo stripslashes ($options[$themeslug.'_header_contact']); ?>
+		<?php echo stripslashes (v($options, $themeslug.'_header_contact')); ?>
 	</div>
 	<?php 
 }
