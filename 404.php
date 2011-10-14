@@ -12,6 +12,19 @@
 	
 /* End header. */
 
+function chimp_yield($filter_name)
+{
+  $fname = dirname(__FILE__)."/templates/pro/$filter_name.php";
+  $default_content = '';
+  if(file_exists($fname))
+  {
+    ob_start();
+    require($fname);
+    $default_content = ob_get_clean();
+  } 
+  return apply_filters($filter_name, $default_content);
+}
+
 ?>
 
 <div id="content_wrap">
@@ -19,11 +32,7 @@
 	<div id="content_left">
 	
 		<div class="content_padding">
-
-			<div class="error">Error 404<br />
-				<center></center><img src="<?php echo get_template_directory_uri() ;?>/images/confusedchimp.png" height="400" width="400" /></center>
-			</div>
-		
+      <?= chimp_yield('chimp_404_content') ?>
 		</div><!--end content_padding-->
 		
 	</div><!--end content_left-->
