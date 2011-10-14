@@ -16,11 +16,7 @@
 	$themeslug = 'if';
 	$options = get_option($themename);
 	
-function v($arr,$key, $default='')
-  {
-    if(!isset($arr[$key])) return $default;
-    return $arr[$key];
-  }
+
 
 /* End global variables. */	
 
@@ -615,6 +611,7 @@ add_action( 'admin_bar_menu', 'admin_link', 113 );
 
 require_once ( get_template_directory() . '/core/core-actions.php' );
 require_once ( get_template_directory() . '/core/core-hooks.php' );
+require_once ( get_template_directory() . '/core/core-functions.php' );
 
 
 // Call additional template files
