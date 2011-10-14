@@ -65,7 +65,8 @@ function chimps_font_family() {
 
 //Meta tags
 function chimps_meta_tags() {
-	global $themeslug, $options; //Call global variables
+	global $themeslug, $options, $post; //Call global variables
+	if(!$post) return; // in case of 404 page or something
 	$title = get_post_meta($post->ID, 'seo_title' , true);
 	$pagedescription = get_post_meta($post->ID, 'seo_description' , true);
 	$keywords = get_post_meta($post->ID, 'seo_keywords' , true); 
