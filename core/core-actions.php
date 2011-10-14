@@ -69,12 +69,15 @@ function chimps_meta_tags() {
 	$title = get_post_meta($post->ID, 'seo_title' , true);
 	$pagedescription = get_post_meta($post->ID, 'seo_description' , true);
 	$keywords = get_post_meta($post->ID, 'seo_keywords' , true); 
-	if (v($options, $themeslug.'_home_title') != '' AND is_front_page()) 
-	{ 
+	
 ?>
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <meta name="distribution" content="global" />
 <meta name="language" content="en" />
+<?php
+if (v($options, $themeslug.'_home_title') != '' AND is_front_page()) 
+	{ 
+?>
 <meta name='title' content='<?php echo v($options, $themeslug.'_home_title') ;?>'/> 
 <?php
 	}
@@ -178,7 +181,8 @@ function chimps_title_tag(){?>
 }
 
 //Link rel
-function chimps_link_rel(){
+function chimps_link_rel()
+	{
 ?>
 <link rel="shortcut icon" href="<?php echo stripslashes($favicon['url']); ?>" type="image/x-icon" />
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
@@ -189,31 +193,38 @@ function chimps_link_rel(){
 }
 
 //Controls header_left title
-function chimps_header_sitename(){ ?>
+function chimps_header_sitename()
+	{ 
+?>
 	<div id="sitename">
 		<h1 class="sitename"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?> </a></h1>
 	</div>
-	<?php
+<?php
 }
 
 //Controls header_left description
-function chimps_header_description(){ ?>
+function chimps_header_description()
+	{ 
+?>
 	<div id="description">
 		<h1 class="description"><?php bloginfo('description'); ?></h1>
 	</div>
-	<?php
+<?php
 }
 
 //Controls header_left logo
-function chimps_header_logo(){ ?>
+function chimps_header_logo()
+	{ 
+?>
 	<div id="logo">
 		<a href="<?php echo home_url(); ?>/"><img src="<?php echo stripslashes($logo['url']); ?>" alt="logo"></a>
 	</div>
-	<?php
+<?php
 }
 
 //Controls header_right contact area
-function chimps_header_contact_area(){ 
+function chimps_header_contact_area()
+	{ 
 	global $themeslug, $options; ?>
 	
 	<div id="header_contact1">
@@ -223,15 +234,18 @@ function chimps_header_contact_area(){
 }
 
 //Controls header_right social icons
-function chimps_header_social_icons(){ ?>
+function chimps_header_social_icons()
+	{ 
+?>
 	<div id="social">
 		<?php get_template_part('icons', 'header'); ?>
 	</div>
-	<?php
+<?php
 }
 
 //Controls navigation
-function chimps_nav() {
+function chimps_nav() 
+{
 	get_template_part('nav', 'header' ); 
 }
 
@@ -240,28 +254,30 @@ function chimps_nav() {
 */
 
 //Controls previous posts link for main blog index pages
-function chimps_previous_posts() {
+function chimps_previous_posts() 
+	{
 	$previous_text = apply_filters('chimps_previous_posts_text', '&laquo; Older Entries' ); //filter for changing older entries link text
-	
-	?>
+?>
 	<div class='next-posts'>
 	<?php next_posts_link($previous_text);?>
 	</div>
-	<?php
+<?php
 }
 
 //Controls next posts link for main blog index pages
-function chimps_newer_posts() {
+function chimps_newer_posts() 
+	{
 	$newer_text = apply_filters('chimps_previous_posts_text', 'Newer Entries &raquo;' ); //filter for changing newer entries link text
-	?>
+?>
 	<div class='prev-posts'>
 	<?php previous_posts_link($newer_text); ?>
 	</div>
-	<?php
+<?php
 }
 
 //Controls page-links for paginated posts
-function chimps_wp_link_pages() {
+function chimps_wp_link_pages() 
+	{
 	wp_link_pages(array(
 		'before' => 'Pages: ', 
 		'next_or_number' => 'number')
