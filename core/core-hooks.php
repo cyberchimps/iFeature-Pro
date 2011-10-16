@@ -54,6 +54,10 @@ function chimps_navigation() {
 	do_action('chimps_navigation');
 }
 
+function chimps_404_content() {
+  do_action('chimps_404_content');
+}
+
 /** 
 * Content 
 */

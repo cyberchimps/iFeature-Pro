@@ -613,6 +613,7 @@ require_once ( get_template_directory() . '/core/core-actions.php' );
 require_once ( get_template_directory() . '/core/core-hooks.php' );
 require_once ( get_template_directory() . '/core/core-functions.php' );
 
+do_action('chimps_init');
 
 // Call additional template files
 	

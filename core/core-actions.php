@@ -28,6 +28,7 @@ add_action('chimps_header_left_logo', 'chimps_header_logo');
 add_action('chimps_header_right_contact_area', 'chimps_header_contact_area');
 add_action('chimps_header_right_social_icons', 'chimps_header_social_icons');
 add_action('chimps_navigation', 'chimps_nav');
+add_action('chimps_404_content', 'chimps_404_content_handler');
 
 /**
 * Core pagination actions
@@ -283,6 +284,15 @@ function chimps_wp_link_pages()
 		'before' => 'Pages: ', 
 		'next_or_number' => 'number')
 	);
+}
+
+function chimps_404_content_handler()
+{
+  ?>
+  <div class="error">Parent 404 Handler<br />
+  	<center></center><img src="<?php echo get_template_directory_uri() ;?>/images/confusedchimp.png" height="400" width="400" /></center>
+  </div>
+  <?
 }
 
 /**

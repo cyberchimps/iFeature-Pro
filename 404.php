@@ -34,7 +34,7 @@ add_filter('chimp_404_content', 'my_custom_404_filter');
 	<div id="content_left">
 	
 		<div class="content_padding">
-      <?= chimp_yield('chimp_404_content') ?>
+      <?= chimps_404_content() ?>
 		</div><!--end content_padding-->
 		
 	</div><!--end content_left-->
