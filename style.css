@@ -196,16 +196,19 @@ input[type=text] { width: 120px; }
 
 .post_container {
 	background-color: #fff;
-	-moz-border-radius: 3px;
 	border-radius: 3px;
+	-moz-border-radius: 3px;
 	margin-bottom: 10px;
-	padding: 0 5px 5px 5px;
+	padding: 0px 5px 5px 5px;
+
 }
 
-.post_container ul {	
+.post_container ul {
+	
 	list-style: disc;
 	margin-left: 21px;
 	list-style-position: inside;
+
 }
 
 ol {
@@ -216,21 +219,22 @@ ol {
 
 .content-background {
 	background-color: #fff;
-	-moz-border-radius: 3px;
 	border-radius: 3px;
-	padding: 0 5px 5px 5px;
+	-moz-border-radius: 3px;
+	padding: 0px 5px 5px 5px;
 }
 
 .archive-contentbg {
 	background-color: #fff;
-	-moz-border-radius: 3px;
 	border-radius: 3px;
-	padding: 0 5px 5px 5px;
+	-moz-border-radius: 3px;
+	padding: 0px 5px 5px 5px;
 }
 
 .posts_title {
 	font-size: 24px;
 	font-weight: bold;
+	margin-bottom: 2px;
 }
 
 .post { 
@@ -239,12 +243,19 @@ ol {
 
 .entry {
 	padding-top: 5px;
+	margin-left: 1px;
 
+}
+
+.entry p {
+	clear: none;
 }
 
 .meta { 
 	color: #ababab;
 	font-size: 12px;
+	margin-left: 1px;
+	margin-bottom: 1px;
 }
 
 .postmetadata { 
@@ -252,13 +263,14 @@ ol {
 	font-size: 12px;
 	background-color: #f8f8f8;
 	height: 18px;
-	margin: auto;
+	margin-bottom: 0px;
 	padding-left: 2px;
 	border: 1px solid #ccc;
 	border-radius: 3px;
 	-moz-border-radius: 3px;
-}
-
+	position: relative;
+ }
+ 
 .post-edit-link {
 	background-color: #757575;
 	padding: 2px 3px;
@@ -266,15 +278,14 @@ ol {
 	font-size: 10px;
 	border-radius: 3px;
 	-moz-border-radius: 3px;
+	margin-left: 1px;
 }
 
 .alignleft,
 img.alignleft {
 	display: inline;
 	float: left;
-  	margin-right: 1.5em;
-  	margin-bottom: 5px;
-  	margin-top: 5px;
+  margin-right: 1.5em;
 }
 .alignright,
 img.alignright {
@@ -295,18 +306,8 @@ img.size-full {
 	height: auto;
 }
 
-.aligncenter, div.aligncenter {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.alignleft {
-	float: left;
-}
-
-.alignright {
-	float: right;
+p {
+     clear: both;
 }
 
 .wp-caption {
@@ -346,11 +347,10 @@ blockquote p { }
 
 .gallery-caption { }
 
-.navigation { }
+.navgation { }
+   .next-posts { float: left; }
+   .prev-posts { float: right; }
 
-.next-posts { float: left; }
-
-.prev-posts { float: right; }
 
 .featured-image {
 	margin-top: 8px; 
