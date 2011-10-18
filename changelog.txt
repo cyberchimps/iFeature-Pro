@@ -9,6 +9,7 @@ Version 2.1 (10-18-11)
 -Removed outdated get_bloginfo('url') call from breadcrumb function. 
 -Fixed several broken links in theme options page. 
 -Updated theme description and tags in stylesheet. 
+-Removed unecessary function_exists conditionals from sidebar templates. 
 
 Version 2.0.3 (10-05-11)
 -Small patch related to footer widgetized area.

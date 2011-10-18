@@ -54,7 +54,7 @@ case 'blog_title':
   
 <tr>
 
-    <td width="15%" rowspan="2" valign="middle"><font size="4"><b>BLOG OPTIONS</b></font> </td>
+    <td width="15%" rowspan="2" valign="middle"><font size="4"><b><?php printf( __( 'BLOG OPTIONS' ,'ifeature' )); ?></b></font> </td>
     <td width="85%"></td>
 
   </tr>
@@ -72,7 +72,7 @@ case 'slider_title':
   
 <tr>
 
-    <td width="20%" rowspan="2" valign="middle"><font size="4"><b>SLIDER OPTIONS</b></font> </td>
+    <td width="20%" rowspan="2" valign="middle"><font size="4"><b><?php printf( __( 'SLIDER OPTIONS' ,'ifeature' )); ?></b></font> </td>
     <td width="80%"></td>
 
   </tr>
@@ -90,7 +90,7 @@ case 'seo_title':
   
 <tr>
 
-    <td width="15%" rowspan="2" valign="middle"><font size="4"><b>SEO OPTIONS</b></font> </td>
+    <td width="15%" rowspan="2" valign="middle"><font size="4"><b><?php printf( __( 'SEO OPTIONS' ,'ifeature' )); ?></b></font> </td>
     <td width="85%"></td>
 
   </tr>
@@ -109,7 +109,7 @@ case 'general_faq':
 <tr>
 
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
-    <td width="85%">Read the <a href="http://cyberchimps.com/question/general-settings-tab-2/" target="_blank">General Options FAQ</a></td>
+    <td width="85%"><?php printf( __( 'Read the', 'ifeature' )); ?> <a href="http://cyberchimps.com/question/general-settings-tab-2/" target="_blank"><?php printf( __( 'General Options Tab FAQ', 'ifeature' )); ?></a></td>
 
   </tr>
  
@@ -127,7 +127,7 @@ case 'design_faq':
 <tr>
 
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
-    <td width="85%">Read the <a href="http://cyberchimps.com/question/design-settings-tab-2/" target="_blank">Design Options FAQ</a></td>
+    <td width="85%"><?php printf( __( 'Read the', 'ifeature' )); ?><a href="http://cyberchimps.com/question/design-settings-tab-2/" target="_blank"><?php printf( __( 'Design Options Tab FAQ', 'ifeature' )); ?></a></td>
 
   </tr>
  
@@ -145,7 +145,7 @@ case 'social_faq':
 <tr>
 
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
-    <td width="85%">Read the <a href="http://cyberchimps.com/question/pro-social-settings-tab/" target="_blank">Social Options FAQ</a></td>
+    <td width="85%"><?php printf( __( 'Read the', 'ifeature' )); ?><a href="http://cyberchimps.com/question/pro-social-settings-tab/" target="_blank"><?php printf( __( 'Social Options Tab FAQ', 'ifeature' )); ?></a></td>
 
   </tr>
  
@@ -163,7 +163,7 @@ case 'blog_faq':
 <tr>
 
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
-    <td width="85%">Read the <a href="http://cyberchimps.com/question/pro-blog-settings-tab/" target="_blank">Blog Options FAQ</a></td>
+    <td width="85%"><?php printf( __( 'Read the', 'ifeature' )); ?><a href="http://cyberchimps.com/question/pro-blog-settings-tab/" target="_blank"><?php printf( __( 'Blog Options Tab FAQ', 'ifeature' )); ?></a></td>
 
   </tr>
  
@@ -181,7 +181,7 @@ case 'footer_faq':
 <tr>
 
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
-    <td width="85%">Read the <a href="http://cyberchimps.com/question/pro-footer-settings-tab/" target="_blank">Footer Options FAQ</a></td>
+    <td width="85%"><?php printf( __( 'Read the', 'ifeature' )); ?><a href="http://cyberchimps.com/question/pro-footer-settings-tab/" target="_blank"><?php printf( __( 'Footer Options Tab FAQ', 'ifeature' )); ?></a></td>
 
   </tr>
  
@@ -199,7 +199,7 @@ case 'import_faq':
 <tr>
 
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
-    <td width="85%">Read the <a href="http://cyberchimps.com/question/pro-importexport-settings-tab/" target="_blank">Import/Export Options FAQ</a></td>
+    <td width="85%"<?php printf( __( 'Read the', 'ifeature' )); ?> <a href="http://cyberchimps.com/question/pro-importexport-settings-tab/" target="_blank"><?php printf( __( 'Import/Export Options Tab FAQ', 'ifeature' )); ?><</a></td>
 
   </tr>
  
@@ -218,7 +218,7 @@ case 'upload':
 
 <tr>
 
-<td width="15%" rowspan="2" valign="middle"><strong>Custom Logo</strong>
+<td width="15%" rowspan="2" valign="middle"><strong><?php printf( __(' Custom Logo' , 'ifeature' )); ?></strong>
 
 
 <tr>
@@ -240,7 +240,7 @@ case 'upload':
 
     
     <br />
-    <small>Upload a logo image to use, press "save settings" to save image.</small>
+    <small><?php printf( __( 'Upload a logo image to use', 'ifeature' )); ?></small>
 
 
 <?php
@@ -264,7 +264,7 @@ case 'upload2':
 
 <tr>
 
-<td width="15%" rowspan="2" valign="middle"><strong>Custom Favicon</strong>
+<td width="15%" rowspan="2" valign="middle"><strong><?php printf( __( 'Custom Favicon', 'ifeature' )); ?></strong>
 
 
  
@@ -287,7 +287,7 @@ case 'upload2':
 
     
     <br />
-    <small>Upload a favicon image to use, press "save settings" to save image.</small>
+    <small><?php printf( __( 'Upload a favicon image to use', 'ifeature' )); ?></small>
 
 
 <?php
@@ -309,7 +309,7 @@ case 'upload3':
 
 <tr>
 
-<td width="15%" rowspan="2" valign="middle"><strong>Custom Home Icon</strong>
+<td width="15%" rowspan="2" valign="middle"><strong><?php printf( __( 'Custom Home Icon', 'ifeature' )); ?></strong>
 
 
  
@@ -332,7 +332,7 @@ case 'upload3':
 
     
     <br />
-    <small>Upload a home icon image to use, press "save settings" to save image.</small>
+    <small><?php printf( __( 'Upload a home icon image to use, press "save settings" to save image.', 'ifeature' )); ?></small>
 
 
 <?php
@@ -356,7 +356,7 @@ case 'upload4':
 
 <tr>
 
-<td width="15%" rowspan="2" valign="middle"><strong>Custom Callout Image</strong>
+<td width="15%" rowspan="2" valign="middle"><strong><?php printf( __( 'Custom Callout Image', 'ifeature' )); ?></strong>
 
 
  
@@ -379,7 +379,7 @@ case 'upload4':
 
     
     <br />
-    <small>Upload a callout image to use, press "save settings" to save image.</small>
+    <small><?php printf( __( 'Upload a callout image to use, press "save settings" to save image.', 'ifeature' )); ?></small>
 
 
 <?php
@@ -404,7 +404,7 @@ case 'excerpts':
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
     <td width="85%">
     <br />
-    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_show_excerpts]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_show_excerpts]" value="1" <?php checked( '1', $options[$themeslug.'_show_excerpts'] ); ?>> - Show Excerpts
+    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_show_excerpts]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_show_excerpts]" value="1" <?php checked( '1', $options[$themeslug.'_show_excerpts'] ); ?>> -  <?php printf( __( 'Show Excerpts', 'ifeature' )); ?>
 <br /><br />
 
 	<?php
@@ -415,7 +415,7 @@ case 'excerpts':
 			$textlink = $options[$themeslug.'_excerpt_link_text']; 
 	?>
 	
-   <input type="text" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_excerpt_link_text]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_excerpt_link_text]" value="<?php echo $textlink ;?>"> - Excerpt Link Text
+   <input type="text" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_excerpt_link_text]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_excerpt_link_text]" value="<?php echo $textlink ;?>"> - <?php printf( __( 'Excerpt Link Text', 'ifeature' )); ?>
 <br /><br />
 
 	<?php
@@ -426,7 +426,7 @@ case 'excerpts':
 			$length = $options[$themeslug.'_excerpt_length']; 
 	?>
 
-     <input type="text" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_excerpt_length]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_excerpt_length]" value="<?php echo $length ;?>" > - Excerpt Character Length
+     <input type="text" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_excerpt_length]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_excerpt_length]" value="<?php echo $length ;?>" > - <?php printf( __( 'Excerpt Character Length', 'ifeature' )); ?>
 <br /><br />
 
 </td>
@@ -450,22 +450,22 @@ case 'post':
     <td width="15%" rowspan="2" valign="middle"><label for="<?php echo $value['id']; ?>"><strong><?php echo $value['name']; ?></strong><br /><small><?php echo $value['desc']; ?></small></label>  </td>
     <td width="85%">
     <br />
-    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_author]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_author]" value="1" <?php checked( '1', $options[$themeslug.'_hide_author'] ); ?>> - Author
+    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_author]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_author]" value="1" <?php checked( '1', $options[$themeslug.'_hide_author'] ); ?>> - <?php printf( __('Author', 'ifeature' )); ?>
 <br /><br />
 
-   <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_categories]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_categories]" value="1" <?php checked( '1', $options[$themeslug.'_hide_categories'] ); ?>> - Categories
+   <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_categories]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_categories]" value="1" <?php checked( '1', $options[$themeslug.'_hide_categories'] ); ?>> - <?php printf( __('Categories', 'ifeature' )); ?>
 <br /><br />
 
-   <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_date]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_date]" value="1" <?php checked( '1', $options[$themeslug.'_hide_date'] ); ?>> - Date
+   <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_date]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_date]" value="1" <?php checked( '1', $options[$themeslug.'_hide_date'] ); ?>> - <?php printf( __('Date', 'ifeature' )); ?>
 <br /><br />
 
-   <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_comments]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_comments]" value="1" <?php checked( '1', $options[$themeslug.'_hide_comments'] ); ?>> - Comments
+   <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_comments]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_comments]" value="1" <?php checked( '1', $options[$themeslug.'_hide_comments'] ); ?>> - <?php printf( __('Comments', 'ifeature' )); ?>
 <br /><br />
 
-   <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_share]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_share]" value="1" <?php checked( '1', $options[$themeslug.'_hide_share'] ); ?>> - Share
+   <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_share]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_share]" value="1" <?php checked( '1', $options[$themeslug.'_hide_share'] ); ?>> - <?php printf( __('Share', 'ifeature' )); ?>
 <br /><br />
 
-   <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_tags]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_tags]" value="1" <?php checked( '1', $options[$themeslug.'_hide_tags'] ); ?>> - Tags
+   <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_tags]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_tags]" value="1" <?php checked( '1', $options[$themeslug.'_hide_tags'] ); ?>> - <?php printf( __('Tags', 'ifeature' )); ?>
 <br /><br />
 
 </td>
@@ -696,7 +696,7 @@ case 'facebook':
     <td width="85%"><input style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>" id="<?php echo $themeslug.'['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
     
     <br /><br />
-    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_facebook]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_facebook]" value="1" <?php checked( '1', $options[$themeslug.'_hide_facebook'] ); ?>> - Check this box to hide the Facebook icon. 
+    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_facebook]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_facebook]" value="1" <?php checked( '1', $options[$themeslug.'_hide_facebook'] ); ?>> - <?php printf( __( 'Check this box to hide the Facebook icon.', 'ifeature' )); ?>
     
     </td>
 
@@ -719,7 +719,7 @@ case 'twitter':
     <td width="85%"><input style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>" id="<?php echo $themeslug.'['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
     
     <br /><br />
-    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_twitter]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_twitter]" value="1" <?php checked( '1', $options[$themeslug.'_hide_twitter'] ); ?>> - Check this box to hide the Twitter icon. 
+    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_twitter]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_twitter]" value="1" <?php checked( '1', $options[$themeslug.'_hide_twitter'] ); ?>> - <?php printf( __( 'Check this box to hide the Twitter icon.', 'ifeature' )); ?>
     
     </td>
 
@@ -742,7 +742,7 @@ case 'gplus':
     <td width="85%"><input style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>" id="<?php echo $themeslug.'['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
     
     <br /><br />
-    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_gplus]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_gplus]" value="1" <?php checked( '1', $options[$themeslug.'_hide_gplus'] ); ?>> - Check this box to hide the Google + icon. 
+    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_gplus]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_gplus]" value="1" <?php checked( '1', $options[$themeslug.'_hide_gplus'] ); ?>> - <?php printf( __( 'Check this box to hide the Google + icon.', 'ifeature' )); ?>
     
     </td>
 
@@ -765,7 +765,7 @@ case 'myspace':
     <td width="85%"><input style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>" id="<?php echo $themeslug.'['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
     
     <br /><br />
-    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_myspace]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_myspace]" value="1" <?php checked( '1', $options[$themeslug.'_hide_myspace'] ); ?>> - Check this box to hide the Myspace icon. 
+    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_myspace]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_myspace]" value="1" <?php checked( '1', $options[$themeslug.'_hide_myspace'] ); ?>> - <?php printf( __( 'Check this box to hide the Myspace icon.', 'ifeature' )); ?>
     
     </td>
 
@@ -789,7 +789,7 @@ case 'flickr':
     <td width="85%"><input style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>" id="<?php echo $themeslug.'['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
     
     <br /><br />
-    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_flickr]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_flickr]" value="1" <?php checked( '1', $options[$themeslug.'_hide_flickr'] ); ?>> - Check this box to hide the Flickr icon. 
+    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_flickr]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_flickr]" value="1" <?php checked( '1', $options[$themeslug.'_hide_flickr'] ); ?>> - <?php printf( __( 'Check this box to hide the Flickr icon.', 'ifeature' )); ?>
     
     </td>
 
@@ -814,7 +814,7 @@ case 'linkedin':
     <td width="85%"><input style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>" id="<?php echo $themeslug.'['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
     
     <br /><br />
-    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_linkedin]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_linkedin]" value="1" <?php checked( '1', $options[$themeslug.'_hide_linkedin'] ); ?>> - Check this box to hide the LinkedIn icon. 
+    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_linkedin]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_linkedin]" value="1" <?php checked( '1', $options[$themeslug.'_hide_linkedin'] ); ?>> - <?php printf( __( 'Check this box to hide the LinkedIn icon.', 'ifeature' )); ?>
     
     </td>
 
@@ -838,7 +838,7 @@ case 'youtube':
     <td width="85%"><input style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>" id="<?php echo $themeslug.'['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
     
     <br /><br />
-    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_youtube]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_youtube]" value="1" <?php checked( '1', $options[$themeslug.'_hide_youtube'] ); ?>> - Check this box to hide the YouTube icon. 
+    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_youtube]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_youtube]" value="1" <?php checked( '1', $options[$themeslug.'_hide_youtube'] ); ?>> -  <?php printf( __( 'Check this box to hide the YouTube icon.  ', 'ifeature' )); ?>
     
     </td>
 
@@ -862,7 +862,7 @@ case 'googlemaps':
     <td width="85%"><input style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>" id="<?php echo $themeslug.'['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
     
     <br /><br />
-    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_googlemaps]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_googlemaps]" value="1" <?php checked( '1', $options[$themeslug.'_hide_googlemaps'] ); ?>> - Check this box to hide the Google Maps icon. 
+    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_googlemaps]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_googlemaps]" value="1" <?php checked( '1', $options[$themeslug.'_hide_googlemaps'] ); ?>> - <?php printf( __( 'Check this box to hide the Google Maps icon.', 'ifeature' )); ?>
     
     </td>
 
@@ -886,7 +886,7 @@ case 'email':
     <td width="85%"><input style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>" id="<?php echo $themeslug.'['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
     
     <br /><br />
-    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_email]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_email]" value="1" <?php checked( '1', $options[$themeslug.'_hide_email'] ); ?>> - Check this box to hide the Email icon. 
+    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_email]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_email]" value="1" <?php checked( '1', $options[$themeslug.'_hide_email'] ); ?>> - <?php printf( __( 'Check this box to hide the Email icon.', 'ifeature' )); ?>
     
     </td>
 
@@ -909,7 +909,7 @@ case 'rss':
     <td width="85%"><input style="width:300px;" name="<?php echo $themename.'['.$value['id'].']'; ?>" id="<?php echo $themeslug.'['.$value['id'].']'; ?>" type="<?php echo $value['type']; ?>" value="<?php if (  $options[$value['id']]  != "") { echo esc_attr($options[$value['id']]) ; } else { echo esc_attr($value['std']) ; } ?>" />
     
     <br /><br />
-    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_rss]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_rss]" value="1" <?php checked( '1', $options[$themeslug.'_hide_rss'] ); ?>> - Check this box to hide the RSS icon. 
+    <input type="checkbox" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_rss]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_hide_rss]" value="1" <?php checked( '1', $options[$themeslug.'_hide_rss'] ); ?>> - <?php printf( __( 'Check this box to hide the RSS icon.', 'ifeature' )); ?>
     
     </td>
 
@@ -961,7 +961,7 @@ case 'customcss':
     <td width="85%"><textarea id="<?php echo $themename.'['.$value['id'].']'; ?>" name="<?php echo $themename.'['.$value['id'].']'; ?>" style="width:400px; height:200px;" type="<?php echo $value['type']; ?>" cols="" rows=""><?php echo stripslashes( $options[$value['id']] ); ?></textarea>
     
     <br /><br />
- Need help? Read our <a href="http://cyberchimps.com/question/custom-css/">Custom CSS documentation</a>.
+ <?php printf( __( 'Need help? Read our', 'ifeature' )); ?> <a href="http://cyberchimps.com/question/custom-css/"><?php printf( __( 'Custom CSS documentation', 'ifeature' )); ?></a>.
     </td>  
  
   
@@ -1057,7 +1057,7 @@ case 'featured':
 
 </select><br /></br>
 
-Define a custom Featured Image size below (default is 100 by 100):
+<?php printf( __( 'Define a custom Featured Image size below (default is 100 by 100):', 'ifeature' )); ?>
 
 <br /><br />
 
@@ -1081,11 +1081,11 @@ Define a custom Featured Image size below (default is 100 by 100):
 	
 ?>
 
-<input type="text" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_featured_image_height]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_featured_image_height]"  value="<?php echo $featureheight ;?>" style="width: 300px;"> - Height
+<input type="text" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_featured_image_height]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_featured_image_height]"  value="<?php echo $featureheight ;?>" style="width: 300px;"> - <?php printf( __( 'Height', 'ifeature' )); ?>
 
 <br /><br />
 
-<input type="text" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_featured_image_width]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_featured_image_width]"  value="<?php echo $featurewidth ;?>" style="width: 300px;"> - Width
+<input type="text" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_featured_image_width]" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_featured_image_width]"  value="<?php echo $featurewidth ;?>" style="width: 300px;"> - <?php printf( __( 'Width', 'ifeature' )); ?>
 
 </td>
 </tr> 
@@ -1121,7 +1121,7 @@ case 'select1':
 
 </select><br /></br>
 
-Or, select "color picker" from the drop down menu and choose your own custom menu color below:
+<?php printf( __( 'Or, select "color picker" from the drop down menu and choose your own custom menu color below:', 'ifeature' )); ?>
 
 <br /><br />
 
@@ -1175,7 +1175,7 @@ case 'select2':
 </select>
 <br /> <br />
 
-Or enter your own font below (Google Fonts with more than one word format as follows: Maven+Pro)
+<?php printf( __( 'Or enter your own font below (Google Fonts with more than one word format as follows: Maven+Pro)', 'ifeature' )); ?>
 <br /> <br />
 
 <input style="width:300px;" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_custom_font]" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_custom_font]" type="text" value="<?php echo $options[$themeslug.'_custom_font'] ?>"  />
@@ -1538,7 +1538,7 @@ case 'select12':
 </select>
 <br /> <br />
 
-Or enter your own font below (Google Fonts with more than one word format as follows: Maven+Pro)
+<?php printf( __( 'Or enter your own font below (Google Fonts with more than one word format as follows: Maven+Pro) ', 'ifeature' )); ?>
 <br /> <br />
 
 <input style="width:300px;" name="<?php echo $themename ;?>[<?php echo $themeslug ;?>_custom_menu_font]" id="<?php echo $themename ;?>[<?php echo $themeslug ;?>_custom_menu_font]" type="text" value="<?php echo $options[$themeslug.'_custom_menu_font'] ?>"  />
