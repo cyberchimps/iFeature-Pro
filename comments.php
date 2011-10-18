@@ -8,7 +8,7 @@
 */
 
 	if ( post_password_required() ) { ?>
-		This post is password protected. Enter the password to view comments.
+		<?php printf( __( 'This post is password protected. Enter the password to view comments.' )); ?>
 	<?php
 		return;
 	}
@@ -16,7 +16,7 @@
 
 <?php if ( have_comments() ) : ?>
 	<br />
-	<h2 id="comments"><?php comments_number('No Responses', 'One Response', '% Responses' );?></h2>
+	<h2 id="comments"><?php comments_number( __('No Responses', 'ifeature' ), __( 'One Response', 'ifeature' ), __('% Responses', 'ifeature' ));?></h2>
 
 	<div class="navigation">
 		<div class="next-posts"><?php previous_comments_link() ?></div>
@@ -53,7 +53,7 @@
 	</div>
 
 	<?php if ( get_option('comment_registration') && !is_user_logged_in() ) : ?>
-		<p>You must be <a href="<?php echo wp_login_url( get_permalink() ); ?>">logged in</a> to post a comment.</p>
+		<p><?php printf (__( 'You must be', 'ifeature' )); ?><a href="<?php echo wp_login_url( get_permalink() ); ?>"><?php printf( __( 'logged in', 'ifeature' ), '</a>', __('to post a comment.', 'ifeture' )); ?></p>
 	<?php else : ?>
 	
 	<?php comment_form(); ?>
