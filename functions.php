@@ -572,7 +572,7 @@ function ifp_widgets_init() {
 	));
 	register_sidebar(array(
 		'name' => 'Footer',
-		'id' => 'footer-widgets',
+		'id' => 'footer',
 		'description' => 'These are the footer widgets',
 		'before_widget' => '<div class="footer-widgets">',
 		'after_widget' => '</div>',
@@ -592,19 +592,6 @@ function admin_link() {
   
 }
 add_action( 'admin_bar_menu', 'admin_link', 113 );
-
-//test filter
-
-//function previous_post_text(){
-	//$previous_text = 'Older Post: ';
-	//return $previous_text;
-//}
-//add_filter('chimps_previous_posts_text','previous_post_text');
-
-//hooks
-
-require_once ( get_template_directory() . '/core/core-actions.php' );
-require_once ( get_template_directory() . '/core/core-hooks.php' );
 
 
 // Call additional template files

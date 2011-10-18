@@ -75,9 +75,8 @@
 			<?php get_template_part('loop', 'index' ); ?>
 				
 		<?php endwhile; ?>
-		
-		<!--Call @Core pagination-->
-		<?php chimps_main_index_pagination(); ?>
+
+		<?php get_template_part('pagination', 'index' ); ?>
 
 		<?php else : ?>
 

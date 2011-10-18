@@ -153,7 +153,7 @@
 	<div id="page-wrap">
 		
 		<div id="main">
-			<?php chimps_before_header(); ?> <!-- Inserts @Core before_header hook -->
+
 			<div id="header">
 				<div id="headerwrap">
 					<div id="header_right">
@@ -165,24 +165,33 @@
 							</div>
 							<?php endif;?>
 							<?php if ($headercontact != 'hide' ):?>
-								<?php chimps_header_right_contact_area(); ?> <!-- Inserts @Core header_right contact area hook -->
+							<div id="header_contact1">
+								<?php echo stripslashes ($headercontact); ?></div> 
 							<?php endif;?>
 							<?php if ($headercontact == 'hide' ):?>
 								<div style ="height: 10%;">&nbsp;</div> 
 							<?php endif;?>
 						<br />
-							<?php chimps_header_right_social_icons(); ?> <!-- Inserts @Core header_right social icons hook -->
+							<div id="social">
+								<?php get_template_part('icons', 'header'); ?>
+							</div><!-- end social -->
 					</div><!-- end header_right -->
 					<!-- Inserts Site Logo -->
 						<?php if ($logo != ''):?>
-							<?php chimps_header_left_logo(); ?> <!-- Inserts @Core header_left logo hook -->
+							<div id="logo">
+								<a href="<?php echo home_url(); ?>/"><img src="<?php echo stripslashes($logo['url']); ?>" alt="logo"></a>
+							</div>
 						<?php endif;?>
 						<?php if ($logo == '' ):?>
-							<?php chimps_header_left(); ?> <!-- Inserts @Core header_left title and description hook -->
+							<div id="sitename">
+								<h1 class="sitename"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?> </a></h1>
+							</div>
 						<?php endif;?>
+					<div id="description">
+						<h1 class="description"><?php bloginfo('description'); ?></h1>
+					</div>
 				</div><!-- end headerwrap -->
 				
-				<?php chimps_navigation(); ?> <!-- Inserts @Core navigation -->
+				<?php get_template_part('nav', 'header' ); ?>
 				
 			</div><!-- end header -->
-<?php chimps_after_header(); ?> <!-- Inserts @Core after_header hook -->
