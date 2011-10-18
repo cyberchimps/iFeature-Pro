@@ -41,7 +41,7 @@ function ifeature_breadcrumbs() {
     echo '<div id="crumbs">';
  
     global $post;
-    $homeLink = get_bloginfo('url');
+    $homeLink = home_url();
     echo '<a href="' . $homeLink . '">' . $home . '</a> ' . $delimiter . ' ';
  
     if ( is_category() ) {

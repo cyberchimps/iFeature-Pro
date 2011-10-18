@@ -161,7 +161,7 @@
 		
 							<?php if ($headercontact == '' ):?>
 							<div id="header_contact">
-								Enter Contact Information Here
+								<?php printf( __( 'Enter Contact Information Here', 'ifeature' )); ?>
 							</div>
 							<?php endif;?>
 							<?php if ($headercontact != 'hide' ):?>
