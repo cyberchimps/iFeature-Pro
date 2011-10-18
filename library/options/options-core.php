@@ -129,24 +129,25 @@ function theme_options_do_page() {
 	
 	<div class="menu">
 	<ul>
-		<li><a href="http://cyberchimps.com/support" target="_blank">Support</a></li>
-		<li><a href="http://cyberchimps.com/ifeaturepro/docs/">Documentation</a></li>
-		<li><a href="http://cyberchimps.com/forum/" target="_blank">Forum</a></li>
-		<li><a href="http://twitter.com/#!/cyberchimps" target="_blank">Twitter</a></li>
-		<li><a href="http://www.facebook.com/CyberChimps" target="_blank">Facebook</a></li>
-		<li><a href="http://cyberchimps.com/store/" target="_blank">CyberChimps Store</a></li>
+			<li><a href="http://cyberchimps.com/support" target="_blank"><?php printf( __( 'Support', 'ifeature' )); ?></a></li>
+		<li><a href="http://cyberchimps.com/ifeature-free/docs" target="_blank"> <?php printf( __( 'Documentation', 'ifeature' )); ?></a></li>
+		<li><a href="http://cyberchimps.com/forum/" target="_blank"><?php printf( __( 'Forum', 'ifeature' )); ?></a></li>
+		<li><a href="http://twitter.com/#!/cyberchimps" target="_blank"><?php printf( __( 'Twitter', 'ifeature' ));?></a></li>
+		<li><a href="http://facebook.com/cyberchimps/" target="_blank"><?php printf( __( 'Facebook', 'ifeature' ));?></a></li>
+		<li><a href="http://cyberchimps.com/store/" target="_blank"><?php printf( __( 'CyberChimps Store', 'ifeature' )); ?></a></li>
+		<li><a href="http://cyberchimpspro.com/" target="_blank"><?php printf( __( 'CyberChimps Pro', 'ifeature' )); ?></a></li>
 	</ul>
 	</div>
 
       
     <div id="tabs" style="clear:both;">   
     <ul class="tabNavigation">
-        <li><a href="#tab1"><span>General</span></a></li>
-        <li><a href="#tab2"><span>Design</span></a></li>
-        <li><a href="#tab3"><span>Blog</span></a></li>
-        <li><a href="#tab4"><span>Social</span></a></li>       
-        <li><a href="#tab5"><span>Footer</span></a></li>
-        <li><a href="#tab6"><span>Import/Export</span></a></li>
+        <li><a href="#tab1"><span><?php printf( __( 'General', 'ifeature' )); ?></span></a></li>
+        <li><a href="#tab2"><span><?php printf( __( 'Design', 'ifeature' )); ?></span></a></li>
+        <li><a href="#tab3"><span><?php printf( __( 'Blog', 'ifeature' )); ?></span></a></li>
+        <li><a href="#tab4"><span><?php printf( __( 'Social', 'ifeature' )); ?></span></a></li>       
+        <li><a href="#tab5"><span><?php printf( __( 'Footer', 'ifeature' )); ?></span></a></li>
+        <li><a href="#tab6"><span><?php printf( __( 'Import/Export', 'ifeature' )); ?></span></a></li>
     
     </ul>
     
@@ -177,7 +178,7 @@ function theme_options_do_page() {
 <p class="submit">
 <input name="reset" type="submit" value="Reset" />
 <input type="hidden" name="action" value="reset" />
-&nbsp;&nbsp;&nbsp;<small>WARNING THIS RESTORES ALL DEFAULTS</small>
+&nbsp;&nbsp;&nbsp;<small><?php printf( __( 'WARNING THIS RESTORES ALL DEFAULTS', 'ifeature' )); ?></small>
 </p>
 </form>
 	</div>
