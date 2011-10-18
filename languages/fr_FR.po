@@ -821,122 +821,122 @@ msgstr ""
 #: icons.php:72
 #@ ifeature
 msgid "Myspace"
-msgstr ""
+msgstr "Myspace"
 
 #: icons.php:72
 #@ ifeature
 msgid "http://myspace.com"
-msgstr ""
+msgstr "http://myspace.com"
 
 #: library/options/options-case.php:57
 #@ ifeature
 msgid "BLOG OPTIONS"
-msgstr ""
+msgstr "OPTIONS BLOG"
 
 #: library/options/options-case.php:75
 #@ ifeature
 msgid "SLIDER OPTIONS"
-msgstr ""
+msgstr "OPTIONS SLIDER"
 
 #: library/options/options-case.php:93
 #@ ifeature
 msgid "SEO OPTIONS"
-msgstr ""
+msgstr "OPTIONS SEO"
 
 #: library/options/options-case.php:184
 #@ ifeature
 msgid "Footer Options Tab FAQ"
-msgstr ""
+msgstr "Pied de page onglet Options FAQ"
 
 #: library/options/options-case.php:202
 #@ ifeature
 msgid "Import/Export Options Tab FAQ"
-msgstr ""
+msgstr "Import / Export de l'onglet Options FAQ"
 
 #: library/options/options-case.php:312
 #@ ifeature
 msgid "Custom Home Icon"
-msgstr ""
+msgstr "Accueil personnalisé Icône"
 
 #: library/options/options-case.php:335
 #@ ifeature
 msgid "Upload a home icon image to use, press \"save settings\" to save image."
-msgstr ""
+msgstr "Ajouter une image icône de la maison à utiliser, appuyez sur \\ \\\"Sauvegarder les paramètres \" pour enregistrer l'image."
 
 #: library/options/options-case.php:359
 #@ ifeature
 msgid "Custom Callout Image"
-msgstr ""
+msgstr "Légende image personnalisée"
 
 #: library/options/options-case.php:382
 #@ ifeature
 msgid "Upload a callout image to use, press \"save settings\" to save image."
-msgstr ""
+msgstr "Ajouter une légende image à utiliser, appuyez sur \\ \\\"Sauvegarder les paramètres \" pour enregistrer l'image."
 
 #: library/options/options-case.php:465
 #@ ifeature
 msgid "Share"
-msgstr ""
+msgstr "Partager"
 
 #: library/options/options-case.php:468
 #@ ifeature
 msgid "Tags"
-msgstr ""
+msgstr "balises"
 
 #: library/options/options-case.php:768
 #@ ifeature
 msgid "Check this box to hide the Myspace icon."
-msgstr ""
+msgstr "Cochez cette case pour masquer l'icône de Myspace."
 
 #: library/options/options-case.php:841
 #@ ifeature
 msgid "Check this box to hide the YouTube icon.  "
-msgstr ""
+msgstr "Cochez cette case pour masquer l'icône YouTube."
 
 #: library/options/options-case.php:865
 #@ ifeature
 msgid "Check this box to hide the Google Maps icon."
-msgstr ""
+msgstr "Cochez cette case pour cacher l'icône de Google Maps."
 
 #: library/options/options-case.php:889
 #@ ifeature
 msgid "Check this box to hide the Email icon."
-msgstr ""
+msgstr "Cochez cette case pour masquer l'icône Email."
 
 #: library/options/options-case.php:964
 #@ ifeature
 msgid "Need help? Read our"
-msgstr ""
+msgstr "Besoin d'aide? Lisez nos"
 
 #: library/options/options-case.php:964
 #@ ifeature
 msgid "Custom CSS documentation"
-msgstr ""
+msgstr "CSS personnalisé de documentation"
 
 #: library/options/options-case.php:1124
 #@ ifeature
 msgid "Or, select \"color picker\" from the drop down menu and choose your own custom menu color below:"
-msgstr ""
+msgstr "Ou, sélectionnez \\ \\\"sélecteur de couleur \" du menu déroulant et choisissez votre propre couleur personnalisée du menu ci-dessous:"
 
 #: library/options/options-case.php:1178
 #@ ifeature
 msgid "Or enter your own font below (Google Fonts with more than one word format as follows: Maven+Pro)"
-msgstr ""
+msgstr "Ou entrez votre propre police ci-dessous (Google Fonts avec plus d'un format word comme suit: Maven + Pro)"
 
 #: library/options/options-case.php:1541
 #@ ifeature
 msgid "Or enter your own font below (Google Fonts with more than one word format as follows: Maven+Pro) "
-msgstr ""
+msgstr "Ou entrez votre propre police ci-dessous (Google Fonts avec plus d'un format word comme suit: Maven + Pro)"
 
 #: library/options/options-core.php:149
 #@ ifeature
 msgid "Footer"
-msgstr ""
+msgstr "Pied de page"
 
 #: library/options/options-core.php:150
 #@ ifeature
 msgid "Import/Export"
-msgstr ""
+msgstr "Import / Export"
 
 #: library/options/options-select.php:12
 #@ default
@@ -1728,132 +1728,132 @@ msgstr ""
 #: library/options/options-tabs.php:93
 #@ ifeature
 msgid "Choose iMenu Color:"
-msgstr ""
+msgstr "Choisir la couleur imenu:"
 
 #: library/options/options-tabs.php:94
 #@ ifeature
 msgid "(Default is Grey)"
-msgstr ""
+msgstr "(Valeur par défaut est Gris)"
 
 #: library/options/options-tabs.php:99
 #@ ifeature
 msgid "Choose a Menu Font:"
-msgstr ""
+msgstr "Choisissez une police de menu:"
 
 #: library/options/options-tabs.php:105
 #@ ifeature
 msgid "Menu Link Color:"
-msgstr ""
+msgstr "Couleur des liens du menu:"
 
 #: library/options/options-tabs.php:106
 #@ ifeature
 msgid "Use the color picker to select the site menu link color (Default is FFFFFF)"
-msgstr ""
+msgstr "Utilisez le sélecteur de couleur pour sélectionner la couleur du lien du site du menu (par défaut est FFFFFF)"
 
 #: library/options/options-tabs.php:112
 #@ ifeature
 msgid "Custom Menu Icon:"
-msgstr ""
+msgstr "Icône Menu personnalisé:"
 
 #: library/options/options-tabs.php:118
 #@ ifeature
 msgid "Hide Home Icon:"
-msgstr ""
+msgstr "Masquer l'icône d'accueil:"
 
 #: library/options/options-tabs.php:119
 #@ ifeature
 msgid "Check this box to hide the home icon in the navigation"
-msgstr ""
+msgstr "Cochez cette case pour masquer l'icône de la maison dans la navigation"
 
 #: library/options/options-tabs.php:124
 #@ ifeature
 msgid "Hide Menu Search:"
-msgstr ""
+msgstr "Cacher la recherche du menu:"
 
 #: library/options/options-tabs.php:125
 #@ ifeature
 msgid "Check this box to hide the search box in the navigation."
-msgstr ""
+msgstr "Cochez cette case pour cacher la boîte de recherche dans la navigation."
 
 #: library/options/options-tabs.php:130
 #@ ifeature
 msgid "Site Title Color"
-msgstr ""
+msgstr "Couleur du titre du site"
 
 #: library/options/options-tabs.php:131
 #@ ifeature
 msgid "Use the color picker to select the site title color"
-msgstr ""
+msgstr "Utilisez le sélecteur de couleur pour sélectionner la couleur du titre du site"
 
 #: library/options/options-tabs.php:136
 #@ ifeature
 msgid "Site Description Color"
-msgstr ""
+msgstr "Couleur Description du site"
 
 #: library/options/options-tabs.php:137
 #@ ifeature
 msgid "Use the color picker to select the site description (tagline) color."
-msgstr ""
+msgstr "Utilisez le sélecteur de couleur pour sélectionner la description du site (slogan) de couleur."
 
 #: library/options/options-tabs.php:142
 #@ ifeature
 msgid "Link Color"
-msgstr ""
+msgstr "Couleur des liens"
 
 #: library/options/options-tabs.php:143
 #@ ifeature
 msgid "Use the color picker to select the site link color)."
-msgstr ""
+msgstr "Utilisez le sélecteur de couleur pour sélectionner la couleur du lien du site)."
 
 #: library/options/options-tabs.php:148
 #@ ifeature
 msgid "Post Title Color"
-msgstr ""
+msgstr "Couleur Titre du poste"
 
 #: library/options/options-tabs.php:149
 #@ ifeature
 msgid "Use the color picker to select the post title color,"
-msgstr ""
+msgstr "Utilisez le sélecteur de couleur pour sélectionner la couleur du titre de poste,"
 
 #: library/options/options-tabs.php:154
 #@ ifeature
 msgid "Disable Header:"
-msgstr ""
+msgstr "Désactivez-tête:"
 
 #: library/options/options-tabs.php:155
 #@ ifeature
 msgid "Check this box to disable the header."
-msgstr ""
+msgstr "Cochez cette case pour désactiver l'en-tête."
 
 #: library/options/options-tabs.php:166
 #@ ifeature
 msgid "Custom CSS"
-msgstr ""
+msgstr "CSS personnalisé"
 
 #: library/options/options-tabs.php:167
 #@ ifeature
 msgid "Override default CSS here."
-msgstr ""
+msgstr "Surcharge CSS par défaut ici."
 
 #: library/options/options-tabs.php:196
 #@ ifeature
 msgid "Select the Sidebar Type:"
-msgstr ""
+msgstr "Sélectionnez le type Sidebar:"
 
 #: library/options/options-tabs.php:197
 #@ ifeature
 msgid "Select the sidebar type for your blog page (default is Right)."
-msgstr ""
+msgstr "Sélectionnez le type de barre latérale de votre page de blog (par défaut à droite)."
 
 #: library/options/options-tabs.php:208
 #@ ifeature
 msgid "Featured Images"
-msgstr ""
+msgstr "Images"
 
 #: library/options/options-tabs.php:226
 #@ ifeature
 msgid "Show Google +1 button"
-msgstr ""
+msgstr "Voir dans Google 1 bouton"
 
 #: library/options/options-tabs.php:238
 #@ ifeautre
@@ -1863,212 +1863,212 @@ msgstr ""
 #: library/options/options-tabs.php:239
 #@ ifeature
 msgid "Check this box to hide the Slider on your blog page."
-msgstr ""
+msgstr "Cochez cette case pour cacher le curseur sur votre page de blog."
 
 #: library/options/options-tabs.php:244
 #@ ifeature
 msgid "Select the Slider Size:"
-msgstr ""
+msgstr "Sélectionnez la Taille du Slider:"
 
 #: library/options/options-tabs.php:250
 #@ ifeature
 msgid "Select the Slider Type:"
-msgstr ""
+msgstr "Sélectionnez le type Slider:"
 
 #: library/options/options-tabs.php:251
 #@ ifeature
 msgid "(Choose between custom feature slides or a post category)."
-msgstr ""
+msgstr "(Choisissez entre les diapositives fonction personnalisée ou une catégorie de poste)."
 
 #: library/options/options-tabs.php:257
 #@ ifeature
 msgid "(Default is all)."
-msgstr ""
+msgstr "(Valeur par défaut est tous)."
 
 #: library/options/options-tabs.php:262
 #@ ifeature
 msgid "Show Posts From Custom Slide Category,"
-msgstr ""
+msgstr "Montrer les messages depuis Catégorie diaporamas personnalisés,"
 
 #: library/options/options-tabs.php:263
 #@ ifeature
 msgid "(Default is default)"
-msgstr ""
+msgstr "(Valeur par défaut est par défaut)"
 
 #: library/options/options-tabs.php:268
 #@ ifeature
 msgid "Number of Featured Blog Posts:"
-msgstr ""
+msgstr "Nombre de messages écrits en vedette:"
 
 #: library/options/options-tabs.php:269
 #@ ifeature
 msgid "(Default is 5)"
-msgstr ""
+msgstr "(Valeur par défaut est 5)"
 
 #: library/options/options-tabs.php:274
 #@ ifeature
 msgid "Slider Height:"
-msgstr ""
+msgstr "Hauteur Slider:"
 
 #: library/options/options-tabs.php:275
 #@ ifeature
 msgid "Default is 330."
-msgstr ""
+msgstr "Par défaut est 330."
 
 #: library/options/options-tabs.php:286
 #@ ifeature
 msgid "Choose the Caption Style:"
-msgstr ""
+msgstr "Choisissez le style de légende:"
 
 #: library/options/options-tabs.php:287
 #@ ifeature
 msgid "(Default is Bottom)."
-msgstr ""
+msgstr "(Valeur par défaut est bas)."
 
 #: library/options/options-tabs.php:292
 #@ ifeature
 msgid "Choose the Slider Animation:"
-msgstr ""
+msgstr "Choisissez l'animation Slider:"
 
 #: library/options/options-tabs.php:293
 #@ ifeature
 msgid "(Default is random)."
-msgstr ""
+msgstr "(Valeur par défaut est aléatoire)."
 
 #: library/options/options-tabs.php:298
 #@ ifeature
 msgid "Choose the Slider Navigation:"
-msgstr ""
+msgstr "Choisissez la navigation Slider:"
 
 #: library/options/options-tabs.php:299
 #@ ifeature
 msgid "(Default is dots)."
-msgstr ""
+msgstr "(Valeur par défaut est des points)."
 
 #: library/options/options-tabs.php:304
 #@ ifeature
 msgid "Disable Slider Navigation:"
-msgstr ""
+msgstr "Désactiver la navigation Slider:"
 
 #: library/options/options-tabs.php:305
 #@ ifeature
 msgid "Check this box to hide the navigation arrows."
-msgstr ""
+msgstr "Cochez cette case pour masquer les flèches de navigation."
 
 #: library/options/options-tabs.php:310
 #@ ifeature
 msgid "Disable Slider Navigation Auto-Hide:"
-msgstr ""
+msgstr "Désactiver curseur de navigation Auto-Hide:"
 
 #: library/options/options-tabs.php:311
 #@ ifeature
 msgid "Check this box to keep the navigation arrows active at all times."
-msgstr ""
+msgstr "Cochez cette case pour conserver les flèches de navigation active à tout moment."
 
 #: library/options/options-tabs.php:316
 #@ ifeature
 msgid "Enable WordThumb Image Resizing:"
-msgstr ""
+msgstr "Activer le redimensionnement d'image WordThumb:"
 
 #: library/options/options-tabs.php:317
 #@ ifeature
 msgid "Check this box to enable the use of TimThumb Image Resizing on the slider."
-msgstr ""
+msgstr "Cochez cette case pour activer l'utilisation de redimensionnement d'image TimThumb sur le curseur."
 
 #: library/options/options-tabs.php:328
 #@ ifeature
 msgid "Home Description"
-msgstr ""
+msgstr "Accueil Description"
 
 #: library/options/options-tabs.php:334
 #@ ifeature
 msgid "Home Keywords"
-msgstr ""
+msgstr "Mots-clés Accueil"
 
 #: library/options/options-tabs.php:340
 #@ ifeature
 msgid "Optional Home Title:)"
-msgstr ""
+msgstr "Titre Accueil option:)"
 
 #: library/options/options-tabs.php:362
 #@ ifeature
 msgid "Facebook URL"
-msgstr ""
+msgstr "Facebook URL"
 
 #: library/options/options-tabs.php:369
 #@ ifeature
 msgid "Enter your Twitter URL for the Twitter social icon."
-msgstr ""
+msgstr "Entrez l'URL de votre site web pour l'icône Twitter sociale."
 
 #: library/options/options-tabs.php:380
 #@ ifeature
 msgid "Flickr URL"
-msgstr ""
+msgstr "Flickr URL"
 
 #: library/options/options-tabs.php:386
 #@ ifeature
 msgid "Myspace URL"
-msgstr ""
+msgstr "Myspace URL"
 
 #: library/options/options-tabs.php:387
 #@ ifeature
 msgid "Enter your Myspace URL for Myspace social icon."
-msgstr ""
+msgstr "Entrez l'URL de votre Myspace pour l'icône social MySpace."
 
 #: library/options/options-tabs.php:392
 #@ ifeature
 msgid "LinkedIn URL"
-msgstr ""
+msgstr "URL LinkedIn"
 
 #: library/options/options-tabs.php:399
 #@ ifeature
 msgid "Enter your YouTube URL for the YouTube social icon."
-msgstr ""
+msgstr "Entrez votre URL de YouTube pour l'icône YouTube sociale."
 
 #: library/options/options-tabs.php:441
 #@ ifeature
 msgid "Enter Copyright text used on the right side of the footer. It can be HTML (default is your blog title),"
-msgstr ""
+msgstr "Entrez le texte d'auteur utilisé sur le côté droit du pied de page. Il peut être HTML (par défaut est le titre de votre blog),"
 
 #: library/options/options-tabs.php:446
 #@ ifeature
 msgid "Footer Color"
-msgstr ""
+msgstr "Couleur Footer"
 
 #: library/options/options-tabs.php:447
 #@ ifeature
 msgid "Use the color picker to select a custom footer color (default is 222)."
-msgstr ""
+msgstr "Utilisez le sélecteur de couleur pour sélectionner une couleur personnalisée pied de page (valeur par défaut est 222)."
 
 #: library/options/options-tabs.php:452
 #@ ifeature
 msgid "Hide Our Link"
-msgstr ""
+msgstr "Cacher Notre Lien"
 
 #: library/options/options-tabs.php:453
 #@ ifeature
 msgid "Check this box to hide the link back to CyberChimps.com."
-msgstr ""
+msgstr "Cochez cette case pour cacher le lien vers CyberChimps.com."
 
 #: library/options/options-tabs.php:475
 #@ ifeature
 msgid "Import Options Settings"
-msgstr ""
+msgstr "Options d'importation des paramètres"
 
 #: library/options/options-tabs.php:476
 #@ ifeature
 msgid "To import your settings, Paste the export code here and press Save Settings."
-msgstr ""
+msgstr "Pour importer vos paramètres, collez le code d'exportation ici et appuyez sur Enregistrer les paramètres."
 
 #: library/options/options-tabs.php:481
 #@ ifeature
 msgid "Export Options Settings"
-msgstr ""
+msgstr "Options d'exportation de paramètres"
 
 #: library/options/options-tabs.php:482
 #@ ifeature
 msgid "Copy the following code, Paste it into a text file and save it. This code can be used to import your settings into another site"
-msgstr ""
+msgstr "Copiez le code suivant, le coller dans un fichier texte et enregistrez-le. Ce code peut être utilisé pour importer vos paramètres dans un autre site"
 
 #: pro/meta-box.php:22
 #@ default
@@ -2083,30 +2083,30 @@ msgstr ""
 #: pro/meta-box.php:646
 #@ ifeature
 msgid "Pro Slider Image"
-msgstr ""
+msgstr "Image Slider Pro"
 
 #: pro/meta-box.php:653
 #@ ifeature
 msgid "Pro Slider Text"
-msgstr ""
+msgstr "Texte Curseur Pro"
 
 #: pro/meta-box.php:660
 #: pro/meta-box.php:712
 #@ ifeature
 msgid "Hide Title Bar"
-msgstr ""
+msgstr "Masquer la barre de titre"
 
 #: pro/meta-box.php:668
 #: pro/meta-box.php:720
 #@ ifeature
 msgid "Custom Thumbnail"
-msgstr ""
+msgstr "Vignette personnalisée"
 
 #: pro/meta-box.php:669
 #: pro/meta-box.php:721
 #@ ifeature
 msgid "Use the image uploader to upload a custom navigation thumbnail"
-msgstr ""
+msgstr "Utilisez le téléchargeur d'image pour télécharger une vignette de navigation personnalisée"
 
 #: pro/meta-box.php:675
 #: pro/meta-box.php:727
@@ -2115,373 +2115,373 @@ msgstr ""
 #: pro/meta-box.php:1102
 #@ ifeature
 msgid "Need help?"
-msgstr ""
+msgstr "Besoin d'aide?"
 
 #: pro/meta-box.php:690
 #@ ifeature
 msgid "Custom Feature Slides"
-msgstr ""
+msgstr "Diapositives de fonction personnalisé"
 
 #: pro/meta-box.php:698
 #@ ifeature
 msgid "Custom Slide Link"
-msgstr ""
+msgstr "Lien Diaporama personnalisé"
 
 #: pro/meta-box.php:699
 #@ ifeature
 msgid "Enter your link here"
-msgstr ""
+msgstr "Entrez votre lien ici"
 
 #: pro/meta-box.php:705
 #@ ifeature
 msgid "Custom Slide Image"
-msgstr ""
+msgstr "Glissez l'image personnalisée"
 
 #: pro/meta-box.php:713
 #@ ifeature
 msgid "Click to disable the title bar on this post:"
-msgstr ""
+msgstr "Cliquez pour désactiver la barre de titre de cet article:"
 
 #: pro/meta-box.php:735
 #@ ifeature
 msgid "Want to re-order your slides?"
-msgstr ""
+msgstr "Vous voulez réorganiser vos diapositives?"
 
 #: pro/meta-box.php:779
 #@ ifeature
 msgid "Page Options"
-msgstr ""
+msgstr "options de la page"
 
 #: pro/meta-box.php:783
 #@ ifeature
 msgid "Select Page Layout"
-msgstr ""
+msgstr "Sélectionnez Mise en page"
 
 #: pro/meta-box.php:784
 #@ ifeature
 msgid "Select your sidebar options"
-msgstr ""
+msgstr "Sélectionnez vos options encadré"
 
 #: pro/meta-box.php:792
 #@ ifeature
 msgid "Enable Feature Slider"
-msgstr ""
+msgstr "Activer Curseur Feature"
 
 #: pro/meta-box.php:793
 #@ ifeature
 msgid "Check this box to enable the  Slider on this page"
-msgstr ""
+msgstr "Cochez cette case pour activer le curseur sur cette page"
 
 #: pro/meta-box.php:800
 #@ ifeature
 msgid "Enable Callout Section"
-msgstr ""
+msgstr "Activer Légende article"
 
 #: pro/meta-box.php:801
 #@ ifeature
 msgid "Check this box to enable the Callout Section on this page"
-msgstr ""
+msgstr "Cochez cette case pour permettre à la Section Légende sur cette page"
 
 #: pro/meta-box.php:808
 #@ ifeature
 msgid "Enable Twitter Bar"
-msgstr ""
+msgstr "Activer Twitter Bar"
 
 #: pro/meta-box.php:809
 #@ ifeature
 msgid "Check this box to enable the Twitter Bar on this page - Requires <a href=\"http://wordpress.org/extend/plugins/twitter-for-wordpress/\" target=\"_blank\">Twitter for WordPress Plugin"
-msgstr ""
+msgstr "Cochez cette case pour activer la barre de Twitter sur cette page - Nécessite <a href=\"http://wordpress.org/extend/plugins/twitter-for-wordpress/\" target=\"_blank\"> Twitter pour WordPress plugin"
 
 #: pro/meta-box.php:816
 #@ ifeature
 msgid "Twitter Handle"
-msgstr ""
+msgstr "Twitter poignée"
 
 #: pro/meta-box.php:823
 #@ ifeature
 msgid "Enable Box Section"
-msgstr ""
+msgstr "Activer caisson"
 
 #: pro/meta-box.php:824
 #@ ifeature
 msgid "Check this box to enable the Box Section on this page"
-msgstr ""
+msgstr "Cochez cette case pour activer le caisson sur cette page"
 
 #: pro/meta-box.php:831
 #@ ifeature
 msgid "Hide Page Title"
-msgstr ""
+msgstr "Titre de la page Cacher"
 
 #: pro/meta-box.php:832
 #@ ifeature
 msgid "Check this box to hide the title on this page"
-msgstr ""
+msgstr "Cochez cette case pour masquer le titre sur cette page"
 
 #: pro/meta-box.php:839
 #@ ifeature
 msgid "Hide Page Content"
-msgstr ""
+msgstr "Cacher contenu de la page"
 
 #: pro/meta-box.php:840
 #@ ifeature
 msgid "Check this box to hide the content on this page"
-msgstr ""
+msgstr "Cochez cette case pour cacher le contenu de cette page"
 
 #: pro/meta-box.php:861
 #@ ifeature
 msgid "Select Slider Size"
-msgstr ""
+msgstr "Sélectionnez Taille Curseur"
 
 #: pro/meta-box.php:862
 #@ ifeature
 msgid "Select the size of the slider"
-msgstr ""
+msgstr "Sélectionnez la taille du curseur"
 
 #: pro/meta-box.php:870
 #@ ifeature
 msgid "Select Slider Type"
-msgstr ""
+msgstr "Sélectionner le type de curseur"
 
 #: pro/meta-box.php:871
 #@ ifeature
 msgid "Select the type of slider"
-msgstr ""
+msgstr "Sélectionnez le type de curseur"
 
 #: pro/meta-box.php:879
 #@ ifeature
 msgid "Custom Slide Category"
-msgstr ""
+msgstr "Catégorie Diaporama personnalisé"
 
 #: pro/meta-box.php:880
 #@ ifeature
 msgid "Select the slide category you would like to use"
-msgstr ""
+msgstr "Sélectionnez la catégorie diapositive que vous souhaitez utiliser"
 
 #: pro/meta-box.php:888
 #@ ifeature
 msgid "Blog Post Category"
-msgstr ""
+msgstr "Catégorie Blog Post"
 
 #: pro/meta-box.php:889
 #@ ifeature
 msgid "Select the blog post category you would like to use"
-msgstr ""
+msgstr "Sélectionnez la catégorie blog que vous souhaitez utiliser"
 
 #: pro/meta-box.php:897
 #@ ifeature
 msgid "Number of featured blog posts"
-msgstr ""
+msgstr "Nombre de messages blog en vedette"
 
 #: pro/meta-box.php:898
 #@ ifeature
 msgid "Default is 5 (for blog posts only)"
-msgstr ""
+msgstr "Par défaut est 5 (pour les messages écrits uniquement)"
 
 #: pro/meta-box.php:905
 #@ ifeature
 msgid "Slider Height"
-msgstr ""
+msgstr "Hauteur curseur"
 
 #: pro/meta-box.php:906
 #@ ifeature
 msgid "Default is 300"
-msgstr ""
+msgstr "Par défaut est 300"
 
 #: pro/meta-box.php:913
 #@ ifeature
 msgid "Slider Delay Time (in milliseconds)"
-msgstr ""
+msgstr "Délai Slider (en millisecondes)"
 
 #: pro/meta-box.php:914
 #@ ifeature
 msgid "Default is 3500"
-msgstr ""
+msgstr "Par défaut est 3500"
 
 #: pro/meta-box.php:921
 #@ ifeature
 msgid "Select Slider Animation Type"
-msgstr ""
+msgstr "Sélectionner le type d'animation Curseur"
 
 #: pro/meta-box.php:922
 #@ ifeature
 msgid "Default is random"
-msgstr ""
+msgstr "Par défaut est aléatoire"
 
 #: pro/meta-box.php:930
 #@ ifeature
 msgid "Select Slider Navigation Style"
-msgstr ""
+msgstr "Sélectionnez curseur de navigation de style"
 
 #: pro/meta-box.php:931
 #@ ifeature
 msgid "Default is dots"
-msgstr ""
+msgstr "Par défaut points"
 
 #: pro/meta-box.php:939
 #@ ifeature
 msgid "Select Slider Caption Style"
-msgstr ""
+msgstr "Sélectionnez le style Légende Curseur"
 
 #: pro/meta-box.php:940
 #@ ifeature
 msgid "Default is none"
-msgstr ""
+msgstr "Par défaut est none"
 
 #: pro/meta-box.php:948
 #@ ifeature
 msgid "Hide Navigation Arrows"
-msgstr ""
+msgstr "Masquer les flèches de navigation\n"
 
 #: pro/meta-box.php:949
 #@ ifeature
 msgid "Check this box to hide the navigation arrows on the slider"
-msgstr ""
+msgstr "Cochez cette case pour masquer les flèches de navigation sur le curseur"
 
 #: pro/meta-box.php:956
 #@ ifeature
 msgid "Disable Navigation Auto-Hide"
-msgstr ""
+msgstr "Désactiver Navigation Auto-Hide"
 
 #: pro/meta-box.php:957
 #@ ifeature
 msgid "Check this box to disable the navigation arrow auto-hide"
-msgstr ""
+msgstr "Cochez cette case pour désactiver la flèche de navigation auto-hide"
 
 #: pro/meta-box.php:964
 #@ ifeature
 msgid "Enable WordThumb Image Resizing"
-msgstr ""
+msgstr "Activer le redimensionnement d'image WordThumb"
 
 #: pro/meta-box.php:965
 #@ ifeature
 msgid "Check this box to enable the use of WordThumb image resizing."
-msgstr ""
+msgstr "Cochez cette case pour activer l'utilisation de redimensionnement d'image WordThumb."
 
 #: pro/meta-box.php:983
 #@ ifeature
 msgid "Callout Section"
-msgstr ""
+msgstr "Légende article"
 
 #: pro/meta-box.php:988
 #: pro/meta-box.php:1079
 #@ ifeature
 msgid "Title"
-msgstr ""
+msgstr "Titre"
 
 #: pro/meta-box.php:989
 #@ ifeature
 msgid "Enter your Callout Section title"
-msgstr ""
+msgstr "Entrez votre titre de section Légende"
 
 #: pro/meta-box.php:996
 #@ ifeature
 msgid "Callout Text"
-msgstr ""
+msgstr "Légende Texte"
 
 #: pro/meta-box.php:997
 #@ ifeature
 msgid "Enter your Callout Section text"
-msgstr ""
+msgstr "Entrez votre texte Section Légende"
 
 #: pro/meta-box.php:1004
 #@ ifeature
 msgid "Callout Button Text"
-msgstr ""
+msgstr "Légende Texte du bouton"
 
 #: pro/meta-box.php:1005
 #@ ifeature
 msgid "Enter the text for your Callout Button"
-msgstr ""
+msgstr "Entrez le texte de votre Légende Bouton"
 
 #: pro/meta-box.php:1012
 #@ ifeature
 msgid "Callout Button URL"
-msgstr ""
+msgstr "Légende URL Bouton"
 
 #: pro/meta-box.php:1020
 #@ ifeature
 msgid "Custom Callout Button Image"
-msgstr ""
+msgstr "Légende image du bouton personnalisé"
 
 #: pro/meta-box.php:1021
 #@ ifeature
 msgid "Upload a custom Callout Buttom image here:"
-msgstr ""
+msgstr "Ajouter une légende personnalisée d'image Buttom ici:"
 
 #: pro/meta-box.php:1028
 #@ ifeature
 msgid "Select Callout Section Background"
-msgstr ""
+msgstr "Sélectionnez Légende Contexte article"
 
 #: pro/meta-box.php:1029
 #@ ifeature
 msgid "Default is  Pro 2, select \"color picker\" to use the color picker option below"
-msgstr ""
+msgstr "Par défaut est Pro 2, sélectionnez \\ \\\"sélecteur de couleur \" pour utiliser l'option sélecteur de couleur ci-dessous"
 
 #: pro/meta-box.php:1037
 #@ ifeature
 msgid "Custom Background Color"
-msgstr ""
+msgstr "Couleur de fond personnalisée"
 
 #: pro/meta-box.php:1038
 #@ ifeature
 msgid "Use the color picker to select a custom background color for the Callout Section"
-msgstr ""
+msgstr "Utilisez le sélecteur de couleur pour sélectionner une couleur de fond personnalisée pour la section Légende"
 
 #: pro/meta-box.php:1044
 #@ ifeature
 msgid "Callout Title Color"
-msgstr ""
+msgstr "Légende Couleur du titre"
 
 #: pro/meta-box.php:1045
 #@ ifeature
 msgid "Use the color picker to select the callout section title color"
-msgstr ""
+msgstr "Utilisez le sélecteur de couleur pour sélectionner la couleur de légende section du titre"
 
 #: pro/meta-box.php:1051
 #@ ifeature
 msgid "Callout Text Color"
-msgstr ""
+msgstr "Légende couleur du texte"
 
 #: pro/meta-box.php:1058
 #@ ifeature
 msgid "Callout Button Color"
-msgstr ""
+msgstr "Légende des couleurs du bouton"
 
 #: pro/meta-box.php:1059
 #@ ifeature
 msgid "Use the color picker to select the callout button color"
-msgstr ""
+msgstr "Utilisez le sélecteur de couleur pour sélectionner la couleur du bouton légende"
 
 #: pro/meta-box.php:1076
 #@ ifeature
 msgid "SEO"
-msgstr ""
+msgstr "SEO"
 
 #: pro/meta-box.php:1080
 #@ ifeature
 msgid "Enter your title"
-msgstr ""
+msgstr "Entrez votre titre"
 
 #: pro/meta-box.php:1086
 #@ ifeature
 msgid "Description"
-msgstr ""
+msgstr "description de"
 
 #: pro/meta-box.php:1087
 #@ ifeature
 msgid "Enter your description"
-msgstr ""
+msgstr "Entrez votre description"
 
 #: pro/meta-box.php:1094
 #@ ifeature
 msgid "Keywords"
-msgstr ""
+msgstr "Mots-clés"
 
 #: pro/meta-box.php:1095
 #@ ifeature
 msgid "Enter your keywords"
-msgstr ""
+msgstr "Entrez vos mots clés"
 
 #: search.php:23
 #, php-format
@@ -2493,11 +2493,11 @@ msgstr ""
 #: sidebar.php:22
 #@ ifeature
 msgid "Pages"
-msgstr ""
+msgstr "pages"
 
 #: sidebar-left.php:30
 #: sidebar.php:56
 #@ ifeature
 msgid "Comments (RSS)"
-msgstr ""
+msgstr "Commentaires (RSS)"
 
