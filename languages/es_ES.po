@@ -1960,16 +1960,6 @@ msgstr "Desactivar deslizante de navegación Auto-Hide:"
 msgid "Check this box to keep the navigation arrows active at all times."
 msgstr "Marque esta casilla para guardar las flechas de navegación activa en todo momento."
 
-#: library/options/options-tabs.php:316
-#@ ifeature
-msgid "Disable WordThumb Image Resizing:"
-msgstr "Desactivar cambio de tamaño WordThumb:"
-
-#: library/options/options-tabs.php:317
-#@ ifeature
-msgid "Check this box to disable the use of TimThumb Image Resizing on the slider."
-msgstr "Marque esta casilla para desactivar el uso de cambio de tamaño TimThumb en el deslizador."
-
 #: library/options/options-tabs.php:328
 #@ ifeature
 msgid "Home Description"
@@ -2092,4 +2082,422 @@ msgstr "Páginas"
 #@ ifeature
 msgid "Comments (RSS)"
 msgstr "Comentarios (RSS)"
+
+#: library/options/options-tabs.php:316
+#@ ifeature
+msgid "Enable WordThumb Image Resizing:"
+msgstr "Habilitar Cambio de tamaño WordThumb:"
+
+#: library/options/options-tabs.php:317
+#@ ifeature
+msgid "Check this box to enable the use of TimThumb Image Resizing on the slider."
+msgstr "Marque esta casilla para permitir el uso de cambio de tamaño TimThumb en el deslizador."
+
+#: pro/meta-box.php:646
+#@ ifeature
+msgid "Pro Slider Image"
+msgstr "Image Slider Pro"
+
+#: pro/meta-box.php:653
+#@ ifeature
+msgid "Pro Slider Text"
+msgstr "Texto deslizante Pro"
+
+#: pro/meta-box.php:660
+#: pro/meta-box.php:712
+#@ ifeature
+msgid "Hide Title Bar"
+msgstr "Ocultar barra de título"
+
+#: pro/meta-box.php:668
+#: pro/meta-box.php:720
+#@ ifeature
+msgid "Custom Thumbnail"
+msgstr "Miniatura personalizada"
+
+#: pro/meta-box.php:669
+#: pro/meta-box.php:721
+#@ ifeature
+msgid "Use the image uploader to upload a custom navigation thumbnail"
+msgstr "Use el cargador de imágenes para cargar una miniatura de navegación personalizada"
+
+#: pro/meta-box.php:675
+#: pro/meta-box.php:727
+#: pro/meta-box.php:972
+#: pro/meta-box.php:1065
+#: pro/meta-box.php:1102
+#@ ifeature
+msgid "Need help?"
+msgstr "¿Necesitas ayuda?"
+
+#: pro/meta-box.php:690
+#@ ifeature
+msgid "Custom Feature Slides"
+msgstr "Las diapositivas personalizada de funciones"
+
+#: pro/meta-box.php:698
+#@ ifeature
+msgid "Custom Slide Link"
+msgstr "Enlace de diapositivas personalizadas"
+
+#: pro/meta-box.php:699
+#@ ifeature
+msgid "Enter your link here"
+msgstr "Introduzca su enlace aquí"
+
+#: pro/meta-box.php:705
+#@ ifeature
+msgid "Custom Slide Image"
+msgstr "Imagen de presentación personalizada"
+
+#: pro/meta-box.php:706
+#@ ifeature
+msgid "Upload your image here:"
+msgstr "Subir su imagen aquí:"
+
+#: pro/meta-box.php:713
+#@ ifeature
+msgid "Click to disable the title bar on this post:"
+msgstr "Haga clic para desactivar la barra de título de este post:"
+
+#: pro/meta-box.php:735
+#@ ifeature
+msgid "Want to re-order your slides?"
+msgstr "¿Quieres volver a ordenar las diapositivas?"
+
+#: pro/meta-box.php:779
+#@ ifeature
+msgid "Page Options"
+msgstr "Opciones de la página"
+
+#: pro/meta-box.php:783
+#@ ifeature
+msgid "Select Page Layout"
+msgstr "Seleccione Diseño de página"
+
+#: pro/meta-box.php:784
+#@ ifeature
+msgid "Select your sidebar options"
+msgstr "Seleccione las opciones de la barra lateral"
+
+#: pro/meta-box.php:792
+#@ ifeature
+msgid "Enable Feature Slider"
+msgstr "Habilitar el control deslizante de funciones"
+
+#: pro/meta-box.php:793
+#@ ifeature
+msgid "Check this box to enable the  Slider on this page"
+msgstr "Marque esta casilla para activar el control deslizante en esta página"
+
+#: pro/meta-box.php:800
+#@ ifeature
+msgid "Enable Callout Section"
+msgstr "Activar Llamada Sección"
+
+#: pro/meta-box.php:801
+#@ ifeature
+msgid "Check this box to enable the Callout Section on this page"
+msgstr "Marque esta casilla para activar la llamada de sección en esta página"
+
+#: pro/meta-box.php:808
+#@ ifeature
+msgid "Enable Twitter Bar"
+msgstr "Habilitar el Bar de Twitter"
+
+#: pro/meta-box.php:809
+#@ ifeature
+msgid "Check this box to enable the Twitter Bar on this page - Requires <a href=\"http://wordpress.org/extend/plugins/twitter-for-wordpress/\" target=\"_blank\">Twitter for WordPress Plugin"
+msgstr "Marque esta casilla para activar la barra de Twitter en esta página - Requiere <a href=\"http://wordpress.org/extend/plugins/twitter-for-wordpress/\" target=\"_blank\"> Twitter para WordPress Plugin"
+
+#: pro/meta-box.php:816
+#@ ifeature
+msgid "Twitter Handle"
+msgstr "manejar Twitter"
+
+#: pro/meta-box.php:823
+#@ ifeature
+msgid "Enable Box Section"
+msgstr "Activar la Sección Caja"
+
+#: pro/meta-box.php:824
+#@ ifeature
+msgid "Check this box to enable the Box Section on this page"
+msgstr "Marque esta casilla para permitir que la Sección de Caja en esta página"
+
+#: pro/meta-box.php:831
+#@ ifeature
+msgid "Hide Page Title"
+msgstr "Ocultar título de la página"
+
+#: pro/meta-box.php:832
+#@ ifeature
+msgid "Check this box to hide the title on this page"
+msgstr "Marque esta casilla para ocultar el título en esta página"
+
+#: pro/meta-box.php:839
+#@ ifeature
+msgid "Hide Page Content"
+msgstr "Ocultar contenido de la página"
+
+#: pro/meta-box.php:840
+#@ ifeature
+msgid "Check this box to hide the content on this page"
+msgstr "Marque esta casilla para ocultar el contenido de esta página"
+
+#: pro/meta-box.php:861
+#@ ifeature
+msgid "Select Slider Size"
+msgstr "Seleccione Tamaño deslizante"
+
+#: pro/meta-box.php:862
+#@ ifeature
+msgid "Select the size of the slider"
+msgstr "Seleccione el tamaño de la barra"
+
+#: pro/meta-box.php:870
+#@ ifeature
+msgid "Select Slider Type"
+msgstr "Seleccionar tipo deslizante"
+
+#: pro/meta-box.php:871
+#@ ifeature
+msgid "Select the type of slider"
+msgstr "Seleccione el tipo de regulador"
+
+#: pro/meta-box.php:879
+#@ ifeature
+msgid "Custom Slide Category"
+msgstr "Categoría presentación personalizada"
+
+#: pro/meta-box.php:880
+#@ ifeature
+msgid "Select the slide category you would like to use"
+msgstr "Seleccione la categoría de diapositiva que desea utilizar"
+
+#: pro/meta-box.php:888
+#@ ifeature
+msgid "Blog Post Category"
+msgstr "Blog categoría de puesto"
+
+#: pro/meta-box.php:889
+#@ ifeature
+msgid "Select the blog post category you would like to use"
+msgstr "Seleccione la categoría de entrada en el blog que le gustaría usar"
+
+#: pro/meta-box.php:897
+#@ ifeature
+msgid "Number of featured blog posts"
+msgstr "Número de puestos blog destacado"
+
+#: pro/meta-box.php:898
+#@ ifeature
+msgid "Default is 5 (for blog posts only)"
+msgstr "Por defecto es 5 (para entradas del blog solamente)"
+
+#: pro/meta-box.php:905
+#@ ifeature
+msgid "Slider Height"
+msgstr "deslizador de altura"
+
+#: pro/meta-box.php:906
+#@ ifeature
+msgid "Default is 300"
+msgstr "Por defecto es 300"
+
+#: pro/meta-box.php:913
+#@ ifeature
+msgid "Slider Delay Time (in milliseconds)"
+msgstr "Deslizador de tiempo de retardo (en milisegundos)"
+
+#: pro/meta-box.php:914
+#@ ifeature
+msgid "Default is 3500"
+msgstr "Por defecto es de 3500"
+
+#: pro/meta-box.php:921
+#@ ifeature
+msgid "Select Slider Animation Type"
+msgstr "Seleccionar tipo deslizante Animación"
+
+#: pro/meta-box.php:922
+#@ ifeature
+msgid "Default is random"
+msgstr "Por defecto es al azar"
+
+#: pro/meta-box.php:930
+#@ ifeature
+msgid "Select Slider Navigation Style"
+msgstr "Seleccione deslizante estilo de navegación"
+
+#: pro/meta-box.php:931
+#@ ifeature
+msgid "Default is dots"
+msgstr "Por defecto es puntos"
+
+#: pro/meta-box.php:939
+#@ ifeature
+msgid "Select Slider Caption Style"
+msgstr "Seleccione Estilo deslizante Leyenda"
+
+#: pro/meta-box.php:940
+#@ ifeature
+msgid "Default is none"
+msgstr "Por defecto no es"
+
+#: pro/meta-box.php:948
+#@ ifeature
+msgid "Hide Navigation Arrows"
+msgstr "Ocultar flechas de navegación"
+
+#: pro/meta-box.php:949
+#@ ifeature
+msgid "Check this box to hide the navigation arrows on the slider"
+msgstr "Marque esta casilla para ocultar las flechas de navegación en el deslizador"
+
+#: pro/meta-box.php:956
+#@ ifeature
+msgid "Disable Navigation Auto-Hide"
+msgstr "Desactivar Navegación Auto-Ocultar"
+
+#: pro/meta-box.php:957
+#@ ifeature
+msgid "Check this box to disable the navigation arrow auto-hide"
+msgstr "Marque esta casilla para desactivar la flecha de navegación de ocultación automática"
+
+#: pro/meta-box.php:964
+#@ ifeature
+msgid "Enable WordThumb Image Resizing"
+msgstr "Habilitar Cambio de tamaño WordThumb"
+
+#: pro/meta-box.php:965
+#@ ifeature
+msgid "Check this box to enable the use of WordThumb image resizing."
+msgstr "Marque esta casilla para permitir el uso de cambiar el tamaño de la imagen WordThumb."
+
+#: pro/meta-box.php:983
+#@ ifeature
+msgid "Callout Section"
+msgstr "Llamada Sección"
+
+#: pro/meta-box.php:988
+#: pro/meta-box.php:1079
+#@ ifeature
+msgid "Title"
+msgstr "título"
+
+#: pro/meta-box.php:989
+#@ ifeature
+msgid "Enter your Callout Section title"
+msgstr "Introduzca su título de la sección Llamada"
+
+#: pro/meta-box.php:996
+#@ ifeature
+msgid "Callout Text"
+msgstr "Llamada de texto"
+
+#: pro/meta-box.php:997
+#@ ifeature
+msgid "Enter your Callout Section text"
+msgstr "Escriba su texto Llamada Sección"
+
+#: pro/meta-box.php:1004
+#@ ifeature
+msgid "Callout Button Text"
+msgstr "Llamada texto de los botones"
+
+#: pro/meta-box.php:1005
+#@ ifeature
+msgid "Enter the text for your Callout Button"
+msgstr "Introduzca el texto de su Llamada botón"
+
+#: pro/meta-box.php:1012
+#@ ifeature
+msgid "Callout Button URL"
+msgstr "Llamada URL botón"
+
+#: pro/meta-box.php:1020
+#@ ifeature
+msgid "Custom Callout Button Image"
+msgstr "Llamada imagen del botón personalizado"
+
+#: pro/meta-box.php:1021
+#@ ifeature
+msgid "Upload a custom Callout Buttom image here:"
+msgstr "Subir una imagen personalizada Llamada Buttom aquí:"
+
+#: pro/meta-box.php:1028
+#@ ifeature
+msgid "Select Callout Section Background"
+msgstr "Seleccione Llamada sección de antecedentes"
+
+#: pro/meta-box.php:1029
+#@ ifeature
+msgid "Default is  Pro 2, select \"color picker\" to use the color picker option below"
+msgstr "Por defecto es Pro 2, seleccione &quot;selector de color&quot;, para usar la opción de selector de color por debajo de"
+
+#: pro/meta-box.php:1037
+#@ ifeature
+msgid "Custom Background Color"
+msgstr "Color de fondo personalizada"
+
+#: pro/meta-box.php:1038
+#@ ifeature
+msgid "Use the color picker to select a custom background color for the Callout Section"
+msgstr "Utilice el selector de color para seleccionar un color de fondo de la llamada Sección"
+
+#: pro/meta-box.php:1044
+#@ ifeature
+msgid "Callout Title Color"
+msgstr "Llamada Color del título"
+
+#: pro/meta-box.php:1045
+#@ ifeature
+msgid "Use the color picker to select the callout section title color"
+msgstr "Utilice el selector de color para seleccionar el color de la sección llamada el título"
+
+#: pro/meta-box.php:1051
+#@ ifeature
+msgid "Callout Text Color"
+msgstr "Llamada Color del texto"
+
+#: pro/meta-box.php:1058
+#@ ifeature
+msgid "Callout Button Color"
+msgstr "Llamada Color del botón"
+
+#: pro/meta-box.php:1059
+#@ ifeature
+msgid "Use the color picker to select the callout button color"
+msgstr "Utilice el selector de color para seleccionar el color del botón de llamada"
+
+#: pro/meta-box.php:1076
+#@ ifeature
+msgid "SEO"
+msgstr "SEO"
+
+#: pro/meta-box.php:1080
+#@ ifeature
+msgid "Enter your title"
+msgstr "Escriba el título"
+
+#: pro/meta-box.php:1086
+#@ ifeature
+msgid "Description"
+msgstr "descripción"
+
+#: pro/meta-box.php:1087
+#@ ifeature
+msgid "Enter your description"
+msgstr "Escriba su descripción"
+
+#: pro/meta-box.php:1094
+#@ ifeature
+msgid "Keywords"
+msgstr "palabras clave"
+
+#: pro/meta-box.php:1095
+#@ ifeature
+msgid "Enter your keywords"
+msgstr "Introduzca las palabras clave"
 

@@ -19,767 +19,587 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes"
 
-#: 404.php:18
+#: 404.php:23
 #@ ifeature
 msgid "Error 404"
 msgstr "Erreur 404"
 
-#: archive.php:26
+#: archive.php:31
 #@ default
 msgid "Archive for the &#8216;ifeature"
 msgstr ""
 
-#: archive.php:26
+#: archive.php:31
 #@ ifeature
 msgid "&#8217; Category:"
 msgstr "&#8217;  Catégorie:"
 
-#: archive.php:29
+#: archive.php:34
 #@ ifeature
 msgid "Posts Tagged &#8216;"
 msgstr "Posts Tagged &#8216;"
 
-#: archive.php:29
+#: archive.php:34
 #@ ifeature
 msgid "&#8217;:"
 msgstr "&#8217;:"
 
-#: archive.php:32
-#: archive.php:35
-#: archive.php:38
+#: archive.php:37
+#: archive.php:40
+#: archive.php:43
 #@ ifeature
 msgid "Archive for:"
 msgstr "Archive pour:"
 
-#: archive.php:41
+#: archive.php:46
 #@ ifeature
 msgid "Author Archive:"
 msgstr "Archive de l'auteur:"
 
-#: archive.php:44
+#: archive.php:49
 #@ ifeature
 msgid "Blog Archives:"
 msgstr "Archives Blog:"
 
-#: comments.php:20
+#: comments.php:19
 #@ ifeature
 msgid "No Responses"
 msgstr "Pas de réponses"
 
-#: comments.php:20
+#: comments.php:19
 #@ ifeature
 msgid "One Response"
 msgstr "One Response"
 
-#: comments.php:20
+#: comments.php:19
 #@ ifeature
 msgid "% Responses"
 msgstr "% Réponses"
 
-#: footer.php:24
-#: sidebar.php:29
+#: footer.php:38
 #@ ifeature
 msgid "Recent Posts"
 msgstr "les messages récents"
 
-#: footer.php:31
-#: sidebar.php:42
+#: footer.php:45
+#: sidebar-right.php:22
+#: sidebar.php:29
 #@ ifeature
 msgid "Archives"
 msgstr "Archives"
 
-#: footer.php:38
+#: footer.php:52
 #@ ifeature
 msgid "Links"
 msgstr "Liens"
 
-#: footer.php:45
-#: footer.php:49
-#: sidebar.php:56
-#: sidebar.php:60
+#: footer.php:59
+#: footer.php:63
+#: sidebar-right.php:36
+#: sidebar-right.php:40
+#: sidebar.php:43
+#: sidebar.php:47
 #@ ifeature
 msgid "WordPress"
 msgstr "WordPress"
 
-#: footer.php:49
-#: sidebar.php:60
+#: footer.php:63
+#: sidebar-right.php:40
+#: sidebar.php:47
 #@ ifeature
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"
 
-#: footer.php:49
-#: sidebar.php:60
+#: footer.php:63
+#: sidebar-right.php:40
+#: sidebar.php:47
 #@ ifeature
 msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
 msgstr "Propulsé par WordPress, state-of-the-art plateforme de publication personnelle sémantique."
 
-#: functions.php:117
-#@ ifeature
+#: functions.php:123
+#@ default
 msgid "Page"
 msgstr "Page"
 
-#: header.php:172
+#: header.php:164
 #@ ifeature
 msgid "Enter Contact Information Here"
 msgstr "Entrez Coordonnées Ici"
 
-#: icons.php:33
-#: icons.php:36
-#: library/options/options.php:408
+#: icons.php:45
+#: icons.php:48
+#: library/options/options-core.php:136
 #@ ifeature
 msgid "Facebook"
 msgstr "Facebook"
 
-#: icons.php:36
+#: icons.php:48
 #@ ifeature
 msgid "http://facebook.com"
 msgstr "http://facebook.com"
 
-#: icons.php:39
-#: icons.php:42
+#: icons.php:51
+#: icons.php:54
+#: library/options/options-core.php:135
 #: library/options/options-themes.php:50
-#: library/options/options.php:407
 #@ ifeature
 #@ default
 msgid "Twitter"
 msgstr "Twitter"
 
-#: icons.php:42
+#: icons.php:54
 #@ ifeature
 msgid "http://twitter.com/"
 msgstr "http://twitter.com/"
 
-#: icons.php:45
+#: icons.php:57
 #@ ifeature
 msgid " Gplus"
 msgstr " Gplus"
 
-#: icons.php:48
+#: icons.php:60
 #@ ifeature
 msgid "https://plus.google.com/"
 msgstr "https://plus.google.com/"
 
-#: icons.php:48
+#: icons.php:60
 #@ ifeature
 msgid "Gplus"
 msgstr "Gplus"
 
-#: icons.php:51
-#: icons.php:54
+#: icons.php:63
+#: icons.php:66
 #@ ifeature
 msgid "Flickr"
 msgstr "Flickr"
 
-#: icons.php:54
+#: icons.php:66
 #@ ifeature
 msgid "https://flickr.com/"
 msgstr "https://flickr.com/"
 
-#: icons.php:57
-#: icons.php:60
+#: icons.php:75
+#: icons.php:78
 #@ ifeature
 msgid "LinkedIn"
 msgstr "LinkedIn"
 
-#: icons.php:60
+#: icons.php:78
 #@ ifeature
 msgid "http://linkedin.com/"
 msgstr "http://linkedin.com/"
 
-#: icons.php:63
-#: icons.php:66
+#: icons.php:81
+#: icons.php:84
 #@ ifeature
 msgid "YouTube"
 msgstr "YouTube"
 
-#: icons.php:66
+#: icons.php:84
 #@ ifeature
 msgid " http://youtube.com/"
 msgstr " http://youtube.com/"
 
-#: icons.php:69
+#: icons.php:87
 #@ ifeature
 msgid "Google Maps"
 msgstr "Google Maps"
 
-#: icons.php:75
-#: icons.php:78
+#: icons.php:93
+#: icons.php:96
 #@ ifeature
 msgid "E-mail"
 msgstr "E-mail"
 
-#: icons.php:78
+#: icons.php:96
 #@ ifeature
 msgid "mailto:no@way.com"
 msgstr "mailto:no@way.com"
 
-#: icons.php:81
-#: icons.php:84
+#: icons.php:99
+#: icons.php:102
 #@ ifeature
 msgid "RSS"
 msgstr "RSS"
 
-#: library/options/options.php:90
+#: library/options/options-tabs.php:40
 #@ ifeature
 msgid "Use the image uploader or enter your own URL into the input field to use an image as your logo. To display the site title as text, leave blank."
 msgstr "Utilisez le téléchargeur d'image ou entrez votre propre URL dans le champ de saisie à utiliser une image comme logo. Pour afficher le titre du site comme du texte, laissez le champ vide."
 
-#: library/options/options.php:97
+#: library/options/options-tabs.php:46
 #@ ifeature
 msgid "Enter contact info such as phone number for the top right corner of the header. It can be HTML (to hide enter the word: hide)."
 msgstr "Entrez les coordonnées telles que le numéro de téléphone pour le coin supérieur droit de l'en-tête. Il peut être HTML (pour masquer entrez le mot: cacher)."
 
-#: library/options/options.php:103
+#: library/options/options-tabs.php:52
 #@ ifeature
 msgid "A favicon is a 16x16 pixel icon that represents your site; paste the URL to a .ico image that you want to use as the image."
 msgstr "Un favicon est une icône de 16x16 pixels qui représente votre site; collez l'URL d'une image ico que vous souhaitez utiliser comme image.."
 
-#: library/options/options.php:109
+#: library/options/options-tabs.php:58
 #@ ifeature
 msgid "Check this box to disable breadcrumb links."
 msgstr "Cochez cette case pour désactiver les liens de navigation."
 
-#: library/options/options.php:115
-#@ ifeature
-msgid "Enter Copyright text used on the right side of the footer. It can be HTML."
-msgstr "Entrez le texte d'auteur utilisé sur le côté droit du pied de page. Il peut être HTML."
-
-#: library/options/options.php:121
+#: library/options/options-tabs.php:64
 #@ ifeature
 msgid "You can paste your Google Analytics or other tracking code in this box. This will be automatically be added to the footer."
 msgstr "Vous pouvez coller votre Google Analytics ou un code de suivi d'autres dans cette boîte. Ce sera automatiquement ajouté dans le pied."
 
-#: library/options/options.php:145
+#: library/options/options-tabs.php:87
 #@ ifeature
 msgid "Choose a font:"
 msgstr "Choisissez une police:"
 
-#: library/options/options.php:146
+#: library/options/options-tabs.php:88
+#: library/options/options-tabs.php:100
 #@ ifeature
 msgid "(Default is Arial)"
 msgstr "(Valeur par défaut est Arial)"
 
-#: library/options/options.php:151
-#@ ifeature
-msgid "Link Color:"
-msgstr "Couleur des liens:"
-
-#: library/options/options.php:152
-#@ ifeature
-msgid "Use the color picker to select the site link color"
-msgstr "Utilisez le sélecteur de couleur pour sélectionner la couleur du lien du site"
-
-#: library/options/options.php:157
+#: library/options/options-tabs.php:160
 #@ ifeature
 msgid "Enable Widget Title Background:"
 msgstr "Activer fond du titre du Widget:"
 
-#: library/options/options.php:158
+#: library/options/options-tabs.php:161
 #@ ifeature
 msgid "Check this box to enable the classic widget title backgrounds."
 msgstr "Cochez cette case pour activer les origines classiques du titre du widget."
 
-#: library/options/options.php:187
+#: library/options/options-tabs.php:202
 #@ ifeature
 msgid "Post Excerpts:"
 msgstr "Extraits du message:"
 
-#: library/options/options.php:188
+#: library/options/options-tabs.php:203
 #@ ifeature
 msgid "Use the following options to control excerpts."
 msgstr "Utilisez les options suivantes pour contrôler extraits."
 
-#: library/options/options.php:193
-#@ ifeature
-msgid "Featured Images:"
-msgstr "Images:"
-
-#: library/options/options.php:194
+#: library/options/options-tabs.php:209
 #@ ifeature
 msgid "Use the following options to control featured image alignment and size."
 msgstr "Utilisez les options suivantes pour contrôler l'alignement des images en vedette et la taille."
 
-#: library/options/options.php:199
+#: library/options/options-tabs.php:214
 #@ ifeature
 msgid "Hide Post Elements:"
 msgstr "Masquer les éléments du message:"
 
-#: library/options/options.php:200
+#: library/options/options-tabs.php:215
 #@ ifeature
 msgid "Use the following checkboxes to hide various post elements."
 msgstr "Utilisez les cases suivantes pour masquer les éléments après diverses."
 
-#: library/options/options.php:205
+#: library/options/options-tabs.php:220
 #@ ifeature
 msgid "Show Facebook Like Button:"
 msgstr "Montrer Facebook Like Button:"
 
-#: library/options/options.php:206
+#: library/options/options-tabs.php:221
 #@ ifeature
 msgid "Check this box to show the Facebook Like Button on blog posts."
 msgstr "Cochez cette case pour montrer le bouton Facebook Comme sur les messages blog."
 
-#: library/options/options.php:211
-#@ ifeature
-msgid "Show Google +1 button:"
-msgstr "Voir dans Google +1 bouton:"
-
-#: library/options/options.php:212
+#: library/options/options-tabs.php:227
 #@ ifeature
 msgid "Check this box to show the Google +1 Button on blog posts."
 msgstr "Cochez cette case pour afficher le Google +1 bouton sur le blog."
 
-#: library/options/options.php:217
-#@ ifeature
-msgid "Home Description:"
-msgstr "Accueil Description:"
-
-#: library/options/options.php:218
+#: library/options/options-tabs.php:329
 #@ ifeature
 msgid "Enter the META description of your homepage here."
 msgstr "Entrez le META description de votre page d'accueil ici."
 
-#: library/options/options.php:223
-#@ ifeature
-msgid "Home Keywords:"
-msgstr "Mots-clés accueil:"
-
-#: library/options/options.php:224
+#: library/options/options-tabs.php:335
 #@ ifeature
 msgid "Enter the META keywords of your homepage here (separated by commas)."
 msgstr "Entrez les mots-clés META sur votre page d'accueil ici (séparés par des virgules)."
 
-#: library/options/options.php:229
-#@ ifeature
-msgid " Optional Home Title:"
-msgstr "Titre Accueil option:"
-
-#: library/options/options.php:230
+#: library/options/options-tabs.php:341
 #@ ifeature
 msgid "Enter an alternative title of your homepage here (default is site tagline)."
 msgstr "Saisissez un titre alternatif de votre page d'accueil ici (valeur par défaut est le slogan du site)."
 
-#: library/options/options.php:252
-#@ ifeature
-msgid "Hide iFeature Slider:"
-msgstr "Cacher iFonction Slider:"
-
-#: library/options/options.php:253
-#@ ifeature
-msgid "Check this box to hide the Feature Slider on the homepage."
-msgstr "Cochez cette case pour cacher le curseur de fond sur la page d'accueil."
-
-#: library/options/options.php:258
+#: library/options/options-tabs.php:256
 #@ ifeature
 msgid "Show Posts From Blog Category:"
 msgstr "Montrer les messages depuis Catégorie blog:"
 
-#: library/options/options.php:259
-#@ ifeature
-msgid "(Default is all)"
-msgstr "(Valeur par défaut est tous)"
-
-#: library/options/options.php:264
-#@ ifeature
-msgid "Number of Featured Posts:"
-msgstr "Nombre de messages en vedette:"
-
-#: library/options/options.php:265
-#@ ifeature
-msgid "(Default is 5"
-msgstr "(5 par défaut"
-
-#: library/options/options.php:270
+#: library/options/options-tabs.php:280
 #@ ifeature
 msgid "Slider Delay Time (in milliseconds):"
 msgstr "Délai Slider (en millisecondes):"
 
-#: library/options/options.php:271
+#: library/options/options-tabs.php:281
 #@ ifeature
 msgid "(Default is 3500)"
 msgstr "(Valeur par défaut est 3500)"
 
-#: library/options/options.php:301
-#@ ifeature
-msgid "Facebook URL:"
-msgstr "Facebook URL:"
-
-#: library/options/options.php:302
+#: library/options/options-tabs.php:363
 #@ ifeature
 msgid "Enter your Facebook page URL for the Facebook social icon."
 msgstr "Entrez l'URL de votre page Facebook de l'icône social Facebook."
 
-#: library/options/options.php:307
+#: library/options/options-tabs.php:368
 #@ ifeature
 msgid "Twitter URL:"
 msgstr "Twitter URL:"
 
-#: library/options/options.php:308
-#@ ifeature
-msgid "Enter your Twitter URL for Twitter social icon."
-msgstr "Entrez l'URL de votre site web pour Twitter sociale icône."
-
-#: library/options/options.php:313
+#: library/options/options-tabs.php:374
 #@ ifeature
 msgid "Google Plus URL:"
 msgstr "Google plus URL:"
 
-#: library/options/options.php:314
+#: library/options/options-tabs.php:375
 #@ ifeature
 msgid "Enter your Google Plus url (we recommend using the http://gplus.to/ shortener)."
 msgstr "Entrez votre Google plus url (nous recommandons d'utiliser le raccourcisseur http://gplus.to/)."
 
-#: library/options/options.php:319
-#@ ifeature
-msgid "Flickr URL:"
-msgstr "Flickr URL:"
-
-#: library/options/options.php:320
+#: library/options/options-tabs.php:381
 #@ ifeature
 msgid "Enter your Flickr URL for the Flickr social icon."
 msgstr "Entrez votre URL Flickr pour l'icône Flickr sociale."
 
-#: library/options/options.php:325
-#@ ifeature
-msgid "LinkedIn URL:"
-msgstr "LinkedIn URL:"
-
-#: library/options/options.php:326
+#: library/options/options-tabs.php:393
 #@ ifeature
 msgid "Enter your LinkedIn URL for the LinkedIn social icon."
 msgstr "Entrez votre URL de l'icône LinkedIn LinkedIn sociale."
 
-#: library/options/options.php:331
+#: library/options/options-tabs.php:398
 #@ ifeature
 msgid "YouTube URL:"
 msgstr "YouTube URL:"
 
-#: library/options/options.php:332
-#@ ifeature
-msgid " Enter your YouTube URL for the YouTube social icon."
-msgstr "Entrez votre URL de YouTube pour l'icône YouTube sociale."
-
-#: library/options/options.php:337
+#: library/options/options-tabs.php:404
 #@ ifeature
 msgid "Google Maps URL:"
 msgstr "Google Maps URL:"
 
-#: library/options/options.php:338
+#: library/options/options-tabs.php:405
 #@ ifeature
 msgid "Enter your Google Maps URL for the Google Maps social icon."
 msgstr "Entrez votre URL Google Maps pour l'icône de Google Maps sociale."
 
-#: library/options/options.php:343
+#: library/options/options-tabs.php:410
 #@ ifeature
 msgid "Email:"
 msgstr "Email:"
 
-#: library/options/options.php:344
-#@ ifeature
-msgid "Enter your contact email address for email social icon."
-msgstr "Entrez votre adresse email de contact pour l'icône sociale email."
-
-#: library/options/options.php:349
+#: library/options/options-tabs.php:416
 #@ ifeature
 msgid "Custom RSS Link:"
 msgstr "Custom RSS Link:"
 
-#: library/options/options.php:350
+#: library/options/options-tabs.php:417
 #@ ifeature
 msgid "Enter Feedburner URL, or leave blank for default RSS feed."
 msgstr "Entrez Feedburner URL, ou blanc de congé pour défaut Flux RSS."
 
-#: library/options/options.php:677
+#: library/options/options-case.php:407
 #@ ifeature
 msgid "Show Excerpts"
 msgstr "Extraits Voir"
 
-#: library/options/options.php:688
+#: library/options/options-case.php:418
 #@ ifeature
 msgid "Excerpt Link Text"
 msgstr "Link Text Extrait"
 
-#: library/options/options.php:699
+#: library/options/options-case.php:429
 #@ ifeature
 msgid "Excerpt Character Length"
 msgstr "Longueur des caractères Extrait"
 
-#: library/options/options.php:723
+#: library/options/options-case.php:453
 #@ ifeature
 msgid "Author"
 msgstr "Auteur"
 
-#: library/options/options.php:726
-#: sidebar.php:49
+#: library/options/options-case.php:456
+#: sidebar-right.php:29
+#: sidebar.php:36
 #@ ifeature
 msgid "Categories"
 msgstr "Catégories"
 
-#: library/options/options.php:729
+#: library/options/options-case.php:459
 #@ ifeature
 msgid "Date"
 msgstr "Date de"
 
-#: library/options/options.php:732
+#: library/options/options-case.php:462
 #@ ifeature
 msgid "Comments"
 msgstr "Commentaires"
 
-#: library/options/options.php:735
-#@ ifeature
-msgid "Sharing"
-msgstr "Partage"
-
-#: library/options/options.php:738
-#@ default
-msgid "Tagsifeature"
-msgstr ""
-
-#: library/options/options.php:774
+#: library/options/options-case.php:1060
 #@ ifeature
 msgid "Define a custom Featured Image size below (default is 100 by 100):"
 msgstr "Définir une taille d'image personnalisée en vedette ci-dessous (par défaut est de 100 par 100):"
 
-#: library/options/options.php:798
+#: library/options/options-case.php:1084
 #@ ifeature
 msgid "Height"
 msgstr "Hauteur"
 
-#: library/options/options.php:802
+#: library/options/options-case.php:1088
 #@ ifeature
 msgid "Width"
 msgstr "Largeur"
 
-#: library/options/options.php:822
+#: library/options/options-case.php:221
 #@ ifeature
 msgid " Custom Logo"
 msgstr "Logo personnalisé"
 
-#: library/options/options.php:845
+#: library/options/options-case.php:243
 #@ ifeature
 msgid "Upload a logo image to use"
 msgstr "Ajouter une image à utiliser le logo"
 
-#: library/options/options.php:102
-#: library/options/options.php:870
+#: library/options/options-case.php:267
+#: library/options/options-tabs.php:51
 #@ ifeature
 msgid "Custom Favicon"
 msgstr "Favicon personnalisée"
 
-#: library/options/options.php:893
+#: library/options/options-case.php:290
 #@ ifeature
 msgid "Upload a favicon image to use"
 msgstr "Ajouter une image à utiliser favicon"
 
-#: library/options/options.php:921
+#: library/options/options-case.php:699
 #@ ifeature
 msgid "Check this box to hide the Facebook icon."
 msgstr "Cochez cette case pour masquer l'icône Facebook."
 
-#: library/options/options.php:946
+#: library/options/options-case.php:722
 #@ ifeature
 msgid "Check this box to hide the Twitter icon."
 msgstr "Cochez cette case pour masquer l'icône Twitter."
 
-#: library/options/options.php:971
+#: library/options/options-case.php:745
 #@ ifeature
 msgid "Check this box to hide the Google + icon."
 msgstr "Cochez cette case pour masquer l'icône de Google +."
 
-#: library/options/options.php:995
+#: library/options/options-case.php:792
 #@ ifeature
 msgid "Check this box to hide the Flickr icon."
 msgstr "Cochez cette case pour masquer l'icône de Flickr."
 
-#: library/options/options.php:1021
+#: library/options/options-case.php:817
 #@ ifeature
 msgid "Check this box to hide the LinkedIn icon."
 msgstr "Cochez cette case pour masquer l'icône de LinkedIn."
 
-#: library/options/options.php:1045
-#@ ifeature
-msgid "Check this box to hide the YouTube icon."
-msgstr "Cochez cette case pour masquer l'icône YouTube."
-
-#: library/options/options.php:1069
-#@ ifeature
-msgid "Check this box to hide the Google Maps icon. "
-msgstr "Cochez cette case pour cacher l'icône de Google Maps."
-
-#: library/options/options.php:1093
-#@ ifeature
-msgid "Check this box to hide the Email icon. "
-msgstr "Cochez cette case pour masquer l'icône Email."
-
-#: library/options/options.php:1116
+#: library/options/options-case.php:912
 #@ ifeature
 msgid "Check this box to hide the RSS icon."
 msgstr "Cochez cette case pour masquer l'icône RSS."
 
-#: library/options/options.php:1245
+#: library/options/options-core.php:181
 #@ ifeature
 msgid "WARNING THIS RESTORES ALL DEFAULTS"
 msgstr "ATTENTION CETTE restaure tous DEFAULTS"
 
-#: archive.php:68
-#: loop.php:75
-#: single.php:54
+#: archive.php:74
+#: loop.php:81
 #@ ifeature
 msgid "No Comments &#187;"
 msgstr "No Comments &#187;"
 
-#: archive.php:68
-#: loop.php:75
-#: single.php:54
+#: archive.php:74
+#: loop.php:81
 #@ ifeature
 msgid "1 Comment &#187;"
 msgstr "1 Comment &#187;"
 
-#: archive.php:68
-#: loop.php:75
-#: single.php:54
+#: archive.php:74
+#: loop.php:81
 #@ ifeature
 msgid "% Comments &#187;"
 msgstr "% Comments &#187;"
 
-#: meta.php:20
+#: meta.php:27
 #@ ifeature
 msgid "Published by"
 msgstr "Publié par"
 
-#: meta.php:20
+#: meta.php:27
 #@ ifeature
 msgid "in"
 msgstr "dans les"
 
-#: meta.php:20
+#: meta.php:27
 #@ ifeature
 msgid "on"
 msgstr "sur"
 
-#: loop.php:45
-#: page.php:57
-#: single.php:38
+#: loop.php:51
+#: page.php:123
+#: single.php:51
 #@ ifeature
 msgid "Edit this entry."
 msgstr "Modifier cette entrée."
 
-#: pagination.php:13
-#@ ifeature
-msgid "&laquo; Older Entries"
-msgstr "&laquo; Articles plus anciens"
-
-#: pagination.php:14
-#@ ifeature
-msgid "Newer Entries &raquo;"
-msgstr "Les nouvelles inscriptions &raquo;"
-
-#: search.php:23
-#@ ifeature
-msgid " Search Results For:"
-msgstr "Résultats de la recherche pour:"
-
-#: search.php:50
+#: search.php:49
 #@ default
 msgid "No posts found.ifeature"
 msgstr ""
 
-#: sidebar.php:21
+#: sidebar-left.php:27
+#: sidebar.php:53
 #@ ifeature
 msgid "Subscribe"
 msgstr "Abonnez-vous"
 
-#: sidebar.php:23
+#: sidebar-left.php:29
+#: sidebar.php:55
 #@ ifeature
 msgid "Entries (RSS)"
 msgstr "Articles (RSS)"
 
-#: sidebar.php:24
-#@ ifeature
-msgid " Comments (RSS)"
-msgstr "Commentaires (RSS)"
-
-#: library/options/meta-box.php:547
-#@ ifeature
-msgid "iFeature Slider Options"
-msgstr "iFonction options Curseur"
-
-#: library/options/meta-box.php:553
-#@ ifeature
-msgid "iFeature Slider Image"
-msgstr "Image Slider iFonction"
-
-#: library/options/meta-box.php:554
+#: pro/meta-box.php:706
 #@ ifeature
 msgid "Upload your image here:"
 msgstr "Téléchargez votre image ici:"
-
-#: library/options/meta-box.php:579
-#@ ifeature
-msgid "Hide page title"
-msgstr "Titre de la page Cacher"
-
-#: library/options/meta-box.php:580
-#@ ifeature
-msgid "Check this box to hide your page title"
-msgstr "Cochez cette case pour cacher votre page de titre"
-
-#: library/options/meta-box.php:586
-#@ ifeature
-msgid "SEO Title"
-msgstr "SEO Title"
-
-#: library/options/meta-box.php:587
-#@ ifeature
-msgid "Enter your page title"
-msgstr "Entrez votre titre de page"
-
-#: library/options/meta-box.php:593
-#@ ifeature
-msgid "SEO Description"
-msgstr "description de référencement"
-
-#: library/options/meta-box.php:594
-#@ ifeature
-msgid "Enter your page description"
-msgstr "Entrez votre description de page"
-
-#: library/options/meta-box.php:601
-#@ ifeature
-msgid "SEO Keywords"
-msgstr "Mots-clés SEO"
 
 #: library/options/options-themes.php:43
 #@ ifeature
 msgid "Professional WordPress Themes"
 msgstr "Professional WordPress Themes"
 
+#: library/options/options-core.php:132
 #: library/options/options-themes.php:47
-#: library/options/options.php:404
 #@ ifeature
 msgid "Support"
 msgstr "Soutien"
 
+#: library/options/options-core.php:133
 #: library/options/options-themes.php:48
-#: library/options/options.php:405
 #@ ifeature
 msgid "Documentation"
 msgstr "Documentation"
 
+#: library/options/options-core.php:134
 #: library/options/options-themes.php:49
-#: library/options/options.php:406
 #@ ifeature
 msgid "Forum"
 msgstr "Forum"
 
+#: library/options/options-core.php:137
 #: library/options/options-themes.php:51
-#: library/options/options.php:409
 #@ ifeature
 msgid "CyberChimps Store"
 msgstr "CyberChimps Store"
 
+#: library/options/options-core.php:138
 #: library/options/options-themes.php:52
-#: library/options/options.php:410
 #@ ifeature
 msgid "CyberChimps Pro"
 msgstr "CyberChimps Pro"
@@ -864,125 +684,1820 @@ msgstr "Pro Neuro est un thème WordPress prochaine génération libérée sous 
 msgid "Buy Neuro Pro"
 msgstr "Buy Neuro Pro"
 
-#: library/options/options.php:419
+#: library/options/options-core.php:145
 #@ ifeature
 msgid "General"
 msgstr "général"
 
-#: library/options/options.php:420
+#: library/options/options-core.php:146
 #@ ifeature
 msgid "Design"
 msgstr "conception"
 
-#: library/options/options.php:421
+#: library/options/options-core.php:147
 #@ ifeature
 msgid "Blog"
 msgstr "Blog"
 
-#: library/options/options.php:422
-#@ ifeature
-msgid "iFeature Slider"
-msgstr "iFeature Slider"
-
-#: library/options/options.php:423
+#: library/options/options-core.php:148
 #@ ifeature
 msgid "Social"
 msgstr "Social"
 
-#: library/options/options.php:476
-#: library/options/options.php:494
-#: library/options/options.php:512
-#: library/options/options.php:531
-#: library/options/options.php:550
+#: library/options/options-case.php:112
+#: library/options/options-case.php:130
+#: library/options/options-case.php:148
+#: library/options/options-case.php:166
+#: library/options/options-case.php:184
+#: library/options/options-case.php:202
 #@ ifeature
 msgid "Read the"
 msgstr "Lire le"
 
-#: library/options/options.php:476
+#: library/options/options-case.php:112
 #@ ifeature
 msgid "General Options Tab FAQ"
 msgstr "Options générales onglet FAQ"
 
-#: library/options/options.php:494
+#: library/options/options-case.php:130
 #@ ifeature
 msgid "Design Options Tab FAQ"
 msgstr "Conception onglet Options FAQ"
 
-#: library/options/options.php:512
+#: library/options/options-case.php:148
 #@ ifeature
 msgid "Social Options Tab FAQ"
 msgstr "Social onglet Options FAQ"
 
-#: library/options/options.php:531
+#: library/options/options-case.php:166
 #@ ifeature
 msgid "Blog Options Tab FAQ"
 msgstr "Blog onglet Options FAQ"
 
-#: library/options/options.php:550
-#@ ifeature
-msgid "Slider Options Tab FAQ"
-msgstr "Curseur de l'onglet Options de FAQ"
-
-#: comments.php:12
+#: comments.php:11
 #@ default
 msgid "This post is password protected. Enter the password to view comments."
 msgstr ""
 
-#: comments.php:57
+#: comments.php:56
 #@ ifeature
 msgid "You must be"
 msgstr "Vous devez être"
 
-#: comments.php:57
+#: comments.php:56
 #@ ifeature
 msgid "logged in"
 msgstr "connecté"
 
-#: comments.php:57
+#: comments.php:56
 #@ ifeture
 msgid "to post a comment."
 msgstr ""
 
-#: archive.php:81
-#: index.php:37
+#: archive.php:88
 #@ ifeature
 msgid "Not Found"
 msgstr "Introuvable"
 
-#: library/options/options.php:89
+#: library/options/options-tabs.php:39
 #@ ifeature
 msgid "Logo URL"
 msgstr "Logo URL"
 
-#: library/options/options.php:96
+#: library/options/options-tabs.php:45
 #@ ifeature
 msgid "Header Contact Area"
 msgstr "Surface de contact en-tête"
 
-#: library/options/options.php:108
+#: library/options/options-tabs.php:57
 #@ ifeature
 msgid "Disable Breadcrumbs"
 msgstr "désactiver Chapelure"
 
-#: library/options/options.php:114
+#: library/options/options-tabs.php:440
 #@ ifeature
 msgid "Footer Copyright"
 msgstr "Bas de page Copyright"
 
-#: library/options/options.php:120
+#: library/options/options-tabs.php:63
 #@ ifeature
 msgid "Google Analytics Code"
 msgstr "Google Analytics Code"
 
-#: loop.php:44
-#: single.php:37
+#: loop.php:50
+#: single.php:49
 #@ ifeature
 msgid "Pages:"
 msgstr "pages:"
 
-#: loop.php:64
-#: single.php:48
+#: loop.php:70
+#: single.php:67
 #@ ifeature
 msgid "Tags:"
 msgstr "tags:"
+
+#: functions.php:349
+#: library/options/options-select.php:56
+#@ default
+msgid "Custom Slides"
+msgstr ""
+
+#: functions.php:350
+#@ default
+msgid "Slides"
+msgstr ""
+
+#: functions.php:511
+#@ default
+msgid "Header Menu"
+msgstr ""
+
+#: functions.php:511
+#@ default
+msgid "Footer Menu"
+msgstr ""
+
+#: icons.php:69
+#: icons.php:72
+#@ ifeature
+msgid "Myspace"
+msgstr ""
+
+#: icons.php:72
+#@ ifeature
+msgid "http://myspace.com"
+msgstr ""
+
+#: library/options/options-case.php:57
+#@ ifeature
+msgid "BLOG OPTIONS"
+msgstr ""
+
+#: library/options/options-case.php:75
+#@ ifeature
+msgid "SLIDER OPTIONS"
+msgstr ""
+
+#: library/options/options-case.php:93
+#@ ifeature
+msgid "SEO OPTIONS"
+msgstr ""
+
+#: library/options/options-case.php:184
+#@ ifeature
+msgid "Footer Options Tab FAQ"
+msgstr ""
+
+#: library/options/options-case.php:202
+#@ ifeature
+msgid "Import/Export Options Tab FAQ"
+msgstr ""
+
+#: library/options/options-case.php:312
+#@ ifeature
+msgid "Custom Home Icon"
+msgstr ""
+
+#: library/options/options-case.php:335
+#@ ifeature
+msgid "Upload a home icon image to use, press \"save settings\" to save image."
+msgstr ""
+
+#: library/options/options-case.php:359
+#@ ifeature
+msgid "Custom Callout Image"
+msgstr ""
+
+#: library/options/options-case.php:382
+#@ ifeature
+msgid "Upload a callout image to use, press \"save settings\" to save image."
+msgstr ""
+
+#: library/options/options-case.php:465
+#@ ifeature
+msgid "Share"
+msgstr ""
+
+#: library/options/options-case.php:468
+#@ ifeature
+msgid "Tags"
+msgstr ""
+
+#: library/options/options-case.php:768
+#@ ifeature
+msgid "Check this box to hide the Myspace icon."
+msgstr ""
+
+#: library/options/options-case.php:841
+#@ ifeature
+msgid "Check this box to hide the YouTube icon.  "
+msgstr ""
+
+#: library/options/options-case.php:865
+#@ ifeature
+msgid "Check this box to hide the Google Maps icon."
+msgstr ""
+
+#: library/options/options-case.php:889
+#@ ifeature
+msgid "Check this box to hide the Email icon."
+msgstr ""
+
+#: library/options/options-case.php:964
+#@ ifeature
+msgid "Need help? Read our"
+msgstr ""
+
+#: library/options/options-case.php:964
+#@ ifeature
+msgid "Custom CSS documentation"
+msgstr ""
+
+#: library/options/options-case.php:1124
+#@ ifeature
+msgid "Or, select \"color picker\" from the drop down menu and choose your own custom menu color below:"
+msgstr ""
+
+#: library/options/options-case.php:1178
+#@ ifeature
+msgid "Or enter your own font below (Google Fonts with more than one word format as follows: Maven+Pro)"
+msgstr ""
+
+#: library/options/options-case.php:1541
+#@ ifeature
+msgid "Or enter your own font below (Google Fonts with more than one word format as follows: Maven+Pro) "
+msgstr ""
+
+#: library/options/options-core.php:149
+#@ ifeature
+msgid "Footer"
+msgstr ""
+
+#: library/options/options-core.php:150
+#@ ifeature
+msgid "Import/Export"
+msgstr ""
+
+#: library/options/options-select.php:12
+#@ default
+msgid "Left (default)"
+msgstr ""
+
+#: library/options/options-select.php:12
+#@ default
+msgid "Center"
+msgstr ""
+
+#: library/options/options-select.php:12
+#: library/options/options-select.php:22
+#@ default
+msgid "Right"
+msgstr ""
+
+#: library/options/options-select.php:17
+#@ default
+msgid "iFeature 2.0 (default)"
+msgstr ""
+
+#: library/options/options-select.php:17
+#: library/options/options-select.php:41
+#@ default
+msgid "Blue"
+msgstr ""
+
+#: library/options/options-select.php:17
+#@ default
+msgid "Grey"
+msgstr ""
+
+#: library/options/options-select.php:17
+#: library/options/options-select.php:41
+#@ default
+msgid "Orange"
+msgstr ""
+
+#: library/options/options-select.php:17
+#: library/options/options-select.php:41
+#@ default
+msgid "Pink"
+msgstr ""
+
+#: library/options/options-select.php:17
+#: library/options/options-select.php:41
+#@ default
+msgid "Red"
+msgstr ""
+
+#: library/options/options-select.php:22
+#@ default
+msgid "Bottom (default)"
+msgstr ""
+
+#: library/options/options-select.php:22
+#@ default
+msgid "Left"
+msgstr ""
+
+#: library/options/options-select.php:22
+#: library/options/options-select.php:27
+#: library/options/options-select.php:32
+#@ default
+msgid "None"
+msgstr ""
+
+#: library/options/options-select.php:27
+#@ default
+msgid "Right (default)"
+msgstr ""
+
+#: library/options/options-select.php:27
+#@ default
+msgid "Two Right"
+msgstr ""
+
+#: library/options/options-select.php:27
+#@ default
+msgid "Right and Left"
+msgstr ""
+
+#: library/options/options-select.php:32
+#@ default
+msgid "Dots (default)"
+msgstr ""
+
+#: library/options/options-select.php:32
+#@ default
+msgid "Thumbnails"
+msgstr ""
+
+#: library/options/options-select.php:37
+#@ default
+msgid "Half-Width (default)"
+msgstr ""
+
+#: library/options/options-select.php:37
+#@ default
+msgid "Full-Width"
+msgstr ""
+
+#: library/options/options-select.php:41
+#@ default
+msgid "Grey (default)"
+msgstr ""
+
+#: library/options/options-select.php:41
+#@ default
+msgid "Black"
+msgstr ""
+
+#: library/options/options-select.php:41
+#@ default
+msgid "White"
+msgstr ""
+
+#: library/options/options-select.php:41
+#@ default
+msgid "Color Picker"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Arial"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Courier New"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Georgia"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Helvetica"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Lucida Grande (default)"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Tahoma"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Times New Roman"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Verdana"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Allan"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Allerta"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Allerta Stencil"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Amaranth"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Annie Use Your Telescope"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Anonymous Pro"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Anton"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Architects Daughter"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Arimo"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Arvo"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Astloch"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Bangers"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Bentham"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Bevan"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Buda"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Cabin"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Cabin Sketch"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Calligraffitti"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Cantarell"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Cardo"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Cherry Cream Soda"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Chewy"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Coda"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Coming Soon"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Copse"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Corben"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Cousine"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Covered By Your Grace"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Crafty Girls"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Crimson Text"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Crushed"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Cuprum"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Dancing Script"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Dawning of a New Day"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Droid Sans"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Droid Sans Mono"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Droid Serif"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "EB Garamond"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Expletus Sans"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Fontdiner Swanky"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Geo"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Goudy Bookletter 1911"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Gruppo"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Homemade Apple"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Inconsolata"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Indie Flower"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Irish Grover"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Josefin Sans"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Josefin Slab"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Just Another Hand"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Just Me Again Down Here"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Kenia"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Kranky"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Kreon"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Kristi"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Lato"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "League Script"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Lekton"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Lobster"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Luckiest Guy"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Maiden Orange"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Meddon"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "MedievalSharp"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Merriweather"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Michroma"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Miltonian"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Miltonian Tattoo"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Molengo"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Mountains of Christmas"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Neucha"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Neuton"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Nobile"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "OFL Sorts Mill Goudy TT"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Old Standard TT"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Orbitron"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Oswald"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Pacifico"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Permanent Marker"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Philosopher"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Puritan"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Quattrocento"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Quattrocento Sans"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Radley"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Raleway"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Reenie Beanie"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Rock Salt"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Schoolbell"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Six Caps"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Slackey"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Smythe"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Sniglet"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Special Elite"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Sue Ellen Francisco"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Sunshiney"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Syncopate"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Terminal Dosis Light"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "The Girl Next Door"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Tinos"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Ubuntu"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Unkempt"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "VT323"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Vibur"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Vollkorn"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Waiting for the Sunrise"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Walter Turncoat"
+msgstr ""
+
+#: library/options/options-select.php:45
+#@ default
+msgid "Yanone Kaffeesatz"
+msgstr ""
+
+#: library/options/options-select.php:50
+#@ default
+msgid "Random (default)"
+msgstr ""
+
+#: library/options/options-select.php:50
+#@ default
+msgid "Slice Down"
+msgstr ""
+
+#: library/options/options-select.php:50
+#@ default
+msgid "Slice Down-Left"
+msgstr ""
+
+#: library/options/options-select.php:50
+#@ default
+msgid "Slice Up"
+msgstr ""
+
+#: library/options/options-select.php:50
+#@ default
+msgid "Slice Up-Left"
+msgstr ""
+
+#: library/options/options-select.php:50
+#@ default
+msgid "Slice Up-Down"
+msgstr ""
+
+#: library/options/options-select.php:50
+#@ default
+msgid "Slice Up-Down-Left"
+msgstr ""
+
+#: library/options/options-select.php:50
+#@ default
+msgid "Fold"
+msgstr ""
+
+#: library/options/options-select.php:50
+#@ default
+msgid "Fade"
+msgstr ""
+
+#: library/options/options-select.php:50
+#@ default
+msgid "Slide In-Right"
+msgstr ""
+
+#: library/options/options-select.php:50
+#@ default
+msgid "Slide In-Left"
+msgstr ""
+
+#: library/options/options-select.php:50
+#@ default
+msgid "Box Random"
+msgstr ""
+
+#: library/options/options-select.php:50
+#@ default
+msgid "Box Rain"
+msgstr ""
+
+#: library/options/options-select.php:50
+#@ default
+msgid "Box Rain-Reverse"
+msgstr ""
+
+#: library/options/options-select.php:50
+#@ default
+msgid "Box Rain-Grow"
+msgstr ""
+
+#: library/options/options-select.php:50
+#@ default
+msgid "Box Rain-Grow-Reverse"
+msgstr ""
+
+#: library/options/options-select.php:56
+#@ default
+msgid "Post Categeory"
+msgstr ""
+
+#: library/options/options-select.php:60
+#@ default
+msgid "iFeature Pro Homepage"
+msgstr ""
+
+#: library/options/options-select.php:60
+#@ default
+msgid "Default (Post) Template"
+msgstr ""
+
+#: library/options/options-tabs.php:93
+#@ ifeature
+msgid "Choose iMenu Color:"
+msgstr ""
+
+#: library/options/options-tabs.php:94
+#@ ifeature
+msgid "(Default is Grey)"
+msgstr ""
+
+#: library/options/options-tabs.php:99
+#@ ifeature
+msgid "Choose a Menu Font:"
+msgstr ""
+
+#: library/options/options-tabs.php:105
+#@ ifeature
+msgid "Menu Link Color:"
+msgstr ""
+
+#: library/options/options-tabs.php:106
+#@ ifeature
+msgid "Use the color picker to select the site menu link color (Default is FFFFFF)"
+msgstr ""
+
+#: library/options/options-tabs.php:112
+#@ ifeature
+msgid "Custom Menu Icon:"
+msgstr ""
+
+#: library/options/options-tabs.php:118
+#@ ifeature
+msgid "Hide Home Icon:"
+msgstr ""
+
+#: library/options/options-tabs.php:119
+#@ ifeature
+msgid "Check this box to hide the home icon in the navigation"
+msgstr ""
+
+#: library/options/options-tabs.php:124
+#@ ifeature
+msgid "Hide Menu Search:"
+msgstr ""
+
+#: library/options/options-tabs.php:125
+#@ ifeature
+msgid "Check this box to hide the search box in the navigation."
+msgstr ""
+
+#: library/options/options-tabs.php:130
+#@ ifeature
+msgid "Site Title Color"
+msgstr ""
+
+#: library/options/options-tabs.php:131
+#@ ifeature
+msgid "Use the color picker to select the site title color"
+msgstr ""
+
+#: library/options/options-tabs.php:136
+#@ ifeature
+msgid "Site Description Color"
+msgstr ""
+
+#: library/options/options-tabs.php:137
+#@ ifeature
+msgid "Use the color picker to select the site description (tagline) color."
+msgstr ""
+
+#: library/options/options-tabs.php:142
+#@ ifeature
+msgid "Link Color"
+msgstr ""
+
+#: library/options/options-tabs.php:143
+#@ ifeature
+msgid "Use the color picker to select the site link color)."
+msgstr ""
+
+#: library/options/options-tabs.php:148
+#@ ifeature
+msgid "Post Title Color"
+msgstr ""
+
+#: library/options/options-tabs.php:149
+#@ ifeature
+msgid "Use the color picker to select the post title color,"
+msgstr ""
+
+#: library/options/options-tabs.php:154
+#@ ifeature
+msgid "Disable Header:"
+msgstr ""
+
+#: library/options/options-tabs.php:155
+#@ ifeature
+msgid "Check this box to disable the header."
+msgstr ""
+
+#: library/options/options-tabs.php:166
+#@ ifeature
+msgid "Custom CSS"
+msgstr ""
+
+#: library/options/options-tabs.php:167
+#@ ifeature
+msgid "Override default CSS here."
+msgstr ""
+
+#: library/options/options-tabs.php:196
+#@ ifeature
+msgid "Select the Sidebar Type:"
+msgstr ""
+
+#: library/options/options-tabs.php:197
+#@ ifeature
+msgid "Select the sidebar type for your blog page (default is Right)."
+msgstr ""
+
+#: library/options/options-tabs.php:208
+#@ ifeature
+msgid "Featured Images"
+msgstr ""
+
+#: library/options/options-tabs.php:226
+#@ ifeature
+msgid "Show Google +1 button"
+msgstr ""
+
+#: library/options/options-tabs.php:238
+#@ ifeautre
+msgid "Hide the Slider:"
+msgstr ""
+
+#: library/options/options-tabs.php:239
+#@ ifeature
+msgid "Check this box to hide the Slider on your blog page."
+msgstr ""
+
+#: library/options/options-tabs.php:244
+#@ ifeature
+msgid "Select the Slider Size:"
+msgstr ""
+
+#: library/options/options-tabs.php:250
+#@ ifeature
+msgid "Select the Slider Type:"
+msgstr ""
+
+#: library/options/options-tabs.php:251
+#@ ifeature
+msgid "(Choose between custom feature slides or a post category)."
+msgstr ""
+
+#: library/options/options-tabs.php:257
+#@ ifeature
+msgid "(Default is all)."
+msgstr ""
+
+#: library/options/options-tabs.php:262
+#@ ifeature
+msgid "Show Posts From Custom Slide Category,"
+msgstr ""
+
+#: library/options/options-tabs.php:263
+#@ ifeature
+msgid "(Default is default)"
+msgstr ""
+
+#: library/options/options-tabs.php:268
+#@ ifeature
+msgid "Number of Featured Blog Posts:"
+msgstr ""
+
+#: library/options/options-tabs.php:269
+#@ ifeature
+msgid "(Default is 5)"
+msgstr ""
+
+#: library/options/options-tabs.php:274
+#@ ifeature
+msgid "Slider Height:"
+msgstr ""
+
+#: library/options/options-tabs.php:275
+#@ ifeature
+msgid "Default is 330."
+msgstr ""
+
+#: library/options/options-tabs.php:286
+#@ ifeature
+msgid "Choose the Caption Style:"
+msgstr ""
+
+#: library/options/options-tabs.php:287
+#@ ifeature
+msgid "(Default is Bottom)."
+msgstr ""
+
+#: library/options/options-tabs.php:292
+#@ ifeature
+msgid "Choose the Slider Animation:"
+msgstr ""
+
+#: library/options/options-tabs.php:293
+#@ ifeature
+msgid "(Default is random)."
+msgstr ""
+
+#: library/options/options-tabs.php:298
+#@ ifeature
+msgid "Choose the Slider Navigation:"
+msgstr ""
+
+#: library/options/options-tabs.php:299
+#@ ifeature
+msgid "(Default is dots)."
+msgstr ""
+
+#: library/options/options-tabs.php:304
+#@ ifeature
+msgid "Disable Slider Navigation:"
+msgstr ""
+
+#: library/options/options-tabs.php:305
+#@ ifeature
+msgid "Check this box to hide the navigation arrows."
+msgstr ""
+
+#: library/options/options-tabs.php:310
+#@ ifeature
+msgid "Disable Slider Navigation Auto-Hide:"
+msgstr ""
+
+#: library/options/options-tabs.php:311
+#@ ifeature
+msgid "Check this box to keep the navigation arrows active at all times."
+msgstr ""
+
+#: library/options/options-tabs.php:316
+#@ ifeature
+msgid "Enable WordThumb Image Resizing:"
+msgstr ""
+
+#: library/options/options-tabs.php:317
+#@ ifeature
+msgid "Check this box to enable the use of TimThumb Image Resizing on the slider."
+msgstr ""
+
+#: library/options/options-tabs.php:328
+#@ ifeature
+msgid "Home Description"
+msgstr ""
+
+#: library/options/options-tabs.php:334
+#@ ifeature
+msgid "Home Keywords"
+msgstr ""
+
+#: library/options/options-tabs.php:340
+#@ ifeature
+msgid "Optional Home Title:)"
+msgstr ""
+
+#: library/options/options-tabs.php:362
+#@ ifeature
+msgid "Facebook URL"
+msgstr ""
+
+#: library/options/options-tabs.php:369
+#@ ifeature
+msgid "Enter your Twitter URL for the Twitter social icon."
+msgstr ""
+
+#: library/options/options-tabs.php:380
+#@ ifeature
+msgid "Flickr URL"
+msgstr ""
+
+#: library/options/options-tabs.php:386
+#@ ifeature
+msgid "Myspace URL"
+msgstr ""
+
+#: library/options/options-tabs.php:387
+#@ ifeature
+msgid "Enter your Myspace URL for Myspace social icon."
+msgstr ""
+
+#: library/options/options-tabs.php:392
+#@ ifeature
+msgid "LinkedIn URL"
+msgstr ""
+
+#: library/options/options-tabs.php:399
+#@ ifeature
+msgid "Enter your YouTube URL for the YouTube social icon."
+msgstr ""
+
+#: library/options/options-tabs.php:441
+#@ ifeature
+msgid "Enter Copyright text used on the right side of the footer. It can be HTML (default is your blog title),"
+msgstr ""
+
+#: library/options/options-tabs.php:446
+#@ ifeature
+msgid "Footer Color"
+msgstr ""
+
+#: library/options/options-tabs.php:447
+#@ ifeature
+msgid "Use the color picker to select a custom footer color (default is 222)."
+msgstr ""
+
+#: library/options/options-tabs.php:452
+#@ ifeature
+msgid "Hide Our Link"
+msgstr ""
+
+#: library/options/options-tabs.php:453
+#@ ifeature
+msgid "Check this box to hide the link back to CyberChimps.com."
+msgstr ""
+
+#: library/options/options-tabs.php:475
+#@ ifeature
+msgid "Import Options Settings"
+msgstr ""
+
+#: library/options/options-tabs.php:476
+#@ ifeature
+msgid "To import your settings, Paste the export code here and press Save Settings."
+msgstr ""
+
+#: library/options/options-tabs.php:481
+#@ ifeature
+msgid "Export Options Settings"
+msgstr ""
+
+#: library/options/options-tabs.php:482
+#@ ifeature
+msgid "Copy the following code, Paste it into a text file and save it. This code can be used to import your settings into another site"
+msgstr ""
+
+#: pro/meta-box.php:22
+#@ default
+msgid "You don't have permission to delete this file."
+msgstr ""
+
+#: pro/meta-box.php:26
+#@ default
+msgid "File has been successfully deleted."
+msgstr ""
+
+#: pro/meta-box.php:646
+#@ ifeature
+msgid "Pro Slider Image"
+msgstr ""
+
+#: pro/meta-box.php:653
+#@ ifeature
+msgid "Pro Slider Text"
+msgstr ""
+
+#: pro/meta-box.php:660
+#: pro/meta-box.php:712
+#@ ifeature
+msgid "Hide Title Bar"
+msgstr ""
+
+#: pro/meta-box.php:668
+#: pro/meta-box.php:720
+#@ ifeature
+msgid "Custom Thumbnail"
+msgstr ""
+
+#: pro/meta-box.php:669
+#: pro/meta-box.php:721
+#@ ifeature
+msgid "Use the image uploader to upload a custom navigation thumbnail"
+msgstr ""
+
+#: pro/meta-box.php:675
+#: pro/meta-box.php:727
+#: pro/meta-box.php:972
+#: pro/meta-box.php:1065
+#: pro/meta-box.php:1102
+#@ ifeature
+msgid "Need help?"
+msgstr ""
+
+#: pro/meta-box.php:690
+#@ ifeature
+msgid "Custom Feature Slides"
+msgstr ""
+
+#: pro/meta-box.php:698
+#@ ifeature
+msgid "Custom Slide Link"
+msgstr ""
+
+#: pro/meta-box.php:699
+#@ ifeature
+msgid "Enter your link here"
+msgstr ""
+
+#: pro/meta-box.php:705
+#@ ifeature
+msgid "Custom Slide Image"
+msgstr ""
+
+#: pro/meta-box.php:713
+#@ ifeature
+msgid "Click to disable the title bar on this post:"
+msgstr ""
+
+#: pro/meta-box.php:735
+#@ ifeature
+msgid "Want to re-order your slides?"
+msgstr ""
+
+#: pro/meta-box.php:779
+#@ ifeature
+msgid "Page Options"
+msgstr ""
+
+#: pro/meta-box.php:783
+#@ ifeature
+msgid "Select Page Layout"
+msgstr ""
+
+#: pro/meta-box.php:784
+#@ ifeature
+msgid "Select your sidebar options"
+msgstr ""
+
+#: pro/meta-box.php:792
+#@ ifeature
+msgid "Enable Feature Slider"
+msgstr ""
+
+#: pro/meta-box.php:793
+#@ ifeature
+msgid "Check this box to enable the  Slider on this page"
+msgstr ""
+
+#: pro/meta-box.php:800
+#@ ifeature
+msgid "Enable Callout Section"
+msgstr ""
+
+#: pro/meta-box.php:801
+#@ ifeature
+msgid "Check this box to enable the Callout Section on this page"
+msgstr ""
+
+#: pro/meta-box.php:808
+#@ ifeature
+msgid "Enable Twitter Bar"
+msgstr ""
+
+#: pro/meta-box.php:809
+#@ ifeature
+msgid "Check this box to enable the Twitter Bar on this page - Requires <a href=\"http://wordpress.org/extend/plugins/twitter-for-wordpress/\" target=\"_blank\">Twitter for WordPress Plugin"
+msgstr ""
+
+#: pro/meta-box.php:816
+#@ ifeature
+msgid "Twitter Handle"
+msgstr ""
+
+#: pro/meta-box.php:823
+#@ ifeature
+msgid "Enable Box Section"
+msgstr ""
+
+#: pro/meta-box.php:824
+#@ ifeature
+msgid "Check this box to enable the Box Section on this page"
+msgstr ""
+
+#: pro/meta-box.php:831
+#@ ifeature
+msgid "Hide Page Title"
+msgstr ""
+
+#: pro/meta-box.php:832
+#@ ifeature
+msgid "Check this box to hide the title on this page"
+msgstr ""
+
+#: pro/meta-box.php:839
+#@ ifeature
+msgid "Hide Page Content"
+msgstr ""
+
+#: pro/meta-box.php:840
+#@ ifeature
+msgid "Check this box to hide the content on this page"
+msgstr ""
+
+#: pro/meta-box.php:861
+#@ ifeature
+msgid "Select Slider Size"
+msgstr ""
+
+#: pro/meta-box.php:862
+#@ ifeature
+msgid "Select the size of the slider"
+msgstr ""
+
+#: pro/meta-box.php:870
+#@ ifeature
+msgid "Select Slider Type"
+msgstr ""
+
+#: pro/meta-box.php:871
+#@ ifeature
+msgid "Select the type of slider"
+msgstr ""
+
+#: pro/meta-box.php:879
+#@ ifeature
+msgid "Custom Slide Category"
+msgstr ""
+
+#: pro/meta-box.php:880
+#@ ifeature
+msgid "Select the slide category you would like to use"
+msgstr ""
+
+#: pro/meta-box.php:888
+#@ ifeature
+msgid "Blog Post Category"
+msgstr ""
+
+#: pro/meta-box.php:889
+#@ ifeature
+msgid "Select the blog post category you would like to use"
+msgstr ""
+
+#: pro/meta-box.php:897
+#@ ifeature
+msgid "Number of featured blog posts"
+msgstr ""
+
+#: pro/meta-box.php:898
+#@ ifeature
+msgid "Default is 5 (for blog posts only)"
+msgstr ""
+
+#: pro/meta-box.php:905
+#@ ifeature
+msgid "Slider Height"
+msgstr ""
+
+#: pro/meta-box.php:906
+#@ ifeature
+msgid "Default is 300"
+msgstr ""
+
+#: pro/meta-box.php:913
+#@ ifeature
+msgid "Slider Delay Time (in milliseconds)"
+msgstr ""
+
+#: pro/meta-box.php:914
+#@ ifeature
+msgid "Default is 3500"
+msgstr ""
+
+#: pro/meta-box.php:921
+#@ ifeature
+msgid "Select Slider Animation Type"
+msgstr ""
+
+#: pro/meta-box.php:922
+#@ ifeature
+msgid "Default is random"
+msgstr ""
+
+#: pro/meta-box.php:930
+#@ ifeature
+msgid "Select Slider Navigation Style"
+msgstr ""
+
+#: pro/meta-box.php:931
+#@ ifeature
+msgid "Default is dots"
+msgstr ""
+
+#: pro/meta-box.php:939
+#@ ifeature
+msgid "Select Slider Caption Style"
+msgstr ""
+
+#: pro/meta-box.php:940
+#@ ifeature
+msgid "Default is none"
+msgstr ""
+
+#: pro/meta-box.php:948
+#@ ifeature
+msgid "Hide Navigation Arrows"
+msgstr ""
+
+#: pro/meta-box.php:949
+#@ ifeature
+msgid "Check this box to hide the navigation arrows on the slider"
+msgstr ""
+
+#: pro/meta-box.php:956
+#@ ifeature
+msgid "Disable Navigation Auto-Hide"
+msgstr ""
+
+#: pro/meta-box.php:957
+#@ ifeature
+msgid "Check this box to disable the navigation arrow auto-hide"
+msgstr ""
+
+#: pro/meta-box.php:964
+#@ ifeature
+msgid "Enable WordThumb Image Resizing"
+msgstr ""
+
+#: pro/meta-box.php:965
+#@ ifeature
+msgid "Check this box to enable the use of WordThumb image resizing."
+msgstr ""
+
+#: pro/meta-box.php:983
+#@ ifeature
+msgid "Callout Section"
+msgstr ""
+
+#: pro/meta-box.php:988
+#: pro/meta-box.php:1079
+#@ ifeature
+msgid "Title"
+msgstr ""
+
+#: pro/meta-box.php:989
+#@ ifeature
+msgid "Enter your Callout Section title"
+msgstr ""
+
+#: pro/meta-box.php:996
+#@ ifeature
+msgid "Callout Text"
+msgstr ""
+
+#: pro/meta-box.php:997
+#@ ifeature
+msgid "Enter your Callout Section text"
+msgstr ""
+
+#: pro/meta-box.php:1004
+#@ ifeature
+msgid "Callout Button Text"
+msgstr ""
+
+#: pro/meta-box.php:1005
+#@ ifeature
+msgid "Enter the text for your Callout Button"
+msgstr ""
+
+#: pro/meta-box.php:1012
+#@ ifeature
+msgid "Callout Button URL"
+msgstr ""
+
+#: pro/meta-box.php:1020
+#@ ifeature
+msgid "Custom Callout Button Image"
+msgstr ""
+
+#: pro/meta-box.php:1021
+#@ ifeature
+msgid "Upload a custom Callout Buttom image here:"
+msgstr ""
+
+#: pro/meta-box.php:1028
+#@ ifeature
+msgid "Select Callout Section Background"
+msgstr ""
+
+#: pro/meta-box.php:1029
+#@ ifeature
+msgid "Default is  Pro 2, select \"color picker\" to use the color picker option below"
+msgstr ""
+
+#: pro/meta-box.php:1037
+#@ ifeature
+msgid "Custom Background Color"
+msgstr ""
+
+#: pro/meta-box.php:1038
+#@ ifeature
+msgid "Use the color picker to select a custom background color for the Callout Section"
+msgstr ""
+
+#: pro/meta-box.php:1044
+#@ ifeature
+msgid "Callout Title Color"
+msgstr ""
+
+#: pro/meta-box.php:1045
+#@ ifeature
+msgid "Use the color picker to select the callout section title color"
+msgstr ""
+
+#: pro/meta-box.php:1051
+#@ ifeature
+msgid "Callout Text Color"
+msgstr ""
+
+#: pro/meta-box.php:1058
+#@ ifeature
+msgid "Callout Button Color"
+msgstr ""
+
+#: pro/meta-box.php:1059
+#@ ifeature
+msgid "Use the color picker to select the callout button color"
+msgstr ""
+
+#: pro/meta-box.php:1076
+#@ ifeature
+msgid "SEO"
+msgstr ""
+
+#: pro/meta-box.php:1080
+#@ ifeature
+msgid "Enter your title"
+msgstr ""
+
+#: pro/meta-box.php:1086
+#@ ifeature
+msgid "Description"
+msgstr ""
+
+#: pro/meta-box.php:1087
+#@ ifeature
+msgid "Enter your description"
+msgstr ""
+
+#: pro/meta-box.php:1094
+#@ ifeature
+msgid "Keywords"
+msgstr ""
+
+#: pro/meta-box.php:1095
+#@ ifeature
+msgid "Enter your keywords"
+msgstr ""
+
+#: search.php:23
+#, php-format
+#@ default
+msgid "Search Results For: %s"
+msgstr ""
+
+#: sidebar-left.php:22
+#: sidebar.php:22
+#@ ifeature
+msgid "Pages"
+msgstr ""
+
+#: sidebar-left.php:30
+#: sidebar.php:56
+#@ ifeature
+msgid "Comments (RSS)"
+msgstr ""
 
