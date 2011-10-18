@@ -643,21 +643,21 @@ function initialize_the_meta_boxes() {
 				'fields' => array(
 
 					array(
-						'name' => $themenamefull.' Pro Slider Image',
+						'name' => $themenamefull.__( 'Pro Slider Image', 'ifeature' ),
 						'desc' => 'Upload your image here:',
 						'id' => $prefix . 'image',
 						'type' => 'image',
 						'std' => ''
 					),
 					array(
-						'name' => $themenamefull.' Pro Slider Text',
+						'name' => $themenamefull. __( 'Pro Slider Text', 'ifeature' ),
 						'desc' => 'Enter your slider text here (optional):',
 						'id' => $prefix . 'text',
 						'type' => 'text',
 						'std' => ''
 					),
 					array(
-						'name' => 'Hide Title Bar',
+						'name' => __( 'Hide Title Bar', 'ifeature' ),
 						'desc' => 'Click to disable the title bar on this slide:',
 						'id' => $prefix . 'hidetitle',
 						'type' => 'checkbox',
@@ -665,14 +665,14 @@ function initialize_the_meta_boxes() {
 					),
 					
 					array(
-						'name' => 'Custom Thumbnail',
-						'desc' => 'Use the image uploader to upload a custom navigation thumbnail',
+						'name' => __( 'Custom Thumbnail', 'ifeature' ),
+						'desc' => __( 'Use the image uploader to upload a custom navigation thumbnail', 'ifeature' ),
 						'id' => $prefix . 'custom_thumb',
 						'type' => 'image'
 					),
 					
 					array(
-						'name' => 'Need help?',
+						'name' => __( 'Need help?', 'ifeature' ),
 						'desc' => '',
 						'id' => '',
 						'type' => 'sliderhelp',
@@ -687,7 +687,7 @@ function initialize_the_meta_boxes() {
 
 	$meta_boxes[] = array(
 		'id' => 'slides',
-		'title' => 'Custom Feature Slides',
+		'title' => __( 'Custom Feature Slides', 'ifeature' ),
 		'pages' => array($themeslug.'_custom_slides'),
 
 		'tabs' => array(
@@ -695,36 +695,36 @@ function initialize_the_meta_boxes() {
 				'fields' => array(
 
 					array(
-						'name' => 'Custom Slide Link',
-						'desc' => 'Enter your link here',
+						'name' => __( 'Custom Slide Link', 'ifeature' ),
+						'desc' => __( 'Enter your link here', 'ifeature' ),
 						'id' => $prefix . 'url',
 						'type' => 'text',
 						'std' => ''
 					),
 					array(
-						'name' => 'Custom Slide Image',
-						'desc' => 'Upload your image here:',
+						'name' => __( 'Custom Slide Image', 'ifeature' ),
+						'desc' => __( 'Upload your image here:', 'ifeature' ),
 						'id' => $prefix . 'image',
 						'type' => 'image',
 						'std' => ''
 					),
 					array(
-						'name' => 'Hide Title Bar',
-						'desc' => 'Click to disable the title bar on this post:',
+						'name' => __( 'Hide Title Bar', 'ifeature' ),
+						'desc' => __( 'Click to disable the title bar on this post:', 'ifeature' ),
 						'id' => $prefix . 'hidetitle',
 						'type' => 'checkbox',
 						'std' => ''
 					),
 
 					array(
-						'name' => 'Custom Thumbnail',
-						'desc' => 'Use the image uploader to upload a custom navigation thumbnail',
+						'name' => __( 'Custom Thumbnail', 'ifeature' ),
+						'desc' => __( 'Use the image uploader to upload a custom navigation thumbnail', 'ifeature' ),
 						'id' => $prefix . 'custom_thumb',
 						'type' => 'image'
 					),
 					
 					array(
-						'name' => 'Need help?',
+						'name' => __( 'Need help?', 'ifeature' ),
 						'desc' => '',
 						'id' => '',
 						'type' => 'sliderhelp',
@@ -732,7 +732,7 @@ function initialize_the_meta_boxes() {
 			),
 					
 					array(
-						'name' => 'Want to re-order your slides?',
+						'name' => __( 'Want to re-order your slides?', 'ifeature' ),
 						'desc' => '',
 						'id' => '',
 						'type' => 'reorder',
@@ -776,12 +776,12 @@ function initialize_the_meta_boxes() {
 		'tabs' => array(
 
 		array(
-				'title' => 'Page Options',
+				'title' => __( 'Page Options', 'ifeature' ),
 				'fields' => array(
 					
 			array(
-				'name' => 'Select Page Layout',
-				'desc' => 'Select your sidebar options',
+				'name' => __( 'Select Page Layout', 'ifeature' ),
+				'desc' => __( 'Select your sidebar options', 'ifeature' ),
 				'id' => 'page_sidebar',
 				'type' => 'select',
 				'options' => array('Sidebar Right (default)', 'Two Sidebar Right', 'Sidebar Right and Left', 'Full-Width'),
@@ -789,55 +789,55 @@ function initialize_the_meta_boxes() {
 			 ),	
 			
 					 array(
-				'name' => 'Enable Feature Slider',
-				'desc' => 'Check this box to enable the ' .$themenamefull. ' Slider on this page',
+				'name' => __( 'Enable Feature Slider', 'ifeature' ),
+				'desc' => __( 'Check this box to enable the ' .$themenamefull. ' Slider on this page', ' ifeature' ),
 				'id' => 'page_enable_slider',
 				'type' => 'checkbox',
 				'std' => ''
 			  ),
 			
 			array(
-				'name' => 'Enable Callout Section',
-				'desc' => 'Check this box to enable the Callout Section on this page',
+				'name' => __( 'Enable Callout Section', 'ifeature' ),
+				'desc' => __( 'Check this box to enable the Callout Section on this page', 'ifeature' ),
 				'id' => 'enable_callout_section',
 				'type' => 'checkbox',
 				'std' => ''
 			),
 			
 			array(
-				'name' => 'Enable Twitter Bar',
-				'desc' => 'Check this box to enable the Twitter Bar on this page - Requires <a href="http://wordpress.org/extend/plugins/twitter-for-wordpress/" target="_blank">Twitter for WordPress Plugin',
+				'name' => __( 'Enable Twitter Bar', 'ifeature' ),
+				'desc' => __( 'Check this box to enable the Twitter Bar on this page - Requires <a href="http://wordpress.org/extend/plugins/twitter-for-wordpress/" target="_blank">Twitter for WordPress Plugin', 'ifeature' ),
 				'id' => 'enable_twitter_bar',
 				'type' => 'checkbox',
 				'std' => ''
 			),
 			
 			array(
-				'name' => 'Twitter Handle',
+				'name' => __( 'Twitter Handle', 'ifeature' ),
 				'desc' => 'Enter your Twitter handle if using the Twitter bar - Requires <a href="http://wordpress.org/extend/plugins/twitter-for-wordpress/" target="_blank">Twitter for WordPress Plugin',
 				'id' => 'twitter_handle',
 				'type' => 'text',
 				'std' => ''
 			),
 			array(
-				'name' => 'Enable Box Section',
-				'desc' => 'Check this box to enable the Box Section on this page',
+				'name' => __( 'Enable Box Section', 'ifeature' ),
+				'desc' => __( 'Check this box to enable the Box Section on this page', 'ifeature' ),
 				'id' => 'enable_box_section',
 				'type' => 'checkbox',
 				'std' => ''
 			),
 		
 			array(
-				'name' => 'Hide Page Title',
-				'desc' => 'Check this box to hide the title on this page',
+				'name' => __( 'Hide Page Title', 'ifeature' ),
+				'desc' => __( 'Check this box to hide the title on this page', 'ifeature' ),
 				'id' => 'hide_page_title',
 				'type' => 'checkbox',
 				'std' => ''
 			),
 			
 			array(
-				'name' => 'Hide Page Content',
-				'desc' => 'Check this box to hide the content on this page',
+				'name' => __( 'Hide Page Content', 'ifeature' ),
+				'desc' => __( 'Check this box to hide the content on this page', 'ifeature' ),
 				'id' => 'hide_page_content',
 				'type' => 'checkbox',
 				'std' => ''
@@ -858,8 +858,8 @@ function initialize_the_meta_boxes() {
 				'fields' => array(
 
 			array(
-				'name' => 'Select Slider Size',
-				'desc' => 'Select the size of the slider',
+				'name' => __( 'Select Slider Size', 'ifeature' ),
+				'desc' => __( 'Select the size of the slider', 'ifeature' ),
 				'id' => 'page_slider_size',
 				'type' => 'select',
 				'options' => array('Full-Width', 'Half-Width'),
@@ -867,8 +867,8 @@ function initialize_the_meta_boxes() {
 			 ),
 
 			array(
-				'name' => 'Select Slider Type',
-				'desc' => 'Select the type of slider',
+				'name' => __( 'Select Slider Type', 'ifeature' ),
+				'desc' => __( 'Select the type of slider', 'ifeature' ),
 				'id' => 'page_slider_type',
 				'type' => 'select',
 				'options' => array('Custom Slides', 'Blog Posts'),
@@ -876,8 +876,8 @@ function initialize_the_meta_boxes() {
 			),
 
 				array(
-				'name' => 'Custom Slide Category',
-				'desc' => 'Select the slide category you would like to use',
+				'name' => __( 'Custom Slide Category', 'ifeature' ),
+				'desc' => __( 'Select the slide category you would like to use', 'ifeature' ),
 				'id' => $prefix . 'category',
 				'type' => 'select',
 				'options' => $slideroptions,
@@ -885,8 +885,8 @@ function initialize_the_meta_boxes() {
 			),	
 			
 			array(
-				'name' => 'Blog Post Category',
-				'desc' => 'Select the blog post category you would like to use',
+				'name' => __( 'Blog Post Category', 'ifeature' ),
+				'desc' => __( 'Select the blog post category you would like to use', 'ifeature' ),
 				'id' => 'slider_blog_category',
 				'type' => 'select',
 				'options' => $blogoptions, 'all',
@@ -894,32 +894,32 @@ function initialize_the_meta_boxes() {
 			),	
 			 
 			array(
-				'name' => 'Number of featured blog posts',
-				'desc' => 'Default is 5 (for blog posts only)',
+				'name' => __( 'Number of featured blog posts', 'ifeature' ), 
+				'desc' => __( 'Default is 5 (for blog posts only)', 'ifeature' ),
 				'id' => 'slider_blog_posts_number',
 				'type' => 'text',
 				'std' => ''
 			), 
 	
 			array(
-				'name' => 'Slider Height',
-				'desc' => 'Default is 300',
+				'name' => __( 'Slider Height', 'ifeature' ),
+				'desc' => __( 'Default is 300', 'ifeature' ),
 				'id' => 'slider_height',
 				'type' => 'text',
 				'std' => ''
 			),
 			
 			array(
-				'name' => 'Slider Delay Time (in milliseconds)',
-				'desc' => 'Default is 3500',
+				'name' => __( 'Slider Delay Time (in milliseconds)', 'ifeature' ),
+				'desc' => __( 'Default is 3500', 'ifeature' ),
 				'id' => 'slider_delay',
 				'type' => 'text',
 				'std' => ''
 			),
 			
 			array(
-				'name' => 'Select Slider Animation Type',
-				'desc' => 'Default is random',
+				'name' => __( 'Select Slider Animation Type', 'ifeature' ),
+				'desc' => __( 'Default is random', 'ifeature' ),
 				'id' => 'page_slider_animation',
 				'type' => 'select',
 				'options' => array('Random (default)', 'Slice Down', 'Slice Down-Left', 'Slice Up', 'Slice Up-Left', 'Slice Up-Down', 'Slice Up-Down-Left', 'Fold', 'Fade', 'Slide In-Right', 'Slide In-Left', 'Box Random', 'Box Rain', 'Box Rain-Reverse', 'Box Rain-Grow', 'Box Rain-Grow-Reverse'),
@@ -927,8 +927,8 @@ function initialize_the_meta_boxes() {
 			 ),
 			 
 			 array(
-				'name' => 'Select Slider Navigation Style',
-				'desc' => 'Default is dots',
+				'name' => __( 'Select Slider Navigation Style', 'ifeature' ),
+				'desc' => __( 'Default is dots', 'ifeature' ),
 				'id' => 'page_slider_navigation_style',
 				'type' => 'select',
 				'options' => array('Dots (default)', 'Thumbnails', 'None'),
@@ -936,8 +936,8 @@ function initialize_the_meta_boxes() {
 			 ),
 			 
 			 array(
-				'name' => 'Select Slider Caption Style',
-				'desc' => 'Default is none',
+				'name' => __( 'Select Slider Caption Style', 'ifeature' ),
+				'desc' => __( 'Default is none', 'ifeature' ),
 				'id' => 'page_slider_caption_style',
 				'type' => 'select',
 				'options' => array('None (default)', 'Bottom', 'Left', 'Right'),
@@ -945,31 +945,31 @@ function initialize_the_meta_boxes() {
 			 ),
 			 
 			 array(
-				'name' => 'Hide Navigation Arrows',
-				'desc' => 'Check this box to hide the navigation arrows on the slider',
+				'name' => __( 'Hide Navigation Arrows', 'ifeature' ),
+				'desc' => __( 'Check this box to hide the navigation arrows on the slider', 'ifeature' ),
 				'id' => 'hide_arrows',
 				'type' => 'checkbox',
 				'std' => ''
 			),
 			
 			array(
-				'name' => 'Disable Navigation Auto-Hide',
-				'desc' => 'Check this box to disable the navigation arrow auto-hide',
+				'name' => __( 'Disable Navigation Auto-Hide', 'ifeature' ),
+				'desc' => __( 'Check this box to disable the navigation arrow auto-hide', 'ifeature' ),
 				'id' => 'disable_autohide',
 				'type' => 'checkbox',
 				'std' => ''
 			),
 			
 			array(
-				'name' => 'Disable WordThumb Image Resizing',
-				'desc' => 'Check this box to disable the use of WordThumb image resizing.',
-				'id' => 'disable_wordthumb',
+				'name' => __( 'Enable WordThumb Image Resizing', 'ifeature' ),
+				'desc' => __( 'Check this box to enable the use of WordThumb image resizing.', 'ifeature' ),
+				'id' => 'enable_wordthumb',
 				'type' => 'checkbox',
 				'std' => ''
 			),
 			
 			array(
-				'name' => 'Need help?',
+				'name' => __( 'Need help?', 'ifeature' ),
 				'desc' => '',
 				'id' => '',
 				'type' => 'pagehelp',
@@ -980,36 +980,36 @@ function initialize_the_meta_boxes() {
 
 
 			array(
-				'title' => 'Callout Section',
+				'title' => __( 'Callout Section', 'ifeature' ),
 				'fields' => array(
 			
 					
 				array(
-						'name' => 'Title',
-						'desc' => 'Enter your Callout Section title',
+						'name' => __( 'Title', 'ifeature' ),
+						'desc' => __( 'Enter your Callout Section title', 'ifeature' ),
 						'id' => 'callout_title',
 						'type' => 'text',
 						'std' => ''
 					),
 					
 				array(
-						'name' => 'Callout Text',
-						'desc' => 'Enter your Callout Section text',
+						'name' => __( 'Callout Text', 'ifeature' ),
+						'desc' => __( 'Enter your Callout Section text', 'ifeature' ),
 						'id' => 'callout_text',
 						'type' => 'textarea',
 						'std' => ''
 					),
 					
 				array(
-						'name' => 'Callout Button Text',
-						'desc' => 'Enter the text for your Callout Button',
+						'name' => __( 'Callout Button Text', 'ifeature' ),
+						'desc' => __( 'Enter the text for your Callout Button', 'ifeature' ),
 						'id' => 'callout_button_text',
 						'type' => 'text',
 						'std' => ''
 					),
 				
 				array(
-						'name' => 'Callout Button URL',
+						'name' => __( 'Callout Button URL', 'ifeature' ),
 						'desc' => 'Enter the link for your Callout Button',
 						'id' => 'callout_url',
 						'type' => 'text',
@@ -1017,16 +1017,16 @@ function initialize_the_meta_boxes() {
 					),
 				
 				array(
-						'name' => 'Custom Callout Button Image',
-						'desc' => 'Upload a custom Callout Buttom image here:',
+						'name' => __( 'Custom Callout Button Image', 'ifeature' ),
+						'desc' => __( 'Upload a custom Callout Buttom image here:', 'ifeature' ),
 						'id' => 'callout_image',
 						'type' => 'image',
 						'std' => ''
 					),
 					
 				array(
-				'name' => 'Select Callout Section Background',
-				'desc' => 'Default is ' .$themenamefull.' Pro 2, select "color picker" to use the color picker option below',
+				'name' => __( 'Select Callout Section Background', 'ifeature '),
+				'desc' => __( 'Default is ' .$themenamefull.' Pro 2, select "color picker" to use the color picker option below', 'ifeature' ),
 				'id' => 'callout_background_color',
 				'type' => 'select',
 				'options' => array($themenamefull.' Pro 2 (default)', 'Blue', 'Grey', 'Orange', 'Pink', 'Red', 'Color Picker'),
@@ -1034,35 +1034,35 @@ function initialize_the_meta_boxes() {
 			 		),
 				
 				array(
-						'name' => 'Custom Background Color',
-						'desc' => 'Use the color picker to select a custom background color for the Callout Section',
+						'name' => __( 'Custom Background Color', 'ifeature' ),
+						'desc' => __( 'Use the color picker to select a custom background color for the Callout Section', 'ifeature' ),
 						'id' => 'custom_callout_color',
 						'type' => 'color'
 					),
 					
 				array(
-						'name' => 'Callout Title Color',
-						'desc' => 'Use the color picker to select the callout section title color',
+						'name' => __( 'Callout Title Color', 'ifeature' ),
+						'desc' => __( 'Use the color picker to select the callout section title color', 'ifeature' ),
 						'id' => 'custom_callout_title_color',
 						'type' => 'color'
 					),
 
 				array(
-						'name' => 'Callout Text Color',
+						'name' => __( 'Callout Text Color', 'ifeature' ),
 						'desc' => 'Use the color picker to select the callout section text color',
 						'id' => 'custom_callout_text_color',
 						'type' => 'color'
 					),
 					
 				array(
-						'name' => 'Callout Button Color',
-						'desc' => 'Use the color picker to select the callout button color',
+						'name' => __( 'Callout Button Color', 'ifeature' ),
+						'desc' => __( 'Use the color picker to select the callout button color', 'ifeature' ),
 						'id' => 'custom_callout_button_color',
 						'type' => 'color'
 					),
 
 				array(
-					'name' => 'Need help?',
+					'name' => __( 'Need help?', 'ifeature' ),
 					'desc' => '',
 					'id' => '',
 					'type' => 'pagehelp',
@@ -1073,33 +1073,33 @@ function initialize_the_meta_boxes() {
 				
 				
 				array(
-				'title' => "SEO",
+				'title' => __( 'SEO', 'ifeature' ),
 				'fields' => array(
 				array(
-						'name' => 'Title',
-						'desc' => 'Enter your title',
+						'name' => __( 'Title', 'ifeature' ),
+						'desc' => __( 'Enter your title', 'ifeature' ),
 						'id' => 'seo_title',
 						'type' => 'text',
 						'std' => ''
 					),
 					array(
-						'name' => 'Description',
-						'desc' => 'Enter your description',
+						'name' => __( 'Description', 'ifeature' ),
+						'desc' => __( 'Enter your description', 'ifeature' ),
 						'id' => 'seo_description',
 						'type' => 'textarea',
 						'std' => ''
 					),
 
 					array(
-						'name' => 'Keywords',
-						'desc' => 'Enter your keywords',
+						'name' => __( 'Keywords', 'ifeature' ),
+						'desc' => __( 'Enter your keywords', 'ifeature' ),
 						'id' => 'seo_keywords',
 						'type' => 'text',
 						'std' => ''
 					),	 
 				
 					array(
-						'name' => 'Need help?',
+						'name' => __( 'Need help?', 'ifeature' ),
 						'desc' => '',
 						'id' => '',
 						'type' => 'pagehelp',

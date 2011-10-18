@@ -30,7 +30,7 @@
 	$navigationstyle = get_post_meta($post->ID, 'page_slider_navigation_style' , true);
 	$navautohide = get_post_meta($post->ID, 'disable_autohide' , true);
 	$hidenav = get_post_meta($post->ID, 'hide_arrows' , true);
-	$timdisable = get_post_meta($post->ID, 'disable_wordthumb' , true);
+	$wordthumbenable = get_post_meta($post->ID, 'enable_wordthumb' , true);
 	
 /* End define variables. */	
 
@@ -314,42 +314,42 @@
 
 	    	/* Controls slide image and thumbnails */
 
-	    	if ($customimage != '' && $customthumb == '' && $timdisable != 'on'){
+	    	if ($customimage != '' && $customthumb == '' && $wordthumbenable == 'on'){
 	    		$image = $customsized;
 	    		$thumbnail = "$root/library/wt/wordthumb.php?src=$customimage&a=c&h=30&w=50";
 	    	}
 	    	
-	    	elseif ($customimage != '' && $timdisable == 'on'){
+	    	elseif ($customimage != '' && $wordthumbenable != 'on'){
 	    		$image = $customimage;
 	    		$thumbnail = $customthumb;
 	    	}
 	    	
-	    	elseif ($customimage == '' && $timdisable == 'on'){
+	    	elseif ($customimage == '' && $wordthumbenable != 'on'){
 	    		$image = "$root/images/pro/ifeatureprolarge.jpg";
 	    		$thumbnail = $customthumb;
 	    	}
 	    	
-	    	elseif ($customimage != '' && $customthumb != '' && $timdisable != 'on' ){
+	    	elseif ($customimage != '' && $customthumb != '' && $wordthumbenable == 'on' ){
 	    		$image = $customsized;
 	    		$thumbnail = "$root/library/wt/wordthumb.php?src=$customthumb&a=c&h=30&w=50";
 	    	}
 
-	    	elseif ($customimage == '' && $size2 == "0" && $size != "0" && $timdisable != 'on'){
+	    	elseif ($customimage == '' && $size2 == "0" && $size != "0" && $wordthumbenable == 'on'){
 	    		$image = "$root/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
 	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	    	}
 
-	    	elseif ($customimage == '' && $size2 == '4' && $size != "0" && $timdisable != 'on'){
+	    	elseif ($customimage == '' && $size2 == '4' && $size != "0" && $wordthumbenable == 'on'){
 	    		$image = "$root/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
 	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	    	}
 
-	    	elseif ($customimage == '' && $size2 == "1" && $size != "0" && $timdisable != 'on' OR $customimage == '' && $size2 == "2" && $size != "0" && $timdisable != 'on'){
+	    	elseif ($customimage == '' && $size2 == "1" && $size != "0" && $wordthumbenable == 'on' OR $customimage == '' && $size2 == "2" && $size != "0" && $wordthumbenable == 'on'){
 	    		$image = "$root/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro2-480.jpg&a=c&h=$height&w=480";
 	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	    	}
 
-	   		elseif ($timdisable != 'on') {
+	   		elseif ($wordthumbenable == 'on') {
 	       		$image = "$root/library/wt/wordthumb.php?src=$root/images/pro/ifeatureprolarge.jpg&a=c&h=$height&w=980";
 	       		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	       	}

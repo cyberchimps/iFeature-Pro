@@ -313,9 +313,9 @@ array( "name" => __( 'Disable Slider Navigation Auto-Hide:', 'ifeature' ),
 	"type" => "checkbox",  
     "std" => "false"),
     
-array( "name" => __( 'Disable WordThumb Image Resizing:', 'ifeature' ),  
-    "desc" => __( 'Check this box to disable the use of TimThumb Image Resizing on the slider.' , 'ifeature' ),  
-    "id" => $shortname."_disable_wordthumb",  
+array( "name" => __( 'Enable WordThumb Image Resizing:', 'ifeature' ),  
+    "desc" => __( 'Check this box to enable the use of TimThumb Image Resizing on the slider.' , 'ifeature' ),  
+    "id" => $shortname."_enable_wordthumb",  
 	"type" => "checkbox",  
     "std" => "false"),
     
