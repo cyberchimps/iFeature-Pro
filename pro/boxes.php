@@ -7,6 +7,9 @@
 	Version: 0.1
 	
 */
+
+	$root = get_template_directory_uri(); 
+	
 ?>
 
 <div id="box_container">
