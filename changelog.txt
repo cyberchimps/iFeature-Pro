@@ -4,6 +4,7 @@ iFeature Pro Changelog
 
 Version 2.1 (10-18-11)
 -Added localization support, includes ifeature.pot as well as Spanish and French .po/.mo files. 
+-WordThumb image resizing script now off by default. 
 -Changed default font family to Arial, Helvetica, serif. 
 -Fixed alignright float issue.
 -URLs now sanitized using esc_url when necessary. 
