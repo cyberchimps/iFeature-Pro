@@ -19,8 +19,8 @@
 	<?php chimps_head_tag(); ?>
 <!-- End @Core head_tag hook content-->
 
-<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?> <!-- adds WP comment threading support-->
-<?php wp_head(); ?> <!-- fires the wp_head action-->
+<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?> <!-- wp_enqueue_script( 'comment-reply' );-->
+<?php wp_head(); ?> <!-- wp_head();-->
 	
 </head> <!-- closing head tag-->
 
