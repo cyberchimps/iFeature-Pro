@@ -2,7 +2,7 @@
 /**
 * CyberChimps Core Framework functions
 *
-* Author: Tyler Cunningham
+* Authors: Tyler Cunningham, Ben Allfree
 * Copyright: © 2011
 * {@link http://cyberchimps.com/ CyberChimps LLC}
 *
