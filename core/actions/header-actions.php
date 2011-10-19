@@ -1,6 +1,6 @@
 <?php
 /**
-* Actions used by the CyberChimps Core Framework
+* Header actions used by the CyberChimps Core Framework
 *
 * Author: Tyler Cunningham
 * Copyright: © 2011
@@ -30,17 +30,10 @@ add_action('chimps_navigation', 'chimps_nav');
 add_action('chimps_404_content', 'chimps_404_content_handler');
 
 /**
-* Core pagination actions
-*/
-add_action('chimps_main_index_pagination', 'chimps_previous_posts');
-add_action('chimps_main_index_pagination', 'chimps_newer_posts');
-add_action('chimps_links_pages', 'chimps_wp_link_pages');
-
-/**
 * Core header functions
 */
 
-//Fonts
+//Fonts - chimps_after_head_tag
 function chimps_font() {
 	global $themeslug, $options; //Call global variables
 
@@ -63,7 +56,7 @@ function chimps_font() {
 	<?php
 }
 
-//HTML attributes
+//HTML attributes - chimps_head_tag
 function chimps_html_attributes() 
 { 
 ?>
@@ -73,7 +66,7 @@ function chimps_html_attributes()
 <?php 
 }
 
-//Meta tags
+//Meta tags - chimps_head_tag
 function chimps_meta_tags() {
 	global $themeslug, $options, $post; //Call global variables
 	if(!$post) return; // in case of 404 page or something
@@ -309,50 +302,6 @@ function chimps_header_social_icons()
 function chimps_nav() 
 {
 	get_template_part('nav', 'header' ); 
-}
-
-/**
-* Core pagination functions
-*/
-
-//Controls previous posts link for main blog index pages
-function chimps_previous_posts() 
-	{
-	$previous_text = apply_filters('chimps_previous_posts_text', '&laquo; Older Entries' ); //filter for changing older entries link text
-?>
-	<div class='next-posts'>
-	<?php next_posts_link($previous_text);?>
-	</div>
-<?php
-}
-
-//Controls next posts link for main blog index pages
-function chimps_newer_posts() 
-	{
-	$newer_text = apply_filters('chimps_newer_posts_text', 'Newer Entries &raquo;' ); //filter for changing newer entries link text
-?>
-	<div class='prev-posts'>
-	<?php previous_posts_link($newer_text); ?>
-	</div>
-<?php
-}
-
-//Controls page-links for paginated posts
-function chimps_wp_link_pages() 
-	{
-	wp_link_pages(array(
-		'before' => 'Pages: ', 
-		'next_or_number' => 'number')
-	);
-}
-
-function chimps_404_content_handler()
-{
-  ?>
-  <div class="error">Parent 404 Handler<br />
-  	<center></center><img src="<?php echo get_template_directory_uri() ;?>/images/confusedchimp.png" height="400" width="400" /></center>
-  </div>
-  <?
 }
 
 /**

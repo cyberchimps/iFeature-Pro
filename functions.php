@@ -616,9 +616,7 @@ add_action( 'admin_bar_menu', 'admin_link', 113 );
 
 //hooks
 
-require_once ( get_template_directory() . '/core/core-actions.php' );
-require_once ( get_template_directory() . '/core/core-hooks.php' );
-require_once ( get_template_directory() . '/core/core-functions.php' );
+require_once ( get_template_directory() . '/core/core-init.php' );
 
 do_action('chimps_init');
 

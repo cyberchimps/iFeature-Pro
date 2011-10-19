@@ -84,4 +84,9 @@ function chimps_main_index_pagination() {
 function chimps_links_pages() { 
 	do_action('chimps_links_pages');
 }
+
+/**
+* End
+*/
+
 ?>

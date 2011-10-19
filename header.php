@@ -36,13 +36,13 @@
 			<div id="header">
 				<div id="headerwrap">
 					<div id="header_right">
-					<!-- Begin @Core header_right contact area hook -->
-						<?php chimps_header_right(); ?> 
-					<!-- End @Core header_right contact area hook -->			
+						<!-- Begin @Core header_right contact area hook -->
+							<?php chimps_header_right(); ?> 
+						<!-- End @Core header_right contact area hook -->			
 					</div><!-- end header_right -->
-					<!-- Begin @Core header_left contact area hook -->
-						<?php chimps_header_left(); ?> 
-					<!-- End @Core header_left contact area hook -->
+						<!-- Begin @Core header_left contact area hook -->
+							<?php chimps_header_left(); ?> 
+						<!-- End @Core header_left contact area hook -->
 				</div><!-- end headerwrap -->
 				<?php chimps_navigation(); ?> <!-- Inserts @Core navigation -->
 			</div><!-- end header -->
