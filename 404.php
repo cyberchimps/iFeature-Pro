@@ -31,7 +31,6 @@
       		<!-- Begin @Core after_404 hook content-->
       		
 		</div><!--end content_padding-->
-		
 	</div><!--end content_left-->
 
 	<div id="sidebar_right">
