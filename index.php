@@ -1,4 +1,4 @@
- <?php
+<?php
 
  /*
 	Index
@@ -31,7 +31,7 @@
 
 <?php get_header(); ?>
 
-<div id="content_wrap">
+<div class="container_16">
 		
 	<?php if ($options[$themeslug.'_hide_slider_blog'] != '1' && $blogslidersize == "full"): ?>
 		<div id = "slider-wrapper">
@@ -40,15 +40,15 @@
 	<?php endif;?>
 		
 	<?php if ($sidebar == "4" OR $blogsidebar == 'none'): ?>
-		<div id="content_fullwidth">
+		<div id="grid_16">
 	<?php endif;?>
 	
 	<?php if ($sidebar == "1" OR $blogsidebar == "right"): ?>
-		<div id="content_left">
+		<div id="grid_8">
 	<?php endif;?>
 	
 	<?php if ($sidebar == '' AND $blogsidebar == ''): ?>
-		<div id="content_left">
+		<div id="grid_8">
 	<?php endif;?>
 	
 	<?php if ($sidebar == "3" OR $blogsidebar == 'right-left' ): ?>
@@ -58,7 +58,7 @@
 	
 	<?php if ($sidebar == "2"  OR $sidebar == "3" OR $blogsidebar == "two-right" OR $blogsidebar == "right-left"): ?>
 		<?php get_sidebar('right'); ?>
-		<div class="content_half">
+		<div class="grid_8">
 	<?php endif;?>
 	
 	<?php if ($options[$themeslug.'_hide_slider_blog'] != '1' && $blogslidersize != "full"): ?>
@@ -67,7 +67,7 @@
 		</div>
 	<?php endif;?>
 
-		<div class="content_padding">
+		<div class="grid_8">
 		
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			
