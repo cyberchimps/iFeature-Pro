@@ -16,37 +16,63 @@
 */
 
 /** 
+* 404
+*/
+function chimps_before_404_content()
+{
+	do_action('chimps_before_404_content');
+}
+
+function chimps_404_content()
+{
+	do_action('chimps_404_content')
+}
+
+function chimps_after_404_content()
+{
+	do_action('chimps_after_404_content')
+}
+
+/** 
 * Header 
 */
-function chimps_after_head_tag() {
+function chimps_after_head_tag() 
+{
 	do_action('chimps_after_head_tag');
 }
 
-function chimps_before_header() {
+function chimps_before_header() 
+{
 	do_action('chimps_before_header');
 }
 
-function chimps_head_tag(){
+function chimps_head_tag()
+{
 	do_action('chimps_head_tag');
 }
 
-function chimps_after_header() {
+function chimps_after_header() 
+
 	do_action('chimps_after_header');
 }
 
-function chimps_header_left() {
+function chimps_header_left() 
+{
 	do_action('chimps_header_left');
 }
 
-function chimps_header_right() {
+function chimps_header_right() 
+{
 	do_action('chimps_header_right');
 }
 
-function chimps_navigation() {
+function chimps_navigation() 
+{
 	do_action('chimps_navigation');
 }
 
-function chimps_404_content() {
+function chimps_404_content() 
+{
   do_action('chimps_404_content');
 }
 
@@ -54,11 +80,13 @@ function chimps_404_content() {
 * Content 
 */
 
-function chimps_before_content() {
+function chimps_before_content() 
+{
 	do_action('chimps_before_content');
 }
 
-function chimps_after_content() {
+function chimps_after_content() 
+{
 	do_action('chimps_after_content');
 }
 
@@ -66,22 +94,26 @@ function chimps_after_content() {
 * Entry 
 */
 
-function chimps_before_entry(){
+function chimps_before_entry()
+{
 	do_action('chimps_before_entry');
 }
 
-function chimps_after_entry(){
+function chimps_after_entry()
+{
 	do_action('chimps_after_entry');
 }
 
 /** 
 * Pagination 
 */
-function chimps_main_index_pagination() { 
+function chimps_main_index_pagination() 
+{ 
 	do_action('chimps_main_index_pagination');
 }
 
-function chimps_links_pages() { 
+function chimps_links_pages() 
+{ 
 	do_action('chimps_links_pages');
 }
 
