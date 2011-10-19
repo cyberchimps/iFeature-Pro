@@ -18,19 +18,19 @@
 /** 
 * 404
 */
-function chimps_before_404_content()
+function chimps_before_404()
 {
-	do_action('chimps_before_404_content');
+	do_action('chimps_before_404');
 }
 
-function chimps_404_content()
+function chimps_404()
 {
-	do_action('chimps_404_content')
+	do_action('chimps_404');
 }
 
-function chimps_after_404_content()
+function chimps_after_404()
 {
-	do_action('chimps_after_404_content')
+	do_action('chimps_after_404');
 }
 
 /** 
@@ -52,7 +52,7 @@ function chimps_head_tag()
 }
 
 function chimps_after_header() 
-
+{
 	do_action('chimps_after_header');
 }
 
@@ -69,11 +69,6 @@ function chimps_header_right()
 function chimps_navigation() 
 {
 	do_action('chimps_navigation');
-}
-
-function chimps_404_content() 
-{
-  do_action('chimps_404_content');
 }
 
 /** 

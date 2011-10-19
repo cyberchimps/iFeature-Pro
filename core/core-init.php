@@ -24,6 +24,7 @@ require_once ( get_template_directory() . '/core/core-hooks.php' );
 //Call the action files
 require_once ( get_template_directory() . '/core/actions/header-actions.php' );
 require_once ( get_template_directory() . '/core/actions/pagination-actions.php' );
+require_once ( get_template_directory() . '/core/actions/404-actions.php' );
 
 /**
 * End
