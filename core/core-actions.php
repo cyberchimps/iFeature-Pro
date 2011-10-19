@@ -205,6 +205,36 @@ function chimps_link_rel()
 <?php
 }
 
+//Header left content (sitename/description or logo)
+function chimps_header_left_content()
+{
+	global $themeslug, $options; //Call global variables
+	$logo = $options['file'];
+
+	if ($logo != '')
+	{
+?>
+	<div id="logo">
+		<a href="<?php echo home_url(); ?>/"><img src="<?php echo stripslashes($logo['url']); ?>" alt="logo"></a>
+	</div>
+<?php
+	}
+						
+	if ($$logo == '' )
+	{
+?>
+	<div id="sitename">
+		<h1 class="sitename"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?> </a></h1>
+	</div>
+	
+	<div id="description">
+		<h1 class="description"><?php bloginfo('description'); ?></h1>
+	</div>
+<?php
+	
+	}						 
+}
+
 //Controls header_left title
 function chimps_header_sitename()
 	{ 
