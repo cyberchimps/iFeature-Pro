@@ -19,10 +19,10 @@
 	<?php chimps_head_tag(); ?>
 <!-- End @Core head_tag hook content-->
 
-<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?> <!-- adds WP comment threading support
-<?php wp_head(); ?> <!-- fires the wp_head action
+<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?> <!-- adds WP comment threading support-->
+<?php wp_head(); ?> <!-- fires the wp_head action-->
 	
-</head> <!-- closing head tag
+</head> <!-- closing head tag-->
 
 <!-- Begin @Core after_head_tag hook content-->
 	<?php chimps_after_head_tag(); ?>

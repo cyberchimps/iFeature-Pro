@@ -35,6 +35,7 @@ function v($arr,$key, $default='')
 	    $locale_file = TEMPLATEPATH . "/core/languages/$locale.php";
 	    if ( is_readable( $locale_file ) )
 		    require_once( $locale_file );
+
 /**
 * End
 */
