@@ -1,6 +1,6 @@
 <?php
 /**
-* ___ actions used by the CyberChimps Core Framework
+* ___ actions used by the CyberChimps Core Framework test
 *
 * Author: Tyler Cunningham
 * Copyright: © 2011
