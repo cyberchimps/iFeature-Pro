@@ -18,15 +18,14 @@
 /**
 * Core header actions
 */
-add_action('chimps_after_head_tag', 'chimps_font_family');
+add_action('chimps_after_head_tag', 'chimps_font');
+add_action('chimps_head_tag', 'chimps_html_attributes');
 add_action('chimps_head_tag', 'chimps_meta_tags');
 add_action('chimps_head_tag', 'chimps_link_rel');
 add_action('chimps_head_tag', 'chimps_title_tag');
-add_action('chimps_header_left', 'chimps_header_sitename');
-add_action('chimps_header_left', 'chimps_header_description');
-add_action('chimps_header_left_logo', 'chimps_header_logo');
-add_action('chimps_header_right_contact_area', 'chimps_header_contact_area');
-add_action('chimps_header_right_social_icons', 'chimps_header_social_icons');
+add_action('chimps_header_left', 'chimps_header_left_content');
+add_action('chimps_header_right', 'chimps_header_contact_area');
+add_action('chimps_header_right', 'chimps_header_social_icons');
 add_action('chimps_navigation', 'chimps_nav');
 add_action('chimps_404_content', 'chimps_404_content_handler');
 
@@ -42,12 +41,12 @@ add_action('chimps_links_pages', 'chimps_wp_link_pages');
 */
 
 //Fonts
-function chimps_font_family() {
+function chimps_font() {
 	global $themeslug, $options; //Call global variables
 
 	if (v($options, $themeslug.'_font') == "" AND v($options, $themeslug.'_custom_font') == "") 
 	{
-		$font = 'Arial';
+		$font = apply_filters( 'chimps_default_font', 'Arial' );
 	}		
 	elseif (v($options, $themeslug.'_custom_font') != "") 
 	{
@@ -62,6 +61,16 @@ function chimps_font_family() {
 	
 	<body style="font-family:'<?php echo ereg_replace("[^A-Za-z0-9]", " ", $font ); ?>', Helvetica, serif" <?php body_class(); ?> >
 	<?php
+}
+
+//HTML attributes
+function chimps_html_attributes() 
+{ 
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes('xhtml'); ?>>
+<head profile="http://gmpg.org/xfn/11">
+<?php 
 }
 
 //Meta tags
@@ -185,6 +194,8 @@ function chimps_title_tag(){?>
 //Link rel
 function chimps_link_rel()
 	{
+	global $themeslug, $options; //Call global variables
+	$favicon = $options['file2'];
 ?>
 <link rel="shortcut icon" href="<?php echo stripslashes($favicon['url']); ?>" type="image/x-icon" />
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
@@ -226,19 +237,38 @@ function chimps_header_logo()
 
 //Controls header_right contact area
 function chimps_header_contact_area()
-	{ 
-	global $themeslug, $options; ?>
+{ 
+	global $themeslug, $options; 
+	$contactdefault = apply_filters( 'chimps_header_contact_default_text', 'Enter Contact Information Here' ); 
 	
-	<div id="header_contact1">
-		<?php echo stripslashes (v($options, $themeslug.'_header_contact')); ?>
-	</div>
-	<?php 
+	if ($options[$themeslug.'_header_contact'] == '' ) 
+	
+		{
+		echo "<div id='header_contact'>";
+			printf( __( $contactdefault, 'core' )); 
+		echo "</div>";
+		}
+
+	 if ($options[$themeslug.'_header_contact'] != 'hide' ) 
+	 
+	 	{
+			echo "<div id='header_contact1'>";
+			echo stripslashes (v($options, $themeslug.'_header_contact')); 
+			echo "</div>";
+		}
+		
+	if ($options[$themeslug.'_header_contact'] == 'hide' ) 
+	
+		{
+			echo "<div style ='height: 10%;'>&nbsp;</div> ";
+		}
 }
 
 //Controls header_right social icons
 function chimps_header_social_icons()
 	{ 
 ?>
+	<br />
 	<div id="social">
 		<?php get_template_part('icons', 'header'); ?>
 	</div>
@@ -269,7 +299,7 @@ function chimps_previous_posts()
 //Controls next posts link for main blog index pages
 function chimps_newer_posts() 
 	{
-	$newer_text = apply_filters('chimps_previous_posts_text', 'Newer Entries &raquo;' ); //filter for changing newer entries link text
+	$newer_text = apply_filters('chimps_newer_posts_text', 'Newer Entries &raquo;' ); //filter for changing newer entries link text
 ?>
 	<div class='prev-posts'>
 	<?php previous_posts_link($newer_text); ?>

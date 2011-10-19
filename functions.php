@@ -16,7 +16,14 @@
 	$themeslug = 'if';
 	$options = get_option($themename);
 	
+/* Localization */
+	    
+	load_theme_textdomain( 'core', TEMPLATEPATH . '/languages' );
 
+	    $locale = get_locale();
+	    $locale_file = TEMPLATEPATH . "/languages/$locale.php";
+	    if ( is_readable( $locale_file ) )
+		    require_once( $locale_file );
 
 /* End global variables. */	
 
