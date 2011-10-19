@@ -581,7 +581,7 @@ function ifp_widgets_init() {
 	));
 	register_sidebar(array(
 		'name' => 'Footer',
-		'id' => 'footer',
+		'id' => 'footer-widgets',
 		'description' => 'These are the footer widgets',
 		'before_widget' => '<div class="footer-widgets">',
 		'after_widget' => '</div>',
