@@ -2,6 +2,11 @@ iFeature Pro Changelog
 
 ****************************
 
+Version 2.1.2 (10-20-11)
+-Fixed syntax error in search.php
+-Removed unecessary closing PHP tags in RSS icon code.
+-Removed unecessary esc_url from email icon code. 
+
 Version 2.1.1 (10-19-11)
 -ANother small patch related to footer widgetized area. 
 
