@@ -3,9 +3,10 @@ iFeature Pro Changelog
 ****************************
 
 Version 2.1.2 (10-20-11)
--Fixed syntax error in search.php
+-Fixed syntax error in search.php.
 -Removed unecessary closing PHP tags in RSS icon code.
 -Removed unecessary esc_url from email icon code. 
+-Fixed before_title and before_widget div classes for sidebar-left and sidebar-right. 
 
 Version 2.1.1 (10-19-11)
 -ANother small patch related to footer widgetized area. 
