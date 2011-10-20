@@ -31,7 +31,7 @@
 
 <?php get_header(); ?>
 
-<div class="container_16">
+<div class="container_12">
 		
 	<?php if ($options[$themeslug.'_hide_slider_blog'] != '1' && $blogslidersize == "full"): ?>
 		<div id = "slider-wrapper">
@@ -40,15 +40,15 @@
 	<?php endif;?>
 		
 	<?php if ($sidebar == "4" OR $blogsidebar == 'none'): ?>
-		<div id="grid_16">
+		<div id="grid_12">
 	<?php endif;?>
 	
 	<?php if ($sidebar == "1" OR $blogsidebar == "right"): ?>
-		<div id="grid_8">
+		<div id="grid_4">
 	<?php endif;?>
 	
 	<?php if ($sidebar == '' AND $blogsidebar == ''): ?>
-		<div id="grid_8">
+		<div id="grid_4">
 	<?php endif;?>
 	
 	<?php if ($sidebar == "3" OR $blogsidebar == 'right-left' ): ?>
@@ -58,7 +58,7 @@
 	
 	<?php if ($sidebar == "2"  OR $sidebar == "3" OR $blogsidebar == "two-right" OR $blogsidebar == "right-left"): ?>
 		<?php get_sidebar('right'); ?>
-		<div class="grid_8">
+		<div class="grid_4">
 	<?php endif;?>
 	
 	<?php if ($options[$themeslug.'_hide_slider_blog'] != '1' && $blogslidersize != "full"): ?>

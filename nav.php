@@ -30,9 +30,10 @@
 		$menucolor = $options[($themeslug.'_menu_color')]; 
 	}	
 ?>		
-					
 
-<div class="grid_10" id="nav">
+<div class="grid_12" id="nav" style="background: #000;">
+
+<div class="grid_8"">
     	    <?php wp_nav_menu( array(
 		    'theme_location' => 'header-menu', // Setting up the location for the main-menu, Main Navigation.
 		    'menu_class' => 'sf-menu', //Adding the class for dropdowns
@@ -42,9 +43,9 @@
 		);
     	?>
     	</div>
-    	
-			<div class="grid_6" id="searchbar">
-					<?php get_search_form(); ?>
-			</div>
+		<div class="grid_4" id="searchbar">
+			<?php get_search_form(); ?>
+		</div>
+</div>
 	<div class="clear"></div>
 <!--end nav.php-->
