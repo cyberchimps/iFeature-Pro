@@ -16,6 +16,24 @@
 */
 
 /** 
+* Archive
+*/
+function chimps_before_archive()
+{
+	do_action('chimps_before_archive');
+}
+
+function chimps_archive()
+{
+	do_action('chimps_archives');
+}
+
+function chimps_after_archive()
+{
+	do_action('chimps_after_archive');
+}
+
+/** 
 * 404
 */
 function chimps_before_404()
