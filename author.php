@@ -2,15 +2,8 @@
 <div id="container">
 <div id="content">
 <?php the_post(); ?>
-<?php if ( is_day() ) : ?>
-<h1 class="page-title"><?php printf( __( 'Daily Archives: <span>%s</span>', 'ifp' ), get_the_time(get_option('date_format')) ) ?></h1>
-<?php elseif ( is_month() ) : ?>
-<h1 class="page-title"><?php printf( __( 'Monthly Archives: <span>%s</span>', 'ifp' ), get_the_time('F Y') ) ?></h1>
-<?php elseif ( is_year() ) : ?>
-<h1 class="page-title"><?php printf( __( 'Yearly Archives: <span>%s</span>', 'ifp' ), get_the_time('Y') ) ?></h1>
-<?php elseif ( isset($_GET['paged']) && !empty($_GET['paged']) ) : ?>
-<h1 class="page-title">Blog Archives</h1>
-<?php endif; ?>
+<h1 class="page-title author"><?php printf( __( 'Author Archives: <span class="vcard">%s</span>', 'ifp' ), "<a class='url fn n' href='$authordata->user_url' title='$authordata->display_name' rel='me'>$authordata->display_name</a>" ) ?></h1>
+<?php $authordesc = $authordata->user_description; if ( !empty($authordesc) ) echo apply_filters( 'archive_meta', '<div class="archive-meta">' . $authordesc . '</div>' ); ?>
 <?php rewind_posts(); ?>
 <?php global $wp_query; $total_pages = $wp_query->max_num_pages; if ( $total_pages > 1 ) { ?>
 <div id="nav-above" class="navigation">

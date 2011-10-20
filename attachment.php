@@ -2,12 +2,9 @@
 <div id="container">
 <div id="content">
 <?php the_post(); ?>
-<div id="nav-above" class="navigation">
-<p class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">&laquo;</span> %title' ) ?></p>
-<p class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">&raquo;</span>' ) ?></p>
-</div>
+<h1 class="page-title"><a href="<?php echo get_permalink($post->post_parent) ?>" title="<?php printf( __( 'Return to %s', 'ifp' ), esc_html( get_the_title($post->post_parent), 1 ) ) ?>" rev="attachment"><span class="meta-nav">&laquo; </span><?php echo get_the_title($post->post_parent) ?></a></h1>
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-<h1 class="entry-title"><?php the_title(); ?></h1>
+<h2 class="entry-title"><?php the_title(); ?></h2>
 <div class="entry-meta">
 <span class="meta-prep meta-prep-author"><?php _e('By ', 'ifp'); ?></span>
 <span class="author vcard"><a class="url fn n" href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>" title="<?php printf( __( 'View all articles by %s', 'ifp' ), $authordata->display_name ); ?>"><?php the_author(); ?></a></span>
@@ -17,7 +14,16 @@
 <?php edit_post_link( __( 'Edit', 'ifp' ), "<span class=\"meta-sep\"> | </span>\n\t\t\t\t\t\t<span class=\"edit-link\">", "</span>\n\t\t\t\t\t" ) ?>
 </div>
 <div class="entry-content">
-<?php the_content(); ?>
+<div class="entry-attachment">
+<?php if ( wp_attachment_is_image( $post->id ) ) : $att_image = wp_get_attachment_image_src( $post->id, "medium"); ?>
+<p class="attachment"><a href="<?php echo wp_get_attachment_url($post->id); ?>" title="<?php the_title(); ?>" rel="attachment"><img src="<?php echo $att_image[0];?>" width="<?php echo $att_image[1];?>" height="<?php echo $att_image[2];?>"  class="attachment-medium" alt="<?php $post->post_excerpt; ?>" /></a>
+</p>
+<?php else : ?>
+<a href="<?php echo wp_get_attachment_url($post->ID) ?>" title="<?php echo esc_html( get_the_title($post->ID), 1 ) ?>" rel="attachment"><?php echo basename($post->guid) ?></a>
+<?php endif; ?>
+</div>
+<div class="entry-caption"><?php if ( !empty($post->post_excerpt) ) the_excerpt() ?></div>
+<?php the_content( __( 'continue reading <span class="meta-nav">&raquo;</span>', 'ifp' )  ); ?>
 <?php wp_link_pages('before=<div class="page-link">' . __( 'Pages:', 'ifp' ) . '&after=</div>') ?>
 </div>
 <div class="entry-utility">
@@ -30,7 +36,7 @@ get_post_comments_feed_link() ) ?>
 <?php if ( ('open' == $post->comment_status) && ('open' == $post->ping_status) ) : // ?>
 <?php printf( __( '<a class="comment-link" href="#respond" title="Post a Comment">Post a Comment</a> or leave a trackback: <a class="trackback-link" href="%s" title="Trackback URL for your post" rel="trackback">Trackback URL</a>.', 'ifp' ), get_trackback_url() ) ?>
 <?php elseif ( !('open' == $post->comment_status) && ('open' == $post->ping_status) ) : // ?>
-<?php printf( __( 'Comments are closed, but you can leave a trackback: <a class="trackback-link" href="%s" title="Trackback URL for post" rel="trackback">Trackback URL</a>.', 'ifp' ), get_trackback_url() ) ?>
+<?php printf( __( 'Comments are closed, but you can leave a trackback: <a class="trackback-link" href="%s" title="Trackback URL for your post" rel="trackback">Trackback URL</a>.', 'ifp' ), get_trackback_url() ) ?>
 <?php elseif ( ('open' == $post->comment_status) && !('open' == $post->ping_status) ) : // ?>
 <?php _e( 'Trackbacks are closed, but you can <a class="comment-link" href="#respond" title="Post a Comment">Post a Comment</a>.', 'ifp' ) ?>
 <?php elseif ( !('open' == $post->comment_status) && !('open' == $post->ping_status) ) : // ?>
@@ -39,11 +45,7 @@ get_post_comments_feed_link() ) ?>
 <?php edit_post_link( __( 'Edit', 'ifp' ), "\n\t\t\t\t\t<span class=\"edit-link\">", "</span>" ) ?>
 </div>
 </div>
-<div id="nav-below" class="navigation">
-<p class="nav-previous"><?php previous_post_link( '%link', '<span class="meta-nav">&laquo;</span> %title' ) ?></p>
-<p class="nav-next"><?php next_post_link( '%link', '%title <span class="meta-nav">&raquo;</span>' ) ?></p>
-</div>
-<?php comments_template('', true); ?>
+<?php comments_template(); ?>
 </div>
 </div>
 <?php get_sidebar(); ?>

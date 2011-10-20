@@ -2,15 +2,7 @@
 <div id="container">
 <div id="content">
 <?php the_post(); ?>
-<?php if ( is_day() ) : ?>
-<h1 class="page-title"><?php printf( __( 'Daily Archives: <span>%s</span>', 'ifp' ), get_the_time(get_option('date_format')) ) ?></h1>
-<?php elseif ( is_month() ) : ?>
-<h1 class="page-title"><?php printf( __( 'Monthly Archives: <span>%s</span>', 'ifp' ), get_the_time('F Y') ) ?></h1>
-<?php elseif ( is_year() ) : ?>
-<h1 class="page-title"><?php printf( __( 'Yearly Archives: <span>%s</span>', 'ifp' ), get_the_time('Y') ) ?></h1>
-<?php elseif ( isset($_GET['paged']) && !empty($_GET['paged']) ) : ?>
-<h1 class="page-title">Blog Archives</h1>
-<?php endif; ?>
+<h1 class="page-title"><?php _e( 'Tag Archives:', 'ifp' ) ?> <span><?php single_tag_title() ?></span></h1>
 <?php rewind_posts(); ?>
 <?php global $wp_query; $total_pages = $wp_query->max_num_pages; if ( $total_pages > 1 ) { ?>
 <div id="nav-above" class="navigation">
@@ -35,7 +27,9 @@
 <div class="entry-utility">
 <span class="cat-links"><span class="entry-utility-prep entry-utility-prep-cat-links"><?php _e( 'Posted in ', 'ifp' ); ?></span><?php echo get_the_category_list(', '); ?></span>
 <span class="meta-sep"> | </span>
-<?php the_tags( '<span class="tag-links"><span class="entry-utility-prep entry-utility-prep-tag-links">' . __('Tagged ', 'ifp' ) . '</span>', ", ", "</span>\n\t\t\t\t\t\t<span class=\"meta-sep\"> | </span>\n" ) ?>
+<?php if ( $tag_ur_it = tag_ur_it(', ') ) : // ?>
+<span class="tag-links"><?php printf( __( 'Also tagged %s', 'ifp' ), $tag_ur_it ) ?></span>
+<?php endif; ?>
 <span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'ifp' ), __( '1 Comment', 'ifp' ), __( '% Comments', 'ifp' ) ) ?></span>
 <?php edit_post_link( __( 'Edit', 'ifp' ), "<span class=\"meta-sep\"> | </span>\n\t\t\t\t\t\t<span class=\"edit-link\">", "</span>\n\t\t\t\t\t\n" ) ?>
 </div>
