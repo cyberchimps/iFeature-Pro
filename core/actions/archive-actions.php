@@ -56,7 +56,7 @@ function chimps_archive_page_title()
 			<?php } 
 }
 
-//Archive loop
+//Archive loop - chimps_archive
 function chimps_archive_loop()
 { ?>
 	<?php while (have_posts()) : the_post(); ?>
@@ -86,8 +86,14 @@ function chimps_archive_loop()
 				</div><!--end post-->
 			</div><!--end post_container-->
 
-	 <?php endwhile; ?>
+	 <?php endwhile; ?>'
 	 
+	 <?php else : ?>
+
+		<h2>Nothing found</h2>
+
+	<?php endif; ?>
+	
 <?php }
 
 

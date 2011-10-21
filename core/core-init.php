@@ -22,10 +22,11 @@ require_once ( get_template_directory() . '/core/core-functions.php' );
 require_once ( get_template_directory() . '/core/core-hooks.php' );
 
 //Call the action files
+require_once ( get_template_directory() . '/core/actions/404-actions.php' );
+// require_once ( get_template_directory() . '/core/actions/archive-actions.php' ); - commenting out for now until syntax error resolved. 
+require_once ( get_template_directory() . '/core/actions/comments-actions.php' );
 require_once ( get_template_directory() . '/core/actions/header-actions.php' );
 require_once ( get_template_directory() . '/core/actions/pagination-actions.php' );
-require_once ( get_template_directory() . '/core/actions/404-actions.php' );
-require_once ( get_template_directory() . '/core/actions/archive-actions.php' );
 
 /**
 * End

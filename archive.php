@@ -38,12 +38,6 @@
 		<!--Begin @Core after_archive hook-->
 			<?php chimps_after_archive(); ?>
 		<!--End @Core after_archive hook-->
-			
-	<?php else : ?>
-
-		<h2>Nothing found</h2>
-
-	<?php endif; ?>
 	
 		</div><!--end content_padding-->
 		

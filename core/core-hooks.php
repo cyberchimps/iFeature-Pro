@@ -16,6 +16,24 @@
 */
 
 /** 
+* 404
+*/
+function chimps_before_404()
+{
+	do_action('chimps_before_404');
+}
+
+function chimps_404()
+{
+	do_action('chimps_404');
+}
+
+function chimps_after_404()
+{
+	do_action('chimps_after_404');
+}
+
+/** 
 * Archive
 */
 function chimps_before_archive()
@@ -34,21 +52,49 @@ function chimps_after_archive()
 }
 
 /** 
-* 404
+* Comments
 */
-function chimps_before_404()
+function chimps_before_comments()
 {
-	do_action('chimps_before_404');
+	do_action('chimps_before_comments');
 }
 
-function chimps_404()
+function chimps_comments()
 {
-	do_action('chimps_404');
+	do_action('chimps_comments');
 }
 
-function chimps_after_404()
+function chimps_after_comments()
 {
-	do_action('chimps_after_404');
+	do_action('chimps_after_comments');
+}
+
+/** 
+* Content 
+*/
+
+function chimps_before_content() 
+{
+	do_action('chimps_before_content');
+}
+
+function chimps_after_content() 
+{
+	do_action('chimps_after_content');
+}
+
+/** 
+* Entry 
+*/
+
+function chimps_before_entry()
+{
+	do_action('chimps_before_entry');
+}
+
+function chimps_after_entry()
+{
+	do_action('chimps_after_entry');
 }
 
 /** 
@@ -87,34 +133,6 @@ function chimps_header_right()
 function chimps_navigation() 
 {
 	do_action('chimps_navigation');
-}
-
-/** 
-* Content 
-*/
-
-function chimps_before_content() 
-{
-	do_action('chimps_before_content');
-}
-
-function chimps_after_content() 
-{
-	do_action('chimps_after_content');
-}
-
-/** 
-* Entry 
-*/
-
-function chimps_before_entry()
-{
-	do_action('chimps_before_entry');
-}
-
-function chimps_after_entry()
-{
-	do_action('chimps_after_entry');
 }
 
 /** 
