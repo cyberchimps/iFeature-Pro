@@ -27,8 +27,7 @@ add_action( 'chimps_archive', 'chimps_archive_loop' );
 
 //Archive page titles - chimps_archive
 function chimps_archive_page_title()
-{
-?>
+{ ?>
 	<?php if (have_posts()) : ?>
 
  			<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
@@ -59,8 +58,7 @@ function chimps_archive_page_title()
 
 //Archive loop
 function chimps_archive_loop()
-{
-?>
+{ ?>
 	<?php while (have_posts()) : the_post(); ?>
 			
 			<div class="post_container">
@@ -90,8 +88,7 @@ function chimps_archive_loop()
 
 	 <?php endwhile; ?>
 	 
-<?php
-}
+<?php }
 
 
 /**
