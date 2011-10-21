@@ -120,9 +120,9 @@ function chimps_after_entry()
 /** 
 * Pagination 
 */
-function chimps_main_index_pagination() 
+function chimps_pagination() 
 { 
-	do_action('chimps_main_index_pagination');
+	do_action('chimps_pagination');
 }
 
 function chimps_links_pages() 

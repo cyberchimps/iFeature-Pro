@@ -19,6 +19,7 @@
 * Core archive actions
 */
 add_action( 'chimps_archive', 'chimps_archive_page_title' );
+add_action( 'chimps_archive', 'chimps_archive_loop' );
 
 /**
 * Core archive functions
@@ -33,7 +34,7 @@ function chimps_archive_page_title()
  			<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
 
 			<?php if (is_category()) { ?>
-				<h2><?php printf( __( 'Archive for the &#8216;'. 'core' )); ?><?php single_cat_title(); ?><?php printf( __( '&#8217; Category:', 'core' )); ?></h2><br />
+				<h2><?php printf( __( 'Archive for the &#8216;', 'core' )); ?><?php single_cat_title(); ?><?php printf( __( '&#8217; Category:', 'core' )); ?></h2><br />
 
 			<?php } elseif( is_tag() ) { ?>
 				<h2><?php printf( __( 'Posts Tagged &#8216;', 'core' )); ?><?php single_tag_title(); ?><?php printf( __( '&#8217;:', 'core' )); ?></h2><br />
@@ -55,6 +56,43 @@ function chimps_archive_page_title()
 	
 			<?php } 
 }
+
+//Archive loop
+function chimps_archive_loop()
+{
+?>
+	<?php while (have_posts()) : the_post(); ?>
+			
+			<div class="post_container">
+
+				<div <?php post_class() ?>>
+				
+						<h2 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+					
+						<?php get_template_part('meta', 'archive'); ?>
+
+						<div class="entry">
+							<?php the_excerpt(); ?>
+						</div>
+				<div class="tags">
+								<?php the_tags('Tags: ', ', ', '<br />'); ?>
+							</div><!--end tags-->
+
+							<div class="postmetadata">
+										<?php get_template_part('share', 'index' ); ?>
+								<div class="comments">
+									<?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
+								</div><!--end comments-->	
+							</div><!--end postmetadata-->
+							
+				</div><!--end post-->
+			</div><!--end post_container-->
+
+	 <?php endwhile; ?>
+	 
+<?php
+}
+
 
 /**
 * End

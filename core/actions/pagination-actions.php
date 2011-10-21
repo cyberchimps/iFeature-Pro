@@ -18,8 +18,8 @@
 /**
 * Core pagination actions
 */
-add_action('chimps_main_index_pagination', 'chimps_previous_posts');
-add_action('chimps_main_index_pagination', 'chimps_newer_posts');
+add_action('chimps_pagination', 'chimps_previous_posts');
+add_action('chimps_pagination', 'chimps_newer_posts');
 add_action('chimps_links_pages', 'chimps_wp_link_pages');
 
 /**
