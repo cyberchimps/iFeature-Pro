@@ -23,37 +23,40 @@ add_action('chimps_pagination', 'chimps_newer_posts');
 add_action('chimps_links_pages', 'chimps_wp_link_pages');
 
 /**
-* Core pagination functions
+* Sets up the previous post link and applies a filter to the link text.
+*
+* @since 1.0
 */
-
-//Controls previous posts link for main blog index pages
-function chimps_previous_posts() 
-	{
-	$previous_text = apply_filters('chimps_previous_posts_text', '&laquo; Older Entries' ); //filter for changing older entries link text
-?>
-	<div class='next-posts'>
-	<?php next_posts_link( __( $previous_text, 'core' ));?>
-	</div>
-<?php
+function chimps_previous_posts() {
+	$previous_text = apply_filters('chimps_previous_posts_text', '&laquo; Older Entries' ); 
+	
+	echo "<div class='next-posts'>";
+	next_posts_link( __( $previous_text, 'core' ));
+	echo "</div>";
 }
 
-//Controls next posts link for main blog index pages
-function chimps_newer_posts() 
-	{
-	$newer_text = apply_filters('chimps_newer_posts_text', 'Newer Entries &raquo;' ); //filter for changing newer entries link text
-?>
-	<div class='prev-posts'>
-	<?php previous_posts_link( __( $newer_text, 'core' )); ?>
-	</div>
-<?php
+/**
+* Sets up the next post link and applies a filter to the link text. 
+*
+* @since 1.0
+*/
+function chimps_newer_posts() {
+	$newer_text = apply_filters('chimps_newer_posts_text', 'Newer Entries &raquo;' );
+	
+	echo "<div class='prev-posts'>";
+	previous_posts_link( __( $newer_text, 'core' ));
+	echo "</div>";
 }
 
-//Controls page-links for paginated posts
-function chimps_wp_link_pages() 
-	{
+/**
+* Uses wp_link_pages to display post pagination. 
+*
+* @since 1.0
+*/
+function chimps_wp_link_pages() {
 	wp_link_pages(array(
-		'before' => 'Pages: ', 
-		'next_or_number' => 'number')
+		'before' => 'Pages: ', // should we add a filter/translation wrapper here?
+		'next_or_number' => 'number') // same here?
 	);
 }
 

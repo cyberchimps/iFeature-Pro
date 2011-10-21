@@ -21,19 +21,15 @@
 add_action( 'chimps_404', 'chimps_404_content' );
 
 /**
-* Core 404 functions
+* Sets up the 404 content message
+*
+* @since 1.0 
 */
-
-// 404 content - chimps_404_content
-function chimps_404_content()
-{
-	$message_text = apply_filters( 'chimps_404_message', 'Error 404' ); //filter for changing older entries link text
-?>
+function chimps_404_content() {
+	$message_text = apply_filters( 'chimps_404_message', 'Error 404' ); ?>
 	<div class="error"><?php printf( __( $message_text, 'core' )); ?><br />
 		<center><img src="<?php echo get_template_directory_uri() ;?>/images/confusedchimp.png" height="400" width="400" /></center>
-	</div>
-
-<?php	
+	</div> <?php
 }
 
 /**

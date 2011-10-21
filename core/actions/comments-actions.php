@@ -19,27 +19,18 @@
 * Core comments actions
 */
 add_action( 'chimps_comments', 'chimps_comments_password_required' );
-add_action( 'chimps_comments', 'chimps_has_comments' );
 
 /**
-* Core comments functions
+* Checks if password is required to comment, sets a filter for text that displays.
+*
+* @since 1.0
 */
-
-//Password Required - chimps_comments
-function chimps_comments_password_required()
-{
+function chimps_comments_password_required() {
 	$password_text = apply_filters( 'chimps_password_required_text', 'This post is password protected. Enter the password to view comments.');
-	if ( post_password_required() ) 
-	{ 
+	if ( post_password_required() ) { 
 		printf( __( $password_text, 'core' )); 
 		return;
 	}
-}
-
-//Has comments - chimps_comments
-function chimps_has_comments()
-{
-
 }
 
 /**
