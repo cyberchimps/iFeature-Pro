@@ -22,15 +22,14 @@ add_action( 'chimps_archive', 'chimps_archive_page_title' );
 add_action( 'chimps_archive', 'chimps_archive_loop' );
 
 /**
-* Core archive functions
+* Output archive page title based on archive type. 
+*
+* @since 1.0
 */
-
-//Archive page titles - chimps_archive
-function chimps_archive_page_title()
-{ ?>
+function chimps_archive_page_title() { ?>
 	<?php if (have_posts()) : ?>
 
- 			<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
+ 		<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
 
 			<?php if (is_category()) { ?>
 				<h2><?php printf( __( 'Archive for the &#8216;', 'core' )); ?><?php single_cat_title(); ?><?php printf( __( '&#8217; Category:', 'core' )); ?></h2><br />
@@ -56,7 +55,11 @@ function chimps_archive_page_title()
 			<?php } 
 }
 
-//Archive loop - chimps_archive
+/**
+* Archive page loop. 
+*
+* @since 1.0
+*/
 function chimps_archive_loop()
 { ?>
 	<?php while (have_posts()) : the_post(); ?>
