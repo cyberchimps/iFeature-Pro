@@ -31,9 +31,11 @@
 	}	
 ?>		
 
-<div class="grid_12" id="nav" style="background: #000;">
+<div class="container_12">
 
-<div class="grid_8"">
+	<div class="grid_12" style="background: #000;">
+
+		<div class="grid_8">
     	    <?php wp_nav_menu( array(
 		    'theme_location' => 'header-menu', // Setting up the location for the main-menu, Main Navigation.
 		    'menu_class' => 'sf-menu', //Adding the class for dropdowns
@@ -42,10 +44,12 @@
 		    )
 		);
     	?>
-    	</div>
-		<div class="grid_4" id="searchbar">
+   		</div>
+		<div class="grid_2" id="searchbar">
 			<?php get_search_form(); ?>
 		</div>
+		
+	</div>
+	
 </div>
-	<div class="clear"></div>
 <!--end nav.php-->

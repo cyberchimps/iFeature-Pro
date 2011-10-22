@@ -24,13 +24,9 @@
 /* End variable definition. */	
 
 ?>
-
-	</div><!--end main-->
-</div><!--end page_wrap-->			
-	
 		
-<div id="footer">
-    <div id="footer_wrap">
+<div class="container_12" id="footer">
+    <div class="grid_12" id="footer_wrap">
     	
     	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Footer") ) : ?>
 		
@@ -74,7 +70,7 @@
 	</div><!--end footer_wrap-->
 </div><!--end footer-->
 	
-	<div id="afterfooter">
+	<div class="container_12" id="afterfooter">
 	
 		<div id="afterfooterwrap">
 		
