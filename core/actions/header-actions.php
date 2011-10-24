@@ -227,9 +227,99 @@ function chimps_header_contact_area() {
 * @since 1.0
 */
 function chimps_header_social_icons() { 
+	global $options, $themeslug; //call globals
+	
+	$facebook		= v($options, $themeslug.'_facebook');
+	$hidefacebook   = v($options, $themeslug.'_hide_facebook');
+	$twitter		= v($options, $themeslug.'_twitter') ;
+	$hidetwitter    = v($options, $themeslug.'_hide_twitter');
+	$gplus		    = v($options, $themeslug.'_gplus') ;
+	$hidegplus      = v($options, $themeslug.'_hide_gplus');
+	$flickr		    = v($options, $themeslug.'_flickr') ;
+	$hideflickr     = v($options, $themeslug.'_hide_flickr');
+	$myspace	    = v($options, $themeslug.'_myspace') ;
+	$hidemyspace    = v($options, $themeslug.'_hide_myspace');
+	$linkedin		= v($options, $themeslug.'_linkedin') ;
+	$hidelinkedin   = v($options, $themeslug.'_hide_linkedin');
+	$youtube		= v($options, $themeslug.'_youtube');
+	$hideyoutube    = v($options, $themeslug.'_hide_youtube');
+	$googlemaps		= v($options, $themeslug.'_googlemaps');
+	$hidegooglemaps = v($options, $themeslug.'_hide_googlemaps');
+	$email			= v($options, $themeslug.'_email');
+	$hideemail      = v($options, $themeslug.'_hide_email');
+	$rss			= v($options, $themeslug.'_rsslink') ;
+	$hiderss   		= v($options, $themeslug.'_hide_rss');
+
 	echo "<br />";
 	echo "<div id='social'>";
-		get_template_part('icons', 'header');
+		?>
+
+<div class="icons">
+
+	<?php if ($hidefacebook != '1' AND $facebook != '' ):?>
+		<a href="<?php echo $facebook ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/facebook.png" alt="Facebook" /></a>
+		<?php endif;?>
+	<?php if ($hidefacebook != '1' AND $facebook == '' ):?>
+		<a href="http://facebook.com" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/facebook.png" alt="Facebook" /></a>
+	<?php endif;?>
+	<?php if ($hidetwitter != '1' AND $twitter != '' ):?>
+		<a href="<?php echo $twitter ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/twitter.png" alt="Twitter" /></a>
+	<?php endif;?>
+	<?php if ($hidetwitter != '1' AND $twitter == '' ):?>
+		<a href="http://twitter.com" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/twitter.png" alt="Twitter" /></a>
+	<?php endif;?>
+	<?php if ($hidegplus != '1' AND $gplus != '' ):?>
+		<a href="<?php echo $gplus ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/gplus.png" alt="Gplus" /></a>
+	<?php endif;?>
+	<?php if ($hidegplus != '1' AND $gplus == '' ):?>
+		<a href="https://plus.google.com" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/gplus.png" alt="Gplus" /></a>
+	<?php endif;?>
+	<?php if ($hideflickr != '1' AND $flickr != '' ):?>
+		<a href="<?php echo $flickr ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/flickr.png" alt="Flickr" /></a>
+	<?php endif;?>
+	<?php if ($hideflickr != '1' AND $flickr == '' ):?>
+		<a href="https://flickr.com" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/flickr.png" alt="Flickr" /></a>
+	<?php endif;?>
+	<?php if ($hidemyspace != '1' AND $myspace != '' ):?>
+		<a href="<?php echo $myspace ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/myspace.png" alt="Gplus" /></a>
+	<?php endif;?>
+	<?php if ($hidemyspace != '1' AND $myspace == '' ):?>
+		<a href="https://myspace.com" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/myspace.png" alt="Gplus" /></a>
+	<?php endif;?>
+	<?php if ($hidelinkedin != '1' AND $linkedin != '' ):?>
+		<a href="<?php echo $linkedin ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/linkedin.png" alt="LinkedIn" /></a>
+	<?php endif;?>
+		<?php if ($hidelinkedin != '1' AND $linkedin == '' ):?>
+		<a href="http://linkedin.com" target="_blank" ><img src="<?php echo get_template_directory_uri(); ?>/images/social/linkedin.png" alt="LinkedIn" /></a>
+	<?php endif;?>
+	<?php if ($hideyoutube != '1' AND $youtube != '' ):?>
+		<a href="<?php echo $youtube ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/youtube.png" alt="YouTube" /></a>
+	<?php endif;?>
+	<?php if ($hideyoutube != '1' AND $youtube == '' ):?>
+		<a href="http://youtube.com" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/youtube.png" alt="YouTube" /></a>
+	<?php endif;?>
+	<?php if ($hidegooglemaps != '1' AND $googlemaps != ''):?>
+		<a href="<?php echo $googlemaps ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/googlemaps.png" alt="Google Maps" /></a>
+	<?php endif;?>
+	<?php if ($hidegooglemaps != '1' AND $googlemaps == ''):?>
+		<a href="http://google.com/maps" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/googlemaps.png" alt="Google Maps" /></a>
+	<?php endif;?>
+	<?php if ($hideemail != '1' AND $email != ''):?>
+		<a href="mailto:<?php echo $email ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/email.png" alt="E-mail" /></a>
+	<?php endif;?>
+		<?php if ($hideemail != '1' AND $email == ''):?>
+		<a href="mailto:no@way.com" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/email.png" alt="E-mail" /></a>
+	<?php endif;?>
+	<?php if ($hiderss != '1' and $rss != '' ):?>
+		<a href="<?php echo $rss ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/rss.png" alt="RSS" /></a>
+	<?php endif;?>
+	<?php if ($hiderss != '1' and $rss == ''  ):?>
+		<a href="<?php bloginfo('rss2_url'); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/rss.png" alt="RSS" /></a>
+	<?php endif;?>
+	
+	
+	
+</div> <?php
 	echo "</div>";
 }
 
