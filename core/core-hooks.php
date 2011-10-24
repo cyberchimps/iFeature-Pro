@@ -147,6 +147,21 @@ function chimps_links_pages() {
 	do_action('chimps_links_pages');
 }
 
+/** 
+* Search
+*/
+function chimps_before_search() {
+	do_action('chimps_before_search');
+}
+
+function chimps_search() {
+	do_action('chimps_search');
+}
+
+function chimps_after_search() {
+	do_action('chimps_after_search');
+}
+
 /**
 * End
 */

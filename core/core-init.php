@@ -29,6 +29,7 @@ require_once ( get_template_directory() . '/core/actions/entry-actions.php' );
 require_once ( get_template_directory() . '/core/actions/header-actions.php' );
 require_once ( get_template_directory() . '/core/actions/footer-actions.php' );
 require_once ( get_template_directory() . '/core/actions/pagination-actions.php' );
+require_once ( get_template_directory() . '/core/actions/search-actions.php' );
 
 /**
 * End
