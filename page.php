@@ -43,7 +43,7 @@ if ($sidebar == "1" OR $sidebar == "2") {
 
 <div id="content_wrap">
 
-<?php if (function_exists('ifeature_breadcrumbs')) ifeature_breadcrumbs(); ?>
+<?php if (function_exists('chimps_breadcrumbs')) chimps_breadcrumbs(); ?>
 
 	<?php if ($enable == "on" && $size == "0"): ?>
 		<div id = "slider-wrapper">

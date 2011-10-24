@@ -21,7 +21,7 @@
 		
 		<div class="content_padding">
 		
-		<?php if (function_exists('ifeature_breadcrumbs')) ifeature_breadcrumbs(); ?>
+		<?php if (function_exists('chimps_breadcrumbs')) chimps_breadcrumbs(); ?>
 		
 		<!--Begin @Core before_archive hook-->
 			<?php chimps_before_archive(); ?>

@@ -34,7 +34,7 @@ get_header(); ?>
 			
 				<div class="post_container">
 				
-				<?php if (function_exists('ifeature_breadcrumbs')) ifeature_breadcrumbs(); ?>
+				<?php if (function_exists('chimps_breadcrumbs')) chimps_breadcrumbs(); ?>
 				
 					<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 			
