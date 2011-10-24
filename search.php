@@ -30,7 +30,14 @@ get_header();
 		<?php chimps_after_search(); ?>
 	<!-- End @Core after_search hook -->
 	
-	<div id="sidebar_right"><?php get_sidebar(); ?></div>
+	<!-- Begin @Core after_entry hook -->
+		<?php chimps_after_entry(); ?>
+	<!-- End @Core after_entry hook -->
+	
+	<div id="sidebar_right">
+		<?php get_sidebar(); ?>
+	</div>
+	
 </div><!--end content_wrap-->
 <div class="clear"></div>
 

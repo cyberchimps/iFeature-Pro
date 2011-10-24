@@ -27,7 +27,6 @@ add_action( 'chimps_search', 'chimps_search_content' );
 */
 function chimps_search_content() { ?>
 	<div id="content_left">
-		
 		<div class="content_padding">
 
 		<?php if (have_posts()) : ?>
@@ -58,7 +57,7 @@ function chimps_search_content() { ?>
 
 	<?php else : ?>
 
-		<h2>No posts found.</h2>
+		<h2><?php printf( __( 'No posts found.', 'core' )) ; ?></h2>
 
 	<?php endif; ?>
 		</div><!--end content_padding-->
