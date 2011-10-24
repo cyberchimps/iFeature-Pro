@@ -15,6 +15,15 @@
 * @since 1.0
 */
 
+//Define custom core functions
+require_once ( get_template_directory() . '/core/extend/extend-functions.php' );
+
+//Define the core hooks
+require_once ( get_template_directory() . '/core/extend/extend-hooks.php' );
+
+//Call actions
+require_once ( get_template_directory() . '/core/extend/actions/slider-actions.php' );
+
 /**
 * End
 */

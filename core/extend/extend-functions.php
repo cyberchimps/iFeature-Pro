@@ -1,6 +1,6 @@
 <?php
 /**
-* Initializes the CyberChimps Core Framework Pro Extension 
+* CyberChimps Core Framework Pro Extension functions
 *
 * Author: Tyler Cunningham
 * Copyright: © 2011
@@ -15,15 +15,14 @@
 * @since 1.0
 */
 
-/** 
-* Slider
-*/
-function chimps_page_slider() {
-	do_action ('chimps_page_slider');
-}
-
 /**
 * End
 */
+		
+// Works in single post outside of the Loop
+function function_name() {
+global $wp_query;
+$thePostID = $wp_query->post->ID;
+}
 		    
 ?>

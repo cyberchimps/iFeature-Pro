@@ -47,7 +47,7 @@ if ($sidebar == "1" OR $sidebar == "2") {
 
 	<?php if ($enable == "on" && $size == "0"): ?>
 		<div id = "slider-wrapper">
-			<center><?php get_template_part('nivoslider', 'page' ); ?> </center>
+			<center><?php chimps_page_slider(); ?> </center>
 		</div>
 
 	<?php endif;?>
