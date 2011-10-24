@@ -108,12 +108,14 @@ function chimps_meta_tags() {
 *
 * @since 1.0
 */
-function chimps_title_tag(){
+function chimps_title_tag() {
+	global $options, $themeslug; 
+	$blogtitle = (v($options, $themeslug.'_home_title'));
+	// $title = get_post_meta($post->ID, 'seo_title' , true); BROKEN 
+
 	echo "<title>";
-	if ($paged>1 ) {
-		echo ' - page '. $paged;
-	}
-	elseif (function_exists('is_tag') && is_tag()) { /*Title for tags */
+	
+	if (function_exists('is_tag') && is_tag()) { /*Title for tags */
 		bloginfo('name'); echo ' - '; single_tag_title("Tag Archive for &quot;"); echo '&quot;  ';
 	}
 	elseif (is_archive()) { /*Title for archives */ 
@@ -184,7 +186,7 @@ function chimps_header_left_content() {
 	</div><?php
 	}
 						
-	if ($$logo == '' ) { ?>
+	if ($logo == '' ) { ?>
 	<div id="sitename">
 		<h1 class="sitename"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?> </a></h1>
 	</div>

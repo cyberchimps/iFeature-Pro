@@ -63,7 +63,6 @@ function chimps_after_comments() {
 /** 
 * Content 
 */
-
 function chimps_before_content() {
 	do_action('chimps_before_content');
 }
@@ -75,7 +74,6 @@ function chimps_after_content() {
 /** 
 * Entry 
 */
-
 function chimps_before_entry() {
 	do_action('chimps_before_entry');
 }
@@ -84,6 +82,24 @@ function chimps_after_entry() {
 	do_action('chimps_after_entry');
 }
 
+/** 
+* Footer 
+*/
+function chimps_before_footer() {
+	do_action('chimps_before_footer_content');
+}
+
+function chimps_footer() {
+	do_action('chimps_footer');
+}
+
+function chimps_afterfooter() { 
+	do_action('chimps_afterfooter');
+}
+
+function chimps_after_footer() {
+	do_action('chimps_after_footer_content');
+}
 /** 
 * Header 
 */
