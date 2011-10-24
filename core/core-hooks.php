@@ -82,6 +82,10 @@ function chimps_after_entry() {
 	do_action('chimps_after_entry');
 }
 
+function chimps_meta() {
+	do_action('chimps_meta');
+}
+
 /** 
 * Footer 
 */

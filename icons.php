@@ -21,9 +21,9 @@
 	$gplus		    = v($options, $themeslug.'_gplus') ;
 	$hidegplus      = v($options, $themeslug.'_hide_gplus');
 	$flickr		    = v($options, $themeslug.'_flickr') ;
-	$hideflickr      = v($options, $themeslug.'_hide_flickr');
+	$hideflickr     = v($options, $themeslug.'_hide_flickr');
 	$myspace	    = v($options, $themeslug.'_myspace') ;
-	$hidemyspace        = v($options, $themeslug.'_hide_myspace');
+	$hidemyspace    = v($options, $themeslug.'_hide_myspace');
 	$linkedin		= v($options, $themeslug.'_linkedin') ;
 	$hidelinkedin   = v($options, $themeslug.'_hide_linkedin');
 	$youtube		= v($options, $themeslug.'_youtube');
