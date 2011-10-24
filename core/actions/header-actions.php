@@ -239,7 +239,33 @@ function chimps_header_social_icons() {
 * @since 1.0
 */
 function chimps_nav() {
-	get_template_part('nav', 'header' ); 
+	global $options, $themeslug; //call globals
+	$homeimage		= v($options, 'file3');?>
+	
+	<div id ="navbackground">
+		<div id="navcontainer">
+
+		<?php if ($homeimage == '' ):?>
+			<div id="homebutton"><a href="<?php echo home_url(); ?>/"><img src="<?php echo get_template_directory_uri(); ?>/images/menu/home.png?>" alt="Home" /></a></div>
+		<?php endif;?>
+		<?php if ($homeimage != '' ):?>
+			<div id="homebutton"><a href="<?php echo home_url(); ?>/"><img src="<?php echo stripslashes($homeimage['url']) ;?>" alt="Home" /></a></div>
+		<?php endif;?>
+   
+   			 <div id="sfwrapper">
+       			 <?php wp_nav_menu( array(
+	    			'theme_location' => 'header-menu', // Setting up the location for the main-menu, Main Navigation.
+	    			'menu_class' => 'sf-menu', //Adding the class for dropdowns
+	    			'container_id' => 'navwrap', //Add CSS ID to the containter that wraps the menu.
+	    			'fallback_cb' => 'menu_fallback', //if wp_nav_menu is unavailable, WordPress displays wp_page_menu function, which displays the pages of your blog.
+	    			));
+    			?>
+    		</div><!--end sfwraooer-->
+			<div id="searchbar">
+				<?php get_search_form(); ?>
+			</div><!--end searchbar-->
+		</div><!--end navbackground-->
+	</div> <!--end navcontainer--> <?php
 }
 
 /**
