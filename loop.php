@@ -25,7 +25,7 @@
 
 		<h2 class="posts_title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
 
-		<?php get_template_part('meta', 'index' ); ?>
+		<?php chimps_meta(); ?>
 						
 			<?php
 				if ( has_post_thumbnail()) {

@@ -44,7 +44,9 @@
 							<?php chimps_header_left(); ?> 
 						<!-- End @Core header_left contact area hook -->
 				</div><!-- end headerwrap -->
-				<?php chimps_navigation(); ?> <!-- Inserts @Core navigation -->
+				<!-- Begin @Core navigation contact area hook -->
+					<?php chimps_navigation(); ?> 
+				<!-- End @Core navigation contact area hook -->
 			</div><!-- end header -->
 <!-- Begin @Core after_header hook -->
 	<?php chimps_after_header(); ?> 

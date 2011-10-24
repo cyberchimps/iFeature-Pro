@@ -261,9 +261,11 @@ function chimps_nav() {
 	    			));
     			?>
     		</div><!--end sfwraooer-->
+    		
 			<div id="searchbar">
 				<?php get_search_form(); ?>
 			</div><!--end searchbar-->
+			
 		</div><!--end navbackground-->
 	</div> <!--end navcontainer--> <?php
 }

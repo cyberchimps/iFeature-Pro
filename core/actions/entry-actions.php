@@ -26,10 +26,10 @@ add_action( 'chimps_meta', 'chimps_meta_byline' );
 * @since 1.0
 */
 function chimps_meta_byline() {
-	global $options, $themeslug; //call globals ?>
+	global $options, $themeslug; //call globals  ?>
 	
 	<div class="meta">
-<?php if ($author != '1'):?><?php printf( __( 'Published by', 'core' )); ?> <?php the_author_posts_link(); ?> <?php endif;?> <?php if ($category != '1'):?><?php printf( __( 'in', 'core' )); ?> <?php the_category(', ') ?> <?php endif;?><?php if ($date != '1'):?> <?php printf( __( 'on', 'core' )); ?> <a href="<?php the_permalink() ?>"><?php the_time('F jS, Y') ?></a><?php endif;?></div> <?
+<?php if ((v($options, $themeslug.'_hide_author')) != '1'):?><?php printf( __( 'Published by', 'core' )); ?> <?php the_author_posts_link(); ?> <?php endif;?> <?php if ((v($options, $themeslug.'_hide_categories')) != '1'):?><?php printf( __( 'in', 'core' )); ?> <?php the_category(', ') ?> <?php endif;?><?php if ((v($options, $themeslug.'_hide_date')) != '1'):?> <?php printf( __( 'on', 'core' )); ?> <a href="<?php the_permalink() ?>"><?php the_time('F jS, Y') ?></a><?php endif;?></div> <?
 
 }
 
