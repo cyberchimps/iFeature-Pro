@@ -25,13 +25,16 @@ add_action( 'chimps_search', 'chimps_search_content' );
 *
 * @since 1.0
 */
-function chimps_search_content() { ?>
+function chimps_search_content() { 
+	$results = apply_filters( 'chimps_search_results_message', 'Search Results For: %s' ); 
+	$noresults = apply_filters( 'chimps_no_search_results_message', 'No posts found.' ); ?>
+	
 	<div id="content_left">
 		<div class="content_padding">
 
 		<?php if (have_posts()) : ?>
 
-		<h2><font size="5"><?php printf( __( 'Search Results For: %s' ), '<span>' . get_search_query() . '</span>' ); ?></font></h2><br />
+		<h2><font size="5"><?php printf( __( $results ), '<span>' . get_search_query() . '</span>' ); ?></font></h2><br />
 
 		<?php while (have_posts()) : the_post(); ?>
 		
@@ -57,7 +60,7 @@ function chimps_search_content() { ?>
 
 	<?php else : ?>
 
-		<h2><?php printf( __( 'No posts found.', 'core' )) ; ?></h2>
+		<h2><?php printf( __( $noresults, 'core' )) ; ?></h2>
 
 	<?php endif; ?>
 		</div><!--end content_padding-->

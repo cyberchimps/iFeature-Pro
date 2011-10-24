@@ -39,11 +39,11 @@ if ($sidebar == "1" OR $sidebar == "2") {
 
 ?>
 
-
-
 <div id="content_wrap">
 
-<?php if (function_exists('chimps_breadcrumbs')) chimps_breadcrumbs(); ?>
+	<!-- Begin @Core before_entry hook -->
+		<?php chimps_before_entry(); ?>
+	<!-- End @Core before_entry hook -->
 
 	<?php if ($enable == "on" && $size == "0"): ?>
 		<div id = "slider-wrapper">
