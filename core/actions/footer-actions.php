@@ -22,8 +22,8 @@ add_action ( 'chimps_footer', 'chimps_footer_widgets' );
 add_action ( 'chimps_footer', 'chimps_analytics' );
 
 //add_action ( 'chimps_afterfooter', 'chimps_afterfooter_copyright' );
-//add_action (' chimps_afterfooter', 'chimps_afterfooter_menu' );
-add_action (' chimps_afterfooter', 'chimps_afterfooter_credit' );
+add_action ( 'chimps_afterfooter', 'chimps_afterfooter_menu' );
+//add_action ( 'chimps_afterfooter', 'chimps_afterfooter_credit' );
 
 /**
 * Set the footer widgetized area.
