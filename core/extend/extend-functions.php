@@ -18,11 +18,5 @@
 /**
 * End
 */
-		
-// Works in single post outside of the Loop
-function function_name() {
-global $wp_query;
-$thePostID = $wp_query->post->ID;
-}
 		    
 ?>
