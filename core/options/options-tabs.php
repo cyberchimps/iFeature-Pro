@@ -29,7 +29,7 @@ array( "id" => "tab1",
 array( "type" => "open"),
    
 
-chimps_general_options(),
+chimps_general_options(), // not working obviously
 
     
 array( "name" => "Logo URL",  
