@@ -186,7 +186,7 @@
 			<div class="grid_6">
 				<h1 class="description"><?php bloginfo('description'); ?></h1>
 			</div>
-			<div class="grid_6" style="text-align:right;">
+			<div class="grid_6">
 				<?php get_template_part('icons', 'header'); ?>
 			</div>
 		</div>

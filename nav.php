@@ -25,7 +25,7 @@
 
 	<div class="grid_12" id="imenu">
 
-		<div class="grid_8">
+		<div class="grid_9">
     	    <?php wp_nav_menu( array(
 		    'theme_location' => 'header-menu', // Setting up the location for the main-menu, Main Navigation.
 		    'menu_class' => 'sf-menu', //Adding the class for dropdowns
@@ -35,7 +35,7 @@
 		);
     	?>
    		</div>
-		<div class="grid_2" id="searchbar">
+		<div class="grid_1">
 			<?php get_search_form(); ?>
 		</div>
 		

@@ -23,28 +23,41 @@ hr {
 ----------------------------------------------------------------------------------------------------*/
 
 h1 {
-  font-size: 25px;
+  font-size: 32px;
 }
 
 h2 {
-  font-size: 23px;
+  font-size: 28px;
 }
 
 h3 {
-  font-size: 21px;
+  font-size: 24px;
 }
 
 h4 {
-  font-size: 19px;
+  font-size: 20px;
 }
 
 h5 {
-  font-size: 17px;
+  font-size: 16px;
 }
 
 h6 {
-  font-size: 15px;
+  font-size: 12px;
 }
+
+/* Custom */
+
+.description {	
+	font-size: 16px;
+	margin-left: 1px;
+}
+
+.sitename {
+	font-size: 32px;
+	font-weight: bolder;
+}
+
 
 /* `Spacing
 ----------------------------------------------------------------------------------------------------*/
@@ -77,5 +90,4 @@ table,
 address,
 fieldset,
 figure {
-  margin-bottom: 20px;
 }
