@@ -87,7 +87,6 @@ function chimps_meta_tags() {
 <meta name='keywords' content=' <?php echo v($options, $themeslug.'_home_keywords') ; ?>' /> <?php
 	}
 	
-	/* Not working right now, will fix later.
 	
 	if ($title != '' AND !is_front_page()) {
 		echo "<meta name='title' content='$title' />";
@@ -99,7 +98,7 @@ function chimps_meta_tags() {
 		echo "<meta name='keywords' content='$keywords'/>";
 	} 
 	
-	*/	
+
 }
 
 
@@ -109,8 +108,9 @@ function chimps_meta_tags() {
 * @since 1.0
 */
 function chimps_title_tag() {
-	global $options, $themeslug; 
+	global $options, $themeslug, $post; 
 	$blogtitle = (v($options, $themeslug.'_home_title'));
+	$title = get_post_meta($post->ID, 'seo_title' , true);
 	// $title = get_post_meta($post->ID, 'seo_title' , true); BROKEN 
 
 	echo "<title>";
