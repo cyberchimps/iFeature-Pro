@@ -25,12 +25,12 @@ function theme_options_init() {
 	 
 
 	wp_register_script($themeslug.'jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"), false, '1.4.4');
-    wp_register_script($themeslug.'jqueryui', get_template_directory_uri(). '/library/js/jquery-ui.js');
-    wp_register_script($themeslug.'jquerycookie', get_template_directory_uri(). '/library/js/jquery-cookie.js');
-    wp_register_script($themeslug.'cookie', get_template_directory_uri(). '/library/js/cookie.js');
-    wp_register_script($themeslug.'color', get_template_directory_uri(). '/library/js/jscolor/jscolor.js');
-	wp_register_script($themeslug.'jquerycustom', get_template_directory_uri(). '/library/js/jquery-custom.js');
-    wp_register_style($themeslug.'css', get_template_directory_uri(). '/library/options/theme-options.css');
+    wp_register_script($themeslug.'jqueryui', get_template_directory_uri(). '/core/library/js/jquery-ui.js');
+    wp_register_script($themeslug.'jquerycookie', get_template_directory_uri(). '/core/library/js/jquery-cookie.js');
+    wp_register_script($themeslug.'cookie', get_template_directory_uri(). '/core/library/js/cookie.js');
+    wp_register_script($themeslug.'color', get_template_directory_uri(). '/core/library/js/jscolor/jscolor.js');
+	wp_register_script($themeslug.'jquerycustom', get_template_directory_uri(). '/core/library/js/jquery-custom.js');
+    wp_register_style($themeslug.'css', get_template_directory_uri(). '/core/options/theme-options.css');
 }
 
 
@@ -72,19 +72,19 @@ global $name, $shortname, $options;
 
 /* Include select arrays */
 
-	require_once ( get_template_directory() . '/library/options/options-select.php' );
+	require_once ( get_template_directory() . '/core/options/options-select.php' );
 
 /* End select arrays */
 
 /* Include options functions */
 
-	require_once ( get_template_directory() . '/library/options/options-functions.php' );
+	require_once ( get_template_directory() . '/core/options/options-functions.php' );
 
 /* End options functions */
 
 /* Include options tabs */
 
-	require_once ( get_template_directory() . '/library/options/options-tabs.php' );
+	require_once ( get_template_directory() . '/core/options/options-tabs.php' );
 
 /* End options tabs */
 
@@ -129,24 +129,26 @@ function theme_options_do_page() {
 	
 	<div class="menu">
 	<ul>
-		<li><a href="http://cyberchimps.com/support" target="_blank">Support</a></li>
-		<li><a href="http://cyberchimps.com/ifeaturepro/docs/">Documentation</a></li>
-		<li><a href="http://cyberchimps.com/forum/" target="_blank">Forum</a></li>
-		<li><a href="http://twitter.com/#!/cyberchimps" target="_blank">Twitter</a></li>
-		<li><a href="http://www.facebook.com/CyberChimps" target="_blank">Facebook</a></li>
-		<li><a href="http://cyberchimps.com/store/" target="_blank">CyberChimps Store</a></li>
+		<li><a href="http://cyberchimps.com/support" target="_blank"><?php printf( __( 'Support', 'core' )); ?></a></li>
+		<li><a href="http://cyberchimps.com/ifeature-free/docs" target="_blank"> <?php printf( __( 'Documentation', 'core' )); ?></a></li>
+		<li><a href="http://cyberchimps.com/forum/" target="_blank"><?php printf( __( 'Forum', 'core' )); ?></a></li>
+		<li><a href="http://twitter.com/#!/cyberchimps" target="_blank"><?php printf( __( 'Twitter', 'core' ));?></a></li>
+		<li><a href="http://facebook.com/cyberchimps/" target="_blank"><?php printf( __( 'Facebook', 'core' ));?></a></li>
+		<li><a href="http://cyberchimps.com/store/" target="_blank"><?php printf( __( 'CyberChimps Store', 'core' )); ?></a></li>
+		<li><a href="http://cyberchimpspro.com/" target="_blank"><?php printf( __( 'CyberChimps Pro', 'core' )); ?></a></li>
+	</ul>
 	</ul>
 	</div>
 
       
     <div id="tabs" style="clear:both;">   
     <ul class="tabNavigation">
-        <li><a href="#tab1"><span>General</span></a></li>
-        <li><a href="#tab2"><span>Design</span></a></li>
-        <li><a href="#tab3"><span>Blog</span></a></li>
-        <li><a href="#tab4"><span>Social</span></a></li>       
-        <li><a href="#tab5"><span>Footer</span></a></li>
-        <li><a href="#tab6"><span>Import/Export</span></a></li>
+  		<li><a href="#tab1"><span><?php printf( __( 'General', 'core' )); ?></span></a></li>
+        <li><a href="#tab2"><span><?php printf( __( 'Design', 'core' )); ?></span></a></li>
+        <li><a href="#tab3"><span><?php printf( __( 'Blog', 'core' )); ?></span></a></li>
+        <li><a href="#tab4"><span><?php printf( __( 'Social', 'core' )); ?></span></a></li>       
+        <li><a href="#tab5"><span><?php printf( __( 'Footer', 'core' )); ?></span></a></li>
+        <li><a href="#tab6"><span><?php printf( __( 'Import/Export', 'core' )); ?></span></a></li>
     
     </ul>
     
@@ -177,7 +179,7 @@ function theme_options_do_page() {
 <p class="submit">
 <input name="reset" type="submit" value="Reset" />
 <input type="hidden" name="action" value="reset" />
-&nbsp;&nbsp;&nbsp;<small>WARNING THIS RESTORES ALL DEFAULTS</small>
+<small>WARNING THIS RESTORES ALL DEFAULTS</small>
 </p>
 </form>
 	</div>
@@ -187,7 +189,7 @@ function theme_options_do_page() {
 
 /* Include options validate */
 
-	require_once ( get_template_directory() . '/library/options/options-validate.php' );
+	require_once ( get_template_directory() . '/core/options/options-validate.php' );
 
 /* End options validate */
 

@@ -378,8 +378,6 @@ do_action('chimps_init');
 
 // Call additional template files
 	
-require_once ( get_template_directory() . '/library/options/options-core.php' );
-require_once ( get_template_directory() . '/library/options/options-themes.php' );
 require_once ( get_template_directory() . '/pro/meta-box.php' );
 require_once ( get_template_directory() . '/inc/update.php' ); // Include automatic updater
 ?>
