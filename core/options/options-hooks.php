@@ -15,13 +15,9 @@
 * @since 1.0
 */
 
-/**
-* Core ___ actions
-*/
-
-/**
-* Core ___ functions
-*/
+function chimps_general_options(){
+	do_action('chimps_general_options');
+}
 
 
 /**

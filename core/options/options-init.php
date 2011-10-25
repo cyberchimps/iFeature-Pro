@@ -12,6 +12,11 @@
 	License URI: http://www.gnu.org/licenses/gpl-2.0.html  
 */
 
+// REQUIREDS
+
+require_once ( get_template_directory() . '/core/options/actions/general-actions.php' );
+require_once ( get_template_directory() . '/core/options/options-hooks.php' );
+
 add_action( 'admin_init', 'theme_options_init' );
 add_action( 'admin_menu', 'theme_options_add_page' ); 
 

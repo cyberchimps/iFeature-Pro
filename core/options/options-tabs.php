@@ -29,12 +29,8 @@ array( "id" => "tab1",
 array( "type" => "open"),
    
 
-array( "name" => "Help",  
-    "desc" => "",  
-    "id" => $shortname."_general_faq",  
-    "type" => "general_faq",  
-    "std" => ""),
-    
+chimps_general_options(),
+
     
 array( "name" => "Logo URL",  
     "desc" => "Use the image uploader or enter your own URL into the input field to use an image as your logo. To display the site title as text, leave blank.",  
