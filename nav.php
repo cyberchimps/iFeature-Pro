@@ -19,21 +19,11 @@
 
 /* End variable definition. */
 
-?>
-
-<?php 
-				
-	if ($options[$themeslug.'_menu_color'] == "") {
-		$menucolor = 'Grey';
-	}
-	else {
-		$menucolor = $options[($themeslug.'_menu_color')]; 
-	}	
-?>		
+?>	
 
 <div class="container_12">
 
-	<div class="grid_12" style="background: #000;">
+	<div class="grid_12" id="imenu">
 
 		<div class="grid_8">
     	    <?php wp_nav_menu( array(

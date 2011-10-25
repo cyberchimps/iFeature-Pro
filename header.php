@@ -137,10 +137,11 @@
 	</title>	
 
 <link rel="shortcut icon" href="<?php echo stripslashes($favicon['url']); ?>" type="image/x-icon" />
-<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/style.css" type="text/css" />
+
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/960/reset.css" type="text/css" />
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/960/text.css" type="text/css" />
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/grid.css" type="text/css" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/style.css" type="text/css" />
 
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <link href='http://fonts.googleapis.com/css?family=<?php echo $font ?>' rel='stylesheet' type='text/css' />
@@ -153,43 +154,44 @@
 
 <body style="font-family:'<?php echo $fontstrip ?>', Helvetica, serif" <?php body_class(); ?> >
 
-<div class="container_12">
+	<header id="head">
+
+		<div class="container_12">
 		
-					<div class="grid_6">
-						<!-- Inserts Site Logo -->
-						<?php if ($logo != ''):?>
-								<a href="<?php echo home_url(); ?>/"><img src="<?php echo stripslashes($logo['url']); ?>" alt="logo"></a>
-						<?php endif;?>
-						<?php if ($logo == '' ):?>
-								<h1 class="sitename"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?> </a></h1>
-						<?php endif;?>
-					</div>
-					<div class="grid_6" style="text-align:right;">
-						<!-- Inserts Header Contact Area -->
-		
-							<?php if ($headercontact == '' ):?>
-								Enter Contact Information Here
-							<?php endif;?>
-							<?php if ($headercontact != 'hide' ):?>
-								<?php echo stripslashes ($headercontact); ?></div> 
-							<?php endif;?>
-							<?php if ($headercontact == 'hide' ):?>
-							<?php endif;?>
-							<br />
-					</div>
-</div>
-					<div class='clear'>&nbsp;</div>
-					<div class="container_12">
-					<div class="grid_6">
-							<h1 class="description"><?php bloginfo('description'); ?></h1>
-					</div>
-					<div class="grid_6" style="text-align:right;">
-								<?php get_template_part('icons', 'header'); ?>
-					</div>
-					<div class='clear'>&nbsp;</div>
-</div>
+			<div class="grid_6">
+				<!-- Inserts Site Logo -->
+				<?php if ($logo != ''):?>
+					<a href="<?php echo home_url(); ?>/"><img src="<?php echo stripslashes($logo['url']); ?>" alt="logo"></a>
+				<?php endif;?>
+				<?php if ($logo == '' ):?>
+					<h1 class="sitename"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?> </a></h1>
+				<?php endif;?>
+			</div>		
+			<div class="grid_6" style="text-align:right;">
+				<!-- Inserts Header Contact Area -->
+				<?php if ($headercontact == '' ):?>
+					Enter Contact Information Here
+				<?php endif;?>
+				<?php if ($headercontact != 'hide' ):?>
+					<?php echo stripslashes ($headercontact); ?></div> 
+				<?php endif;?>
+				<?php if ($headercontact == 'hide' ):?>
+				<?php endif;?>
+				<br />
+			</div>
+		</div>
+		<div class='clear'>&nbsp;</div>
+
+		<div class="container_12">
+			<div class="grid_6">
+				<h1 class="description"><?php bloginfo('description'); ?></h1>
+			</div>
+			<div class="grid_6" style="text-align:right;">
+				<?php get_template_part('icons', 'header'); ?>
+			</div>
+		</div>
+		<div class='clear'>&nbsp;</div>
 		
 		<?php get_template_part('nav', 'header' ); ?>
 
-	
-</header>
+	</header>
