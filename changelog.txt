@@ -5,6 +5,8 @@ iFeature Pro Changelog
 Version 2.1.3 (10-25-11)
 -Fixed broken jQuery call.
 -Styling changes to HTML elements.
+-Fixed missing text domain in comments.php.
+-Changed default menu font to Arial. 
 
 Version 2.1.2 (10-20-11)
 -Fixed syntax error in search.php.
