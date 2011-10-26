@@ -28,9 +28,6 @@ array( "id" => "tab1",
 
 array( "type" => "open"),
    
-
-chimps_general_options(), // not working obviously
-
     
 array( "name" => "Logo URL",  
     "desc" => "Use the image uploader or enter your own URL into the input field to use an image as your logo. To display the site title as text, leave blank.",  
