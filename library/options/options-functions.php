@@ -315,7 +315,7 @@ function add_menu_font() {
 	global $themename, $themeslug, $options;	
 		
 	if ($options[$themeslug.'_menu_font'] == "") {
-		$font = 'Cantarell';
+		$font = 'Arial';
 	}		
 		
 	elseif ($options[$themeslug.'_custom_menu_font'] != "") {
