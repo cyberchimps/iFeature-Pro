@@ -16,13 +16,13 @@
 */
 
 //Define custom core functions
-require_once ( get_template_directory() . '/core/extend/extend-functions.php' );
+require_once ( get_template_directory() . '/core/pro/pro-functions.php' );
 
 //Define the core hooks
-require_once ( get_template_directory() . '/core/extend/extend-hooks.php' );
+require_once ( get_template_directory() . '/core/pro/pro-hooks.php' );
 
 //Call actions
-require_once ( get_template_directory() . '/core/extend/actions/slider-actions.php' );
+require_once ( get_template_directory() . '/core/pro/actions/slider-actions.php' );
 
 
 /**

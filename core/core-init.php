@@ -32,7 +32,7 @@ require_once ( get_template_directory() . '/core/actions/pagination-actions.php'
 require_once ( get_template_directory() . '/core/actions/search-actions.php' );
 
 //Call extend (this is only tempoaray)
-require_once ( get_template_directory() . '/core/extend/extend-init.php' );
+require_once ( get_template_directory() . '/core/pro/pro-init.php' );
 
 //Options
 require_once ( get_template_directory() . '/core/options/options-init.php' );
