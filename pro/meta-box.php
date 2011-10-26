@@ -89,7 +89,7 @@ class RW_Meta_Box {
 					data = $(this).attr("rel");
 				$.post(ajaxurl, {action: \'rw_delete_file\', data: data}, function(response){
 					$parent.fadeOut("slow");
-					alert(response);
+					
 				});
 				return false;
 			});

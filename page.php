@@ -45,9 +45,9 @@ if ($sidebar == "1" OR $sidebar == "2") {
 		<?php chimps_before_entry(); ?>
 	<!-- End @Core before_entry hook -->
 
-
-			<?php chimps_page_slider(); ?> 
-		
+	<!-- Begin @Core page_slider hook -->
+		<?php chimps_page_slider(); ?> 
+	<!-- End @Core page_slider hook -->
 
 	
 	<?php if ($callout == "on"): ?>
