@@ -45,12 +45,10 @@ if ($sidebar == "1" OR $sidebar == "2") {
 		<?php chimps_before_entry(); ?>
 	<!-- End @Core before_entry hook -->
 
-	<?php if ($enable == "on" && $size == "0"): ?>
-		<div id = "slider-wrapper">
-			<?php chimps_page_slider(); ?> 
-		</div>
 
-	<?php endif;?>
+			<?php chimps_page_slider(); ?> 
+		
+
 	
 	<?php if ($callout == "on"): ?>
 	

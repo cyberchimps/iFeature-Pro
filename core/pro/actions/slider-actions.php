@@ -35,6 +35,7 @@ function chimps_page_slider_content() { ?>
 
     $tmp_query = $wp_query; 
 	$root = get_template_directory_uri(); 
+	$enable = get_post_meta($post->ID, 'page_enable_slider' , true);
 	$size = get_post_meta($post->ID, 'page_slider_size' , true);
 	$size2 = get_post_meta($post->ID, 'page_sidebar' , true);
 	$type = get_post_meta($post->ID, 'page_slider_type' , true);
@@ -48,6 +49,10 @@ function chimps_page_slider_content() { ?>
 	$navautohide = get_post_meta($post->ID, 'disable_autohide' , true);
 	$hidenav = get_post_meta($post->ID, 'hide_arrows' , true);
 	$timdisable = get_post_meta($post->ID, 'disable_wordthumb' , true);
+	
+	if ($enable == "on" && $size == "0") {
+	
+	echo "<div id='slider-wrapper'>";
 	
 /* End define variables. */	
 
@@ -508,6 +513,9 @@ OUT;
 echo $out;
 
 /* END */ 
+
+echo "</div>";
+}
 
 
 }

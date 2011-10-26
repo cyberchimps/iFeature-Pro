@@ -27,6 +27,9 @@ add_action( 'chimps_comments', 'chimps_comments_loop' );
 * @since 1.0
 */
 function chimps_comments_password_required() {
+	
+	global $post;
+	
 	$password_text = apply_filters( 'chimps_password_required_text', 'This post is password protected. Enter the password to view comments.');
 	if ( post_password_required() ) { 
 		printf( __( $password_text, 'core' )); 
