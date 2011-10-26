@@ -4,7 +4,7 @@ Theme URI: http://cyberchimps.com/ifeaturepro
 Description: iFeature Pro: A Premium WordPress Theme designed by CyberChimps.com featuring customizable theme options, an aesthetically pleasing design with five color choices, a feature slider, callout section, dynamic header for custom logo, social icons, and contact section, widgetized sidebar and footer, typography including Google Fonts, and multiple template choices.
 Author: CyberChimps
 Author URI: http://cyberchimps.com
-Version: 2.1.2
+Version: 2.1.3
 Tags: white, light, silver, two-columns, fixed-width, custom-header, custom-menu, threaded-comments, sticky-post
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -22,6 +22,11 @@ body { font-size: 14px;	}
 
 /* Page Layout  */
 
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 4px;
+	margin-top: 4px;
+}
+
 #page-wrap { 
 	width: 980px; 
 	margin: auto;
@@ -36,7 +41,7 @@ body { font-size: 14px;	}
 
 .error { font-size: 28px; text-align: center; }
 
-p { margin: 0 0 10px 0; }
+p { margin: 5px 0 12px 0; p: line-height: 1.3em;}
 
 a { color: #717171; text-decoration: none; }
 
@@ -46,11 +51,34 @@ a img {border: none; }
 
 ul, ol { margin: 0 0 10px 0; }
 
+hr {
+	margin-bottom: 5px;
+}
+
 #crumbs {margin-bottom: 5px;}
 
-dt {font-weight: bold; margin-top: 10px;}
+tr { }
 
-dd {margin-bottom: 15px; }
+th { padding-right: 30px; padding-bottom: 10px; }
+
+td {
+border-top: 1px solid #DDD;
+padding: 6px 10px 6px 0;
+}
+
+table {border-bottom: 1px solid #DDD;}
+
+code, tt { }
+
+#crumbs {margin-bottom: 5px;}
+
+dt {font-weight: bold; margin-top: 5px; margin-bottom: 5px; margin-left: 26px; }
+
+dd {margin-bottom: 15px; margin-left: 26px; }
+
+pre {margin-left: 20px;}
+
+fieldset {border: none;}
 
 /* Header  */
 
@@ -198,7 +226,6 @@ input[type=text] { width: 120px; }
 	background-color: #fff;
 	border-radius: 3px;
 	-moz-border-radius: 3px;
-	margin-bottom: 10px;
 	padding: 0px 5px 5px 5px;
 
 }
@@ -234,7 +261,8 @@ ol {
 .posts_title {
 	font-size: 24px;
 	font-weight: bold;
-	margin-bottom: 2px;
+	margin-bottom: 5px;
+	margin-left: 1px;
 }
 
 .post { 
@@ -242,7 +270,7 @@ ol {
 }
 
 .entry {
-	padding-top: 5px;
+	padding-top: 2x;
 	margin-left: 1px;
 
 }
@@ -338,7 +366,8 @@ p {
 blockquote { 
 	background-color: #ccc;
 	margin: 10px;
-	padding: 3px;
+	padding: 10px;
+	font-style: italic;
 }
 
 blockquote p { }
@@ -1040,7 +1069,12 @@ ol.commentlist li.thread-odd { }
 
 form { }
 
-textarea { }
+textarea {
+	margin-top: 10px;
+	padding-bottom: 10px; 
+	width: 90%
+	
+ }
 
 @media print {
 
