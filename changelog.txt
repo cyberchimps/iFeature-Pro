@@ -2,6 +2,9 @@ iFeature Pro Changelog
 
 ****************************
 
+Version 2.1.4 (10-27-11)
+-Removed unecessary esc_url wrapper. 
+
 Version 2.1.3 (10-25-11)
 -Fixed broken jQuery call.
 -Styling changes to HTML elements.
