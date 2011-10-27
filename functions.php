@@ -362,14 +362,6 @@ function admin_link() {
 }
 add_action( 'admin_bar_menu', 'admin_link', 113 );
 
-//test filter
-
-//function previous_post_text(){
-	//$previous_text = 'Older Post: ';
-	//return $previous_text;
-//}
-//add_filter('chimps_previous_posts_text','previous_post_text');
-
 //hooks
 
 require_once ( get_template_directory() . '/core/core-init.php' );
@@ -378,6 +370,5 @@ do_action('chimps_init');
 
 // Call additional template files
 	
-require_once ( get_template_directory() . '/pro/meta-box.php' );
 require_once ( get_template_directory() . '/inc/update.php' ); // Include automatic updater
 ?>
