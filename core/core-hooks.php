@@ -71,6 +71,10 @@ function chimps_after_content() {
 	do_action('chimps_after_content');
 }
 
+function chimps_post_formats() {
+	do_action('chimps_post_formats');
+}
+
 /** 
 * Entry 
 */

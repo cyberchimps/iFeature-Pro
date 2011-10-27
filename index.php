@@ -74,7 +74,7 @@
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			
 			<!--Call the Loop-->
-			<?php get_template_part('loop', 'index' ); ?>
+			<?php chimps_post_formats(); ?>
 				
 		<?php endwhile; ?>
 		
