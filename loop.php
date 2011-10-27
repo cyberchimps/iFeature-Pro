@@ -73,7 +73,7 @@
 
 				<div class="postmetadata">
 					<?php if ($share != '1'):?>
-						<?php get_template_part('share', 'index' ); ?>
+						
 					<?php endif;?>
 
 				<div class="comments">

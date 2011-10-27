@@ -22,6 +22,8 @@ add_action( 'chimps_before_entry', 'chimps_breadcrumbs' );
 
 add_action( 'chimps_meta', 'chimps_meta_byline' );
 
+add_action( 'chimps_after_entry', 'chimps_share_section' );
+
 /**
 * Breadcrumbs function
 *
@@ -141,6 +143,19 @@ function chimps_meta_byline() {
 		<?php if ((v($options, $themeslug.'_hide_categories')) != '1'):?><?php printf( __( 'in', 'core' )); ?> <?php the_category(', ') ?> <?php endif;?>
 		<?php if ((v($options, $themeslug.'_hide_date')) != '1'):?> <?php printf( __( 'on', 'core' )); ?> <a href="<?php the_permalink() ?>"><?php the_time('F jS, Y') ?></a><?php endif;?>
 	</div> <?
+}
+
+/**
+* Sets up the HTML for the post share section
+*
+* @since 1.0
+*/
+function chimps_share_section() { ?>
+
+<div class="share">
+<a href="http://www.facebook.com/share.php?u=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/facebook.png" alt="Share on Facebook" /></a> <a href="http://twitter.com/home?status=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/twitter.png" alt="Share on Twitter" /></a> <a href="http://reddit.com/submit?url=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/reddit.png" alt="Share on Reddit" /></a> <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/linkedin.png" alt="Share on LinkedIn" /></a>
+</div> <?php
+
 }
 
 /**

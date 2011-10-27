@@ -362,6 +362,21 @@ function admin_link() {
 }
 add_action( 'admin_bar_menu', 'admin_link', 113 );
 
+//Searchform   FIND OUT WHATS CAUSING ERROR
+
+/* function ifeature_searchform() {
+
+	$searchform = '<form method="get" class="searchform" action="' . home_url( '/' ) . '"
+	<div><input type="text" name="s" class="s" value="Search" id="searchsubmit" onfocus="if (this.value == 'Search') this.value = '';" /></div>
+	<div><input type="submit" class="searchsubmit" value="" /></div>
+	</form>';
+
+	return $searchform;
+
+}
+
+add_filter( 'get_search_form', 'ifeature_searchform' ); */
+
 //hooks
 
 require_once ( get_template_directory() . '/core/core-init.php' );
