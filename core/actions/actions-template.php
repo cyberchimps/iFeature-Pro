@@ -1,6 +1,6 @@
 <?php
 /**
-* ___ actions used by the CyberChimps Core Framework 
+* Callout actions used by the CyberChimps Core Framework Pro Extension
 *
 * Author: Tyler Cunningham
 * Copyright: © 2011
@@ -11,7 +11,7 @@
 * along with this software. In the main directory, see: /licensing/
 * If not, see: {@link http://www.gnu.org/licenses/}.
 *
-* @package Core
+* @package Pro
 * @since 1.0
 */
 

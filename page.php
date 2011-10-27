@@ -27,7 +27,7 @@
 
 /* End define global variables. */
 
-/* Adjust Post Meta Data bar width. */
+/* Adjust Post Meta Data bar width.  NEED TO FIGURE SOMETHING TO REPLACE THIS */
 
 if ($sidebar == "1" OR $sidebar == "2") {
 	
@@ -49,18 +49,14 @@ if ($sidebar == "1" OR $sidebar == "2") {
 		<?php chimps_page_slider(); ?> 
 	<!-- End @Core page_slider hook -->
 
+	<!-- Begin @Core Callout hook -->
+		<?php chimps_callout_section(); ?> 
+	<!-- End @Core callout hook -->	
 	
-	<?php if ($callout == "on"): ?>
+	<!-- Begin @Core Twitterbar hook -->
+		<?php chimps_twitterbar_section(); ?> 
+	<!-- End @Core Twitterbar hook -->	
 	
-			<?php include (TEMPLATEPATH . '/pro/callout.php' ); ?> 
-			
-	<?php endif;?>
-	
-	<?php if ($twitterbar == "on"): ?>
-	
-			<?php include (TEMPLATEPATH . '/pro/twitter.php' ); ?> 
-	
-	<?php endif;?>
 	
 	<?php if ($sidebar == "4"): ?>
 		<div id="content_fullwidth">
@@ -138,9 +134,11 @@ if ($sidebar == "1" OR $sidebar == "2") {
 	<?php get_sidebar('left'); ?>
 	<?php endif;?>
 	
-	<?php if ($enableboxes == 'on' ):?>
-		<?php include (TEMPLATEPATH . '/pro/boxes.php' ); ?>
-	<?php endif;?>
+
+	<!-- Begin @Core Box Section hook -->
+		<?php chimps_box_section(); ?> 
+	<!-- End @Core Box Section hook -->
+
 </div><!--end content_wrap-->
 
 

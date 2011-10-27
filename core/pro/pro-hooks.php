@@ -15,6 +15,22 @@
 * @since 1.0
 */
 
+
+
+/** 
+* Box Section
+*/
+function chimps_box_section() {
+	do_action ('chimps_box_section');
+}
+
+/** 
+* Callout Section
+*/
+function chimps_callout_section() {
+	do_action ('chimps_callout_section');
+}
+
 /** 
 * Slider
 */
@@ -22,6 +38,12 @@ function chimps_page_slider() {
 	do_action ('chimps_page_slider');
 }
 
+/** 
+* Twitterbar Section
+*/
+function chimps_twitterbar_section() {
+	do_action ('chimps_twitterbar_section');
+}
 /**
 * End
 */

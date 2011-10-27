@@ -11,7 +11,7 @@
 * along with this software. In the main directory, see: /licensing/
 * If not, see: {@link http://www.gnu.org/licenses/}.
 *
-* @package Extend
+* @package Pro
 * @since 1.0
 */
 
