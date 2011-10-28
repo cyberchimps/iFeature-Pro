@@ -78,12 +78,12 @@ function chimps_post_formats() {
 /** 
 * Entry 
 */
-function chimps_before_entry() {
-	do_action('chimps_before_entry');
+function chimps_index_before_entry() {
+	do_action('chimps_index_before_entry');
 }
 
-function chimps_after_entry() {
-	do_action('chimps_after_entry');
+function chimps_index_after_entry() {
+	do_action('chimps_index_after_entry');
 }
 
 function chimps_meta() {

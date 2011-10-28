@@ -21,17 +21,27 @@
 //add_action( 'chimps_before_entry', 'chimps_breadcrumbs' );  
 
 //add_action( 'chimps_after_entry', 'chimps_share_section' );
-add_action( 'chimps_after_entry', 'chimps_after_entry_sidebar' );
 
-add_action( 'chimps_before_entry', 'chimps_before_entry_sidebar' );
 
-add_action( 'chimps_meta', 'chimps_meta_byline' );
+add_action( 'chimps_index_after_entry', 'chimps_index_after_entry_sidebar' );
+
+add_action( 'chimps_index_before_entry', 'chimps_index_before_entry_slider' );
+add_action( 'chimps_index_before_entry', 'chimps_index_before_entry_sidebar' );
 
 add_action( 'chimps_index_entry', 'chimps_index_content_slider' );
 
-function chimps_index_content_slider() { ?>
+add_action( 'chimps_meta', 'chimps_meta_byline' );
+
+
+/**
+* Index content slider
+*
+* @since 1.0
+*/
+function chimps_index_content_slider() { 
+		global $options, $themeslug; ?>
 		
-		<?php if (v($options, $themeslug.'_hide_slider_blog') != '1' && $blogslidersize != "full"): ?>
+		<?php if (v($options, $themeslug.'_hide_slider_blog') != '1' && v($options,$themeslug.'_slider_size') != "full"): ?>
 		<div id = "slider-wrapper">
 			<?php get_template_part('sliderblog', 'page' ); ?>
 		</div>
@@ -39,13 +49,28 @@ function chimps_index_content_slider() { ?>
 
 }
 
+/**
+* Index content before entry slider
+*
+* @since 1.0
+*/
+function chimps_index_before_entry_slider() { 
+		global $options, $themeslug; ?>
+		
+		<?php if (v($options, $themeslug.'_hide_slider_blog') != '1' && v($options,$themeslug.'_slider_size') == "full"): ?>
+		<div id = "slider-wrapper">
+			<?php get_template_part('sliderblog', 'index' ); ?>
+		</div>
+	<?php endif;?> <?
+
+}
 
 /**
 * Before entry sidebar
 *
 * @since 1.0
 */
-function chimps_after_entry_sidebar() {
+function chimps_index_after_entry_sidebar() {
 	global $options, $themeslug, $post; // call globals
 	
 	$blogsidebar = v($options,$themeslug.'_blog_sidebar');
@@ -62,12 +87,13 @@ function chimps_after_entry_sidebar() {
 		<?php get_sidebar('left'); ?>
 	<?php endif;?> <?php
 }
+
 /**
 * Before entry sidebar
 *
 * @since 1.0
 */
-function chimps_before_entry_sidebar() { 
+function chimps_index_before_entry_sidebar() { 
 	global $options, $themeslug, $post; // call globals
 	
 	$blogsidebar = v($options,$themeslug.'_blog_sidebar');
