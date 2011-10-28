@@ -364,7 +364,7 @@ add_action( 'admin_bar_menu', 'admin_link', 113 );
 
 //Searchform  
 
-function ifeature_searchform() {
+/*function ifeature_searchform() {
 
 	$searchform = '<form method="get" class="searchform" action="' . home_url( '/' ) . '"
 	<div><input type="text" name="s" class="s" value="Search" id="searchsubmit" onfocus="if (this.value == \'Search\') this.value = '';" /></div>
@@ -375,7 +375,7 @@ function ifeature_searchform() {
 
 }
 
-add_filter( 'get_search_form', 'ifeature_searchform' ); 
+add_filter( 'get_search_form', 'ifeature_searchform' ); */
 
 //hooks
 
@@ -392,9 +392,21 @@ require_once ( get_template_directory() . '/inc/update.php' ); // Include automa
 //test filer
 
 function custom_link_post_format( $content ) {
-
-$content = 'hello';
-return $content;
+$root = get_template_directory_uri(); 
+ob_start();
+?>
+	<div class="post_container" style="background-color: yellow;">
+		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
+			<div class ="format-icon"><img src="<?php echo $root ;?>/images/formats/link.png" height="50px" width="50px" /></div><h2 class="posts_title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+				<div class="entry">
+					<?php the_content(); ?>
+				</div>
+		</div><!--end post_class-->		
+	</div><!--end post_container-->
+	<?php	
+	$content = ob_get_clean();
+	
+	return $content;
 }
 
 add_filter('chimps_post_formats_link_content', 'custom_link_post_format' );

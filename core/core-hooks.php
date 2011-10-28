@@ -90,6 +90,10 @@ function chimps_meta() {
 	do_action('chimps_meta');
 }
 
+function chimps_index_entry() {
+	do_action('chimps_index_entry');
+}
+
 /** 
 * Footer 
 */

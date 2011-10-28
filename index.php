@@ -41,33 +41,9 @@
 		</div>
 	<?php endif;?>
 		
-	<?php if ($sidebar == "4" OR $blogsidebar == 'none'): ?>
-		<div id="content_fullwidth">
-	<?php endif;?>
+	<?php chimps_before_entry(); ?>
 	
-	<?php if ($sidebar == "1" OR $blogsidebar == "right"): ?>
-		<div id="content_left">
-	<?php endif;?>
-	
-	<?php if ($sidebar == '' AND $blogsidebar == ''): ?>
-		<div id="content_left">
-	<?php endif;?>
-	
-	<?php if ($sidebar == "3" OR $blogsidebar == 'right-left' ): ?>
-		<?php get_sidebar('left'); ?>
-		<?php get_sidebar('right'); ?>
-	<?php endif;?>
-	
-	<?php if ($sidebar == "2"  OR $sidebar == "3" OR $blogsidebar == "two-right" OR $blogsidebar == "right-left"): ?>
-		<?php get_sidebar('right'); ?>
-		<div class="content_half">
-	<?php endif;?>
-	
-	<?php if (v($options, $themeslug.'_hide_slider_blog') != '1' && $blogslidersize != "full"): ?>
-		<div id = "slider-wrapper">
-			<?php get_template_part('sliderblog', 'page' ); ?>
-		</div>
-	<?php endif;?>
+	<?php chimps_index_entry(); ?>
 
 		<div class="content_padding">
 		
@@ -89,16 +65,7 @@
 		</div> <!--end content_padding-->
 	</div> <!--end content_left-->
 
-	<?php if ($sidebar == '' AND $blogsidebar == ''): ?>
-	<?php get_sidebar(); ?>
-	<?php endif;?>
-	
-	<?php if ($sidebar == "1" OR $blogsidebar == 'right' ): ?>
-	<?php get_sidebar(); ?>
-	<?php endif;?>
-	<?php if ($sidebar == "2" OR $blogsidebar == 'two-right' ): ?>
-	<?php get_sidebar('left'); ?>
-	<?php endif;?>
+<?php chimps_after_entry(); ?>
 
 </div><!--end content_wrap-->
 <div style="clear:both;"></div>
