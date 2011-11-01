@@ -33,13 +33,13 @@
 			<!--End @Core pagination loop hook-->
 			
 		</div> <!--end content_padding-->
-	</div> <!--end content_left-->
+	</div> <!--end content_left/fullwidth-->
 
 	<!--Begin @Core index after entry hook-->
 	<?php chimps_index_after_entry(); ?>
 	<!--End @Core index after entry hook-->
 
-</div><!--end content_div-->
+</div><!--end content_wrap-->
 <div style="clear:both;"></div>
 
 <?php get_footer(); ?>

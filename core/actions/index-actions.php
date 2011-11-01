@@ -130,9 +130,11 @@ function chimps_index_before_entry_sidebar() {
 *
 * @since 1.0
 */
-function chimps_index_loop_content($content) { 
+function chimps_index_loop_content($content) { ?>
 
-	global $options, $themeslug; //call globals
+	<?php if (have_posts()) : while (have_posts()) : the_post(); ?> <?
+
+	global $options, $themeslug, $post; //call globals
 		
 	if (get_post_format() == '') {
 		$format = "default";
@@ -141,7 +143,7 @@ function chimps_index_loop_content($content) {
 		$format = get_post_format();
 	} ?>
 	
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+		
 	
 	<div class="post_container">
 	
@@ -228,6 +230,9 @@ function chimps_index_loop_content($content) {
 			<h2>Not Found</h2>
 
 		<?php endif; ?>
+		
+	
+	
 	<?
 }
 
