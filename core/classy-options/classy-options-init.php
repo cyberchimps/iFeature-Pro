@@ -9,4 +9,8 @@ $ifeature_options
 	->section("General")
 		->upload("custom_logo", "Custom Logo")
 		->textarea("if_header_contact")
+	
+	->section("Test")
+		->upload("custom_logo_test", "Custom Logo")
+		->textarea("header_contact")
 ;

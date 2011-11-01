@@ -392,6 +392,7 @@ require_once ( get_template_directory() . '/inc/update.php' ); // Include automa
 //test filer
 
 function custom_link_post_format( $content ) {
+global $options, $themeslug;
 $root = get_template_directory_uri(); 
 ob_start();
 ?>
@@ -415,7 +416,7 @@ ob_start();
 			?>	
 				<div class="entry" <?php if ( has_post_thumbnail()) { echo 'style="min-height: 115px;" '; }?>>
 					<?php 
-						if ($excerpts == '1' ) {
+						if (v($options, $themeslug.'_show_excerpts') == '1' ) {
 						the_excerpt();
 						}
 						else {

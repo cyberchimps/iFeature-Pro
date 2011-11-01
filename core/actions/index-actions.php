@@ -206,7 +206,7 @@ function chimps_index_loop_content($content) { ?>
 			
 			<!--end fb-->
 				<div class="tags">
-					<?php if ($tags != '1'):?>
+					<?php if ($options[$themeslug.'_hide_tags'] != '1'):?>
 						<?php the_tags('Tags: ', ', ', '<br />'); ?>
 					<?php endif;?>
 				</div><!--end tags-->	
@@ -215,7 +215,7 @@ function chimps_index_loop_content($content) { ?>
 <a href="http://www.facebook.com/share.php?u=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/facebook.png" alt="Share on Facebook" /></a> <a href="http://twitter.com/home?status=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/twitter.png" alt="Share on Twitter" /></a> <a href="http://reddit.com/submit?url=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/reddit.png" alt="Share on Reddit" /></a> <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/linkedin.png" alt="Share on LinkedIn" /></a>
 				</div><!--end share-->
 				<div class="comments">
-					<?php if ($comments != '1'):?>
+					<?php if ($options[$themeslug.'_hide_comments'] != '1'):?>
 						<?php comments_popup_link( __('No Comments &#187;', 'ifeature' ), __('1 Comment &#187;', 'ifeature' ), __('% Comments &#187;' , 'ifeature' )); ?>
 					<?php endif;?>
 				</div><!--end comments-->	
