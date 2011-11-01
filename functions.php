@@ -395,14 +395,36 @@ function custom_link_post_format( $content ) {
 $root = get_template_directory_uri(); 
 ob_start();
 ?>
-	<div class="post_container" style="background-color: yellow;">
+
+	<div class="post_content" style="background: yellow; ">
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
-			<div class ="format-icon"><img src="<?php echo $root ;?>/images/formats/link.png" height="50px" width="50px" /></div><h2 class="posts_title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-				<div class="entry">
-					<?php the_content(); ?>
-				</div>
-		</div><!--end post_class-->		
-	</div><!--end post_container-->
+			<div class ="format-icon"><!--begin format icon-->
+				<img src="<?php echo get_template_directory_uri(); ?>/images/formats/link.png" height="50px" width="50px" />
+			</div><!--end format-icon-->
+				<h2 class="posts_title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+					<!--Call Meta-->
+			<?php chimps_meta(); ?>
+				<?php
+				if ( has_post_thumbnail()) {
+ 		 			echo '<div class="featured-image">';
+ 		 			echo '<a href="' . get_permalink($post->ID) . '" >';
+ 		 				the_post_thumbnail();
+  					echo '</a>';
+  					echo '</div>';
+				}
+			?>	
+				<div class="entry" <?php if ( has_post_thumbnail()) { echo 'style="min-height: 115px;" '; }?>>
+					<?php 
+						if ($excerpts == '1' ) {
+						the_excerpt();
+						}
+						else {
+							the_content();
+						}
+					 ?>
+				</div><!--end entry-->
+			</div>
+			</div>
 	<?php	
 	$content = ob_get_clean();
 	

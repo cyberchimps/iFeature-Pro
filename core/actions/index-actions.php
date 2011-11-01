@@ -130,32 +130,105 @@ function chimps_index_before_entry_sidebar() {
 *
 * @since 1.0
 */
-function chimps_index_loop_content($content) { 	
+function chimps_index_loop_content($content) { 
+
+	global $options, $themeslug; //call globals
+		
 	if (get_post_format() == '') {
 		$format = "default";
 	}
 	else {
 		$format = get_post_format();
-	}
+	} ?>
 	
-	ob_start(); ?>
-
+	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+	
 	<div class="post_container">
+	
+		<?php ob_start(); ?>
+
+	
+		<div class="post_content">
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 			<div class ="format-icon"><!--begin format icon-->
 				<img src="<?php echo get_template_directory_uri(); ?>/images/formats/<?php echo $format ;?>.png" height="50px" width="50px" />
 			</div><!--end format-icon-->
 				<h2 class="posts_title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-				<div class="entry"><!--begin entry-->
-					<?php the_content(); ?>
+					<!--Call @Core Meta hook-->
+			<?php chimps_meta(); ?>
+				<?php
+				if ( has_post_thumbnail()) {
+ 		 			echo '<div class="featured-image">';
+ 		 			echo '<a href="' . get_permalink($post->ID) . '" >';
+ 		 				the_post_thumbnail();
+  					echo '</a>';
+  					echo '</div>';
+				}
+			?>	
+				<div class="entry" <?php if ( has_post_thumbnail()) { echo 'style="min-height: 115px;" '; }?>>
+					<?php 
+						if (v($options, $themeslug.'_show_excerpts') == '1' ) {
+						the_excerpt();
+						}
+						else {
+							the_content();
+						}
+					 ?>
 				</div><!--end entry-->
-		</div><!--end post_class-->		
-	</div><!--end post_container-->
-	<?php	
-	$content = ob_get_clean();
-	$content = apply_filters( 'chimps_post_formats_'.$format.'_content', $content );
+				</div><!--end post_class-->	
+			</div><!--end post content-->
+			<?php	
+		
+		$content = ob_get_clean();
+		$content = apply_filters( 'chimps_post_formats_'.$format.'_content', $content );
 	
-	echo $content;
+		echo $content; ?>
+	
+			<?php wp_link_pages(array('before' => 'Pages: ', 'next_or_number' => 'number')); ?>
+				
+			<?php edit_post_link('Edit', '<p>', '</p>'); ?>	
+					
+			<?php if ($options[$themeslug.'_show_gplus'] == "1"):?>
+				<div class="gplusone" >	
+					<g:plusone size="standard" count="true"></g:plusone>
+				</div >
+			<?php endif;?>
+						
+			<?php if ($options[$themeslug.'_show_fb_like'] == "1"):?>
+					
+				<div id="fb">
+					<iframe src="http://www.facebook.com/plugins/like.php?href=<?php the_permalink() ?>&layout=standard&show_faces=true&width=450&action=like&colorscheme=light" scrolling="no" frameborder="0"  allowTransparency="true" style="border:none; overflow:hidden; width:330px; height:28px"></iframe>
+				</div>
+			
+			<?php endif;?>
+			
+			<!--end fb-->
+				<div class="tags">
+					<?php if ($tags != '1'):?>
+						<?php the_tags('Tags: ', ', ', '<br />'); ?>
+					<?php endif;?>
+				</div><!--end tags-->	
+			<div class="postmetadata">
+				<div class="share">
+<a href="http://www.facebook.com/share.php?u=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/facebook.png" alt="Share on Facebook" /></a> <a href="http://twitter.com/home?status=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/twitter.png" alt="Share on Twitter" /></a> <a href="http://reddit.com/submit?url=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/reddit.png" alt="Share on Reddit" /></a> <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/linkedin.png" alt="Share on LinkedIn" /></a>
+				</div><!--end share-->
+				<div class="comments">
+					<?php if ($comments != '1'):?>
+						<?php comments_popup_link( __('No Comments &#187;', 'ifeature' ), __('1 Comment &#187;', 'ifeature' ), __('% Comments &#187;' , 'ifeature' )); ?>
+					<?php endif;?>
+				</div><!--end comments-->	
+			</div><!--end postmetadata-->
+			
+	</div><!--end post_container-->
+	
+		<?php endwhile; ?>
+		
+		<?php else : ?>
+
+			<h2>Not Found</h2>
+
+		<?php endif; ?>
+	<?
 }
 
 /**

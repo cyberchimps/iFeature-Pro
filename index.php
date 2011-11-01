@@ -14,33 +14,32 @@
 
 <div id="content_wrap">
 		
+	<!--Begin @Core index before entry hook-->	
 	<?php chimps_index_before_entry(); ?>
+	<!--End @Core index before entry hook-->
 	
+	<!--Begin @Core index entry hook-->
 	<?php chimps_index_entry(); ?>
+	<!--End @Core index entry hook-->
 
 		<div class="content_padding">
 		
-			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			
-			<!--Call the Loop-->
+			<!--Begin @Core index loop hook-->
 			<?php chimps_index_loop(); ?>
-				
-		<?php endwhile; ?>
+			<!--End @Core index loop hook-->	
 		
-		<!--Call @Core pagination-->
-		<?php chimps_pagination(); ?>
-
-		<?php else : ?>
-
-			<h2>Not Found</h2>
-
-		<?php endif; ?>
+			<!--Begin @Core pagination hook-->
+			<?php chimps_pagination(); ?>
+			<!--End @Core pagination loop hook-->
+			
 		</div> <!--end content_padding-->
 	</div> <!--end content_left-->
 
-<?php chimps_index_after_entry(); ?>
+	<!--Begin @Core index after entry hook-->
+	<?php chimps_index_after_entry(); ?>
+	<!--End @Core index after entry hook-->
 
-</div><!--end content_wrap-->
+</div><!--end content_div-->
 <div style="clear:both;"></div>
 
 <?php get_footer(); ?>
