@@ -71,9 +71,6 @@ function chimps_after_content() {
 	do_action('chimps_after_content');
 }
 
-function chimps_post_formats() {
-	do_action('chimps_post_formats');
-}
 
 /** 
 * Entry 
@@ -92,6 +89,10 @@ function chimps_meta() {
 
 function chimps_index_entry() {
 	do_action('chimps_index_entry');
+}
+
+function chimps_index_loop() {
+	do_action('chimps_index_loop');
 }
 
 /** 

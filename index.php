@@ -23,7 +23,7 @@
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			
 			<!--Call the Loop-->
-			<?php chimps_post_formats(); ?>
+			<?php chimps_index_loop(); ?>
 				
 		<?php endwhile; ?>
 		
