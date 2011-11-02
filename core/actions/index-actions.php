@@ -30,6 +30,8 @@ add_action( 'chimps_index_before_entry', 'chimps_index_before_entry_sidebar' );
 
 add_action( 'chimps_index_loop', 'chimps_index_loop_content' );
 
+add_action( 'chimps_index_after_loop', 'chimps_link_pages' );
+add_action( 'chimps_index_after_loop', 'chimps_post_edit_link' );
 add_action( 'chimps_index_after_loop', 'chimps_fb_like_plus_one' );
 add_action( 'chimps_index_after_loop', 'chimps_index_tags' );
 add_action( 'chimps_index_after_loop', 'chimps_share_section' );
@@ -187,12 +189,10 @@ function chimps_index_loop_content($content) { ?>
 		$content = apply_filters( 'chimps_post_formats_'.$format.'_content', $content );
 	
 		echo $content; ?>
-	
-			<?php wp_link_pages(array('before' => 'Pages: ', 'next_or_number' => 'number')); ?>
-				
-			<?php edit_post_link('Edit', '<p>', '</p>'); ?>	
-									
-			<?php chimps_index_after_loop(); ?>
+		
+		<!--Begin @Core index after loop hook-->							
+		<?php chimps_index_after_loop(); ?>
+		<!--End @Core index after loop hook-->
 
 	</div><!--end post_container-->
 	
@@ -205,6 +205,24 @@ function chimps_index_loop_content($content) { ?>
 		<?php endif; ?>
 		
 	<?
+}
+
+/**
+* Sets up the WP edit link
+*
+* @since 1.0
+*/
+function chimps_post_edit_link() {
+	edit_post_link('Edit', '<p>', '</p>');
+}
+
+/**
+* Sets up the WP link pages
+*
+* @since 1.0
+*/
+function chimps_link_pages() {
+	 wp_link_pages(array('before' => 'Pages: ', 'next_or_number' => 'number'));
 }
 
 /**
