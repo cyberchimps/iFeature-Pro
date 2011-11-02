@@ -95,6 +95,14 @@ function chimps_index_loop() {
 	do_action('chimps_index_loop');
 }
 
+function chimps_index_before_loop() {
+	do_action('chimps_index_before_loop');
+}
+
+function chimps_index_after_loop() {
+	do_action('chimps_index_after_loop');
+}
+
 /** 
 * Footer 
 */

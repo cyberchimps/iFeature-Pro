@@ -27,7 +27,12 @@ add_action( 'chimps_index_after_entry', 'chimps_index_after_entry_sidebar' );
 
 add_action( 'chimps_index_before_entry', 'chimps_index_before_entry_slider' );
 add_action( 'chimps_index_before_entry', 'chimps_index_before_entry_sidebar' );
+
 add_action( 'chimps_index_loop', 'chimps_index_loop_content' );
+
+add_action( 'chimps_index_after_loop', 'chimps_fb_like_plus_one' );
+add_action( 'chimps_index_after_loop', 'chimps_index_tags' );
+add_action( 'chimps_index_after_loop', 'chimps_share_section' );
 
 add_action( 'chimps_index_entry', 'chimps_index_content_slider' );
 
@@ -143,12 +148,9 @@ function chimps_index_loop_content($content) { ?>
 		$format = get_post_format();
 	} ?>
 	
-		
-	
 	<div class="post_container">
 	
 		<?php ob_start(); ?>
-
 	
 		<div class="post_content">
 		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
@@ -189,8 +191,49 @@ function chimps_index_loop_content($content) { ?>
 			<?php wp_link_pages(array('before' => 'Pages: ', 'next_or_number' => 'number')); ?>
 				
 			<?php edit_post_link('Edit', '<p>', '</p>'); ?>	
-					
-			<?php if ($options[$themeslug.'_show_gplus'] == "1"):?>
+									
+			<?php chimps_index_after_loop(); ?>
+
+	</div><!--end post_container-->
+	
+		<?php endwhile; ?>
+		
+		<?php else : ?>
+
+			<h2>Not Found</h2>
+
+		<?php endif; ?>
+		
+	<?
+}
+
+/**
+* Sets up the tag area
+*
+* @since 1.0
+*/
+
+function chimps_index_tags() {
+	global $options, $themeslug; ?>
+
+		<div class="tags">
+					<?php if ($options[$themeslug.'_hide_tags'] != '1'):?>
+						<?php the_tags('Tags: ', ', ', '<br />'); ?>
+					<?php endif;?>
+				</div><!--end tags-->	
+ <?
+}
+
+/**
+* Sets up the Facebook Like and Google Plus One area
+*
+* @since 1.0
+*/
+
+function chimps_fb_like_plus_one() {
+	global $options, $themeslug; ?>
+
+	<?php if ($options[$themeslug.'_show_gplus'] == "1"):?>
 				<div class="gplusone" >	
 					<g:plusone size="standard" count="true"></g:plusone>
 				</div >
@@ -203,37 +246,7 @@ function chimps_index_loop_content($content) { ?>
 				</div>
 			
 			<?php endif;?>
-			
-			<!--end fb-->
-				<div class="tags">
-					<?php if ($options[$themeslug.'_hide_tags'] != '1'):?>
-						<?php the_tags('Tags: ', ', ', '<br />'); ?>
-					<?php endif;?>
-				</div><!--end tags-->	
-			<div class="postmetadata">
-				<div class="share">
-<a href="http://www.facebook.com/share.php?u=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/facebook.png" alt="Share on Facebook" /></a> <a href="http://twitter.com/home?status=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/twitter.png" alt="Share on Twitter" /></a> <a href="http://reddit.com/submit?url=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/reddit.png" alt="Share on Reddit" /></a> <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/linkedin.png" alt="Share on LinkedIn" /></a>
-				</div><!--end share-->
-				<div class="comments">
-					<?php if ($options[$themeslug.'_hide_comments'] != '1'):?>
-						<?php comments_popup_link( __('No Comments &#187;', 'ifeature' ), __('1 Comment &#187;', 'ifeature' ), __('% Comments &#187;' , 'ifeature' )); ?>
-					<?php endif;?>
-				</div><!--end comments-->	
-			</div><!--end postmetadata-->
-			
-	</div><!--end post_container-->
-	
-		<?php endwhile; ?>
-		
-		<?php else : ?>
-
-			<h2>Not Found</h2>
-
-		<?php endif; ?>
-		
-	
-	
-	<?
+ <?
 }
 
 /**
@@ -364,9 +377,16 @@ function chimps_meta_byline() {
 */
 function chimps_share_section() { ?>
 
-<div class="share">
+<div class="postmetadata">
+				<div class="share">
 <a href="http://www.facebook.com/share.php?u=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/facebook.png" alt="Share on Facebook" /></a> <a href="http://twitter.com/home?status=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/twitter.png" alt="Share on Twitter" /></a> <a href="http://reddit.com/submit?url=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/reddit.png" alt="Share on Reddit" /></a> <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/linkedin.png" alt="Share on LinkedIn" /></a>
-</div> <?php
+				</div><!--end share-->
+				<div class="comments">
+					<?php if ($options[$themeslug.'_hide_comments'] != '1'):?>
+						<?php comments_popup_link( __('No Comments &#187;', 'ifeature' ), __('1 Comment &#187;', 'ifeature' ), __('% Comments &#187;' , 'ifeature' )); ?>
+					<?php endif;?>
+				</div><!--end comments-->	
+			</div><!--end postmetadata--><?php
 
 }
 
