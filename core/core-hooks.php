@@ -145,6 +145,9 @@ function chimps_edit_link() {
 	do_action('chimps_edit_link');
 }
 
+function chimps_fb_like_plus_one() { //this will be renamed I promise
+	do_action('chimps_fb_like_plus_one');
+}
 
 /** 
 * Header 

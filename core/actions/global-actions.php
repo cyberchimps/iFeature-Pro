@@ -15,15 +15,23 @@
 * @since 1.0
 */
 
+add_action( 'chimps_post_byline', 'chimps_post_byline_content' );
 
+add_action( 'chimps_post_bar', 'chimps_post_bar_content' );
 
+add_action( 'chimps_post_edit_link', 'chimps_post_edit_link_content' );
 
+add_action( 'chimps_link_pages', 'chimps_link_pages_content' );
+
+add_action( 'chimps_post_tags', 'chimps_post_tags_content' );
+
+add_action( 'chimps_fb_like_plus_one', 'chimps_fb_like_plus_one_content' );
 /**
 * Sets the post byline information (author, date, category). 
 *
 * @since 1.0
 */
-function chimps_meta_byline() {
+function chimps_post_byline_content() {
 	global $options, $themeslug; //call globals  ?>
 	
 	<div class="meta">
@@ -38,19 +46,25 @@ function chimps_meta_byline() {
 *
 * @since 1.0
 */
-function chimps_share_section() { ?>
+function chimps_post_bar_content() { 
+	global $options, $themeslug; ?>
 
-<div class="postmetadata">
-				<div class="share">
-<a href="http://www.facebook.com/share.php?u=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/facebook.png" alt="Share on Facebook" /></a> <a href="http://twitter.com/home?status=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/twitter.png" alt="Share on Twitter" /></a> <a href="http://reddit.com/submit?url=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/reddit.png" alt="Share on Reddit" /></a> <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/linkedin.png" alt="Share on LinkedIn" /></a>
-				</div><!--end share-->
-				<div class="comments">
-					<?php if ($options[$themeslug.'_hide_comments'] != '1'):?>
-						<?php comments_popup_link( __('No Comments &#187;', 'ifeature' ), __('1 Comment &#187;', 'ifeature' ), __('% Comments &#187;' , 'ifeature' )); ?>
+	<div class="postmetadata">
+		<div class="share">
+		
+		<a href="http://www.facebook.com/share.php?u=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/facebook.png" alt="Share on Facebook" /></a> 
+		<a href="http://twitter.com/home?status=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/twitter.png" alt="Share on Twitter" /></a> 
+		<a href="http://reddit.com/submit?url=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/reddit.png" alt="Share on Reddit" /></a> <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/linkedin.png" alt="Share on LinkedIn" /></a>
+				
+		</div><!--end share-->
+				
+		<div class="comments">
+			<?php if ($options[$themeslug.'_hide_comments'] != '1'):?>
+					<?php comments_popup_link( __('No Comments &#187;', 'core' ), __('1 Comment &#187;', 'core' ), __('% Comments &#187;' , 'core' )); //need a filer here ?>
 					<?php endif;?>
-				</div><!--end comments-->	
-			</div><!--end postmetadata--><?php
-
+		</div><!--end comments-->	
+	
+	</div><!--end postmetadata--> <?php
 }
 
 /**
@@ -58,7 +72,7 @@ function chimps_share_section() { ?>
 *
 * @since 1.0
 */
-function chimps_post_edit_link() {
+function chimps_post_edit_link_content() {
 	edit_post_link('Edit', '<p>', '</p>');
 }
 
@@ -67,7 +81,7 @@ function chimps_post_edit_link() {
 *
 * @since 1.0
 */
-function chimps_link_pages() {
+function chimps_link_pages_content() {
 	 wp_link_pages(array('before' => 'Pages: ', 'next_or_number' => 'number'));
 }
 
@@ -77,7 +91,7 @@ function chimps_link_pages() {
 * @since 1.0
 */
 
-function chimps_post_tags() {
+function chimps_post_tags_content() {
 	global $options, $themeslug; ?>
 
 		<div class="tags">
@@ -94,7 +108,7 @@ function chimps_post_tags() {
 * @since 1.0
 */
 
-function chimps_fb_like_plus_one() {
+function chimps_fb_like_plus_one_content() {
 	global $options, $themeslug; ?>
 
 	<?php if ($options[$themeslug.'_show_gplus'] == "1"):?>

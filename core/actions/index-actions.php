@@ -208,66 +208,6 @@ function chimps_index_loop_content($content) { ?>
 }
 
 /**
-* Sets up the WP edit link
-*
-* @since 1.0
-*/
-function chimps_post_edit_link() {
-	edit_post_link('Edit', '<p>', '</p>');
-}
-
-/**
-* Sets up the WP link pages
-*
-* @since 1.0
-*/
-function chimps_link_pages() {
-	 wp_link_pages(array('before' => 'Pages: ', 'next_or_number' => 'number'));
-}
-
-/**
-* Sets up the tag area
-*
-* @since 1.0
-*/
-
-function chimps_index_tags() {
-	global $options, $themeslug; ?>
-
-		<div class="tags">
-					<?php if ($options[$themeslug.'_hide_tags'] != '1'):?>
-						<?php the_tags('Tags: ', ', ', '<br />'); ?>
-					<?php endif;?>
-				</div><!--end tags-->	
- <?
-}
-
-/**
-* Sets up the Facebook Like and Google Plus One area
-*
-* @since 1.0
-*/
-
-function chimps_fb_like_plus_one() {
-	global $options, $themeslug; ?>
-
-	<?php if ($options[$themeslug.'_show_gplus'] == "1"):?>
-				<div class="gplusone" >	
-					<g:plusone size="standard" count="true"></g:plusone>
-				</div >
-			<?php endif;?>
-						
-			<?php if ($options[$themeslug.'_show_fb_like'] == "1"):?>
-					
-				<div id="fb">
-					<iframe src="http://www.facebook.com/plugins/like.php?href=<?php the_permalink() ?>&layout=standard&show_faces=true&width=450&action=like&colorscheme=light" scrolling="no" frameborder="0"  allowTransparency="true" style="border:none; overflow:hidden; width:330px; height:28px"></iframe>
-				</div>
-			
-			<?php endif;?>
- <?
-}
-
-/**
 * Breadcrumbs function
 *
 * @since 1.0
