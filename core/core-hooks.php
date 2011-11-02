@@ -121,6 +121,31 @@ function chimps_afterfooter() {
 function chimps_after_footer() {
 	do_action('chimps_after_footer_content');
 }
+
+/** 
+* Global 
+*/
+function chimps_post_bar() {
+	do_action('chimps_post_bar');
+}
+
+function chimps_post_byline() {
+	do_action('chimps_post_byline');
+}
+
+function chimps_post_tags() {
+	do_action('chimps_post_tags');
+}
+
+function chimps_link_pages() {
+	do_action('chimps_link_pages');
+}
+
+function chimps_edit_link() {
+	do_action('chimps_edit_link');
+}
+
+
 /** 
 * Header 
 */

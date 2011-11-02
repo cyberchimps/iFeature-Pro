@@ -155,7 +155,7 @@ function chimps_index_loop_content($content) { ?>
 		<?php ob_start(); ?>
 	
 		<div class="post_content">
-		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
+			<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 			<div class ="format-icon"><!--begin format icon-->
 				<img src="<?php echo get_template_directory_uri(); ?>/images/formats/<?php echo $format ;?>.png" height="50px" width="50px" />
 			</div><!--end format-icon-->
@@ -181,8 +181,8 @@ function chimps_index_loop_content($content) { ?>
 						}
 					 ?>
 				</div><!--end entry-->
-				</div><!--end post_class-->	
-			</div><!--end post content-->
+			</div><!--end post_class-->	
+		</div><!--end post content-->
 			<?php	
 		
 		$content = ob_get_clean();
