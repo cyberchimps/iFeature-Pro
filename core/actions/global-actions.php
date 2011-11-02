@@ -1,6 +1,6 @@
 <?php
 /**
-* Search actions used by the CyberChimps Core Framework 
+* Global actions used by the CyberChimps Core Framework 
 *
 * Author: Tyler Cunningham
 * Copyright: © 2011
@@ -15,6 +15,9 @@
 * @since 1.0
 */
 
+/**
+* Core global actions
+*/
 add_action( 'chimps_post_byline', 'chimps_post_byline_content' );
 
 add_action( 'chimps_post_bar', 'chimps_post_bar_content' );
@@ -26,6 +29,7 @@ add_action( 'chimps_link_pages', 'chimps_link_pages_content' );
 add_action( 'chimps_post_tags', 'chimps_post_tags_content' );
 
 add_action( 'chimps_fb_like_plus_one', 'chimps_fb_like_plus_one_content' );
+
 /**
 * Sets the post byline information (author, date, category). 
 *
@@ -51,11 +55,9 @@ function chimps_post_bar_content() {
 
 	<div class="postmetadata">
 		<div class="share">
-		
 		<a href="http://www.facebook.com/share.php?u=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/facebook.png" alt="Share on Facebook" /></a> 
 		<a href="http://twitter.com/home?status=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/twitter.png" alt="Share on Twitter" /></a> 
-		<a href="http://reddit.com/submit?url=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/reddit.png" alt="Share on Reddit" /></a> <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/linkedin.png" alt="Share on LinkedIn" /></a>
-				
+		<a href="http://reddit.com/submit?url=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/reddit.png" alt="Share on Reddit" /></a> <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/linkedin.png" alt="Share on LinkedIn" /></a>	
 		</div><!--end share-->
 				
 		<div class="comments">
@@ -89,7 +91,6 @@ function chimps_link_pages_content() {
 *
 * @since 1.0
 */
-
 function chimps_post_tags_content() {
 	global $options, $themeslug; ?>
 
@@ -105,7 +106,6 @@ function chimps_post_tags_content() {
 *
 * @since 1.0
 */
-
 function chimps_fb_like_plus_one_content() {
 	global $options, $themeslug; ?>
 

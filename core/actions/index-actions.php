@@ -176,8 +176,7 @@ function chimps_index_loop_content($content) { ?>
 					 ?>
 				</div><!--end entry-->
 			</div><!--end post_class-->	
-		</div><!--end post content-->
-			<?php	
+		</div><!--end post content--> <?php	
 		
 		$content = ob_get_clean();
 		$content = apply_filters( 'chimps_post_formats_'.$format.'_content', $content );
