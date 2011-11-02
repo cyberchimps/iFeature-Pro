@@ -27,7 +27,7 @@
 			<!--Begin @Core index loop hook-->
 			<?php chimps_index_loop(); ?>
 			<!--End @Core index loop hook-->	
-		
+
 			<!--Begin @Core pagination hook-->
 			<?php chimps_pagination(); ?>
 			<!--End @Core pagination loop hook-->

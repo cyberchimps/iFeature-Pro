@@ -30,12 +30,6 @@ add_action( 'chimps_index_before_entry', 'chimps_index_before_entry_sidebar' );
 
 add_action( 'chimps_index_loop', 'chimps_index_loop_content' );
 
-add_action( 'chimps_index_after_loop', 'chimps_link_pages' );
-add_action( 'chimps_index_after_loop', 'chimps_post_edit_link' );
-add_action( 'chimps_index_after_loop', 'chimps_fb_like_plus_one' );
-add_action( 'chimps_index_after_loop', 'chimps_index_tags' );
-add_action( 'chimps_index_after_loop', 'chimps_share_section' );
-
 add_action( 'chimps_index_entry', 'chimps_index_content_slider' );
 
 add_action( 'chimps_meta', 'chimps_meta_byline' );
@@ -190,10 +184,26 @@ function chimps_index_loop_content($content) { ?>
 	
 		echo $content; ?>
 		
-		<!--Begin @Core index after loop hook-->							
-		<?php chimps_index_after_loop(); ?>
-		<!--End @Core index after loop hook-->
-
+			<!--Begin @Core link pages hook-->
+			<?php chimps_link_pages(); ?>
+			<!--End @Core link pages hook-->
+			
+			<!--Begin @Core post edit link hook-->
+			<?php chimps_edit_link(); ?>
+			<!--End @Core post edit link hook-->
+			
+			<!--Begin @Core FB like hook-->
+			<?php chimps_fb_like_plus_one(); ?>
+			<!--End @Core FB like hook-->
+			
+			<!--Begin @Core post tags hook-->
+			<?php chimps_post_tags(); ?>
+			<!--End @Core post tags hook-->
+			
+			<!--Begin @Core post bar hook-->
+			<?php chimps_post_bar(); ?>
+			<!--End @Core post bar hook-->
+			
 	</div><!--end post_container-->
 	
 		<?php endwhile; ?>
