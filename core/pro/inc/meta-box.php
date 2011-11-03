@@ -441,6 +441,9 @@ class RW_Meta_Box {
 				}
 			});
 
+			$('.section_order').each(function() {
+				update($(this));
+			});
 		});
 </script>
 <style type="text/css">
