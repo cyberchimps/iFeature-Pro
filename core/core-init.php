@@ -40,7 +40,7 @@ require_once ( get_template_directory() . '/core/pro/pro-init.php' );
 require_once ( get_template_directory() . '/core/options/options-init.php' );
 require_once ( get_template_directory() . '/core/options/options-themes.php' );
 
-//require_once ( get_template_directory() . '/core/classy-options/classy-options-init.php' );
+require_once ( get_template_directory() . '/core/classy-options/classy-options-init.php' );
 
 
 /**
