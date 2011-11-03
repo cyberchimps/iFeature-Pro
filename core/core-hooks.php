@@ -38,7 +38,11 @@ function chimps_before_archive() {
 }
 
 function chimps_archive() {
-	do_action('chimps_archives');
+	do_action('chimps_archive');
+}
+
+function chimps_archive_title() {
+	do_action('chimps_archive_title');
 }
 
 function chimps_after_archive() {

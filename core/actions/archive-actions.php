@@ -18,7 +18,7 @@
 /**
 * Core archive actions
 */
-add_action( 'chimps_archive', 'chimps_archive_page_title' );
+add_action( 'chimps_archive_title', 'chimps_archive_page_title' );
 add_action( 'chimps_archive', 'chimps_archive_loop' );
 
 /**
@@ -26,8 +26,9 @@ add_action( 'chimps_archive', 'chimps_archive_loop' );
 *
 * @since 1.0
 */
-function chimps_archive_page_title() { ?>
-	<?php if (have_posts()) : ?>
+function chimps_archive_page_title() { 
+	global $post; ?>
+	
 
  		<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
 
@@ -62,7 +63,7 @@ function chimps_archive_page_title() { ?>
 */
 function chimps_archive_loop()
 { ?>
-	<?php while (have_posts()) : the_post(); ?>
+
 			
 			<div class="post_container">
 
@@ -89,14 +90,7 @@ function chimps_archive_loop()
 				</div><!--end post-->
 			</div><!--end post_container-->
 
-	 <?php endwhile; ?>'
-	 
-	 <?php else : ?>
-
-		<h2>Nothing found</h2>
-
-	<?php endif; ?>
-	
+		
 <?php }
 
 

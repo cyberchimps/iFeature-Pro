@@ -27,10 +27,26 @@
 			<?php chimps_before_archive(); ?>
 		<!--End @Core before_archive hook-->
 		
-		<!--Begin @Core archive hook-->
-			<?php chimps_archive(); ?>
-		<!--End @Core archive hook-->
+		<?php if (have_posts()) : ?>
 		
+			<!--Begin @Core archive hook-->
+			<?php chimps_archive_title(); ?>
+			<!--End @Core archive hook-->
+		
+		<?php while (have_posts()) : the_post(); ?>
+		
+			<!--Begin @Core archive hook-->
+				<?php chimps_archive(); ?>
+			<!--End @Core archive hook-->
+		
+		 <?php endwhile; ?>
+	 
+	 <?php else : ?>
+
+		<h2>Nothing found</h2>
+
+	<?php endif; ?>
+
 		<!--Begin @Core pagination hook-->
 			<?php chimps_pagination(); ?>
 		<!--End @Core pagination hook-->
