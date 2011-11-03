@@ -385,7 +385,7 @@ class RW_Meta_Box {
 
 	function show_field_section_order($field, $meta) {
 		$this->show_field_begin($field, $meta);
-		$meta = (array) unserialize($meta);
+		$meta = explode(",", $meta);
 		echo "<div class='section_order'>";
 		echo "<div class='left_list'>";
 			foreach($field['options'] as $key => $value) {
@@ -566,11 +566,6 @@ class RW_Meta_Box {
 	// Save images, call save_field_file, cause they use the same mechanism
 	function save_field_image($post_id, $field, $old, $new) {
 		$this->save_field_file($post_id, $field, $old, $new);
-	}
-
-	function save_field_section_order($post_id, $field, $old, $new) {
-		$new = serialize(explode(",", $new));
-		$this->save_field($post_id, $field, $old, $new);
 	}
 
 	/******************** END META BOX SAVE **********************/
