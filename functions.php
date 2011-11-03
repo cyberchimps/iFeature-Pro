@@ -392,7 +392,7 @@ require_once ( get_template_directory() . '/inc/update.php' ); // Include automa
 //test filer
 
 function custom_link_post_format( $content ) {
-global $options, $themeslug;
+global $options, $themeslug, $post;
 $root = get_template_directory_uri(); 
 ob_start();
 ?>
