@@ -24,6 +24,7 @@
 	$twitterbar = get_post_meta($post->ID, 'enable_twitter_bar' , true);
 	$enableboxes = get_post_meta($post->ID, 'enable_box_section' , true);
 	$pagecontent = get_post_meta($post->ID, 'hide_page_content' , true);
+	$page_section_order = get_post_meta($post->ID, 'page_section_order' , true);
 
 /* End define global variables. */
 
@@ -43,26 +44,14 @@ if ($sidebar == "1" OR $sidebar == "2") {
 
 
 
-	<!-- Begin @Core page_slider hook -->
-		<?php chimps_page_slider(); ?> 
-	<!-- End @Core page_slider hook -->
-
-	<!-- Begin @Core Callout hook -->
-		<?php chimps_callout_section(); ?> 
-	<!-- End @Core callout hook -->	
-	
-	<!-- Begin @Core Twitterbar hook -->
-		<?php chimps_twitterbar_section(); ?> 
-	<!-- End @Core Twitterbar hook -->	
-	
-	<!-- Begin @Core page section hook -->
-		<?php chimps_page_section(); ?> 
-	<!-- End @Core page section hook -->	
-		
-
-	<!-- Begin @Core Box Section hook -->
-		<?php chimps_box_section(); ?> 
-	<!-- End @Core Box Section hook -->
+<?php
+	foreach(explode(",", $page_section_order) as $key) {
+		$fn = 'chimps_' . $key;
+		if(function_exists($fn)) {
+			call_user_func_array($fn, array());
+		}
+	}
+?>
 
 </div><!--end content_wrap-->
 
