@@ -421,7 +421,6 @@ class RW_Meta_Box {
 					val.push($(this).data('key'));
 				})
 				hidden.val(val.join(","));
-				console.log(val);
 			}
 			$(".left_list").delegate(".action", "click", function() {
 				var item = $(this).closest('.list_item');
