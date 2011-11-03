@@ -41,9 +41,7 @@ if ($sidebar == "1" OR $sidebar == "2") {
 
 <div id="content_wrap">
 
-	<!-- Begin @Core before_entry hook -->
-		<?php chimps_before_entry(); ?>
-	<!-- End @Core before_entry hook -->
+
 
 	<!-- Begin @Core page_slider hook -->
 		<?php chimps_page_slider(); ?> 
