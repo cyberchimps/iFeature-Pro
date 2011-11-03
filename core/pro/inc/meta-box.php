@@ -383,6 +383,78 @@ class RW_Meta_Box {
 		$this->show_field_text($field, $meta);
 	}
 
+	function show_field_section_order($field, $meta) {
+		$this->show_field_begin($field, $meta);
+		$meta = (array) unserialize($meta);
+		echo "<div class='section_order'>";
+		echo "<div class='left_list'>";
+			foreach($field['options'] as $key => $value) {
+				if(in_array($key, $meta)) continue;
+				echo "<div class='list_item'>";
+					echo "<input type='button' class='action' value='Add'>";
+					echo "<span data-key='{$key}'>{$value}</span>";
+				echo "</div>";
+			}
+		echo "</div>";
+		echo "<div class='right_list'>";
+		echo "Drag to resize";
+			foreach($meta as $key) {
+				if(!$key) continue;
+				$value = $field['options'][$key];
+				echo "<div class='list_item'>";
+					echo "<input type='button' class='action' value='Remove'>";
+					echo "<span data-key='{$key}'>{$value}</span>";
+				echo "</div>";
+			}
+
+		echo "</div>";
+		echo "<input type='hidden' id={$field['id']} name={$field['id']} />";
+		echo "</div>";
+?>
+
+<script type="text/javascript">
+		jQuery(function($) {
+			function update(base) {
+				var hidden = base.find("input[type='hidden']");
+				var val = [];
+				base.find('.right_list span').each(function() {
+					val.push($(this).data('key'));
+				})
+				hidden.val(val.join(","));
+				console.log(val);
+			}
+			$(".left_list").delegate(".action", "click", function() {
+				var item = $(this).closest('.list_item');
+				$(this).val('Remove');
+				$(this).closest('.section_order').children('.right_list').append(item);
+				update($(this).closest(".section_order"));
+			});
+			$(".right_list").delegate(".action", "click", function() {
+				var item = $(this).closest('.list_item');
+				$(this).val('Add');
+				$(this).closest('.section_order').children('.left_list').append(item);
+				update($(this).closest(".section_order"));
+			});
+			$(".right_list").sortable({
+				change: function() {
+					update($(this).closest(".section_order"));
+				}
+			});
+
+		});
+</script>
+<style type="text/css">
+   .left_list, .right_list {
+	float: left;
+	margin: 20px;
+	width: 130px;
+}
+</style>
+
+	<?php
+		$this->show_field_end($field, $meta);
+	}
+
 	/******************** END META BOX FIELDS **********************/
 
 	/******************** BEGIN META BOX SAVE **********************/
@@ -491,6 +563,11 @@ class RW_Meta_Box {
 	// Save images, call save_field_file, cause they use the same mechanism
 	function save_field_image($post_id, $field, $old, $new) {
 		$this->save_field_file($post_id, $field, $old, $new);
+	}
+
+	function save_field_section_order($post_id, $field, $old, $new) {
+		$new = serialize(explode(",", $new));
+		$this->save_field($post_id, $field, $old, $new);
 	}
 
 	/******************** END META BOX SAVE **********************/
@@ -1106,7 +1183,20 @@ function initialize_the_meta_boxes() {
 						'std' => ''
 			),
 
-				)),
+		)),
+				array(
+					'title' => 'Section Order',
+					'fields' => array(
+						array(
+							'name' => "Section Order",
+							'desc' => "",
+							'id' => 'page_section_order',
+							'type' => 'section_order',
+							'options' => array('callout' => 'Callout', 'twitter' => 'Twitter'),
+							'std' => ''
+						)
+					)
+				)
 
 		)
 	);
