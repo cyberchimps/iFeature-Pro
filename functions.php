@@ -12,7 +12,7 @@
 /* Define global variables. */	
 
 	$themename = 'ifeature';
-	$themenamefull = 'iFeature';
+	$themenamefull = 'iFeature Pro';
 	$themeslug = 'if';
 	$options = get_option($themename);
 	
