@@ -1190,7 +1190,15 @@ function initialize_the_meta_boxes() {
 							'desc' => "",
 							'id' => 'page_section_order',
 							'type' => 'section_order',
-							'options' => array('callout' => 'Callout', 'twitter' => 'Twitter'),
+							'options' => array(
+
+								'page_slider' => "Page Slider",
+								'callout_section' => "Callout",
+								'twitterbar_section' => "Twitter Bar",
+								'page_section' => "Page",
+								'box_section' => "Box"
+								
+							),
 							'std' => ''
 						)
 					)
