@@ -391,7 +391,7 @@ require_once ( get_template_directory() . '/inc/update.php' ); // Include automa
 
 //test filer
 
-function custom_link_post_format( $content ) {
+/*function custom_link_post_format( $content ) {
 global $options, $themeslug, $post;
 $root = get_template_directory_uri(); 
 ob_start();
@@ -432,7 +432,7 @@ ob_start();
 	return $content;
 }
 
-add_filter('chimps_post_formats_link_content', 'custom_link_post_format' );
+add_filter('chimps_post_formats_link_content', 'custom_link_post_format' ); */
 
 
 ?>

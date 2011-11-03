@@ -133,7 +133,7 @@ function chimps_index_before_entry_sidebar() {
 */
 function chimps_index_loop_content($content) { ?>
 
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?> <?
+	 <?
 
 	global $options, $themeslug, $post; //call globals
 		
@@ -144,8 +144,7 @@ function chimps_index_loop_content($content) { ?>
 		$format = get_post_format();
 	} ?>
 	
-	<div class="post_container">
-	
+		
 		<?php ob_start(); ?>
 	
 		<div class="post_content">
@@ -182,38 +181,7 @@ function chimps_index_loop_content($content) { ?>
 		$content = apply_filters( 'chimps_post_formats_'.$format.'_content', $content );
 	
 		echo $content; ?>
-		
-			<!--Begin @Core link pages hook-->
-			<?php chimps_link_pages(); ?>
-			<!--End @Core link pages hook-->
-			
-			<!--Begin @Core post edit link hook-->
-			<?php chimps_edit_link(); ?>
-			<!--End @Core post edit link hook-->
-			
-			<!--Begin @Core FB like hook-->
-			<?php chimps_fb_like_plus_one(); ?>
-			<!--End @Core FB like hook-->
-			
-			<!--Begin @Core post tags hook-->
-			<?php chimps_post_tags(); ?>
-			<!--End @Core post tags hook-->
-			
-			<!--Begin @Core post bar hook-->
-			<?php chimps_post_bar(); ?>
-			<!--End @Core post bar hook-->
-			
-	</div><!--end post_container-->
-	
-		<?php endwhile; ?>
-		
-		<?php else : ?>
-
-			<h2>Not Found</h2>
-
-		<?php endif; ?>
-		
-	<?
+			<?
 }
 
 /**
