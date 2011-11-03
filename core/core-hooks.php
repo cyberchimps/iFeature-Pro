@@ -193,6 +193,13 @@ function chimps_links_pages() {
 }
 
 /** 
+* page
+*/
+function chimps_page_section() {
+	do_action('chimps_page_section');
+}
+
+/** 
 * Search
 */
 function chimps_before_search() {

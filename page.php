@@ -57,83 +57,10 @@ if ($sidebar == "1" OR $sidebar == "2") {
 		<?php chimps_twitterbar_section(); ?> 
 	<!-- End @Core Twitterbar hook -->	
 	
-	
-	<?php if ($sidebar == "4"): ?>
-		<div id="content_fullwidth">
-	<?php endif;?>
-
-	
-	<?php if ($sidebar == "2" && $pagecontent == "on"): ?>
-		<div id="content_left">
-	<?php endif;?>
-	
-	<?php if ($sidebar == "0" OR $sidebar == ""): ?>
-		<div id="content_left">
-	<?php endif;?>
-	
-	<?php if ($sidebar == "2" && $pagecontent != "on"): ?>
-	<?php get_sidebar('left'); ?>
-	<?php get_sidebar('right'); ?>
-	<?php endif;?>
-	
-	<?php if ($sidebar == "1" && $pagecontent != "on" OR $sidebar == "2" && $pagecontent != "on"): ?>
-	<?php get_sidebar('right'); ?>
-	<div class="content_half">
-	<?php endif;?>
-	
-	<?php if ($enable == "on" && $size == "1"): ?>
-		<div id = "slider-wrapper">
-			<?php get_template_part('nivoslider', 'page' ); ?>
-		</div>
-	<?php endif;?>
-
-		<?php if ($pagecontent != "on"): ?>
-		<div class="content_padding">
+	<!-- Begin @Core page section hook -->
+		<?php chimps_page_section(); ?> 
+	<!-- End @Core page section hook -->	
 		
-			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		
-			<div class="post_container">
-			
-			
-			
-				<div class="post" id="post-<?php the_ID(); ?>">
-				<?php if ($hidetitle == ""): ?>
-				
-			
-
-					<h2 class="posts_title"><?php the_title(); ?></h2>
-						<?php endif;?>
-
-					<div class="entry">
-
-						<?php the_content(); ?>
-						
-
-					</div><!--end entry-->
-					<div style=clear:both;></div>
-					<?php wp_link_pages(array('before' => 'Pages: ', 'next_or_number' => 'number')); ?>
-
-
-				<?php edit_post_link('Edit', '<p>', '</p>'); ?>
-
-				</div><!--end post-->
-		
-			<?php comments_template(); ?>
-
-			<?php endwhile; endif; ?>
-			</div><!--end post_container-->
-				<?php endif;?>
-		</div><!--end content_padding-->
-		
-	</div><!--end content_left-->
-	
-	<?php if ($sidebar == "0" && $pagecontent != "on"  OR $sidebar == ""): ?>
-	<?php get_sidebar(); ?>
-	<?php endif;?>
-	<?php if ($sidebar == "1" && $pagecontent != "on"): ?>
-	<?php get_sidebar('left'); ?>
-	<?php endif;?>
-	
 
 	<!-- Begin @Core Box Section hook -->
 		<?php chimps_box_section(); ?> 
