@@ -397,7 +397,7 @@ class RW_Meta_Box {
 			}
 		echo "</div>";
 		echo "<div class='right_list'>";
-		echo "Drag to resize";
+		echo "Drag to reorder";
 			foreach($meta as $key) {
 				if(!$key) continue;
 				$value = $field['options'][$key];
