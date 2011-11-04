@@ -37,5 +37,6 @@ $ifeature_options
 		->text($themeslug."_rss_url", "RSS Icon URL")
 	->section("Footer")
 		->textarea($themeslug."_google_analytics", "Google Analytics Code")
+		->select($themeslug."_footer_show", "Show in Footer", array( 'options' => array('nothing' => "Nothing", 'credits' => "Credits", "everything" => "Everything" )))
 	
 ;
