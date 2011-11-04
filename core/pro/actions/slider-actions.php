@@ -723,22 +723,31 @@ function chimps_page_slider_content() { ?>
 	    	/* Post-specific variables */	
 
 	    	$customimage 		= get_post_meta($post->ID, 'slider_image' , true);  /* Gets slide custom image from page/post meta option */
-	    	$customtext 		=  $post->post_content; /* Gets slide caption from custom slide meta option */
+	    	$oldcustomtext 		= $post->post_content; /* Gets slide caption from custom slide meta option */
+	    	$newcustomtext      = get_post_meta($post->ID, 'slider_caption' , true);
 	    	$customlink 		= get_post_meta($post->ID, 'slider_url' , true); /* Gets link from custom slide meta option */
 	    	$permalink 			= get_permalink(); /* Gets post URL for blog post slides */
-	   		$blogtext 				= get_post_meta($post->ID, 'slider_text' , true); /* Gets slide caption from post meta option */  		
-	   		$newtitle 				= get_post_meta($post->ID, 'slider_title' , true);
-	   		$oldtitle				= get_the_title() ; /* Gets slide title from post/custom slide title */
+	   		$blogtext 			= get_post_meta($post->ID, 'slider_text' , true); /* Gets slide caption from post meta option */  		
+	   		$newtitle 			= get_post_meta($post->ID, 'slider_title' , true);
+	   		$oldtitle			= get_the_title() ; /* Gets slide title from post/custom slide title */
 	   		$hidetitlebar       = get_post_meta($post->ID, 'slider_hidetitle' , true); /* Gets page/post meta option for disabling slide title bar */
 	   		$customsized        = "$root/library/wt/wordthumb.php?src=$customimage&a=c&$wordthumb"; /* Gets custom image from page/post meta option, applies word thumb code  */
 	   		$customthumb 		= get_post_meta($post->ID, 'slider_custom_thumb' , true); /* Gets custom thumbnail from page/post meta option */
 	   		
-			if ($oldtitle == '' && $newtitle != '') {
+			if ($oldtitle != '' && $newtitle == '') {
 				$title = get_post_meta($post->ID, 'title' , true);
 			}
 			
 			else {
 				$title = $newtitle;
+			}
+			
+			if ($oldcustomtext != '' && $newcustomtext == '') {
+				$customtext = $post->post_content;
+			}
+			
+			else {
+				$customtext = $newcustomtext;
 			}
 
 			/* End variables */	
