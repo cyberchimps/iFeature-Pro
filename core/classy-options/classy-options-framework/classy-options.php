@@ -499,7 +499,7 @@ class ClassyOptions {
 	}
 
 	function multicheck( $key, $label = "", $options = array() ) {
-		$this->add( array( 'id' => $key, 'type' => 'multicheck', 'name' => $label ) );
+		$this->add( array( 'id' => $key, 'type' => 'multicheck', 'name' => $label, 'options' => $options['options'] ) );
 		return $this;
 	}
 
