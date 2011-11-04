@@ -15,6 +15,7 @@
 	$themenamefull = 'iFeature Pro';
 	$themeslug = 'if';
 	$options = get_option($themename);
+	$root = get_template_directory_uri(); 
 	
 /* Localization */
 	    
@@ -138,7 +139,7 @@ add_action( 'init', 'create_post_type' );
 
 function create_post_type() {
 
-	global $themename, $themeslug, $options;
+	global $themename, $themeslug, $options, $root;
 	
 	register_post_type( $themeslug.'_custom_slides',
 		array(
@@ -151,6 +152,7 @@ function create_post_type() {
 			'supports' => array('custom-fields'),
 			'taxonomies' => array( 'slide_categories'),
 			'has_archive' => true,
+			'menu_icon' => "$root/images/pro/favicon.ico",
 			'rewrite' => array('slug' => 'slides')
 		)
 	);
