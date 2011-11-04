@@ -768,6 +768,21 @@ function initialize_the_meta_boxes() {
 			array(
 				'fields' => array(
 
+					
+					array(
+						'name' => 'Custom Slide Title',
+						'desc' => 'Enter your title here',
+						'id' => $prefix . 'title',
+						'type' => 'text',
+						'std' => ''
+					),
+					array(
+						'name' => 'Custom Slide Caption',
+						'desc' => 'Enter your caption here',
+						'id' => $prefix . 'caption',
+						'type' => 'text',
+						'std' => ''
+					),
 					array(
 						'name' => 'Custom Slide Link',
 						'desc' => 'Enter your link here',
