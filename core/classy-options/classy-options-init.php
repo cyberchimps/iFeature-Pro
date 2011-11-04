@@ -38,5 +38,6 @@ $ifeature_options
 	->section("Footer")
 		->textarea($themeslug."_google_analytics", "Google Analytics Code")
 		->select($themeslug."_footer_show", "Show in Footer", array( 'options' => array('nothing' => "Nothing", 'credits' => "Credits", "everything" => "Everything" )))
+		->multicheck($themeslug."_foo", "Foo", array( 'options' => array("key1" => "Value 1", "key2" => "Value 2", "key3" => "Value 3")))
 	
 ;
