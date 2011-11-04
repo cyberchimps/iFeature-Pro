@@ -45,7 +45,7 @@ function chimps_index_content_slider() {
 		
 		<?php if (v($options, $themeslug.'_hide_slider_blog') != '1' && v($options,$themeslug.'_slider_size') != "full"): ?>
 		<div id = "slider-wrapper">
-			<?php get_template_part('sliderblog', 'page' ); ?>
+			<?php chimps_blog_slider(); ?>
 		</div>
 	<?php endif;?> <?
 
@@ -61,7 +61,7 @@ function chimps_index_before_entry_slider() {
 		
 		<?php if (v($options, $themeslug.'_hide_slider_blog') != '1' && v($options,$themeslug.'_slider_size') == "full"): ?>
 		<div id = "slider-wrapper">
-			<?php get_template_part('sliderblog', 'index' ); ?>
+			<?php chimps_blog_slider(); ?>
 		</div>
 	<?php endif;?> <?
 

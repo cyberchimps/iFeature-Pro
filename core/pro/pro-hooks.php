@@ -34,6 +34,9 @@ function chimps_callout_section() {
 /** 
 * Slider
 */
+function chimps_blog_slider() {
+	do_action ('chimps_blog_slider');
+}
 function chimps_page_slider() {
 	do_action ('chimps_page_slider');
 }
