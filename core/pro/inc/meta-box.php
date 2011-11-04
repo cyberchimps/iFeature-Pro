@@ -435,7 +435,7 @@ class RW_Meta_Box {
 				update($(this).closest(".section_order"));
 			});
 			$(".right_list").sortable({
-				change: function() {
+				update: function() {
 					update($(this).closest(".section_order"));
 				}
 			});
