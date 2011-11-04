@@ -246,7 +246,7 @@ class ClassyOptions {
 			break;
 			
 			// Select Box
-			case ($value['type'] == 'select'):
+			case 'select':
 				$output .= '<select class="of-input" name="' . esc_attr( $option_name . '[' . $value['id'] . ']' ) . '" id="' . esc_attr( $value['id'] ) . '">';
 				
 				foreach ($value['options'] as $key => $option ) {
@@ -515,6 +515,11 @@ class ClassyOptions {
 
 	function typography( $key, $label = "", $options = array() ) {
 		$this->add( array( 'id' => $key, 'type' => 'typography', 'name' => $label ) );
+		return $this;
+	}
+
+	function select( $key, $label = "", $options = array() ) {
+		$this->add( array( 'id' => $key, 'type' => 'select', 'name' => $label, 'options' => $options['options'] ) );
 		return $this;
 	}
 }
