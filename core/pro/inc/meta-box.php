@@ -1213,7 +1213,7 @@ function initialize_the_meta_boxes() {
 								'box_section' => "Box"
 								
 							),
-							'std' => ''
+							'std' => 'page_section'
 						)
 					)
 				)
