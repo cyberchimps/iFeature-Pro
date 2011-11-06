@@ -387,15 +387,6 @@ class RW_Meta_Box {
 		$this->show_field_begin($field, $meta);
 		$meta = explode(",", $meta);
 		echo "<div class='section_order'>";
-		echo "<div class='left_list'>";
-			foreach($field['options'] as $key => $value) {
-				if(in_array($key, $meta)) continue;
-				echo "<div class='list_item'>";
-					echo "<input type='button' class='action' value='Add'>";
-					echo "<span data-key='{$key}'>{$value}</span>";
-				echo "</div>";
-			}
-		echo "</div>";
 		echo "<div class='right_list'>";
 		echo "Drag to reorder";
 			foreach($meta as $key) {
@@ -407,6 +398,15 @@ class RW_Meta_Box {
 				echo "</div>";
 			}
 
+		echo "</div>";
+		echo "<div class='left_list'>";
+			foreach($field['options'] as $key => $value) {
+				if(in_array($key, $meta)) continue;
+				echo "<div class='list_item'>";
+					echo "<input type='button' class='action' value='Add'>";
+					echo "<span data-key='{$key}'>{$value}</span>";
+				echo "</div>";
+			}
 		echo "</div>";
 		echo "<input type='hidden' id={$field['id']} name={$field['id']} />";
 		echo "</div>";
