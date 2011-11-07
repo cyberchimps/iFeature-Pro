@@ -32,7 +32,7 @@ $options
 		->text($themeslug."_featured_image_width", "Featured Image WIdth")
 		->multicheck($themeslug."_hide_byline", "Hide Post Byline Elements", array( 'options' => array("key1" => "Author", "key2" => "Categories", "key3" => "Date", "key4" => "Comments", "key5" => "Share", "key6" => "Tags")))
 		->checkbox($themeslug."_show_fb_like", "Show Facebook Like Button")
-		->checkbox($themeslug."_show_plus_one", "Show Google Plus One Button")
+		->checkbox($themeslug."_show_gplus", "Show Google Plus One Button")
 		->checkbox($themeslug."_hide_slider_blog", "Hide Index Slider")
 		->select($themeslug."_slider_size", "Select the Slider Size", array( 'options' => array("key1" => "half", "key2" => "full")))
 		->select($themeslug."_slider_type", "Select the Slider Type", array( 'options' => array("key1" => "posts", "key2" => "custom")))

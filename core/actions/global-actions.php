@@ -39,9 +39,9 @@ function chimps_post_byline_content() {
 	global $options, $themeslug; //call globals  ?>
 	
 	<div class="meta">
-		<?php if ((v($options, $themeslug.'_hide_author')) != '1'):?><?php printf( __( 'Published by', 'core' )); ?> <?php the_author_posts_link(); ?> <?php endif;?> 
-		<?php if ((v($options, $themeslug.'_hide_categories')) != '1'):?><?php printf( __( 'in', 'core' )); ?> <?php the_category(', ') ?> <?php endif;?>
-		<?php if ((v($options, $themeslug.'_hide_date')) != '1'):?> <?php printf( __( 'on', 'core' )); ?> <a href="<?php the_permalink() ?>"><?php the_time('F jS, Y') ?></a><?php endif;?>
+		<?php if ($options->get($themeslug.'_hide_author') != '1'):?><?php printf( __( 'Published by', 'core' )); ?> <?php the_author_posts_link(); ?> <?php endif;?> 
+		<?php if ($options->get($themeslug.'_hide_categories') != '1'):?><?php printf( __( 'in', 'core' )); ?> <?php the_category(', ') ?> <?php endif;?>
+		<?php if ($options->get($themeslug.'_hide_date') != '1'):?> <?php printf( __( 'on', 'core' )); ?> <a href="<?php the_permalink() ?>"><?php the_time('F jS, Y') ?></a><?php endif;?>
 	</div> <?
 }
 
@@ -61,7 +61,7 @@ function chimps_post_bar_content() {
 		</div><!--end share-->
 				
 		<div class="comments">
-			<?php if ($options[$themeslug.'_hide_comments'] != '1'):?>
+			<?php if ($options->get($themeslug.'_hide_comments') != '1'):?>
 				<?php comments_popup_link( __('No Comments &#187;', 'core' ), __('1 Comment &#187;', 'core' ), __('% Comments &#187;' , 'core' )); //need a filer here ?>
 			<?php endif;?>
 		</div><!--end comments-->	
@@ -95,7 +95,7 @@ function chimps_post_tags_content() {
 	global $options, $themeslug; ?>
 
 	<div class="tags">
-		<?php if ($options[$themeslug.'_hide_tags'] != '1'):?>
+		<?php if ($options->get($themeslug.'_hide_tags') != '1'):?>
 			<?php the_tags('Tags: ', ', ', '<br />'); ?>
 		<?php endif;?>
 	</div><!--end tags--> <?php
@@ -109,13 +109,13 @@ function chimps_post_tags_content() {
 function chimps_fb_like_plus_one_content() {
 	global $options, $themeslug; ?>
 
-	<?php if ($options[$themeslug.'_show_gplus'] == "1"):?>
+	<?php if ($options->get($themeslug.'_show_gplus') == "1"):?>
 		<div class="gplusone">	
 			<g:plusone size="standard" count="true"></g:plusone>
 		</div>
 	<?php endif;?>
 						
-	<?php if ($options[$themeslug.'_show_fb_like'] == "1"):?>			
+	<?php if ($options->get($themeslug.'_show_fb_like') == "1"):?>			
 		<div id="fb">
 			<iframe src="http://www.facebook.com/plugins/like.php?href=<?php the_permalink() ?>&layout=standard&show_faces=true&width=450&action=like&colorscheme=light" scrolling="no" frameborder="0"  allowTransparency="true" style="border:none; overflow:hidden; width:330px; height:28px"></iframe>
 		</div>
