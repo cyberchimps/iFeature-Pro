@@ -65,22 +65,25 @@
 			<?php endif;?>
 
 			<!--end fb-->
+			
 				<div class="tags">
 					<?php if ($tags != '1'):?>
 						<?php the_tags( __( 'Tags:', 'ifeature' ), ', ', '<br />'); ?>
 					<?php endif;?>
-				</div><!--end tags-->	
+				</div><!--end tags-->
+				
 
 				<div class="postmetadata">
 					<?php if ($share != '1'):?>
 						<?php get_template_part('share', 'index' ); ?>
 					<?php endif;?>
-
+					
 				<div class="comments">
 					<?php if ($comments != '1'):?>
 						<?php comments_popup_link( __('No Comments &#187;', 'ifeature' ), __('1 Comment &#187;', 'ifeature' ), __('% Comments &#187;' , 'ifeature' )); ?>
 					<?php endif;?>
 				</div><!--end comments-->	
+
 				</div><!--end postmetadata-->
 							
 	</div><!--end post_class-->
