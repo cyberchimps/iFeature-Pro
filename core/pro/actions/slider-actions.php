@@ -870,17 +870,7 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 /* End slide creation */		
 
 
-/* Define slider navigation variable */ 
-  	
-	if ($options['if_slider_navigation'] == '1') {
-	    $csNavigation = 'false';
-	}
-
-	else {
-		$csNavigation = 'true';
-	}
-
-/* End slider navigation variable */ 
+ 
 
 	?>
 
