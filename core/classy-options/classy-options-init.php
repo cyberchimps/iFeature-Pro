@@ -21,7 +21,7 @@ $options
 		->color($themeslug."_link_color", "Link Color")
 		->color($themeslug."_post_title_color", "Post Title Color")
 		->color($themeslug."_footer_color", "Footer Color")
-		->textarea($themeslug."_custom_css", "Custom CSS")
+		->textarea($themeslug."_css_options", "Custom CSS")
 	->section("Blog")
 		->select($themeslug."_blog_sidebar", "Select the Sidebar Type", array( 'options' => array("key1" => "Right", "key2" => "None", "key3" => "Two Right", "key4" => "Right and Left")))
 		->checkbox($themeslug."_show_excerpts", "Post Excerpts")

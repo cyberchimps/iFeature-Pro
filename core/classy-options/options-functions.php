@@ -12,10 +12,10 @@
  
 function disable_breadcrumbs() {
 
-	global $options;
+	global $options, $themeslug;
 	$root = get_template_directory_uri();
 	
-	if (v($options, 'if_disable_breadcrumbs') == "1") {
+	if ($options->get($themeslug.'_disable_breadcrumbs') == "1") {
 		
 		echo '<style type="text/css">';
 		echo "#crumbs {display: none;}";
@@ -31,7 +31,7 @@ function plusone_alignment() {
 
 	global $themename, $themeslug, $options;
 	
-	if (v($options, $themeslug.'_show_fb_like') == "1" AND v($options, $themeslug.'_show_gplus') == "1" ) {
+	if ($options->get($themeslug.'_show_fb_like') == "1" AND $options->get($themeslug.'_show_gplus') == "1" ) {
 
 		echo '<style type="text/css">';
 		echo ".gplusone {float: right; margin-right: -38px;}";
@@ -49,7 +49,7 @@ function featured_image_alignment() {
 
 	global $themename, $themeslug, $options;
 	
-	if (v($options, $themeslug.'_featured_images') == "right" ) {
+	if ($options->get($themeslug.'_featured_images') == "right" ) {
 
 		echo '<style type="text/css">';
 		echo ".featured-image {float: right;}";
@@ -57,7 +57,7 @@ function featured_image_alignment() {
 		
 	}
 	
-	elseif (v($options, $themeslug.'_featured_images') == "center" ) {
+	elseif ($options->get($themeslug.'_featured_images') == "center" ) {
 
 		echo '<style type="text/css">';
 		echo ".featured-image {text-align: center;}";
@@ -80,7 +80,7 @@ add_action( 'wp_head', 'featured_image_alignment');
 
 /* Hide Header*/
 
-function hide_header() {
+/* function hide_header() {
 
 	global $themename, $themeslug, $options;
 
@@ -94,7 +94,7 @@ function hide_header() {
 	}
 	
 }
-add_action( 'wp_head', 'hide_header');
+add_action( 'wp_head', 'hide_header'); */
 
 /* Post Meta Data width */
 
@@ -102,7 +102,7 @@ function post_meta_data_width() {
 
 	global $themename, $themeslug, $options;
 
-	if (v($options, $themeslug.'_blog_sidebar') == "two-right" OR v($options, $themeslug.'_blog_sidebar') == "right-left") {
+	if ($options->get($themeslug.'_blog_sidebar') == "two-right" OR $options->get($themeslug.'_blog_sidebar') == "right-left") {
 
 		echo '<style type="text/css">';
 		echo ".postmetadata {width: 480px;}";
@@ -120,17 +120,14 @@ function add_menu_color() {
 
 	global $themename, $themeslug, $options;
 	$root = get_template_directory_uri(); 
-
-	if  (v($options, $themeslug.'_menu_color') == "") {
 		
 		echo '<style type="text/css">';
 		echo "#navbackground {background: url($root/images/menu/Grey.png) no-repeat left top}";
 		echo '</style>';
 		
-	}
 
 	
-	elseif (v($options, $themeslug.'_menu_color') != "picker" && v($options, $themeslug.'_menu_color') != "") {
+	/* elseif (v($options, $themeslug.'_menu_color') != "picker" && v($options, $themeslug.'_menu_color') != "") {
 	
 		$menucolor = v($options, $themeslug.'_menu_color');
 		
@@ -147,7 +144,7 @@ function add_menu_color() {
 		echo '<style type="text/css">';
 		echo "#navbackground {height: 35px; border: 1px solid #333; -moz-border-radius: 3px; border-radius: 3px; -moz-box-shadow:0 0 3px #444; -webkit-box-shadow:0 0 3px #444; box-shadow:0 0 3px #444;background-color: #$menucolor;}";
 		echo '</style>';
-	}
+	} */
 	
 }
 add_action( 'wp_head', 'add_menu_color');
@@ -158,12 +155,12 @@ function add_sitetitle_color() {
 
 	global $themename, $themeslug, $options;
 
-	if (v($options, $themeslug.'_sitetitle_color') == "") {
+	if ($options->get($themeslug.'_sitetitle_color') == "") {
 		$sitetitle = '717171';
 	}
 	
 	else {
-		$sitetitle = v($options, $themeslug.'_sitetitle_color'); 
+		$sitetitle = $options->get($themeslug.'_sitetitle_color'); 
 	}		
 	
 		echo '<style type="text/css">';
@@ -179,12 +176,12 @@ function add_link_color() {
 
 	global $themename, $themeslug, $options;
 
-	if (!v($options, $themeslug.'_link_color')) {
+	if (!$options->get($themeslug.'_link_color')) {
 		$link = '717171';
 	}
 
 	else { 
-		$link = v($options, $themeslug.'_link_color'); 
+		$link = $options->get($themeslug.'_link_color'); 
 	}				
 	
 		echo '<style type="text/css">';
@@ -201,12 +198,12 @@ function add_menulink_color() {
 
 	global $themename, $themeslug, $options;
 
-	if (!v($options, $themeslug.'_menulink_color')) {
+	if (!$options->get($themeslug.'_menulink_color')) {
 		$sitelink = 'FFFFFF';
 	}
 	
 	else{ 
-		$sitelink = v($options, $themeslug.'_menulink_color'); 
+		$sitelink = $options->get($themeslug.'_menulink_color'); 
 	}	
 		
 		echo '<style type="text/css">';
@@ -221,12 +218,12 @@ function add_tagline_color() {
 
 	global $themename, $themeslug, $options;
 
-	if (v($options, $themeslug.'_tagline_color')) {
+	if (!$options->get($themeslug.'_tagline_color')) {
 		$tagline = '000';
 	}
 	
 	else { 
-		$tagline = v($options, $themeslug.'_tagline_color'); 
+		$tagline = $options->get($themeslug.'_tagline_color'); 
 	}		
 		
 		echo '<style type="text/css">';
@@ -242,11 +239,11 @@ function add_posttitle_color() {
 
 	global $themename, $themeslug, $options;
 
-	if (!v($options, $themeslug.'_posttitle_color')) {
+	if (!$options->get($themeslug.'_posttitle_color')) {
 		$posttitle = '717171';
 	}
 	else {
-		$posttitle = v($options, $themeslug.'_posttitle_color'); 
+		$posttitle = $options->get($themeslug.'_posttitle_color'); 
 	}		
 		
 		echo '<style type="text/css">';
@@ -258,7 +255,7 @@ add_action( 'wp_head', 'add_posttitle_color');
 
 /* Hide search/home button */
 
-function fullwidth_nav() {
+/*function fullwidth_nav() {
 
 	global $themename, $themeslug, $options;
 
@@ -288,7 +285,7 @@ function fullwidth_nav() {
 	}
 
 }
-add_action( 'wp_head', 'fullwidth_nav');
+add_action( 'wp_head', 'fullwidth_nav'); */
 
 /* Footer Color */
 
@@ -296,9 +293,9 @@ function add_footer_color() {
 
 	global $themename, $themeslug, $options;
 
-	if (v($options, $themeslug.'_footer_color') && v($options, $themeslug.'_footer_color') != "222222" ) {
+	if ($options->get($themeslug.'_footer_color') != "222222" ) {
 	
-		$footercolor = v($options, $themeslug.'_footer_color'); 
+		$footercolor = $options->get($themeslug.'_footer_color'); 
 	
 	
 		echo '<style type="text/css">';
@@ -310,7 +307,7 @@ add_action( 'wp_head', 'add_footer_color');
 
 /* Menu Font */
  
-function add_menu_font() {
+/* function add_menu_font() {
 		
 	global $themename, $themeslug, $options;	
 		
@@ -333,11 +330,11 @@ function add_menu_font() {
 		echo ".sf-menu a {font-family: $fontstrip;}";
 		echo '</style>';
 }
-add_action( 'wp_head', 'add_menu_font');
+add_action( 'wp_head', 'add_menu_font'); */
 
 /* Widget title background */
  
-function widget_title_bg() {
+/*function widget_title_bg() {
 
 	global $themename, $themeslug, $options;
 	$root = get_template_directory_uri();
@@ -351,7 +348,7 @@ function widget_title_bg() {
 
 	}
 }
-add_action( 'wp_head', 'widget_title_bg');
+add_action( 'wp_head', 'widget_title_bg'); */
 
 
 /* Custom CSS */
@@ -360,7 +357,7 @@ function custom_css() {
 
 	global $themename, $themeslug, $options;
 	
-	$custom = v($options, $themeslug.'_css_options');
+	$custom =$options->get($themeslug.'_css_options');
 	echo '<style type="text/css">' . "\n";
 	echo custom_css_filter ( $custom ) . "\n";
 	echo '</style>' . "\n";

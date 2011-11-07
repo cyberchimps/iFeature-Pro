@@ -16,14 +16,6 @@
 */
 
 /**
-* Returns a default value for arrays with missing keys
-*
-* @since 1.0
-*/
-function v() {
-   
-}
-/**
 * Establishes 'core' as the textdomain, sets $locale and file path
 *
 * @since 1.0
