@@ -43,7 +43,7 @@ add_action( 'chimps_meta', 'chimps_meta_byline' );
 function chimps_index_content_slider() { 
 		global $options, $themeslug; ?>
 		
-		<?php if (v($options, $themeslug.'_hide_slider_blog') != '1' && v($options,$themeslug.'_slider_size') != "full"): ?>
+		<?php if ($options->get($themeslug.'_hide_slider_blog') != '1' && $options->get($themeslug.'_slider_size') != "full"): ?>
 		<div id = "slider-wrapper">
 			<?php chimps_blog_slider(); ?>
 		</div>
@@ -59,7 +59,7 @@ function chimps_index_content_slider() {
 function chimps_index_before_entry_slider() { 
 		global $options, $themeslug; ?>
 		
-		<?php if (v($options, $themeslug.'_hide_slider_blog') != '1' && v($options,$themeslug.'_slider_size') == "full"): ?>
+		<?php if ($options->get($themeslug.'_hide_slider_blog') != '1' && $options->get($themeslug.'_slider_size') == "full"): ?>
 		<div id = "slider-wrapper">
 			<?php chimps_blog_slider(); ?>
 		</div>
@@ -75,7 +75,7 @@ function chimps_index_before_entry_slider() {
 function chimps_index_after_entry_sidebar() {
 	global $options, $themeslug, $post; // call globals
 	
-	$blogsidebar = v($options,$themeslug.'_blog_sidebar');
+	$blogsidebar = $options->get($themeslug.'_blog_sidebar');
 	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);?>
 	
 	<?php if ($sidebar == '' AND $blogsidebar == ''): ?>
@@ -98,7 +98,7 @@ function chimps_index_after_entry_sidebar() {
 function chimps_index_before_entry_sidebar() { 
 	global $options, $themeslug, $post; // call globals
 	
-	$blogsidebar = v($options,$themeslug.'_blog_sidebar');
+	$blogsidebar = $options->get($themeslug.'_blog_sidebar');
 	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);?>
 			
 	<?php if ($sidebar == "4" OR $blogsidebar == 'none'): ?>
@@ -166,7 +166,7 @@ function chimps_index_loop_content($content) { ?>
 			?>	
 				<div class="entry" <?php if ( has_post_thumbnail()) { echo 'style="min-height: 115px;" '; }?>>
 					<?php 
-						if (v($options, $themeslug.'_show_excerpts') == '1' ) {
+						if ($options->get($themeslug.'_show_excerts') == '1' ) {
 						the_excerpt();
 						}
 						else {
