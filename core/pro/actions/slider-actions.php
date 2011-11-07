@@ -36,28 +36,28 @@ function chimps_blog_slider_content() {
 
     $tmp_query = $wp_query; 
 	$root = get_template_directory_uri(); 
-	$size = v($options, $themeslug.'_slider_size');
-	$size2 = v($options, $themeslug.'_blog_sidebar');
-	$type = v($options, $themeslug.'_slider_type'); 
-	$category = v($options, $themeslug.'_slider_category'); 
-	$customcategory = v($options, $themeslug.'_customslider_category');
-	$captionstyle = v($options, $themeslug.'_caption_style');
-	$sliderheight = v($options, $themeslug.'_slider_height');
-	$navautohide = v($options, $themeslug.'_disable_nav_autohide');
-	$hidenav = v($options, $themeslug.'_hide_slider_arrows');
-	$timdisable = v($options, $themeslug.'_disable_wordthumb');
+	$size = $options->get($themeslug.'_slider_size');
+	$size2 = $options->get($themeslug.'_blog_sidebar');
+	$type = $options->get($themeslug.'_slider_type'); 
+	$category = $options->get($themeslug.'_slider_category'); 
+	$customcategory = $options->get($themeslug.'_customslider_category');
+	$captionstyle = $options->get($themeslug.'_caption_style');
+	$sliderheight = $options->get($themeslug.'_slider_height');
+	$navautohide = $options->get($themeslug.'_disable_nav_autohide');
+	$hidenav = $options->get($themeslug.'_hide_slider_arrows');
+	$worddisable = $options->get($themeslug.'_disable_wordthumb');
 
 	
 /* End define variables. */	
 
 /* Define slider animation variable */
 
-	if (v($options, $themeslug.'_slider_animation') == '') {
+	if ($options->get($themeslug.'_slider_animation') == '') {
 		$animation = 'random';	
 	}
 
 	else {
-		$animation = v($options, $themeslug.'_slider_animation');
+		$animation = $options->get($themeslug.'_slider_animation');
 	}
 
 /* End slider animation */		
@@ -109,7 +109,7 @@ function chimps_blog_slider_content() {
 
 /* Define slider caption style */      
 
-	if ($captionstyle == 'left') {
+	if ($captionstyle == 'key3') {
 		
 		?>
 		
@@ -120,7 +120,7 @@ function chimps_blog_slider_content() {
 		<?php
 	}
 	
-	elseif ($captionstyle == 'right') {
+	elseif ($captionstyle == 'key2') {
 		
 		?>
 		
@@ -134,11 +134,11 @@ function chimps_blog_slider_content() {
 
 /* Define wordthumb default height and widths. */		
 
-	if ($size == "full") {
+	if ($size == "key2") {
 		$wordthumb = "h=$height&w=980";
 	}
 
-	elseif ($size2 == "two-right" OR $size2 == "right-left") {
+	elseif ($size2 == "key3" OR $size2 == "key4") {
 		$wordthumb = "h=$height&w=480";
 	}
 
@@ -150,11 +150,11 @@ function chimps_blog_slider_content() {
 
 /* Define slider width variable */ 
 
-	if ($size == 'full' && $size2 != 'two-right' AND $size2 != 'right-left') {
+	if ($size == 'key2' && $size2 != 'key3' AND $size2 != 'key4') {
 	  	$csWidth = '980';
 	}		
 
-	elseif ($size2 == 'right-left' && $size != 'full' OR $size2 == 'two-right' && $size != 'full') {
+	elseif ($size2 == 'key4' && $size != 'key2' OR $size2 == 'key3' && $size != 'key2') {
 		$csWidth = '480';
 	}  	
 
@@ -166,17 +166,17 @@ function chimps_blog_slider_content() {
 
 /* Query posts based on theme/meta options */
 
-	if (v($options, $themeslug.'_slider_type') == '') {
+	if ($options->get($themeslug.'_slider_type') == '') {
 		$usecustomslides = 'posts';
 	}	
 
 	else {
-		$usecustomslides = v($options, $themeslug.'_slider_type');
+		$usecustomslides = $options->get($themeslug.'_slider_type');
 	}
 
 /* Query posts based on theme/meta options */
 
-	if ( $type == 'custom') {
+	if ( $type == 'key2') {
     	query_posts( array ('post_type' => $themeslug.'_custom_slides', 'showposts' => 20,  'slide_categories' => $customcategory  ) );
     }
     	
@@ -192,7 +192,7 @@ function chimps_blog_slider_content() {
 	    $out = "<div id='slider' class='nivoSlider'>"; 
 	    $i = 0;
 
-	if (v($options, $themeslug.'_slider_posts_number') == '') {
+	if ($options->get($themeslug.'_slider_posts_number') == '') {
 	    $no = '5';    	
 	}   	
 
@@ -201,7 +201,7 @@ function chimps_blog_slider_content() {
 	}
 
 	else {
-		$no = v($options, $themeslug.'_slider_posts_number');
+		$no = $options->get($themeslug.'_slider_posts_number');
 	}
 
 /* End post counter */	    	
@@ -264,42 +264,42 @@ function chimps_blog_slider_content() {
 
 	    	  	/* Controls slide image and thumbnails */
 
-	    	if ($customimage != '' && $customthumb == '' && $timdisable != '1'){
+	    	if ($customimage != '' && $customthumb == '' && $worddisable != '1'){
 	    		$image = $customsized;
 	    		$thumbnail = "$root/library/wt/wordthumb.php?src=$customimage&a=c&h=30&w=50";
 	    	}
 	    	
-	    	elseif ($customimage != '' && $timdisable == '1'){
+	    	elseif ($customimage != '' && $worddisable == '1'){
 	    		$image = $customimage;
 	    		$thumbnail = $customthumb;
 	    	}
 	    	
-	    	elseif ($customimage == '' && $timdisable == '1'){
+	    	elseif ($customimage == '' && $worddisable == '1'){
 	    		$image = "$root/images/pro/ifeatureprolarge.jpg";
 	    		$thumbnail = $customthumb;
 	    	}
 	    	
-	    	elseif ($customimage != '' && $customthumb != '' && $timdisable != '1' ){
+	    	elseif ($customimage != '' && $customthumb != '' && $worddisable != '1' ){
 	    		$image = $customsized;
 	    		$thumbnail = "$root/library/wt/wordthumb.php?src=$customthumb&a=c&h=30&w=50";
 	    	}
 
-	    	elseif ($customimage == '' && $size2 == "0" && $size != "0" && $timdisable != '1'){
+	    	elseif ($customimage == '' && $size2 == "0" && $size != "0" && $worddisable != '1'){
 	    		$image = "$root/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
 	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	    	}
 
-	    	elseif ($customimage == '' && $size2 == '4' && $size != "0" && $timdisable != '1'){
+	    	elseif ($customimage == '' && $size2 == '4' && $size != "0" && $worddisable != '1'){
 	    		$image = "$root/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
 	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	    	}
 
-	    	elseif ($customimage == '' && $size2 == "1" && $size != "0" && $timdisable != '1' OR $customimage == '' && $size2 == "2" && $size != "0" && $timdisable != '1'){
+	    	elseif ($customimage == '' && $size2 == "1" && $size != "0" && $worddisable != '1' OR $customimage == '' && $size2 == "2" && $size != "0" && $worddisable != '1'){
 	    		$image = "$root/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro2-480.jpg&a=c&h=$height&w=480";
 	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	    	}
 
-	   		elseif ($timdisable != '1') {
+	   		elseif ($worddisable != '1') {
 	       		$image = "$root/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
 	       		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	       	}
@@ -345,19 +345,19 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 
 /* Define slider delay variable */ 
     
-	if (v($options, $themeslug.'_slider_delay') == '') {
+	if ($options->get($themeslug.'_slider_delay') == '') {
 	    $delay = '3500';
 	}    
 
 	else {
-		$delay = v($options, $themeslug.'_slider_delay');
+		$delay = $options->get($themeslug.'_slider_delay');
 	}
 
 /* End slider delay variable */ 	
 
 /* Define slider navigation variable */ 
   	
-	if (v($options, $themeslug.'_slider_navigation') == '1') {
+	if ($options->get($themeslug.'_slider_navigation') == '1') {
 	    $csNavigation = 'false';
 	}
 
@@ -383,7 +383,7 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 	
 /* Define slider navigation style */ 		
 	
-	if (v($options, $themeslug.'_slider_nav') == 'dots' OR v($options, $themeslug.'_slider_nav') == '') {
+	if ($options->get($themeslug.'_slider_nav') == 'key1' OR $options->get($themeslug.'_slider_nav') == '') {
 		
 		echo '<style type="text/css">';
 		echo ".nivo-controlNav a {background: url($root/images/bullets.png) no-repeat; display:block; width:22px; height:22px; 	text-indent:-9999px; border:0; margin-right:3px; float:left;}";
@@ -392,7 +392,7 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 		
 	}
  
-	if (v($options, $themeslug.'_slider_nav') == "none")  {
+	if ($options->get($themeslug.'_slider_nav') == "key4")  {
 			
 		echo '<style type="text/css">';
 		echo ".nivo-controlNav {display: none;}";
@@ -486,7 +486,7 @@ function chimps_page_slider_content() { ?>
 	$navigationstyle = get_post_meta($post->ID, 'page_slider_navigation_style' , true);
 	$navautohide = get_post_meta($post->ID, 'disable_autohide' , true);
 	$hidenav = get_post_meta($post->ID, 'hide_arrows' , true);
-	$timdisable = get_post_meta($post->ID, 'disable_wordthumb' , true);
+	$worddisable = get_post_meta($post->ID, 'disable_wordthumb' , true);
 	
 	if ($enable == "on" && $size == "0") {
 	
@@ -790,42 +790,42 @@ function chimps_page_slider_content() { ?>
 
 	    	/* Controls slide image and thumbnails */
 
-	    	if ($customimage != '' && $customthumb == '' && $timdisable != 'on'){
+	    	if ($customimage != '' && $customthumb == '' && $worddisable != 'on'){
 	    		$image = $customsized;
 	    		$thumbnail = "$root/library/wt/wordthumb.php?src=$customimage&a=c&h=30&w=50";
 	    	}
 	    	
-	    	elseif ($customimage != '' && $timdisable == 'on'){
+	    	elseif ($customimage != '' && $worddisable == 'on'){
 	    		$image = $customimage;
 	    		$thumbnail = $customthumb;
 	    	}
 	    	
-	    	elseif ($customimage == '' && $timdisable == 'on'){
+	    	elseif ($customimage == '' && $worddisable == 'on'){
 	    		$image = "$root/images/pro/ifeatureprolarge.jpg";
 	    		$thumbnail = $customthumb;
 	    	}
 	    	
-	    	elseif ($customimage != '' && $customthumb != '' && $timdisable != 'on' ){
+	    	elseif ($customimage != '' && $customthumb != '' && $worddisable != 'on' ){
 	    		$image = $customsized;
 	    		$thumbnail = "$root/library/wt/wordthumb.php?src=$customthumb&a=c&h=30&w=50";
 	    	}
 
-	    	elseif ($customimage == '' && $size2 == "0" && $size != "0" && $timdisable != 'on'){
+	    	elseif ($customimage == '' && $size2 == "0" && $size != "0" && $worddisable != 'on'){
 	    		$image = "$root/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
 	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	    	}
 
-	    	elseif ($customimage == '' && $size2 == '4' && $size != "0" && $timdisable != 'on'){
+	    	elseif ($customimage == '' && $size2 == '4' && $size != "0" && $worddisable != 'on'){
 	    		$image = "$root/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
 	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	    	}
 
-	    	elseif ($customimage == '' && $size2 == "1" && $size != "0" && $timdisable != 'on' OR $customimage == '' && $size2 == "2" && $size != "0" && $timdisable != 'on'){
+	    	elseif ($customimage == '' && $size2 == "1" && $size != "0" && $worddisable != 'on' OR $customimage == '' && $size2 == "2" && $size != "0" && $worddisable != 'on'){
 	    		$image = "$root/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro2-480.jpg&a=c&h=$height&w=480";
 	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	    	}
 
-	   		elseif ($timdisable != 'on') {
+	   		elseif ($worddisable != 'on') {
 	       		$image = "$root/library/wt/wordthumb.php?src=$root/images/pro/ifeatureprolarge.jpg&a=c&h=$height&w=980";
 	       		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	       	}

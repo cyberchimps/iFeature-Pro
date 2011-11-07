@@ -43,7 +43,7 @@ add_action( 'chimps_meta', 'chimps_meta_byline' );
 function chimps_index_content_slider() { 
 		global $options, $themeslug; ?>
 		
-		<?php if ($options->get($themeslug.'_hide_slider_blog') != '1' && $options->get($themeslug.'_slider_size') != "full"): ?>
+		<?php if ($options->get($themeslug.'_hide_slider_blog') != '1' && $options->get($themeslug.'_slider_size') != "key2"): ?>
 		<div id = "slider-wrapper">
 			<?php chimps_blog_slider(); ?>
 		</div>
@@ -59,7 +59,7 @@ function chimps_index_content_slider() {
 function chimps_index_before_entry_slider() { 
 		global $options, $themeslug; ?>
 		
-		<?php if ($options->get($themeslug.'_hide_slider_blog') != '1' && $options->get($themeslug.'_slider_size') == "full"): ?>
+		<?php if ($options->get($themeslug.'_hide_slider_blog') != '1' && $options->get($themeslug.'_slider_size') == "key2"): ?>
 		<div id = "slider-wrapper">
 			<?php chimps_blog_slider(); ?>
 		</div>
@@ -82,10 +82,10 @@ function chimps_index_after_entry_sidebar() {
 		<?php get_sidebar(); ?>
 	<?php endif;?>
 	
-	<?php if ($sidebar == "1" OR $blogsidebar == 'right' ): ?>
+	<?php if ($sidebar == "1" OR $blogsidebar == 'key1' ): ?>
 		<?php get_sidebar(); ?>
 	<?php endif;?>
-	<?php if ($sidebar == "2" OR $blogsidebar == 'two-right' ): ?>
+	<?php if ($sidebar == "2" OR $blogsidebar == 'key3' ): ?>
 		<?php get_sidebar('left'); ?>
 	<?php endif;?> <?php
 }
@@ -101,11 +101,11 @@ function chimps_index_before_entry_sidebar() {
 	$blogsidebar = $options->get($themeslug.'_blog_sidebar');
 	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);?>
 			
-	<?php if ($sidebar == "4" OR $blogsidebar == 'none'): ?>
+	<?php if ($sidebar == "4" OR $blogsidebar == 'key2'): ?>
 		<div id="content_fullwidth">
 	<?php endif;?>
 	
-	<?php if ($sidebar == "1" OR $blogsidebar == "right"): ?>
+	<?php if ($sidebar == "1" OR $blogsidebar == 'key1'): ?>
 		<div id="content_left">
 	<?php endif;?>
 	
@@ -113,12 +113,12 @@ function chimps_index_before_entry_sidebar() {
 		<div id="content_left">
 	<?php endif;?>
 	
-	<?php if ($sidebar == "3" OR $blogsidebar == 'right-left' ): ?>
+	<?php if ($sidebar == "3" OR $blogsidebar == 'key4' ): ?>
 		<?php get_sidebar('left'); ?>
 		<?php get_sidebar('right'); ?>
 	<?php endif;?>
 	
-	<?php if ($sidebar == "2"  OR $sidebar == "3" OR $blogsidebar == "two-right" OR $blogsidebar == "right-left"): ?>
+	<?php if ($sidebar == "2"  OR $sidebar == "3" OR $blogsidebar == 'key3' OR $blogsidebar == 'key4'): ?>
 		<?php get_sidebar('right'); ?>
 		<div class="content_half">
 	<?php endif;?> <?php

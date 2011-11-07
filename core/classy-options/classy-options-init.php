@@ -41,7 +41,7 @@ $options
 		->text($themeslug."_slider_delay", "Slider Delay")
 		->select($themeslug."_caption_style", "Select the Caption Style", array( 'options' => array("key1" => "Bottom", "key2" => "Right", "key3" => "Left", "key4" => "None")))
 		->select($themeslug."_slider_animation", "Select the Sidebar Animation", array( 'options' => array("key1" => "Random", "key2" => "sliceDown", "key3" => "sliceDownLeft", "key4" => "sliceUp", "key5" => "sliceUpLeft", "key6" => "sliceUpDown", "key7" => "sliceUpDownLeft", "key8" => "fold", "key9" => "fade",  "fade", "key10" => "slideInRight", "key11" => "slideInLeft", "key12" => "boxRandom", "key13" => "boxRain", "key14" => "boxRainReverse", "key15" => "boxRainGrow", "key16" => "boxRainGrowReverse",)))
-		->select($themeslug."_slider_nav", "Select the Slider Size", array( 'options' => array("key1" => "half", "key2" => "full")))
+		->select($themeslug."_slider_nav", "Select the Slider Navigation", array( 'options' => array("key1" => "Dots", "key2" => "Thumbnails", "key3" => "none")))
 		->checkbox($themeslug."_hide_slider_arrows", "Disable Slider Navigation")
 		->checkbox($themeslug."_disable_nav_autohide", "Disable Slider Navigation Auto-Hide")
 		->checkbox($themeslug."_disable_wordthumb", "Disable WordThumb Image Resizing")
