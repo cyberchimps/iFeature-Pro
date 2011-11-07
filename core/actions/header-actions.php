@@ -37,14 +37,14 @@ add_action('chimps_404_content', 'chimps_404_content_handler');
 function chimps_font() {
 	global $themeslug, $options; //Call global variables
 
-	if (v($options, $themeslug.'_font') == "" AND v($options, $themeslug.'_custom_font') == "") {
+	if ($options->get($themeslug.'_font') == "" AND $options->get($themeslug.'_custom_font') == "") {
 		$font = apply_filters( 'chimps_default_font', 'Arial' );
 	}		
-	elseif (v($options, $themeslug.'_custom_font') != "") {
-		$font = v($options, $themeslug.'_custom_font');	
+	elseif ($options->get($themeslug.'_custom_font') != "") {
+		$font = $options->get($themeslug.'_custom_font');	
 	}	
 	else {
-		$font = v($options, $themeslug.'_font'); 
+		$font = $options->get($themeslug.'_font'); 
 	} ?>
 	
 	<body style="font-family:'<?php echo ereg_replace("[^A-Za-z0-9]", " ", $font ); ?>', Helvetica, serif" <?php body_class(); ?> > <?php
@@ -77,14 +77,14 @@ function chimps_meta_tags() {
 <meta name="distribution" content="global" />
 <meta name="language" content="en" /> <?php
 
-	if (v($options, $themeslug.'_home_title') != '' AND is_front_page()) { ?>
-<meta name='title' content='<?php echo v($options, $themeslug.'_home_title') ;?>'/> <?php
+	if ($options->get($themeslug.'_home_title') != '' AND is_front_page()) { ?>
+<meta name='title' content='<?php echo ($options->get($themeslug.'_home_title')) ;?>'/> <?php
 	}
-	if (v($options, $themeslug.'_home_description') != '' AND is_front_page()) { ?>
-<meta name='description' content='<?php echo v($options, $themeslug.'_home_description') ;?>' /> <?php
+	if ($options->get($themeslug.'_home_description') != '' AND is_front_page()) { ?>
+<meta name='description' content='<?php echo ($options->get($themeslug.'_home_description')) ;?>' /> <?php
 	}
-	if (v($options, $themeslug.'_home_keywords') != '' AND is_front_page()) { ?>
-<meta name='keywords' content=' <?php echo v($options, $themeslug.'_home_keywords') ; ?>' /> <?php
+	if ($options->get($themeslug.'_home_keywords') != '' AND is_front_page()) { ?>
+<meta name='keywords' content=' <?php echo ($options->get($themeslug.'_home_keywords')) ; ?>' /> <?php
 	}
 	
 	
@@ -109,9 +109,8 @@ function chimps_meta_tags() {
 */
 function chimps_title_tag() {
 	global $options, $themeslug, $post; 
-	$blogtitle = (v($options, $themeslug.'_home_title'));
+	$blogtitle = ($options->get($themeslug.'_home_title'));
 	$title = get_post_meta($post->ID, 'seo_title' , true);
-	// $title = get_post_meta($post->ID, 'seo_title' , true); BROKEN 
 
 	echo "<title>";
 	
@@ -164,11 +163,11 @@ function chimps_title_tag() {
 */
 function chimps_link_rel() {
 	global $themeslug, $options; //Call global variables
-	$favicon = $options['file2']; //Calls the favicon URL from the theme options ?>
+	$favicon = $options->get($themeslug.'_custom_favicon'); //Calls the favicon URL from the theme options ?>
 <link rel="shortcut icon" href="<?php echo stripslashes($favicon['url']); ?>" type="image/x-icon" />
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-<link href='http://fonts.googleapis.com/css?family=<?php echo v($options, $themeslug.'_font'); ?>' rel='stylesheet' type='text/css' /> <?php
+<link href='http://fonts.googleapis.com/css?family=<?php echo ($options->get($themeslug.'_font')); ?>' rel='stylesheet' type='text/css' /> <?php
 }
 
 /**
@@ -178,7 +177,7 @@ function chimps_link_rel() {
 */
 function chimps_header_left_content() {
 	global $themeslug, $options; //Call global variables
-	$logo = $options['file']; //Calls the logo URL from the theme options
+	$logo = $options->get($themeslug.'_custom_logo'); //Calls the logo URL from the theme options
 
 	if ($logo != '') { ?>
 	<div id="logo">
@@ -206,17 +205,17 @@ function chimps_header_contact_area() {
 	global $themeslug, $options; 
 	$contactdefault = apply_filters( 'chimps_header_contact_default_text', 'Enter Contact Information Here' ); 
 	
-	if ($options[$themeslug.'_header_contact'] == '' ) {
+	if ($options->get($themeslug.'_header_contact') == '' ) {
 		echo "<div id='header_contact'>";
 			printf( __( $contactdefault, 'core' )); 
 		echo "</div>";
 	}
-	if ($options[$themeslug.'_header_contact'] != 'hide' ) {
+	if ($options->get($themeslug.'_header_contact') != 'hide' ) {
 		echo "<div id='header_contact1'>";
-		echo stripslashes (v($options, $themeslug.'_header_contact')); 
+		echo stripslashes ($options->get($themeslug.'_header_contact')); 
 		echo "</div>";
 	}	
-	if ($options[$themeslug.'_header_contact'] == 'hide' ) {
+	if ($options->get($themeslug.'_header_contact') == 'hide' ) {
 		echo "<div style ='height: 10%;'>&nbsp;</div> ";
 	}
 }
@@ -229,26 +228,26 @@ function chimps_header_contact_area() {
 function chimps_header_social_icons() { 
 	global $options, $themeslug; //call globals
 	
-	$facebook		= v($options, $themeslug.'_facebook');
-	$hidefacebook   = v($options, $themeslug.'_hide_facebook');
-	$twitter		= v($options, $themeslug.'_twitter') ;
-	$hidetwitter    = v($options, $themeslug.'_hide_twitter');
-	$gplus		    = v($options, $themeslug.'_gplus') ;
-	$hidegplus      = v($options, $themeslug.'_hide_gplus');
-	$flickr		    = v($options, $themeslug.'_flickr') ;
-	$hideflickr     = v($options, $themeslug.'_hide_flickr');
-	$myspace	    = v($options, $themeslug.'_myspace') ;
-	$hidemyspace    = v($options, $themeslug.'_hide_myspace');
-	$linkedin		= v($options, $themeslug.'_linkedin') ;
-	$hidelinkedin   = v($options, $themeslug.'_hide_linkedin');
-	$youtube		= v($options, $themeslug.'_youtube');
-	$hideyoutube    = v($options, $themeslug.'_hide_youtube');
-	$googlemaps		= v($options, $themeslug.'_googlemaps');
-	$hidegooglemaps = v($options, $themeslug.'_hide_googlemaps');
-	$email			= v($options, $themeslug.'_email');
-	$hideemail      = v($options, $themeslug.'_hide_email');
-	$rss			= v($options, $themeslug.'_rsslink') ;
-	$hiderss   		= v($options, $themeslug.'_hide_rss');
+	$facebook		= $options->get($themeslug.'_facebook');
+	$hidefacebook   = $options->get($themeslug.'_hide_facebook');
+	$twitter		= $options->get($themeslug.'_twitter');;
+	$hidetwitter    = $options->get($themeslug.'_hide_twitter');;
+	$gplus		    = $options->get($themeslug.'_gplus');
+	$hidegplus      = $options->get($themeslug.'_hide_gplus');
+	$flickr		    = $options->get($themeslug.'_flickr');
+	$hideflickr     = $options->get($themeslug.'_hide_flickr');
+	$myspace	    = $options->get($themeslug.'_myspace');
+	$hidemyspace    = $options->get($themeslug.'_hide_myspace');
+	$linkedin		= $options->get($themeslug.'_linkedin');
+	$hidelinkedin   = $options->get($themeslug.'_hide_linkedin');
+	$youtube		= $options->get($themeslug.'_youtube');
+	$hideyoutube    = $options->get($themeslug.'_hide_youtube');
+	$googlemaps		= $options->get($themeslug.'_googlemaps');
+	$hidegooglemaps = $options->get($themeslug.'_hide_googlemaps');
+	$email			= $options->get($themeslug.'_email');
+	$hideemail      = $options->get($themeslug.'_hide_email');
+	$rss			= $options->get($themeslug.'_rsslink');
+	$hiderss   		= $options->get($themeslug.'_hide_rss');
 
 	echo "<br />";
 	echo "<div id='social'>"; ?>
@@ -327,7 +326,7 @@ function chimps_header_social_icons() {
 */
 function chimps_nav() {
 	global $options, $themeslug; //call globals
-	$homeimage		= v($options, 'file3');?>
+	$homeimage		= $options->get($themeslug.'_home_logo'); ?>
 	
 	<div id ="navbackground">
 		<div id="navcontainer">

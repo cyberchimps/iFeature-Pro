@@ -67,7 +67,7 @@ $options
 		->checkbox($themeslug."_hide_googlemaps", "Hide Google maps Icon")
 		->text($themeslug."_email", "Email Address")
 		->checkbox($themeslug."_hide_email", "Hide Email Icon")
-		->text($themeslug."_rss", "RSS Icon URL")
+		->text($themeslug."_rsslink", "RSS Icon URL")
 		->checkbox($themeslug."_hide_rss", "Hide RSS Icon")
 	->section("Footer")
 		->text($themeslug."_footer_text", "Footer Copyright Text")
