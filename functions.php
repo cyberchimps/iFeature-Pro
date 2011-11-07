@@ -14,7 +14,6 @@
 	$themename = 'ifeature';
 	$themenamefull = 'iFeature Pro';
 	$themeslug = 'if';
-	$options = get_option($themename);
 	$root = get_template_directory_uri(); 
 	
 /* Localization */

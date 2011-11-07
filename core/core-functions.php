@@ -20,11 +20,9 @@
 *
 * @since 1.0
 */
-function v($arr,$key, $default='') {
-    if(!isset($arr[$key])) return $default;
-    return $arr[$key];
+function v() {
+   
 }
-
 /**
 * Establishes 'core' as the textdomain, sets $locale and file path
 *

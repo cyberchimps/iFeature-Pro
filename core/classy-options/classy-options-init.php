@@ -2,10 +2,10 @@
 
 require( 'classy-options-framework/classy-options-framework.php');
 
-global $ifeature_options, $themeslug, $themenamefull;
-$ifeature_options = new ClassyOptions("ifeature", $themenamefull." Options");
+global $options, $themeslug, $themename, $themenamefull;
+$options = new ClassyOptions($themename, $themenamefull." Options");
 
-$ifeature_options
+$options
 	->section("General")
 		->upload($themeslug."_custom_logo", "Custom Logo")
 		->textarea($themeslug."_header_contact", "Header Contact Area")
