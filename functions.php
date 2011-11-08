@@ -70,7 +70,7 @@ add_theme_support('automatic-feed-links');
 	
 /* Add post-thumb support. */
 
-	
+function init_featured_image() {	
 if ( function_exists( 'add_theme_support' ) ) {
 
  global $themename, $themeslug, $options;
@@ -91,10 +91,13 @@ if ( function_exists( 'add_theme_support' ) ) {
 	else {
 		$featurewidth = $options->get($themeslug.'_featured_image_width'); 
 	} 
-	add_theme_support( 'post-thumbnails' ); 
+	 
 	set_post_thumbnail_size( $featureheight, $featurewidth, true );
 }	
-	
+}
+add_action( 'init', 'init_featured_image', 11);	
+
+add_theme_support( 'post-thumbnails' );
 // This theme allows users to set a custom background
 add_custom_background();
 
