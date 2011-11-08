@@ -48,14 +48,8 @@ h6 {
 
 /* Custom Font Styles */
 
-.widget-title {
-	font-size: 16px;
-	color: #3366CC;
-}
-
 .posts_title a{
 	text-decoration: none;
-	color: #3366CC;
 	font-weight: 400;
 }
 
@@ -82,7 +76,7 @@ ul {
 }
 
 li {
-  margin-left: 30px;
+
 }
 
 p,

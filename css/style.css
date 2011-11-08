@@ -72,8 +72,8 @@ a{outline:none}
 }
 
 .metabar {
-	background-color: #f4f4f4;
-	margin: -4px -15px -10px -15px;
+	background-color: #f8f8f8;
+	margin: -3px -15px -10px -15px;
 	border-top: 1px #e5e5e5 solid;
 	border-radius: 0px 0px 4px 4px;
 	padding: 0 10px 0 10px;
@@ -213,21 +213,15 @@ input[type=text] { width: 120px; }
 	border-radius: 4px;
 	-moz-border-radius: 4px;
 	box-shadow:inset 0 0 2px #ccc;
-	list-style-type: none;
-	background: #f8f8f8; /* Old browsers */
-	background: -moz-linear-gradient(top, #f8f8f8 0%, #f8f8f8 40%, #ececec 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(40%,#f8f8f8), color-stop(100%,#ececec)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #f8f8f8 0%,#f8f8f8 40%,#ececec 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #f8f8f8 0%,#f8f8f8 40%,#ececec 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, #f8f8f8 0%,#f8f8f8 40%,#ececec 100%); /* IE10+ */
-	background: linear-gradient(top, #f8f8f8 0%,#f8f8f8 40%,#ececec 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#ececec',GradientType=0 ); /* IE6-9 */
+	background: #fff; /* Old browsers */
 }
 
+.widget-title{font-size:18px;color:#444;text-shadow:none;padding:3px;border-radius:4px 4px 0 0;background:#f8f8f8;margin: 0 -10px 0 -10px;padding: 2px 15px 2px 15px;border-bottom: 1px solid #e5e5e5;}
+.widget-container ul{padding:10px}
 
 /* Blog and Post Styles */
 
-/*.post{padding-bottom:20px;border-bottom:#ccc 1px dashed;margin-bottom:10px}
+/*.post{padding-bottom:20px;border-bottom:#ccc 1px dashed;margin-bottom:10px}*/
 .entry-title{margin-bottom:2px}
 .single .entry-title{text-align:left;line-height:30px;margin-top:12px;margin-bottom:10px}
 .entry-title a{font-size:22px}
@@ -241,11 +235,11 @@ input[type=text] { width: 120px; }
 #respond input, #respond textarea{margin:0 5px 5px 0;overflow:auto}
 #respond textarea{width:628px;height:100px}
 .avatar{width:32px;height:32px;margin:0 5px 5px 0;float:left}
-/*
 
 /* WP Editor Styles */
 
-/*.sticky{background:#f7f7f7;padding:5px 15px 15px 15px;margin-top:18px}
+/*.sticky{background:#f7f7f7;padding:5px 15px 15px 15px;margin-top:18px}*/
+
 .bypostauthor{background:#f7f7f7;padding:4px}
 blockquote{background:#f7f7f7;padding:0 10px 0 10px;border:#bbb 4px double}
 .wp-caption{background:#f7f7f7;padding:15px 5px 1px 15px;margin:20px 0 20px 0}
@@ -255,17 +249,37 @@ blockquote{background:#f7f7f7;padding:0 10px 0 10px;border:#bbb 4px double}
 .alignright{text-align:center;margin:0 0 10px 10px;float:right}
 .aligncenter{clear:both;display:block;margin-left:auto;margin-right:auto}
 .size-thumbnail{margin:5px}
-/*
 
 /* Footer  */
 
+#footer {
+	background: #666 url(../images/new/ios-linen.jpg) repeat-x center top;
+}
+
+#footer_container {
+	margin: auto;
+	width: 980px;
+}
+
 .footer-widgets {
 	float: left;
-	width: 225px;
-	margin-top: 10px;
-	margin-left: 18px;
-	padding-bottom: 15px;
+	width: 200px;
+	margin-top: 15px;
+	margin-left: 15px;
+	margin-bottom: 15px;
+	-moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+	-webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+	box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+	color: #222;
+	padding: 0px 10px 15px 10px;
+	background: #fff; /* Old browsers */
 }
+
+.footer-widget-title {
+	font-size:18px;color:#444;text-shadow:none;padding:3px;border-radius:4px 4px 0 0;background:#f8f8f8;margin: 0 -10px 0 -10px;padding: 2px 15px 2px 15px;border-bottom: 1px solid #e5e5e5;
+}
+
+.footer-widgets ul{padding:10px}
 
 .footer-widgets li {
 	list-style-type: none;
@@ -275,3 +289,48 @@ blockquote{background:#f7f7f7;padding:0 10px 0 10px;border:#bbb 4px double}
 .footer-item ul {
 	padding-left: 15px;
 }
+
+#afterfooter {
+	width: 100%; 
+	background: black; 
+	color: white;
+
+}
+
+#afterfooterwrap {
+	width: 980px; 
+	height:45px; 
+	margin: auto;
+	padding-top: 10px;
+}
+
+#afterfootercopyright {
+	max-width: 200px;
+	float: right;
+	position: relative;
+}
+
+#afterfootermenu {
+	float:left;
+	position: absolute;
+	width: 400px;
+	height: 40px;
+	overflow: hidden;
+}
+
+#afterfootermenu a {
+	color: #F5F5F5;
+}
+
+#afterfootermenu ul {
+	margin: 0; 
+	padding: 0; 
+	list-style-type: none; 
+	list-style-image: none; 
+}
+
+#afterfootermenu li {
+	display: inline; 
+}
+
+.credit { height: 22px; width: 148px; z-index: 99;margin: auto;	}

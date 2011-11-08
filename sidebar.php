@@ -2,7 +2,7 @@
     
         <!-- All this stuff in here only shows up if you DON'T have any widgets active in this zone -->
     
-		<div class="widget-style">    
+		<div class="widget-container">    
 		<h2 class="widget-title">Welcome to iFeature Pro 2</h2>
     	<ul>
 						<li>Thank you for purchasing iFeature Pro 2.</li>
@@ -15,28 +15,28 @@
 					</ul>
     	</div>
 		
-		<div class="widget-style">    
+		<div class="widget-container">    
 		<h2 class="widget-title"><?php printf( __('Pages', 'ifeature' )); ?></h2>
 		<ul>
     	<?php wp_list_pages('title_li=' ); ?>
     	</ul>
     	</div>
     
-    	<div class="widget-style">
+		<div class="widget-container">    
     	<h2 class="widget-title"><?php printf( __( 'Archives', 'ifeature' )); ?></h2>
     	<ul>
     		<?php wp_get_archives('type=monthly'); ?>
     	</ul>
     	</div>
         
-        <div class="widget-style">
+		<div class="widget-container">    
        <h2 class="widget-title"><?php printf( __('Categories', 'ifeature' )); ?></h2>
         <ul>
     	   <?php wp_list_categories('show_count=1&title_li='); ?>
         </ul>
         </div>
         
-    	<div class="widget-style">
+		<div class="widget-container">    
     	<h2 class="widget-title"><?php printf( __('WordPress', 'ifeature' )); ?></h2>
     	<ul>
     		<?php wp_register(); ?>

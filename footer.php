@@ -25,9 +25,9 @@
 
 ?>
 		
-<div id="footer" class="container_12">
+<div id="footer">
 
-    <div class="grid_12" id="footer_wrap">
+    <div id="footer_container">
     	
     	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Footer") ) : ?>
 		
