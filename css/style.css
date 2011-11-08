@@ -273,6 +273,7 @@ blockquote{background:#f7f7f7;padding:0 10px 0 10px;border:#bbb 4px double}
 	color: #222;
 	padding: 0px 10px 15px 10px;
 	background: #fff; /* Old browsers */
+	min-height: 200px;
 }
 
 .footer-widget-title {
