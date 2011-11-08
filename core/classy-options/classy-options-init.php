@@ -5,6 +5,16 @@ require( 'classy-options-framework/classy-options-framework.php');
 global $options, $themeslug, $themename, $themenamefull;
 $options = new ClassyOptions($themename, $themenamefull." Options");
 
+$customterms2 = get_terms('slide_categories', 'hide_empty=0');
+
+	$customslider = array();
+                                    
+    	foreach($customterms2 as $customterm) {
+
+        	$customslider[$customterm->slug] = $customterm->name;
+
+        }
+
 $terms2 = get_terms('category', 'hide_empty=0');
 
 	$blogoptions = array();
@@ -25,7 +35,7 @@ $options
 		->upload($themeslug."_custom_favicon", "Custom Favicon")
 		->checkbox($themeslug."_disable_breadcrumbs", "Disable breadcrumbs")
 	->section("Design")
-		->select($themeslug."_font", "Choose a Font", array( 'options' => array("key1" => "Arial", "key2" => "Courier New", "key3" => "Georgia", "key4" => "Helvetica", "key5" => "Lucida Grande", "key6" => "Tahoma", "key7" => "Times New Roman", "key8" => "Verdana", "key9" => "Actor", "key10" => "Coda", "key11" => "Maven Pro", "key12" => "Metrophobic", "key13" => "News Cycle", "key14" => "Nobile", "key15" => "Tenor Sans", "key16" => "Quicksand", "key17" => "Ubuntu")))
+		->select($themeslug."_font", "Choose a Font", array( 'options' => array("Arial" => "Arial (default)", "Courier New" => "Courier New", "Georgia" => "Georgia", "Helvetica" => "Helvetica", "Lucida Grande" => "Lucida Grande", "Tahoma" => "Tahoma", "Times New Roman" => "Times New Roman", "Verdana" => "Verdana", "Actor" => "Actor", "Coda" => "Coda", "maven+pro" => "Maven Pro", "Metrophobic" => "Metrophobic", "news+cycle" => "News Cycle", "Nobile" => "Nobile", "tenor+sans" => "Tenor Sans", "Quicksand" => "Quicksand", "Ubuntu" => "Ubuntu")))
 		->text($themeslug."_custom_font", "Enter a Custom Font")
 		->select($themeslug."_color_scheme", "Select a Color Scheme", array( 'options' => array("key1" => "Blue", "key2" => "Black")))
 		->color($themeslug."_menu_link_color", "Menu Link Color")
@@ -50,6 +60,7 @@ $options
 		->select($themeslug."_slider_size", "Select the Slider Size", array( 'options' => array("key1" => "half", "key2" => "full")))
 		->select($themeslug."_slider_type", "Select the Slider Type", array( 'options' => array("key1" => "posts", "key2" => "custom")))
 		->select($themeslug.'_slider_posts_category', 'Select the post category for the slider', array( 'options' => $blogoptions ))
+		->select($themeslug.'_slider_custom_category', 'Select the custom slide category for the slider', array( 'options' => $customslider ))
 		->text($themeslug."_slider_posts_number", "Number of Featured Blog Posts")
 		->text($themeslug."_slider_height", "Slider height")
 		->text($themeslug."_slider_delay", "Slider Delay")
