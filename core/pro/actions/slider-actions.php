@@ -284,7 +284,7 @@ function chimps_blog_slider_content() {
 	    		$thumbnail = "$root/library/wt/wordthumb.php?src=$customthumb&a=c&h=30&w=50";
 	    	}
 
-	    	elseif ($customimage == '' && $size2 == "0" && $size != "0" && $worddisable != '1'){
+	    	elseif ($customimage == '' && $size2 == "key1" && $size != "key2" && $worddisable != '1'){
 	    		$image = "$root/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
 	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	    	}
@@ -303,9 +303,7 @@ function chimps_blog_slider_content() {
 	       		$image = "$root/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
 	       		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	       	}
-	       	
-	      
-
+	       
 	     	/* End image/thumb */	
 
 	     	/* Markup for slides */
