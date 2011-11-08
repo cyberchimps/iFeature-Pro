@@ -9,7 +9,7 @@ function chimps_init_options() {
 global $options, $themeslug, $themename, $themenamefull;
 $options = new ClassyOptions($themename, $themenamefull." Options");
 
-$customterms2 = get_terms('slide_categories', 'hide_empty=0');
+$customterms2 = get_terms('category', 'hide_empty=0');
 
 	$customslider = array();
                                     
@@ -39,7 +39,7 @@ $options
 		->upload($themeslug."_custom_favicon", "Custom Favicon")
 		->checkbox($themeslug."_disable_breadcrumbs", "Disable breadcrumbs")
 	->section("Design")
-		->select($themeslug."_font", "Choose a Font", array( 'options' => array("Arial" => "Arial (default)", "Courier New" => "Courier New", "Georgia" => "Georgia", "Helvetica" => "Helvetica", "Lucida Grande" => "Lucida Grande", "Tahoma" => "Tahoma", "Times New Roman" => "Times New Roman", "Verdana" => "Verdana", "Actor" => "Actor", "Coda" => "Coda", "maven+pro" => "Maven Pro", "Metrophobic" => "Metrophobic", "news+cycle" => "News Cycle", "Nobile" => "Nobile", "tenor+sans" => "Tenor Sans", "Quicksand" => "Quicksand", "Ubuntu" => "Ubuntu")))
+		->select($themeslug."_font", "Choose a Font", array( 'options' => array("Arial" => "Arial (default)", "Courier New" => "Courier New", "Georgia" => "Georgia", "Helvetica" => "Helvetica", "Lucida Grande" => "Lucida Grande", "Tahoma" => "Tahoma", "Times New Roman" => "Times New Roman", "Verdana" => "Verdana", "Actor" => "Actor", "Coda" => "Coda", "Maven+Pro" => "Maven Pro", "Metrophobic" => "Metrophobic", "News+Cycle" => "News Cycle", "Nobile" => "Nobile", "Tenor+Sans" => "Tenor Sans", "Quicksand" => "Quicksand", "Ubuntu" => "Ubuntu")))
 		->text($themeslug."_custom_font", "Enter a Custom Font")
 		->select($themeslug."_color_scheme", "Select a Color Scheme", array( 'options' => array("key1" => "Blue", "key2" => "Black")))
 		->color($themeslug."_menu_link_color", "Menu Link Color")
