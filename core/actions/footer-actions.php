@@ -21,9 +21,10 @@
 add_action ( 'chimps_footer', 'chimps_footer_widgets' );
 add_action ( 'chimps_footer', 'chimps_analytics' );
 
-//add_action ( 'chimps_afterfooter', 'chimps_afterfooter_copyright' );
+add_action ( 'chimps_afterfooter', 'chimps_afterfooter_copyright' );
 add_action ( 'chimps_afterfooter', 'chimps_afterfooter_menu' );
-//add_action ( 'chimps_afterfooter', 'chimps_afterfooter_credit' );
+add_action ( 'chimps_afterfooter', 'chimps_afterfooter_credit' );
+
 
 /**
 * Set the footer widgetized area.
@@ -79,7 +80,7 @@ function chimps_footer_widgets() {
 function chimps_analytics() {
 	global $options, $themeslug; //call globals
 	
-	echo stripslashes (v($options, $themeslug.'_ga_code'));
+	echo stripslashes ($options->get($themeslug.'_ga_code'));
 }
 
 /**
@@ -90,15 +91,15 @@ function chimps_analytics() {
 function chimps_afterfooter_copyright() {
 	global $options, $themeslug; //call globals
 	
-	if (v($options, $themeslug.'_footer_text') == "") {
+	if ($options->get($themeslug.'_footer_text') == "") {
 		$copyright =   'test';
 	}
 	else {
-		$copyright = v($options[$themeslug.'_footer_text']);
+		$copyright = $options->get($themeslug.'_footer_text');
 	}
 	
 	echo "<div id='afterfootercopyright'>";
-		return $copyright;
+		echo $copyright;
 	echo "</div>";
 }
 
@@ -120,9 +121,11 @@ function chimps_afterfooter_menu() {
 *
 * @since 1.0
 */
-function chimps_afterfooter_credit() {
+function chimps_afterfooter_credit() { ?>
 	
-	echo 'boner';
+	<div class="credit">
+<a href="http://cyberchimps.com/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/achimps.png" /></a>
+</div> <?
 }
 
 /**

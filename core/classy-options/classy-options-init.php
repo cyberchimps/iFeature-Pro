@@ -71,7 +71,7 @@ $options
 		->checkbox($themeslug."_hide_rss", "Hide RSS Icon")
 	->section("Footer")
 		->text($themeslug."_footer_text", "Footer Copyright Text")
-		->textarea($themeslug."_google_analytics", "Google Analytics Code")
+		->textarea($themeslug."_ga_code", "Google Analytics Code")
 		->checkbox($themeslug."_hide_link", "Hide CyberChimps Link")
 			
 ;
