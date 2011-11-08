@@ -1,4 +1,4 @@
- <?php
+<?php
 
 /* Call globals. */	
 
@@ -20,6 +20,8 @@
 ?>
 
 <div class="post_container">
+
+	<div style="">
 			
 	<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 
@@ -73,17 +75,19 @@
 				</div><!--end tags-->
 				
 
-				<div class="postmetadata">
-					<?php if ($share != '1'):?>
-						<?php get_template_part('share', 'index' ); ?>
-					<?php endif;?>
-					
+				<div class="metabar" class="grid_8">
+				
 				<div class="comments">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/new/Commentsgrey.png" height="21px" width="21px" />&nbsp
 					<?php if ($comments != '1'):?>
 						<?php comments_popup_link( __('No Comments &#187;', 'ifeature' ), __('1 Comment &#187;', 'ifeature' ), __('% Comments &#187;' , 'ifeature' )); ?>
 					<?php endif;?>
-				</div><!--end comments-->	
-
+				</div><!--end comments-->
+				
+				<?php if ($share != '1'):?>
+					<?php get_template_part('share', 'index' ); ?>
+				<?php endif;?>
+				
 				</div><!--end postmetadata-->
 							
 	</div><!--end post_class-->
