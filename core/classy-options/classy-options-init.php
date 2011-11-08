@@ -2,6 +2,10 @@
 
 require( 'classy-options-framework/classy-options-framework.php');
 
+add_action('init', 'chimps_init_options');
+
+function chimps_init_options() {
+
 global $options, $themeslug, $themename, $themenamefull;
 $options = new ClassyOptions($themename, $themenamefull." Options");
 
@@ -100,3 +104,4 @@ $options
 		->checkbox($themeslug."_hide_link", "Hide CyberChimps Link")
 			
 ;
+}
