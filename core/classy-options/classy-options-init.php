@@ -102,6 +102,7 @@ $options
 		->text($themeslug."_footer_text", "Footer Copyright Text")
 		->textarea($themeslug."_ga_code", "Google Analytics Code")
 		->checkbox($themeslug."_hide_link", "Hide CyberChimps Link")
-			
+	->section("Temp")
+		->images("image", "Select an image", array( 'options' => array( 'key1' => CLASSY_OPTIONS_FRAMEWORK_URL . "images/ico-delete.png", 'key2' => "http://www.google.co.in/images/nav_logo95.png" ) ) )
 ;
 }
