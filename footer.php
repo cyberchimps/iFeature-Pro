@@ -16,7 +16,7 @@
 	
 		
 <div id="footer">
-    <div id="footer_wrap">
+     <div id="footer_container">
     	
 	<!-- Begin @Core footer hook content-->
 		<?php chimps_footer(); ?>
