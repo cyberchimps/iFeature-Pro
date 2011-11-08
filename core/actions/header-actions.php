@@ -167,6 +167,9 @@ function chimps_link_rel() {
 <link rel="shortcut icon" href="<?php echo stripslashes($favicon); ?>" type="image/x-icon" />
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/style.css" type="text/css" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/960/reset.css" type="text/css" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/960/text.css" type="text/css" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/grid.css" type="text/css" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <link href='http://fonts.googleapis.com/css?family=<?php echo ($options->get($themeslug.'_font')); ?>' rel='stylesheet' type='text/css' /> <?php
 }
@@ -329,32 +332,26 @@ function chimps_nav() {
 	global $options, $themeslug; //call globals
 	$homeimage		= $options->get($themeslug.'_home_logo'); ?>
 	
-	<div id ="navbackground">
-		<div id="navcontainer">
+	<div class="container_12">
 
-		<?php if ($homeimage == '' ):?>
-			<div id="homebutton"><a href="<?php echo home_url(); ?>/"><img src="<?php echo get_template_directory_uri(); ?>/images/menu/home.png?>" alt="Home" /></a></div>
-		<?php endif;?>
-		<?php if ($homeimage != '' ):?>
-			<div id="homebutton"><a href="<?php echo home_url(); ?>/"><img src="<?php echo stripslashes($homeimage['url']) ;?>" alt="Home" /></a></div>
-		<?php endif;?>
-   
-   			 <div id="sfwrapper">
-       			 <?php wp_nav_menu( array(
-	    			'theme_location' => 'header-menu', // Setting up the location for the main-menu, Main Navigation.
-	    			'menu_class' => 'sf-menu', //Adding the class for dropdowns
-	    			'container_id' => 'navwrap', //Add CSS ID to the containter that wraps the menu.
-	    			'fallback_cb' => 'menu_fallback', //if wp_nav_menu is unavailable, WordPress displays wp_page_menu function, which displays the pages of your blog.
-	    			));
-    			?>
-    		</div><!--end sfwraooer-->
-    		
-			<div id="searchbar">
-				<?php get_search_form(); ?>
-			</div><!--end searchbar-->
-			
-		</div><!--end navbackground-->
-	</div> <!--end navcontainer--> <?php
+	<div class="grid_12" id="imenu">
+
+		<div id="nav" class="grid_9">		
+		    <?php wp_nav_menu( array(
+		    'theme_location' => 'header-menu', // Setting up the location for the main-menu, Main Navigation.
+		    'fallback_cb' => 'menu_fallback', //if wp_nav_menu is unavailable, WordPress displays wp_page_menu function, which displays the pages of your blog.
+		    )
+		);
+    	?>
+   		</div>
+		<div class="grid_1">
+			<?php get_search_form(); ?>
+		</div>
+		
+	</div>
+	
+</div>
+ <?php
 }
 
 /**

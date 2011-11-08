@@ -25,12 +25,12 @@
 
 add_action( 'chimps_index_after_entry', 'chimps_index_after_entry_sidebar' );
 
-add_action( 'chimps_index_before_entry', 'chimps_index_before_entry_slider' );
-add_action( 'chimps_index_before_entry', 'chimps_index_before_entry_sidebar' );
+//add_action( 'chimps_index_before_entry', 'chimps_index_before_entry_slider' );
+//add_action( 'chimps_index_before_entry', 'chimps_index_before_entry_sidebar' );
 
 add_action( 'chimps_index_loop', 'chimps_index_loop_content' );
 
-add_action( 'chimps_index_entry', 'chimps_index_content_slider' );
+//add_action( 'chimps_index_entry', 'chimps_index_content_slider' );
 
 
 /**
@@ -77,11 +77,15 @@ function chimps_index_after_entry_sidebar() {
 	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);?>
 	
 	<?php if ($sidebar == '' AND $blogsidebar == ''): ?>
+	<div id="sidebar" class="grid_4">
 		<?php get_sidebar(); ?>
+	</div>
 	<?php endif;?>
 	
 	<?php if ($sidebar == "1" OR $blogsidebar == 'key1' ): ?>
+	<div id="sidebar" class="grid_4">
 		<?php get_sidebar(); ?>
+	</div>
 	<?php endif;?>
 	<?php if ($sidebar == "2" OR $blogsidebar == 'key3' ): ?>
 		<?php get_sidebar('left'); ?>
@@ -104,11 +108,11 @@ function chimps_index_before_entry_sidebar() {
 	<?php endif;?>
 	
 	<?php if ($sidebar == "1" OR $blogsidebar == 'key1'): ?>
-		<div id="content_left">
+	
 	<?php endif;?>
 	
 	<?php if ($sidebar == '' AND $blogsidebar == ''): ?>
-		<div id="content_left">
+
 	<?php endif;?>
 	
 	<?php if ($sidebar == "3" OR $blogsidebar == 'key4' ): ?>
@@ -145,7 +149,7 @@ function chimps_index_loop_content($content) { ?>
 		
 		<?php ob_start(); ?>
 	
-		<div class="post_content">
+		<div class="post_container">
 			<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 			<div class ="postformats"><!--begin format icon-->
 				<img src="<?php echo get_template_directory_uri(); ?>/images/formats/<?php echo $format ;?>.png" height="50px" width="50px" />
@@ -172,8 +176,7 @@ function chimps_index_loop_content($content) { ?>
 						}
 					 ?>
 				</div><!--end entry-->
-			</div><!--end post_class-->	
-		</div><!--end post content--> <?php	
+			<?php	
 		
 		$content = ob_get_clean();
 		$content = apply_filters( 'chimps_post_formats_'.$format.'_content', $content );
