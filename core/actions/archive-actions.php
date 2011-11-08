@@ -63,34 +63,30 @@ function chimps_archive_page_title() {
 */
 function chimps_archive_loop()
 { ?>
-
-			
 			<div class="post_container">
-
+			
 				<div <?php post_class() ?>>
 				
 						<h2 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
 					
-						<?php get_template_part('meta', 'archive'); ?>
+						<?php chimps_post_byline(); ?>
 
 						<div class="entry">
 							<?php the_excerpt(); ?>
 						</div>
-				<div class="tags">
-								<?php the_tags('Tags: ', ', ', '<br />'); ?>
-							</div><!--end tags-->
-
-							<div class="postmetadata">
-										<?php get_template_part('share', 'index' ); ?>
-								<div class="comments">
-									<?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
-								</div><!--end comments-->	
-							</div><!--end postmetadata-->
+				
+				<!--Begin @Core post tags hook-->
+					<?php chimps_post_tags(); ?>
+				<!--End @Core post tags hook-->
+			
+				<!--Begin @Core post bar hook-->
+					<?php chimps_post_bar(); ?>
+				<!--End @Core post bar hook-->							
 							
 				</div><!--end post-->
+				
 			</div><!--end post_container-->
-
-		
+			
 <?php }
 
 

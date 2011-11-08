@@ -213,7 +213,7 @@ add_action( 'save_post', 'custom_taxonomy_default', 100, 2 );
 
 function nivoslider(){
 	 
-	$path =  get_template_directory_uri() ."/library/ns/";
+	$path =  get_template_directory_uri() ."/library/ns";
 
 	$script = "
 		
@@ -228,7 +228,7 @@ add_action('wp_head', 'nivoslider');
 
 function plusone(){
 	
-	$path =  get_template_directory_uri() ."/library/js/";
+	$path =  get_template_directory_uri() ."/library/js";
 
 	$script = "
 		

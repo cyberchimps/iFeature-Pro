@@ -32,8 +32,6 @@ add_action( 'chimps_index_loop', 'chimps_index_loop_content' );
 
 add_action( 'chimps_index_entry', 'chimps_index_content_slider' );
 
-add_action( 'chimps_meta', 'chimps_meta_byline' );
-
 
 /**
 * Index content slider
@@ -154,7 +152,7 @@ function chimps_index_loop_content($content) { ?>
 			</div><!--end format-icon-->
 				<h2 class="posts_title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
 					<!--Call @Core Meta hook-->
-			<?php chimps_meta(); ?>
+			<?php chimps_post_byline(); ?>
 				<?php
 				if ( has_post_thumbnail()) {
  		 			echo '<div class="featured-image">';

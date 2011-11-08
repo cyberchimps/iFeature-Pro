@@ -5,6 +5,19 @@ require( 'classy-options-framework/classy-options-framework.php');
 global $options, $themeslug, $themename, $themenamefull;
 $options = new ClassyOptions($themename, $themenamefull." Options");
 
+$terms2 = get_terms('category', 'hide_empty=0');
+
+	$blogoptions = array();
+                                    
+	$blogoptions['all'] = "All";
+
+    	foreach($terms2 as $term) {
+
+        	$blogoptions[$term->slug] = $term->name;
+
+        }
+
+
 $options
 	->section("General")
 		->upload($themeslug."_custom_logo", "Custom Logo")
@@ -36,6 +49,7 @@ $options
 		->checkbox($themeslug."_hide_slider_blog", "Hide Index Slider")
 		->select($themeslug."_slider_size", "Select the Slider Size", array( 'options' => array("key1" => "half", "key2" => "full")))
 		->select($themeslug."_slider_type", "Select the Slider Type", array( 'options' => array("key1" => "posts", "key2" => "custom")))
+		->select($themeslug.'_slider_posts_category', 'Select the post category for the slider', array( 'options' => $blogoptions ))
 		->text($themeslug."_slider_posts_number", "Number of Featured Blog Posts")
 		->text($themeslug."_slider_height", "Slider height")
 		->text($themeslug."_slider_delay", "Slider Delay")
