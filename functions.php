@@ -11,6 +11,7 @@
 
 /* Define global variables. */	
 
+
 	$themename = 'ifeature';
 	$themenamefull = 'iFeature Pro';
 	$themeslug = 'if';
@@ -72,26 +73,26 @@ add_theme_support('automatic-feed-links');
 	
 if ( function_exists( 'add_theme_support' ) ) {
 
-	global $themename, $themeslug, $options;
+	/* global $themename, $themeslug, $options;
 	
-		if($options[$themeslug.'_featured_image_height'] == "") {
+		if ($options->get($themeslug.'_featured_image_height') == '') {
 			$featureheight = '100';
 	}		
 	
 	else {
-		$featureheight = $options[$themeslug.'_featured_image_height']; 
+		$featureheight = $options->get($themeslug.'_featured_image_height'); 
 		
 	}
 	
-		if ($options[$themeslug.'_featured_image_width'] == "") {
+		if ($options->get($themeslug.'_featured_image_width') == "") {
 			$featurewidth = '100';
 	}		
 	
 	else {
-		$featurewidth = $options[$themeslug.'_featured_image_width']; 
-	}
+		$featurewidth = $options->get($themeslug.'_featured_image_width'); 
+	} */
 	add_theme_support( 'post-thumbnails' ); 
-	set_post_thumbnail_size( $featureheight, $featurewidth, true );
+	//set_post_thumbnail_size( $featureheight, $featurewidth, true );
 }	
 	
 // This theme allows users to set a custom background
