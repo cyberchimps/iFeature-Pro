@@ -9,7 +9,7 @@ function chimps_init_options() {
 global $options, $themeslug, $themename, $themenamefull;
 $options = new ClassyOptions($themename, $themenamefull." Options");
 
-$customterms2 = get_terms('category', 'hide_empty=0');
+$customterms2 = get_terms('slide_categories', 'hide_empty=0');
 
 	$customslider = array();
                                     

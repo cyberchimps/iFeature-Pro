@@ -73,7 +73,7 @@ add_theme_support('automatic-feed-links');
 	
 if ( function_exists( 'add_theme_support' ) ) {
 
-	/* global $themename, $themeslug, $options;
+ global $themename, $themeslug, $options;
 	
 		if ($options->get($themeslug.'_featured_image_height') == '') {
 			$featureheight = '100';
@@ -90,9 +90,9 @@ if ( function_exists( 'add_theme_support' ) ) {
 	
 	else {
 		$featurewidth = $options->get($themeslug.'_featured_image_width'); 
-	} */
+	} 
 	add_theme_support( 'post-thumbnails' ); 
-	//set_post_thumbnail_size( $featureheight, $featurewidth, true );
+	set_post_thumbnail_size( $featureheight, $featurewidth, true );
 }	
 	
 // This theme allows users to set a custom background
