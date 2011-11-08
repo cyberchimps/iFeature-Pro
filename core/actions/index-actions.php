@@ -147,7 +147,7 @@ function chimps_index_loop_content($content) { ?>
 	
 		<div class="post_content">
 			<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
-			<div class ="format-icon"><!--begin format icon-->
+			<div class ="postformats"><!--begin format icon-->
 				<img src="<?php echo get_template_directory_uri(); ?>/images/formats/<?php echo $format ;?>.png" height="50px" width="50px" />
 			</div><!--end format-icon-->
 				<h2 class="posts_title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
