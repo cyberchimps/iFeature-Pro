@@ -88,7 +88,7 @@
 					<?php get_template_part('share', 'index' ); ?>
 				<?php endif;?>
 				
-				</div><!--end postmetadata-->
+				</div><!--end metabar-->
 							
 	</div><!--end post_class-->
 				
