@@ -15,6 +15,7 @@ function chimps_page_section_content() {
 	$twitterbar = get_post_meta($post->ID, 'enable_twitter_bar' , true);
 	$enableboxes = get_post_meta($post->ID, 'enable_box_section' , true);
 	$pagecontent = get_post_meta($post->ID, 'hide_page_content' , true);
+	$test = get_post_meta($post->ID, 'page_section_order' , true);
 
 ?>
 
@@ -68,7 +69,17 @@ function chimps_page_section_content() {
 
 						<?php the_content(); ?>
 						
-
+						<?php if (preg_match("/page_slider/", $test )) {
+						
+							echo "success";
+						}
+						
+							else {
+							
+							echo "failure";
+							
+							}
+						?>
 					</div><!--end entry-->
 					<div style=clear:both;></div>
 					<?php wp_link_pages(array('before' => 'Pages: ', 'next_or_number' => 'number')); ?>
