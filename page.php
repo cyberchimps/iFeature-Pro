@@ -40,7 +40,7 @@ if ($sidebar == "1" OR $sidebar == "2") {
 
 ?>
 
-<div id="content_wrap">
+<div class="container_12">
 
 
 
