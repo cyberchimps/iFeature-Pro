@@ -103,14 +103,11 @@ add_editor_style();
 
 // Load jQuery
 if ( !is_admin() ) {
-  function ifeature_frontend_scripts()
-  {
-	   wp_deregister_script('jquery');
-	   wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"), false);
+ 
 	   wp_enqueue_script('jquery');
   }
-  add_action('wp_enqueue_scripts', 'ifeature_frontend_scripts');
-}
+
+
 
 /**
 * Attach CSS3PIE behavior to elements
