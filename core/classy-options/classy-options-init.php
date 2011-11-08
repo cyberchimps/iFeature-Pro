@@ -44,7 +44,7 @@ $options
 		->select($themeslug."_slider_nav", "Select the Slider Navigation", array( 'options' => array("key1" => "Dots", "key2" => "Thumbnails", "key3" => "none")))
 		->checkbox($themeslug."_hide_slider_arrows", "Disable Slider Navigation")
 		->checkbox($themeslug."_disable_nav_autohide", "Disable Slider Navigation Auto-Hide")
-		->checkbox($themeslug."_disable_wordthumb", "Disable WordThumb Image Resizing")
+		->checkbox($themeslug."_enable_wordthumb", "Enable WordThumb Image Resizing")
 		->textarea($themeslug."_home_description", "Home Description")
 		->textarea($themeslug."_home_keywords", "Home Keywords")
 		->text($themeslug."_home_title", "Optional Home Title")

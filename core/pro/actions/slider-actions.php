@@ -264,42 +264,42 @@ function chimps_blog_slider_content() {
 
 	    	  	/* Controls slide image and thumbnails */
 
-	    	if ($customimage != '' && $customthumb == '' && $wordenable != '1'){
+	    	if ($customimage != '' && $customthumb == '' && $wordenable == '1'){
 	    		$image = $customsized;
 	    		$thumbnail = "$root/library/wt/wordthumb.php?src=$customimage&a=c&h=30&w=50";
 	    	}
 	    	
-	    	elseif ($customimage != '' && $wordenable == '1'){
+	    	elseif ($customimage != '' && $wordenable != '1'){
 	    		$image = $customimage;
 	    		$thumbnail = $customthumb;
 	    	}
 	    	
-	    	elseif ($customimage == '' && $wordenable == '1'){
+	    	elseif ($customimage == '' && $wordenable != '1'){
 	    		$image = "$root/images/pro/ifeatureprolarge.jpg";
 	    		$thumbnail = $customthumb;
 	    	}
 	    	
-	    	elseif ($customimage != '' && $customthumb != '' && $wordenable != '1' ){
+	    	elseif ($customimage != '' && $customthumb != '' && $wordenable == '1' ){
 	    		$image = $customsized;
 	    		$thumbnail = "$root/library/wt/wordthumb.php?src=$customthumb&a=c&h=30&w=50";
 	    	}
 
-	    	elseif ($customimage == '' && $size2 == "key1" && $size != "key2" && $wordenable != '1'){
+	    	elseif ($customimage == '' && $size2 == "key1" && $size != "key2" && $wordenable == '1'){
 	    		$image = "$root/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
 	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	    	}
 
-	    	elseif ($customimage == '' && $size2 == '4' && $size != "0" && $wordenable != '1'){
+	    	elseif ($customimage == '' && $size2 == '4' && $size != "0" && $wordenable == '1'){
 	    		$image = "$root/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
 	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	    	}
 
-	    	elseif ($customimage == '' && $size2 == "1" && $size != "0" && $wordenable != '1' OR $customimage == '' && $size2 == "2" && $size != "0" && $wordenable != '1'){
+	    	elseif ($customimage == '' && $size2 == "1" && $size != "0" && $wordenable == '1' OR $customimage == '' && $size2 == "2" && $size != "0" && $wordenable == '1'){
 	    		$image = "$root/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro2-480.jpg&a=c&h=$height&w=480";
 	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	    	}
 
-	   		elseif ($wordenable != '1') {
+	   		elseif ($wordenable == '1') {
 	       		$image = "$root/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
 	       		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	       	}
