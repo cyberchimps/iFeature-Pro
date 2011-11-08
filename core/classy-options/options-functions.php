@@ -156,7 +156,7 @@ function add_sitetitle_color() {
 	global $themename, $themeslug, $options;
 
 	if ($options->get($themeslug.'_sitetitle_color') == "") {
-		$sitetitle = '717171';
+		$sitetitle = '#717171';
 	}
 	
 	else {
@@ -164,7 +164,7 @@ function add_sitetitle_color() {
 	}		
 	
 		echo '<style type="text/css">';
-		echo ".sitename a {color: #$sitetitle;}";
+		echo ".sitename a {color: $sitetitle;}";
 		echo '</style>';
 		
 }
@@ -177,7 +177,7 @@ function add_link_color() {
 	global $themename, $themeslug, $options;
 
 	if (!$options->get($themeslug.'_link_color')) {
-		$link = '717171';
+		$link = '#717171';
 	}
 
 	else { 
@@ -185,7 +185,7 @@ function add_link_color() {
 	}				
 	
 		echo '<style type="text/css">';
-		echo "a {color: #$link;}";
+		echo "a {color: $link;}";
 		echo '</style>';
 		
 }
@@ -199,7 +199,7 @@ function add_menulink_color() {
 	global $themename, $themeslug, $options;
 
 	if (!$options->get($themeslug.'_menulink_color')) {
-		$sitelink = 'FFFFFF';
+		$sitelink = '#FFFFFF';
 	}
 	
 	else{ 
@@ -207,7 +207,7 @@ function add_menulink_color() {
 	}	
 		
 		echo '<style type="text/css">';
-		echo ".sf-menu a {color: #$sitelink;}";
+		echo ".sf-menu a {color: $sitelink;}";
 		echo '</style>';
 }
 add_action( 'wp_head', 'add_menulink_color');
@@ -219,7 +219,7 @@ function add_tagline_color() {
 	global $themename, $themeslug, $options;
 
 	if (!$options->get($themeslug.'_tagline_color')) {
-		$tagline = '000';
+		$tagline = '#000';
 	}
 	
 	else { 
@@ -227,7 +227,7 @@ function add_tagline_color() {
 	}		
 		
 		echo '<style type="text/css">';
-		echo "#description {color: #$tagline;}";
+		echo "#description {color: $tagline;}";
 		echo '</style>';
 
 }
@@ -240,14 +240,14 @@ function add_posttitle_color() {
 	global $themename, $themeslug, $options;
 
 	if (!$options->get($themeslug.'_posttitle_color')) {
-		$posttitle = '717171';
+		$posttitle = '#717171';
 	}
 	else {
 		$posttitle = $options->get($themeslug.'_posttitle_color'); 
 	}		
 		
 		echo '<style type="text/css">';
-		echo ".posts_title a {color: #$posttitle;}";
+		echo ".posts_title a {color: $posttitle;}";
 		echo '</style>';
 
 }
@@ -293,13 +293,13 @@ function add_footer_color() {
 
 	global $themename, $themeslug, $options;
 
-	if ($options->get($themeslug.'_footer_color') != "222222" ) {
+	if ($options->get($themeslug.'_footer_color') != "#222222" ) {
 	
 		$footercolor = $options->get($themeslug.'_footer_color'); 
 	
 	
 		echo '<style type="text/css">';
-		echo "#footer {background: #$footercolor;}";
+		echo "#footer {background: $footercolor;}";
 		echo '</style>';
 	}
 }

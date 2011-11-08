@@ -42,7 +42,8 @@ function chimps_comments_password_required() {
 *
 * @since 1.0
 */
-function chimps_comments_loop() { ?>
+function chimps_comments_loop() { 
+	global $post; ?>
 <?php if ( have_comments() ) : ?>
 	<br />
 	<h2 id="comments"><?php comments_number( __('No Responses', 'core' ), __( 'One Response', 'core' ), __('% Responses', 'core' ));?></h2>

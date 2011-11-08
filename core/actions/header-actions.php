@@ -164,7 +164,7 @@ function chimps_title_tag() {
 function chimps_link_rel() {
 	global $themeslug, $options; //Call global variables
 	$favicon = $options->get($themeslug.'_custom_favicon'); //Calls the favicon URL from the theme options ?>
-<link rel="shortcut icon" href="<?php echo stripslashes($favicon['url']); ?>" type="image/x-icon" />
+<link rel="shortcut icon" href="<?php echo stripslashes($favicon); ?>" type="image/x-icon" />
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <link href='http://fonts.googleapis.com/css?family=<?php echo ($options->get($themeslug.'_font')); ?>' rel='stylesheet' type='text/css' /> <?php
