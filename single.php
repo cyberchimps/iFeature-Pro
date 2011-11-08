@@ -8,16 +8,7 @@
 	Copyright (C) 2011 CyberChimps
 */
 
-/* Call globals. */	
 
-	global $themename, $themeslug, $options;
-
-/* End globals. */	
-
-/* Define variables. */	
-
-	$showfblike	= $options[$themeslug.'_show_fb_like'];
-	$showgplus		= $options[$themeslug.'_show_gplus'];
 
 /* End variable definition. */	
 

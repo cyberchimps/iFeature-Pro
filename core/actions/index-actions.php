@@ -166,7 +166,7 @@ function chimps_index_loop_content($content) { ?>
 			?>	
 				<div class="entry" <?php if ( has_post_thumbnail()) { echo 'style="min-height: 115px;" '; }?>>
 					<?php 
-						if ($options->get($themeslug.'_show_excerts') == '1' ) {
+						if ($options->get($themeslug.'_show_excerpts') == '1' ) {
 						the_excerpt();
 						}
 						else {

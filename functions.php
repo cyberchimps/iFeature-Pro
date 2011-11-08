@@ -33,12 +33,12 @@ function new_excerpt_more($more) {
 
 	global $themename, $themeslug, $options;
     
-    	if ($options[$themeslug.'_excerpt_link_text'] == '') {
+    	if ($options->get($themeslug.'_excerpt_link_text') == '') {
     		$linktext = '(Read More...)';
    		}
     
     	else {
-    		$linktext = $options[$themeslug.'_excerpt_link_text'];
+    		$linktext = $options->get($themeslug.'_excerpt_link_text');
    		}
     
     global $post;
@@ -50,12 +50,12 @@ function new_excerpt_length($length) {
 
 	global $themename, $themeslug, $options;
 	
-		if ($options[$themeslug.'_excerpt_length'] == '') {
+		if ($options->get($themeslug.'_excerpt_length') == '') {
     		$length = '55';
     	}
     
     	else {
-    		$length = $options[$themeslug.'_excerpt_length'];
+    		$length = $options->get($themeslug.'_excerpt_length');
     	}
 
 	return $length;
