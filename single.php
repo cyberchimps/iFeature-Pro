@@ -24,17 +24,20 @@
 
 get_header(); ?>
 
-<div id="content_wrap">
+<div class="container_12">
 	
-	<div id="content_left">
-	
-		<div class="content_padding">
-		
+		<div id="content" class="grid_8">
+			
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			
 				<div class="post_container">
 				
+					<div class="postformats"><img src="<?php echo get_template_directory_uri(); ?>/images/postformats/StandardPostIcons.png" /></div>
+
+				
 				<?php if (function_exists('ifeature_breadcrumbs')) ifeature_breadcrumbs(); ?>
+				
+				
 				
 					<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 			
@@ -67,7 +70,7 @@ get_header(); ?>
 								<?php the_tags( __( 'Tags:', 'ifeature' ), ', ', '<br />'); ?>
 							</div><!--end tags-->
 
-							<div class="postmetadata">
+							<div class="metabar">
 									<?php get_template_part ('share', 'single' ); ?>
 								<div class="comments">
 									<?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
@@ -80,10 +83,11 @@ get_header(); ?>
 
 		<?php endwhile; endif; ?>
 				</div><!--end post_container-->
-		</div><!--end content_padding-->
 	</div> <!--end content_left-->
 	
-	<?php get_sidebar(); ?>
+		<div id="sidebar" class="grid_4">
+				<?php get_sidebar(); ?>
+		</div>
 		
 </div><!--end content_wrap-->
 <div style=clear:both;></div>

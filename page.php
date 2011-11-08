@@ -41,64 +41,15 @@ if ($sidebar == "1" OR $sidebar == "2") {
 
 
 
-<div id="content_wrap">
+<div class="container_12">
 
-<?php if (function_exists('ifeature_breadcrumbs')) ifeature_breadcrumbs(); ?>
-
-	<?php if ($enable == "on" && $size == "0"): ?>
-		<div id = "slider-wrapper">
-			<center><?php get_template_part('nivoslider', 'page' ); ?> </center>
-		</div>
-
-	<?php endif;?>
+	<?php if ($pagecontent != "on"): ?>
+			<div id="content" class="grid_8">
 	
-	<?php if ($callout == "on"): ?>
-	
-			<?php include (TEMPLATEPATH . '/pro/callout.php' ); ?> 
-			
-	<?php endif;?>
-	
-	<?php if ($twitterbar == "on"): ?>
-	
-			<?php include (TEMPLATEPATH . '/pro/twitter.php' ); ?> 
-	
-	<?php endif;?>
-	
-	<?php if ($sidebar == "4"): ?>
-		<div id="content_fullwidth">
-	<?php endif;?>
-
-	
-	<?php if ($sidebar == "2" && $pagecontent == "on"): ?>
-		<div id="content_left">
-	<?php endif;?>
-	
-	<?php if ($sidebar == "0" OR $sidebar == ""): ?>
-		<div id="content_left">
-	<?php endif;?>
-	
-	<?php if ($sidebar == "2" && $pagecontent != "on"): ?>
-	<?php get_sidebar('left'); ?>
-	<?php get_sidebar('right'); ?>
-	<?php endif;?>
-	
-	<?php if ($sidebar == "1" && $pagecontent != "on" OR $sidebar == "2" && $pagecontent != "on"): ?>
-	<?php get_sidebar('right'); ?>
-	<div class="content_half">
-	<?php endif;?>
-	
-	<?php if ($enable == "on" && $size == "1"): ?>
-		<div id = "slider-wrapper">
-			<?php get_template_part('nivoslider', 'page' ); ?>
-		</div>
-	<?php endif;?>
-
-		<?php if ($pagecontent != "on"): ?>
-		<div class="content_padding">
-		
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		
 			<div class="post_container">
+						<?php if (function_exists('ifeature_breadcrumbs')) ifeature_breadcrumbs(); ?>
 			
 			
 			
@@ -129,23 +80,17 @@ if ($sidebar == "1" OR $sidebar == "2") {
 			<?php endwhile; endif; ?>
 			</div><!--end post_container-->
 				<?php endif;?>
-		</div><!--end content_padding-->
 		
 	</div><!--end content_left-->
 	
-	<?php if ($sidebar == "0" && $pagecontent != "on"  OR $sidebar == ""): ?>
-	<?php get_sidebar(); ?>
-	<?php endif;?>
-	<?php if ($sidebar == "1" && $pagecontent != "on"): ?>
-	<?php get_sidebar('left'); ?>
-	<?php endif;?>
+		<div id="sidebar" class="grid_4">
+				<?php get_sidebar(); ?>
+		</div>
 	
 	<?php if ($enableboxes == 'on' ):?>
 		<?php include (TEMPLATEPATH . '/pro/boxes.php' ); ?>
 	<?php endif;?>
 </div><!--end content_wrap-->
-
-
 
 <div style=clear:both;></div>
 <?php get_footer(); ?>

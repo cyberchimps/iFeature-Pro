@@ -46,7 +46,7 @@
     	</ul>
     	</div>
     	
-    	<div class="widget-style">
+    	<div class="widget-container">
     	<h2 class="widget-title"><?php printf( __('Subscribe', 'ifeature' )); ?></h2>
     	<ul>
     		<li><a href="<?php bloginfo('rss2_url'); ?>"><?php printf( __('Entries (RSS)', 'ifeature' )); ?></a></li>
