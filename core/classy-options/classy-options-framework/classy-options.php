@@ -26,6 +26,7 @@ class ClassyOptions {
 	function load_styles() {
 		wp_enqueue_style('admin-style', CLASSY_OPTIONS_FRAMEWORK_URL.'css/admin-style.css');
 		wp_enqueue_style('color-picker', CLASSY_OPTIONS_FRAMEWORK_URL.'css/colorpicker.css');
+		wp_enqueue_style('thickbox');
 	}
 
 	function load_scripts() {
