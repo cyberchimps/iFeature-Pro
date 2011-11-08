@@ -490,7 +490,7 @@ class ClassyOptions {
 	}
 
 	function images( $key, $label = "", $options = array() ) {
-		$this->add( array( 'id' => $key, 'type' => 'images', 'name' => $label ) );
+		$this->add( array( 'id' => $key, 'type' => 'images', 'name' => $label, 'options' => $options['options'] ) );
 		return $this;
 	}
 
