@@ -21,7 +21,7 @@
 
 <div class="post_container">
 
-	<div style="">
+	<div class="postformats"><img src="<?php echo get_template_directory_uri(); ?>/images/postformats/StandardPostIcons.png" /></div>
 			
 	<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 
