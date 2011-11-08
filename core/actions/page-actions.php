@@ -19,28 +19,6 @@ function chimps_page_section_content() {
 
 ?>
 
-<?php if ($sidebar == "4"): ?>
-		<div id="content_fullwidth">
-	<?php endif;?>
-
-	
-	<?php if ($sidebar == "2" && $pagecontent == "on"): ?>
-		<div id="content_left">
-	<?php endif;?>
-	
-	<?php if ($sidebar == "0" OR $sidebar == ""): ?>
-		<div id="content_left">
-	<?php endif;?>
-	
-	<?php if ($sidebar == "2" && $pagecontent != "on"): ?>
-	<?php get_sidebar('left'); ?>
-	<?php get_sidebar('right'); ?>
-	<?php endif;?>
-	
-	<?php if ($sidebar == "1" && $pagecontent != "on" OR $sidebar == "2" && $pagecontent != "on"): ?>
-	<?php get_sidebar('right'); ?>
-	<div class="content_half">
-	<?php endif;?>
 	
 	<?php if ($enable == "on" && $size == "1"): ?>
 		<div id = "slider-wrapper">
@@ -49,18 +27,15 @@ function chimps_page_section_content() {
 	<?php endif;?>
 
 		<?php if ($pagecontent != "on"): ?>
-		<div class="content_padding">
+		<div id="content" class="grid_8">
 		
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		
 			<div class="post_container">
 			
-			
-			
 				<div class="post" id="post-<?php the_ID(); ?>">
 				<?php if ($hidetitle == ""): ?>
 				
-			
 
 					<h2 class="posts_title"><?php the_title(); ?></h2>
 						<?php endif;?>
@@ -81,6 +56,7 @@ function chimps_page_section_content() {
 							}
 						?>
 					</div><!--end entry-->
+					
 					<div style=clear:both;></div>
 					<?php wp_link_pages(array('before' => 'Pages: ', 'next_or_number' => 'number')); ?>
 
@@ -94,12 +70,14 @@ function chimps_page_section_content() {
 			<?php endwhile; endif; ?>
 			</div><!--end post_container-->
 				<?php endif;?>
-		</div><!--end content_padding-->
+		
 		
 	</div><!--end content_left-->
 	
 	<?php if ($sidebar == "0" && $pagecontent != "on"  OR $sidebar == ""): ?>
+	<div id="sidebar" class="grid_4">
 	<?php get_sidebar(); ?>
+	</div>
 	<?php endif;?>
 	<?php if ($sidebar == "1" && $pagecontent != "on"): ?>
 	<?php get_sidebar('left'); ?>

@@ -53,7 +53,7 @@ if ($sidebar == "1" OR $sidebar == "2") {
 	}
 ?>
 
-</div><!--end content_wrap-->
+</div><!--end container_12-->
 
 
 
