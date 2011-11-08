@@ -46,21 +46,78 @@ function chimps_blog_slider_content() {
 	$navautohide = $options->get($themeslug.'_disable_nav_autohide');
 	$hidenav = $options->get($themeslug.'_hide_slider_arrows');
 	$wordenable = $options->get($themeslug.'_enable_wordthumb');
+	$slideranimation = $options->get($themeslug.'_slider_animation');
 
 	
 /* End define variables. */	
 
-/* Define slider animation variable */
+/* Define animation styles. */	
 
-	if ($options->get($themeslug.'_slider_animation') == '') {
-		$animation = 'random';	
+	if ($slideranimation == 'key2') {
+		$animation = 'sliceDown';
+	}
+	
+	elseif ($slideranimation == 'key3') {
+		$animation = 'sliceDownLeft' ;
 	}
 
+	elseif ($slideranimation == 'key4') {
+		$animation = 'sliceUp' ;
+	}
+
+	elseif ($slideranimation == 'key5') {
+		$animation = 'sliceUpLeft' ;
+	}
+
+	elseif ($slideranimation == 'key6') {
+		$animation = 'sliceUpDown' ;
+	}
+
+	elseif ($slideranimation == 'key7') {
+		$animation = 'sliceUpDownLeft' ;
+	}
+
+	elseif ($slideranimation == 'key8') {
+		$animation = 'fold' ;
+	}
+
+	elseif ($slideranimation == 'key9') {
+		$animation = 'fade' ;
+	}
+
+	elseif ($slideranimation == 'key10') {
+		$animation = 'slideInRight' ;
+	}
+
+	elseif ($slideranimation == 'key11') {
+		$animation = 'slideInLeft' ;
+	}
+
+	elseif ($slideranimation == 'key12') {
+		$animation = 'boxRandom' ;
+	}
+
+	elseif ($slideranimation == 'key13') {
+		$animation = 'boxRain' ;
+	}
+
+	elseif ($slideranimation == 'key14') {
+		$animation = 'boxRainReverse' ;
+	}
+
+	elseif ($slideranimation == 'key15') {
+		$animation = 'boxRainGrow' ;
+	}
+	
+	elseif ($slideranimation == 'key16') {
+		$animation = 'boxRainGrowReverse' ;
+	}
+	
 	else {
-		$animation = $options->get($themeslug.'_slider_animation');
+		$animation = 'random';
 	}
 
-/* End slider animation */		
+/* End animation styles. */		
 
 /* Slider navigation options */
 
@@ -411,7 +468,7 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 
 	$(window).load(function() {
     $('#slider').nivoSlider({
-        effect:'random', // Specify sets like: 'fold,fade,sliceDown'
+        effect: '$animation', // Specify sets like: 'fold,fade,sliceDown'
         slices:15, // For slice animations
         boxCols: 8, // For box animations
         boxRows: 4, // For box animations
@@ -788,42 +845,42 @@ function chimps_page_slider_content() { ?>
 
 	    	/* Controls slide image and thumbnails */
 
-	    	if ($customimage != '' && $customthumb == '' && $wordenable != 'on'){
+	    	if ($customimage != '' && $customthumb == '' && $wordenable == 'on'){
 	    		$image = $customsized;
 	    		$thumbnail = "$root/library/wt/wordthumb.php?src=$customimage&a=c&h=30&w=50";
 	    	}
 	    	
-	    	elseif ($customimage != '' && $wordenable == 'on'){
+	    	elseif ($customimage != '' && $wordenable != 'on'){
 	    		$image = $customimage;
 	    		$thumbnail = $customthumb;
 	    	}
 	    	
-	    	elseif ($customimage == '' && $wordenable == 'on'){
+	    	elseif ($customimage == '' && $wordenable != 'on'){
 	    		$image = "$root/images/pro/ifeatureprolarge.jpg";
 	    		$thumbnail = $customthumb;
 	    	}
 	    	
-	    	elseif ($customimage != '' && $customthumb != '' && $wordenable != 'on' ){
+	    	elseif ($customimage != '' && $customthumb != '' && $wordenable == 'on' ){
 	    		$image = $customsized;
 	    		$thumbnail = "$root/library/wt/wordthumb.php?src=$customthumb&a=c&h=30&w=50";
 	    	}
 
-	    	elseif ($customimage == '' && $size2 == "0" && $size != "0" && $wordenable != 'on'){
+	    	elseif ($customimage == '' && $size2 == "0" && $size != "0" && $wordenable == 'on'){
 	    		$image = "$root/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
 	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	    	}
 
-	    	elseif ($customimage == '' && $size2 == '4' && $size != "0" && $wordenable != 'on'){
+	    	elseif ($customimage == '' && $size2 == '4' && $size != "0" && $wordenable == 'on'){
 	    		$image = "$root/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
 	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	    	}
 
-	    	elseif ($customimage == '' && $size2 == "1" && $size != "0" && $wordenable != 'on' OR $customimage == '' && $size2 == "2" && $size != "0" && $wordenable != 'on'){
+	    	elseif ($customimage == '' && $size2 == "1" && $size != "0" && $wordenable == 'on' OR $customimage == '' && $size2 == "2" && $size != "0" && $wordenable == 'on'){
 	    		$image = "$root/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro2-480.jpg&a=c&h=$height&w=480";
 	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	    	}
 
-	   		elseif ($wordenable != 'on') {
+	   		elseif ($wordenable == 'on') {
 	       		$image = "$root/library/wt/wordthumb.php?src=$root/images/pro/ifeatureprolarge.jpg&a=c&h=$height&w=980";
 	       		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	       	}
