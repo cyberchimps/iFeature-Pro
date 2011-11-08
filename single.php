@@ -15,19 +15,15 @@
 
 get_header(); ?>
 
-<div id="content_wrap">
+<?php get_header(); ?>
+
+<div class="container_12">
+
+	<div id="main">
 	
-	<div id="content_wrap">
-		
-	<!--Begin @Core index before entry hook-->	
-	<?php chimps_index_before_entry(); ?>
-	<!--End @Core index before entry hook-->
+		<div id="content" class="grid_8">
 
-		<div class="content_padding">
-
-		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		
-			<div class="post_container">
+			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		
 				<!--Begin @Core index loop hook-->
 					<?php chimps_index_loop(); ?>
@@ -53,28 +49,31 @@ get_header(); ?>
 					<?php chimps_post_bar(); ?>
 				<!--End @Core post bar hook-->
 			
-			</div><!--end post_container-->
+				</div><!--end post_class-->	
+		</div><!--end post container--> 
 	
-		<?php endwhile; ?>
+			<?php endwhile; ?>
 		
-		<?php else : ?>
+			<?php else : ?>
 
-			<h2>Not Found</h2>
+				<h2>Not Found</h2>
 
-		<?php endif; ?>
-		
-			<!--Begin @Core pagination hook-->
+			<?php endif; ?>
+			
+				<!--Begin @Core pagination hook-->
 			<?php chimps_pagination(); ?>
 			<!--End @Core pagination loop hook-->
-			
-		</div> <!--end content_padding-->
-	</div> <!--end content_left/fullwidth-->
+		
+		</div><!--end content-->
 
 	<!--Begin @Core index after entry hook-->
 	<?php chimps_index_after_entry(); ?>
 	<!--End @Core index after entry hook-->
 
-</div><!--end content_wrap-->
+	</div><!--end main-->
+
+</div><!--end container_12-->
+
 <div style="clear:both;"></div>
 
 <?php get_footer(); ?>
