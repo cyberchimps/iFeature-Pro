@@ -177,7 +177,7 @@ function add_link_color() {
 	global $themename, $themeslug, $options;
 
 	if (!$options->get($themeslug.'_link_color')) {
-		$link = '#717171';
+		$link = '#0085CF';
 	}
 
 	else { 
@@ -240,7 +240,7 @@ function add_posttitle_color() {
 	global $themename, $themeslug, $options;
 
 	if (!$options->get($themeslug.'_posttitle_color')) {
-		$posttitle = '#717171';
+		$posttitle = '#0085CF';
 	}
 	else {
 		$posttitle = $options->get($themeslug.'_posttitle_color'); 
