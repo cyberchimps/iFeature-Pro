@@ -523,4 +523,25 @@ class ClassyOptions {
 		$this->add( array( 'id' => $key, 'type' => 'select', 'name' => $label, 'options' => $options['options'] ) );
 		return $this;
 	}
+
+	function remove_section( $name ) {
+		$started = false;
+		foreach($this->options as $k => $option) {
+			if( $started && $option['type'] == 'heading' ) {
+				$end_index = $k;
+				break;
+			}
+			if($option['type'] == 'heading' && $option['name'] == $name) {
+				$started = true;
+				$start_index = $k;
+			}
+
+		}
+		if(!isset($end_index) ) {
+			$end_index = count($this->options) - 1;
+		}
+
+		array_splice($this->options, $start_index, $end_index - $start_index );
+		return $this;
+	}
 }
