@@ -320,7 +320,8 @@ class ClassyOptions {
 			
 			// Uploader
 			case "upload":
-				$output .= optionsframework_medialibrary_uploader( $value['id'], $val, null ); // New AJAX Uploader using Media Library	
+				// $output .= optionsframework_medialibrary_uploader( $value['id'], $val, null ); // New AJAX Uploader using Media Library	
+				$output .= "<input type='file' id='{$value['id']} name='{$value['id']}>";
 			break;
 			
 			// Typography
