@@ -42,7 +42,7 @@ function chimps_index_content_slider() {
 		global $options, $themeslug; ?>
 		
 		<?php if ($options->get($themeslug.'_hide_slider_blog') != '1' && $options->get($themeslug.'_slider_size') != "key2"): ?>
-		<div id = "slider-wrapper">
+		<div id="slider-wrapper">
 			<?php chimps_blog_slider(); ?>
 		</div>
 	<?php endif;?> <?
@@ -58,7 +58,7 @@ function chimps_index_before_entry_slider() {
 		global $options, $themeslug; ?>
 		
 		<?php if ($options->get($themeslug.'_hide_slider_blog') != '1' && $options->get($themeslug.'_slider_size') == "key2"): ?>
-		<div id = "slider-wrapper">
+		<div id="slider-wrapper">
 			<?php chimps_blog_slider(); ?>
 		</div>
 	<?php endif;?> <?
@@ -149,7 +149,7 @@ function chimps_index_loop_content($content) { ?>
 		
 		<?php ob_start(); ?>
 	
-			<div class ="postformats"><!--begin format icon-->
+			<div class="postformats"><!--begin format icon-->
 				<img src="<?php echo get_template_directory_uri(); ?>/images/formats/<?php echo $format ;?>.png" />
 			</div><!--end format-icon-->
 				<h2 class="posts_title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
