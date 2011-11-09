@@ -39,9 +39,9 @@ function chimps_post_byline_content() {
 	global $options, $themeslug; //call globals  ?>
 	
 	<div class="meta">
-		<?php if ($options->get($themeslug.'_hide_author') != '1'):?><?php printf( __( 'Published by', 'core' )); ?> <?php the_author_posts_link(); ?> <?php endif;?> 
+		<?php if ($options->get($themeslug.'_hide_date') != '1'):?> <?php printf( __( 'Published on', 'core' )); ?> <a href="<?php the_permalink() ?>"><?php the_time('F jS, Y') ?></a><?php endif;?>
+		<?php if ($options->get($themeslug.'_hide_author') != '1'):?><?php printf( __( 'by', 'core' )); ?> <?php the_author_posts_link(); ?> <?php endif;?> 
 		<?php if ($options->get($themeslug.'_hide_categories') != '1'):?><?php printf( __( 'in', 'core' )); ?> <?php the_category(', ') ?> <?php endif;?>
-		<?php if ($options->get($themeslug.'_hide_date') != '1'):?> <?php printf( __( 'on', 'core' )); ?> <a href="<?php the_permalink() ?>"><?php the_time('F jS, Y') ?></a><?php endif;?>
 	</div> <?
 }
 

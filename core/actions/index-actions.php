@@ -148,8 +148,11 @@ function chimps_index_loop_content($content) { ?>
 	
 		
 		<?php ob_start(); ?>
-	
-			<div class="postformats"><!--begin format icon-->
+			
+			<div class="date"><!--begin date icon-->
+				<?php the_time('M j') ?>
+			</div><!--end format-icon-->
+			<div class="postformats"><!--begin date icon-->
 				<img src="<?php echo get_template_directory_uri(); ?>/images/formats/<?php echo $format ;?>.png" />
 			</div><!--end format-icon-->
 				<h2 class="posts_title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
