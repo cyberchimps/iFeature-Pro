@@ -24,6 +24,7 @@ a img{border:none}
 a{outline:none}
 
 /* Layout  */
+ 
 
 #head {
 	margin-top: 25px;
@@ -353,11 +354,30 @@ a img {border: none; }
 
 ul, ol { margin: 0 0 10px 0; }
 
-#crumbs {margin-bottom: 5px;}
+tr { }
 
-dt {font-weight: bold; margin-top: 10px;}
+th { padding-right: 30px; padding-bottom: 10px; }
 
-dd {margin-bottom: 15px; }
+td {
+border-top: 1px solid #DDD;
+padding: 6px 10px 6px 0;
+}
+
+table {border-bottom: 1px solid #DDD;}
+
+code, tt { }
+
+#crumbs {
+	margin-bottom: 5px;
+	margin-left: 5px;	
+}
+
+dt {font-weight: bold; margin-top: 5px; margin-bottom: 5px; margin-left: 26px; }
+
+dd {margin-bottom: 15px; margin-left: 26px; }
+
+pre {margin-left: 20px;}
+
 
 
 /* more post style  */
