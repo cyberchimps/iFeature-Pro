@@ -328,3 +328,7 @@
 	border-bottom-right-radius: 3px;
 	border-bottom-left-radius: 3px;
 }
+
+#of_container .subsection > h3 {
+  background: red;
+}
