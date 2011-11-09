@@ -338,7 +338,7 @@ class ClassyOptions {
 			case "upload":
 				// $output .= optionsframework_medialibrary_uploader( $value['id'], $val, null ); // New AJAX Uploader using Media Library	
 				if(isset($val['url'])) {
-					$output .= "Preview: " . "<img src='{$val['url']}'/>";
+					$output .= "Preview: " . "<img src='{$val['url']}'/><br/>";
 				}
 				$output .= " URL <input type='text' name='{$value['id']}_text' size='72' value='" . (isset($val['url']) ? $val['url'] : "") . "'/>";
 				$output .= " or upload File: <input type='file' id='{$value['id']}' name='{$value['id']}'>";
