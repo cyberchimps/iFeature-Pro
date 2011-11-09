@@ -13,7 +13,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /* Reset and Design Constant Styles */
 
 *, html, body{padding:0;border:0;margin:0;list-style:none}
-body, div, p, input, textarea{font-family:"Lucida Grande",Helvetica,Arial,Verdana,sans-serif;font-size:13px;color:#000}
+body, div, p, input, textarea{font-size:13px;color:#000}
 h1, h2, h3, h4, h5, h6{font-weight:normal;}
 p{margin:10px 0}
 a{color:#0085CF;text-decoration:none}
