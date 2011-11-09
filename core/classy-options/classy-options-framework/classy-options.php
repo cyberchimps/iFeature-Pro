@@ -72,7 +72,7 @@ class ClassyOptions {
 	<h2><?php esc_html_e( 'Theme Options' ); ?></h2>
 
 	<div id="of_container">
-		<form action="options.php" method="post">
+		<form action="options.php" method="post" enctype="multipart/form-data">
 			<?php settings_fields($this->id); ?>
 
 			<div id="header">
@@ -146,6 +146,22 @@ class ClassyOptions {
 				if ( 'multicheck' == $option['type'] && ! isset( $input[$id] ) ) {
 					foreach ( $option['options'] as $key => $value ) {
 						$input[$id][$key] = '0';
+					}
+				}
+
+				if ( 'upload' == $option['type'] ) {
+					if ($_FILES[$id]['name'] != '') {
+					  $overrides = array('test_form' => false); 
+					  $file = wp_handle_upload($_FILES[$id], $overrides);
+					  $clean[$id] = $file;
+					} 
+				   
+					elseif(isset($_POST["{$id}_text"]) && $_POST["{$id}_text"] != '') {
+						$input['file'] = array('url' => $_POST["{$id}_text"]);
+						$clean[$id] = array('url' => $_POST["{$id}_text"]);				    } 
+				    
+				    else {
+						$clean[$id] = null;
 					}
 				}
 
@@ -321,7 +337,10 @@ class ClassyOptions {
 			// Uploader
 			case "upload":
 				// $output .= optionsframework_medialibrary_uploader( $value['id'], $val, null ); // New AJAX Uploader using Media Library	
-				$output .= "<input type='file' id='{$value['id']} name='{$value['id']}>";
+				if(isset($val['url'])) {
+					$output .= "Preview: " . "<img src='{$val['url']}'/>";
+				}
+				$output .= "<input type='file' id='{$value['id']}' name='{$value['id']}'>";
 			break;
 			
 			// Typography

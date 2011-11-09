@@ -10,7 +10,7 @@ class ClassyOptionsSanitize {
 		add_filter( 'cof_background_position', array( __CLASS__, 'sanitize_background_position' ) );
 		add_filter( 'cof_background_repeat', array( __CLASS__, 'sanitize_background_repeat' ) );
 		add_filter( 'cof_sanitize_background', array( __CLASS__, 'sanitize_background' ) );
-		add_filter( 'cof_sanitize_upload', array( __CLASS__, 'sanitize_upload' ) );
+		// add_filter( 'cof_sanitize_upload', array( __CLASS__, 'sanitize_upload' ) );
 		add_filter( 'cof_sanitize_color', array( __CLASS__, 'sanitize_hex' ) );
 		add_filter( 'cof_sanitize_multicheck', array( __CLASS__, 'sanitize_multicheck' ), 10, 2 );
 		add_filter( 'cof_sanitize_checkbox', array( __CLASS__, 'sanitize_checkbox' ) );
@@ -53,6 +53,7 @@ class ClassyOptionsSanitize {
 
 	static function sanitize_upload( $input ) {
 		$output = '';
+		var_dump($_FILES);
 		$filetype = wp_check_filetype($input);
 		if ( $filetype["ext"] ) {
 			$output = $input;
