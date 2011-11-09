@@ -146,7 +146,7 @@ jQuery(document).ready(function($) {
 		 		
 	$('.subsection-items').hide();
 	$('.subsection > h3').click(function() {
-		$(this).siblings('div').slideToggle();
+		$(this).siblings('div').toggle();
 	});
 });	
 
