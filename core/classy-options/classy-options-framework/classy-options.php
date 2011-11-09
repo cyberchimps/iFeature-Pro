@@ -104,6 +104,15 @@ class ClassyOptions {
 
 <?php
 	}
+	function default_data() {
+		$ret = array();
+		foreach($this->options as $option) {
+			if(isset($option['id']) && isset($option['std'])) {
+				$ret[$option['id']] = $option['std'];
+			}
+		}
+		return $ret;
+	}
 	function validate_data( $input ) {
 
 		/*
