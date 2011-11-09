@@ -166,10 +166,11 @@ function chimps_link_rel() {
 	$favicon = $options->get($themeslug.'_custom_favicon'); //Calls the favicon URL from the theme options ?>
 <link rel="shortcut icon" href="<?php echo stripslashes($favicon); ?>" type="image/x-icon" />
 
-<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/style.css" type="text/css" />
+
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/960/reset.css" type="text/css" />
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/960/text.css" type="text/css" />
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/grid.css" type="text/css" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/style.css" type="text/css" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 <link href='http://fonts.googleapis.com/css?family=<?php echo ($options->get($themeslug.'_font')); ?>' rel='stylesheet' type='text/css' /> <?php
 }

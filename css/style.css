@@ -343,7 +343,7 @@ blockquote{background:#f7f7f7;padding:0 10px 0 10px;border:#bbb 4px double}
 
 .error { font-size: 28px; text-align: center; }
 
-p { margin: 0 0 10px 0; }
+p { margin: 5px 0 12px 0; line-height: 1.3em; clear: both;}
 
 
 
@@ -397,13 +397,20 @@ ol {
 	-moz-border-radius: 3px;
 }
 
+.entry {
+	padding-top: 2px;
+	margin-left: 1px;
+
+}
+
+.entry p {
+	clear: none;
+
 .alignleft,
 img.alignleft {
 	display: inline;
 	float: left;
-  	margin-right: 1.5em;
-  	margin-bottom: 5px;
-  	margin-top: 5px;
+  margin-right: 1.5em;
 }
 .alignright,
 img.alignright {
@@ -418,6 +425,7 @@ img.aligncenter {
 	margin-left: auto;
 	margin-right: auto;
 }
+
 
 img.size-full {
 	max-width: 640px;
