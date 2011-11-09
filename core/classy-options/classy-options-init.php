@@ -106,9 +106,5 @@ $options
 		->text($themeslug."_footer_text", "Footer Copyright Text")
 		->textarea($themeslug."_ga_code", "Google Analytics Code")
 		->checkbox($themeslug."_hide_link", "Hide CyberChimps Link")
-	->section("Temp")
-		->images("image", "Select an image", array( 'options' => array( 'key1' => "http://s3.envato.com/files/1182437/09-abstract-vector-background-preview-thumbnail.jpg", 'key2' => "http://s3.envato.com/files/1182437/09-abstract-vector-background-preview-thumbnail.jpg" ) ) )
-		->section(" -> Temp Child")
-			->checkbox($themeslug."_hide_link", "Hide CyberChimps Link")
 ;
 }
