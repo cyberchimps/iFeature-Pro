@@ -144,4 +144,9 @@ jQuery(document).ready(function($) {
 	$('.of-radio-img-img').show();
 	$('.of-radio-img-radio').hide();
 		 		
+	$('.subsection-items').hide();
+	$('.subsection > h3').click(function() {
+		$(this).siblings('div').slideToggle();
+	});
 });	
+

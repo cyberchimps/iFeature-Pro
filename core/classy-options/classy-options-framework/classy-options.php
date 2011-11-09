@@ -197,7 +197,7 @@ class ClassyOptions {
 			$checked = '';
 			
 			// Wrap all options
-			if ( ($value['type'] != "heading") && ($value['type'] != "info") ) {
+			if ( ($value['type'] != "heading") && ($value['type'] != "info" && $value['type'] != "subsection" && $value['type'] != "subsection_end") ) {
 
 				// Keep all ids lowercase with no spaces
 				$value['id'] = preg_replace('/\W/', '', strtolower($value['id']) );
@@ -223,7 +223,7 @@ class ClassyOptions {
 			}
 			
 			// If the option is already saved, ovveride $val
-			if ( ($value['type'] != 'heading') && ($value['type'] != 'info')) {
+			if ( ($value['type'] != "heading") && ($value['type'] != "info" && $value['type'] != "subsection" && $value['type'] != "subsection_end") ) {
 				if ( isset($settings[($value['id'])]) ) {
 						$val = $settings[($value['id'])];
 						// Striping slashes of non-array options
@@ -464,9 +464,17 @@ class ClassyOptions {
 				$menu .= '<li><a id="'.  esc_attr( $jquery_click_hook ) . '-tab" title="' . esc_attr( $value['name'] ) . '" href="' . esc_attr( '#'.  $jquery_click_hook ) . '">' . esc_html( $value['name'] ) . '</a></li>';
 				$output .= '<div class="group" id="' . esc_attr( $jquery_click_hook ) . '"><h2>' . esc_html( $value['name'] ) . '</h2>' . "\n";
 				break;
+
+			case "subsection":
+				$output .= "<div class='subsection'><h3>{$value['name']}</h3><div class='subsection-items'>";
+			break;
+
+			case "subsection_end":
+				$output .= "</div></div>";
+			break;
 			}
 
-			if ( ( $value['type'] != "heading" ) && ( $value['type'] != "info" ) ) {
+			if ( ($value['type'] != "heading") && ($value['type'] != "info" && $value['type'] != "subsection" && $value['type'] != "subsection_end") ) {
 				if ( $value['type'] != "checkbox" ) {
 					$output .= '<br/>';
 				}
@@ -487,6 +495,16 @@ class ClassyOptions {
 
 	function section($text) {
 		$this->add( array( 'type' => 'heading', 'name' => $text) );
+		return $this;
+	}
+
+	function subsection($text) {
+		$this->add( array( 'type' => 'subsection', 'name' => $text) );
+		return $this;
+	}
+
+	function subsection_end() {
+		$this->add( array( 'type' => 'subsection_end' ) );
 		return $this;
 	}
 
