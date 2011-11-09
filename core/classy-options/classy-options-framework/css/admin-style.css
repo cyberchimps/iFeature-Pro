@@ -2,6 +2,22 @@
 /* OptionsFramework Admin Styles */
 /*-------------------------------------------------------------------------------------------*/
 
+
+.js .checkbox{
+  display:none;
+}
+
+.toggle{
+   background:url("toggle.png") bottom left;
+    display:block;
+    width:70px;
+    height:22px;
+}
+
+.toggle.checked{
+  background-position:top left;
+}
+
 .updated {
 	width:770px;
 }
