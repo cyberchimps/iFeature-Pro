@@ -24,7 +24,6 @@ a img{border:none}
 a{outline:none}
 
 /* Layout  */
- 
 
 #head {
 	margin-top: 25px;
@@ -344,7 +343,7 @@ blockquote{background:#f7f7f7;padding:0 10px 0 10px;border:#bbb 4px double}
 
 .error { font-size: 28px; text-align: center; }
 
-p { margin: 5px 0 12px 0; line-height: 1.3em; clear: both;}
+p { margin: 0 0 10px 0; }
 
 
 
@@ -354,30 +353,11 @@ a img {border: none; }
 
 ul, ol { margin: 0 0 10px 0; }
 
-tr { }
+#crumbs {margin-bottom: 5px;}
 
-th { padding-right: 30px; padding-bottom: 10px; }
+dt {font-weight: bold; margin-top: 10px;}
 
-td {
-border-top: 1px solid #DDD;
-padding: 6px 10px 6px 0;
-}
-
-table {border-bottom: 1px solid #DDD;}
-
-code, tt { }
-
-#crumbs {
-	margin-bottom: 5px;
-	margin-left: 5px;	
-}
-
-dt {font-weight: bold; margin-top: 5px; margin-bottom: 5px; margin-left: 26px; }
-
-dd {margin-bottom: 15px; margin-left: 26px; }
-
-pre {margin-left: 20px;}
-
+dd {margin-bottom: 15px; }
 
 
 /* more post style  */
@@ -417,20 +397,13 @@ ol {
 	-moz-border-radius: 3px;
 }
 
-.entry {
-	padding-top: 2px;
-	margin-left: 1px;
-
-}
-
-.entry p {
-	clear: none;
-
 .alignleft,
 img.alignleft {
 	display: inline;
 	float: left;
-  margin-right: 1.5em;
+  	margin-right: 1.5em;
+  	margin-bottom: 5px;
+  	margin-top: 5px;
 }
 .alignright,
 img.alignright {
@@ -445,7 +418,6 @@ img.aligncenter {
 	margin-left: auto;
 	margin-right: auto;
 }
-
 
 img.size-full {
 	max-width: 640px;
