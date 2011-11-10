@@ -42,25 +42,16 @@ if ($sidebar == "1" OR $sidebar == "2") {
 
 <div class="container_12">
 
-	<!-- Begin @Core Callout hook -->
-		<?php chimps_callout_section(); ?> 
-	<!-- End @Core callout hook -->	
+<?php
+	foreach(explode(",", $page_section_order) as $key) {
+		$fn = 'chimps_' . $key;
+		if(function_exists($fn)) {
+			call_user_func_array($fn, array());
+		}
+	}
+?>
 	
-	<!-- Begin @Core Twitterbar hook -->
-		<?php chimps_twitterbar_section(); ?> 
-	<!-- End @Core Twitterbar hook -->	
-	
-	<!-- Begin @Core page section hook -->
-		<?php chimps_page_section(); ?> 
-	<!-- End @Core page section hook -->
-			
-	<!-- Begin @Core Box Section hook -->
-		<?php chimps_box_section(); ?> 
-	<!-- End @Core Box Section hook -->
-	
-	<!-- Begin @Core page_slider hook -->
-		<?php chimps_page_slider(); ?> 
-	<!-- End @Core page_slider hook -->
+
 
 
 </div>
