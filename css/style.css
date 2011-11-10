@@ -95,7 +95,7 @@ a{outline:none}
 }
 
 .metabar {
-	background-color: #f8f8f8;
+	background: #f8f8f8 url(../images/metabarbg.gif) repeat-x center top;
 	margin: -3px -15px -10px -15px;
 	border-top: 1px #e5e5e5 solid;
 	border-radius: 0px 0px 4px 4px;
