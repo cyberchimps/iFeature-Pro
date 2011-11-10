@@ -34,7 +34,7 @@ jQuery(document).ready(function($) {
          checkbox.removeAttr("checked");
 
        }else{
-         checkbox.attr("checked","true");
+         checkbox.attr("checked","checked");
        }
        $(this).toggleClass("checked");
 
@@ -50,6 +50,8 @@ jQuery(document).ready(function($) {
      e.preventDefault();
     });
 
+    // debug
+     $('.checkbox').toggle()
 	
 	// Fade out the save message
 	$('.fade').delay(1000).fadeOut(1000);
@@ -154,6 +156,14 @@ jQuery(document).ready(function($) {
       $('#section-if_custom_font').show();
     } else {
       $('#section-if_custom_font').hide();
+    }
+  }).change();
+  $("#if_show_excerpts").change(function() {
+    var toShow = $("#section-if_excerpt_link_text, #section-if_excerpt_length");
+    if($(this).is(':checked')) {
+      toShow.show();
+    } else {
+      toShow.hide();
     }
   }).change();
 });	
