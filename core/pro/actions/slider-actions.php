@@ -543,7 +543,7 @@ function chimps_page_slider_content() { ?>
 	$hidenav = get_post_meta($post->ID, 'hide_arrows' , true);
 	$wordenable = get_post_meta($post->ID, 'enable_wordthumb' , true);
 	
-	if ($enable == "on" && $size == "0") {
+
 	
 	echo "<div id='slider-wrapper'>";
 	
@@ -1018,7 +1018,7 @@ echo "</div>";
 }
 
 
-}
+
 
 /**
 * End

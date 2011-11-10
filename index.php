@@ -14,7 +14,7 @@
 
 <div class="container_12">
 
-	<div id="main">
+
 	
 		<div id="content" class="grid_8">
 		
@@ -73,7 +73,7 @@
 	<?php chimps_index_after_entry(); ?>
 	<!--End @Core index after entry hook-->
 
-	</div><!--end main-->
+	
 
 </div><!--end container_12-->
 
