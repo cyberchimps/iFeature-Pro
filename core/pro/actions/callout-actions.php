@@ -214,6 +214,8 @@ function chimps_callout_section_content() {
 
 }
 
+add_shortcode ('callout', 'chimps_callout_section_content' );
+
 /**
 * End
 */

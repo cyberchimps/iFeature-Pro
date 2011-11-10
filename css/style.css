@@ -884,27 +884,30 @@ ol.commentlist li.thread-odd { }
 /*=== Custom Slider Styles ===*/
 /*============================*/
 
-
 #slider-wrapper {
-
+	height: 380px;
     margin: auto;
     margin-bottom: 50px;
     -moz-box-shadow:0 0 5px #AAAAAA;
     -webkit-box-shadow:0 0 5px #AAAAAA;
     box-shadow:0 0 5px #AAAAAA;
-    border: 1px solid white;
+    height: 380px;
+    border: 1px solid;
+	border-top: 1px solid #CCC;
+	border-left: 1px solid #CCC;
+	border-right: 1px solid #BBB;
+	border-bottom: 1px solid #BBB;
+	border-radius: 0px 0px 4px 4px;
 }
 
 .nivo-controlNav {
 	position:absolute;
 	bottom:-40px; /* Put the nav below the slider */
-
-	
-
+}
 	
 /* Slider Thumbnail Nav Style */
 	
-.nivo-controlNav a {
+.nivo-controlNav a{
 	
 	z-index:9;
 	width:50px;
@@ -917,7 +920,6 @@ ol.commentlist li.thread-odd { }
 }
 
 
-}
 #slider .nivo-controlNav img {
 	display:inline; /* Unhide the thumbnails */
 	position:relative;
