@@ -18,16 +18,19 @@
 /**
 * Core header actions
 */
-add_action('chimps_after_head_tag', 'chimps_font');
-add_action('chimps_head_tag', 'chimps_html_attributes');
-add_action('chimps_head_tag', 'chimps_meta_tags');
-add_action('chimps_head_tag', 'chimps_link_rel');
-add_action('chimps_head_tag', 'chimps_title_tag');
-add_action('chimps_header_left', 'chimps_header_left_content');
-add_action('chimps_header_right', 'chimps_header_contact_area');
-add_action('chimps_header_right', 'chimps_header_social_icons');
-add_action('chimps_navigation', 'chimps_nav');
-add_action('chimps_404_content', 'chimps_404_content_handler');
+add_action( 'chimps_after_head_tag', 'chimps_font' );
+add_action( 'chimps_head_tag', 'chimps_html_attributes' );
+add_action( 'chimps_head_tag', 'chimps_meta_tags' );
+add_action( 'chimps_head_tag', 'chimps_link_rel' );
+add_action( 'chimps_head_tag', 'chimps_title_tag' );
+
+add_action( 'chimps_header_sitename', 'chimps_header_sitename_content');
+add_action( 'chimps_header_site_description', 'chimps_header_site_description_content' );
+add_action( 'chimps_header_contact_area', 'chimps_header_contact_area_content' );
+add_action( 'chimps_header_social_icons', 'chimps_header_social_icons_content' );
+
+add_action( 'chimps_navigation', 'chimps_nav' );
+add_action( 'chimps_404_content', 'chimps_404_content_handler' );
 
 /**
 * Establishes the theme font family.
@@ -97,10 +100,7 @@ function chimps_meta_tags() {
 	if ($keywords != '' AND !is_front_page()) {
 		echo "<meta name='keywords' content='$keywords'/>";
 	} 
-	
-
 }
-
 
 /**
 * Establishes the theme title tags.
@@ -176,29 +176,33 @@ function chimps_link_rel() {
 }
 
 /**
-* Header left content (sitename/description or logo)
+* Header left content (sitename or logo)
 *
 * @since 1.0
 */
-function chimps_header_left_content() {
+function chimps_header_sitename_content() {
 	global $themeslug, $options; //Call global variables
 	$logo = $options->get($themeslug.'_custom_logo'); //Calls the logo URL from the theme options
 
 	if ($logo != '') { ?>
 	<div id="logo">
 		<a href="<?php echo home_url(); ?>/"><img src="<?php echo stripslashes($logo['url']); ?>" alt="logo"></a>
-	</div><?php
+	</div> <?php
 	}
 						
 	if ($logo == '' ) { ?>
 	<div id="sitename">
 		<h1 class="sitename"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?> </a></h1>
-	</div>
+	</div> <?php
+	}						 
+}
+
+function chimps_header_site_description_content() {
+	global $themeslug, $options; ?>
 	
 	<div id="description">
 		<h1 class="description"><?php bloginfo('description'); ?></h1>
 	</div> <?php
-	}						 
 }
 
 /**
@@ -206,7 +210,7 @@ function chimps_header_left_content() {
 *
 * @since 1.0
 */
-function chimps_header_contact_area() { 
+function chimps_header_contact_area_content() { 
 	global $themeslug, $options; 
 	$contactdefault = apply_filters( 'chimps_header_contact_default_text', 'Enter Contact Information Here' ); 
 	
@@ -230,7 +234,7 @@ function chimps_header_contact_area() {
 *
 * @since 1.0
 */
-function chimps_header_social_icons() { 
+function chimps_header_social_icons_content() { 
 	global $options, $themeslug; //call globals
 	
 	$facebook		= $options->get($themeslug.'_facebook');

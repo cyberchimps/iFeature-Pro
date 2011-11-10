@@ -172,6 +172,22 @@ function chimps_after_header() {
 	do_action('chimps_after_header');
 }
 
+function chimps_header_sitename() {
+	do_action('chimps_header_sitename');
+}
+
+function chimps_header_site_description() {
+	do_action('chimps_header_site_description');
+}
+
+function chimps_header_contact_area() {
+	do_action('chimps_header_contact_area');
+}
+
+function chimps_header_social_icons() {
+	do_action('chimps_header_social_icons');
+}
+
 function chimps_header_left() 
 {
 	do_action('chimps_header_left');

@@ -38,18 +38,37 @@
 		
 			<div class="grid_6">
 				
-				<!-- Begin @Core header_left contact area hook -->
-						<?php chimps_header_left(); ?> 
-					<!-- End @Core header_left contact area hook -->
+				<!-- Begin @Core header sitename hook -->
+						<?php chimps_header_sitename(); ?> 
+				<!-- End @Core header sitename hook -->
+			</div>	
+			
+			<div class="grid_6" style="text-align:right;">
+					<!-- Begin @Core header contact area hook -->
+						<?php chimps_header_contact_area(); ?> 
+				<!-- End @Core header contact area hook -->
 					
 			</div>	
+		
+		</div>
+		
+		<div class='clear'>&nbsp;</div>
+		
+		<div class="container_12">
 				
-			<div class="grid_6" style="text-align:right;">
+			<div class="grid_6">
 			
-				<!-- Begin @Core header_right contact area hook -->
-					<?php chimps_header_right(); ?> 
-				<!-- End @Core header_right contact area hook -->	
-				<br />
+				<!-- Begin @Core header description hook -->
+						<?php chimps_header_site_description(); ?> 
+				<!-- End @Core header description hook -->
+			
+			</div>
+			
+			<div class="grid_6">
+			
+					<!-- Begin @Core header social icon hook -->
+						<?php chimps_header_social_icons(); ?> 
+				<!-- End @Core header contact social icon hook -->	
 				
 			</div>
 			
