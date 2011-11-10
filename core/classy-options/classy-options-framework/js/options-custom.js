@@ -166,5 +166,14 @@ jQuery(document).ready(function($) {
       toShow.hide();
     }
   }).change();
+
+  $("#if_hide_slider_blog").change(function() {
+    var toShow = $("#section-if_hide_slider_blog").siblings();
+    if($(this).is(':checked')) {
+      toShow.hide();
+    } else {
+      toShow.show();
+    }
+  }).change();
 });	
 
