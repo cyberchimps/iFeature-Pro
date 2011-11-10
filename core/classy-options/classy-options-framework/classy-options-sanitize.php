@@ -265,7 +265,8 @@ class ClassyOptionsSanitize {
 			'times'     => 'Times New Roman',
 			'tahoma'    => 'Tahoma, Geneva',
 			'palatino'  => 'Palatino',
-			'helvetica' => 'Helvetica*'
+			'helvetica' => 'Helvetica*',
+			'custom'    => 'Custom'
 		);
 		return apply_filters( 'cof_recognized_font_faces', $default );
 	}
