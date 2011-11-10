@@ -121,11 +121,16 @@ function chimps_afterfooter_menu() {
 *
 * @since 1.0
 */
-function chimps_afterfooter_credit() { ?>
+function chimps_afterfooter_credit() { 
+	global $options, $themeslug; //call globals
 	
-	<div class="credit">
-<a href="http://cyberchimps.com/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/achimps.png" /></a>
-</div> <?
+	if ($options->get($themeslug.'_hide_link') != "1") {?>
+		
+		<div class="credit">
+			<a href="http://cyberchimps.com/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/achimps.png" /></a>
+		</div> 
+	
+	<? }
 }
 
 /**
