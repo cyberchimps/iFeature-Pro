@@ -20,14 +20,12 @@ function chimps_page_section_content() {
 ?>
 <div class="container_12">
 	
-	<?php if ($enable == "on" && $size == "1"): ?>
-		<div id = "slider-wrapper">
-			<?php get_template_part('nivoslider', 'page' ); ?>
-		</div>
-	<?php endif;?>
+	
 
 		<?php if ($pagecontent != "on"): ?>
 		<div id="content" class="grid_8">
+		
+		<?php chimps_page_content_slider(); ?>
 		
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		

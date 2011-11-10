@@ -18,8 +18,13 @@
 /**
 * Extend slider actions
 */
-add_action ('chimps_page_slider', 'chimps_page_slider_content' );
+
+
+
 add_action ('chimps_blog_slider', 'chimps_blog_slider_content' );
+
+
+
 
 /**
 * Extend slider functions
@@ -47,6 +52,9 @@ function chimps_blog_slider_content() {
 	$hidenav = $options->get($themeslug.'_hide_slider_arrows');
 	$wordenable = $options->get($themeslug.'_enable_wordthumb');
 	$slideranimation = $options->get($themeslug.'_slider_animation');
+	
+
+   
 
 	
 /* End define variables. */	
@@ -542,7 +550,6 @@ function chimps_page_slider_content() { ?>
 	$navautohide = get_post_meta($post->ID, 'disable_autohide' , true);
 	$hidenav = get_post_meta($post->ID, 'hide_arrows' , true);
 	$wordenable = get_post_meta($post->ID, 'enable_wordthumb' , true);
-	
 
 	
 	echo "<div id='slider-wrapper'>";
@@ -933,7 +940,7 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 <!-- Apply slider CSS based on user settings -->
 
 	<style type="text/css" media="screen">
-		#slider-wrapper { width: <?php echo $csWidth ?>px; height: <?php echo $height ?>px; margin: auto; margin-bottom: 50px; margin-top: 50px;}
+		#slider-wrapper { width: <?php echo $csWidth ?>px; height: <?php echo $height ?>px; margin: auto; margin-bottom: 50px; }
 		#slider { width: <?php echo $csWidth ?>px; height: <?php echo $height ?>px; margin: auto;}
 	</style>
 
@@ -1015,6 +1022,8 @@ echo $out;
 /* END */ 
 
 echo "</div>";
+
+
 }
 
 

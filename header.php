@@ -81,7 +81,7 @@
 		<!-- Begin @Core navigation contact area hook -->
 			<?php chimps_navigation(); ?> 
 		<!-- End @Core navigation contact area hook -->
-				
+				<div class='clear'>&nbsp;</div>
 			</header>
 				
 <!-- Begin @Core after_header hook -->

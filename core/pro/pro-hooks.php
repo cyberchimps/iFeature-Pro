@@ -40,6 +40,9 @@ function chimps_blog_slider() {
 function chimps_page_slider() {
 	do_action ('chimps_page_slider');
 }
+function chimps_page_content_slider() {
+	do_action ('chimps_page_content_slider');
+}
 
 /** 
 * Twitterbar Section

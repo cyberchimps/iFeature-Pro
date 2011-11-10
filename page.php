@@ -25,6 +25,7 @@
 	$enableboxes = get_post_meta($post->ID, 'enable_box_section' , true);
 	$pagecontent = get_post_meta($post->ID, 'hide_page_content' , true);
 	$page_section_order = get_post_meta($post->ID, 'page_section_order' , true);
+	$test = get_post_meta($post->ID, 'page_section_order' , true);
 
 /* End define global variables. */
 
@@ -37,6 +38,21 @@ if ($sidebar == "1" OR $sidebar == "2") {
 		echo '</style>';
 		
 	}
+	
+
+
+if ($size == "0") {
+
+add_action ('chimps_page_slider', 'chimps_page_slider_content' );
+
+}
+
+if (preg_match("/page_slider/", $test ) && $size == "1" ) {
+
+add_action ('chimps_page_content_slider', 'chimps_page_slider_content' );
+
+}
+
 
 ?>
 
