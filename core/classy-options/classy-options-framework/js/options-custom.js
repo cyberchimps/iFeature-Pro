@@ -148,6 +148,5 @@ jQuery(document).ready(function($) {
 	$('.subsection > h3').click(function() {
 		$(this).siblings('div').fadeToggle();
 	});
-  $('.group .subsection:first .subsection-items').fadeToggle();
 });	
 
