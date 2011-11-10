@@ -64,7 +64,7 @@ $options
 		->subsection_end()->subsection("Slider")
 			->checkbox($themeslug."_hide_slider_blog", "Hide Index Slider")
 			->select($themeslug."_slider_size", "Select the Slider Size", array( 'options' => array("key1" => "half", "key2" => "full")))
-			->select($themeslug."_slider_type", "Select the Slider Type", array( 'options' => array("key1" => "posts", "key2" => "custom")))
+			->select($themeslug."_slider_type", "Select the Slider Type", array( 'options' => array("posts" => "posts", "custom" => "custom")))
 			->select($themeslug.'_slider_posts_category', 'Select the post category for the slider', array( 'options' => $blogoptions ))
 			->select($themeslug.'_slider_custom_category', 'Select the custom slide category for the slider', array( 'options' => $customslider ))
 			->text($themeslug."_slider_posts_number", "Number of Featured Blog Posts")

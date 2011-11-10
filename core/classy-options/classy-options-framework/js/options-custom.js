@@ -175,5 +175,15 @@ jQuery(document).ready(function($) {
       toShow.show();
     }
   }).change();
+  $("#if_slider_type").change(function(){
+    var val = $(this).val(),
+      post = $("#section-if_slider_posts_category"),
+      custom = $("#section-if_slider_custom_category");
+    if(val == 'custom') {
+      post.hide(); custom.show();
+    } else {
+      post.show(); custom.hide();
+    }
+  }).change();
 });	
 
