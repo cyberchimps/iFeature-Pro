@@ -28,9 +28,9 @@
 	<?php chimps_after_head_tag(); ?>
 <!-- End @Core after_head_tag hook content-->
 	
-		<!-- Begin @Core before_header hook  content-->
-			<?php chimps_before_header(); ?> 
-		<!-- End @Core before_header hook content -->
+<!-- Begin @Core before_header hook  content-->
+	<?php chimps_before_header(); ?> 
+<!-- End @Core before_header hook content -->
 			
 	<header id="head">
 			
@@ -41,6 +41,7 @@
 				<!-- Begin @Core header sitename hook -->
 					<?php chimps_header_sitename(); ?> 
 				<!-- End @Core header sitename hook -->
+				
 			</div>	
 			
 			<div class="grid_6" style="text-align:right;">
@@ -77,9 +78,9 @@
 		
 		<div class='clear'>&nbsp;</div>
 
-				<!-- Begin @Core navigation contact area hook -->
-					<?php chimps_navigation(); ?> 
-				<!-- End @Core navigation contact area hook -->
+		<!-- Begin @Core navigation contact area hook -->
+			<?php chimps_navigation(); ?> 
+		<!-- End @Core navigation contact area hook -->
 				
 			</header>
 				

@@ -256,7 +256,7 @@ input[type=text] { width: 120px; }
 .odd{background:#f8f8f8}
 #form-allowed-tags code{font-size:12px}
 #respond input, #respond textarea{margin:0 5px 5px 0;overflow:auto}
-#respond textarea{width:628px;height:100px}
+#respond textarea{width:600px;height:100px}
 .avatar{width:32px;height:32px;margin:0 5px 5px 0;float:left}
 
 /* WP Editor Styles */
