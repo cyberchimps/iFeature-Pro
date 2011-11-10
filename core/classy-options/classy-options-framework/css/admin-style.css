@@ -336,3 +336,27 @@
 #of-nav li img {
   padding-right: 8px;
 }
+
+#of_container h3.heading {
+  float: left;
+  clear: both;
+  display: inline;
+}
+
+#of_container div.option {
+  display: inline;
+}
+#of_container #content .section .controls {
+  float: right;
+}
+#of_container #content .section h3.heading {
+  border-bottom: none;
+}
+
+#of_container #content .section{
+  border-bottom: 1px solid #E7E7E7
+}
+
+#of_container #content div.group {
+  margin-top: 15px;
+}
