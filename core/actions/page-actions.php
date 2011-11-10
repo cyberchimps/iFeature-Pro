@@ -21,7 +21,7 @@ function chimps_page_section_content() {
 <div class="container_12">
 	
 	
-
+<?php if (function_exists('chimps_breadcrumbs')) chimps_breadcrumbs(); ?>
 		<?php if ($pagecontent != "on"): ?>
 		<div id="content" class="grid_8">
 		

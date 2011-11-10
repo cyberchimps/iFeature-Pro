@@ -12,12 +12,9 @@ get_header();
 
 ?>
 
-<div id="content_wrap">
+<div class="container_12">
 
-	<!-- Begin @Core before_entry hook -->
-		<?php chimps_before_entry(); ?>
-	<!-- End @Core before_entry hook -->
-	
+	<div id="content" class="grid_8">
 	<!-- Begin @Core before_search hook -->
 		<?php chimps_before_search(); ?>
 	<!-- End @Core before_search hook -->
@@ -29,15 +26,14 @@ get_header();
 	<!-- Begin @Core after_search hook -->
 		<?php chimps_after_search(); ?>
 	<!-- End @Core after_search hook -->
-	
-	<!-- Begin @Core after_entry hook -->
-		<?php chimps_after_entry(); ?>
-	<!-- End @Core after_entry hook -->
-	
-	<div id="sidebar_right">
-		<?php get_sidebar(); ?>
+		
 	</div>
 	
+	<div id="sidebar" class="grid_4">
+				<?php get_sidebar(); ?>
+		</div>
+	
+
 </div><!--end content_wrap-->
 <div class="clear"></div>
 
