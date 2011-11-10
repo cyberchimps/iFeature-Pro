@@ -256,7 +256,7 @@ input[type=text] { width: 120px; }
 .odd{background:#f8f8f8}
 #form-allowed-tags code{font-size:12px}
 #respond input, #respond textarea{margin:0 5px 5px 0;overflow:auto}
-#respond textarea{width:628px;height:100px}
+#respond textarea{width:600px;height:100px}
 .avatar{width:32px;height:32px;margin:0 5px 5px 0;float:left}
 
 /* WP Editor Styles */
@@ -924,7 +924,7 @@ ol.commentlist li.thread-odd { }
 #slider {
 	position:relative;
     margin:auto;
-	background:url(images/slider/loading.gif) no-repeat 50% 50%;
+	background:url(../images/slider/loading.gif) no-repeat 50% 50%;
 }
 
 #slider img {
@@ -949,7 +949,7 @@ ol.commentlist li.thread-odd { }
 	display:block;
 	width:30px;
 	height:30px;
-	background:url(images/slider/arrows.png) no-repeat;
+	background:url(../images/slider/arrows.png) no-repeat;
 	text-indent:-9999px;
 	border:0;
 }
@@ -1014,4 +1014,5 @@ a.nivo-prevNav {
 .nivo-caption p {
 	padding:5px;
 	margin:0; 
+	color: white;
 }

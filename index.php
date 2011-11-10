@@ -17,6 +17,11 @@
 	<div id="main">
 	
 		<div id="content" class="grid_8">
+		
+		<!--Begin @Core index entry hook-->
+	<?php chimps_index_entry(); ?>
+	<!--End @Core index entry hook-->
+
 
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			

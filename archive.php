@@ -15,11 +15,11 @@
 
 ?>
 
-<div id="content_wrap">
+<div class="container_12">
 
-	<div id="content_left">
-		
-		<div class="content_padding">
+	<div id="main">
+	
+		<div id="content" class="grid_8">
 		
 		<?php if (function_exists('chimps_breadcrumbs')) chimps_breadcrumbs(); ?>
 		
@@ -57,13 +57,15 @@
 	
 		</div><!--end content_padding-->
 		
-	</div><!--end content_left-->
 
-	<div id="sidebar_right">
-		<?php get_sidebar(); ?>
-	</div>
+
+		<div id="sidebar" class="grid_4">
+				<?php get_sidebar(); ?>
+		</div>
 	
 </div><!--end content_wrap-->
+
+	</div><!--end content_left-->
 
 <div style=clear:both;></div>
 
