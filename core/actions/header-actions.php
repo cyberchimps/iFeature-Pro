@@ -349,7 +349,7 @@ function chimps_nav() {
 		);
     	?>
    		</div>
-		<div class="grid_1">
+		<div class="grid_2">
 			<?php get_search_form(); ?>
 		</div>
 		
