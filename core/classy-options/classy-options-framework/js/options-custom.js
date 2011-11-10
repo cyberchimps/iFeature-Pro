@@ -148,5 +148,13 @@ jQuery(document).ready(function($) {
 	$('.subsection > h3').click(function() {
 		$(this).siblings('div').fadeToggle();
 	});
+
+  $("#section-if_font").change(function() {
+    if($(this).find(":selected").val() == 'custom') {
+      $('#section-if_custom_font').show();
+    } else {
+      $('#section-if_custom_font').hide();
+    }
+  }).change();
 });	
 
