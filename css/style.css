@@ -25,6 +25,10 @@ a{outline:none}
 
 /* Layout  */
 
+#header_contact{
+	text-align:right;
+}
+
 #head {
 	margin-top: 25px;
 }
@@ -558,6 +562,7 @@ li { padding-left: 5px; }
 	overflow: hidden;
 	margin-bottom: 10px;
 	margin-top: 10px;
+	margin: auto;
 
 }
 
@@ -644,6 +649,7 @@ li { padding-left: 5px; }
 	float: left;
 	padding-top: 5px;
 	padding-bottom: 15px;
+
 }
 
 #box_container ul {
@@ -669,6 +675,7 @@ li { padding-left: 5px; }
 	-moz-border-radius: 5px;
 	-khtml-border-radius: 5px;
 	-webkit-border-radius: 5px;
+
 }
 
 
