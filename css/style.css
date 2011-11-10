@@ -886,7 +886,7 @@ ol.commentlist li.thread-odd { }
 
 
 #slider-wrapper {
-
+	height: 380px;
     margin: auto;
     margin-bottom: 50px;
     -moz-box-shadow:0 0 5px #AAAAAA;
