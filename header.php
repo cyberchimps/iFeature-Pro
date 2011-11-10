@@ -39,13 +39,14 @@
 			<div class="grid_6">
 				
 				<!-- Begin @Core header sitename hook -->
-						<?php chimps_header_sitename(); ?> 
+					<?php chimps_header_sitename(); ?> 
 				<!-- End @Core header sitename hook -->
 			</div>	
 			
 			<div class="grid_6" style="text-align:right;">
-					<!-- Begin @Core header contact area hook -->
-						<?php chimps_header_contact_area(); ?> 
+			
+				<!-- Begin @Core header contact area hook -->
+					<?php chimps_header_contact_area(); ?> 
 				<!-- End @Core header contact area hook -->
 					
 			</div>	
@@ -59,15 +60,15 @@
 			<div class="grid_6">
 			
 				<!-- Begin @Core header description hook -->
-						<?php chimps_header_site_description(); ?> 
+					<?php chimps_header_site_description(); ?> 
 				<!-- End @Core header description hook -->
 			
 			</div>
 			
 			<div class="grid_6">
 			
-					<!-- Begin @Core header social icon hook -->
-						<?php chimps_header_social_icons(); ?> 
+				<!-- Begin @Core header social icon hook -->
+					<?php chimps_header_social_icons(); ?> 
 				<!-- End @Core header contact social icon hook -->	
 				
 			</div>
@@ -75,7 +76,6 @@
 		</div>
 		
 		<div class='clear'>&nbsp;</div>
-
 
 				<!-- Begin @Core navigation contact area hook -->
 					<?php chimps_navigation(); ?> 

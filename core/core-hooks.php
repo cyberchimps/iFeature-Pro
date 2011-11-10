@@ -188,15 +188,6 @@ function chimps_header_social_icons() {
 	do_action('chimps_header_social_icons');
 }
 
-function chimps_header_left() 
-{
-	do_action('chimps_header_left');
-}
-
-function chimps_header_right() {
-	do_action('chimps_header_right');
-}
-
 function chimps_navigation() {
 	do_action('chimps_navigation');
 }
