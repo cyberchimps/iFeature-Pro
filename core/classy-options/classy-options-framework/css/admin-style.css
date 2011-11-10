@@ -332,3 +332,7 @@
 #of_container .subsection > h3 {
   background: red;
 }
+
+#of-nav li img {
+  padding-right: 8px;
+}

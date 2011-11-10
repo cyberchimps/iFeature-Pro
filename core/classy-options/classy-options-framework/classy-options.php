@@ -468,9 +468,12 @@ class ClassyOptions {
 				if($counter >= 2){
 				   $output .= '</div>'."\n";
 				}
+				
 				$jquery_click_hook = preg_replace('/\W/', '', strtolower($value['name']) );
 				$jquery_click_hook = "of-option-" . $jquery_click_hook;
-				$menu .= '<li><a id="'.  esc_attr( $jquery_click_hook ) . '-tab" title="' . esc_attr( $value['name'] ) . '" href="' . esc_attr( '#'.  $jquery_click_hook ) . '">' . esc_html( $value['name'] ) . '</a></li>';
+				$menu .= '<li>';
+				$icon = isset($value['icon']) ? "<img src={$value['icon']}>" : "";
+				$menu .= '<a id="'.  esc_attr( $jquery_click_hook ) . '-tab" title="' . esc_attr( $value['name'] ) . '" href="' . esc_attr( '#'.  $jquery_click_hook ) . '">' . $icon . esc_html( $value['name'] ) . '</a></li>';
 				$output .= '<div class="group" id="' . esc_attr( $jquery_click_hook ) . '"><h2>' . esc_html( $value['name'] ) . '</h2>' . "\n";
 				break;
 
@@ -502,8 +505,12 @@ class ClassyOptions {
 	    return array($output,$menu);
 	}
 
-	function section($text) {
-		$this->add( array( 'type' => 'heading', 'name' => $text) );
+	function section($text, $options = array()) {
+		if(isset($options['icon'])) {
+			$this->add( array( 'type' => 'heading', 'name' => $text, 'icon' => $options['icon']));
+		} else {
+			$this->add( array( 'type' => 'heading', 'name' => $text) );
+		}
 		return $this;
 	}
 

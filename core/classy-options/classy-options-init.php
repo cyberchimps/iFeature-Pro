@@ -33,7 +33,7 @@ $terms2 = get_terms('category', 'hide_empty=0');
 
 
 $options
-	->section("General")
+	->section("General", array('icon' => CLASSY_OPTIONS_FRAMEWORK_URL . 'images/ico-delete.png'))
 		->upload($themeslug."_custom_logo", "Custom Logo")
 		->textarea($themeslug."_header_contact", "Header Contact Area")
 		->upload($themeslug."_custom_favicon", "Custom Favicon")
