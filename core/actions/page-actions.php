@@ -18,7 +18,7 @@ function chimps_page_section_content() {
 	$test = get_post_meta($post->ID, 'page_section_order' , true);
 
 ?>
-
+<div class="container_12">
 	
 	<?php if ($enable == "on" && $size == "1"): ?>
 		<div id = "slider-wrapper">
@@ -83,9 +83,9 @@ function chimps_page_section_content() {
 	<?php get_sidebar('left'); ?>
 	<?php endif;?>
 
+</div><!--end container_12-->
 
-
-
+<div class='clear'>&nbsp;</div>
 
 <?
 }

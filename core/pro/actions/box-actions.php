@@ -56,7 +56,7 @@ function chimps_box_section_content() {
 			</div><!--end box3-->
 		<?php endif; ?>
 
-	</div><!--end box_container--> <?php
+	</div><!--end box_container--> <div class='clear'>&nbsp;</div><?php
 	}
 }
 
