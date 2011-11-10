@@ -330,7 +330,13 @@
 }
 
 #of_container .subsection > h3 {
-  background: red;
+  border: 1px solid #666666;
+  padding: 7px 10px;
+}
+
+#of_container .subsection .plus {
+  float: right;
+  margin-right: 20px;
 }
 
 #of-nav li img {

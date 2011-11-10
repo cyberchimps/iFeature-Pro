@@ -478,7 +478,9 @@ class ClassyOptions {
 				break;
 
 			case "subsection":
-				$output .= "<div class='subsection'><h3>{$value['name']}</h3><div class='subsection-items'>";
+				$output .= "<div class='subsection'><h3>{$value['name']}<span class='plus'>"
+					. "<img src='" . CLASSY_OPTIONS_FRAMEWORK_URL . "/images/ico-delete.png'>"
+					. "</span></h3><div class='subsection-items'>";
 			break;
 
 			case "subsection_end":
