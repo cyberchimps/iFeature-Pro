@@ -156,6 +156,22 @@ function create_post_type() {
 			'rewrite' => array('slug' => 'slides')
 		)
 	);
+	
+	register_post_type( $themeslug.'_featured_posts',
+		array(
+			'labels' => array(
+				'name' => __( 'Featured Posts' ),
+				'singular_name' => __( 'Posts' )
+			),
+			'public' => true,
+			'show_ui' => true, 
+			'supports' => array('custom-fields'),
+			'has_archive' => true,
+			'menu_icon' => "$root/images/pro/favicon.ico",
+			'rewrite' => array('slug' => 'slides')
+		)
+	);
+
 }
 
 // Register custom category taxonomy for Slider
