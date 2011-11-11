@@ -758,6 +758,62 @@ function initialize_the_meta_boxes() {
 			)
 		)
 	);
+	
+	$meta_boxes[] = array(
+		'id' => 'slides',
+		'title' => 'Featured Post Carousel',
+		'pages' => array($themeslug.'_featured_posts'),
+
+		'tabs' => array(
+			array(
+				'fields' => array(
+
+				
+					array(
+						'name' => 'Featured Post Title',
+						'desc' => 'Enter your title here',
+						'id' => 'post_title',
+						'type' => 'text',
+						'std' => ''
+					),
+					
+					array(
+						'name' => 'Featured Post Image',
+						'desc' => 'Upload your image here:',
+						'id' => 'post_image',
+						'type' => 'image',
+						'std' => ''
+					),
+					
+						array(
+						'name' => 'Featured Post Link',
+						'desc' => 'Enter your link here',
+						'id' => 'post_url',
+						'type' => 'text',
+						'std' => ''
+					),
+					
+					array(
+						'name' => 'Need help?',
+						'desc' => '',
+						'id' => '',
+						'type' => 'featuredhelp',
+						'std' => ''
+			),
+
+										
+					array(
+						'name' => 'Want to re-order your slides?',
+						'desc' => '',
+						'id' => '',
+						'type' => 'reorder',
+						'std' => ''
+			),
+				)
+			)
+		)
+	);
+
 
 	$meta_boxes[] = array(
 		'id' => 'slides',
