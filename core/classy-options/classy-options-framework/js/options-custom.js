@@ -31,10 +31,9 @@ jQuery(document).ready(function($) {
        var checkbox = $('#'+checkboxID);
 
        if (checkbox.is(":checked")) {
-         checkbox.removeAttr("checked");
-
+         checkbox.removeAttr("checked").change();
        }else{
-         checkbox.attr("checked","checked");
+         checkbox.attr("checked","checked").change();
        }
        $(this).toggleClass("checked");
 
@@ -50,8 +49,6 @@ jQuery(document).ready(function($) {
      e.preventDefault();
     });
 
-    // debug
-     $('.checkbox').toggle()
 	
 	// Fade out the save message
 	$('.fade').delay(1000).fadeOut(1000);
