@@ -32,7 +32,7 @@
 if ($sidebar == "1" OR $sidebar == "2") {
 	
 		echo '<style type="text/css">';
-		echo ".postmetadata {width: 480px;}";
+		echo ".postmetadata {width: 450px;}";
 		echo '</style>';
 		
 	}

@@ -105,7 +105,7 @@ function post_meta_data_width() {
 	if ($options[$themeslug.'_blog_sidebar'] == "two-right" OR $options[$themeslug.'_blog_sidebar'] == "right-left") {
 
 		echo '<style type="text/css">';
-		echo ".postmetadata {width: 480px;}";
+		echo ".postmetadata {width: 468px;}";
 		echo '</style>';
 		
 	}
