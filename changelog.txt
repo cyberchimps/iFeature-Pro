@@ -5,6 +5,8 @@ iFeature Pro Changelog
 Version 2.1.4 (11-02-11)
 -Removed unecessary esc_url wrapper. 
 -Adjusted JS in slider templates to fix potential conflict. 
+-Reduced margin on table data elements.
+-Reduced width of postmetadata bar on blog page when 2 sidebars are active. 
 
 
 Version 2.1.3 (10-25-11)
