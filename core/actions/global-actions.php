@@ -36,12 +36,13 @@ add_action( 'chimps_fb_like_plus_one', 'chimps_fb_like_plus_one_content' );
 * @since 1.0
 */
 function chimps_post_byline_content() {
-	global $options, $themeslug; //call globals  ?>
+	global $options, $themeslug; //call globals  
+	$hidden = $options->get($themeslug.'_hide_byline');?>
 	
 	<div class="meta">
-		<?php if ($options->get($themeslug.'_hide_date') != '1'):?> <?php printf( __( 'Published on', 'core' )); ?> <a href="<?php the_permalink() ?>"><?php the_time('F jS, Y') ?></a><?php endif;?>
-		<?php if ($options->get($themeslug.'_hide_author') != '1'):?><?php printf( __( 'by', 'core' )); ?> <?php the_author_posts_link(); ?> <?php endif;?> 
-		<?php if ($options->get($themeslug.'_hide_categories') != '1'):?><?php printf( __( 'in', 'core' )); ?> <?php the_category(', ') ?> <?php endif;?>
+		<?php if (!($hidden['key3'])):?> <?php printf( __( 'Published on', 'core' )); ?> <a href="<?php the_permalink() ?>"><?php the_time('F jS, Y') ?></a><?php endif;?>
+		<?php if (!($hidden['key1'])):?><?php printf( __( 'by', 'core' )); ?> <?php the_author_posts_link(); ?> <?php endif;?> 
+		<?php if (!($hidden['key2'])):?><?php printf( __( 'in', 'core' )); ?> <?php the_category(', ') ?> <?php endif;?>
 		</div> <?
 }
 
@@ -51,17 +52,20 @@ function chimps_post_byline_content() {
 * @since 1.0
 */
 function chimps_post_bar_content() { 
-	global $options, $themeslug; ?>
-
-	<div class="metabar" class="grid_8">
-		<div class="share">
+	global $options, $themeslug; 
+	$hidden = $options->get($themeslug.'_hide_byline'); ?>
+	
+	
+		<div class="metabar" class="grid_8">
+		<?php if (!($hidden['key5'])):?>
+			<div class="share">
 		<a href="http://www.facebook.com/share.php?u=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/facebook.png" alt="Share on Facebook" height="16px" width="16px" /></a> 
 		<a href="http://twitter.com/home?status=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/twitter.png" alt="Share on Twitter" height="16px" width="16px" /></a> 
 		<a href="http://reddit.com/submit?url=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/reddit.png" alt="Share on Reddit" height="16px" width="16px" /></a> <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/linkedin.png" alt="Share on LinkedIn" height="16px" width="16px" /></a>	
 		</div><!--end share-->
-				
+	<?php endif;?>		
+		<?php if (!($hidden['key4'])):?>
 		<div class="comments">
-			<?php if ($options->get($themeslug.'_hide_comments') != '1'):?>
 			<img src="<?php echo get_template_directory_uri(); ?>/images/Commentsgrey.png" height="21px" width="21px" />&nbsp
 				<?php comments_popup_link( __('No Comments &#187;', 'core' ), __('1 Comment &#187;', 'core' ), __('% Comments &#187;' , 'core' )); //need a filer here ?>
 			<?php endif;?>
@@ -93,13 +97,15 @@ function chimps_link_pages_content() {
 * @since 1.0
 */
 function chimps_post_tags_content() {
-	global $options, $themeslug; ?>
+	global $options, $themeslug; 
+	$hidden = $options->get($themeslug.'_hide_byline'); ?>
 
+	<?php if (!($hidden['key6'])):?>
 	<div class="tags">
-		<?php if ($options->get($themeslug.'_hide_tags') != '1'):?>
 			<?php the_tags('Tags: ', ', ', '<br />'); ?>
-		<?php endif;?>
-	</div><!--end tags--> <?php
+		
+	</div><!--end tags--> 
+	<?php endif;
 }
 
 /**
