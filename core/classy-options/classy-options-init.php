@@ -108,5 +108,6 @@ $options
 		->checkbox($themeslug."_hide_link", "Hide CyberChimps Link")
 	->section("Import / Export")
 		->export("Export Settings")
+		->import("Import Settings")
 ;
 }

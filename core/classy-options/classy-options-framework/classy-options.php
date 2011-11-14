@@ -128,6 +128,17 @@ class ClassyOptions {
 			return $this->default_data();
 		}
 
+		if( isset( $_POST['import' ] ) ) {
+			if( trim( $_POST['import' ] ) ) {
+				$try = unserialize( trim( $_POST['import' ] ) );
+				if($try) {
+					add_settings_error( $this->id, 'import', __( 'Options Imported', 'optionsframework' ), 'updated fade' );
+					return $try;
+				} else {
+					add_settings_error( $this->id, 'import', __( 'Invalid Data for Import', 'optionsframework' ), 'updated fade' );
+				}
+			}
+		}
 		/*
 		 * Update Settings.
 		 */
@@ -464,7 +475,10 @@ class ClassyOptions {
 			break;                       
 
 			case "export":
-				$output .= "<textarea rows='10'>" . serialize($settings) . "</textarea>";
+				$output .= "<textarea rows='10'>" . esc_html(serialize($settings)) . "</textarea>";
+				break;
+			case "import":
+				$output .= "<textarea name='import' rows='10'></textarea>";
 				break;
 			// Heading for Navigation
 			case "heading":
@@ -586,6 +600,11 @@ class ClassyOptions {
 
 	function export( $label ) {
 		$this->add( array( 'type' => 'export', 'name' => $label ) );
+		return $this;
+	}
+
+	function import( $label ) {
+		$this->add( array( 'type' => 'import', 'name' => $label ) );
 		return $this;
 	}
 
