@@ -130,7 +130,8 @@ class ClassyOptions {
 
 		if( isset( $_POST['import' ] ) ) {
 			if( trim( $_POST['import' ] ) ) {
-				$try = unserialize( trim( $_POST['import' ] ) );
+				$string = stripslashes( trim( $_POST['import'] ) );
+				$try = unserialize( $string );
 				if($try) {
 					add_settings_error( $this->id, 'import', __( 'Options Imported', 'optionsframework' ), 'updated fade' );
 					return $try;
