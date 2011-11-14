@@ -149,7 +149,7 @@ function create_post_type() {
 			),
 			'public' => true,
 			'show_ui' => true, 
-			'supports' => array('custom-fields', 'title'),
+			'supports' => array('custom-fields'),
 			'taxonomies' => array( 'slide_categories'),
 			'has_archive' => true,
 			'menu_icon' => "$root/images/pro/favicon.ico",

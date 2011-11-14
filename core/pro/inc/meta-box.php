@@ -828,7 +828,7 @@ function initialize_the_meta_boxes() {
 					array(
 						'name' => 'Custom Slide Title',
 						'desc' => 'Enter your title here',
-						'id' => $prefix . 'title',
+						'id' => 'post_title',
 						'type' => 'text',
 						'std' => ''
 					),

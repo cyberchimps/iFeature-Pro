@@ -22,7 +22,6 @@
 			</div>
 		</div>
 
-	
 		<div id="content" class="grid_8">
 		
 		<!--Begin @Core index entry hook-->
