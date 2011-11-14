@@ -11,7 +11,7 @@
 * along with this software. In the main directory, see: /licensing/
 * If not, see: {@link http://www.gnu.org/licenses/}.
 *
-* @package Extend
+* @package Pro
 * @since 1.0
 */
 
@@ -29,6 +29,13 @@ function chimps_box_section() {
 */
 function chimps_callout_section() {
 	do_action ('chimps_callout_section');
+}
+
+/** 
+* Carousel Section
+*/
+function chimps_carousel_section() {
+	do_action ('chimps_carousel_section');
 }
 
 /** 
@@ -50,6 +57,7 @@ function chimps_page_content_slider() {
 function chimps_twitterbar_section() {
 	do_action ('chimps_twitterbar_section');
 }
+
 /**
 * End
 */

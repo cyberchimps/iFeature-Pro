@@ -1023,3 +1023,80 @@ a.nivo-prevNav {
 	margin:0; 
 	color: white;
 }
+
+/************************************************
+	      JCAROUSEL LITE		
+************************************************/
+#list {
+	height:130px;
+	width:900px; 
+	margin:15px auto; 
+}
+
+.slider {
+	float:left;
+	left: -5000px; 
+	margin:15px; 
+	position:relative; 
+	visibility:hidden;	
+}
+	
+.slider ul {
+	height:100px;
+	width:600px; 
+}
+
+.slider ul li {
+	padding:0 20px;
+}
+
+.slider ul li img {
+	cursor:pointer;
+	height:100px; 
+	padding-top:3px;
+	width:120px;  
+}
+
+.prev {
+	cursor:pointer; 
+	float:left;
+	padding-top:60px;
+}
+
+.next {
+	cursor:pointer; 
+	float:right; 
+	padding-top:60px;
+}
+
+/************************************************
+	      CAPTIFY CAPTION		
+************************************************/
+.caption-top, .caption-bottom {
+	background: #000000;
+	color: #ffffff; 
+	cursor:default;
+	padding:2px; 
+	font-size:13px;   
+	text-align:center;
+}
+
+.caption-top {
+	border-width:0px;
+}
+
+.caption-bottom {
+	border-width:0px;
+	height: 25px;
+}
+
+.caption a, .caption a {
+	background:#000;
+	border:none; 
+	text-decoration:none;  
+	padding:2px;
+}
+
+.caption a:hover, .caption a:hover {
+	background:#202020;
+}

@@ -165,7 +165,7 @@ function create_post_type() {
 			),
 			'public' => true,
 			'show_ui' => true, 
-			'supports' => array('custom-fields', 'title' ),
+			'supports' => array('custom-fields'),
 			'has_archive' => true,
 			'menu_icon' => "$root/images/pro/favicon.ico",
 			'rewrite' => array('slug' => 'slides')
@@ -242,6 +242,23 @@ function nivoslider(){
 	echo $script;
 }
 add_action('wp_head', 'nivoslider');
+
+// Carousel Javascript
+
+function carousel(){
+	 
+	$path =  get_template_directory_uri() ."/library/js/";
+
+	$script = "
+		
+		<script type=\"text/javascript\" src=\"".$path."/captify.tiny.js\"></script>
+		<script type=\"text/javascript\" src=\"".$path."/jcarousellite_1.0.1.pack.js\"></script>
+		";
+	
+	echo $script;
+}
+add_action('wp_head', 'carousel');
+
 
 // + 1 Button 
 

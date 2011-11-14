@@ -15,13 +15,13 @@
 * @since 1.0
 */
 
+add_action( 'chimps_carousel_section', 'chimps_carousel_section_content' );
 
-
-function chimps_carousel_content() {
+function chimps_carousel_section_content() {
 
 /* Call globals. */	
 
-	global $themename, $themeslug, $options;
+	global $themename, $themeslug, $options, $post, $wp_query;
 
 /* End globals. */	
 
@@ -64,9 +64,9 @@ function chimps_carousel_content() {
 	    	/* Post-specific variables */	
 
 	    	$image 		= get_post_meta($post->ID, 'post_image' , true);  
-	    	$title 		= get_post_meta($post->ID, 'post_title' , true);  
+	    	$title 		= get_the_title();  
 	    	$link 		= get_post_meta($post->ID, 'post_url' , true);
-	    	$imagesized = "$root/library/wt/wordthumb.php?src=$image&a=c&h=150&w=150";
+	
 
 			/* End variables */	
 
@@ -76,7 +76,7 @@ function chimps_carousel_content() {
 	    	
 				<li>
 	    			<a href='$link' title='$title'>	
-	    				<img src='$imagesized' alt='$title' class='captify'/>
+	    				<img src='http://localhost:8888/wp-content/uploads/Making-of-Wonder-of-Nature.jpg' alt='$title' class='captify'/>
 	    			</a>
 	    		</li>
 	    	
