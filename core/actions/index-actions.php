@@ -86,10 +86,11 @@ function chimps_index_after_entry_sidebar() {
 	<div id="sidebar" class="grid_4">
 		<?php get_sidebar(); ?>
 	</div>
+	
 	<?php endif;?>
 	<?php if ($sidebar == "2" OR $blogsidebar == 'key3' ): ?>
 		<?php get_sidebar('left'); ?>
-	<?php endif;?> <?php
+	<?php endif;?> <?php 
 }
 
 /**
