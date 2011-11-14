@@ -462,7 +462,10 @@ class ClassyOptions {
 				}
 				$output .= '<div class="clear"></div></div>' . "\n";
 			break;                       
-			
+
+			case "export":
+				$output .= "<textarea rows='10'>" . serialize($settings) . "</textarea>";
+				break;
 			// Heading for Navigation
 			case "heading":
 				if($counter >= 2){
@@ -578,6 +581,11 @@ class ClassyOptions {
 
 	function select( $key, $label = "", $options = array() ) {
 		$this->add( array( 'id' => $key, 'type' => 'select', 'name' => $label, 'options' => $options['options'] ) );
+		return $this;
+	}
+
+	function export( $label ) {
+		$this->add( array( 'type' => 'export', 'name' => $label ) );
 		return $this;
 	}
 

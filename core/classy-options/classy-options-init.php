@@ -106,5 +106,7 @@ $options
 		->text($themeslug."_footer_text", "Footer Copyright Text")
 		->textarea($themeslug."_ga_code", "Google Analytics Code")
 		->checkbox($themeslug."_hide_link", "Hide CyberChimps Link")
+	->section("Import / Export")
+		->export("Export Settings")
 ;
 }
