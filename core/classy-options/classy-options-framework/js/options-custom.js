@@ -155,6 +155,13 @@ jQuery(document).ready(function($) {
       $('#section-if_custom_font').hide();
     }
   }).change();
+  $("#section-if_menu_font").change(function() {
+    if($(this).find(":selected").val() == 'custom') {
+      $('#section-if_custom_menu_font').show();
+    } else {
+      $('#section-if_custom_menu_font').hide();
+    }
+  }).change();
   $("#if_show_excerpts").change(function() {
     var toShow = $("#section-if_excerpt_link_text, #section-if_excerpt_length");
     if($(this).is(':checked')) {
@@ -163,7 +170,14 @@ jQuery(document).ready(function($) {
       toShow.hide();
     }
   }).change();
-
+  $("#if_show_featured_images").change(function() {
+    var toShow = $("#section-if_featured_image_align, #section-if_featured_image_height, #section-if_featured_image_width");
+    if($(this).is(':checked')) {
+      toShow.show();
+    } else {
+      toShow.hide();
+    }
+  }).change();
   $("#if_hide_slider_blog").change(function() {
     var toShow = $("#section-if_hide_slider_blog").siblings();
     if($(this).is(':checked')) {
