@@ -1146,6 +1146,14 @@ function initialize_the_meta_boxes() {
 					),
 					
 				array(
+						'name' => 'Disable Callout Button',
+						'desc' => 'Check this box to disable the callout button',
+						'id' => 'disable_callout_button',
+						'type' => 'checkbox',
+						'std' => ''
+					),
+					
+				array(
 						'name' => 'Callout Button Text',
 						'desc' => 'Enter the text for your Callout Button',
 						'id' => 'callout_button_text',
@@ -1293,7 +1301,7 @@ function metabox_enqueue() {
 	$color = get_user_meta( get_current_user_id(), 'admin_color', true );
 
 	wp_register_style(  'metabox-tabs-css', $path2. 'metabox-tabs.css');
-	wp_register_style(  'jf-color',       $path2. 'metabox-fresh.css');
+
 	wp_register_script ( 'jf-metabox-tabs', $path. 'metabox-tabs.js');
 
 	wp_enqueue_script('jf-metabox-tabs');
@@ -1301,7 +1309,7 @@ function metabox_enqueue() {
 	wp_enqueue_script('jf-metabox-tabs');
 	wp_enqueue_script('jquerycustom', get_template_directory_uri().'/library/js/jquery-custom.js', array('jquery') );
 	
-	wp_enqueue_style('jf-color');
+	
 	wp_enqueue_style('metabox-tabs-css');
 }
 

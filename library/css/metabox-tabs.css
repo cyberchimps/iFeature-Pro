@@ -12,10 +12,19 @@ list-style: none;
 .metabox-tabs li {
 display: inline;
 }
+
 ul.metabox-tabs li.active {
-border-style: solid solid none;
-border-width: 1px 1px 0;
+background-color: #F1F1F1;
 }
+
+ul.metabox-tabs li.active, div.tab-content {
+border-color: #DFDFDF;
+}
+.metabox-tabs .active a {
+color: #333;
+}
+
+
 ul.metabox-tabs li {
 padding: 5px;
 -moz-border-radius: 3px 3px 0 0;

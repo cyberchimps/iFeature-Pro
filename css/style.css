@@ -583,8 +583,8 @@ li { padding-left: 5px; }
 	-webkit-border-radius: 5px;
 }
 
-.callout_text {
-	width: 730px;
+#callout_text {
+	
 	float: left;
 	padding-left: 10px;
 	padding-top: 10px;
@@ -597,9 +597,9 @@ li { padding-left: 5px; }
 	color: #000;
 }
 
-.calloutbutton {
+#calloutbutton {
 	padding: 10px 5px 10px 5px;
-	width: 200px;
+	
 	float:right;
 	margin-top: 15px;
 	margin-right: 10px;
@@ -611,17 +611,17 @@ li { padding-left: 5px; }
 	position: relative;
 }
 
-.calloutimg{
+#calloutimg{
 	padding-top: 10px;
-	width: 190px;
+	
 	float:right;
 }
 
-.calloutbutton:hover{
+#calloutbutton:hover{
 	background: #222;
 }
 
-.calloutbutton a{
+#calloutbutton a{
 	color: #fff;
 	font-size: 18px;
 	font-weight: 800;
