@@ -25,17 +25,14 @@ a{outline:none}
 
 /* Layout  */
 
-#header_contact{
-	text-align:right;
+#header_contact{ text-align:right;
 }
 
-#head {
-	margin-top: 25px;
-}
+#head {	margin-top: 25px;}
 
-#content { 
-	padding-top: 15px;
-}
+#head2 {	margin-top: 20px;}
+
+#content { padding-top: 15px;}
 
 .post_container {
 	padding: 5px 15px 20px 15px;
