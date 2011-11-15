@@ -70,9 +70,6 @@ add_action ('chimps_page_content_slider', 'chimps_page_slider_content' );
 	}
 ?>
 	
-
-
-
 </div>
 
 <div style=clear:both;></div>

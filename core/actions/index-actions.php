@@ -25,7 +25,7 @@
 
 add_action( 'chimps_index_after_entry', 'chimps_index_after_entry_sidebar' );
 
-//add_action( 'chimps_index_before_entry', 'chimps_index_before_entry_slider' );
+add_action( 'chimps_index_before_entry', 'chimps_index_before_entry_slider' );
 add_action( 'chimps_index_before_entry', 'chimps_index_before_entry_sidebar' );
 
 add_action( 'chimps_index_loop', 'chimps_index_loop_content' );
