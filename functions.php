@@ -144,7 +144,7 @@ function create_post_type() {
 	register_post_type( $themeslug.'_custom_slides',
 		array(
 			'labels' => array(
-				'name' => __( 'Custom Slides' ),
+				'name' => __( 'iFeature Slides' ),
 				'singular_name' => __( 'Slides' )
 			),
 			'public' => true,

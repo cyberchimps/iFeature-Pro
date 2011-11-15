@@ -183,7 +183,7 @@ jQuery(document).ready(function($) {
     }
   }).change();
 
-  $("#of-option-social div.section-text").each(function(){
+  $("#of-option-header div.section-text").each(function(){
     var $this = $(this), $next = $(this).next();
     $this.find(".controls").css({float: 'left', clear: 'both'});
     $next.find(".controls").css({float: 'right', width: 80});
