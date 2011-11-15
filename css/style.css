@@ -167,6 +167,8 @@ a{outline:none}
 #nav ul ul ul li:hover ul li a{width:140px;padding:0 14px 0 24px}
 #nav .parent > a, #nav .parent > a:hover{background-image:url(../images/arrow.png);background-position:right;background-repeat:no-repeat}
 
+#home {float: left;}
+
 /* Search Bar */
 
 .searchform {

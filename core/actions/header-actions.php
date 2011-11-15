@@ -342,7 +342,8 @@ function chimps_nav() {
 
 	<div class="grid_12" id="imenu">
 
-		<div id="nav" class="grid_9">		
+		<div id="nav" class="grid_9">
+			<div id="home"><img src="<?php echo get_template_directory_uri() ;?>/images/home.png" /></div>
 		    <?php wp_nav_menu( array(
 		    'theme_location' => 'header-menu', // Setting up the location for the main-menu, Main Navigation.
 		    'fallback_cb' => 'menu_fallback', //if wp_nav_menu is unavailable, WordPress displays wp_page_menu function, which displays the pages of your blog.
