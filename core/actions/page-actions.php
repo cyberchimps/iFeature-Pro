@@ -16,14 +16,34 @@ function chimps_page_section_content() {
 	$enableboxes = get_post_meta($post->ID, 'enable_box_section' , true);
 	$pagecontent = get_post_meta($post->ID, 'hide_page_content' , true);
 	$test = get_post_meta($post->ID, 'page_section_order' , true);
+	
+	if ($sidebar == "1" OR $sidebar == "2" ) {
+		$content_grid = 'grid_6';
+	}
+	
+	elseif ($sidebar == "3") {
+		$content_grid = 'grid_12';
+	}
+	
+	else {
+		$content_grid = 'grid_8';
+	}
+
+
 
 ?>
 <div class="container_12">
+
+	<?php if ($sidebar == "2"): ?>
+		<div id="sidebar" class="grid_3">
+			<?php get_sidebar('left'); ?>
+		</div>
+	<?php endif;?>
 	
 	
 <?php if (function_exists('chimps_breadcrumbs')) chimps_breadcrumbs(); ?>
 		
-		<div id="content" class="grid_8">
+		<div id="content" class="<?php echo $content_grid; ?>">
 		
 		<?php chimps_page_content_slider(); ?>
 		
@@ -42,17 +62,6 @@ function chimps_page_section_content() {
 
 						<?php the_content(); ?>
 						
-						<?php if (preg_match("/page_slider/", $test )) {
-						
-							echo "success";
-						}
-						
-							else {
-							
-							echo "failure";
-							
-							}
-						?>
 					</div><!--end entry-->
 					
 					<div style=clear:both;></div>
@@ -73,12 +82,21 @@ function chimps_page_section_content() {
 	</div><!--end content_left-->
 	
 	<?php if ($sidebar == "0" OR $sidebar == ""): ?>
-	<div id="sidebar" class="grid_4">
-	<?php get_sidebar(); ?>
-	</div>
+		<div id="sidebar" class="grid_4">
+			<?php get_sidebar(); ?>
+		</div>
 	<?php endif;?>
+	
 	<?php if ($sidebar == "1"): ?>
-	<?php get_sidebar('left'); ?>
+		<div id="sidebar" class="grid_3">
+			<?php get_sidebar('left'); ?>
+		</div>
+	<?php endif;?>
+	
+	<?php if ($sidebar == "1" OR $sidebar == "2"): ?>
+		<div id="sidebar" class="grid_3">
+			<?php get_sidebar('right'); ?>
+		</div>
 	<?php endif;?>
 
 </div><!--end container_12-->
