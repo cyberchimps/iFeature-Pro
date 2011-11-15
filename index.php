@@ -8,6 +8,19 @@
 	Copyright (C) 2011 CyberChimps
 */
 
+	global $options, $themeslug, $post; // call globals
+	
+	$blogsidebar = $options->get($themeslug.'_blog_sidebar');
+	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);
+	
+	if ($sidebar == "2" OR $blogsidebar == 'key3' OR $blogsidebar == 'key4' ) {
+		$content_grid = 'grid_6';
+	}
+	
+	else {
+		$content_grid = 'grid_8';
+	}
+
 ?>
 
 <?php get_header(); ?>
@@ -26,7 +39,7 @@
 	<?php chimps_index_before_entry(); ?>
 	<!--End @Core index entry hook-->
 
-		<div id="content" class="grid_8">
+		<div id="content" class="<?php echo $content_grid; ?>">
 		
 		<!--Begin @Core index entry hook-->
 	<?php chimps_index_entry(); ?>
