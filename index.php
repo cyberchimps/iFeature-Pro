@@ -14,13 +14,17 @@
 
 <div class="container_12">
 
-<div id = "wrap">
+<!--<div id = "wrap">
 			<div id ="list">
 				<div class="prev"><img src="<?php echo $root ;?>/images/prev.jpg" alt="prev" /></div>
 			<?php chimps_carousel_section(); ?>
 				<div class="next"><img src="<?php echo $root ;?>/images/next.jpg" alt="next" /></div>
 			</div>
-		</div>
+</div>-->
+
+			<!--Begin @Core index entry hook-->
+	<?php chimps_index_before_entry(); ?>
+	<!--End @Core index entry hook-->
 
 		<div id="content" class="grid_8">
 		
