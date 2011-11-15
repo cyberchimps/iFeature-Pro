@@ -13,11 +13,11 @@
 	$blogsidebar = $options->get($themeslug.'_blog_sidebar');
 	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);
 	
-	if ($sidebar == "2" OR $blogsidebar == 'key3' OR $blogsidebar == 'key4' ) {
+	if ($sidebar == "1" OR $sidebar == "2" OR $blogsidebar == 'key3' OR $blogsidebar == 'key4' ) {
 		$content_grid = 'grid_6';
 	}
 	
-	elseif ($sidebar == "2" OR $blogsidebar == 'key2' ) {
+	elseif ($sidebar == "3" OR $blogsidebar == 'key2' ) {
 		$content_grid = 'grid_12';
 	}
 	
