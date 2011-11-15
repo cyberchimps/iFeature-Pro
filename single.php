@@ -56,6 +56,8 @@ get_header(); ?>
 		</div><!--end post container--> 
 	
 			<?php endwhile; ?>
+			
+			<?php comments_template(); ?>
 		
 			<?php else : ?>
 

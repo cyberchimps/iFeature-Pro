@@ -62,6 +62,11 @@ a{outline:none}
 .entry {
 }
 
+.entry p {
+	clear: none;
+}
+
+
 .meta {
 	color: #989898;
 	font-size: 12px;
@@ -366,9 +371,20 @@ ul, ol { margin: 0 0 10px 0; }
 
 #crumbs {margin-bottom: 5px;}
 
-dt {font-weight: bold; margin-top: 10px;}
+dt {font-weight: bold; margin-top: 5px; margin-bottom: 5px; margin-left: 26px; }
 
-dd {margin-bottom: 15px; }
+dd {margin-bottom: 15px; margin-left: 26px; }
+
+th { padding-right: 20px; padding-bottom: 10px; }
+
+td {
+border-top: 1px solid #DDD;
+padding: 6px 10px 6px 0;
+}
+
+table {border-bottom: 1px solid #DDD;}
+
+pre {margin-left: 20px;}
 
 
 /* more post style  */
@@ -439,9 +455,6 @@ p {
      clear: both;
 }
 
-.entry p {
-	clear: none;
-}
 
 
 
