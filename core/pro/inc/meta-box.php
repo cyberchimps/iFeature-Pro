@@ -389,24 +389,24 @@ class RW_Meta_Box {
 		$meta = explode(",", $meta);
 		echo "<div class='section_order'>";
 		echo "<div class='right_list'>";
-		echo "<div id='drag'>Drag and drop</div>";
+		echo "<div id='drag'>Reorder</div>";
 			foreach($meta as $key) {
 				if(!$key) continue;
 				$value = $field['options'][$key];
 				echo "<div class='list_item'>";
+					echo "<input id='minus' type='image' type='image' src='$root/images/minus.png' class='action' value='Remove'>";
 					echo "<span data-key='{$key}'>{$value}</span>";
-					echo "<input type='button' class='action' value='Remove'>";
 				echo "</div>";
 			}
 
 		echo "</div>";
 		echo "<div class='left_list'>";
-		echo "Inactive Sections";
+		echo "Inactive Elements";
 			foreach($field['options'] as $key => $value) {
 				if(in_array($key, $meta)) continue;
 				echo "<div class='list_item'>";
+					echo "<input id='plus' type='image' src='$root/images/plus.png' class='action' value='Add'>";
 					echo "<span data-key='{$key}'>{$value}</span>";
-					echo "<input type='image' src='$root/images/plus.png' class='action' value='Add'>";
 				echo "</div>";
 			}
 		echo "</div>";
