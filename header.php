@@ -33,6 +33,8 @@
 <!-- End @Core before_header hook content -->
 			
 	<header id="head">
+		
+	<?php if ($options->get($themeslug.'_disable_header') != "1"):?>
 			
 		<div class="container_12">
 		
@@ -77,6 +79,8 @@
 		</div>
 		
 		<div class='clear'>&nbsp;</div>
+		
+	<?php endif;?>
 
 		<!-- Begin @Core navigation contact area hook -->
 			<?php chimps_navigation(); ?> 

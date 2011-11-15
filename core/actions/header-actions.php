@@ -334,15 +334,24 @@ function chimps_header_social_icons_content() {
 * @since 1.0
 */
 function chimps_nav() {
-	global $options, $themeslug; //call globals
-	$homeimage		= $options->get($themeslug.'_home_logo'); ?>
+	global $options, $themeslug; //call globals 
+	
+	if ($options->get($themeslug.'_disable_homeicon') == "1" && $options->get($themeslug.'_disable_search') == "1") {
+	
+		$grid = 'grid_12';
+	}
+	
+	else {
+		$grid = 'grid_9';
+	}
+							?>
 	
 	<div class="container_12">
 
 	<div class="grid_12" id="imenu">
 
-		<div id="nav" class="grid_9">
-			<div id="home"><a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri() ;?>/images/home.png" /></a></div>
+		<div id="nav" class="<?php echo $grid; ?>">
+			<?php if ($options->get($themeslug.'_disable_homeicon') != "1"):?><div id="home"><a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri() ;?>/images/home.png" /></a></div><?php endif;?>
 		    <?php wp_nav_menu( array(
 		    'theme_location' => 'header-menu', // Setting up the location for the main-menu, Main Navigation.
 		    'fallback_cb' => 'menu_fallback', //if wp_nav_menu is unavailable, WordPress displays wp_page_menu function, which displays the pages of your blog.
@@ -350,10 +359,11 @@ function chimps_nav() {
 		);
     	?>
    		</div>
+   		<?php if ($options->get($themeslug.'_disable_search') != "1"):?>
 		<div class="grid_2">
 			<?php get_search_form(); ?>
 		</div>
-		
+		<?php endif;?>
 	</div>
 	
 </div>
