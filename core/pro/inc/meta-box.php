@@ -932,30 +932,23 @@ function initialize_the_meta_boxes() {
 				'options' => array('Sidebar Right (default)', 'Two Sidebar Right', 'Sidebar Right and Left', 'Full-Width'),
 				'std' => ''
 			 ),	
-			
-					 array(
-				'name' => 'Enable Feature Slider',
-				'desc' => 'Check this box to enable the ' .$themenamefull. ' Slider on this page',
-				'id' => 'page_enable_slider',
-				'type' => 'checkbox',
-				'std' => ''
-			  ),
-			
-			array(
-				'name' => 'Enable Callout Section',
-				'desc' => 'Check this box to enable the Callout Section on this page',
-				'id' => 'enable_callout_section',
-				'type' => 'checkbox',
-				'std' => ''
-			),
-			
-			array(
-				'name' => 'Enable Twitter Bar',
-				'desc' => 'Check this box to enable the Twitter Bar on this page - Requires <a href="http://wordpress.org/extend/plugins/twitter-for-wordpress/" target="_blank">Twitter for WordPress Plugin',
-				'id' => 'enable_twitter_bar',
-				'type' => 'checkbox',
-				'std' => ''
-			),
+			 
+			 array(
+				'name' => "Section Order",
+				'desc' => "",
+				'id' => 'page_section_order',
+				'type' => 'section_order',
+				'options' => array(
+
+					'page_slider' => "Page Slider",
+					'callout_section' => "Callout",
+					'twitterbar_section' => "Twitter Bar",
+					'page_section' => "Page",
+					'box_section' => "Box"			
+					),
+							'std' => 'page_section'
+				),
+
 			
 			array(
 				'name' => 'Twitter Handle',
@@ -964,26 +957,12 @@ function initialize_the_meta_boxes() {
 				'type' => 'text',
 				'std' => ''
 			),
-			array(
-				'name' => 'Enable Box Section',
-				'desc' => 'Check this box to enable the Box Section on this page',
-				'id' => 'enable_box_section',
-				'type' => 'checkbox',
-				'std' => ''
-			),
+		
 		
 			array(
 				'name' => 'Hide Page Title',
 				'desc' => 'Check this box to hide the title on this page',
 				'id' => 'hide_page_title',
-				'type' => 'checkbox',
-				'std' => ''
-			),
-			
-			array(
-				'name' => 'Hide Page Content',
-				'desc' => 'Check this box to hide the content on this page',
-				'id' => 'hide_page_content',
 				'type' => 'checkbox',
 				'std' => ''
 			),
@@ -1260,27 +1239,7 @@ function initialize_the_meta_boxes() {
 			),
 
 		)),
-				array(
-					'title' => 'Section Order',
-					'fields' => array(
-						array(
-							'name' => "Section Order",
-							'desc' => "",
-							'id' => 'page_section_order',
-							'type' => 'section_order',
-							'options' => array(
-
-								'page_slider' => "Page Slider",
-								'callout_section' => "Callout",
-								'twitterbar_section' => "Twitter Bar",
-								'page_section' => "Page",
-								'box_section' => "Box"
-								
-							),
-							'std' => 'page_section'
-						)
-					)
-				)
+		
 
 		)
 	);

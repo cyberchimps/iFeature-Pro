@@ -22,7 +22,7 @@ function chimps_page_section_content() {
 	
 	
 <?php if (function_exists('chimps_breadcrumbs')) chimps_breadcrumbs(); ?>
-		<?php if ($pagecontent != "on"): ?>
+		
 		<div id="content" class="grid_8">
 		
 		<?php chimps_page_content_slider(); ?>
@@ -67,17 +67,17 @@ function chimps_page_section_content() {
 
 			<?php endwhile; endif; ?>
 			</div><!--end post_container-->
-				<?php endif;?>
+				
 		
 		
 	</div><!--end content_left-->
 	
-	<?php if ($sidebar == "0" && $pagecontent != "on"  OR $sidebar == ""): ?>
+	<?php if ($sidebar == "0" OR $sidebar == ""): ?>
 	<div id="sidebar" class="grid_4">
 	<?php get_sidebar(); ?>
 	</div>
 	<?php endif;?>
-	<?php if ($sidebar == "1" && $pagecontent != "on"): ?>
+	<?php if ($sidebar == "1"): ?>
 	<?php get_sidebar('left'); ?>
 	<?php endif;?>
 
