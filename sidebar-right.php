@@ -5,8 +5,8 @@
     
         <!-- All this stuff in here only shows up if you DON'T have any widgets active in this zone -->
     
-		<div class="sidebar-widget-style">    
-		<h2 class="sidebar-widget-title">Sidebar Right</h2>
+		<div class="widget-container">    
+		<h2 class="widget-title">Sidebar Right</h2>
     	<ul>
 						<li>Thank you for purchasing iFeature Pro.</li>
 						<li>&nbsp;</li>
@@ -18,22 +18,22 @@
 					</ul>
     	</div>
 		
-		<div class="sidebar-widget-style">
-    	<h2 class="sidebar-widget-title">Archives</h2>
+		<div class="widget-container">   
+    	<h2 class="widget-title">Archives</h2>
     	<ul>
     		<?php wp_get_archives('type=monthly'); ?>
     	</ul>
     	</div>
         
-        <div class="sidebar-widget-style">
-        <h2 class="sidebar-widget-title">Categories</h2>
+       <div class="widget-container">   
+        <h2 class="widget-title">Categories</h2>
         <ul>
     	   <?php wp_list_categories('show_count=1&title_li='); ?>
         </ul>
         </div>
         
-    	<div class="sidebar-widget-style">
-    	<h2 class="sidebar-widget-title">WordPress</h2>
+    	<div class="widget-container">   
+    	<h2 class="widget-title">WordPress</h2>
     	<ul>
     		<?php wp_register(); ?>
     		<li><?php wp_loginout(); ?></li>

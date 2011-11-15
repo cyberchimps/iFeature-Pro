@@ -5,8 +5,8 @@
     
         <!-- All this stuff in here only shows up if you DON'T have any widgets active in this zone -->
     
-		<div class="sidebar-widget-style">    
-		<h2 class="sidebar-widget-title">Sidebar Left</h2>
+		<div class="widget-container">      
+		<h2 class="widget-title">Sidebar Left</h2>
     	<ul>
 						<li>Thank you for purchasing iFeature Pro.</li>
 						<li>&nbsp;</li>
@@ -18,13 +18,13 @@
 					</ul>
     	</div>
 		
-		<div class="sidebar-widget-style">    
-		<h2 class="sidebar-widget-title">Pages</h2>
+		<div class="widget-container">     
+		<h2 class="widget-title">Pages</h2>
     	<?php wp_list_pages('title_li=' ); ?>
     	</div>
     	
-    	<div class="sidebar-widget-style">
-    	<h2 class="sidebar-widget-title">Subscribe</h2>
+    	<div class="widget-container">
+    	<h2 class="widget-title">Subscribe</h2>
     	<ul>
     		<li><a href="<?php bloginfo('rss2_url'); ?>">Entries (RSS)</a></li>
     		<li><a href="<?php bloginfo('comments_rss2_url'); ?>">Comments (RSS)</a></li>
