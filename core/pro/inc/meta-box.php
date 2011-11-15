@@ -439,7 +439,12 @@ class RW_Meta_Box {
 			$(".right_list").sortable({
 				update: function() {
 					update($(this).closest(".section_order"));
-				}
+				},
+				connectWith: '.left_list'
+			});
+
+			$(".left_list").sortable({
+				connectWith: '.right_list'
 			});
 
 			$('.section_order').each(function() {
