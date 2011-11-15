@@ -709,7 +709,7 @@ function initialize_the_meta_boxes() {
 
 	$meta_boxes[] = array(
 		'id' => 'feature',
-		'title' => $themenamefull.' Pro Slider Options',
+		'title' => $themenamefull.' Slider Options',
 		'pages' => array('post'),
 
 		'tabs' => array(
@@ -915,7 +915,7 @@ function initialize_the_meta_boxes() {
 
 	$meta_boxes[] = array(
 		'id' => 'pages',
-		'title' => $themenamefull.' Pro Page Options',
+		'title' => $themenamefull.' Page Options',
 		'pages' => array('page'),
 
 		'tabs' => array(
@@ -999,7 +999,7 @@ function initialize_the_meta_boxes() {
 			)),
 
 			array(
-				'title' => $themenamefull." Pro Slider Options",
+				'title' => $themenamefull." Slider Options",
 				'fields' => array(
 
 			array(
@@ -1125,7 +1125,7 @@ function initialize_the_meta_boxes() {
 
 
 			array(
-				'title' => 'Callout Section',
+				'title' => 'Callout Options',
 				'fields' => array(
 			
 					
@@ -1226,7 +1226,7 @@ function initialize_the_meta_boxes() {
 				
 				
 				array(
-				'title' => "SEO",
+				'title' => "SEO Options",
 				'fields' => array(
 				array(
 						'name' => 'Title',
