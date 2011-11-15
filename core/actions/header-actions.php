@@ -259,7 +259,6 @@ function chimps_header_social_icons_content() {
 	$rss			= $options->get($themeslug.'_rsslink');
 	$hiderss   		= $options->get($themeslug.'_hide_rss');
 
-	echo "<br />";
 	echo "<div id='social'>"; ?>
 
 	<div class="icons">

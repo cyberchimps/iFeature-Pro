@@ -49,7 +49,7 @@
 			<div id="header_contact" class="grid_6">
 			
 				<!-- Begin @Core header contact area hook -->
-					<?php chimps_header_contact_area(); ?> 
+					<?php chimps_header_contact_area(); ?>
 				<!-- End @Core header contact area hook -->
 					
 			</div>	
@@ -58,7 +58,7 @@
 		
 		<div class='clear'>&nbsp;</div>
 		
-		<div class="container_12">
+		<div class="container_12" id="head2">
 				
 			<div class="grid_6">
 			
