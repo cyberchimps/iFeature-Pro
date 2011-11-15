@@ -409,6 +409,8 @@ function admin_link() {
 }
 add_action( 'admin_bar_menu', 'admin_link', 113 );
 
+if ( ! isset( $content_width ) ) $content_width = 608;
+
 //Searchform  
 
 /*function ifeature_searchform() {
