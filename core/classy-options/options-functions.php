@@ -49,7 +49,7 @@ function featured_image_alignment() {
 
 	global $themename, $themeslug, $options;
 	
-	if ($options->get($themeslug.'_featured_images') == "right" ) {
+	if ($options->get($themeslug.'_featured_image_align') == "key3" ) {
 
 		echo '<style type="text/css">';
 		echo ".featured-image {float: right;}";
@@ -57,7 +57,7 @@ function featured_image_alignment() {
 		
 	}
 	
-	elseif ($options->get($themeslug.'_featured_images') == "center" ) {
+	elseif ($options->get($themeslug.'_featured_image_align') == "key2" ) {
 
 		echo '<style type="text/css">';
 		echo ".featured-image {text-align: center;}";

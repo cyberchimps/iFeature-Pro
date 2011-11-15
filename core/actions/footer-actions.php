@@ -90,17 +90,19 @@ function chimps_analytics() {
 */
 function chimps_afterfooter_copyright() {
 	global $options, $themeslug; //call globals
-	
+		
 	if ($options->get($themeslug.'_footer_text') == "") {
-		$copyright =   'test';
+		$copyright =  get_bloginfo('name');
 	}
 	else {
 		$copyright = $options->get($themeslug.'_footer_text');
 	}
 	
 	echo "<div id='afterfootercopyright'>";
-		echo $copyright;
+		echo "&copy; $copyright";
 	echo "</div>";
+	
+
 }
 
 /**
