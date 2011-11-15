@@ -45,6 +45,8 @@ $options
 		->subsection_end()
 		->subsection("Background")
 			->textarea($themeslug."_placeholder", "Placeholder")
+			->radio($themeslug."_bg_image_position", "Select the Image Position", array( 'options' => array("key1" => "Left", "key2" => "Center", "key3" => "Right")))
+			->radio($themeslug."_bg_image_repeat", "Select the Image Repeat", array( 'options' => array("key1" => "No Repeat", "key2" => "Tile", "key3" => "Tile Horizontally", "key4" => "Tile Vertically")))
 		->subsection_end()
 		->subsection("Custom Colors")
 			->color($themeslug."_menu_link_color", "Menu Link Color")
