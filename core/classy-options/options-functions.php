@@ -77,25 +77,6 @@ function featured_image_alignment() {
 }
 add_action( 'wp_head', 'featured_image_alignment');
 
-
-/* Hide Header*/
-
-/* function hide_header() {
-
-	global $themename, $themeslug, $options;
-
-	if (v($options, $themeslug.'_hide_header') == "1") {
-
-		echo '<style type="text/css">';
-		echo "#headerwrap {display: none;}";
-		echo "#header {height: 40px; margin-top: 10px;}";
-		echo '</style>';
-		
-	}
-	
-}
-add_action( 'wp_head', 'hide_header'); */
-
 /* Post Meta Data width */
 
 function post_meta_data_width() {
@@ -112,42 +93,6 @@ function post_meta_data_width() {
 	
 }
 add_action( 'wp_head', 'post_meta_data_width');
-
-
-/* Menu Color */
-
-function add_menu_color() {
-
-	global $themename, $themeslug, $options;
-	$root = get_template_directory_uri(); 
-		
-		echo '<style type="text/css">';
-		echo "#navbackground {background: url($root/images/menu/Grey.png) no-repeat left top}";
-		echo '</style>';
-		
-
-	
-	/* elseif (v($options, $themeslug.'_menu_color') != "picker" && v($options, $themeslug.'_menu_color') != "") {
-	
-		$menucolor = v($options, $themeslug.'_menu_color');
-		
-		echo '<style type="text/css">';
-		echo "#navbackground {background: url($root/images/menu/$menucolor.png) no-repeat left top}";
-		echo '</style>';
-		
-	}
-	
-	elseif (v($options, $themeslug.'_menu_color') == "picker") {
-	
-		$menucolor = v($options, $themeslug.'_custom_menu_color'); 
-			
-		echo '<style type="text/css">';
-		echo "#navbackground {height: 35px; border: 1px solid #333; -moz-border-radius: 3px; border-radius: 3px; -moz-box-shadow:0 0 3px #444; -webkit-box-shadow:0 0 3px #444; box-shadow:0 0 3px #444;background-color: #$menucolor;}";
-		echo '</style>';
-	} */
-	
-}
-add_action( 'wp_head', 'add_menu_color');
 
 /* Site Title Color */
 
@@ -207,7 +152,7 @@ function add_menulink_color() {
 	}	
 		
 		echo '<style type="text/css">';
-		echo ".sf-menu a {color: $sitelink;}";
+		echo "#nav ul li a {color: $sitelink;}";
 		echo '</style>';
 }
 add_action( 'wp_head', 'add_menulink_color');
