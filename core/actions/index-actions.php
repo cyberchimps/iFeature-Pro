@@ -86,9 +86,15 @@ function chimps_index_after_entry_sidebar() {
 	<div id="sidebar" class="grid_4">
 		<?php get_sidebar(); ?>
 	</div>
-	
 	<?php endif;?>
-	<?php if ($sidebar == "2" OR $blogsidebar == 'key4' ): ?>
+	
+	<?php if ($sidebar == "2" OR $blogsidebar == 'key3' ): ?>
+	<div id="sidebar" class="grid_3">
+		<?php get_sidebar('left'); ?>
+	</div>
+	<?php endif;?> 
+	
+	<?php if ($sidebar == "2" OR $blogsidebar == 'key3' OR $blogsidebar == 'key4' ): ?>
 	<div id="sidebar" class="grid_3">
 		<?php get_sidebar('right'); ?>
 	</div>
@@ -106,7 +112,7 @@ function chimps_index_before_entry_sidebar() {
 	$blogsidebar = $options->get($themeslug.'_blog_sidebar');
 	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);?>
 				
-	<?php if ($sidebar == "3" OR $blogsidebar == 'key3' OR $blogsidebar == 'key4' ): ?>
+	<?php if ($sidebar == "3" OR $blogsidebar == 'key4' ): ?>
 	<div id="sidebar" class="grid_3">
 		<?php get_sidebar('left'); ?>
 	</div>
