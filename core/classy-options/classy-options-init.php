@@ -101,7 +101,7 @@ $options
 			->multicheck($themeslug."_hide_byline", "Hide Post Byline Elements", array( 'options' => array("key1" => "Author", "key2" => "Categories", "key3" => "Date", "key4" => "Comments", "key5" => "Share", "key6" => "Tags")))
 			->checkbox($themeslug."_show_fb_like", "Show Facebook Like Button")
 			->checkbox($themeslug."_show_gplus", "Show Google Plus One Button")
-		->subsection_end()->subsection("Blog iSlider")
+		->subsection_end()->subsection("Blog Slider")
 			->checkbox($themeslug."_hide_slider_blog", "Hide Index Slider")
 			->select($themeslug."_slider_size", "Select the Slider Size", array( 'options' => array("key1" => "half", "key2" => "full")))
 			->select($themeslug."_slider_type", "Select the Slider Type", array( 'options' => array("posts" => "posts", "custom" => "custom")))
