@@ -53,7 +53,6 @@ function chimps_callout_section_content() {
 		$grid = 'grid_12';
 	}
 	
-	 if ($callout == "on") {
 
 /* End variable definition. */	
 
@@ -221,7 +220,7 @@ function chimps_callout_section_content() {
 
 }
 
-}
+
 
 add_shortcode ('callout', 'chimps_callout_section_content' );
 

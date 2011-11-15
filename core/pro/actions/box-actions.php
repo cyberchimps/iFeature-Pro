@@ -29,9 +29,7 @@ function chimps_box_section_content() {
 	global $post; //call globals
 	
 	$enableboxes = get_post_meta($post->ID, 'enable_box_section' , true);
-	$root = get_template_directory_uri();
-
-	if ($enableboxes == 'on' ) { ?>
+	$root = get_template_directory_uri(); ?>
 
 	<div id="box_container"> <!--box container-->
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box Left") ) : ?>
@@ -58,7 +56,7 @@ function chimps_box_section_content() {
 
 	</div><!--end box_container--> <div class='clear'>&nbsp;</div><?php
 	}
-}
+
 
 /**
 * End
