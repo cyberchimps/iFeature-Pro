@@ -82,19 +82,19 @@ function chimps_index_after_entry_sidebar() {
 	</div>
 	<?php endif;?>
 	
-	<?php if ($sidebar == "1" OR $blogsidebar == 'key1' ): ?>
+	<?php if ($sidebar == "0" OR $blogsidebar == 'key1' ): ?>
 	<div id="sidebar" class="grid_4">
 		<?php get_sidebar(); ?>
 	</div>
 	<?php endif;?>
 	
-	<?php if ($sidebar == "2" OR $blogsidebar == 'key3' ): ?>
+	<?php if ($sidebar == "3" OR $blogsidebar == 'key3' ): ?>
 	<div id="sidebar" class="grid_3">
 		<?php get_sidebar('left'); ?>
 	</div>
 	<?php endif;?> 
 	
-	<?php if ($sidebar == "2" OR $blogsidebar == 'key3' OR $blogsidebar == 'key4' ): ?>
+	<?php if ($sidebar == "2" OR $sidebar == "3" OR $blogsidebar == 'key3' OR $blogsidebar == 'key4' ): ?>
 	<div id="sidebar" class="grid_3">
 		<?php get_sidebar('right'); ?>
 	</div>
