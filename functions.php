@@ -275,6 +275,18 @@ function plusone(){
 }
 add_action('wp_head', 'plusone');
 
+// Typekit
+
+function typekit_support() {
+	global $themename, $themeslug, $options;
+	
+	$embed = $options->get($themeslug.'_typekit');
+	
+	echo stripslashes($embed);
+
+}
+add_action('wp_head', 'typekit_support');
+
 
 // Register superfish scripts
 	
