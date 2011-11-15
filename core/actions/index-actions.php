@@ -167,6 +167,8 @@ function chimps_index_loop_content($content) { ?>
 						}
 					 ?>
 				</div><!--end entry-->
+				
+				<div style=clear:both;></div>
 			<?php	
 		
 		$content = ob_get_clean();
