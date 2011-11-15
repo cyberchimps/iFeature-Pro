@@ -11,7 +11,7 @@
  * @version: 3.0.1
  */
  
- 
+	
 
 // Ajax delete files on the fly. Modified from a function used by "Verve Meta Boxes" plugin (http://goo.gl/LzYSq)
 add_action('wp_ajax_rw_delete_file', 'rw_delete_file');
@@ -384,6 +384,7 @@ class RW_Meta_Box {
 	}
 
 	function show_field_section_order($field, $meta) {
+		$root = get_template_directory_uri();  
 		$this->show_field_begin($field, $meta);
 		$meta = explode(",", $meta);
 		echo "<div class='section_order'>";
@@ -405,7 +406,7 @@ class RW_Meta_Box {
 				if(in_array($key, $meta)) continue;
 				echo "<div class='list_item'>";
 					echo "<span data-key='{$key}'>{$value}</span>";
-					echo "<input type='image' src='<get_template_directory_uri();>/images/plus.png' class='action' value='Add'>";
+					echo "<input type='image' src='$root/images/plus.png' class='action' value='Add'>";
 				echo "</div>";
 			}
 		echo "</div>";
