@@ -17,6 +17,10 @@
 		$content_grid = 'grid_6';
 	}
 	
+	elseif ($sidebar == "2" OR $blogsidebar == 'key2' ) {
+		$content_grid = 'grid_12';
+	}
+	
 	else {
 		$content_grid = 'grid_8';
 	}
