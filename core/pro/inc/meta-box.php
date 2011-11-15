@@ -388,6 +388,16 @@ class RW_Meta_Box {
 		$this->show_field_begin($field, $meta);
 		$meta = explode(",", $meta);
 		echo "<div class='section_order'>";
+		echo "<div class='left_list'>";
+		echo "Inactive Elements";
+			foreach($field['options'] as $key => $value) {
+				if(in_array($key, $meta)) continue;
+				echo "<div class='list_item'>";
+					echo "<input id='plus' type='image' src='$root/images/plus.png' class='action' value='Add'>";
+					echo "<span data-key='{$key}'>{$value}</span>";
+				echo "</div>";
+			}
+		echo "</div>";
 		echo "<div class='right_list'>";
 		echo "<div id='drag'>Reorder</div>";
 			foreach($meta as $key) {
@@ -399,16 +409,6 @@ class RW_Meta_Box {
 				echo "</div>";
 			}
 
-		echo "</div>";
-		echo "<div class='left_list'>";
-		echo "Inactive Elements";
-			foreach($field['options'] as $key => $value) {
-				if(in_array($key, $meta)) continue;
-				echo "<div class='list_item'>";
-					echo "<input id='plus' type='image' src='$root/images/plus.png' class='action' value='Add'>";
-					echo "<span data-key='{$key}'>{$value}</span>";
-				echo "</div>";
-			}
 		echo "</div>";
 		echo "<input type='hidden' id={$field['id']} name={$field['id']} />";
 		echo "</div>";
