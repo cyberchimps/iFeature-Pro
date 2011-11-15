@@ -388,13 +388,13 @@ class RW_Meta_Box {
 		$meta = explode(",", $meta);
 		echo "<div class='section_order'>";
 		echo "<div class='right_list'>";
-		echo "Drag to reorder";
+		echo "<div id='drag'>Drag and drop</div>";
 			foreach($meta as $key) {
 				if(!$key) continue;
 				$value = $field['options'][$key];
 				echo "<div class='list_item'>";
-					echo "<input type='button' class='action' value='Remove'>";
 					echo "<span data-key='{$key}'>{$value}</span>";
+					echo "<input type='button' class='action' value='Remove'>";
 				echo "</div>";
 			}
 
@@ -404,8 +404,8 @@ class RW_Meta_Box {
 			foreach($field['options'] as $key => $value) {
 				if(in_array($key, $meta)) continue;
 				echo "<div class='list_item'>";
-					echo "<input type='button' class='action' value='Add'>";
 					echo "<span data-key='{$key}'>{$value}</span>";
+					echo "<input type='image' src='<get_template_directory_uri();>/images/plus.png' class='action' value='Add'>";
 				echo "</div>";
 			}
 		echo "</div>";
@@ -935,19 +935,18 @@ function initialize_the_meta_boxes() {
 			 ),	
 			 
 			 array(
-				'name' => "Section Order",
+				'name' => "Page Elements",
 				'desc' => "",
 				'id' => 'page_section_order',
 				'type' => 'section_order',
 				'options' => array(
-
-					'page_slider' => "Page Slider",
+					'page_slider' => "iFeature Slider",
 					'callout_section' => "Callout",
 					'twitterbar_section' => "Twitter Bar",
 					'page_section' => "Page",
-					'box_section' => "Box"			
+					'box_section' => "Boxes"			
 					),
-							'std' => 'page_section'
+					'std' => 'page_section'
 				),
 
 			

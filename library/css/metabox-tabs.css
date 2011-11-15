@@ -80,3 +80,9 @@ border-width: 1px;
 	border: 1px solid #acacac;
 	border-radius: 4px;
 }
+
+#drag {
+	font-size: 10px;
+	color: #e6e6e6;
+	text-align: center;
+}
