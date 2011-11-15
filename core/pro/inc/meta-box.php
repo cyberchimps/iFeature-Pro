@@ -400,6 +400,7 @@ class RW_Meta_Box {
 
 		echo "</div>";
 		echo "<div class='left_list'>";
+		echo "Inactive Sections";
 			foreach($field['options'] as $key => $value) {
 				if(in_array($key, $meta)) continue;
 				echo "<div class='list_item'>";
