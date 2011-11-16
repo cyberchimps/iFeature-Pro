@@ -47,6 +47,8 @@ get_header(); ?>
 				<!--Begin @Core post tags hook-->
 					<?php chimps_post_tags(); ?>
 				<!--End @Core post tags hook-->
+				
+				<?php previous_post_link(); ?> <?php next_post_link(); ?>
 			
 				<!--Begin @Core post bar hook-->
 					<?php chimps_post_bar(); ?>
