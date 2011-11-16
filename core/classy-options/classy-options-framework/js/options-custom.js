@@ -181,7 +181,7 @@ jQuery(document).ready(function($) {
   $("#if_hide_slider_blog").change(function() {
     var toShow = $("#section-if_hide_slider_blog").siblings();
     if($(this).is(':checked')) {
-      toShow.fadeOut();
+      toShow.hide();
     } else {
       toShow.fadeIn();
     }
