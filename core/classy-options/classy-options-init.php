@@ -133,6 +133,7 @@ $options
 		->subsection_end()
 	
 	->section("Footer", array('icon' => CLASSY_OPTIONS_FRAMEWORK_URL . 'images/ico-delete.png'))
+		->checkbox($themeslug."_disable_footer", "Toggle to disable the footer")
 		->text($themeslug."_footer_text", "Footer Copyright Text")
 		->checkbox($themeslug."_hide_link", "Hide CyberChimps Link")
 	->section("Import / Export", array('icon' => CLASSY_OPTIONS_FRAMEWORK_URL . 'images/ico-delete.png'))
