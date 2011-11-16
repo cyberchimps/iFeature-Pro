@@ -186,6 +186,14 @@ jQuery(document).ready(function($) {
       toShow.show();
     }
   }).change();
+    $("#if_disable_footer").change(function() {
+    var toShow = $("#section-if_footer_text, #section-if_hide_link");
+    if($(this).is(':checked')) {
+      toShow.hide();
+    } else {
+      toShow.show();
+    }
+  }).change();
   $("#if_slider_type").change(function(){
     var val = $(this).val(),
       post = $("#section-if_slider_posts_category"),
