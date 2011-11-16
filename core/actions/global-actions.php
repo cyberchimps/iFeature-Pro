@@ -100,7 +100,7 @@ function chimps_post_tags_content() {
 	global $options, $themeslug; 
 	$hidden = $options->get($themeslug.'_hide_byline'); ?>
 
-	<?php if (!($hidden['key6'])):?>
+	<?php if (has_tag() AND !($hidden['key6'])):?>
 	<div class="tags">
 			<?php the_tags('Tags: ', ', ', '<br />'); ?>
 		

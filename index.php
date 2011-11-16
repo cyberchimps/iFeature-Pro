@@ -33,9 +33,9 @@
 
 <!--<div id = "wrap">
 			<div id ="list">
-				<div class="prev"><img src="<?php echo $root ;?>/images/prev.jpg" alt="prev" /></div>
-			<?php chimps_carousel_section(); ?>
-				<div class="next"><img src="<?php echo $root ;?>/images/next.jpg" alt="next" /></div>
+				<div class="prev"><img src="<?php //echo $root ;?>/images/prev.jpg" alt="prev" /></div>
+			<?php //chimps_carousel_section(); ?>
+				<div class="next"><img src="<?php //echo $root ;?>/images/next.jpg" alt="next" /></div>
 			</div>
 </div>-->
 
