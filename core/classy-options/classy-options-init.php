@@ -48,6 +48,7 @@ $options
 			->upload($themeslug."_background_image", "Background Image")
 			->radio($themeslug."_bg_image_position", "Select the Image Position", array( 'options' => array("key1" => "Left", "key2" => "Center", "key3" => "Right")))
 			->radio($themeslug."_bg_image_repeat", "Select the Image Repeat", array( 'options' => array("key1" => "No Repeat", "key2" => "Tile", "key3" => "Tile Horizontally", "key4" => "Tile Vertically")))
+			->radio($themeslug."_bg_image_position", "Select the Image Position", array( 'options' => array("key1" => "Scroll", "key2" => "Fixed",)))
 			->color($themeslug."_background_color", "Select a Background Color")
 		->subsection_end()
 		->subsection("Custom Colors")

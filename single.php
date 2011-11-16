@@ -55,6 +55,8 @@ get_header(); ?>
 				<!--End @Core post bar hook-->
 			
 				</div><!--end post_class-->	
+				
+				
 		</div><!--end post container--> 
 	
 			<?php endwhile; ?>
