@@ -204,7 +204,6 @@ jQuery(document).ready(function($) {
       post.show(); custom.hide();
     }
   }).change();
-<<<<<<< HEAD
 
   $("#of-option-header div.section-text").each(function(){
     var $this = $(this), $next = $(this).next();
@@ -220,7 +219,5 @@ jQuery(document).ready(function($) {
       }
     }).change();
   });
-=======
->>>>>>> parent of 8c3b909... Almost done with social checkboxes and texts.
 });	
 
