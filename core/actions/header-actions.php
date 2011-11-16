@@ -202,7 +202,7 @@ function chimps_header_site_description_content() {
 	global $themeslug, $options; ?>
 	
 	<div id="description">
-		<h1 class="description"><?php bloginfo('description'); ?></h1>
+		<h1 class="description"><?php bloginfo('description'); ?>&nbsp;</h1>
 	</div> <?php
 }
 
