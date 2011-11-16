@@ -165,7 +165,7 @@ jQuery(document).ready(function($) {
   $("#if_show_excerpts").change(function() {
     var toShow = $("#section-if_excerpt_link_text, #section-if_excerpt_length");
     if($(this).is(':checked')) {
-      toShow.fadeIn();
+      toShow.show();
     } else {
       toShow.hide();
     }
@@ -173,7 +173,7 @@ jQuery(document).ready(function($) {
   $("#if_show_featured_images").change(function() {
     var toShow = $("#section-if_featured_image_align, #section-if_featured_image_height, #section-if_featured_image_width");
     if($(this).is(':checked')) {
-      toShow.fadeIn();
+      toShow.show();
     } else {
       toShow.hide();
     }
@@ -183,15 +183,15 @@ jQuery(document).ready(function($) {
     if($(this).is(':checked')) {
       toShow.hide();
     } else {
-      toShow.fadeIn();
+      toShow.show();
     }
   }).change();
     $("#if_disable_footer").change(function() {
     var toShow = $("#section-if_footer_text, #section-if_hide_link");
     if($(this).is(':checked')) {
-      toShow.fadeOut();
+      toShow.hide();
     } else {
-      toShow.fadeIn();
+      toShow.show();
     }
   }).change();
   $("#if_slider_type").change(function(){
@@ -199,9 +199,9 @@ jQuery(document).ready(function($) {
       post = $("#section-if_slider_posts_category"),
       custom = $("#section-if_slider_custom_category");
     if(val == 'custom') {
-      post.hide(); custom.fadeIn();
+      post.hide(); custom.show();
     } else {
-      post.fadeIn(); custom.hide();
+      post.show(); custom.hide();
     }
   }).change();
 <<<<<<< HEAD
@@ -214,7 +214,7 @@ jQuery(document).ready(function($) {
     $this.find('.option').before($next.find(".option"));
     $this.find("input[type='checkbox']").change(function() {
       if($(this).is(":checked")) {
-        $(this).closest('.option').next().fadeIn();
+        $(this).closest('.option').next().show();
       } else {
         $(this).closest('.option').next().hide();
       }
