@@ -198,40 +198,6 @@ function add_posttitle_color() {
 }
 add_action( 'wp_head', 'add_posttitle_color');
 
-/* Hide search/home button */
-
-/*function fullwidth_nav() {
-
-	global $themename, $themeslug, $options;
-
-	if (v($options, $themeslug.'_hide_search') == "1" && v($options, $themeslug.'_hide_home_icon') == "") {
-		
-		echo '<style type="text/css">';
-		echo "#searchbar {display: none;}";
-		echo "#sfwrapper {width: 91%;}";
-		echo '</style>';
-	}
-
-	elseif (v($options, $themeslug.'_hide_search') == "" && v($options, $themeslug.'_hide_home_icon') == "1" ) {
-
-		echo '<style type="text/css">';
-		echo "#homebutton {display: none;}";
-		echo "#sfwrapper {width: 79%; padding-left: 5px;}";
-		echo '</style>';
-	}
-
-	elseif (v($options, $themeslug.'_hide_search') == "1" && v($options, $themeslug.'_hide_home_icon') == "1" ) {
-
-		echo '<style type="text/css">';
-		echo "#homebutton {display: none;}";
-		echo "#searchbar {display: none;}";
-		echo "#sfwrapper {width: 100%; padding-left: 5px;}";
-		echo '</style>';
-	}
-
-}
-add_action( 'wp_head', 'fullwidth_nav'); */
-
 /* Footer Color */
 
 function add_footer_color() {
@@ -252,30 +218,30 @@ add_action( 'wp_head', 'add_footer_color');
 
 /* Menu Font */
  
-/* function add_menu_font() {
+function add_menu_font() {
 		
 	global $themename, $themeslug, $options;	
 		
-	if (v($options, $themeslug.'_menu_font') == "") {
-		$font = 'Cantarell';
+	if ($options->get($themeslug.'_menu_font') == "") {
+		$font = 'Arial';
 	}		
 		
-	elseif (v($options, $themeslug.'_custom_menu_font') != "") {
-		$font = v($options, $themeslug.'_custom_menu_font');	
+	elseif ($options->get($themeslug.'_custom_menu_font') != "") {
+		$font = $options->get($themeslug.'_custom_menu_font');	
 	}
 	
 	else {
-		$font = v($options, ($themeslug.'_menu_font')); 
+		$font = $options->get($themeslug.'_menu_font'); 
 	}
 	
 		$fontstrip =  ereg_replace("[^A-Za-z0-9]", " ", $font );
 	
 		echo "<link href='http://fonts.googleapis.com/css?family=$font' rel='stylesheet' type='text/css' />";
 		echo '<style type="text/css">';
-		echo ".sf-menu a {font-family: $fontstrip;}";
+		echo "#nav ul li a {font-family: $fontstrip;}";
 		echo '</style>';
 }
-add_action( 'wp_head', 'add_menu_font'); */
+add_action( 'wp_head', 'add_menu_font'); 
 
 /* Widget title background */
  
