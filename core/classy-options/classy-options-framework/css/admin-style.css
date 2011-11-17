@@ -65,7 +65,7 @@
 }
 #of_container #of-nav ul li a:link, #of-nav ul li a:visited {
 	display: block;
-	padding: 10px 10px 10px 15px;
+	padding: 10px 10px 10px 30px;
 	font-family: Arial, Helvetica, Serif;
 	font-size: 13px;
 	text-decoration: none;
@@ -353,7 +353,11 @@
 }
 
 #of-nav li img {
+  position: absolute;
   padding-right: 8px;
+}
+#of-nav li a {
+  padding-left: 10px;
 }
 
 #of_container h3.heading {

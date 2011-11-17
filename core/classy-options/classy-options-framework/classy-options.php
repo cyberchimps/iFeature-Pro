@@ -490,8 +490,8 @@ class ClassyOptions {
 				$jquery_click_hook = preg_replace('/\W/', '', strtolower($value['name']) );
 				$jquery_click_hook = "of-option-" . $jquery_click_hook;
 				$menu .= '<li>';
-				$icon = isset($value['icon']) ? "<img src={$value['icon']}>" : "";
-				$menu .= '<a id="'.  esc_attr( $jquery_click_hook ) . '-tab" title="' . esc_attr( $value['name'] ) . '" href="' . esc_attr( '#'.  $jquery_click_hook ) . '">' . $icon . esc_html( $value['name'] ) . '</a></li>';
+				$icon = isset($value['icon']) ? " style=\"background-image: url({$value['icon']}); background-position: 8px center; background-repeat: no-repeat; \"" : "";
+				$menu .= '<a id="'.  esc_attr( $jquery_click_hook ) . '-tab" title="' . esc_attr( $value['name'] ) . '" href="' . esc_attr( '#'.  $jquery_click_hook ) . '"' . $icon . '>' . esc_html( $value['name'] ) . ' <span></span></a></li>';
 				$output .= '<div class="group" id="' . esc_attr( $jquery_click_hook ) . '"><h2>' . esc_html( $value['name'] ) . '</h2>' . "\n";
 				break;
 
