@@ -404,7 +404,7 @@ function admin_link() {
 
 	global $wp_admin_bar;
 
-	$wp_admin_bar->add_menu( array( 'id' => 'iFeature', 'title' => 'iFeature Pro Settings', 'href' => admin_url('themes.php?page=theme_options')  ) ); 
+	$wp_admin_bar->add_menu( array( 'id' => 'iFeature', 'title' => 'iFeature Pro Options', 'href' => admin_url('themes.php?page=ifeature')  ) ); 
   
 }
 add_action( 'admin_bar_menu', 'admin_link', 113 );
