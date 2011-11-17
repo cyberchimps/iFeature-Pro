@@ -145,7 +145,13 @@ jQuery(document).ready(function($) {
 		 		
 	$('.subsection-items').hide();
 	$('.subsection > h3').click(function() {
-		$(this).siblings('div').fadeToggle();
+		$('span.minus').removeClass('minus');
+		if($(this).siblings('div').is(':visible')) {
+			$(this).siblings('div').fadeOut();
+		} else {
+			$(this).siblings('div').fadeIn();
+			$(this).find("span").addClass('minus');
+		}
 	});
 
   $("#section-if_font").change(function() {

@@ -383,3 +383,17 @@
 h3 {
 	margin: 0;
 }
+
+span.plus {
+	background: url(../images/downarrow.png);
+	height: 16px;
+	width: 16px;
+	display: block;
+}
+
+span.minus {
+	background: url(../images/uparrow.png);
+	height: 16px;
+	width: 16px;
+	display: block;
+}

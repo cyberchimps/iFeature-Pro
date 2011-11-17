@@ -497,7 +497,7 @@ class ClassyOptions {
 
 			case "subsection":
 				$output .= "<div class='subsection'><h3>{$value['name']}<span class='plus'>"
-					. "<img src='" . CLASSY_OPTIONS_FRAMEWORK_URL . "/images/downarrow.png'>"
+					// . "<img src='" . CLASSY_OPTIONS_FRAMEWORK_URL . "/images/downarrow.png'>"
 					. "</span></h3><div class='subsection-items'>";
 			break;
 
