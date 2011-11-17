@@ -34,6 +34,10 @@ a{outline:none}
 
 #content { padding-top: 15px;}
 
+#logo {
+	margin-bottom: 5px;
+}
+
 .post_container {
 	padding: 5px 15px 20px 15px;
 	border: 1px solid;
@@ -111,7 +115,7 @@ a{outline:none}
 /* Social Icons  */
 
 .icons {
-	text-align:right;margin-top: 8px;
+	text-align:right;margin-top: 15px;
 }
 
 .icons a img {
