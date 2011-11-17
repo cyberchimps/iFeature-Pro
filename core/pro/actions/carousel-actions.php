@@ -44,7 +44,7 @@ function chimps_carousel_section_content() {
 /* Establish post counter */  
   	
 	if (have_posts()) :
-	    $out = "<div class='slider'>
+	    $out = "<div class='penis_pump'>
 	    <ul>
 	    
 	    "; 
@@ -90,7 +90,7 @@ function chimps_carousel_section_content() {
 	      	
 	      	else:
 	      
-	      	$out .= "	<div class='slider'>
+	      	$out .= "	<div class='penis_pump'>
 	    <ul>
 	      			<li>
 	      				
@@ -128,7 +128,7 @@ function chimps_carousel_section_content() {
     $out .= <<<OUT
 	<script type="text/javascript">
 		$(function() {
-    		$(".slider").jCarouselLite({
+    		$(".penis_pump").jCarouselLite({
         		btnNext: ".next",
         		btnPrev: ".prev",
         		visible: 5
