@@ -31,7 +31,8 @@ function chimps_box_section_content() {
 	$enableboxes = get_post_meta($post->ID, 'enable_box_section' , true);
 	$root = get_template_directory_uri(); ?>
 
-	<div id="box_container"> <!--box container-->
+	<div id="box_container" class="container_12"> <!--box container-->
+		<div class="grid_12">
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box Left") ) : ?>
 			<div class="box1">
 				<h2 class="box-widget-title">iFeature Pro 2 Slider</h2>
@@ -53,7 +54,7 @@ function chimps_box_section_content() {
 				<p>We designed iFeature Pro 2 to be as easy to design with as possible, if you do run into trouble we provide a <a href="http://cyberchimps.com/forum">support forum</a>, and <a href="http://www.cyberchimps.com/ifeature-pro/docs/">precise documentation</a>.</p>
 			</div><!--end box3-->
 		<?php endif; ?>
-
+</div>
 	</div><!--end box_container--> <div class='clear'>&nbsp;</div><?php
 	}
 
