@@ -109,6 +109,10 @@ function chimps_carousel_section_content() {
 					<li>
 	    				<img src='$default' alt='Post 5' class='captify'/>
 	    			</li>
+	    			
+	    			<li>
+	    				<img src='$default' alt='Post 6' class='captify'/>
+	    			</li>
 
 	      				
 	    			</ul>
@@ -131,7 +135,7 @@ function chimps_carousel_section_content() {
     		$(".carousel").jCarouselLite({
         		btnNext: ".next",
         		btnPrev: ".prev",
-        		visible: 5
+        		visible: 6
     		});
 		});
 
