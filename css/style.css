@@ -897,7 +897,7 @@ ol.commentlist li.thread-odd { }
 #slider {
 	position:relative;
     margin:auto;
-	background:url(../images/slider/loading.gif) no-repeat 50% 50%;
+	background: #fff url(../images/slider/loading.gif) no-repeat 50% 50%;
 	border-bottom: 1px solid #bbb;
 }
 
