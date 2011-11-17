@@ -950,7 +950,8 @@ function initialize_the_meta_boxes() {
 					'callout_section' => "Callout",
 					'twitterbar_section' => "Twitter Bar",
 					'page_section' => "Page",
-					'box_section' => "Boxes"			
+					'box_section' => "Boxes",
+					'carousel_section' => "Carousel",			
 					),
 					'std' => 'page_section'
 				),
