@@ -32,7 +32,12 @@ function chimps_carousel_section_content() {
 	$worddisable = get_post_meta($post->ID, 'disable_wordthumb' , true);
 	$default = "$root/images/pro/carousel.jpg";
 	
-/* End define variables. */	
+/* End define variables. */	 ?>
+
+<div id="carousel_wrapper">
+			<div id="carousel_list">
+				<div class="prev"><img src="<?php echo $root ;?>/images/prev.png" alt="prev" /></div>
+<?
 
 
 /* Query posts  */
@@ -172,7 +177,11 @@ OUT;
 echo $out;
 
 /* END */ 
+?>
 
+				<div class="next"><img src="<?php echo $root ;?>/images/next.png" alt="next" /></div>
+			</div>
+</div> <?
 
 }
 

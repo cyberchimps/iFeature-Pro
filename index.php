@@ -31,13 +31,9 @@
 
 <div class="container_12">
 
-<div id="carousel_wrapper">
-			<div id="carousel_list">
-				<div class="prev"><img src="<?php echo $root ;?>/images/prev.png" alt="prev" /></div>
+
 			<?php chimps_carousel_section(); ?>
-				<div class="next"><img src="<?php echo $root ;?>/images/next.png" alt="next" /></div>
-			</div>
-</div>
+
 
 			<!--Begin @Core index entry hook-->
 	<?php chimps_index_before_entry(); ?>
