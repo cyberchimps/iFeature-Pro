@@ -30,7 +30,7 @@
 }
 #of_container #header {
 	height: 60px;
-	background:#eaeaea;
+	background: #fff;
 	border: 1px solid #ccc;
 	border-top-left-radius: 4px;
 	-moz-border-radius-topleft: 4px;
@@ -49,7 +49,7 @@
 	line-height: 26px;
 }
 #of_container #main {
-	background-color: #212121;
+	background: url(dark.png) #212121;
 	border-left: 1px solid #d8d8d8;
 	border-right: 1px solid #d8d8d8;
 	border-bottom: 1px solid #d8d8d8;
@@ -84,7 +84,7 @@
 	width: 595px;
 	margin-left: -1px;
 	padding: 0 14px;
-	background-color: #fbfbfb;
+	background: url(noise.png) #fbfbfb;
 	border-left: 1px solid #d8d8d8;
 }
 #of_container #content .section {
@@ -319,7 +319,7 @@
 	float:right;
 }
 #of_container .of_admin_bar {
-	background: #f3f3f3;
+	background: #fff;
 	border:solid #ccc;
 	border-width:0px 1px 1px 1px;
 	padding: 10px 20px 0px 20px;

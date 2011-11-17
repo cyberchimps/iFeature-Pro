@@ -28,7 +28,7 @@ a{outline:none}
 #header_contact{ text-align:right;
 }
 
-#head {	margin-top: 25px;}
+#head {	margin-top: 30px;}
 
 #head2 {	margin-top: 20px;}
 
@@ -111,7 +111,7 @@ a{outline:none}
 /* Social Icons  */
 
 .icons {
-	text-align:right;margin-bottom: 5px;
+	text-align:right;margin-top: 8px;
 }
 
 .icons a img {

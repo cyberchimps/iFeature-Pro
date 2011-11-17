@@ -46,14 +46,36 @@
 				
 			</div>	
 			
+			<div id="header_contact" class="grid_6">
+			
+				<!-- Begin @Core header contact area hook -->
+					<?php chimps_header_contact_area(); ?>
+				<!-- End @Core header contact area hook -->
+					
+			</div>	
+		
+		</div>
+		
+		<div class='clear'>&nbsp;</div>
+		
+		<div class="container_12" id="head2">
+				
+			<div class="grid_6">
+			
+				<!-- Begin @Core header description hook -->
+					<?php chimps_header_site_description(); ?> 
+				<!-- End @Core header description hook -->
+			
+			</div>
+			
 			<div class="grid_6">
 			
 				<!-- Begin @Core header social icon hook -->
 					<?php chimps_header_social_icons(); ?> 
-				<!-- End @Core header contact social icon hook -->
+				<!-- End @Core header contact social icon hook -->	
 				
-			</div>	
-		
+			</div>
+			
 		</div>
 		
 		<div class='clear'>&nbsp;</div>
