@@ -401,3 +401,10 @@ span.minus {
 	width: 16px;
 	display: block;
 }
+#of-nav li.current a span {
+	background: url(../images/sidearrow.png);
+	float: right;
+	height: 16px;
+	width: 16px;
+	display: block;
+}
