@@ -33,9 +33,9 @@
 
 <div id="carousel_wrapper">
 			<div id="carousel_list">
-				<div class="prev"><img src="<?php echo $root ;?>/images/prev.jpg" alt="prev" /></div>
+				<div class="prev"><img src="<?php echo $root ;?>/images/prev.png" alt="prev" /></div>
 			<?php chimps_carousel_section(); ?>
-				<div class="next"><img src="<?php echo $root ;?>/images/next.jpg" alt="next" /></div>
+				<div class="next"><img src="<?php echo $root ;?>/images/next.png" alt="next" /></div>
 			</div>
 </div>
 
