@@ -31,7 +31,7 @@
 
 <div class="container_12">
 
-<div id = "carousel_wrapper">
+<div id="carousel_wrapper">
 			<div id ="carousel_list">
 				<div class="prev"><img src="<?php echo $root ;?>/images/prev.jpg" alt="prev" /></div>
 			<?php chimps_carousel_section(); ?>
