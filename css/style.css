@@ -1042,7 +1042,7 @@ a.nivo-prevNav {
 	margin:15px auto; 
 }
 
-.penis_pump {
+.carousel {
 	float:left;
 	left: -5000px; 
 	margin:15px; 
@@ -1050,16 +1050,16 @@ a.nivo-prevNav {
 	visibility:hidden;	
 }
 	
-.penis_pump ul {
+.carousel ul {
 	height:100px;
 	width:600px; 
 }
 
-.penis_pump ul li {
+.carousel ul li {
 	padding:0 20px;
 }
 
-.penis_pump ul li img {
+.carousel ul li img {
 	cursor:pointer;
 	height:100px; 
 	padding-top:3px;
