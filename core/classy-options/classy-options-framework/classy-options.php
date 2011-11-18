@@ -218,7 +218,7 @@ class ClassyOptions {
 			$checked = '';
 			
 			// Wrap all options
-			if ( ($value['type'] != "heading") && ($value['type'] != "info" && $value['type'] != "subsection" && $value['type'] != "subsection_end") ) {
+			if ( ($value['type'] != "heading") && ($value['type'] != "info" && $value['type'] != "subsection" && $value['type'] != "subsection_end") && $value['type'] != "open_outersection" && $value['type'] != "close_outersection" ) {
 
 				// Keep all ids lowercase with no spaces
 				$value['id'] = isset( $value['id'] ) ? preg_replace('/\W/', '', strtolower($value['id']) ) : "";
@@ -244,7 +244,7 @@ class ClassyOptions {
 			}
 			
 			// If the option is already saved, ovveride $val
-			if ( ($value['type'] != "heading") && ($value['type'] != "info" && $value['type'] != "subsection" && $value['type'] != "subsection_end") ) {
+			if ( ($value['type'] != "heading") && ($value['type'] != "info" && $value['type'] != "subsection" && $value['type'] != "subsection_end") && $value['type'] != "open_outersection" && $value['type'] != "close_outersection" ) {
 				if ( isset($settings[($value['id'])]) ) {
 						$val = $settings[($value['id'])];
 						// Striping slashes of non-array options
@@ -504,9 +504,17 @@ class ClassyOptions {
 			case "subsection_end":
 				$output .= "</div></div>";
 			break;
+
+			case "open_outersection":
+				$output .= "<div class='outersection'>";
+			break;
+
+			case "close_outersection":
+				$output .= "</div>";
+			break;
 			}
 
-			if ( ($value['type'] != "heading") && ($value['type'] != "info" && $value['type'] != "subsection" && $value['type'] != "subsection_end") ) {
+			if ( ($value['type'] != "heading") && ($value['type'] != "info" && $value['type'] != "subsection" && $value['type'] != "subsection_end") && $value['type'] != "open_outersection" && $value['type'] != "close_outersection" ) {
 				if ( $value['type'] != "checkbox" ) {
 					$output .= '<br/>';
 				}
@@ -606,6 +614,16 @@ class ClassyOptions {
 
 	function import( $label ) {
 		$this->add( array( 'type' => 'import', 'name' => $label ) );
+		return $this;
+	}
+
+	function open_outersection() {
+		$this->add( array( 'type' => 'open_outersection' ) );
+		return $this;
+	}
+
+	function close_outersection() {
+		$this->add( array( 'type' => 'close_outersection' ) );
 		return $this;
 	}
 
