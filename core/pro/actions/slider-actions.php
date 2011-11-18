@@ -436,7 +436,7 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 <!-- Apply slider CSS based on user settings -->
 
 	<style type="text/css" media="screen">
-		#slider-wrapper { width: <?php echo $csWidth ?>px;  margin: auto; margin-bottom: 20px;}
+		#slider-wrapper { width: <?php echo $csWidth ?>px; height: <?php echo $height ?>px; margin: auto; }
 		#slider { width: <?php echo $csWidth ?>px; height: <?php echo $height ?>px; margin: auto; }
 	</style>
 
@@ -519,6 +519,11 @@ echo $out;
 /* END */ 
 
 echo "</div>";
+
+?>
+<div class="slider_nav" style="width: <?php echo $csWidth ?>px; ">&nbsp;</div>
+<div class='clear'>&nbsp;</div>
+<?
 
 }
 

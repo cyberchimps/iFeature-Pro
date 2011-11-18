@@ -42,9 +42,9 @@ function chimps_index_content_slider() {
 		global $options, $themeslug; ?>
 		
 		<?php if ($options->get($themeslug.'_hide_slider_blog') != '1' && $options->get($themeslug.'_slider_size') != "key2"): ?>
-		<div id="slider-wrapper">
+		
 			<?php chimps_blog_slider(); ?>
-		</div>
+		
 	<?php endif;?> <?
 
 }
@@ -58,9 +58,9 @@ function chimps_index_before_entry_slider() {
 		global $options, $themeslug; ?>
 		
 		<?php if ($options->get($themeslug.'_hide_slider_blog') != '1' && $options->get($themeslug.'_slider_size') == "key2"): ?>
-		<div id="slider-wrapper">
+	
 			<?php chimps_blog_slider(); ?>
-		</div>
+		
 	<?php endif;?> <?
 
 }
