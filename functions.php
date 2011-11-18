@@ -166,6 +166,7 @@ function create_post_type() {
 			'public' => true,
 			'show_ui' => true, 
 			'supports' => array('custom-fields'),
+			'taxonomies' => array( 'featured_post_categories'),
 			'has_archive' => true,
 			'menu_icon' => "$root/images/pro/favicon.ico",
 			'rewrite' => array('slug' => 'slides')
@@ -188,6 +189,17 @@ function custom_taxonomies() {
 			'label' => 'Slide Categories',	
 			'query_var' => true,	
 			'rewrite' => array( 'slug' => 'slide_categories' ),	
+		)
+	);
+	
+	register_taxonomy(
+		'featured_post_categories',		
+		$themeslug.'_featured_post_categories',		
+		array(
+			'hierarchical' => true,
+			'label' => 'Post Categories',	
+			'query_var' => true,	
+			'rewrite' => array( 'slug' => 'featured_post_categories' ),	
 		)
 	);
 }
