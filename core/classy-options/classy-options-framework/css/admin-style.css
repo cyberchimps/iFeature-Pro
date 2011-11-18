@@ -408,3 +408,12 @@ span.minus {
 	width: 16px;
 	display: block;
 }
+
+#of_container .toggle {
+	float: right;
+	clear: both;
+}
+
+#of_container .section-multicheck label {
+	display: block;
+}
