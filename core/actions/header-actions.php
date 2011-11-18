@@ -261,8 +261,17 @@ function chimps_header_social_icons_content() {
 	$rss			= $options->get($themeslug.'_rsslink');
 	$hiderss   		= $options->get($themeslug.'_hide_rss');
 	
+	if ($options->get($themeslug.'_icon_style') == '') {
 	
-	$folder = $options->get($themeslug.'_icon_style');;
+		$folder = 'default';
+		
+	}
+	
+	else {
+	
+		$folder = $options->get($themeslug.'_icon_style');
+	
+	}
 
 	echo "<div id='social'>"; ?>
 
