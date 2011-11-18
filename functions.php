@@ -160,7 +160,7 @@ function create_post_type() {
 	register_post_type( $themeslug.'_featured_posts',
 		array(
 			'labels' => array(
-				'name' => __( 'Featured Posts' ),
+				'name' => __( 'Carousel' ),
 				'singular_name' => __( 'Posts' )
 			),
 			'public' => true,
@@ -197,7 +197,7 @@ function custom_taxonomies() {
 		$themeslug.'_featured_post_categories',		
 		array(
 			'hierarchical' => true,
-			'label' => 'Post Categories',	
+			'label' => 'Carousel Categories',	
 			'query_var' => true,	
 			'rewrite' => array( 'slug' => 'featured_post_categories' ),	
 		)
