@@ -469,7 +469,7 @@ class ClassyOptions {
 				if ( isset($value['name']) ) {
 					$output .= '<h3 class="heading">' . ( $value['name'] ) . '</h3>' . "\n";
 				}
-				if ( $value['desc'] ) {
+				if ( isset( $value['desc'] ) ) {
 					$output .= wpautop( wp_kses( $value['desc'], $allowedtags) ) . "\n";
 				}
 				$output .= '<div class="clear"></div></div>' . "\n";
