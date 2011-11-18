@@ -107,8 +107,8 @@ class ClassyOptions {
 	function default_data() {
 		$ret = array();
 		foreach($this->options as $option) {
-			if(isset($option['id']) && isset($option['std'])) {
-				$ret[$option['id']] = $option['std'];
+			if(isset($option['id']) && isset($option['default'])) {
+				$ret[$option['id']] = $option['default'];
 			}
 		}
 		return $ret;
@@ -239,8 +239,8 @@ class ClassyOptions {
 			 }
 			
 			// Set default value to $val
-			if ( isset( $value['std']) ) {
-				$val = $value['std'];
+			if ( isset( $value['default']) ) {
+				$val = $value['default'];
 			}
 			
 			// If the option is already saved, ovveride $val
@@ -558,52 +558,52 @@ class ClassyOptions {
 	}
 
 	function text( $key, $label = "", $options = array() ) {
-		$this->add( array( 'id' => $key, 'type' => 'text', 'name' => $label ) );
+		$this->add( $options + array( 'id' => $key, 'type' => 'text', 'name' => $label ) );
 		return $this;
 	}
 
 	function textarea( $key, $label = "", $options = array() ) {
-		$this->add( array( 'id' => $key, 'type' => 'textarea', 'name' => $label ) );
+		$this->add( $options + array( 'id' => $key, 'type' => 'textarea', 'name' => $label ) );
 		return $this;
 	}
 
 	function radio( $key, $label = "", $options = array() ) {
-		$this->add( array( 'id' => $key, 'type' => 'radio', 'name' => $label, 'options' => $options['options'] ) );
+		$this->add( $options + array( 'id' => $key, 'type' => 'radio', 'name' => $label, 'options' => $options['options'] ) );
 		return $this;
 	}
 
 	function images( $key, $label = "", $options = array() ) {
-		$this->add( array( 'id' => $key, 'type' => 'images', 'name' => $label, 'options' => $options['options'] ) );
+		$this->add( $options + array( 'id' => $key, 'type' => 'images', 'name' => $label, 'options' => $options['options'] ) );
 		return $this;
 	}
 
 	function checkbox( $key, $label = "", $options = array() ) {
-		$this->add( array( 'id' => $key, 'type' => 'checkbox', 'name' => $label ) );
+		$this->add( $options + array( 'id' => $key, 'type' => 'checkbox', 'name' => $label ) );
 		return $this;
 	}
 
 	function multicheck( $key, $label = "", $options = array() ) {
-		$this->add( array( 'id' => $key, 'type' => 'multicheck', 'name' => $label, 'options' => $options['options'] ) );
+		$this->add( $options + array( 'id' => $key, 'type' => 'multicheck', 'name' => $label, 'options' => $options['options'] ) );
 		return $this;
 	}
 
 	function color( $key, $label = "", $options = array() ) {
-		$this->add( array( 'id' => $key, 'type' => 'color', 'name' => $label ) );
+		$this->add( $options + array( 'id' => $key, 'type' => 'color', 'name' => $label ) );
 		return $this;
 	}
 
 	function upload( $key, $label = "", $options = array() ) {
-		$this->add( array( 'id' => $key, 'type' => 'upload', 'name' => $label ) );
+		$this->add( $options + array( 'id' => $key, 'type' => 'upload', 'name' => $label ) );
 		return $this;
 	}
 
 	function typography( $key, $label = "", $options = array() ) {
-		$this->add( array( 'id' => $key, 'type' => 'typography', 'name' => $label ) );
+		$this->add( $options + array( 'id' => $key, 'type' => 'typography', 'name' => $label ) );
 		return $this;
 	}
 
 	function select( $key, $label = "", $options = array() ) {
-		$this->add( array( 'id' => $key, 'type' => 'select', 'name' => $label, 'options' => $options['options'] ) );
+		$this->add( $options + array( 'id' => $key, 'type' => 'select', 'name' => $label ) );
 		return $this;
 	}
 
