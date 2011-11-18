@@ -81,7 +81,7 @@ function chimps_carousel_section_content() {
 	    	
 				<li>
 	    			<a href='$link' title='$title'>	
-	    				<img src='http://localhost:8888/wp-content/uploads/Making-of-Wonder-of-Nature.jpg' alt='$title' class='captify'/>
+	    				<img src='$image' alt='$title' class='captify'/>
 	    			</a>
 	    		</li>
 	    	
