@@ -102,7 +102,20 @@
 	border-right: 1px solid #BBB;
 	border-bottom: 1px solid #BBB;
 	border-radius: 0px 0px 4px 4px;
+	background: #FFF;
+}
+
+.slider_nav {
+	height: 50px;
+	box-shadow:0 0 4px #AAAAAA;
+	border-left: 1px solid #CCC;
+	border-right: 1px solid #BBB;
+	border-bottom: 1px solid #BBB;
+	border-radius: 0px 0px 4px 4px;
 	background: #f8f8f8;
+	margin: auto;
+	margin-bottom: 20px;
+	
 }
 
 .nivo-controlNav {

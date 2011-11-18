@@ -1026,7 +1026,7 @@ echo "</div>";
 
 ?>
 
-<div style="width: 980px; height: 50px; background-color: white; margin: auto;"></div>
+<div class="slider_nav" style="width: <?php echo $csWidth ?>px;"></div>
 <?
 
 }
