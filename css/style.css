@@ -373,6 +373,8 @@ img.size-full {max-width: 608px;height: auto;}
 
 .aligncenter, div.aligncenter {display: block;margin-left: auto;margin-right: auto;}
 
+.alignnone {display: block;}
+
 .wp-caption {
 	background-color: #f3f3f3;
 	border: 1px solid #ddd;
