@@ -192,7 +192,7 @@ function chimps_breadcrumbs() {
  
   if ( !is_home() && !is_front_page() || is_paged() ) {
  
-    echo '<div id="crumbs">';
+    echo '<div id="crumbs" class="grid_10">';
  
     global $post;
     $homeLink = get_bloginfo('url');
