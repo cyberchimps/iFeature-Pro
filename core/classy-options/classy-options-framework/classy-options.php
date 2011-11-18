@@ -221,7 +221,7 @@ class ClassyOptions {
 			if ( ($value['type'] != "heading") && ($value['type'] != "info" && $value['type'] != "subsection" && $value['type'] != "subsection_end") ) {
 
 				// Keep all ids lowercase with no spaces
-				$value['id'] = preg_replace('/\W/', '', strtolower($value['id']) );
+				$value['id'] = isset( $value['id'] ) ? preg_replace('/\W/', '', strtolower($value['id']) ) : "";
 
 				$id = 'section-' . $value['id'];
 
