@@ -389,6 +389,7 @@ class RW_Meta_Box {
 		$meta = explode(",", $meta);
 		echo "<div class='section_order'>";
 		echo "<div class='left_list'>";
+		echo "<div class='list_items'>";
 		echo "Inactive Elements";
 			foreach($field['options'] as $key => $value) {
 				if(in_array($key, $meta)) continue;
@@ -396,6 +397,7 @@ class RW_Meta_Box {
 					echo "<span data-key='{$key}'>{$value}</span>";
 				echo "</div>";
 			}
+		echo "</div>";
 		echo "</div>";
 		echo "<div class='right_list'>";
 		echo "<div id='drag'>Reorder</div>";
@@ -419,18 +421,18 @@ class RW_Meta_Box {
 			function update(base) {
 				var hidden = base.find("input[type='hidden']");
 				var val = [];
-				base.find('.right_list span').each(function() {
+				base.find('.right_list .list_items span').each(function() {
 					val.push($(this).data('key'));
 				})
 				hidden.val(val.join(","));
 			}
-			$(".left_list").delegate(".action", "click", function() {
+			$(".left_list .list_items").delegate(".action", "click", function() {
 				var item = $(this).closest('.list_item');
 				$(this).val('Remove');
 				$(this).closest('.section_order').children('.right_list').append(item);
 				update($(this).closest(".section_order"));
 			});
-			$(".right_list").delegate(".action", "click", function() {
+			$(".right_list .list_items").delegate(".action", "click", function() {
 				var item = $(this).closest('.list_item');
 				$(this).val('Add');
 				$(this).closest('.section_order').children('.left_list').append(item);
@@ -440,10 +442,10 @@ class RW_Meta_Box {
 				update: function() {
 					update($(this).closest(".section_order"));
 				},
-				connectWith: '.left_list'
+				connectWith: '.left_list .list_items'
 			});
 
-			$(".left_list").sortable({
+			$(".left_list .list_items").sortable({
 				connectWith: '.right_list .list_items'
 			});
 
