@@ -201,7 +201,7 @@ function chimps_callout_section_content() {
 
 	<div id="callout_text" class="<?php echo $grid; ?>">
 		<h2 class="callout_title"><?php echo $callouttitle ?></h2>
-		<p class="calloutp"><?php echo $callouttext  ?></p>
+		<p><?php echo $callouttext  ?></p>
 	</div>
 		
 <?php if ($image == '' && $hidebutton != 'on'): ?>
