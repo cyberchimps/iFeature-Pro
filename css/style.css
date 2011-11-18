@@ -1,4 +1,4 @@
-/*   
+ /*   
 Theme Name: iFeature Pro 3
 Theme URI: http://cyberchimps.com/ifeaturepro
 Description: iFeature Pro: A Premium WordPress Theme designed by CyberChimps.com featuring customizable theme options, an aesthetically pleasing design with five color choices, a feature slider, callout section, dynamic header for custom logo, social icons, and contact section, widgetized sidebar and footer, typography including Google Fonts, and multiple template choices.
@@ -52,7 +52,7 @@ a:hover {color: #555;}
 
 /* Social Icons  */
 
-.icons {text-align:right;margin-top: 18px;}
+.icons {text-align:right;margin-top: 10px;}
 
 .icons a img {opacity:.6; padding-left: 3px;}
 
