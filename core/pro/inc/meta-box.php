@@ -393,13 +393,13 @@ class RW_Meta_Box {
 			foreach($field['options'] as $key => $value) {
 				if(in_array($key, $meta)) continue;
 				echo "<div class='list_item'>";
-					echo "<input id='plus' type='image' src='$root/images/plus.png' class='action' value='Add'>";
 					echo "<span data-key='{$key}'>{$value}</span>";
 				echo "</div>";
 			}
 		echo "</div>";
 		echo "<div class='right_list'>";
 		echo "<div id='drag'>Reorder</div>";
+		echo "<div class='list_items'>";
 			foreach($meta as $key) {
 				if(!$key) continue;
 				$value = $field['options'][$key];
@@ -408,7 +408,7 @@ class RW_Meta_Box {
 					echo "<span data-key='{$key}'>{$value}</span>";
 				echo "</div>";
 			}
-
+		echo "</div>";
 		echo "</div>";
 		echo "<input type='hidden' id={$field['id']} name={$field['id']} />";
 		echo "</div>";
@@ -436,7 +436,7 @@ class RW_Meta_Box {
 				$(this).closest('.section_order').children('.left_list').append(item);
 				update($(this).closest(".section_order"));
 			});
-			$(".right_list").sortable({
+			$(".right_list .list_items").sortable({
 				update: function() {
 					update($(this).closest(".section_order"));
 				},
@@ -444,7 +444,7 @@ class RW_Meta_Box {
 			});
 
 			$(".left_list").sortable({
-				connectWith: '.right_list'
+				connectWith: '.right_list .list_items'
 			});
 
 			$('.section_order').each(function() {
