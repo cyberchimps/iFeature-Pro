@@ -216,7 +216,7 @@ function custom_taxonomy_default( $post_id, $post ) {
 
 		$defaults = array(
 
-			'slide_categories' => array( 'default' ),
+			'slide_categories' => array( 'default' ), 'featured_post_categories' => array( 'default' ),
 
 			);
 
