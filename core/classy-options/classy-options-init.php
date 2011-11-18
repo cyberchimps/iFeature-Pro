@@ -81,7 +81,7 @@ $options
 		->subsection_end()
 		->subsection("Social")
 			->images($themeslug."_icon_style", "Icon set", array( 'options' => array( 'default' =>
-"http://tylerbcunningham.com/wp-content/uploads/2011/11/icons.png", 'round' => "http://tylerbcunningham.com/wp-content/uploads/2011/11/icons.png", 'legacy' => "http://tylerbcunningham.com/wp-content/uploads/2011/11/icons.png" ) ) )
+"http://tylerbcunningham.com/wp-content/uploads/2011/11/icons-default.png", 'round' => "http://tylerbcunningham.com/wp-content/uploads/2011/11/icons-default.png", 'legacy' => "http://tylerbcunningham.com/wp-content/uploads/2011/11/icons-default.png" ) ) )
 			->text($themeslug."_twitter", "Twitter Icon URL")
 			->checkbox($themeslug."_hide_twitter", "Hide Twitter Icon", array('default' => true))
 			->text($themeslug."_facebook", "Facebook Icon URL")

@@ -24,7 +24,7 @@
 }
 #of_container {
 	margin: 10px 0;
-	width: 785px;
+	width: 850px;
 	position:relative;
 	z-index: 0;
 }
@@ -81,7 +81,7 @@
 #of_container #content {
 	float: left;
 	min-height: 560px;
-	width: 595px;
+	width: 660px;
 	margin-left: -1px;
 	padding: 0 14px;
 	background: url(noise.png) #fbfbfb;
@@ -98,7 +98,7 @@
 }
 #of_container #content .section .controls {
 	float: left;
-	width: 345px;
+	width: 365px;
 	margin: 12px 15px 0 0;
 }
 #of_container #content .section .explain {
