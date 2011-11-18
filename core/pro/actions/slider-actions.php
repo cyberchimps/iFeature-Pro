@@ -449,7 +449,7 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 	if ($options->get($themeslug.'_slider_nav') == 'key1' OR $options->get($themeslug.'_slider_nav') == '') {
 		
 		echo '<style type="text/css">';
-		echo ".nivo-controlNav a {background: url($root/images/bullets.png) no-repeat; display:block; width:22px; height:22px; 	text-indent:-9999px; border:0; margin-right:3px; float:left;}";
+		echo ".nivo-controlNav a {background: url($root/images/slider/bullets.png) no-repeat; display:block; width:22px; height:22px; 	text-indent:-9999px; border:0; margin-right:3px; float:left;}";
 		echo ".nivo-controlNav a.active {background-position:0 -22px;} ";
 		echo '</style>';
 		
@@ -959,7 +959,7 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 	if ($navigationstyle == '0' OR $navigationstyle == '') {
 		
 		echo '<style type="text/css">';
-		echo ".nivo-controlNav a {background: url($root/images/bullets.png) no-repeat; display:block; width:22px; height:22px; 	text-indent:-9999px; border:0; margin-right:3px; float:left;}";
+		echo ".nivo-controlNav a {background: url($root/images/slider/bullets.png) no-repeat; display:block; width:22px; height:22px; 	text-indent:-9999px; border:0; margin-right:3px; float:left;}";
 		echo ".nivo-controlNav a.active {background-position:0 -22px;} ";
 		echo '</style>';
 		
