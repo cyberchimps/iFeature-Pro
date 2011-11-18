@@ -109,6 +109,7 @@ $options
 			->select($themeslug."_featured_image_align", "Featured Image Alignment", array( 'options' => array("key1" => "Left", "key2" => "Center", "key3" => "Right")))
 			->text($themeslug."_featured_image_height", "Featured Image Height")
 			->text($themeslug."_featured_image_width", "Featured Image WIdth")
+			->checkbox($themeslug."_show_carousel", "Enable Featured Post Carousel")
 			->multicheck($themeslug."_hide_byline", "Hide Post Byline Elements", array( 'options' => array("key1" => "Author", "key2" => "Categories", "key3" => "Date", "key4" => "Comments", "key5" => "Share", "key6" => "Tags")))
 			->checkbox($themeslug."_show_fb_like", "Show Facebook Like Button")
 			->checkbox($themeslug."_show_gplus", "Show Google Plus One Button")

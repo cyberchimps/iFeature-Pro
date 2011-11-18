@@ -54,7 +54,7 @@ a:hover {color: #555;}
 
 .icons {text-align:right;margin-top: 15px;}
 
-.icons a img {opacity:.6;}
+.icons a img {opacity:.6; padding-left: 3px;}
 
 .icons a:hover img {opacity:1;}
 
