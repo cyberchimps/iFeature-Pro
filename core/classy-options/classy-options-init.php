@@ -46,11 +46,12 @@ $options
 		->subsection_end()
 		->subsection("Background")
 			->images($themeslug."_background_image", "Select a background", array( 'options' => array( 'default' =>
-TEMPLATE_URL . '/images/backgrounds/dark.png', 'custom' => TEMPLATE_URL . '/images/backgrounds/dark.png' )))
+TEMPLATE_URL . '/images/backgrounds/noise.png', 'dark' => TEMPLATE_URL . '/images/backgrounds/dark.png', 'wood' => TEMPLATE_URL . '/images/backgrounds/wood.png', 'space' => TEMPLATE_URL . '/images/backgrounds/space.png' )))
 			->checkbox($themeslug."_custom_background", "Toggle to use a custom background")
 			->upload($themeslug."_background_upload", "Background Image")
 			->radio($themeslug."_bg_image_position", "Select the Image Position", array( 'options' => array("key1" => "Left", "key2" => "Center", "key3" => "Right")))
 			->radio($themeslug."_bg_image_repeat", "Select the Image Repeat", array( 'options' => array("key1" => "No Repeat", "key2" => "Tile", "key3" => "Tile Horizontally", "key4" => "Tile Vertically")))
+			->radio($themeslug."_bg_image_attachment", "Select the Image Attachment", array( 'options' => array("key1" => "Scroll", "key2" => "Fixed")))
 			->color($themeslug."_background_color", "Select a Background Color")
 		->subsection_end()
 		->subsection("Custom Colors")

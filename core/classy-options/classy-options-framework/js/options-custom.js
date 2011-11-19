@@ -201,7 +201,7 @@ jQuery(document).ready(function($) {
     }
   }).change();
       $("#if_custom_background").change(function() {
-    var toShow = $("#section-if_background_upload, #section-if_bg_image_position, #section-if_bg_image_repeat, #section-if_background_color ");
+    var toShow = $("#section-if_background_upload, #section-if_bg_image_position, #section-if_bg_image_repeat, #section-if_background_color, #section-if_bg_image_attachment ");
     if($(this).is(':checked')) {
       toShow.show();
     } else {
