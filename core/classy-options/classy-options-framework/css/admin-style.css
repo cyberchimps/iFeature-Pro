@@ -427,3 +427,9 @@ span.minus {
   width: auto;
   margin-left: 10px;
 }
+
+
+#of_container #content .outersection .section { 
+  border: 1px solid #666;
+  border-radius: 2px;
+}
