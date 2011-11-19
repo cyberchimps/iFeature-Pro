@@ -417,3 +417,13 @@ span.minus {
 #of_container .section-multicheck label {
 	display: block;
 }
+
+#of_container #content .section-multicheck h3 {
+  float: none;
+}
+
+#of_container #content .section-multicheck .controls {
+  float: none;
+  width: auto;
+  margin-left: 10px;
+}
