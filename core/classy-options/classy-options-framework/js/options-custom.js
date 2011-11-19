@@ -200,6 +200,14 @@ jQuery(document).ready(function($) {
       toShow.show();
     }
   }).change();
+      $("#if_custom_background").change(function() {
+    var toShow = $("#section-if_background_upload, #section-if_bg_image_position, #section-if_bg_image_repeat, #section-if_background_color ");
+    if($(this).is(':checked')) {
+      toShow.show();
+    } else {
+      toShow.hide();
+    }
+  }).change();
   $("#if_slider_type").change(function(){
     var val = $(this).val(),
       post = $("#section-if_slider_posts_category"),

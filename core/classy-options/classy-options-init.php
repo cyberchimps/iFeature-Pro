@@ -45,7 +45,10 @@ $options
 						->textarea($themeslug."_typekit", "Enter your TypeKit Code")
 		->subsection_end()
 		->subsection("Background")
-			->upload($themeslug."_background_image", "Background Image")
+			->images($themeslug."_background_image", "Select a background", array( 'options' => array( 'default' =>
+TEMPLATE_URL . '/images/backgrounds/dark.png', 'custom' => TEMPLATE_URL . '/images/backgrounds/dark.png' )))
+			->checkbox($themeslug."_custom_background", "Toggle to use a custom background")
+			->upload($themeslug."_background_upload", "Background Image")
 			->radio($themeslug."_bg_image_position", "Select the Image Position", array( 'options' => array("key1" => "Left", "key2" => "Center", "key3" => "Right")))
 			->radio($themeslug."_bg_image_repeat", "Select the Image Repeat", array( 'options' => array("key1" => "No Repeat", "key2" => "Tile", "key3" => "Tile Horizontally", "key4" => "Tile Vertically")))
 			->color($themeslug."_background_color", "Select a Background Color")

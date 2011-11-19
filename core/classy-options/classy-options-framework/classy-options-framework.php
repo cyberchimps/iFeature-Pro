@@ -33,6 +33,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 /* Basic plugin definitions */
 
 define('CLASSY_OPTIONS_FRAMEWORK_URL', get_template_directory_uri() . '/core/classy-options/classy-options-framework/');
+define('TEMPLATE_URL', get_template_directory_uri()) ;
 
 /* Make sure we don't expose any info if called directly */
 
