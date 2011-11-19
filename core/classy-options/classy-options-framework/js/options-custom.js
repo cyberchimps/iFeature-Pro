@@ -219,19 +219,21 @@ jQuery(document).ready(function($) {
     }
   }).change();
 
-  $("#of-option-header div.section-text").each(function(){
-    var $this = $(this), $next = $(this).next();
-    $this.find(".controls").css({float: 'left', clear: 'both'});
-    $next.find(".controls").css({float: 'right', width: 80});
-    $next.hide();
-    $this.find('.option').before($next.find(".option"));
-    $this.find("input[type='checkbox']").change(function() {
-      if($(this).is(":checked")) {
-        $(this).closest('.option').next().show();
-      } else {
-        $(this).closest('.option').next().hide();
-      }
-    }).change();
+  $.each(['twitter', 'facebook', 'gplus', 'flickr', 'linkedin', 'youtube', 'googlemaps', 'email', 'rsslink'], function(i, val) {
+	  $("#section-if_" + val).each(function(){
+		  var $this = $(this), $next = $(this).next();
+		  $this.find(".controls").css({float: 'left', clear: 'both'});
+		  $next.find(".controls").css({float: 'right', width: 80});
+		  $next.hide();
+		  $this.find('.option').before($next.find(".option"));
+		  $this.find("input[type='checkbox']").change(function() {
+			  if($(this).is(":checked")) {
+				  $(this).closest('.option').next().show();
+			  } else {
+				  $(this).closest('.option').next().hide();
+			  }
+		  }).change();
+	  });
   });
 });	
 
