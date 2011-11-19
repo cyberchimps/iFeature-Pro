@@ -394,6 +394,7 @@ class RW_Meta_Box {
 			foreach($field['options'] as $key => $value) {
 				if(in_array($key, $meta)) continue;
 				echo "<div class='list_item'>";
+					echo "<img id='minus' type='image' type='image' src='$root/images/minus.png' class='action'/>";
 					echo "<span data-key='{$key}'>{$value}</span>";
 				echo "</div>";
 			}
@@ -406,7 +407,7 @@ class RW_Meta_Box {
 				if(!$key) continue;
 				$value = $field['options'][$key];
 				echo "<div class='list_item'>";
-					echo "<input id='minus' type='image' type='image' src='$root/images/minus.png' class='action' value='Remove'>";
+					echo "<img id='minus' type='image' type='image' src='$root/images/minus.png' class='action'/>";
 					echo "<span data-key='{$key}'>{$value}</span>";
 				echo "</div>";
 			}
@@ -425,17 +426,19 @@ class RW_Meta_Box {
 					val.push($(this).data('key'));
 				})
 				hidden.val(val.join(","));
+				$('.right_list .action').show();
+				$('.left_list .action').hide();
 			}
 			$(".left_list .list_items").delegate(".action", "click", function() {
 				var item = $(this).closest('.list_item');
-				$(this).val('Remove');
-				$(this).closest('.section_order').children('.right_list').append(item);
+				$(this).closest('.section_order').children('.right_list').children('.list_items').append(item);
 				update($(this).closest(".section_order"));
 			});
 			$(".right_list .list_items").delegate(".action", "click", function() {
 				var item = $(this).closest('.list_item');
 				$(this).val('Add');
-				$(this).closest('.section_order').children('.left_list').append(item);
+				$(this).closest('.section_order').children('.left_list').children('.list_items').append(item);
+				$(this).hide();
 				update($(this).closest(".section_order"));
 			});
 			$(".right_list .list_items").sortable({
