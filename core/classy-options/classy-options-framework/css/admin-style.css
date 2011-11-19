@@ -433,6 +433,6 @@ span.minus {
 
 
 #of_container #content .outersection .section { 
-  border: 1px solid #666;
-  border-radius: 2px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
