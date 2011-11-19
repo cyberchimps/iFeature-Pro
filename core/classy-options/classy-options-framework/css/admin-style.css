@@ -49,7 +49,7 @@
 	line-height: 26px;
 }
 #of_container #main {
-	background: url(dark.png) #212121;
+	background: url(carbon_fibre.png) #212121;
 	border-left: 1px solid #d8d8d8;
 	border-right: 1px solid #d8d8d8;
 	border-bottom: 1px solid #d8d8d8;
@@ -72,6 +72,7 @@
 	color: #fff;
 	font-weight: bolder;
 	border-bottom: 1px solid #333;
+	width: 119px;
 }
 #of_container #of-nav ul li.current a, #of-nav ul li a:hover {
 	color: #fff;
@@ -83,7 +84,7 @@
 	width: 660px;
 	margin-left: -1px;
 	padding: 0 14px;
-	background: url(noise.png) #fbfbfb;
+	background: url(whitey.png) #fbfbfb;
 	border-left: 1px solid #d8d8d8;
 }
 #of_container #content .section {
