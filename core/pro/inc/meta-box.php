@@ -394,7 +394,7 @@ class RW_Meta_Box {
 			foreach($field['options'] as $key => $value) {
 				if(in_array($key, $meta)) continue;
 				echo "<div class='list_item'>";
-					echo "<img src='$root/images/minus.png' class='action'/>";
+					echo "<img src='$root/images/minus.png' class='action' title='Remove'/>";
 					echo "<span data-key='{$key}'>{$value}</span>";
 				echo "</div>";
 			}
@@ -407,7 +407,7 @@ class RW_Meta_Box {
 				if(!$key) continue;
 				$value = $field['options'][$key];
 				echo "<div class='list_item'>";
-					echo "<img src='$root/images/minus.png' class='action'/>";
+					echo "<img src='$root/images/minus.png' class='action' title='Remove'/>";
 					echo "<span data-key='{$key}'>{$value}</span>";
 				echo "</div>";
 			}
