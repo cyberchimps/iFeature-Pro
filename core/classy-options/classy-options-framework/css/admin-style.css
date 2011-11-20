@@ -29,7 +29,7 @@
 	z-index: 0;
 }
 #of_container #header {
-	height: 60px;
+	height: 100px;
 	background: #fff;
 	border: 1px solid #ccc;
 	border-top-left-radius: 4px;
@@ -49,7 +49,7 @@
 	line-height: 26px;
 }
 #of_container #main {
-	background: url(dark.png) #212121;
+	background: url(carbon_fibre.png) #212121;
 	border-left: 1px solid #d8d8d8;
 	border-right: 1px solid #d8d8d8;
 	border-bottom: 1px solid #d8d8d8;
@@ -71,12 +71,12 @@
 	text-decoration: none;
 	color: #fff;
 	font-weight: bolder;
-	border-bottom: 1px solid #000;
-	background: #8c8c8c;
+	border-bottom: 1px solid #333;
+	width: 119px;
 }
 #of_container #of-nav ul li.current a, #of-nav ul li a:hover {
 	color: #fff;
-	background-color: #0085CF;
+	background: #0085CF;
 }
 #of_container #content {
 	float: left;
@@ -84,7 +84,7 @@
 	width: 660px;
 	margin-left: -1px;
 	padding: 0 14px;
-	background: url(noise.png) #fbfbfb;
+	background: url(whitey.png) #fbfbfb;
 	border-left: 1px solid #d8d8d8;
 }
 #of_container #content .section {
@@ -136,13 +136,16 @@
 }
 #of_container .controls select {
 	padding: 0 0 0 4px;
-	width: 340px
+	width: 340px;
+	float: right;
 }
 #of_container .controls textarea {
 	width: 345px;
+	float: right;
 }
 #of_container input[type=text] {
 	width: 340px;
+	float: right;
 }
 #of_container input.checkbox {
 	clear: both;
@@ -430,6 +433,6 @@ span.minus {
 
 
 #of_container #content .outersection .section { 
-  border: 1px solid #666;
-  border-radius: 2px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
