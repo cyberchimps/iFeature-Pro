@@ -458,10 +458,13 @@ class RW_Meta_Box {
 		});
 </script>
 <style type="text/css">
-   .left_list, .right_list {
+.left_list, .right_list {
 	float: left;
 	margin: 20px;
 	width: 130px;
+}
+.list_items {
+	padding-bottom: 5px;
 }
 </style>
 
