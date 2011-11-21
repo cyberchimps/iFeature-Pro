@@ -30,7 +30,10 @@ textarea, input[type="text"], input[type="password"], input[type="file"], input[
 
 div.updated, .login .message {
 	background-color: #56add6;
-	border-color: #000;
+	border-color: #777;
+	color: #fff;
+	font-weight: bold;
+	font-size: 14px;
 }
 
 .updated {
