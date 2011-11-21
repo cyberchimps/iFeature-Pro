@@ -3,7 +3,9 @@
 /*-------------------------------------------------------------------------------------------*/
 
 .section-info{
-	background: yellow !important;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 textarea, input[type="text"], input[type="password"], input[type="file"], input[type="button"], input[type="submit"], input[type="reset"], select {
