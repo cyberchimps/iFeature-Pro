@@ -210,8 +210,8 @@ jQuery(document).ready(function($) {
   }).change();
   $("#if_slider_type").change(function(){
     var val = $(this).val(),
-      post = $("#section-if_slider_posts_category"),
-      custom = $("#section-if_slider_custom_category");
+      post = $("#section-if_slider_category"),
+      custom = $("#section-if_customslider_category");
     if(val == 'custom') {
       post.hide(); custom.show();
     } else {

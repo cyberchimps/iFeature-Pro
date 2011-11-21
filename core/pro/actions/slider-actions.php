@@ -241,7 +241,7 @@ echo "<div id='slider-wrapper'>";
 
 /* Query posts based on theme/meta options */
 
-	if ( $type == 'key2') {
+	if ( $type == 'custom') {
     	query_posts( array ('post_type' => $themeslug.'_custom_slides', 'showposts' => 20,  'slide_categories' => $customcategory  ) );
     }
     	
