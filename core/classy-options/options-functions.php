@@ -14,14 +14,63 @@ function background_option() {
 
 	global $options, $themeslug;
 	$root = get_template_directory_uri();
+	$customsource = $options->get($themeslug.'_background_upload');
+	$custom = stripslashes($customsource['url']);
+	$repeat = $options->get($themeslug.'_bg_image_repeat');
+	$position = $options->get($themeslug.'_bg_image_position');
+	$attachment = $options->get($themeslug.'_bg_image_attachment');
+	$color = $options->get($themeslug.'_background_color');
 	
-	if ($options->get($themeslug.'_background_image') == "" OR $options->get($themeslug.'_disable_breadcrumbs') == "default")  {
+	if ($options->get($themeslug.'_background_image') == "" OR $options->get($themeslug.'_background_image') == "default" && $options->get($themeslug.'_custom_background') != "1")  {
 	
 		echo '<style type="text/css">';
 		echo "body {background-image: url('$root/images/backgrounds/noise.jpg'); background-repeat: repeat; background-position: top left; background-attachment: fixed;}";
 		echo '</style>';
+	}
+	
+	if ($options->get($themeslug.'_background_image') == "dark" && $options->get($themeslug.'_custom_background') != "1")  {
+	
+		echo '<style type="text/css">';
+		echo "body {background-image: url('$root/images/backgrounds/dark.png'); background-repeat: repeat; background-position: top left; background-attachment: fixed;}";
+		echo '</style>';
+	}
+	
+	if ($options->get($themeslug.'_background_image') == "wood" && $options->get($themeslug.'_custom_background') != "1")  {
+	
+		echo '<style type="text/css">';
+		echo "body {background-image: url('$root/images/backgrounds/wood.png'); background-repeat: repeat; background-position: top left; background-attachment: fixed;}";
+		echo '</style>';
+	}
+	
+	if ($options->get($themeslug.'_background_image')  == "blue" && $options->get($themeslug.'_custom_background') != "1")  {
+	
+		echo '<style type="text/css">';
+		echo "body {background-image: url('$root/images/backgrounds/blue.jpg'); background-repeat: repeat-x; background-position: top center; background-attachment: fixed;}";
+		echo '</style>';
+	}
+	
+	if ($options->get($themeslug.'_background_image') == "metal" && $options->get($themeslug.'_custom_background') != "1")   {
+	
+		echo '<style type="text/css">';
+		echo "body {background-image: url('$root/images/backgrounds/metal.jpg'); background-color: #000; background-repeat: repeat-x; background-position: top center; background-attachment: fixed;}";
+		echo '</style>';
+	}
+	
+	if ($options->get($themeslug.'_background_image') == "space" && $options->get($themeslug.'_custom_background') != "1")  {
+	
+		echo '<style type="text/css">';
+		echo "body {background-image: url('$root/images/backgrounds/space.jpg'); background-color: #000; background-repeat: repeat-x; background-position: top center; background-attachment: fixed;}";
+		echo '</style>';
+	}
+	
+	if ($options->get($themeslug.'_custom_background') == "1") {
+	
+		echo '<style type="text/css">';
+		echo "body {background-image: url('$custom'); background-color: $color; background-repeat: $repeat; background-position: $position; background-attachment: $attachment;}";
+		echo '</style>';
 	
 	}
+	
 }
 add_action( 'wp_head', 'background_option');
 
