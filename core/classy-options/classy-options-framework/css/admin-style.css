@@ -22,8 +22,19 @@ textarea, input[type="text"], input[type="password"], input[type="file"], input[
   background-position:top left;
 }
 
+.wrap div.updated, .wrap div.error {
+	margin: 66px 0 -40px 159px;
+	position: absolute;
+	z-index: 2000;
+}
+
+div.updated, .login .message {
+	background-color: #56add6;
+	border-color: #000;
+}
+
 .updated {
-	width:770px;
+	width:642px;
 }
 #of_container {
 	margin: 10px 0;
