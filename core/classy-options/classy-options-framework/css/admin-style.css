@@ -52,7 +52,7 @@ div.updated, .login .message {
 	z-index: 0;
 }
 #of_container #header {
-	height: 92px;
+	height: 91px;
 	background: #f8f8f8; /* Old browsers */
 	background: -moz-linear-gradient(top,  #f8f8f8 0%, #ededed 40%, #dddddd 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(40%,#ededed), color-stop(100%,#dddddd)); /* Chrome,Safari4+ */
@@ -83,7 +83,7 @@ div.updated, .login .message {
 }
 
 .menu ul{
-    margin: 13px 5px; padding: 0;}
+    margin: 10px 5px; padding: 0;}
  
 .menu ul li{
     display: inline;margin-right: 5px;}
@@ -123,7 +123,7 @@ input.button-primary, button.button-primary, a.button-primary {
 
 input.button-primary:active,button.button-primary:active,a.button-primary:active{background:#555;color:#f8f8f8;}
 
-.submit input{text-decoration:none;font-size:12px!important;line-height:16px;padding: 2px 6px 2px 6px;cursor:pointer;border-width:1px;border-style:solid;-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;-khtml-box-sizing:content-box;box-sizing:content-box;margin-top: -13px;}
+.submit input{text-decoration:none;font-size:12px!important;line-height:16px;padding: 2px 6px 2px 6px;cursor:pointer;border-width:1px;border-style:solid;-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;-khtml-box-sizing:content-box;box-sizing:content-box;margin-top: -16px;}
 
 input.button-primary {font-size:14px !important;}
 
