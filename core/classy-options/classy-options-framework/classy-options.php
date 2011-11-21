@@ -78,8 +78,8 @@ class ClassyOptions {
 				<h2><?php esc_html_e($this->name); ?></h2>
 				</div>
 				<div class="clear"></div>
-					<p class="submit" style="clear:left;float: right;">
-						<input type="submit" class="button-primary" value="Save Settings" />   
+					<p class="submit">
+						<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options' ); ?>" />
 					</p>
 				<div class="menu">
 					<ul>
@@ -107,8 +107,9 @@ class ClassyOptions {
 				<div class="clear"></div>
 			</div>
 			<div class="of_admin_bar">
-				<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options' ); ?>" />
+   			    <div id="top"><a href='#TOP'><img src="<?php echo get_template_directory_uri() ;?>/images/options/top.png" /></a></div>
 				<input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!' ) ); ?>' );" />
+				<div class="chimps"><a href="http://cyberchimps.com/" target="_blank"><img src="<?php echo get_template_directory_uri() ;?>/images/options/cyberchimpsmini.png" /></a></div>
 			</div>
 			<div class="clear"></div>
 		</form>
