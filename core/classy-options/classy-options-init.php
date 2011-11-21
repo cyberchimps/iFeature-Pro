@@ -46,7 +46,7 @@ $options
 		->subsection_end()
 		->subsection("Background")
 			->images($themeslug."_background_image", "Select a background", array( 'options' => array( 'default' =>
-TEMPLATE_URL . '/images/backgrounds/thumbs/noise.png', 'dark' => TEMPLATE_URL . '/images/backgrounds/thumbs/dark.png', 'wood' => TEMPLATE_URL . '/images/backgrounds/thumbs/wood.png', 'space' => TEMPLATE_URL . '/images/backgrounds/thumbs/space.png', 'blue' => TEMPLATE_URL . '/images/backgrounds/thumbs/blue.png' )))
+TEMPLATE_URL . '/images/backgrounds/thumbs/noise.png', 'dark' => TEMPLATE_URL . '/images/backgrounds/thumbs/dark.png', 'wood' => TEMPLATE_URL . '/images/backgrounds/thumbs/wood.png', 'space' => TEMPLATE_URL . '/images/backgrounds/thumbs/space.png', 'blue' => TEMPLATE_URL . '/images/backgrounds/thumbs/blue.png', 'metal' => TEMPLATE_URL . '/images/backgrounds/thumbs/metal.png' )))
 			->checkbox($themeslug."_custom_background", "Toggle to use a custom background")
 			->upload($themeslug."_background_upload", "Background Image")
 			->radio($themeslug."_bg_image_position", "Select the Image Position", array( 'options' => array("key1" => "Left", "key2" => "Center", "key3" => "Right")))
