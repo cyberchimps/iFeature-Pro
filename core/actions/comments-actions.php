@@ -45,21 +45,22 @@ function chimps_comments_password_required() {
 function chimps_comments_loop() { 
 	global $post; ?>
 <?php if ( have_comments() ) : ?>
-	<br />
-	<h2 id="comments"><?php comments_number( __('No Responses', 'core' ), __( 'One Response', 'core' ), __('% Responses', 'core' ));?></h2>
+	<div class="comments_container">
+		<h2 class="commentsh2"><?php comments_number( __('No Responses', 'core' ), __( 'One Response', 'core' ), __('% Responses', 'core' ));?></h2>
 
-	<div class="navigation">
-		<div class="next-posts"><?php previous_comments_link() ?></div>
-		<div class="prev-posts"><?php next_comments_link() ?></div>
-	</div>
+		<div class="navigation">
+			<div class="next-posts"><?php previous_comments_link() ?></div>
+			<div class="prev-posts"><?php next_comments_link() ?></div>
+		</div>
 
-	<ol class="commentlist">
-		<?php wp_list_comments(); ?>
-	</ol>
+		<ol class="commentlist">
+			<?php wp_list_comments(); ?>
+		</ol>
 
-	<div class="navigation">
-		<div class="next-posts"><?php previous_comments_link() ?></div>
-		<div class="prev-posts"><?php next_comments_link() ?></div>
+		<div class="navigation">
+			<div class="next-posts"><?php previous_comments_link() ?></div>
+			<div class="prev-posts"><?php next_comments_link() ?></div>
+		</div>
 	</div>
 	
  <?php else : // this is displayed if there are no comments so far ?>
