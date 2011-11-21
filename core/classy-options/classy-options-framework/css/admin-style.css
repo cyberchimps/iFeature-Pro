@@ -33,7 +33,7 @@ textarea, input[type="text"], input[type="password"], input[type="file"], input[
 	z-index: 0;
 }
 #of_container #header {
-	height: 100px;
+	height: 80px;
 	background: #f8f8f8; /* Old browsers */
 	background: -moz-linear-gradient(top,  #f8f8f8 0%, #ededed 40%, #dddddd 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(40%,#ededed), color-stop(100%,#dddddd)); /* Chrome,Safari4+ */
@@ -44,6 +44,7 @@ textarea, input[type="text"], input[type="password"], input[type="file"], input[
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
 	border: 1px solid #ccc;
 	border-bottom: 1px solid #aaa;
+	padding: 0px 10px 10px 10px;
 	border-top-left-radius: 4px;
 	-moz-border-radius-topleft: 4px;
 	-webkit-border-top-left-radius: 4px;
@@ -53,13 +54,53 @@ textarea, input[type="text"], input[type="password"], input[type="file"], input[
 }
 #of_container #header .logo {
 	float: left;
-	margin:5px 20px;
+	margin: 5px 6px;
 }
 #of_container #header .logo h2 {
 	font-style:normal;
 	font-size: 22px;
 	line-height: 26px;
 }
+
+.menu ul{
+    margin: 8px 5px; padding: 0;}
+ 
+.menu ul li{
+    display: inline;margin-right: 5px;}
+ 
+.menu ul li a{
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+    padding: 2px 6px 2px 6px;
+    background-color: #777;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #777;
+  	}
+ 
+.menu ul li a:hover, .menu ul li .current{
+    color: #fff;
+    background-color:#444;
+    border: 1px solid #777; }
+    
+input.button-primary, button.button-primary, a.button-primary {
+	border-color: #666;
+	font-weight: bold;
+	color: white;
+	background: #000;
+	text-shadow: rgba(0, 0, 0, 0.3) 0 -1px 0;
+}
+
+.button:hover,.button-secondary:hover,.submit input:hover,input[type=button]:hover,input[type=submit]:hover{color:#fff;border-color:#666;background-color: #0085CF;}
+
+input.button-primary:active,button.button-primary:active,a.button-primary:active{background:#555;color:#ccc;}
+
+
+.submit input,.button,input.button,.button-primary,input.button-primary,.button-secondary,input.button-secondary,.button-highlighted,input.button-highlighted,#postcustomstuff .submit input{text-decoration:none;font-size:12px!important;line-height:16px;padding: 2px 6px 2px 6px;cursor:pointer;border-width:1px;border-style:solid;-moz-border-radius:3px;-khtml-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;-khtml-box-sizing:content-box;box-sizing:content-box;margin-top: -26px;}
+
+input.button-primary {font-size:14px !important;}
+
 #of_container #main {
 	background: url(carbon_fibre.png) #212121;
 	border-left: 1px solid #d8d8d8;
