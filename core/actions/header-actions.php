@@ -163,7 +163,7 @@ function chimps_title_tag() {
 */
 function chimps_link_rel() {
 	global $themeslug, $options; //Call global variables
-	$favicon = $options->get($themeslug.'_custom_favicon'); //Calls the favicon URL from the theme options ?>
+	$favicon = $options->get($themeslug.'_favicon'); //Calls the favicon URL from the theme options ?>
 <link rel="shortcut icon" href="<?php echo stripslashes($favicon['url']); ?>" type="image/x-icon" />
 
 
@@ -185,7 +185,7 @@ function chimps_link_rel() {
 */
 function chimps_header_sitename_content() {
 	global $themeslug, $options; //Call global variables
-	$logo = $options->get($themeslug.'_custom_logo'); //Calls the logo URL from the theme options
+	$logo = $options->get($themeslug.'_logo'); //Calls the logo URL from the theme options
 
 	if ($logo != '') { ?>
 	<div id="logo">
@@ -194,7 +194,7 @@ function chimps_header_sitename_content() {
 	}
 						
 	if ($logo == '' ) { ?>
-		<h1 class="sitename"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?> </a></h1>
+		<h1 class="sitename"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?> </a> </h1>
 		<?php
 	}						 
 }
@@ -370,7 +370,7 @@ function chimps_nav() {
 	<div class="grid_12" id="imenu_<?php echo $color; ?>">
 
 		<div id="nav" class="<?php echo $grid; ?>">
-			<?php if ($options->get($themeslug.'_disable_homeicon') != "1"):?><div id="home"><a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri() ;?>/images/home.png" /></a></div><?php endif;?>
+			<?php if ($options->get($themeslug.'_hide_home_icon') != "1"):?><div id="home"><a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri() ;?>/images/home.png" /></a></div><?php endif;?>
 		    <?php wp_nav_menu( array(
 		    'theme_location' => 'header-menu', // Setting up the location for the main-menu, Main Navigation.
 		    'fallback_cb' => 'menu_fallback', //if wp_nav_menu is unavailable, WordPress displays wp_page_menu function, which displays the pages of your blog.
@@ -378,7 +378,7 @@ function chimps_nav() {
 		);
     	?>
    		</div>
-   		<?php if ($options->get($themeslug.'_disable_search') != "1"):?>
+   		<?php if ($options->get($themeslug.'_hide_search') != "1"):?>
 		<div class="grid_2">
 			<?php get_search_form(); ?>
 		</div>
