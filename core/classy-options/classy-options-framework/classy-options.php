@@ -68,8 +68,6 @@ class ClassyOptions {
 	function render() {
 		settings_errors(); ?>
 <div class="wrap">
-	<?php screen_icon( 'themes' ); ?>
-	<h2><?php esc_html_e( 'Theme Options' ); ?></h2>
 
 	<div id="of_container">
 		<form action="options.php" method="post" enctype="multipart/form-data">
