@@ -2,6 +2,10 @@
 /* OptionsFramework Admin Styles */
 /*-------------------------------------------------------------------------------------------*/
 
+.section-info{
+	background: yellow !important;
+}
+
 textarea, input[type="text"], input[type="password"], input[type="file"], input[type="button"], input[type="submit"], input[type="reset"], select {
 	float: right;
 }
