@@ -3,6 +3,10 @@
 /*-------------------------------------------------------------------------------------------*/
 
 
+textarea, input[type="text"], input[type="password"], input[type="file"], input[type="button"], input[type="submit"], input[type="reset"], select {
+	float: right;
+}
+
 .js .checkbox{
   display:none;
 }
@@ -130,9 +134,10 @@
 	background-color: #f1f1f1;
 	border: 1px solid;
 	border-color: #ccc #e6e6e6 #e6e6e6 #ccc;
-	width: 340px;
+	width: 330px;
 	padding: 4px;
 	font-size: 12px;
+	
 }
 #of_container .controls select {
 	padding: 0 0 0 4px;
