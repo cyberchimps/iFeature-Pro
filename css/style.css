@@ -4,7 +4,7 @@ Theme URI: http://cyberchimps.com/ifeaturepro
 Description: iFeature Pro: A Premium WordPress Theme designed by CyberChimps.com featuring customizable theme options, an aesthetically pleasing design with five color choices, a feature slider, callout section, dynamic header for custom logo, social icons, and contact section, widgetized sidebar and footer, typography including Google Fonts, and multiple template choices.
 Author: CyberChimps
 Author URI: http://cyberchimps.com
-Version: 3.0 Nov 17, 2011
+Version: 3.0 Nov 21, 2011
 Tags: white, light, silver, two-columns, fixed-width, custom-header, custom-menu, threaded-comments, sticky-post
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -86,8 +86,6 @@ a:hover {color: #555;}
 }
 
 /* Nav  */
-
-
 
 #nav{position:relative;padding-left:4px;z-index:2147483647}
 #nav .parent > a, #nav .parent > a:hover{background-image:url(../images/arrow.png);background-position:right;background-repeat:no-repeat}
@@ -184,7 +182,6 @@ input[type=text] {width: 100px;}
 }
 
 .postbar {
-	background-color: #f8f8f8;
 	margin: -3px -15px -10px -15px;
 	border-top: 1px #e5e5e5 solid;
 	border-radius: 0px 0px 4px 4px;
@@ -192,6 +189,14 @@ input[type=text] {width: 100px;}
 	position: absolute;
 	width: 96.7%;
 	height: 22px;
+	background: #f8f8f8; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f8f8f8 0%, #ededed 40%, #dddddd 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(40%,#ededed), color-stop(100%,#dddddd)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #f8f8f8 0%,#ededed 40%,#dddddd 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #f8f8f8 0%,#ededed 40%,#dddddd 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #f8f8f8 0%,#ededed 40%,#dddddd 100%); /* IE10+ */
+	background: linear-gradient(top,  #f8f8f8 0%,#ededed 40%,#dddddd 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
 }
 
 .comments {text-align: left;float: left;padding-top: 3px;font-size: 12px;}
@@ -255,7 +260,7 @@ ol {list-style-position: inside;margin-left: 21px;}
 	background: #fff; /* Old browsers */
 }
 
-.widget-title{font-size:18px;color:#444;text-shadow:none;padding:3px;border-radius:4px 4px 0 0;background:#f8f8f8;margin: 0 -10px 0 -10px;padding: 2px 15px 2px 15px;border-bottom: 1px solid #e5e5e5;}
+.widget-title{font-size:18px;color:#444;text-shadow:none;padding:3px;border-radius:4px 4px 0 0;margin: 0 -10px 0 -10px;padding: 2px 15px 2px 15px;border-bottom: 1px solid #aaa;background: #f8f8f8; /* Old browsers */background: -moz-linear-gradient(top,  #f8f8f8 0%, #ededed 40%, #dddddd 100%); /* FF3.6+ */background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(40%,#ededed), color-stop(100%,#dddddd)); /* Chrome,Safari4+ */background: -webkit-linear-gradient(top,  #f8f8f8 0%,#ededed 40%,#dddddd 100%); /* Chrome10+,Safari5.1+ */background: -o-linear-gradient(top,  #f8f8f8 0%,#ededed 40%,#dddddd 100%); /* Opera 11.10+ */background: -ms-linear-gradient(top,  #f8f8f8 0%,#ededed 40%,#dddddd 100%); /* IE10+ */background: linear-gradient(top,  #f8f8f8 0%,#ededed 40%,#dddddd 100%); /* W3C */filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */}
 .widget-container ul{padding:10px}
 
 /* Blog and Post Styles */
