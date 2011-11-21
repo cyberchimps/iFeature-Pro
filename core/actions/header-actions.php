@@ -355,11 +355,19 @@ function chimps_nav() {
 	
 	else {
 		$grid = 'grid_9';
-	}?>
+	}
+	
+	if ($options->get($themeslug.'_color_scheme') == '') {
+		$color = 'blue';
+	}
+	else {
+		$color = $options->get($themeslug.'_color_scheme');
+	}
+	?>
 	
 	<div class="container_12">
 
-	<div class="grid_12" id="imenu_<?php echo $options->get($themeslug.'_color_scheme'); ?>">
+	<div class="grid_12" id="imenu_<?php echo $color; ?>">
 
 		<div id="nav" class="<?php echo $grid; ?>">
 			<?php if ($options->get($themeslug.'_disable_homeicon') != "1"):?><div id="home"><a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri() ;?>/images/home.png" /></a></div><?php endif;?>
