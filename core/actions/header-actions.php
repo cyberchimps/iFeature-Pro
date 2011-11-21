@@ -194,7 +194,7 @@ function chimps_header_sitename_content() {
 	}
 						
 	if ($logo == '' ) { ?>
-		<h1 class="sitename"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?> </a> </h1>
+		<h1 class="sitename"><a href="<?php echo home_url(); ?>/"><?php bloginfo('name'); ?> </a></h1>
 		<?php
 	}						 
 }

@@ -150,7 +150,7 @@ echo "<div id='slider-wrapper'>";
 
 /* Define blog category */
 
-	if ($category != 'All') {
+	if ($category != 'all') {
 		$blogcategory = $category;
 	}
 	
