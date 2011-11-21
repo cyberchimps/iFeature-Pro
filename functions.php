@@ -99,7 +99,7 @@ add_action( 'init', 'init_featured_image', 11);
 
 add_theme_support( 'post-thumbnails' );
 // This theme allows users to set a custom background
-add_custom_background();
+
 
 // This theme styles the visual editor with editor-style.css to match the theme style.
 add_editor_style();

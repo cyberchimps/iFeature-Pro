@@ -8,6 +8,23 @@
 	
 */
 
+/* Backgound Option*/
+
+function background_option() {
+
+	global $options, $themeslug;
+	$root = get_template_directory_uri();
+	
+	if ($options->get($themeslug.'_background_image') == "" OR $options->get($themeslug.'_disable_breadcrumbs') == "default")  {
+	
+		echo '<style type="text/css">';
+		echo "body {background-image: url('$root/images/backgrounds/noise.jpg'); background-repeat: repeat; background-position: top left; background-attachment: fixed;}";
+		echo '</style>';
+	
+	}
+}
+add_action( 'wp_head', 'background_option');
+
 /* Disable breadcrumbs*/
  
 function disable_breadcrumbs() {
