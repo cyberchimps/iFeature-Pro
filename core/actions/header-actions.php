@@ -43,7 +43,7 @@ function chimps_font() {
 	if ($options->get($themeslug.'_font') == "" AND $options->get($themeslug.'_custom_font') == "") {
 		$font = apply_filters( 'chimps_default_font', 'Arial' );
 	}		
-	elseif ($options->get($themeslug.'_custom_font') != "") {
+	elseif ($options->get($themeslug.'_custom_font') != "" && $options->get($themeslug.'_font') == 'custom') {
 		$font = $options->get($themeslug.'_custom_font');	
 	}	
 	else {
@@ -108,7 +108,7 @@ function chimps_meta_tags() {
 * @since 1.0
 */
 function chimps_title_tag() {
-	global $options, $themeslug, $post; 
+	global $options, $themeslug, $query, $post; 
 	$blogtitle = ($options->get($themeslug.'_home_title'));
 	$title = get_post_meta($post->ID, 'seo_title' , true);
 
@@ -163,7 +163,17 @@ function chimps_title_tag() {
 */
 function chimps_link_rel() {
 	global $themeslug, $options; //Call global variables
-	$favicon = $options->get($themeslug.'_favicon'); //Calls the favicon URL from the theme options ?>
+	$favicon = $options->get($themeslug.'_favicon'); //Calls the favicon URL from the theme options 
+	
+	if ($options->get($themeslug.'_font') == "" AND $options->get($themeslug.'_custom_font') == "") {
+		$font = apply_filters( 'chimps_default_font', 'Arial' );
+	}		
+	elseif ($options->get($themeslug.'_custom_font') != "" && $options->get($themeslug.'_font') == 'custom') {
+		$font = $options->get($themeslug.'_custom_font');	
+	}	
+	else {
+		$font = $options->get($themeslug.'_font'); 
+	} ?>
 <link rel="shortcut icon" href="<?php echo stripslashes($favicon['url']); ?>" type="image/x-icon" />
 
 
@@ -175,7 +185,7 @@ function chimps_link_rel() {
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/elements.css" type="text/css" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
-<link href='http://fonts.googleapis.com/css?family=<?php echo ($options->get($themeslug.'_font')); ?>' rel='stylesheet' type='text/css' /> <?php
+<link href='http://fonts.googleapis.com/css?family=<?php echo $font ; ?>' rel='stylesheet' type='text/css' /> <?php
 }
 
 /**
