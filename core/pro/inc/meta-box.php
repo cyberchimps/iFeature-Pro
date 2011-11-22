@@ -843,13 +843,6 @@ function initialize_the_meta_boxes() {
 
 					
 					array(
-						'name' => 'Custom Slide Title (Required)',
-						'desc' => 'Enter your title here',
-						'id' => 'post_title',
-						'type' => 'text',
-						'std' => ''
-					),
-					array(
 						'name' => 'Custom Slide Caption',
 						'desc' => 'Enter your caption here',
 						'id' => $prefix . 'caption',
