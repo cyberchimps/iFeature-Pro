@@ -9,6 +9,16 @@ function chimps_init_options() {
 global $options, $themeslug, $themename, $themenamefull;
 $options = new ClassyOptions($themename, $themenamefull." Options");
 
+$carouselterms2 = get_terms('carousel_categories', 'hide_empty=0');
+
+	$customscarousel = array();
+                                    
+    	foreach($carouselterms2 as $carouselterm) {
+
+        	$customcarousel[$carouselterm->slug] = $carouselterm->name;
+
+        }
+
 $customterms2 = get_terms('slide_categories', 'hide_empty=0');
 
 	$customslider = array();
@@ -119,6 +129,7 @@ TEMPLATE_URL . '/images/social/thumbs/icons-default.png', 'round' => TEMPLATE_UR
 			->text($themeslug."_featured_image_height", "Featured Image Height")
 			->text($themeslug."_featured_image_width", "Featured Image Width")
 			->checkbox($themeslug."_show_carousel", "Enable Featured Post Carousel")
+			->select($themeslug.'_carousel_category', 'Select the carousel category', array( 'options' => $customcarousel ))
 			->multicheck($themeslug."_hide_byline", "Hide Post Byline Elements", array( 'options' => array($themeslug."_hide_author" => "Author" , $themeslug."_hide_categories" => "Categories", $themeslug."_hide_date" => "Date", $themeslug."_hide_comments" => "Comments", $themeslug."_hide_share" => "Share", $themeslug."_hide_tags" => "Tags")))
 			->checkbox($themeslug."_show_fb_like", "Show Facebook Like Button")
 			->checkbox($themeslug."_show_gplus", "Show Google Plus One Button")
