@@ -156,14 +156,14 @@ jQuery(document).ready(function($) {
 
   $("#section-if_font").change(function() {
     if($(this).find(":selected").val() == 'custom') {
-      $('#section-if_custom_font').show();
+      $('#section-if_custom_font').fadeIn();
     } else {
       $('#section-if_custom_font').hide();
     }
   }).change();
   $("#section-if_menu_font").change(function() {
     if($(this).find(":selected").val() == 'custom') {
-      $('#section-if_custom_menu_font').show();
+      $('#section-if_custom_menu_font').fadeIn();
     } else {
       $('#section-if_custom_menu_font').hide();
     }
