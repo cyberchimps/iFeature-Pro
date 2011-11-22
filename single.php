@@ -66,10 +66,6 @@ get_header(); ?>
 				<h2>Not Found</h2>
 
 			<?php endif; ?>
-			
-				<!--Begin @Core pagination hook-->
-			<?php chimps_pagination(); ?>
-			<!--End @Core pagination loop hook-->
 		
 		</div><!--end content-->
 
