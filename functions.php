@@ -23,7 +23,7 @@ function mytheme_comment($comment, $args, $depth) {
    <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
      <div id="comment-<?php comment_ID(); ?>">
       <div class="comment-author vcard">
-         <?php echo get_avatar( $comment->comment_author_email, 48 ); ?>
+         <?php echo get_avatar( $comment, 64 ); ?>
 
          <?php printf(__('<cite class="fn">%s</cite> <span class="says">said:</span>'), get_comment_author_link()) ?>
       </div>
