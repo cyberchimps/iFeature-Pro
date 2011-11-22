@@ -389,8 +389,8 @@ class RW_Meta_Box {
 		$meta = explode(",", $meta);
 		echo "<div class='section_order'>";
 		echo "<div class='left_list'>";
-		echo "<div class='list_items'>";
 		echo "<div id='inactive'>Inactive Elements</div>";
+		echo "<div class='list_items'>";
 			foreach($field['options'] as $key => $value) {
 				if(in_array($key, $meta)) continue;
 				echo "<div class='list_item'>";
@@ -400,7 +400,9 @@ class RW_Meta_Box {
 			}
 		echo "</div>";
 		echo "</div>";
+		echo "<div id='arrow'><img src='$root/images/arrowdrag.png' /></div>";
 		echo "<div class='right_list'>";
+		echo "<div id='active'>Active Elements</div>";
 		echo "<div id='drag'>Drag & Drop Elements</div>";
 		echo "<div class='list_items'>";
 			foreach($meta as $key) {
