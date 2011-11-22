@@ -18,6 +18,12 @@ function postbar_option() {
 		echo ".postbar {width: 95.4%;}";
 		echo '</style>';
 	}
+	
+	if ($options->get($themeslug.'_blog_sidebar') == 'none') {
+		echo '<style type="text/css">';
+		echo ".postbar {width: 97.8%;}";
+		echo '</style>';
+	}
 }
 add_action( 'wp_head', 'postbar_option');
 
