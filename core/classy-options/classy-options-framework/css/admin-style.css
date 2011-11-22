@@ -288,14 +288,14 @@ input.button-primary {font-size:14px !important;}
     width: 240px;
 }
 #of_container .controls .of-radio-img-img {
-	border:3px solid #fff;
+	border:3px solid #eee;
 	margin:0 5px 10px 0;
 	display:none;
 	cursor:pointer;
 	float:left;
 }
 #of_container .controls .of-radio-img-selected {
-	border:3px solid #ccc
+	border:3px solid #aaa
 }
 #of_container .controls .of-radio-img-img:hover {
 	opacity:.8;
