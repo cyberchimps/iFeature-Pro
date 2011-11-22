@@ -76,11 +76,7 @@ function chimps_index_after_entry_sidebar() {
 	$blogsidebar = $options->get($themeslug.'_blog_sidebar');
 	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);?>
 	
-	<?php if ($sidebar == '' OR $blogsidebar == ''): ?>
-	<div id="sidebar" class="grid_4">
-		<?php get_sidebar(); ?>
-	</div>
-	<?php endif;?>
+	
 	
 	<?php if ($sidebar == "0" OR $blogsidebar == 'right' ): ?>
 	<div id="sidebar" class="grid_4">

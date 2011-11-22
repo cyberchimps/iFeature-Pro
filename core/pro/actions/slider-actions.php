@@ -203,7 +203,7 @@ echo "<div id='slider-wrapper'>";
 		$wordthumb = "h=$height&w=980";
 	}
 
-	elseif ($size2 == "key3" OR $size2 == "key4") {
+	elseif ($size2 == "two-right" OR $size2 == "right-left") {
 		$wordthumb = "h=$height&w=480";
 	}
 
@@ -215,12 +215,12 @@ echo "<div id='slider-wrapper'>";
 
 /* Define slider width variable */ 
 
-	if ($size == 'key2' && $size2 != 'key3' AND $size2 != 'key4') {
+	if ($size == 'key2' && $size2 != 'two-right' AND $size2 != 'right-left') {
 	  	$csWidth = '980';
 	}		
 
-	elseif ($size2 == 'key4' && $size != 'key2' OR $size2 == 'key3' && $size != 'key2') {
-		$csWidth = '480';
+	elseif ($size2 == 'right-left' && $size != 'key2' OR $size2 == 'two-right' && $size != 'key2') {
+		$csWidth = '470';
 	}  	
 
 	else {
