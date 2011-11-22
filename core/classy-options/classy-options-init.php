@@ -111,7 +111,7 @@ TEMPLATE_URL . '/images/social/thumbs/icons-default.png', 'round' => TEMPLATE_UR
 		->subsection_end()
 	->section("Blog")
 		->subsection("Blog Options")
-			->select($themeslug."_blog_sidebar", "Select the Sidebar Type", array( 'options' => array("right" => "Right", "none" => "None", "two-right" => "Two Right", "right-left" => "Right and Left")))
+			->images($themeslug."_blog_sidebar", "Select the Sidebar Type", array( 'options' => array("two-right" => TEMPLATE_URL . '/images/options/tworight.png', "right-left" => TEMPLATE_URL . '/images/options/rightleft.png', "none" => TEMPLATE_URL . '/images/options/none.png', "right" => TEMPLATE_URL . '/images/options/right.png')))
 			->checkbox($themeslug."_show_excerpts", "Post Excerpts")
 			->text($themeslug."_excerpt_link_text", "Excerpt Link Text")
 			->text($themeslug."_excerpt_length", "Excerpt Length")
