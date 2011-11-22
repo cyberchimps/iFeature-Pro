@@ -898,6 +898,17 @@ function initialize_the_meta_boxes() {
 		)
 	);
 
+	$carouselterms = get_terms('carousel_categories', 'hide_empty=0');
+
+	$carouseloptions = array();
+
+	foreach($carouselterms as $term) {
+
+		$carouseloptions[$term->slug] = $term->name;
+
+	}
+
+
 	$terms = get_terms('slide_categories', 'hide_empty=0');
 
 	$slideroptions = array();
@@ -1220,6 +1231,23 @@ function initialize_the_meta_boxes() {
 				'std' => ''
 			),
 					
+				
+				)),
+
+				array(
+				'title' => 'Carousel Options',
+				'fields' => array(
+			
+		
+					
+				array(
+				'name' => 'Carousel Category',
+				'desc' => 'Select the category you would like to use.',
+				'id' => 'carousel_category',
+				'type' => 'select',
+				'options' => $carouseloptions, 'all',
+				'std' => ''
+			),	
 				
 				)),
 
