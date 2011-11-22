@@ -135,7 +135,7 @@
 	z-index:9;
 	width:50px;
 	height:30px;
-	text-indent:-9999px;
+	
 	border:0;
 	margin-right:3px;
 	float:left;
@@ -144,9 +144,9 @@
 
 
 #slider .nivo-controlNav img {
-	display:inline; /* Unhide the thumbnails */
-	position:relative;
-	margin-right:10px;
+	display: inline;
+	position: relative;
+	margin-right: 10px;
 }
 
 /* End slider thumbs */
