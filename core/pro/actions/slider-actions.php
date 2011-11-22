@@ -359,7 +359,7 @@ echo "<div id='slider-wrapper'>";
 	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	    	}
 
-	    	elseif ($customimage == '' && $size2 == "1" && $size != "0" && $wordenable == '1' OR $customimage == '' && $size2 == "2" && $size != "0" && $wordenable == '1'){
+	    	elseif ($customimage == '' && $size2 == "two-right" && $size != "0" && $wordenable == '1' OR $customimage == '' && $size2 == "right-left" && $size != "0" && $wordenable == '1'){
 	    		$image = "$root/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro2-480.jpg&a=c&h=$height&w=480";
 	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	    	}
