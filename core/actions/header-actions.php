@@ -173,7 +173,13 @@ function chimps_link_rel() {
 	}	
 	else {
 		$font = $options->get($themeslug.'_font'); 
-	} ?>
+	} 
+	if ($options->get($themeslug.'_color_scheme') == '') {
+		$color = 'blue';
+	}
+	else {
+		$color = $options->get($themeslug.'_color_scheme');
+	}?>
 <link rel="shortcut icon" href="<?php echo stripslashes($favicon['url']); ?>" type="image/x-icon" />
 
 
@@ -181,7 +187,7 @@ function chimps_link_rel() {
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/960/text.css" type="text/css" />
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/grid.css" type="text/css" />
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/style.css" type="text/css" />
-<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/imenu.css" type="text/css" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/color/<?php echo $color; ?>.css" type="text/css" />
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/elements.css" type="text/css" />
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
@@ -367,17 +373,11 @@ function chimps_nav() {
 		$grid = 'grid_9';
 	}
 	
-	if ($options->get($themeslug.'_color_scheme') == '') {
-		$color = 'blue';
-	}
-	else {
-		$color = $options->get($themeslug.'_color_scheme');
-	}
 	?>
 	
 	<div class="container_12">
 
-	<div class="grid_12" id="imenu_<?php echo $color; ?>">
+	<div class="grid_12" id="imenu">
 
 		<div id="nav" class="<?php echo $grid; ?>">
 			<?php if ($options->get($themeslug.'_hide_home_icon') != "1"):?><div id="home"><a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri() ;?>/images/home.png" /></a></div><?php endif;?>
