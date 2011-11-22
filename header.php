@@ -11,6 +11,8 @@
 /* Call globals. */	
 
 	global $themename, $themeslug, $options;
+	
+	ifeature_header_content_init();
 
 /* End globals. */
 	
@@ -35,29 +37,11 @@
 	<header id="head">
 		
 	<?php if ($options->get($themeslug.'_disable_header') != "1"):?>
-			
-		<div class="container_12">
-		
-			<div class="grid_6">
+	
+		<!-- Begin @iFeature header content hook-->
+			<?php ifeature_header_content(); ?> 
+		<!-- End @iFeature header content hook -->	
 				
-				<!-- Begin @Core header sitename hook -->
-					<?php chimps_header_sitename(); ?> 
-				<!-- End @Core header sitename hook -->
-				
-			</div>	
-			
-			<div class="grid_6">
-			
-				<!-- Begin @Core header social icon hook -->
-					<?php chimps_header_social_icons(); ?> 
-				<!-- End @Core header contact social icon hook -->
-				
-			</div>	
-		
-		</div>
-		
-		<div class='clear'>&nbsp;</div>
-		
 	<?php endif;?>
 
 		<!-- Begin @Core navigation contact area hook -->

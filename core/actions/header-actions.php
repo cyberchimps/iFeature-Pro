@@ -32,6 +32,8 @@ add_action( 'chimps_header_social_icons', 'chimps_header_social_icons_content' )
 add_action( 'chimps_navigation', 'chimps_nav' );
 add_action( 'chimps_404_content', 'chimps_404_content_handler' );
 
+
+
 /**
 * Establishes the theme font family.
 *

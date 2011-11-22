@@ -473,6 +473,8 @@ do_action('chimps_init');
 // Call additional template files
 	
 require_once ( get_template_directory() . '/inc/update.php' ); // Include automatic updater
+require_once ( get_template_directory() . '/inc/theme-hooks.php' ); // Include automatic updater
+require_once ( get_template_directory() . '/inc/theme-actions.php' ); // Include automatic updater
 
 
 

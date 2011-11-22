@@ -192,6 +192,8 @@ function chimps_navigation() {
 	do_action('chimps_navigation');
 }
 
+
+
 /** 
 * Pagination 
 */
