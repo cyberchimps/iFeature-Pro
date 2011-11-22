@@ -17,7 +17,7 @@ textarea, input[type="text"], input[type="password"], input[type="file"], input[
 }
 
 .toggle{
-   background:url("toggle.png") bottom left;
+   background:url("../images/toggle.png") bottom left;
     display:block;
     width:70px;
     height:22px;
@@ -52,7 +52,7 @@ div.updated, .login .message {
 	z-index: 0;
 }
 #of_container #header {
-	height: 91px;
+	height: 85px;
 	background: #f8f8f8; /* Old browsers */
 	background: -moz-linear-gradient(top,  #f8f8f8 0%, #ededed 40%, #dddddd 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(40%,#ededed), color-stop(100%,#dddddd)); /* Chrome,Safari4+ */
@@ -130,7 +130,7 @@ input.button-primary {font-size:14px !important;}
 #top {float: right;text-decoration: none;padding: 5px;}
 
 #of_container #main {
-	background: url(carbon_fibre.png) #212121;
+	background: url(../images/carbon_fibre.png) #212121;
 	border-left: 1px solid #d8d8d8;
 	border-right: 1px solid #d8d8d8;
 	border-bottom: 1px solid #d8d8d8;
@@ -165,8 +165,9 @@ input.button-primary {font-size:14px !important;}
 	width: 660px;
 	margin-left: -1px;
 	padding: 0 14px;
-	background: url(whitey.png) #fbfbfb;
+	background: url(../images/whitey.png) #fbfbfb;
 	border-left: 1px solid #aaa;
+	margin-top: -6px;
 }
 #of_container #content .section {
 	margin-bottom: 10px;
