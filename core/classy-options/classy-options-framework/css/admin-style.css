@@ -179,7 +179,7 @@ input.button-primary {font-size:14px !important;}
 }
 #of_container #content .section .controls {
 	float: left;
-	width: 365px;
+	width: 360px;
 	margin: 12px 15px 0 0;
 }
 #of_container #content .section .explain {
@@ -292,7 +292,7 @@ input.button-primary {font-size:14px !important;}
 	margin:0 5px 10px 0;
 	display:none;
 	cursor:pointer;
-	float:left;
+	float:right;
 }
 #of_container .controls .of-radio-img-selected {
 	border:3px solid #aaa
