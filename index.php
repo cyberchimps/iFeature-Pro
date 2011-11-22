@@ -32,11 +32,11 @@
 <div class="container_12">
 
 
-			
+		<?php chimps_carousel_section() ?>	
 
 
-			<!--Begin @Core index entry hook-->
-	<?php chimps_index_before_entry(); ?>
+	<!--Begin @Core index entry hook-->
+		<?php chimps_index_before_entry(); ?>
 	<!--End @Core index entry hook-->
 
 		<div id="content" class="<?php echo $content_grid; ?>">
