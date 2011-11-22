@@ -54,7 +54,7 @@ function chimps_comments_loop() {
 		</div>
 
 		<ol class="commentlist">
-			<?php wp_list_comments(); ?>
+			<?php wp_list_comments('type=comment&callback=mytheme_comment'); ?>
 		</ol>
 
 		<div class="navigation">

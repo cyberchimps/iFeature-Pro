@@ -467,7 +467,7 @@ ol.commentlist li.comment div.comment-author { }
 ol.commentlist li.comment div.vcard { }
 ol.commentlist li.comment div.vcard cite.fn { font-style: normal; }
 ol.commentlist li.comment div.vcard cite.fn a.url { }
-ol.commentlist li.comment div.vcard img.avatar { float:right; margin: 0 0 10px 10px; }
+ol.commentlist li.comment div.vcard img.avatar { margin: 0 10px 10px 10px; }
 ol.commentlist li.comment div.vcard img.avatar-32 { }
 ol.commentlist li.comment div.vcard img.photo { }
 ol.commentlist li.comment div.vcard span.says { }
