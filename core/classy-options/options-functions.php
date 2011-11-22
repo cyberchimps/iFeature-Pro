@@ -8,6 +8,19 @@
 	
 */
 
+/* Adjust postbar width for full width and 2 sidebar configs*/
+
+function postbar_option() {
+	global $options, $themeslug;
+	
+	if ($options->get($themeslug.'_blog_sidebar') == 'two-right' OR $options->get($themeslug.'_blog_sidebar') == 'right-left') {
+		echo '<style type="text/css">';
+		echo ".postbar {width: 95.4%;}";
+		echo '</style>';
+	}
+}
+add_action( 'wp_head', 'postbar_option');
+
 /* Backgound Option*/
 
 function background_option() {
