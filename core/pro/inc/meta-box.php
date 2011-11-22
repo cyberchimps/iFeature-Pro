@@ -390,7 +390,7 @@ class RW_Meta_Box {
 		echo "<div class='section_order'>";
 		echo "<div class='left_list'>";
 		echo "<div class='list_items'>";
-		echo "Inactive Elements";
+		echo "<div id='inactive'>Inactive Elements</div>";
 			foreach($field['options'] as $key => $value) {
 				if(in_array($key, $meta)) continue;
 				echo "<div class='list_item'>";
@@ -401,7 +401,7 @@ class RW_Meta_Box {
 		echo "</div>";
 		echo "</div>";
 		echo "<div class='right_list'>";
-		echo "<div id='drag'>Reorder</div>";
+		echo "<div id='drag'>Drag & Drop Elements</div>";
 		echo "<div class='list_items'>";
 			foreach($meta as $key) {
 				if(!$key) continue;
