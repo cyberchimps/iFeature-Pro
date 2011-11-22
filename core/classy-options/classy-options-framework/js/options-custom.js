@@ -199,6 +199,14 @@ jQuery(document).ready(function($) {
     } else {
       toShow.fadeIn();
     }
+   }).change();
+    $("#if_show_carousel").change(function() {
+    var toShow = $("#section-if_carousel_category");
+    if($(this).is(':checked')) {
+      toShow.fadeIn();
+    } else {
+      toShow.fadeOut();
+    }
   }).change();
       $("#if_extra_header").change(function() {
     var toShow = $("#section-if_header_contact");
