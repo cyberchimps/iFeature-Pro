@@ -189,12 +189,12 @@ function add_link_color() {
 
 	if ($options->get($themeslug.'_link_color') != '') {
 		$link = $options->get($themeslug.'_link_color'); 
-	}
+	
 
 		echo '<style type="text/css">';
 		echo "a {color: $link;}";
 		echo '</style>';
-		
+	}
 }
 add_action( 'wp_head', 'add_link_color');
 
@@ -248,11 +248,11 @@ function add_posttitle_color() {
 
 	if ($options->get($themeslug.'_posttitle_color') != '') {
 		$posttitle = $options->get($themeslug.'_posttitle_color'); 
-	}		
+			
 		echo '<style type="text/css">';
 		echo ".posts_title a {color: $posttitle;}";
 		echo '</style>';
-
+	}
 }
 add_action( 'wp_head', 'add_posttitle_color');
 

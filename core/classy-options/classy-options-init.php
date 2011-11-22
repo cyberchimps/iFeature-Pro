@@ -71,6 +71,7 @@ TEMPLATE_URL . '/images/backgrounds/thumbs/noise.png', 'dark' => TEMPLATE_URL . 
 		->close_outersection()
 		->subsection("Header Options")
 			->upload($themeslug."_logo", "Custom Logo")
+			->checkbox($themeslug."_extra_header", "Extra Header Information")
 			->textarea($themeslug."_header_contact", "Header Contact Area")
 			->upload($themeslug."_favicon", "Custom Favicon")
 			->checkbox($themeslug."_disable_breadcrumbs", "Disable breadcrumbs")
