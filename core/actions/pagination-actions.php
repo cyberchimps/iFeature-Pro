@@ -30,7 +30,7 @@ add_action('chimps_links_pages', 'chimps_wp_link_pages');
 function chimps_previous_posts() {
 	$previous_text = apply_filters('chimps_previous_posts_text', '&laquo; Older Entries' ); 
 	
-	echo "<div class='next-posts'>";
+	echo "<div class='pagnext-posts'>";
 	next_posts_link( __( $previous_text, 'core' ));
 	echo "</div>";
 }
@@ -43,7 +43,7 @@ function chimps_previous_posts() {
 function chimps_newer_posts() {
 	$newer_text = apply_filters('chimps_newer_posts_text', 'Newer Entries &raquo;' );
 	
-	echo "<div class='prev-posts'>";
+	echo "<div class='pagprev-posts'>";
 	previous_posts_link( __( $newer_text, 'core' ));
 	echo "</div>";
 }
