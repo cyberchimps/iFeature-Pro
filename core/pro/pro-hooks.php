@@ -34,8 +34,12 @@ function chimps_callout_section() {
 /** 
 * Carousel Section
 */
-function chimps_carousel_section() {
-	do_action ('chimps_carousel_section');
+function chimps_index_carousel_section() {
+	do_action ('chimps_index_carousel_section');
+}
+
+function chimps_page_carousel_section() {
+	do_action ('chimps_page_carousel_section');
 }
 
 /** 

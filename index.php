@@ -32,7 +32,7 @@
 <div class="container_12">
 
 
-		<?php chimps_carousel_section() ?>	
+		<?php chimps_index_carousel_section() ?>	
 
 
 	<!--Begin @Core index entry hook-->

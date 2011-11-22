@@ -15,9 +15,9 @@
 * @since 1.0
 */
 
-add_action( 'chimps_carousel_section', 'chimps_carousel_section_content' );
+add_action( 'chimps_index_carousel_section', 'chimps_index_carousel_section_content' );
 
-function chimps_carousel_section_content() {
+function chimps_index_carousel_section_content() {
 
 /* Call globals. */	
 
@@ -31,6 +31,7 @@ function chimps_carousel_section_content() {
 	$root = get_template_directory_uri(); 
 	$worddisable = get_post_meta($post->ID, 'disable_wordthumb' , true);
 	$default = "$root/images/pro/carousel.jpg";
+	$customcategory = $options->get($themeslug.'_carousel_category');
 	
 /* End define variables. */	 
 
@@ -47,7 +48,7 @@ if ($options->get($themeslug.'_show_carousel') == '1') {
 
 /* Query posts  */
 
-    query_posts( array ('post_type' => $themeslug.'_featured_posts', 'showposts' => 20, true)  );
+    query_posts( array ('post_type' => $themeslug.'_featured_posts', 'showposts' => 20, true, 'carousel_categories' => $customcategory ));
 
 /* End query posts based on theme/meta options */
     	
