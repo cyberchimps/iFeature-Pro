@@ -451,6 +451,8 @@ li { padding-left: 5px; }
 	font-weight: bold;
 }
 
+
+
 #comments .navigation { padding: 0 0 18px 0; }
 
 label[for="comment"] {display: block;}
@@ -458,6 +460,7 @@ label[for="comment"] {display: block;}
 /* Comment lists  */
 
 ol.commentlist { list-style: none; }
+ol.commentlist p { margin-left: 8px; }
 ol.commentlist li { }
 ol.commentlist li.alt { }
 ol.commentlist li.bypostauthor { }
@@ -477,7 +480,7 @@ ol.commentlist li.comment div.comment-meta { font-size: 11px; }
 ol.commentlist li.comment div.comment-meta a { color: #888; }
 ol.commentlist li.comment p { }
 ol.commentlist li.comment ul { }
-ol.commentlist li.comment div.reply { font-size: 11px; }
+ol.commentlist li.comment div.reply { font-size: 11px; margin-left: 8px; }
 ol.commentlist li.comment div.reply a { font-weight: bold; }
 ol.commentlist li.comment ul.children { list-style: none; margin: 10px 0 0; }
 ol.commentlist li.comment ul.children li { }
@@ -486,9 +489,9 @@ ol.commentlist li.comment ul.children li.bypostauthor { }
 ol.commentlist li.comment ul.children li.byuser { }
 ol.commentlist li.comment ul.children li.comment { }
 ol.commentlist li.comment ul.children li.comment-author-admin { }
-ol.commentlist li.comment ul.children li.depth-2 { border-left: 1px solid #999; margin: 0 0 10px 10px; }
-ol.commentlist li.comment ul.children li.depth-3 { border-left: 1px solid #bbb; margin: 0 0 10px 10px; }
-ol.commentlist li.comment ul.children li.depth-4 { border-left: 1px solid #ddd; margin: 0 0 10px 10px; }
+ol.commentlist li.comment ul.children li.depth-2 {  margin: 0 0 10px 10px; }
+ol.commentlist li.comment ul.children li.depth-3 {  margin: 0 0 10px 10px; }
+ol.commentlist li.comment ul.children li.depth-4 {  margin: 0 0 10px 10px; }
 ol.commentlist li.comment ul.children li.depth-5 { }
 ol.commentlist li.comment ul.children li.odd { }
 ol.commentlist li.even { background: #fafafa;border: 1px solid #ccc;border-radius: 4px; }
