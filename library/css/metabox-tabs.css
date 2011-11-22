@@ -15,14 +15,22 @@ display: inline;
 }
 
 ul.metabox-tabs li.active {
-background-color: #F1F1F1;
+background-color: #fff;
+border-top: 1px solid #ccc;
+border-left: 1px solid #ccc;
+border-right: 1px solid #ccc;
 }
 
 ul.metabox-tabs li.active, div.tab-content {
 border-color: #DFDFDF;
 }
+
 .metabox-tabs .active a {
-color: #333;
+color: #000;
+}
+
+.metabox-tabs a {
+color: #444;
 }
 
 
@@ -53,9 +61,11 @@ overflow: auto;
 padding: 0.5em 0.9em;
 border-style: solid;
 border-width: 1px;
+background: #fff;
+border-radius: 0px 4px 4px;
 }
 
-/** Sections */
+/** Page Elements */
 .section_order {
 	background: #222;
 }
@@ -83,8 +93,15 @@ border-width: 1px;
 }
 
 #drag {
-	font-size: 10px;
-	color: #e6e6e6;
+	font-size: 12px;
+	font-weight: bold;
+	color: #fff;
+	text-align: center;
+}
+
+#inactive {
+	font-size: 12px;
+	color: #000;
 	text-align: center;
 }
 
@@ -95,11 +112,5 @@ img.action {
 	border: 1px solid #acacac;
 	text-align: right;
 	cursor: pointer;
-}
-
-#plus {
-	margin-right: 5px;
-	margin-bottom: -3px;
-	background: #f2f2f2;
-	border: 1px solid #acacac;
+	padding: 2px;
 }
