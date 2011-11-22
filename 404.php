@@ -14,8 +14,9 @@
 
 ?>
 
-<div id="content_wrap">
-	<div id="content_left">
+<div class="container_12">
+
+	<div id="content" class="grid_12">
 		<div class="content_padding">
 		
 			<!-- Begin @Core before_404 hook content-->
@@ -33,11 +34,9 @@
 		</div><!--end content_padding-->
 	</div><!--end content_left-->
 
-	<div id="sidebar_right">
-		<?php get_sidebar(); ?>
-	</div>
+
 	
 </div><!--end content_wrap-->
-<div style=clear:both;></div><!--clear-->
+<div style="clear:both;"></div>
 
 <?php get_footer(); ?>

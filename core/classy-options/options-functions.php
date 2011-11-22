@@ -292,7 +292,7 @@ function add_menu_font() {
 		$font = 'Arial';
 	}		
 		
-	elseif ($options->get($themeslug.'_custom_menu_font') != "") {
+	elseif ($options->get($themeslug.'_menu_font') == 'custom' && $options->get($themeslug.'_custom_menu_font') != "") {
 		$font = $options->get($themeslug.'_custom_menu_font');	
 	}
 	
