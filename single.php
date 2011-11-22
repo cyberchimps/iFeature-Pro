@@ -48,7 +48,7 @@ get_header(); ?>
 					<?php chimps_post_tags(); ?>
 				<!--End @Core post tags hook-->
 				
-				<?php previous_post_link(); ?> <?php next_post_link(); ?>
+				<div style="text-align:left;padding:5px;"><?php previous_post_link(); ?></div> <div style="text-align:right;padding:5px;"><?php next_post_link(); ?></div>
 			
 				<!--Begin @Core post bar hook-->
 					<?php chimps_post_bar(); ?>

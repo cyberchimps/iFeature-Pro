@@ -19,7 +19,7 @@ p{margin: 0 0 10px 0;clear: both;}
 a{color:#0085CF;text-decoration:none}
 a:hover{text-decoration:none}
 #wrapper input, textarea{color:#666;border:#ccc 1px solid;border-radius:2px}
-input[type=submit]{cursor:pointer}
+input[type=submit]{cursor:pointer;}
 a img{border:none}
 a{outline:none}
 
