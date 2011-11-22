@@ -217,11 +217,15 @@ input[type=text] {width: 100px;}
 
 /* Posts Navigation */
 
-.next-posts {float: left;padding: 5px;background:#fff;border: 1px solid #ccc;margin-bottom: 10px;border-radius: 4px;box-shadow:inset 0 0 2px #ccc;}
+.next-posts {float: left;padding: 5px 0 5px 0; }
 
 .prev-posts { float: right;padding: 5px 0 5px 0; }
 
 #crumbs {padding: 2px 5px 0px 5px;}
+
+.pagnext-posts {float: left;padding: 5px;background:#fff;border: 1px solid #ccc;margin-bottom: 10px;border-radius: 4px;box-shadow:inset 0 0 2px #ccc;}
+
+.pagprev-posts { float: right;padding: 5px;background:#fff;border: 1px solid #ccc;margin-bottom: 10px;border-radius: 4px;box-shadow:inset 0 0 2px #ccc; }
 
 /* HTML styling  */
 
