@@ -61,6 +61,8 @@ function chimps_comments_loop() {
 			<div class="next-posts"><?php previous_comments_link() ?></div>
 			<div class="prev-posts"><?php next_comments_link() ?></div>
 		</div>
+		
+	
 	
  <?php else : // this is displayed if there are no comments so far ?>
 
@@ -89,6 +91,8 @@ function chimps_comments_loop() {
 	<?php comment_form(); ?>
 	
 		<?php endif; ?>
+		
+		
 
 		<!--<p>You can use these tags: <code><?php echo allowed_tags(); ?></code></p>-->	
 		
@@ -99,8 +103,10 @@ function chimps_comments_loop() {
 	
 </div>
 
-	<?php endif; // If registration required and not logged in ?>
 </div><!--end comments_container-->
+
+	<?php endif; // If registration required and not logged in ?>
+
 <?php }
 
 /**
