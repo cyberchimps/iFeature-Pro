@@ -20,6 +20,8 @@ a{color:#0085CF;text-decoration:none}
 a:hover{text-decoration:none}
 #wrapper input, textarea{color:#666;border:#ccc 1px solid;border-radius:2px}
 input[type=submit]{cursor:pointer;}
+input {border: 1px solid #ccc;}
+input[type=submit]{font-size: 12px;padding: 2px;border: 1px solid #999;border-radius: 3px;}
 a img{border:none}
 a{outline:none}
 
@@ -148,9 +150,6 @@ a:hover {color: #555;}
 .searchform .s:focus {outline:0; border:none;}
 
 .searchform .searchsubmit {display:none;}
-
-input[type=text] {width: 100px;}
-
 
 /* Post Container Styling  */
 
