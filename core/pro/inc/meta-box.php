@@ -960,13 +960,7 @@ function initialize_the_meta_boxes() {
 				),
 
 			
-			array(
-				'name' => 'Twitter Handle',
-				'desc' => 'Enter your Twitter handle if using the Twitter bar - Requires <a href="http://wordpress.org/extend/plugins/twitter-for-wordpress/" target="_blank">Twitter for WordPress Plugin',
-				'id' => 'twitter_handle',
-				'type' => 'text',
-				'std' => ''
-			),
+		
 		
 		
 			array(
@@ -1212,6 +1206,23 @@ function initialize_the_meta_boxes() {
 					),
 
 				)),
+				
+				array(
+				'title' => 'Twitter Options',
+				'fields' => array(
+			
+					
+				array(
+				'name' => 'Twitter Handle',
+				'desc' => 'Enter your Twitter handle if using the Twitter bar - Requires <a href="http://wordpress.org/extend/plugins/twitter-for-wordpress/" target="_blank">Twitter for WordPress Plugin',
+				'id' => 'twitter_handle',
+				'type' => 'text',
+				'std' => ''
+			),
+					
+				
+				)),
+
 				
 				
 				array(

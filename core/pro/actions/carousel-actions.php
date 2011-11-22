@@ -29,7 +29,6 @@ function chimps_index_carousel_section_content() {
 
     $tmp_query = $wp_query; 
 	$root = get_template_directory_uri(); 
-	$worddisable = get_post_meta($post->ID, 'disable_wordthumb' , true);
 	$default = "$root/images/pro/carousel.jpg";
 	$customcategory = $options->get($themeslug.'_carousel_category');
 	
