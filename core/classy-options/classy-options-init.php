@@ -86,7 +86,7 @@ TEMPLATE_URL . '/images/backgrounds/thumbs/noise.png', 'dark' => TEMPLATE_URL . 
 		->subsection_end()
 		->subsection("Social")
 			->images($themeslug."_icon_style", "Icon set", array( 'options' => array( 'default' =>
-"http://tylerbcunningham.com/wp-content/uploads/2011/11/icons-default.png", 'round' => "http://tylerbcunningham.com/wp-content/uploads/2011/11/icons-round.png", 'legacy' => "http://tylerbcunningham.com/wp-content/uploads/2011/11/icons-classic.png" ) ) )
+TEMPLATE_URL . '/images/social/thumbs/icons-default.png', 'round' => TEMPLATE_URL . '/images/social/thumbs/icons-round.png', 'legacy' => TEMPLATE_URL . '/images/social/thumbs/icons-classic.png' ) ) )
 			->text($themeslug."_twitter", "Twitter Icon URL", array('default' => 'http://twitter.com'))
 			->checkbox($themeslug."_hide_twitter", "Hide Twitter Icon", array('default' => true))
 			->text($themeslug."_facebook", "Facebook Icon URL", array('default' => 'http://facebook.com'))
