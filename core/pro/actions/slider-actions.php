@@ -340,7 +340,7 @@ echo "<div id='slider-wrapper'>";
 	    	}
 	    	
 	    	elseif ($customimage == '' && $wordenable != '1'){
-	    		$image = "$root/images/pro/ifeatureprolarge.jpg";
+	    		$image = "$root/images/pro/iFeaturePro2-640.jpg";
 	    		$thumbnail = $customthumb;
 	    	}
 	    	
