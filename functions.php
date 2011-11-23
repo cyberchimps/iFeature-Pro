@@ -315,7 +315,7 @@ add_action( 'save_post', 'custom_taxonomy_default', 100, 2 );
 
 function nivoslider(){
 	 
-	$path =  get_template_directory_uri() ."/library/ns";
+	$path =  get_template_directory_uri() ."/core/library/ns";
 
 	$script = "
 		
@@ -330,7 +330,7 @@ add_action('wp_head', 'nivoslider');
 
 function carousel(){
 	 
-	$path =  get_template_directory_uri() ."/library/js/";
+	$path =  get_template_directory_uri() ."/core/library/js";
 
 	$script = "
 		
@@ -347,7 +347,7 @@ add_action('wp_head', 'carousel');
 
 function plusone(){
 	
-	$path =  get_template_directory_uri() ."/library/js";
+	$path =  get_template_directory_uri() ."/core/library/js";
 
 	$script = "
 		
@@ -369,30 +369,6 @@ function typekit_support() {
 
 }
 add_action('wp_head', 'typekit_support');
-
-
-// Register superfish scripts
-	
-function add_scripts() {
- 
-    if (!is_admin()) { // Add the scripts, but not to the wp-admin section.
-    // Adjust the below path to where scripts dir is, if you must.
-    $scriptdir = get_template_directory_uri() ."/library/sf/";
- 
-    // Register the Superfish javascript file
-    wp_register_script( 'superfish', $scriptdir.'sf.js', false, '1.4.8');
-    wp_register_script( 'sf-menu', $scriptdir.'sf-menu.js');
-    // Now the superfish CSS
-   
-    //load the scripts and style.
-	wp_enqueue_style('superfish-css');
-    wp_enqueue_script('superfish');
-    wp_enqueue_script('sf-menu');
-    } // end the !is_admin function
-} //end add_our_scripts function
- 
-//Add our function to the wp_head. You can also use wp_print_scripts.
-add_action( 'wp_head', 'add_scripts',0);
 	
 	// Register menu names
 	
