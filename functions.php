@@ -178,10 +178,7 @@ add_theme_support( 'post-thumbnails' );
 // This theme styles the visual editor with editor-style.css to match the theme style.
 add_editor_style();
 
-// Load jQuery
-if ( !is_admin() ) {
-	wp_enqueue_script('jquery');
-}
+
 
 /**
 * Attach CSS3PIE behavior to elements
@@ -369,6 +366,17 @@ function typekit_support() {
 
 }
 add_action('wp_head', 'typekit_support');
+
+
+// Register superfish scripts
+	
+function my_scripts_method() {
+    wp_deregister_script( 'jquery' );
+    wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js');
+    wp_enqueue_script( 'jquery' );
+}    
+ 
+add_action('wp_enqueue_scripts', 'my_scripts_method');
 	
 	// Register menu names
 	
