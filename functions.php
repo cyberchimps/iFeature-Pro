@@ -16,6 +16,11 @@
 	$themeslug = 'if';
 	$root = get_template_directory_uri(); 
 	
+	
+//Redirect after activation
+if ( is_admin() && isset($_GET['activated'] ) && $pagenow ==	"themes.php" )
+	wp_redirect( 'themes.php?page=ifeature' );
+	
 //Gallery options 
 
 function custom_gallery_post_format( $content ) {
@@ -23,10 +28,11 @@ global $options, $themeslug, $post;
 $root = get_template_directory_uri(); 
 ob_start();
 ?>
-
-	<div class="postformats"><!--begin format icon-->
+		<?php if ($options->get($themeslug.'_post_formats') == '1') : ?>
+			<div class="postformats"><!--begin format icon-->
 				<img src="<?php echo get_template_directory_uri(); ?>/images/formats/gallery.png" />
 			</div><!--end format-icon-->
+		<?php endif;?>
 				<h2 class="posts_title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
 					<!--Call @Core Meta hook-->
 			<?php chimps_post_byline(); ?>
