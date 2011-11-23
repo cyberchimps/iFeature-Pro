@@ -468,6 +468,10 @@ a img.aligncenter {
     padding:0 4px 5px;
 }
 
+img.size-full {
+	max-width: 610px;
+	height: auto;
+}
 
 blockquote { 
 	background-color: #ccc;
