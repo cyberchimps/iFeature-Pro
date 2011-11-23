@@ -340,7 +340,7 @@ echo "<div id='slider-wrapper'>";
 	    	}
 	    	
 	    	elseif ($customimage == '' && $wordenable != '1'){
-	    		$image = "$root/images/pro/iFeaturePro2-640.jpg";
+	    		$image = "$root/images/pro/iFeaturePro3-640.jpg";
 	    		$thumbnail = $customthumb;
 	    	}
 	    	
@@ -350,12 +350,12 @@ echo "<div id='slider-wrapper'>";
 	    	}
 
 	    	elseif ($customimage == '' && $size2 == "key1" && $size != "key2" && $wordenable == '1'){
-	    		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
+	    		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro3-640.jpg&a=c&h=$height&w=640";
 	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	    	}
 
 	    	elseif ($customimage == '' && $size2 == '4' && $size != "0" && $wordenable == '1'){
-	    		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
+	    		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro3-640.jpg&a=c&h=$height&w=640";
 	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	    	}
 
@@ -365,7 +365,7 @@ echo "<div id='slider-wrapper'>";
 	    	}
 
 	   		elseif ($wordenable == '1') {
-	       		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
+	       		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro3-640.jpg&a=c&h=$height&w=640";
 	       		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	       	}
 	       	
