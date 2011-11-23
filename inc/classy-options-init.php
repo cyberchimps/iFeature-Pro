@@ -80,7 +80,7 @@ $options
 		->close_outersection()
 		->subsection("Header Options")
 			->upload($themeslug."_logo", "Custom Logo")
-			->checkbox($themeslug."_extra_header", "Extra Header Information")
+			->checkbox($themeslug."_enable_header_contact", "Toggle for Header Contact Area")
 			->textarea($themeslug."_header_contact", "Header Contact Area")
 			->upload($themeslug."_favicon", "Custom Favicon")
 			->checkbox($themeslug."_disable_breadcrumbs", "Disable breadcrumbs")

@@ -208,7 +208,7 @@ jQuery(document).ready(function($) {
       toShow.fadeOut();
     }
   }).change();
-      $("#if_extra_header").change(function() {
+      $("#if_enable_header_contact").change(function() {
     var toShow = $("#section-if_header_contact");
     if($(this).is(':checked')) {
       toShow.show();
