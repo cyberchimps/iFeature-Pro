@@ -66,7 +66,7 @@ function chimps_post_bar_content() {
 	<?php endif;?>		
 		<?php if (($hidden[$themeslug.'_hide_comments'])):?>
 		<div class="comments">
-			<img src="<?php echo get_template_directory_uri(); ?>/images/Commentsgrey.png" height="21px" width="21px" alt="comments"/>&nbsp
+			<img src="<?php echo get_template_directory_uri(); ?>/images/Commentsgrey.png" height="21px" width="21px" alt="comments"/>&nbsp;
 				<?php comments_popup_link( __('No Comments &#187;', 'core' ), __('1 Comment &#187;', 'core' ), __('% Comments &#187;' , 'core' )); //need a filer here ?>
 		</div><!--end comments-->
 		<?php endif;?>	

@@ -368,6 +368,7 @@ echo "<div id='slider-wrapper'>";
 	       		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
 	       		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
 	       	}
+	       	
 	       
 	     	/* End image/thumb */	
 
@@ -483,13 +484,13 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
         animSpeed:500, // Slide transition speed
         pauseTime:'$delay', // How long each slide will show
         startSlide:0, // Set starting Slide (0 index)
-        directionNav:$hidenavigation, // Next & Prev navigation
+        directionNav:$hidenavigation, // Next Prev navigation
         directionNavHide:$autohide, // Only show on hover
         controlNavThumbs:true, // Use thumbnails for Control Nav
         controlNavThumbsFromRel:true, // Use image rel for thumbs
         controlNavThumbsSearch: '.jpg', // Replace this with...
         controlNavThumbsReplace: '_thumb.jpg', // ...this in thumb Image src
-        keyboardNav:true, // Use left & right arrows
+        keyboardNav:true, // Use left  right arrows
         pauseOnHover:true, // Stop animation while hovering
         manualAdvance:false, // Force manual transitions
         captionOpacity:0.7, // Universal caption opacity
@@ -984,13 +985,13 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
         animSpeed:500, // Slide transition speed
         pauseTime:'$delay', // How long each slide will show
         startSlide:0, // Set starting Slide (0 index)
-        directionNav:$hidenavigation, // Next & Prev navigation
+        directionNav:$hidenavigation, // Next  Prev navigation
         directionNavHide:$autohide, // Only show on hover
         controlNavThumbs:true, // Use thumbnails for Control Nav
         controlNavThumbsFromRel:true, // Use image rel for thumbs
         controlNavThumbsSearch: '.jpg', // Replace this with...
         controlNavThumbsReplace: '_thumb.jpg', // ...this in thumb Image src
-        keyboardNav:true, // Use left & right arrows
+        keyboardNav:true, // Use left  right arrows
         pauseOnHover:true, // Stop animation while hovering
         manualAdvance:false, // Force manual transitions
         captionOpacity:0.7, // Universal caption opacity
