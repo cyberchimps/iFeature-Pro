@@ -487,8 +487,8 @@ require_once ( get_template_directory() . '/core/core-init.php' );
 do_action('chimps_init');
 
 // Call additional template files
-require_once ( get_template_directory() . '/core/classy-options/classy-options-init.php' );
-require_once ( get_template_directory() . '/core/classy-options/options-functions.php' );
+require_once ( get_template_directory() . '/inc/classy-options-init.php' );
+require_once ( get_template_directory() . '/inc/options-functions.php' );
 	
 require_once ( get_template_directory() . '/inc/update.php' ); // Include automatic updater
 require_once ( get_template_directory() . '/inc/theme-hooks.php' ); // Include automatic updater

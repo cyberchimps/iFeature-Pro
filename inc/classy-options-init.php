@@ -1,6 +1,6 @@
 <?php
 
-require( 'classy-options-framework/classy-options-framework.php');
+require( get_template_directory() . '/core/classy-options/classy-options-framework/classy-options-framework.php');
 
 add_action('init', 'chimps_init_options');
 
