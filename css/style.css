@@ -432,6 +432,11 @@ a img.aligncenter {
     margin-right: auto
 }
 
+img.size-full {
+	max-width: 610px;
+	height: auto;
+}
+
 .wp-caption {
     background: #fff;
     border: 1px solid #f0f0f0;
@@ -456,7 +461,7 @@ a img.aligncenter {
     border: 0 none;
     height: auto;
     margin:0;
-    max-width: 98.5%;
+    max-width: 95%;
     padding:0;
     width: auto;
 }
@@ -468,10 +473,7 @@ a img.aligncenter {
     padding:0 4px 5px;
 }
 
-img.size-full {
-	max-width: 610px;
-	height: auto;
-}
+
 
 blockquote { 
 	background-color: #ccc;
