@@ -12,9 +12,6 @@
 global $options, $themeslug;
 
 ?>
-
-	</div><!--end main-->
-</div><!--end page_wrap-->			
 	
 <?php if ($options->get($themeslug.'_disable_footer') != "1"):?>	
 

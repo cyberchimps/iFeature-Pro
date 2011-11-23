@@ -100,6 +100,6 @@
 
 </div><!--end container_12-->
 
-<div style="clear:both;"></div>
+<div class='clear'>&nbsp;</div>
 
 <?php get_footer(); ?>

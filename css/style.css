@@ -182,7 +182,7 @@ a:hover {color: #5ca9d6;}
 	border-left: 1px solid #ccc;
 }
 
-#postbar {
+.postbar {
 	margin: -3px -15px -10px -15px;
 	border-top: 1px #e5e5e5 solid;
 	border-radius: 0px 0px 4px 4px;

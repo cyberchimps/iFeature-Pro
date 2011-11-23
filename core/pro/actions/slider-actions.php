@@ -375,10 +375,10 @@ echo "<div id='slider-wrapper'>";
 
 	    	$out .= "<a href='$link'>	
 	    				<img src='$image' height='$height' width='$csWidth' title='$titlevar' rel='$thumbnail' alt='iFeaturePro' />
-	    					<div id='caption$i' class='nivo-html-caption'>
+	    					<span id='caption$i' class='nivo-html-caption'>
                 				<font size='4'>$title </font> <br />
                 				$text 
-                			</div>
+                			</span>
 	    				</a>
 	    			";
 
