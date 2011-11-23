@@ -14,7 +14,7 @@
 function enqueue_store_styles() {
  
  	global $themename, $themeslug, $options;
- 	wp_register_style($themeslug.'storecss', get_template_directory_uri(). '/core/options/themes.css');
+ 	wp_register_style($themeslug.'storecss', get_template_directory_uri(). '/core/classy-options/themes.css');
 
       
     wp_enqueue_style($themeslug.'storecss');  
