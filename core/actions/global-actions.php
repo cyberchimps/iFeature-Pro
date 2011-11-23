@@ -56,7 +56,7 @@ function chimps_post_bar_content() {
 	$hidden = $options->get($themeslug.'_hide_byline'); ?>
 	
 	
-		<div class="postbar" class="grid_8">
+		<div id="postbar" class="grid_8">
 		<?php if (($hidden[$themeslug.'_hide_share'])):?>
 			<div class="share">
 		<a href="http://www.facebook.com/share.php?u=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/facebook.png" alt="Share on Facebook" height="16px" width="16px" /></a> 
@@ -66,7 +66,7 @@ function chimps_post_bar_content() {
 	<?php endif;?>		
 		<?php if (($hidden[$themeslug.'_hide_comments'])):?>
 		<div class="comments">
-			<img src="<?php echo get_template_directory_uri(); ?>/images/Commentsgrey.png" height="21px" width="21px" />&nbsp
+			<img src="<?php echo get_template_directory_uri(); ?>/images/Commentsgrey.png" height="21px" width="21px" alt="comments"/>&nbsp
 				<?php comments_popup_link( __('No Comments &#187;', 'core' ), __('1 Comment &#187;', 'core' ), __('% Comments &#187;' , 'core' )); //need a filer here ?>
 		</div><!--end comments-->
 		<?php endif;?>	
