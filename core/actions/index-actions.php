@@ -78,7 +78,7 @@ function chimps_index_after_entry_sidebar() {
 	
 	
 	
-	<?php if ($sidebar == "0" OR $blogsidebar == 'right' ): ?>
+	<?php if ($sidebar == "0" OR $blogsidebar == 'right' OR $blogsidebar == '' ): ?>
 	<div id="sidebar" class="grid_4">
 		<?php get_sidebar(); ?>
 	</div>
