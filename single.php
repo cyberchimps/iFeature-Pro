@@ -15,8 +15,6 @@
 
 get_header(); ?>
 
-<?php get_header(); ?>
-
 <div class="container_12">
 <?php if (function_exists('chimps_breadcrumbs')) chimps_breadcrumbs(); ?>
 
