@@ -427,9 +427,8 @@ a.nivo-prevNav {
 
 #box_container {
 	min-height: 240px;
-	float: left;
 	padding-top: 5px;
-	padding-bottom: 15px;
+	margin-bottom: 25px;
 }
 
 #box_container ul {
