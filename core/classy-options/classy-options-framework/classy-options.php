@@ -201,7 +201,7 @@ class ClassyOptions {
 				}
 
 				// For a value to be submitted to database it must pass through a sanitization filter
-				if ( has_filter( 'cof_sanitize_' . $option['type'] && isset($input['id'])) ) {
+				if ( has_filter( 'cof_sanitize_' . $option['type'] ) ) {
 					$clean[$id] = apply_filters( 'cof_sanitize_' . $option['type'], $input[$id], $option );
 				}
 			}
