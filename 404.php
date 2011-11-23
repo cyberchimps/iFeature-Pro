@@ -37,6 +37,6 @@
 
 	
 </div><!--end content_wrap-->
-<div style="clear:both;"></div>
+<div class='clear'>&nbsp;</div>
 
 <?php get_footer(); ?>
