@@ -18,11 +18,11 @@ h1, h2, h3, h4, h5, h6{font-weight:normal;}
 p{margin: 0 0 10px 0;clear: both;}
 a{color:#0085CF;text-decoration:none}
 a:hover{text-decoration:none}
-#wrapper input, textarea{color:#666;border:#ccc 1px solid;border-radius:2px}
+#wrapper input, textarea{color:#666;border:#ccc 1px solid;border-radius:2px;-moz-border-radius: 2px;}
 input[type=submit]{cursor:pointer;}
 input {border: 1px solid #ccc;}
-input[type=submit]{font-size: 12px;padding: 2px;margin-top: 5px;border: 1px solid #999;border-radius: 3px;}
-input[type=reset]{font-size: 12px;padding: 2px;margin-top: 5px;border: 1px solid #999;border-radius: 3px;}
+input[type=submit]{font-size: 12px;padding: 2px;margin-top: 5px;border: 1px solid #999;border-radius: 3px;-moz-border-radius: 3px;}
+input[type=reset]{font-size: 12px;padding: 2px;margin-top: 5px;border: 1px solid #999;border-radius: 3px;-moz-border-radius: 3px;}
 a img{border:none}
 a{outline:none}
 
@@ -177,6 +177,7 @@ a:hover {color: #555;}
 	height: 46px;
 	width: 50px;
 	border-radius: 0px 4px 0px;
+	-moz-border-radius: 0px 4px 0px;	
 	border-bottom: 1px solid #ccc;
 	border-left: 1px solid #ccc;
 }
@@ -185,6 +186,7 @@ a:hover {color: #555;}
 	margin: -3px -15px -10px -15px;
 	border-top: 1px #e5e5e5 solid;
 	border-radius: 0px 0px 4px 4px;
+	-moz-border-radius: 0px 0px 4px 4px;
 	padding: 0 10px 0 10px;
 	position: absolute;
 	width: 96.7%;
@@ -274,7 +276,7 @@ ol {list-style-position: inside;margin-left: 21px;}
 
 
 
-.widget-title{font-size:18px;color:#444;text-shadow:none;padding:3px;border-radius:4px 4px 0 0;margin: 0 -10px 0 -10px;padding: 2px 15px 2px 15px;border-bottom: 1px solid #aaa;background: #f8f8f8;/* Old browsers */background: -moz-linear-gradient(top,  #f8f8f8 0%, #ededed 40%, #dddddd 100%); /* FF3.6+ */background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(40%,#ededed), color-stop(100%,#dddddd)); /* Chrome,Safari4+ */background: -webkit-linear-gradient(top,  #f8f8f8 0%,#ededed 40%,#dddddd 100%); /* Chrome10+,Safari5.1+ */background: -o-linear-gradient(top,  #f8f8f8 0%,#ededed 40%,#dddddd 100%); /* Opera 11.10+ */background: -ms-linear-gradient(top,  #f8f8f8 0%,#ededed 40%,#dddddd 100%); /* IE10+ */background: linear-gradient(top,  #f8f8f8 0%,#ededed 40%,#dddddd 100%); /* W3C */filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */}
+.widget-title{font-size:18px;color:#444;text-shadow:none;padding:3px;border-radius:4px 4px 0 0;-moz-border-radius:4px 4px 0 0;margin: 0 -10px 0 -10px;padding: 2px 15px 2px 15px;border-bottom: 1px solid #aaa;background: #f8f8f8;/* Old browsers */background: -moz-linear-gradient(top,  #f8f8f8 0%, #ededed 40%, #dddddd 100%); /* FF3.6+ */background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(40%,#ededed), color-stop(100%,#dddddd)); /* Chrome,Safari4+ */background: -webkit-linear-gradient(top,  #f8f8f8 0%,#ededed 40%,#dddddd 100%); /* Chrome10+,Safari5.1+ */background: -o-linear-gradient(top,  #f8f8f8 0%,#ededed 40%,#dddddd 100%); /* Opera 11.10+ */background: -ms-linear-gradient(top,  #f8f8f8 0%,#ededed 40%,#dddddd 100%); /* IE10+ */background: linear-gradient(top,  #f8f8f8 0%,#ededed 40%,#dddddd 100%); /* W3C */filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */}
 .widget-container ul{padding:10px}
 
 /* Blog and Post Styles */
@@ -322,7 +324,7 @@ ol {list-style-position: inside;margin-left: 21px;}
 }
 
 .footer-widget-title {
-	font-size:18px;color:#444;text-shadow:none;padding:3px;border-radius:4px 4px 0 0;margin: 0 -10px 0 -10px;padding: 2px 15px 2px 15px;border-bottom: 1px solid #aaa;background: #f8f8f8;/* Old browsers */background: -moz-linear-gradient(top,  #f8f8f8 0%, #ededed 40%, #dddddd 100%); /* FF3.6+ */background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(40%,#ededed), color-stop(100%,#dddddd)); /* Chrome,Safari4+ */background: -webkit-linear-gradient(top,  #f8f8f8 0%,#ededed 40%,#dddddd 100%); /* Chrome10+,Safari5.1+ */background: -o-linear-gradient(top,  #f8f8f8 0%,#ededed 40%,#dddddd 100%); /* Opera 11.10+ */background: -ms-linear-gradient(top,  #f8f8f8 0%,#ededed 40%,#dddddd 100%); /* IE10+ */background: linear-gradient(top,  #f8f8f8 0%,#ededed 40%,#dddddd 100%); /* W3C */filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
+	font-size:18px;color:#444;text-shadow:none;padding:3px;border-radius:4px 4px 0 0;-moz-border-radius:4px 4px 0 0;margin: 0 -10px 0 -10px;padding: 2px 15px 2px 15px;border-bottom: 1px solid #aaa;background: #f8f8f8;/* Old browsers */background: -moz-linear-gradient(top,  #f8f8f8 0%, #ededed 40%, #dddddd 100%); /* FF3.6+ */background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(40%,#ededed), color-stop(100%,#dddddd)); /* Chrome,Safari4+ */background: -webkit-linear-gradient(top,  #f8f8f8 0%,#ededed 40%,#dddddd 100%); /* Chrome10+,Safari5.1+ */background: -o-linear-gradient(top,  #f8f8f8 0%,#ededed 40%,#dddddd 100%); /* Opera 11.10+ */background: -ms-linear-gradient(top,  #f8f8f8 0%,#ededed 40%,#dddddd 100%); /* IE10+ */background: linear-gradient(top,  #f8f8f8 0%,#ededed 40%,#dddddd 100%); /* W3C */filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
 }
 
 .footer-widgets ul{padding:10px}
@@ -505,8 +507,8 @@ ol.commentlist li.comment ul.children li.depth-3 {  margin: 0 0 10px 10px; }
 ol.commentlist li.comment ul.children li.depth-4 {  margin: 0 0 10px 10px; }
 ol.commentlist li.comment ul.children li.depth-5 { }
 ol.commentlist li.comment ul.children li.odd { }
-ol.commentlist li.even { background: #fafafa;border: 1px solid #ccc;border-radius: 4px; }
-ol.commentlist li.odd { background: #fff;border: 1px solid #ccc;border-radius: 4px; }
+ol.commentlist li.even { background: #fafafa;border: 1px solid #ccc;border-radius: 4px;-moz-border-radius: 4px; }
+ol.commentlist li.odd { background: #fff;border: 1px solid #ccc;border-radius: 4px;-moz-border-radius: 4px; }
 ol.commentlist li.parent { border-left: 1px solid #111; }
 ol.commentlist li.thread-alt { }
 ol.commentlist li.thread-even { }
