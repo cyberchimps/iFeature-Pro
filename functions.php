@@ -11,12 +11,60 @@
 
 /* Define global variables. */	
 
-
 	$themename = 'ifeature';
 	$themenamefull = 'iFeature Pro';
 	$themeslug = 'if';
 	$root = get_template_directory_uri(); 
 	
+//Gallery options 
+
+function custom_gallery_post_format( $content ) {
+global $options, $themeslug, $post;
+$root = get_template_directory_uri(); 
+ob_start();
+?>
+
+	<div class="postformats"><!--begin format icon-->
+				<img src="<?php echo get_template_directory_uri(); ?>/images/formats/gallery.png" />
+			</div><!--end format-icon-->
+				<h2 class="posts_title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+					<!--Call @Core Meta hook-->
+			<?php chimps_post_byline(); ?>
+				<?php
+				if ( has_post_thumbnail() && $options->get($themeslug.'_show_featured_images') == '1' ) {
+ 		 			echo '<div class="featured-image">';
+ 		 			echo '<a href="' . get_permalink($post->ID) . '" >';
+ 		 				the_post_thumbnail();
+  					echo '</a>';
+  					echo '</div>';
+				}
+			?>	
+				<div class="entry" <?php if ( has_post_thumbnail() && $options->get($themeslug.'_show_featured_images') == '1' ) { echo 'style="min-height: 115px;" '; }?>>
+		<?php
+					$images = get_children( array( 'post_parent' => $post->ID, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order', 'order' => 'ASC', 'numberposts' => 999 ) );
+					if ( $images ) :
+						$total_images = count( $images );
+						$image = array_shift( $images );
+						$image_img_tag = wp_get_attachment_image( $image->ID, 'thumbnail' );
+				?>
+
+				<figure class="gallery-thumb">
+					<a href="<?php the_permalink(); ?>"><?php echo $image_img_tag; ?></a>
+					<br /><br />
+					This gallery contains <?php echo $total_images ; ?> images
+					<?php endif;?>
+				</figure><!-- .gallery-thumb -->
+				</div><!--end entry-->
+
+				
+				<div style=clear:both;></div>
+	<?php	
+	$content = ob_get_clean();
+	
+	return $content;
+}
+
+add_filter('chimps_post_formats_gallery_content', 'custom_gallery_post_format' ); 
 	
 function mytheme_comment($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
@@ -134,8 +182,6 @@ add_editor_style();
 if ( !is_admin() ) {
 	wp_enqueue_script('jquery');
 }
-
-
 
 /**
 * Attach CSS3PIE behavior to elements
@@ -474,58 +520,5 @@ do_action('chimps_init');
 require_once ( get_template_directory() . '/inc/update.php' ); // Include automatic updater
 require_once ( get_template_directory() . '/inc/theme-hooks.php' ); // Include automatic updater
 require_once ( get_template_directory() . '/inc/theme-actions.php' ); // Include automatic updater
-
-
-
-//test filer
-
-function custom_gallery_post_format( $content ) {
-global $options, $themeslug, $post;
-$root = get_template_directory_uri(); 
-ob_start();
-?>
-
-	<div class="postformats"><!--begin format icon-->
-				<img src="<?php echo get_template_directory_uri(); ?>/images/formats/gallery.png" />
-			</div><!--end format-icon-->
-				<h2 class="posts_title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-					<!--Call @Core Meta hook-->
-			<?php chimps_post_byline(); ?>
-				<?php
-				if ( has_post_thumbnail() && $options->get($themeslug.'_show_featured_images') == '1' ) {
- 		 			echo '<div class="featured-image">';
- 		 			echo '<a href="' . get_permalink($post->ID) . '" >';
- 		 				the_post_thumbnail();
-  					echo '</a>';
-  					echo '</div>';
-				}
-			?>	
-				<div class="entry" <?php if ( has_post_thumbnail() && $options->get($themeslug.'_show_featured_images') == '1' ) { echo 'style="min-height: 115px;" '; }?>>
-		<?php
-					$images = get_children( array( 'post_parent' => $post->ID, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order', 'order' => 'ASC', 'numberposts' => 999 ) );
-					if ( $images ) :
-						$total_images = count( $images );
-						$image = array_shift( $images );
-						$image_img_tag = wp_get_attachment_image( $image->ID, 'thumbnail' );
-				?>
-
-				<figure class="gallery-thumb">
-					<a href="<?php the_permalink(); ?>"><?php echo $image_img_tag; ?></a>
-					<br /><br />
-					This gallery contains <?php echo $total_images ; ?> images
-					<?php endif;?>
-				</figure><!-- .gallery-thumb -->
-				</div><!--end entry-->
-
-				
-				<div style=clear:both;></div>
-	<?php	
-	$content = ob_get_clean();
-	
-	return $content;
-}
-
-add_filter('chimps_post_formats_gallery_content', 'custom_gallery_post_format' ); 
-
 
 ?>
