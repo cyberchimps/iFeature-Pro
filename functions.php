@@ -132,9 +132,8 @@ add_editor_style();
 
 // Load jQuery
 if ( !is_admin() ) {
- 
-	   wp_enqueue_script('jquery');
-  }
+	wp_enqueue_script('jquery');
+}
 
 
 
