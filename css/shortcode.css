@@ -7,7 +7,7 @@
 
 .checklist ul li{
 	padding:5px 5px 5px 30px;
-	background: url(./images/pro/checkbox.png) no-repeat center left;
+	background: url(../images/pro/checkbox.png) no-repeat center left;
 }
 
 .boxcode {
@@ -61,7 +61,7 @@
 /* ------- Default Sliding Door Buttons ------- */
 .button_link{
 	font-family: Tahoma, Arial, sans-serif;
-	background:url(./images/pro/button_sprite.png) no-repeat scroll right -165px transparent;
+	background:url(../images/pro/button_sprite.png) no-repeat scroll right -165px transparent;
 	text-decoration:none !important;
 	color:#eee !important;
 	text-shadow:0 -1px 0 #888888;
@@ -75,7 +75,7 @@
 }
 
 .button_link span{
-	background:url(./images/pro/button_sprite.png) no-repeat scroll -6px -122px transparent;
+	background:url(../images/pro/button_sprite.png) no-repeat scroll -6px -122px transparent;
 	text-decoration:none !important;
 	display:block;
 	line-height:10px;
