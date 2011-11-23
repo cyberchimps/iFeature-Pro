@@ -142,7 +142,7 @@ function chimps_page_carousel_section_content() {
     
     $out .= <<<OUT
 	<script type="text/javascript">
-		$(function() {
+		jQuery(document).ready(function($) {
     		$(".carousel").jCarouselLite({
         		btnNext: ".next",
         		btnPrev: ".prev",
@@ -316,7 +316,7 @@ if ($options->get($themeslug.'_show_carousel') == '1') {
     
     $out .= <<<OUT
 	<script type="text/javascript">
-		$(function() {
+		jQuery(document).ready(function($) {
     		$(".carousel").jCarouselLite({
         		btnNext: ".next",
         		btnPrev: ".prev",
