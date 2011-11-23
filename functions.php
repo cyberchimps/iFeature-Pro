@@ -5,7 +5,7 @@
 	Author: Tyler Cunningham
 	Establishes the core theme functions.
 	Copyright (C) 2011 CyberChimps
-	Version 2.0
+	Version 3.0
 */
 
 
@@ -177,14 +177,11 @@ if ( function_exists( 'add_theme_support' ) ) {
 }
 add_action( 'init', 'init_featured_image', 11);	
 
+// Featured image support.
 add_theme_support( 'post-thumbnails' );
-// This theme allows users to set a custom background
-
 
 // This theme styles the visual editor with editor-style.css to match the theme style.
 add_editor_style();
-
-
 
 /**
 * Attach CSS3PIE behavior to elements
@@ -204,8 +201,6 @@ function render_ie_pie() { ?>
 
 add_action('wp_head', 'render_ie_pie', 8);
 	
-
-
 
 // Create custom post type for Slider
 
@@ -374,7 +369,7 @@ function typekit_support() {
 add_action('wp_head', 'typekit_support');
 
 
-// Register superfish scripts
+// Register jQuery
 	
 function my_scripts_method() {
     
@@ -481,22 +476,9 @@ function admin_link() {
 }
 add_action( 'admin_bar_menu', 'admin_link', 113 );
 
+//Set content width
+
 if ( ! isset( $content_width ) ) $content_width = 608;
-
-//Searchform  
-
-/*function ifeature_searchform() {
-
-	$searchform = '<form method="get" class="searchform" action="' . home_url( '/' ) . '"
-	<div><input type="text" name="s" class="s" value="Search" id="searchsubmit" onfocus="if (this.value == \'Search\') this.value = '';" /></div>
-	<div><input type="submit" class="searchsubmit" value=\'\' /></div>
-	</form>';
-
-	return $searchform;
-
-}
-
-add_filter( 'get_search_form', 'ifeature_searchform' ); */
 
 //hooks
 
@@ -505,6 +487,7 @@ require_once ( get_template_directory() . '/core/core-init.php' );
 do_action('chimps_init');
 
 // Call additional template files
+require_once ( get_template_directory() . '/core/classy-options/classy-options-init.php' );
 	
 require_once ( get_template_directory() . '/inc/update.php' ); // Include automatic updater
 require_once ( get_template_directory() . '/inc/theme-hooks.php' ); // Include automatic updater
