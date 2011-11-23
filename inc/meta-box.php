@@ -1315,7 +1315,7 @@ function metabox_enqueue() {
 	wp_enqueue_script('jf-metabox-tabs');
 	
 	wp_enqueue_script('jf-metabox-tabs');
-	wp_enqueue_script('jquerycustom', get_template_directory_uri().'/library/js/jquery-custom.js', array('jquery') );
+	wp_enqueue_script('jquerycustom', get_template_directory_uri().'/core/library/js/jquery-custom.js', array('jquery') );
 	
 	
 	wp_enqueue_style('metabox-tabs-css');
