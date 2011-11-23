@@ -480,22 +480,20 @@ require_once ( get_template_directory() . '/inc/theme-actions.php' ); // Include
 
 //test filer
 
-/*function custom_link_post_format( $content ) {
+function custom_gallery_post_format( $content ) {
 global $options, $themeslug, $post;
 $root = get_template_directory_uri(); 
 ob_start();
 ?>
 
-	<div class="post_content" style="background: yellow; ">
-		<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
-			<div class ="format-icon"><!--begin format icon-->
-				<img src="<?php echo get_template_directory_uri(); ?>/images/formats/link.png" height="50px" width="50px" />
+	<div class="postformats"><!--begin format icon-->
+				<img src="<?php echo get_template_directory_uri(); ?>/images/formats/gallery.png" />
 			</div><!--end format-icon-->
 				<h2 class="posts_title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-					<!--Call Meta-->
-			<?php chimps_meta(); ?>
+					<!--Call @Core Meta hook-->
+			<?php chimps_post_byline(); ?>
 				<?php
-				if ( has_post_thumbnail()) {
+				if ( has_post_thumbnail() && $options->get($themeslug.'_show_featured_images') == '1' ) {
  		 			echo '<div class="featured-image">';
  		 			echo '<a href="' . get_permalink($post->ID) . '" >';
  		 				the_post_thumbnail();
@@ -503,25 +501,32 @@ ob_start();
   					echo '</div>';
 				}
 			?>	
-				<div class="entry" <?php if ( has_post_thumbnail()) { echo 'style="min-height: 115px;" '; }?>>
-					<?php 
-						if (v($options, $themeslug.'_show_excerpts') == '1' ) {
-						the_excerpt();
-						}
-						else {
-							the_content();
-						}
-					 ?>
+				<div class="entry" <?php if ( has_post_thumbnail() && $options->get($themeslug.'_show_featured_images') == '1' ) { echo 'style="min-height: 115px;" '; }?>>
+		<?php
+					$images = get_children( array( 'post_parent' => $post->ID, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order', 'order' => 'ASC', 'numberposts' => 999 ) );
+					if ( $images ) :
+						$total_images = count( $images );
+						$image = array_shift( $images );
+						$image_img_tag = wp_get_attachment_image( $image->ID, 'thumbnail' );
+				?>
+
+				<figure class="gallery-thumb">
+					<a href="<?php the_permalink(); ?>"><?php echo $image_img_tag; ?></a>
+					<br /><br />
+					This gallery contains <?php echo $total_images ; ?> images
+					<?php endif;?>
+				</figure><!-- .gallery-thumb -->
 				</div><!--end entry-->
-			</div>
-			</div>
+
+				
+				<div style=clear:both;></div>
 	<?php	
 	$content = ob_get_clean();
 	
 	return $content;
 }
 
-add_filter('chimps_post_formats_link_content', 'custom_link_post_format' ); */
+add_filter('chimps_post_formats_gallery_content', 'custom_gallery_post_format' ); 
 
 
 ?>
