@@ -11,7 +11,7 @@ $options = new ClassyOptions($themename, $themenamefull." Options");
 
 $carouselterms2 = get_terms('carousel_categories', 'hide_empty=0');
 
-	$customscarousel = array();
+	$customcarousel = array();
                                     
     	foreach($carouselterms2 as $carouselterm) {
 
