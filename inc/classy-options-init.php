@@ -83,7 +83,7 @@ $options
 			->checkbox($themeslug."_enable_header_contact", "Show Header Contact Area")
 			->textarea($themeslug."_header_contact", "Header Contact Area")
 			->checkbox($themeslug."_show_description", "Show Site Description")
-			->text($themeslug."_icon_margin", "Social Icon Margin Top", array('default' => '10px'))
+			->text($themeslug."_icon_margin", "Social Icon Margin Top", array('default' => '18px'))
 			->upload($themeslug."_favicon", "Custom Favicon")
 			->checkbox($themeslug."_disable_breadcrumbs", "Disable breadcrumbs")
 		->subsection_end()
