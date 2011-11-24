@@ -34,13 +34,13 @@ function ifeature_header_standard_content() {
 				<!-- Begin @Core header sitename hook -->
 					<?php chimps_header_sitename(); ?> 
 				<!-- End @Core header sitename hook -->
-				<?php chimps_header_site_description(); ?> 
+			
 				
 			</div>	
 			
 			<div class="grid_6">
 			
-			<?php chimps_header_contact_area(); ?>
+			
 				<!-- Begin @Core header social icon hook -->
 					<?php chimps_header_social_icons(); ?> 
 				<!-- End @Core header contact social icon hook -->
@@ -95,7 +95,7 @@ function ifeature_header_extra_content() {
 			
 		</div>
 			
-		<div class="grid_6">
+		<div id="social" class="grid_6">
 			
 			<!-- Begin @Core header social icon hook -->
 				<?php chimps_header_social_icons(); ?> 
@@ -118,7 +118,7 @@ function ifeature_header_extra_content() {
 function ifeature_header_content_init() {
 	global $options, $themeslug;
 	
-			add_action( 'ifeature_header_content', 'ifeature_header_extra_content');
+			add_action( 'ifeature_header_content', 'ifeature_header_standard_content');
 
 }
 

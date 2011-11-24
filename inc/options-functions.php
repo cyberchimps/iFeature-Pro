@@ -8,6 +8,21 @@
 	
 */
 
+/* Icon margin*/
+
+function icon_margin() {
+	global $options, $themeslug;
+	$margin = $options->get($themeslug.'_icon_margin');
+	
+	if ($options->get($themeslug.'_icon_margin') != '10px' ) {
+		echo '<style type="text/css">';
+		echo ".icons {margin-top: $margin;}";
+		echo '</style>';
+	}
+
+}
+add_action( 'wp_head', 'icon_margin' );
+
 /* Adjust postbar width for full width and 2 sidebar configs*/
 
 function postbar_option() {
