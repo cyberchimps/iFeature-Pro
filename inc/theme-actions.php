@@ -61,7 +61,7 @@ function ifeature_header_standard_content() {
 * @since 3.0
 */
 function ifeature_header_extra_content() {
-?>
+global $options, $themeslug;?>
 	
 	<div class="container_12">
 		
@@ -73,12 +73,14 @@ function ifeature_header_extra_content() {
 				
 		</div>	
 			
-		<div id="header_contact" class="grid_6">
-			
+				<div id="header_contact" class="grid_6">
+				&nbsp;
+			<?php if ($options->get($themeslug.'_enable_header_contact') == '1'	): ?>
+
 		<!-- Begin @Core header contact area hook -->
 			<?php chimps_header_contact_area(); ?>
 		<!-- End @Core header contact area hook -->
-					
+					<?php endif ; ?>
 		</div>	
 		
 	</div>
@@ -88,11 +90,12 @@ function ifeature_header_extra_content() {
 	<div class="container_12" id="head2">
 				
 		<div class="grid_6">
-			
+		&nbsp;
+			<?php if ($options->get($themeslug.'_show_description') == '1'	): ?>
 			<!-- Begin @Core header description hook -->
 				<?php chimps_header_site_description(); ?> 
 			<!-- End @Core header description hook -->
-			
+			<?php endif; ?>
 		</div>
 			
 		<div id="social" class="grid_6">
@@ -118,7 +121,14 @@ function ifeature_header_extra_content() {
 function ifeature_header_content_init() {
 	global $options, $themeslug;
 	
+	if ($options->get($themeslug.'_enable_header_contact') != '1' && $options->get($themeslug.'_show_description') != '1') {
+	
 			add_action( 'ifeature_header_content', 'ifeature_header_standard_content');
-
+	}
+	
+	if ($options->get($themeslug.'_enable_header_contact') == '1' OR $options->get($themeslug.'_show_description') == '1') {
+	
+			add_action( 'ifeature_header_content', 'ifeature_header_extra_content');
+	}
 }
 
