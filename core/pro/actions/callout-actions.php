@@ -56,34 +56,6 @@ function chimps_callout_section_content() {
 
 /* End variable definition. */	
 
-/* Define background colors. */	
-
-	if ($calloutbgcolor == '1') {
-		$calloutbg = 'calloutBlue.png';
-	}
-	
-	elseif ($calloutbgcolor == '2') {
-		$calloutbg = 'calloutGrey.png';
-	}
-	
-	elseif ($calloutbgcolor == '3') {
-		$calloutbg = 'calloutOrange.png';
-	}
-
-	elseif ($calloutbgcolor == '4') {
-		$calloutbg = 'calloutPink.png';
-	}
-	
-	elseif ($calloutbgcolor == '5') {
-		$calloutbg = 'calloutRed.png';
-	}
-	
-	else {
-		$calloutbg = $customcalloutbgcolor;
-	}
-	
-/* End define background colors. */		
-
 /* Echo custom button color. */
 
 	if ($bcolor != "") {
@@ -122,17 +94,10 @@ function chimps_callout_section_content() {
 
 /* Echo background color CSS. */	
 
-	if ($calloutbgcolor != '6' AND $calloutbgcolor != '0'){
+	if ($customcalloutbgcolor != ''){
 	
 		echo '<style type="text/css" media="screen">';
-		echo "#calloutwrap {background: url($root/images/pro/$calloutbg) no-repeat top center; height: 100px; border: none;}";
-		echo '</style>';
-	}
-	
-	elseif ($calloutbgcolor == '6'){
-	
-		echo '<style type="text/css" media="screen">';
-		echo "#calloutwrap {background: $calloutbg ;}";
+		echo "#calloutwrap {background: $customcalloutbgcolor ;}";
 		echo '</style>';
 	
 	}

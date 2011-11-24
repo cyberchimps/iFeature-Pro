@@ -1171,14 +1171,6 @@ function initialize_the_meta_boxes() {
 						'std' => ''
 					),
 					
-				array(
-				'name' => 'Select Callout Section Background',
-				'desc' => 'Default is ' .$themenamefull.' Pro 2, select "color picker" to use the color picker option below',
-				'id' => 'callout_background_color',
-				'type' => 'select',
-				'options' => array($themenamefull.' Pro 2 (default)', 'Blue', 'Grey', 'Orange', 'Pink', 'Red', 'Color Picker'),
-				'std' => ''
-			 		),
 				
 				array(
 						'name' => 'Custom Background Color',
