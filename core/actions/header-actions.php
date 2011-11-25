@@ -80,6 +80,9 @@ function chimps_meta_tags() {
 
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <meta name="distribution" content="global" />
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<meta http-equiv="X-UA-Compatible" content="IE=8" />
+<meta http-equiv="X-UA-Compatible" content="IE=9" />
 <meta name="language" content="en" /> <?php
 
 	if ($options->get($themeslug.'_home_title') != '' AND is_front_page()) { ?>
