@@ -296,7 +296,7 @@ function add_footer_color() {
 
 	global $themename, $themeslug, $options;
 
-	if ($options->get($themeslug.'_footer_color') != "#222222" ) {
+	if ($options->get($themeslug.'_footer_color') != "" ) {
 	
 		$footercolor = $options->get($themeslug.'_footer_color'); 
 	
