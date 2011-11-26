@@ -62,7 +62,7 @@ function chimps_comments_loop() {
 			<div class="prev-posts"><?php next_comments_link() ?></div>
 		</div>
 		
-	
+	</div><!--end comments_container-->
 	
  <?php else : // this is displayed if there are no comments so far ?>
 
@@ -77,6 +77,8 @@ function chimps_comments_loop() {
 <?php endif; ?>
 
 <?php if ( comments_open() ) : ?>
+
+<div class="comments_container">
 
 <div id="respond">
 
