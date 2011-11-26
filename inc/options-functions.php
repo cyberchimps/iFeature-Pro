@@ -14,7 +14,7 @@ function icon_margin() {
 	global $options, $themeslug;
 	$margin = $options->get($themeslug.'_icon_margin');
 	
-	if ($options->get($themeslug.'_icon_margin') != '18px' ) {
+	if ($options->get($themeslug.'_icon_margin') != '10px' ) {
 		echo '<style type="text/css">';
 		echo ".icons {margin-top: $margin;}";
 		echo '</style>';
