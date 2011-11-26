@@ -130,19 +130,19 @@ echo "<div id='slider-wrapper'>";
 /* Slider navigation options */
 
 	if ($hidenav == '1') {
-		$hidenavigation = 'false';
+		$hidenavigation = 'true';
 	}
 
 	else {
-		$hidenavigation = 'true';
+		$hidenavigation = 'false';
 	}
 	
 	if ($navautohide == '1') {
-		$autohide = 'false';
+		$autohide = 'true';
 	}
 	
 	else {
-		$autohide = 'true';
+		$autohide = 'false';
 	}
 
 /* End navigation options */
