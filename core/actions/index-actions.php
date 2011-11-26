@@ -41,7 +41,7 @@ add_action( 'chimps_index_entry', 'chimps_index_content_slider' );
 function chimps_index_content_slider() { 
 		global $options, $themeslug; ?>
 		
-		<?php if ($options->get($themeslug.'_hide_slider_blog') != '1' && $options->get($themeslug.'_slider_size') != "key2"): ?>
+		<?php if ($options->get($themeslug.'_hide_slider_blog') == '1' && $options->get($themeslug.'_slider_size') != "key2"): ?>
 		
 			<?php chimps_blog_slider(); ?>
 		
@@ -57,7 +57,7 @@ function chimps_index_content_slider() {
 function chimps_index_before_entry_slider() { 
 		global $options, $themeslug; ?>
 		
-		<?php if ($options->get($themeslug.'_hide_slider_blog') != '1' && $options->get($themeslug.'_slider_size') == "key2"): ?>
+		<?php if ($options->get($themeslug.'_hide_slider_blog') == '1' && $options->get($themeslug.'_slider_size') == "key2"): ?>
 	
 			<?php chimps_blog_slider(); ?>
 		

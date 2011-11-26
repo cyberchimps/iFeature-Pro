@@ -36,7 +36,7 @@
 			
 	<header id="head">
 		
-	<?php if ($options->get($themeslug.'_disable_header') != "1"):?>
+	<?php if ($options->get($themeslug.'_disable_header') == "1"):?>
 	
 		<!-- Begin @iFeature header content hook-->
 			<?php ifeature_header_content(); ?> 
