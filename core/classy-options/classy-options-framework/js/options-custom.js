@@ -195,9 +195,9 @@ jQuery(document).ready(function($) {
     $("#if_disable_footer").change(function() {
     var toShow = $("#section-if_footer_text, #section-if_hide_link");
     if($(this).is(':checked')) {
-      toShow.fadeOut();
-    } else {
       toShow.fadeIn();
+    } else {
+      toShow.fadeOut();
     }
    }).change();
     $("#if_show_carousel").change(function() {

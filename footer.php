@@ -13,7 +13,7 @@ global $options, $themeslug;
 
 ?>
 	
-<?php if ($options->get($themeslug.'_disable_footer') != "1"):?>	
+<?php if ($options->get($themeslug.'_disable_footer') == "1"):?>	
 
 <div id="footer">
      <div id="footer_container">

@@ -159,7 +159,7 @@ TEMPLATE_URL . '/images/social/thumbs/icons-default.png', 'round' => TEMPLATE_UR
 	
 	->section("Footer")
 		->open_outersection()
-			->checkbox($themeslug."_disable_footer", "Toggle to disable the footer")
+			->checkbox($themeslug."_disable_footer", "Toggle to enable the footer", array('default' => true))
 			->text($themeslug."_footer_text", "Footer Copyright Text")
 			->checkbox($themeslug."_hide_link", "Hide CyberChimps Link")
 		->close_outersection()
