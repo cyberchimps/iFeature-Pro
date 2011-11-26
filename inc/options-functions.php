@@ -232,6 +232,24 @@ function add_link_color() {
 }
 add_action( 'wp_head', 'add_link_color');
 
+/* Menu Color */
+
+function add_menu_color() {
+
+	global $themename, $themeslug, $options;
+
+	if ($options->get($themeslug.'_custom_menu_color') != '') {
+		$color = $options->get($themeslug.'_custom_menu_color'); 
+	
+
+		echo '<style type="text/css">';
+		echo "#imenu {background: $color;}";
+		echo '</style>';
+	}
+}
+add_action( 'wp_head', 'add_menu_color');
+
+
 
 /* Menu Link Color */
 
@@ -334,25 +352,6 @@ function add_menu_font() {
 		echo '</style>';
 }
 add_action( 'wp_head', 'add_menu_font'); 
-
-/* Widget title background */
- 
-/*function widget_title_bg() {
-
-	global $themename, $themeslug, $options;
-	$root = get_template_directory_uri();
-	
-	if (v($options, $themeslug.'_widget_title_bg') == "1") {
-		
-		echo '<style type="text/css">';
-		echo ".box-widget-title {background: url($root/images/wtitlebg.png) no-repeat center top; margin: -6px -5px 5px -5px;}";
-		echo ".sidebar-widget-title {background: url($root/images/wtitlebg.png) no-repeat center top; margin: -6px -5px 5px -5px;}";
-		echo '</style>';
-
-	}
-}
-add_action( 'wp_head', 'widget_title_bg'); */
-
 
 /* Custom CSS */
 
