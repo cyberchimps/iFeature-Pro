@@ -9,6 +9,23 @@
 */
 
 
+	global $options, $themeslug, $post; // call globals
+	
+	$blogsidebar = $options->get($themeslug.'_blog_sidebar');
+	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);
+	
+	if ($sidebar == "1" OR $sidebar == "2" OR $blogsidebar == 'two-right' OR $blogsidebar == 'right-left' ) {
+		$content_grid = 'grid_6';
+	}
+	
+	elseif ($sidebar == "3" OR $blogsidebar == 'none' ) {
+		$content_grid = 'grid_12';
+	}
+	
+	else {
+		$content_grid = 'grid_8';
+	}
+
 
 /* End variable definition. */	
 
@@ -19,7 +36,7 @@ get_header(); ?>
 <?php if (function_exists('chimps_breadcrumbs')) chimps_breadcrumbs(); ?>
 
 	
-		<div id="content" class="grid_8">
+		<div id="content" class="<?php echo $content_grid; ?>">
 
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			
