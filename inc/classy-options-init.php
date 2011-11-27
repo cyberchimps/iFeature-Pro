@@ -69,7 +69,7 @@ $options
 						->textarea($themeslug."_typekit", "Enter your TypeKit Code")
 		->subsection_end()
 		->subsection("Background")
-			->images($themeslug."_background_image", "Select a background", array( 'options' => array(  'dark' => TEMPLATE_URL . '/images/backgrounds/thumbs/dark.png', 'wood' => TEMPLATE_URL . '/images/backgrounds/thumbs/wood.png', 'default' => TEMPLATE_URL . '/images/backgrounds/thumbs/noise.png','space' => TEMPLATE_URL . '/images/backgrounds/thumbs/space.png', 'blue' => TEMPLATE_URL . '/images/backgrounds/thumbs/blue.png', 'metal' => TEMPLATE_URL . '/images/backgrounds/thumbs/metal.png' )))
+			->images($themeslug."_background_image", "Select a background", array( 'options' => array(  'dark' => TEMPLATE_URL . '/images/backgrounds/thumbs/dark.png', 'wood' => TEMPLATE_URL . '/images/backgrounds/thumbs/wood.png', 'default' => TEMPLATE_URL . '/images/backgrounds/thumbs/noise.png','space' => TEMPLATE_URL . '/images/backgrounds/thumbs/space.png', 'blue' => TEMPLATE_URL . '/images/backgrounds/thumbs/blue.png', 'metal' => TEMPLATE_URL . '/images/backgrounds/thumbs/metal.png' ), 'default' => 'default'))
 			->checkbox($themeslug."_custom_background", "Toggle to use a custom background")
 			->upload($themeslug."_background_upload", "Background Image")
 			->radio($themeslug."_bg_image_position", "Select the Image Position", array( 'options' => array("top left" => "Left", "top center" => "Center", "top right" => "Right")))
@@ -110,8 +110,8 @@ $options
 		
 		->subsection_end()
 		->subsection("Social")
-			->images($themeslug."_icon_style", "Icon set", array( 'options' => array( 'default' =>
-TEMPLATE_URL . '/images/social/thumbs/icons-default.png', 'round' => TEMPLATE_URL . '/images/social/thumbs/icons-round.png', 'legacy' => TEMPLATE_URL . '/images/social/thumbs/icons-classic.png' ) ) )
+			->images($themeslug."_icon_style", "Icon set", array( 'options' => array( 'round' => TEMPLATE_URL . '/images/social/thumbs/icons-round.png', 'legacy' => TEMPLATE_URL . '/images/social/thumbs/icons-classic.png', 'default' =>
+TEMPLATE_URL . '/images/social/thumbs/icons-default.png' ), 'default' => 'default' ) )
 			->text($themeslug."_twitter", "Twitter Icon URL", array('default' => 'http://twitter.com'))
 			->checkbox($themeslug."_hide_twitter", "Hide Twitter Icon", array('default' => true))
 			->text($themeslug."_facebook", "Facebook Icon URL", array('default' => 'http://facebook.com'))
