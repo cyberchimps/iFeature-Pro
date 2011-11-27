@@ -15,6 +15,8 @@ global $options, $themeslug;
 	
 <?php if ($options->get($themeslug.'_disable_footer') == "1"):?>	
 
+</div><!--end container 12 main wrap-->
+
 <div id="footer">
      <div id="footer_container">
     	

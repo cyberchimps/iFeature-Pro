@@ -49,7 +49,9 @@
 		<!-- End @Core navigation contact area hook -->
 				<div class='clear'>&nbsp;</div>
 			</header>
-<script type="text/javascript">$("ul").parent("li").addClass("parent");</script>				
+<script type="text/javascript">$("ul").parent("li").addClass("parent");</script>			
+
+<div class="container_12"><!--main wrap-->	
 <!-- Begin @Core after_header hook -->
 	<?php chimps_after_header(); ?> 
 <!-- End @Core after_header hook -->
