@@ -6,6 +6,9 @@ Version 3.0.1 (11-27-11)
 -Fixed issue with galleries in single post pages. 
 -Changed search result text from h2 to h3, removed unecessary font size attribute. 
 -Minor change to credit link option.
+-Reduced background image file size.
+-Added Dark Blue color option.
+-Fixed Featured Image's showing up on single post page.
 
 Version 3.0 (11-26-11)
 -Introduction of CyberChimps Core WordPress Framework. 
