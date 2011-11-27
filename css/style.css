@@ -1,14 +1,4 @@
- /*   
-Theme Name: iFeature Pro 3
-Theme URI: http://cyberchimps.com/ifeaturepro
-Description: iFeature Pro: A Premium WordPress Theme designed by CyberChimps.com featuring customizable theme options, an aesthetically pleasing design with five color choices, a feature slider, callout section, dynamic header for custom logo, social icons, and contact section, widgetized sidebar and footer, typography including Google Fonts, and multiple template choices.
-Author: CyberChimps
-Author URI: http://cyberchimps.com
-Version: 3.0 Nov 21, 2011
-Tags: white, light, silver, two-columns, fixed-width, custom-header, custom-menu, threaded-comments, sticky-post
-License: GNU General Public License v2.0
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-*/
+/* iFeature Pro 3 Style.css */
 
 /* Reset and Design Constant Styles */
 
@@ -65,13 +55,11 @@ a:hover {color: #5ca9d6;}
 
 #head2 {margin-top: 20px;}
 
-#content {padding-top: 15px;}
-
 #logo {margin-bottom: 5px;}
 
 /* Social Icons  */
 
-#social {}
+#social {margin-bottom: 5px;}
 
 .icons {text-align:right;margin-top: 10px;}
 
@@ -103,7 +91,7 @@ a:hover {color: #5ca9d6;}
 	-webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2), 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
 	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2), 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
 	-webkit-appearance: none;
-	margin-bottom: 5px;
+	margin-bottom: 15px;
 }
 
 /* Nav  */
@@ -266,8 +254,6 @@ pre {margin-left: 20px;}
 ol {list-style-position: inside;margin-left: 21px;}
 
 /* Sidebar  */
-
-#sidebar {padding-top: 15px;}
 
 .widget-container {
 	color: #222;
