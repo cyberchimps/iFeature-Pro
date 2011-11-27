@@ -2,7 +2,7 @@
 
 /* Reset and Design Constant Styles */
 
-*, html, body{padding:0;border:0;margin:0;list-style:none}
+*, html, body{padding:0;border:0;margin:0;}
 body, div, p, input, textarea{font-size:14px;}
 h1, h2, h3, h4, h5, h6{font-weight:normal;}
 p{margin: 0 0 10px 0;clear: both;}
@@ -242,6 +242,8 @@ ol {list-style-position: inside;margin-left: 21px;}
 	box-shadow:inset 0 0 2px #ccc;
 	background: #fff; /* Old browsers */
 }
+
+.widget-container li {list-style: none;}
 
 .textwidget {padding-top: 10px;}
 
