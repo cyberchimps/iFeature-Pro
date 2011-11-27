@@ -11,7 +11,7 @@ class ClassyOptions {
 	}
 
 	function admin_menu() {
-		$page = add_submenu_page('themes.php', $this->name, $this->name, 'edit_themes', $this->id, array( $this, 'render' ) );
+		$page = add_theme_page( 'iFeature Pro 3 Options', 'iFeature Pro 3 Options', 'edit_themes', $this->id, array( $this, 'render' ) );
 
 		add_action( "admin_print_styles-$page", array($this, 'load_styles') );
 		add_action( "admin_print_scripts-$page",  array($this, 'load_scripts') );
@@ -75,7 +75,7 @@ class ClassyOptions {
 
 			<div id="header">
 				<div class="logo">
-				<h2><?php esc_html_e($this->name); ?></h2>
+				<h2>iFeature Pro 3 Options</h2>
 				</div>
 				<div class="clear"></div>
 					<p class="submit">
