@@ -1,14 +1,4 @@
- /*   
-Theme Name: iFeature Pro 3
-Theme URI: http://cyberchimps.com/ifeaturepro
-Description: iFeature Pro: A Premium WordPress Theme designed by CyberChimps.com featuring customizable theme options, an aesthetically pleasing design with five color choices, a feature slider, callout section, dynamic header for custom logo, social icons, and contact section, widgetized sidebar and footer, typography including Google Fonts, and multiple template choices.
-Author: CyberChimps
-Author URI: http://cyberchimps.com
-Version: 3.0 Nov 21, 2011
-Tags: white, light, silver, two-columns, fixed-width, custom-header, custom-menu, threaded-comments, sticky-post
-License: GNU General Public License v2.0
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-*/
+/* iFeature Pro 3 Style.css */
 
 /* Reset and Design Constant Styles */
 
@@ -65,46 +55,17 @@ a:hover {color: #5ca9d6;}
 
 #head2 {margin-top: 20px;}
 
-#content {padding-top: 15px;}
-
 #logo {margin-bottom: 5px;}
 
 /* Social Icons  */
 
-#social {}
+#social {margin-bottom: 5px;}
 
 .icons {text-align:right;margin-top: 10px;}
 
 .icons a img {opacity:.6; padding-left: 3px;}
 
 .icons a:hover img {opacity:1;}
-
-/* iMenu Styling  */
-
-#imenu {
-	background: #45484d; /* Old browsers */
-	background: -moz-linear-gradient(top,  #45484d 0%, #000000 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#45484d), color-stop(100%,#000000)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  #45484d 0%,#000000 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  #45484d 0%,#000000 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  #45484d 0%,#000000 100%); /* IE10+ */
-	background: linear-gradient(top,  #45484d 0%,#000000 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
-	-moz-border-radius: 4px; 
-	-webkit-border-radius: 4px;
-	border-radius: 4px;
-	color: #fff;
-	border: none;
-	cursor: pointer;
-	text-decoration: none;
-	text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.15);
-	overflow: visible;
-	-moz-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2), 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
-	-webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2), 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
-	box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2), 1px 1px 3px rgba(0, 0, 0, 0.2) inset;
-	-webkit-appearance: none;
-	margin-bottom: 5px;
-}
 
 /* Nav  */
 
@@ -266,8 +227,6 @@ pre {margin-left: 20px;}
 ol {list-style-position: inside;margin-left: 21px;}
 
 /* Sidebar  */
-
-#sidebar {padding-top: 15px;}
 
 .widget-container {
 	color: #222;
