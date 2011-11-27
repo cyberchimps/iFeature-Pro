@@ -175,7 +175,7 @@ TEMPLATE_URL . '/images/social/thumbs/icons-default.png' ), 'default' => 'defaul
 		->open_outersection()
 			->checkbox($themeslug."_disable_footer", "Toggle to enable the footer", array('default' => true))
 			->text($themeslug."_footer_text", "Footer Copyright Text")
-			->checkbox($themeslug."_hide_link", "CyberChimps Link", array('default' => true)
+			->checkbox($themeslug."_hide_link", "CyberChimps Link", array('default' => true))
 		->close_outersection()
 	->section("Import / Export")
 		->open_outersection()
