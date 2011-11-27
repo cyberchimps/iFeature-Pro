@@ -44,7 +44,21 @@ $terms2 = get_terms('category', 'hide_empty=0');
 
 $options
 	->section("Welcome")
-		->info("<iframe width='480' height='360' src='http://www.youtube.com/embed/LFWa721Im_g' frameborder='0' allowfullscreen></iframe>")
+		->info("<h1>iFeature Pro 3</h1>
+		<h2>A Different Kind of WordPress Theme</h2>
+<strong>Introducing Drag &amp; Drop Page Elements. Intuitive New Theme Options. New Design.</strong>
+<p>iFeature Pro 3 is one of the most advanced personal content management WordPress Themes in the world and now offers intuitive theme options which make using iFeature Pro even more personal and fun than ever before.</p>
+
+<p>To get started simply work your way through the menus to the left, select your options, add your content, and always remember to hit save after making any changes.</p>
+
+<p>We have moved many of your favorite options including the iFeature Pro Slider to the iFeature Pro Page Options which are available below the Page content entry area in WP-Admin when you edit a page. This way you can configure each page individually. You will also find the new Drag & Drop Page Elements editor within the new iFeature Pro Page Options as well.</p>
+
+<p>If you are using the iFeature Pro Slider on a Page you can upload, and edit your slides from the iFeature Slides menu available in the WP-Admin menu to the far left. Look for the CyberChimps logo.</p>
+
+<p>We tried to make iFeature Pro 3 as easy to use as possible, but if you still need help please read the <a href='http://cyberchimps.com/ifeaturepro/docs/' target='_blank'>documentation</a>, and visit our <a href='http://cyberchimps.com/forum/pro/' target='_blank'>support forum</a>.</p>
+
+<p>Thank you for using iFeature Pro, a <a href='http://cyberchimps.com' target='_blank'>CyberChimps WordPress Theme</a>.</p>
+")
 	->section("Design")
 		->open_outersection()
 			->select($themeslug."_color_scheme", "Select a Color Scheme", array( 'options' => array("blue" => "Blue (default)", "black" => "Black", "green" => "Green", "grey" => "Grey", "orange" => "Orange", "pink" => "Pink", "red" => "Red", "white" => "White"), 'default' => 'blue'))
