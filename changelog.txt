@@ -2,6 +2,10 @@ iFeature Pro Changelog
 
 ****************************
 
+Version 3.0.1 (11-27-11)
+-Fixed issue with galleries in single post pages. 
+-Changed search result text from h2 to h3, removed unecessary font size attribute. 
+
 Version 3.0 (11-26-11)
 -Introduction of CyberChimps Core WordPress Framework. 
 -New Theme Options panel using Classy Options Framework.
