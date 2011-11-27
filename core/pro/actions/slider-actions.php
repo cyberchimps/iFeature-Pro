@@ -351,22 +351,22 @@ echo "<div id='slider-wrapper'>";
 
 	    	elseif ($customimage == '' && $size2 == "key1" && $size != "key2" && $wordenable == '1'){
 	    		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro3-640.jpg&a=c&h=$height&w=640";
-	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
+	    		$thumbnail = "$root/images/pro/iFeaturePro3thumb.jpg";
 	    	}
 
 	    	elseif ($customimage == '' && $size2 == '4' && $size != "0" && $wordenable == '1'){
 	    		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro3-640.jpg&a=c&h=$height&w=640";
-	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
+	    		$thumbnail = "$root/images/pro/iFeaturePro3thumb.jpg";
 	    	}
 
 	    	elseif ($customimage == '' && $size2 == "two-right" && $size != "0" && $wordenable == '1' OR $customimage == '' && $size2 == "right-left" && $size != "0" && $wordenable == '1'){
-	    		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro2-480.jpg&a=c&h=$height&w=480";
-	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
+	    		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro3-470.jpg&a=c&h=$height&w=480";
+	    		$thumbnail = "$root/images/pro/iFeaturePro3thumb.jpg";
 	    	}
 
 	   		elseif ($wordenable == '1') {
 	       		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro3-640.jpg&a=c&h=$height&w=640";
-	       		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
+	       		$thumbnail = "$root/images/pro/iFeaturePro3thumb.jpg";
 	       	}
 	       	
 	       
@@ -640,7 +640,7 @@ function chimps_page_slider_content() { ?>
 	}		
 
 	elseif ($size2 == '1' && $size != '0' OR $size2 == '2' && $size != '0') {
-		$csWidth = '480';
+		$csWidth = '470';
 	}  	
 
 	else {
@@ -862,7 +862,7 @@ function chimps_page_slider_content() { ?>
 	    	}
 	    	
 	    	elseif ($customimage == '' && $wordenable != 'on'){
-	    		$image = "$root/images/pro/ifeatureprolarge.jpg";
+	    		$image = "$root/images/pro/iFeaturePro3-980.jpg";
 	    		$thumbnail = $customthumb;
 	    	}
 	    	
@@ -872,23 +872,23 @@ function chimps_page_slider_content() { ?>
 	    	}
 
 	    	elseif ($customimage == '' && $size2 == "0" && $size != "0" && $wordenable == 'on'){
-	    		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
-	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
+	    		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro3-640.jpg&a=c&h=$height&w=640";
+	    		$thumbnail = "$root/images/pro/iFeaturePro3thumb.jpg";
 	    	}
 
 	    	elseif ($customimage == '' && $size2 == '4' && $size != "0" && $wordenable == 'on'){
-	    		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro2-640.jpg&a=c&h=$height&w=640";
-	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
+	    		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro3-640.jpg&a=c&h=$height&w=640";
+	    		$thumbnail = "$root/images/pro/iFeaturePro3thumb.jpg";
 	    	}
 
 	    	elseif ($customimage == '' && $size2 == "1" && $size != "0" && $wordenable == 'on' OR $customimage == '' && $size2 == "2" && $size != "0" && $wordenable == 'on'){
-	    		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro2-480.jpg&a=c&h=$height&w=480";
-	    		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
+	    		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro3-470.jpg&a=c&h=$height&w=480";
+	    		$thumbnail = "$root/images/pro/iFeaturePro3thumb.jpg";
 	    	}
 
 	   		elseif ($wordenable == 'on') {
-	       		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/ifeatureprolarge.jpg&a=c&h=$height&w=980";
-	       		$thumbnail = "$root/images/pro/iFeaturePro2thumb.jpg";
+	       		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro3-980.jpg&a=c&h=$height&w=980";
+	       		$thumbnail = "$root/images/pro/iFeaturePro3thumb.jpg";
 	       	}
 	       	
 	      
