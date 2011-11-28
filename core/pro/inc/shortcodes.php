@@ -1,4 +1,4 @@
-<?
+<?php
 
 /**
 * Shortcodes used by the CyberChimps Core Pro Extension

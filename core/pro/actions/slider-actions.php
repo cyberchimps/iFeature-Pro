@@ -524,7 +524,7 @@ echo "</div>";
 ?>
 <div class="slider_nav" style="width: <?php echo $csWidth ?>px; ">&nbsp;</div>
 <div class='clear'>&nbsp;</div>
-<?
+<?php
 
 }
 
@@ -1025,7 +1025,7 @@ echo "</div>";
 ?>
 
 <div class="slider_nav" style="width: <?php echo $csWidth ?>px;"></div>
-<?
+<?php
 
 }
 

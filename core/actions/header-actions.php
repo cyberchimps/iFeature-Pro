@@ -80,9 +80,7 @@ function chimps_meta_tags() {
 
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <meta name="distribution" content="global" />
-<meta http-equiv="X-UA-Compatible" content="IE=7" />
-<meta http-equiv="X-UA-Compatible" content="IE=8" />
-<meta http-equiv="X-UA-Compatible" content="IE=9" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="language" content="en" /> <?php
 
 	if ($options->get($themeslug.'_home_title') != '' AND is_front_page()) { ?>
@@ -195,6 +193,11 @@ function chimps_link_rel() {
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/style.css" type="text/css" />
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/color/<?php echo $color; ?>.css" type="text/css" />
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/elements.css" type="text/css" />
+
+<?php if (is_child_theme()) :  //add support for child themes?>
+	<link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory') ; ?>/style.css" type="text/css" />
+<?php endif; ?>
+
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
 <link href='http://fonts.googleapis.com/css?family=<?php echo $font ; ?>' rel='stylesheet' type='text/css' /> <?php

@@ -222,7 +222,7 @@ table {border-bottom: 1px solid #DDD;}
 
 pre {margin-left: 20px;}
 
-ol {list-style-position: inside;margin-left: 21px;}
+ol, ul {list-style-position: inside;margin-left: 21px;}
 
 /* Sidebar  */
 

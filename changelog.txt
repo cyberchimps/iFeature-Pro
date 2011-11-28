@@ -2,6 +2,12 @@ iFeature Pro Changelog
 
 ****************************
 
+Version 3.0.2 (11-28-11)
+-Fix for child theme support.
+-Posts with no title will now display "Untitled".
+-Fixed UL styling bug. 
+-PHP tag fixes.
+
 Version 3.0.1 (11-27-11)
 -Fixed issue with galleries in single post pages. 
 -Changed search result text from h2 to h3, removed unnecessary font size attribute. 
