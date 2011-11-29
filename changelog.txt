@@ -7,6 +7,7 @@ Version 3.0.2 (11-28-11)
 -Posts with no title will now display "Untitled".
 -Fixed UL styling bug. 
 -PHP tag fixes.
+-Fixed jQuery no-conflict issue in the slider (not sure how undone).
 
 Version 3.0.1 (11-27-11)
 -Fixed issue with galleries in single post pages. 
