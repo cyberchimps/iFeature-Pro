@@ -103,7 +103,7 @@ function chimps_page_section_content() {
 
 <div class='clear'>&nbsp;</div>
 
-<?
+<?php
 }
 
 
