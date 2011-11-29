@@ -473,18 +473,18 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
     
     $out .= <<<OUT
 	<script type="text/javascript">
-		var $ = jQuery.noConflict();
-
+		
+	jQuery(document).ready(function($) {
 	$(window).load(function() {
     $('#slider').nivoSlider({
-        effect: '$animation', // Specify sets like: 'fold,fade,sliceDown'
+        effect:'$animation', // Specify sets like: 'fold,fade,sliceDown'
         slices:15, // For slice animations
         boxCols: 8, // For box animations
         boxRows: 4, // For box animations
         animSpeed:500, // Slide transition speed
         pauseTime:'$delay', // How long each slide will show
         startSlide:0, // Set starting Slide (0 index)
-        directionNav:$hidenavigation, // Next Prev navigation
+        directionNav:$hidenavigation, // Next  Prev navigation
         directionNavHide:$autohide, // Only show on hover
         controlNavThumbs:true, // Use thumbnails for Control Nav
         controlNavThumbsFromRel:true, // Use image rel for thumbs
@@ -507,9 +507,9 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
     \$control.css({left: (\$this.width() - \$control.width()) / 2}); 
 });
 });
+});
 
 </script>
-
 
 OUT;
 
