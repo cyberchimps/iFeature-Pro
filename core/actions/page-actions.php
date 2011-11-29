@@ -102,7 +102,6 @@ function chimps_page_section_content() {
 </div><!--end container_12-->
 
 <div class='clear'>&nbsp;</div>
-
 <?php
 }
 
