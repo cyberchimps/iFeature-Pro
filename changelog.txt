@@ -8,6 +8,7 @@ Version 3.0.2 (11-28-11)
 -Fixed UL styling bug. 
 -PHP tag fixes.
 -Fixed jQuery no-conflict issue in the slider (not sure how undone).
+-Fixed bug related to previous Featured Image fix.
 
 Version 3.0.1 (11-27-11)
 -Fixed issue with galleries in single post pages. 
