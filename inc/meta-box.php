@@ -809,16 +809,7 @@ function initialize_the_meta_boxes() {
 						'type' => 'text',
 						'std' => ''
 					),
-					
-					array(
-						'name' => 'Need help?',
-						'desc' => '',
-						'id' => '',
-						'type' => 'featuredhelp',
-						'std' => ''
-			),
-
-										
+												
 					array(
 						'name' => 'Want to re-order your slides?',
 						'desc' => '',
