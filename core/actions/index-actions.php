@@ -45,7 +45,7 @@ function chimps_index_content_slider() {
 		
 			<?php chimps_blog_slider(); ?>
 		
-	<?php endif;?> <?
+	<?php endif;
 
 }
 
@@ -61,7 +61,7 @@ function chimps_index_before_entry_slider() {
 	
 			<?php chimps_blog_slider(); ?>
 		
-	<?php endif;?> <?
+	<?php endif;
 
 }
 
@@ -124,7 +124,7 @@ function chimps_index_before_entry_sidebar() {
 */
 function chimps_index_loop_content($content) { ?>
 
-	 <?
+	 <?php
 
 	global $options, $themeslug, $post; //call globals
 	
@@ -173,8 +173,7 @@ function chimps_index_loop_content($content) { ?>
 		$content = ob_get_clean();
 		$content = apply_filters( 'chimps_post_formats_'.$format.'_content', $content );
 	
-		echo $content; ?>
-			<?
+		echo $content; 
 }
 
 /**

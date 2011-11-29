@@ -43,7 +43,7 @@ function chimps_page_carousel_section_content() {
 <div id="carousel_wrapper">
 			<div id="carousel_list">
 				<div class="prev"><img src="<?php echo $root ;?>/images/prev.png" alt="prev" /></div>
-<?
+<?php
 
 
 /* Query posts  */
@@ -187,7 +187,7 @@ echo $out;
 
 				<div class="next"><img src="<?php echo $root ;?>/images/next.png" alt="next" /></div>
 			</div>
-</div> <?
+</div> <?php
 
 }
 
@@ -217,7 +217,7 @@ if ($options->get($themeslug.'_show_carousel') == '1') {
 <div id="carousel_wrapper">
 			<div id="carousel_list">
 				<div class="prev"><img src="<?php echo $root ;?>/images/prev.png" alt="prev" /></div>
-<?
+<?php
 
 
 /* Query posts  */
@@ -361,7 +361,7 @@ echo $out;
 
 				<div class="next"><img src="<?php echo $root ;?>/images/next.png" alt="next" /></div>
 			</div>
-</div> <?
+</div> <?php
 
 }
 
