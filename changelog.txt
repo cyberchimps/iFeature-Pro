@@ -16,6 +16,7 @@ Version 3.0.2 (11-30-11)
 -Fixed slider thumbnail issue, also now hiding slider nav div if navigation disabled. 
 -Fixed blog slider arrow option names. 
 -Added secondary option to toggle afterfooter independent from footer. 
+-Added option to toggle widget title backgrounds.
 
 Version 3.0.1 (11-27-11)
 -Fixed issue with galleries in single post pages. 
