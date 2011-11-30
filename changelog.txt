@@ -32,8 +32,8 @@ Version 3.0 (11-26-11)
 -Introduction of custom CSS grid.
 -Added Featured Post carousel.
 -New theme design, includes bordered post and page containers, modified post layout.
+-Introduced the Featured Post Carousel.
 -Removed SuperFish, using CSS menu. 
--Twitterbar added for use on a per-page basis. 
 -Post formats support added.
 -New social icon set added.
 -Added post pagination links to single.php.
