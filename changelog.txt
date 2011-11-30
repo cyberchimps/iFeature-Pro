@@ -14,7 +14,7 @@ Version 3.0.2 (11-30-11)
 -Added missing No Tile option to custom backgrounds. 
 -Added option to enable/disable post pagination links, fixed text overlap for long post titles. 
 -Fixed slider thumbnail issue, also now hiding slider nav div if navigation disabled. 
--Fixed blog slider arrow option names. 
+-Adjusted several option names for more clarity. 
 -Added secondary option to toggle afterfooter independent from footer. 
 -Added option to toggle widget title backgrounds.
 -Changed footer styling.
