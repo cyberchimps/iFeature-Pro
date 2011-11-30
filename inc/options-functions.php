@@ -8,6 +8,20 @@
 	
 */
 
+/* Widget Title Background*/
+
+function widget_title_background() {
+	global $options, $themeslug;
+		
+	if ($options->get($themeslug.'_widget_title_background') == '0' ) {
+		echo '<style type="text/css">';
+		echo ".widget-title {bcakground: none; border-bottom: none;}";
+		echo '</style>';
+	}
+
+}
+add_action( 'wp_head', 'widget_title_background' );
+
 /* Icon margin*/
 
 function icon_margin() {
