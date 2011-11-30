@@ -171,7 +171,6 @@ TEMPLATE_URL . '/images/social/thumbs/icons-default.png' ), 'default' => 'defaul
 			->textarea($themeslug."_home_keywords", "Home Keywords")
 			->text($themeslug."_home_title", "Optional Home Title")
 		->subsection_end()
-	
 	->section("Footer")
 		->open_outersection()
 			->checkbox($themeslug."_disable_footer", "Toggle to enable the footer", array('default' => true))

@@ -10,7 +10,7 @@ Version 3.0.2 (11-30-11)
 -Fixed jQuery no-conflict issue in the slider (not sure how undone).
 -Fixed bug related to previous Featured Image fix.
 -Fixed some theme elements not showing upon activation: header, footer, post byline elements. 
--Added fix for non-keymaster admins not having access to theme option in multisite. 
+-Added fix for non-keymaster admins not having access to theme option in multisite installs. 
 -Added missing No Tile option to custom backgrounds. 
 -Added option to enable/disable post pagination links, fixed text overlap for long post titles. 
 -Fixed slider thumbnail issue, also now hiding slider nav div if navigation disabled. 
