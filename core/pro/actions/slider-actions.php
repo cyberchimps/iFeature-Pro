@@ -344,7 +344,7 @@ echo "<div id='slider-wrapper'>";
 	    		$thumbnail = $customthumb;
 	    	}
 	    	
-	    	elseif ($customimage != '' && $customthumb != '' && $wordenable == '1' ){
+	    	elseif ($customimage == '' && $customthumb != '' && $wordenable == '1' ){
 	    		$image = $customsized;
 	    		$thumbnail = "$root/core/library/wt/wordthumb.php?src=$customthumb&a=c&h=30&w=50";
 	    	}
