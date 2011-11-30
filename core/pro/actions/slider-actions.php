@@ -872,14 +872,19 @@ function chimps_page_slider_content() { ?>
 	    		$thumbnail = "$root/library/wt/wordthumb.php?src=$customimage&a=c&h=30&w=50";
 	    	}
 	    	
-	    	elseif ($customimage != '' && $wordenable != 'on'){
+	    	elseif ($customimage != '' && $customthumb == '' && $wordenable != 'on'){
 	    		$image = $customimage;
+	    		$thumbnail = "$root/images/pro/iFeaturePro3thumb.jpg";
+	    	}
+	    	
+	    	elseif ($customimage == ''&& $customthumb != '' && $wordenable != 'on'){
+	    		$image = "$root/images/pro/iFeaturePro3-980.jpg";
 	    		$thumbnail = $customthumb;
 	    	}
 	    	
-	    	elseif ($customimage == '' && $wordenable != 'on'){
+	    	elseif ($customimage == ''&& $customthumb == '' && $wordenable != 'on'){
 	    		$image = "$root/images/pro/iFeaturePro3-980.jpg";
-	    		$thumbnail = $customthumb;
+	    		$thumbnail = "$root/images/pro/iFeaturePro3thumb.jpg";
 	    	}
 	    	
 	    	elseif ($customimage != '' && $customthumb != '' && $wordenable == 'on' ){
@@ -978,7 +983,8 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 		
 			echo '<style type="text/css">';
 			echo '.nivo-controlNav {display: none;}';
-			echo '#slider-wrapper {margin-bottom: 0px;}';
+			echo ".slider_nav {display: none;}";
+			echo '#slider-wrapper {margin-bottom: 20px;}';
 			echo '</style>';
 	}    
 
