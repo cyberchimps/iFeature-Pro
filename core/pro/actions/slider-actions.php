@@ -334,9 +334,9 @@ echo "<div id='slider-wrapper'>";
 	    		$thumbnail = "$root/core/library/wt/wordthumb.php?src=$customimage&a=c&h=30&w=50";
 	    	}
 	    	
-	    	elseif ($customimage != '' && $customthumb != '' && $wordenable != '1'){
+	    	elseif ($customimage != '' && $customthumb != '' && $wordenable == '1'){
 	    		$image = $customimage;
-	    		$thumbnail = $customthumb;
+	    		$thumbnail = "$root/core/library/wt/wordthumb.php?src=$customthumb&a=c&h=30&w=50";
 	    	}
 	    	
 	    	elseif ($customimage != '' && $customthumb == '' && $wordenable != '1'){
@@ -471,11 +471,12 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 		
 	}
  
-	if ($options->get($themeslug.'_slider_nav') == "key4")  {
+	if ($options->get($themeslug.'_slider_nav') == "key3")  {
 			
 		echo '<style type="text/css">';
 		echo ".nivo-controlNav {display: none;}";
-		echo '#slider-wrapper {margin-bottom: 0px;}';
+		echo ".slider_nav {display: none;}";
+		echo '#slider-wrapper {margin-bottom: 20px;}';
 		echo '</style>';
 
 	}	
