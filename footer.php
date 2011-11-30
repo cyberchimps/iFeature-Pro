@@ -23,9 +23,13 @@ global $options, $themeslug;
 	<!-- Begin @Core footer hook content-->
 		<?php chimps_footer(); ?>
 	<!-- End @Core footer hook content-->
+	
+	<?php endif;?>
 			   
 	</div><!--end footer_wrap-->
 </div><!--end footer-->
+
+<?php if ($options->get($themeslug.'_disable_afterfooter') != "0"):?>
 	
 	<div id="afterfooter">
 		<div id="afterfooterwrap">

@@ -13,6 +13,9 @@ Version 3.0.2 (11-30-11)
 -Added fix for non-keymaster admins not having access to theme option in multisite. 
 -Added missing No Tile option to custom backgrounds. 
 -Added option to enable/disable post pagination links. 
+-Fixed slider thumbnail issue, also now hiding slider nav div if navigation disabled. 
+-Fixed blog slider arrow option names. 
+-Added secondary option to toggle afterfooter independent from footer. 
 
 Version 3.0.1 (11-27-11)
 -Fixed issue with galleries in single post pages. 

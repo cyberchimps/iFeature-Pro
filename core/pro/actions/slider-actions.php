@@ -339,12 +339,17 @@ echo "<div id='slider-wrapper'>";
 	    		$thumbnail = "$root/core/library/wt/wordthumb.php?src=$customthumb&a=c&h=30&w=50";
 	    	}
 	    	
+	    	elseif ($customimage != '' && $customthumb != '' && $wordenable != '1'){
+	    		$image = $customimage;
+	    		$thumbnail = $customthumb;
+	    	}
+	    	
 	    	elseif ($customimage != '' && $customthumb == '' && $wordenable != '1'){
 	    		$image = $customimage;
 	    		$thumbnail = "$root/images/pro/iFeaturePro3thumb.jpg";
 	    	}
 	    	
-	    	elseif ($customimage != '' && $customthumb == '' && $wordenable != '1'){
+	    	elseif ($customimage != '' && $customthumb == '' && $wordenable == '1'){
 	    		$image = $customsized;
 	    		$thumbnail = "$root/images/pro/iFeaturePro3thumb.jpg";
 	    	}

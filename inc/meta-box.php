@@ -1075,7 +1075,7 @@ function initialize_the_meta_boxes() {
 			 ),
 			 
 			 array(
-				'name' => 'Hide Navigation Arrows',
+				'name' => 'Hide Arrows',
 				'desc' => 'Check this box to hide the navigation arrows on the slider',
 				'id' => 'hide_arrows',
 				'type' => 'checkbox',
@@ -1083,7 +1083,7 @@ function initialize_the_meta_boxes() {
 			),
 			
 			array(
-				'name' => 'Disable Navigation Auto-Hide',
+				'name' => 'Disable Arrow Auto-Hide',
 				'desc' => 'Check this box to disable the navigation arrow auto-hide',
 				'id' => 'disable_autohide',
 				'type' => 'checkbox',
