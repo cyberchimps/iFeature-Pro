@@ -63,7 +63,7 @@ get_header(); ?>
 					<?php chimps_post_tags(); ?>
 				<!--End @Core post tags hook-->
 				
-				<div style="text-align:left;padding:5px; margin-top: -10px; margin-bottom: 5px; margin-left: -5px;"><?php previous_post_link(); ?></div> <div style="float:right;padding:5px; margin-top:-35px;"><?php next_post_link(); ?></div>
+				<div class="prev-posts-single"><?php previous_post_link(); ?></div> <div class="next-posts-single"><?php next_post_link(); ?></div>
 			
 				<!--Begin @Core post bar hook-->
 					<?php chimps_post_bar(); ?>
