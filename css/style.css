@@ -280,19 +280,21 @@ ol, ul {list-style-position: inside;margin-left: 21px;}
 /* Footer  */
 
 #footer {
-	background: #666 url(../images/linen.jpg) repeat center top;
-	border-top: 2px solid #222;
+	background: #222;
+	border-top: 2px solid #ccc;
 }
 
 .footer-widgets {
 	color: #fff;
+	margin-top: 15px;
+	margin-bottom: 10px;
 }
 
 .footer-widget-title {
-	font-size:18px;color:#fff;text-shadow:none;padding:3px;
+	font-size:18px;color:#fff;font-weight: 400;
 }
 
-.footer-widgets ul{padding:10px; margin-left: 0px;}
+.footer-widgets ul{padding:5px 0px 5px 0px; margin-left: 0px;}
 
 .footer-widgets li {
 	list-style-type: none;
@@ -307,7 +309,7 @@ ol, ul {list-style-position: inside;margin-left: 21px;}
 	width: 100%; 
 	background: black; 
 	color: white;
-
+	border-top: 2px solid #333;
 }
 
 #afterfooterwrap {
