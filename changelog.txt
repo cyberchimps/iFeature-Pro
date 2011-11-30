@@ -12,7 +12,7 @@ Version 3.0.2 (11-30-11)
 -Fixed some theme elements not showing upon activation: header, footer, post byline elements. 
 -Added fix for non-keymaster admins not having access to theme option in multisite. 
 -Added missing No Tile option to custom backgrounds. 
--Added option to enable/disable post pagination links. 
+-Added option to enable/disable post pagination links, fixed text overlap for long post titles. 
 -Fixed slider thumbnail issue, also now hiding slider nav div if navigation disabled. 
 -Fixed blog slider arrow option names. 
 -Added secondary option to toggle afterfooter independent from footer. 
