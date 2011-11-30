@@ -15,7 +15,7 @@ function widget_title_background() {
 		
 	if ($options->get($themeslug.'_widget_title_background') == '0' ) {
 		echo '<style type="text/css">';
-		echo ".widget-title {bcakground: none; border-bottom: none;}";
+		echo ".widget-title {background: none; border-bottom: none;}";
 		echo '</style>';
 	}
 
