@@ -205,7 +205,7 @@ jQuery(document).ready(function($) {
     if($(this).is(':checked')) {
       toShow.fadeIn();
     } else {
-      toShow.fadeOut();
+      toShow.hide();
     }
   }).change();
       $("#if_enable_header_contact").change(function() {
