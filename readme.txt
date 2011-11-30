@@ -13,5 +13,4 @@ For the support forum please visit: http://cyberchimps.com/forum/
 
 For more support options please visit http://cyberchimps.com/ifeaturepro/support/
 
-e-mail: ifeaturepro@gmail.com
-
+Also, please read our guide on upgrading to iFeature Pro 3 if you are coming from an older version. http://cyberchimps.com/question/updating-ifeature-pro-3/
