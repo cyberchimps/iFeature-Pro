@@ -63,7 +63,9 @@ get_header(); ?>
 					<?php chimps_post_tags(); ?>
 				<!--End @Core post tags hook-->
 				
-				<div class="prev-posts-single"><?php previous_post_link(); ?></div> <div class="next-posts-single"><?php next_post_link(); ?></div>
+				<!--Begin @Core post pagination hook-->
+					<?php chimps_post_pagination(); ?>
+				<!--End @Core post pagination hook-->
 			
 				<!--Begin @Core post bar hook-->
 					<?php chimps_post_bar(); ?>

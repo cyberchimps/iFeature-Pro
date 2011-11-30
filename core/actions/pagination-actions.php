@@ -21,6 +21,7 @@
 add_action('chimps_pagination', 'chimps_previous_posts');
 add_action('chimps_pagination', 'chimps_newer_posts');
 add_action('chimps_links_pages', 'chimps_wp_link_pages');
+add_action('chimps_post_pagination', 'chimps_post_pagination_content');
 
 /**
 * Sets up the previous post link and applies a filter to the link text.
@@ -58,6 +59,19 @@ function chimps_wp_link_pages() {
 		'before' => 'Pages: ', // should we add a filter/translation wrapper here?
 		'next_or_number' => 'number') // same here?
 	);
+}
+
+/**
+* Post pagination links 
+*
+* @since 1.0
+*/
+function chimps_post_pagination_content() {
+	global $options, $themeslug?>
+	
+	<?php if ($options->get($themeslug.'_post_pagination') != "0"):?>
+	<div class="prev-posts-single"><?php previous_post_link(); ?></div> <div class="next-posts-single"><?php next_post_link(); ?></div>
+	<?php endif; 
 }
 
 /**

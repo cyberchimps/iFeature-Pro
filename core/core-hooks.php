@@ -205,6 +205,10 @@ function chimps_links_pages() {
 	do_action('chimps_links_pages');
 }
 
+function chimps_post_pagination() { 
+	do_action('chimps_post_pagination');
+}
+
 /** 
 * page
 */
