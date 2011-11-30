@@ -297,7 +297,7 @@ ol, ul {list-style-position: inside;margin-left: 21px;}
 	font-size:18px;color:#fff;text-shadow:none;padding:3px;
 }
 
-.footer-widgets ul{padding:10px}
+.footer-widgets ul{padding:10px; margin-left: 0px;}
 
 .footer-widgets li {
 	list-style-type: none;
