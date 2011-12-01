@@ -4,7 +4,7 @@ iFeature Pro Changelog
 
 Version 3.0.3 (12-01-11)
 -Various IE visual fixes.
--General bug fixes. 
+-General bug fixes and style changes. 
 
 Version 3.0.2 (11-30-11)
 -Fix for child theme support.
