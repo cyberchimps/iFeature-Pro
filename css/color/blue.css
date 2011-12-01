@@ -14,7 +14,6 @@ a:hover {color: #5ca9d6;}
 	background: -o-linear-gradient(top,  #6cafd8 0%,#2593ce 44%,#0085cf 100%); /* Opera 11.10+ */
 	background: -ms-linear-gradient(top,  #6cafd8 0%,#2593ce 44%,#0085cf 100%); /* IE10+ */
 	background: linear-gradient(top,  #6cafd8 0%,#2593ce 44%,#0085cf 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6cafd8', endColorstr='#0085cf',GradientType=0 ); /* IE6-9 */
 	-moz-border-radius: 4px; 
 	-webkit-border-radius: 4px;
 	border-radius: 4px;
