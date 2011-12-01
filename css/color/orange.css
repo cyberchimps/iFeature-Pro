@@ -7,7 +7,7 @@ a:hover {color: #ffa84c;}
 .meta a{color: #ffa84c;}
 
 #imenu {
-	background: #ffa84c; /* Old browsers */
+	background: #ff7b0d; /* Old browsers */
 	background: -moz-linear-gradient(top,  #ffa84c 0%, #ff7b0d 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffa84c), color-stop(100%,#ff7b0d)); /* Chrome,Safari4+ */
 	background: -webkit-linear-gradient(top,  #ffa84c 0%,#ff7b0d 100%); /* Chrome10+,Safari5.1+ */
