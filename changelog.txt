@@ -2,6 +2,10 @@ iFeature Pro Changelog
 
 ****************************
 
+Version 3.0.3 (12-01-11)
+-Various IE visual fixes.
+-General bug fixes. 
+
 Version 3.0.2 (11-30-11)
 -Fix for child theme support.
 -Posts with no title will now display "Untitled".
