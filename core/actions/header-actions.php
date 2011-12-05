@@ -374,7 +374,7 @@ function chimps_header_social_icons_content() {
 function chimps_nav() {
 	global $options, $themeslug; //call globals 
 	
-	if ($options->get($themeslug.'_hide_home_icon') == "0" && $options->get($themeslug.'_hide_search') == "0") {
+	if ($options->get($themeslug.'_hide_home_icon') == "0" && $options->get($themeslug.'_hide_search') == "0" OR $options->get($themeslug.'_hide_home_icon') == "1" && $options->get($themeslug.'_hide_search') == "0" ) {
 		$grid = 'grid_12';
 	}
 	
