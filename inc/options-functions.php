@@ -241,6 +241,7 @@ function add_link_color() {
 
 		echo '<style type="text/css">';
 		echo "a {color: $link;}";
+		echo ".meta a {color: $link;}";
 		echo '</style>';
 	}
 }

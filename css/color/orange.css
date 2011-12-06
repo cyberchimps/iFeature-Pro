@@ -2,7 +2,7 @@
 
 a {color: #ff7b0d;}
 
-a:hover {color: #ffa84c;}
+a:hover, .meta a:hover {color: #ffa84c;}
 
 .meta a{color: #ffa84c;}
 
