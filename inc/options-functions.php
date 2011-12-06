@@ -247,6 +247,24 @@ function add_link_color() {
 }
 add_action( 'wp_head', 'add_link_color');
 
+/* Link Hover Color */
+
+function add_link_hover_color() {
+
+	global $themename, $themeslug, $options;
+
+	if ($options->get($themeslug.'_link_hover_color') != '') {
+		$link = $options->get($themeslug.'_link_hover_color'); 
+	
+
+		echo '<style type="text/css">';
+		echo "a:hover {color: $link;}";
+		echo ".meta a:hover {color: $link;}";
+		echo '</style>';
+	}
+}
+add_action( 'wp_head', 'add_link_hover_color');
+
 /* Menu Color */
 
 function add_menu_color() {

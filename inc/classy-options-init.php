@@ -82,6 +82,7 @@ $options
 			->color($themeslug."_sitetitle_color", "Site Title Color")
 			->color($themeslug."_tagline_color", "Site Description Color")
 			->color($themeslug."_link_color", "Link Color")
+			->color($themeslug."_link_hover_color", "Link Hover Color")
 			->color($themeslug."_posttitle_color", "Post Title Color")
 			->color($themeslug."_footer_color", "Footer Color")
 		->subsection_end()

@@ -7,6 +7,7 @@ Version 3.0.4 (12-05-11)
 -Fixed menu grid variable when search and home button are disabled. 
 -Removed special charcters filter from Custom CSS option.
 -Added class to archive title H2 tags. 
+-Added link hover color option.
 
 Version 3.0.3 (12-01-11)
 -Various IE visual fixes.
