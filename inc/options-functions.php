@@ -375,7 +375,7 @@ function custom_css() {
 	
 	$custom =$options->get($themeslug.'_css_options');
 	echo '<style type="text/css">' . "\n";
-	echo custom_css_filter ( $custom ) . "\n";
+	echo  $custom  . "\n";
 	echo '</style>' . "\n";
 }
 
