@@ -2,9 +2,7 @@
 
 a {color: #888;}
 
-a:hover, .meta a:hover {color: #ccc;}
-
-.meta a{color: #888;}
+a:hover {color: #ccc;}
 
 #imenu {
 	background: #fff; /* Old browsers */
