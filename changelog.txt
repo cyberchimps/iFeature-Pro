@@ -9,7 +9,7 @@ Version 3.0.4 (12-05-11)
 -Added class to archive title H2 tags. 
 -Added link hover color option.
 -jQuery no-conflict fix.
--Now calling WP jQuery library. 
+-Centered theme options panel.
 
 Version 3.0.3 (12-01-11)
 -Various IE visual fixes.
