@@ -1,12 +1,12 @@
 <div id="sidebar_left">
 	<div id="sidebar240">
 
-    <?php if (dynamic_sidebar('Sidebar Left')) : else : ?>
+    <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Sidebar Left')) : else : ?>
     
         <!-- All this stuff in here only shows up if you DON'T have any widgets active in this zone -->
     
-		<div class="sidebar-widget-style">    
-		<h2 class="sidebar-widget-title">Sidebar Left</h2>
+		<div class="widget-container">      
+		<h2 class="widget-title">Sidebar Left</h2>
     	<ul>
 						<li>Thank you for purchasing iFeature Pro.</li>
 						<li>&nbsp;</li>
@@ -18,16 +18,16 @@
 					</ul>
     	</div>
 		
-		<div class="sidebar-widget-style">    
-		<h2 class="sidebar-widget-title"><?php printf( __('Pages', 'ifeature' )); ?></h2>
+		<div class="widget-container">     
+		<h2 class="widget-title">Pages</h2>
     	<?php wp_list_pages('title_li=' ); ?>
     	</div>
     	
-    	<div class="sidebar-widget-style">
-    	<h2 class="sidebar-widget-title"><?php printf( __('Subscribe', 'ifeature' )); ?></h2>
+    	<div class="widget-container">
+    	<h2 class="widget-title">Subscribe</h2>
     	<ul>
-    		<li><a href="<?php bloginfo('rss2_url'); ?>"><?php printf( __('Entries (RSS)', 'ifeature' )); ?></a></li>
-    		<li><a href="<?php bloginfo('comments_rss2_url'); ?>"><?php printf( __('Comments (RSS)', 'ifeature' )); ?></a></li>
+    		<li><a href="<?php bloginfo('rss2_url'); ?>">Entries (RSS)</a></li>
+    		<li><a href="<?php bloginfo('comments_rss2_url'); ?>">Comments (RSS)</a></li>
     	</ul>
     	</div>
 	

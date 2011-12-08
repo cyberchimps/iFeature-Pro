@@ -24,128 +24,53 @@
 	$twitterbar = get_post_meta($post->ID, 'enable_twitter_bar' , true);
 	$enableboxes = get_post_meta($post->ID, 'enable_box_section' , true);
 	$pagecontent = get_post_meta($post->ID, 'hide_page_content' , true);
+	$page_section_order = get_post_meta($post->ID, 'page_section_order' , true);
+	if(!$page_section_order) {
+		$page_section_order = 'page_section';
+	}
+	$test = get_post_meta($post->ID, 'page_section_order' , true);
 
 /* End define global variables. */
 
-/* Adjust Post Meta Data bar width. */
+/* Adjust Post Meta Data bar width.  NEED TO FIGURE SOMETHING TO REPLACE THIS */
 
 if ($sidebar == "1" OR $sidebar == "2") {
 	
 		echo '<style type="text/css">';
-		echo ".postmetadata {width: 450px;}";
+		echo ".postmetadata {width: 480px;}";
 		echo '</style>';
 		
 	}
+	
+
+
+if ($size == "0") {
+
+add_action ('chimps_page_slider', 'chimps_page_slider_content' );
+
+}
+
+if (preg_match("/page_slider/", $test ) && $size == "1" ) {
+
+add_action ('chimps_page_content_slider', 'chimps_page_slider_content' );
+
+}
+
 
 ?>
 
+<div class="container_12">
 
-
-<div id="content_wrap">
-
-<?php if (function_exists('ifeature_breadcrumbs')) ifeature_breadcrumbs(); ?>
-
-	<?php if ($enable == "on" && $size == "0"): ?>
-		<div id = "slider-wrapper">
-			<center><?php get_template_part('nivoslider', 'page' ); ?> </center>
-		</div>
-
-	<?php endif;?>
+<?php
+	foreach(explode(",", $page_section_order) as $key) {
+		$fn = 'chimps_' . $key;
+		if(function_exists($fn)) {
+			call_user_func_array($fn, array());
+		}
+	}
+?>
 	
-	<?php if ($callout == "on"): ?>
-	
-			<?php include (TEMPLATEPATH . '/pro/callout.php' ); ?> 
-			
-	<?php endif;?>
-	
-	<?php if ($twitterbar == "on"): ?>
-	
-			<?php include (TEMPLATEPATH . '/pro/twitter.php' ); ?> 
-	
-	<?php endif;?>
-	
-	<?php if ($sidebar == "4"): ?>
-		<div id="content_fullwidth">
-	<?php endif;?>
-
-	
-	<?php if ($sidebar == "2" && $pagecontent == "on"): ?>
-		<div id="content_left">
-	<?php endif;?>
-	
-	<?php if ($sidebar == "0" OR $sidebar == ""): ?>
-		<div id="content_left">
-	<?php endif;?>
-	
-	<?php if ($sidebar == "2" && $pagecontent != "on"): ?>
-	<?php get_sidebar('left'); ?>
-	<?php get_sidebar('right'); ?>
-	<?php endif;?>
-	
-	<?php if ($sidebar == "1" && $pagecontent != "on" OR $sidebar == "2" && $pagecontent != "on"): ?>
-	<?php get_sidebar('right'); ?>
-	<div class="content_half">
-	<?php endif;?>
-	
-	<?php if ($enable == "on" && $size == "1"): ?>
-		<div id = "slider-wrapper">
-			<?php get_template_part('nivoslider', 'page' ); ?>
-		</div>
-	<?php endif;?>
-
-		<?php if ($pagecontent != "on"): ?>
-		<div class="content_padding">
-		
-			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-		
-			<div class="post_container">
-			
-			
-			
-				<div class="post" id="post-<?php the_ID(); ?>">
-				<?php if ($hidetitle == ""): ?>
-				
-			
-
-					<h2 class="posts_title"><?php the_title(); ?></h2>
-						<?php endif;?>
-
-					<div class="entry">
-
-						<?php the_content(); ?>
-						
-
-					</div><!--end entry-->
-					<div style=clear:both;></div>
-					<?php wp_link_pages(array('before' => 'Pages: ', 'next_or_number' => 'number')); ?>
-
-
-				<?php edit_post_link ( __( 'Edit this entry.' , 'ifeature' ) , '<p>', '</p>'); ?>
-
-				</div><!--end post-->
-		
-			<?php comments_template(); ?>
-
-			<?php endwhile; endif; ?>
-			</div><!--end post_container-->
-				<?php endif;?>
-		</div><!--end content_padding-->
-		
-	</div><!--end content_left-->
-	
-	<?php if ($sidebar == "0" && $pagecontent != "on"  OR $sidebar == ""): ?>
-	<?php get_sidebar(); ?>
-	<?php endif;?>
-	<?php if ($sidebar == "1" && $pagecontent != "on"): ?>
-	<?php get_sidebar('left'); ?>
-	<?php endif;?>
-	
-	<?php if ($enableboxes == 'on' ):?>
-		<?php include (TEMPLATEPATH . '/pro/boxes.php' ); ?>
-	<?php endif;?>
-</div><!--end content_wrap-->
-
-
+</div>
 
 <div style=clear:both;></div>
 <?php get_footer(); ?>

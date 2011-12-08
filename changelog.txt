@@ -2,40 +2,58 @@ iFeature Pro Changelog
 
 ****************************
 
-Version 2.1.4 (11-02-11)
--Removed unecessary esc_url wrapper. 
--Adjusted JS in slider templates to fix potential conflict. 
--Reduced margin on table data elements.
--Reduced width of postmetadata bar on blog page when 2 sidebars are active. 
+Version 3.0.4 (12-05-11)
+-Removed cursor: pointer; from all iMenu css. 
+-Fixed menu grid variable when search and home button are disabled. 
+-Removed special charcters filter from Custom CSS option.
+-Added class to archive title H2 tags. 
+-Added link hover color option.
+-jQuery no-conflict fix.
+-Centered theme options panel.
 
+Version 3.0.3 (12-01-11)
+-Various IE visual fixes.
+-General bug fixes and style changes. 
 
-Version 2.1.3 (10-25-11)
--Fixed broken jQuery call.
--Styling changes to HTML elements.
--Fixed missing text domain in comments.php.
--Changed default menu font to Arial. 
+Version 3.0.2 (11-30-11)
+-Fix for child theme support.
+-Posts with no title will now display "Untitled".
+-Fixed UL styling bug. 
+-PHP tag fixes for Windows Server support.
+-Fixed jQuery no-conflict issue in the slider (not sure how undone).
+-Fixed bug related to previous Featured Image fix.
+-Fixed some theme elements not showing upon activation: header, footer, post byline elements. 
+-Added fix for non-keymaster admins not having access to theme option in multisite installs. 
+-Added missing No Tile option to custom backgrounds. 
+-Added option to enable/disable post pagination links, fixed text overlap for long post titles. 
+-Fixed slider thumbnail issue, also now hiding slider nav div if navigation disabled. 
+-Adjusted several option names for more clarity. 
+-Added secondary option to toggle afterfooter independent from footer. 
+-Added option to toggle widget title backgrounds.
+-Changed footer styling.
 
-Version 2.1.2 (10-20-11)
--Fixed syntax error in search.php.
--Removed unecessary closing PHP tags in RSS icon code.
--Removed unecessary esc_url from email icon code. 
--Fixed before_title and before_widget div classes for sidebar-left and sidebar-right. 
+Version 3.0.1 (11-27-11)
+-Fixed issue with galleries in single post pages. 
+-Changed search result text from h2 to h3, removed unnecessary font size attribute. 
+-Minor change to credit link option.
+-Reduced background image file size.
+-Added Dark Blue color option.
+-Fixed Featured Image's showing up on single post page.
 
-Version 2.1.1 (10-19-11)
--ANother small patch related to footer widgetized area. 
+Version 3.0 (11-26-11)
+-Introduction of CyberChimps Core WordPress Framework. 
+-New Theme Options panel using Classy Options Framework.
+-Introduction of Drag and Drop page elements. 
+-Introduction of custom CSS grid.
+-Added Featured Post carousel.
+-New theme design, includes bordered post and page containers, modified post layout.
+-Introduced the Featured Post Carousel.
+-Removed SuperFish, using CSS menu. 
+-Post formats support added.
+-New social icon set added.
+-Added post pagination links to single.php.
 
-Version 2.1 (10-18-11)
--Added localization support, includes ifeature.pot as well as Spanish and French .po/.mo files. 
--WordThumb image resizing script now off by default. 
--Changed default font family to Arial, Helvetica, serif. 
--Fixed alignright float issue.
--URLs now sanitized using esc_url when necessary. 
--Removed outdated get_bloginfo('url') call from breadcrumb function. 
--Fixed several broken links in theme options page. 
--Updated theme description and tags in stylesheet. 
--Removed unecessary function_exists conditionals from sidebar templates. 
-
-Version 2.0.3 (10-05-11)
+Version 2.0.2 (10-05-11)
 -Small patch related to footer widgetized area.
 
 Version 2.0.2 (10-04-11)

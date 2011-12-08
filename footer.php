@@ -9,112 +9,40 @@
 	
 */
 
-/* Call globals. */	
-
-	global $themename, $themeslug, $options;
-
-/* End globals. */	
-
-/* Define variables. */	
-
-	$analytics = $options[$themeslug.'_ga_code'];
-	$copyright = $options[$themeslug.'_footer_text'];
-	$hidelink  = $options[$themeslug.'_hide_link'];
-
-/* End variable definition. */	
+global $options, $themeslug;
 
 ?>
-
-	</div><!--end main-->
-</div><!--end page_wrap-->			
 	
-		
+<?php if ($options->get($themeslug.'_disable_footer') != "0"):?>	
+
+</div><!--end container 12 main wrap-->
+
 <div id="footer">
-    <div id="footer_wrap">
+     <div class="container_12">
     	
-    	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Footer") ) : ?>
-		
-		<div class="footer-widgets">
-			<h3 class="footer-widget-title"><?php printf( __( 'Recent Posts', 'ifeature' )); ?></h3>
-			<ul>
-				<?php wp_get_archives('type=postbypost&limit=4'); ?>
-			</ul>
-		</div>
-		
-		<div class="footer-widgets">
-			<h3 class="footer-widget-title"><?php printf( __( 'Archives', 'ifeature' )); ?></h3>
-			<ul>
-				<?php wp_get_archives('type=monthly&limit=16'); ?>
-			</ul>
-		</div>
-
-		<div class="footer-widgets">
-			<h3 class="footer-widget-title"><?php printf( __( 'Links', 'ifeature' )); ?></h3>
-			<ul>
-				<?php wp_list_bookmarks('categorize=0&title_li='); ?>
-			</ul>
-		</div>
-
-		<div class="footer-widgets">
-			<h3 class="footer-widget-title"><?php printf( __( 'WordPress', 'ifeature' )); ?></h3>
-			<ul>
-    		<?php wp_register(); ?>
-    		<li><?php wp_loginout(); ?></li>
-    		<li><a href="<?php echo esc_url( __('http://wordpress.org/', 'ifeature' )); ?>" target="_blank" title="<?php esc_attr_e('Powered by WordPress, state-of-the-art semantic personal publishing platform.', 'ifeature'); ?>"> <?php printf( __('WordPress', 'ifeature' )); ?></a></li>
-    		<?php wp_meta(); ?>
-    		</ul>
-		</div>
-			<?php endif; ?>
-		<div class="clear"></div>
-
-		<!--Inserts Google Analytics Code-->
-		
-		<?php echo stripslashes($analytics); ?>
+	<!-- Begin @Core footer hook content-->
+		<?php chimps_footer(); ?>
+	<!-- End @Core footer hook content-->
+	
+	<?php endif;?>
 			   
 	</div><!--end footer_wrap-->
 </div><!--end footer-->
+
+<?php if ($options->get($themeslug.'_disable_afterfooter') != "0"):?>
 	
 	<div id="afterfooter">
-	
 		<div id="afterfooterwrap">
 		
-				<!--Inserts Copyright Text-->
-				<?php if ($copyright == ''): ?> 
+		<!-- Begin @Core afterfooter hook content-->
+			<?php chimps_afterfooter(); ?>
+		<!-- End @Core afterfooter hook content-->
 				
-					<div id="afterfootercopyright">
-						&copy; <?php echo bloginfo ( 'name' );  ?>
-					</div>
-					
-				<?php endif;?>
-				
-				<?php if ($copyright != ''):?> 
-				
-					<div id="afterfootercopyright">
-						&copy; <?php echo $copyright; ?>
-					</div>
-					
-				<?php endif;?>
-				
-			<!--Inserts Afterfooter Menu-->
-			
-			<div id="afterfootermenu">
-			<?php wp_nav_menu( array(
-	   			'theme_location' => 'footer-menu', // Setting up the location for the main-menu, Main Navigation.
-	    	)); ?>
-			</div>
-			
-			<!--Inserts iFeature SEO Module-->
-			
-				<?php if ($hidelink != "1" ):?>
-				
-					<div id="credit">
-						<?php get_template_part('credit', 'footer' ); ?>
-					</div>
-			
-				<?php endif;?>
 		</div>  <!--end afterfooterwrap-->	
-		
 	</div> <!--end afterfooter-->	
+	
+	<?php endif;?>
+	
 	<?php wp_footer(); ?>	
 </body>
 

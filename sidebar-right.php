@@ -1,12 +1,12 @@
 <div id="sidebar_right">
 	<div id="sidebar240">
 
-    <?php if (dynamic_sidebar('Sidebar Right')) : else : ?>
+    <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Sidebar Right')) : else : ?>
     
         <!-- All this stuff in here only shows up if you DON'T have any widgets active in this zone -->
     
-		<div class="sidebar-widget-style">    
-		<h2 class="sidebar-widget-title">Sidebar Right</h2>
+		<div class="widget-container">    
+		<h2 class="widget-title">Sidebar Right</h2>
     	<ul>
 						<li>Thank you for purchasing iFeature Pro.</li>
 						<li>&nbsp;</li>
@@ -18,26 +18,26 @@
 					</ul>
     	</div>
 		
-		<div class="sidebar-widget-style">
-    	<h2 class="sidebar-widget-title"><?php printf( __( 'Archives', 'ifeature' )); ?></h2>
+		<div class="widget-container">   
+    	<h2 class="widget-title">Archives</h2>
     	<ul>
     		<?php wp_get_archives('type=monthly'); ?>
     	</ul>
     	</div>
         
-        <div class="sidebar-widget-style">
-        <h2 class="sidebar-widget-title"><?php printf( __('Categories', 'ifeature' )); ?></h2>
+       <div class="widget-container">   
+        <h2 class="widget-title">Categories</h2>
         <ul>
     	   <?php wp_list_categories('show_count=1&title_li='); ?>
         </ul>
         </div>
         
-    	<div class="sidebar-widget-style">
-    	<h2 class="sidebar-widget-title"><?php printf( __('WordPress', 'ifeature' )); ?></h2>
+    	<div class="widget-container">   
+    	<h2 class="widget-title">WordPress</h2>
     	<ul>
     		<?php wp_register(); ?>
     		<li><?php wp_loginout(); ?></li>
-    		<li><a href="<?php echo esc_url( __('http://wordpress.org/', 'ifeature' )); ?>" target="_blank" title="<?php esc_attr_e('Powered by WordPress, state-of-the-art semantic personal publishing platform.', 'ifeature'); ?>"> <?php printf( __('WordPress', 'ifeature' )); ?></a></li>
+    		<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress</a></li>
     		<?php wp_meta(); ?>
     	</ul>
     	</div>
