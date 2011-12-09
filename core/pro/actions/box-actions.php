@@ -30,28 +30,26 @@ function chimps_box_section_content() {
 	
 	$enableboxes = get_post_meta($post->ID, 'enable_box_section' , true);
 	$root = get_template_directory_uri(); ?>
+	
 
 	<div id="box_container" class="container_12"> <!--box container-->
 		<div class="grid_12">
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box Left") ) : ?>
 			<div class="box1">
-				<h2 class="box-widget-title">iFeature Pro Slider</h2>
-					<img src="<?php echo $root ; ?>/images/icons/slidericon.png" height="100" alt="slider" class="aligncenter" />
-					<p>The iFeature Pro Slider includes auto-image resizing, new transitions, thumbnails, custom categories, improved captions, and the ability to have a slider on every page.</p>
+				<h2 class="box-widget-title">Box Left</h2>
+				<p>This is the box left widgetized area.</p>
 			</div><!--end box1-->
 			<?php endif; ?>
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box Middle") ) : ?>
 			<div class="box2">
-				<h2 class="box-widget-title">New Design</h2>
-					<img src="<?php echo $root ; ?>/images/icons/blueprint.png" height="100" alt="blueprint" class="aligncenter" />
-					<p>With <a href="http://cyberchimps.com/ifeaturepro/">iFeature Pro</a> we’ve done the design work for you, all you need to do is pick a color scheme, select your options, and add your content.</p>
+				<h2 class="box-widget-title">Box Middle</h2>
+					<p>This is the box middle widgetized area.</p>
 			</div><!--end box2-->
 			<?php endif; ?>
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box Right") ) : ?>
 			<div class="box3">
-				<h2 class="box-widget-title">Excellent Support</h2>
-				<img src="<?php echo $root ; ?>/images/icons/docs.png" height="100" alt="docs" class="aligncenter" />
-				<p>We designed iFeature Pro to be as easy to design with as possible, if you do run into trouble we provide a <a href="http://cyberchimps.com/forum">support forum</a>, and <a href="http://www.cyberchimps.com/ifeaturepro/docs/">precise documentation</a>.</p>
+				<h2 class="box-widget-title">Box Right</h2>
+				<p>This is the box right widgetized area.</p>
 			</div><!--end box3-->
 		<?php endif; ?>
 </div>
