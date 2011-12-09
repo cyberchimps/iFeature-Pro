@@ -129,9 +129,6 @@ function chimps_after_footer() {
 /** 
 * Global 
 */
-function chimps_post_bar() {
-	do_action('chimps_post_bar');
-}
 
 function chimps_post_byline() {
 	do_action('chimps_post_byline');

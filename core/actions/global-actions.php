@@ -20,8 +20,6 @@
 */
 add_action( 'chimps_post_byline', 'chimps_post_byline_content' );
 
-add_action( 'chimps_post_bar', 'chimps_post_bar_content' );
-
 add_action( 'chimps_edit_link', 'chimps_edit_link_content' );
 
 add_action( 'chimps_link_pages', 'chimps_link_pages_content' );
@@ -46,32 +44,6 @@ function chimps_post_byline_content() {
 		</div> <?php
 }
 
-/**
-* Sets up the HTML for the post share section
-*
-* @since 1.0
-*/
-function chimps_post_bar_content() { 
-	global $options, $themeslug; 
-	$hidden = $options->get($themeslug.'_hide_byline'); ?>
-	
-	
-		<div class="postbar" class="grid_8">
-		<?php if (($hidden[$themeslug.'_hide_share']) != '0'):?>
-			<div class="share">
-		<a href="http://www.facebook.com/share.php?u=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/facebook.png" alt="Share on Facebook" height="16px" width="16px" /></a> 
-		<a href="http://twitter.com/home?status=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/twitter.png" alt="Share on Twitter" height="16px" width="16px" /></a> 
-		<a href="http://reddit.com/submit?url=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/reddit.png" alt="Share on Reddit" height="16px" width="16px" /></a> <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/linkedin.png" alt="Share on LinkedIn" height="16px" width="16px" /></a>	
-		</div><!--end share-->
-	<?php endif;?>		
-		<?php if (($hidden[$themeslug.'_hide_comments']) != '0'):?>
-		<div class="comments">
-			<img src="<?php echo get_template_directory_uri(); ?>/images/Commentsgrey.png" height="21px" width="21px" alt="comments"/>&nbsp;
-				<?php comments_popup_link( __('No Comments &#187;', 'core' ), __('1 Comment &#187;', 'core' ), __('% Comments &#187;' , 'core' )); //need a filer here ?>
-		</div><!--end comments-->
-		<?php endif;?>	
-	</div><!--end postmetadata--> <?php
-}
 
 /**
 * Sets up the WP edit link

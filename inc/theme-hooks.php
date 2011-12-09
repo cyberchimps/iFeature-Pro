@@ -25,3 +25,11 @@ function ifeature_header_content() {
 	do_action('ifeature_header_content');
 }
 
+/**
+* Hook for the post bar
+*
+* @since 3.0.5
+*/
+function ifeature_post_bar() {
+	do_action('ifeature_post_bar');
+}

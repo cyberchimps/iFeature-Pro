@@ -71,9 +71,9 @@
 					<?php chimps_post_tags(); ?>
 				<!--End @Core post tags hook-->
 			
-				<!--Begin @Core post bar hook-->
-					<?php chimps_post_bar(); ?>
-				<!--End @Core post bar hook-->
+				<!--Begin @iFeature post bar hook-->
+					<?php ifeature_post_bar(); ?>
+				<!--End @iFeature post bar hook-->
 			
 				</div><!--end post_class-->	
 		</div><!--end post container--> 

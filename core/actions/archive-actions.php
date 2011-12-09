@@ -61,8 +61,8 @@ function chimps_archive_page_title() {
 *
 * @since 1.0
 */
-function chimps_archive_loop()
-{ ?>
+function chimps_archive_loop() { 
+?>
 			<div class="post_container">
 			
 				<div <?php post_class() ?>>
@@ -79,9 +79,9 @@ function chimps_archive_loop()
 					<?php chimps_post_tags(); ?>
 				<!--End @Core post tags hook-->
 			
-				<!--Begin @Core post bar hook-->
-					<?php chimps_post_bar(); ?>
-				<!--End @Core post bar hook-->							
+				<!--Begin @iFeature post bar hook-->
+					<?php ifeature_post_bar(); ?>
+				<!--End @iFeature post bar hook-->						
 							
 				</div><!--end post-->
 				
