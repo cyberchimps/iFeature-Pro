@@ -31,8 +31,6 @@ add_action( 'chimps_header_social_icons', 'chimps_header_social_icons_content' )
 add_action( 'chimps_navigation', 'chimps_nav' );
 add_action( 'chimps_404_content', 'chimps_404_content_handler' );
 
-
-
 /**
 * Establishes the theme font family.
 *
@@ -227,8 +225,6 @@ function chimps_header_social_icons_content() {
 	$hidegplus      = $options->get($themeslug.'_hide_gplus');
 	$flickr		    = $options->get($themeslug.'_flickr');
 	$hideflickr     = $options->get($themeslug.'_hide_flickr');
-	$myspace	    = $options->get($themeslug.'_myspace');
-	$hidemyspace    = $options->get($themeslug.'_hide_myspace');
 	$linkedin		= $options->get($themeslug.'_linkedin');
 	$hidelinkedin   = $options->get($themeslug.'_hide_linkedin');
 	$youtube		= $options->get($themeslug.'_youtube');
@@ -279,12 +275,6 @@ function chimps_header_social_icons_content() {
 		<?php endif;?>
 		<?php if ($hideflickr == '1' AND $flickr == '' ):?>
 			<a href="https://flickr.com" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/<?php echo $folder; ?>/flickr.png" alt="Flickr" /></a>
-		<?php endif;?>
-		<?php if ($hidemyspace == '1' AND $myspace != '' ):?>
-			<a href="<?php echo $myspace ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/<?php echo $folder; ?>/myspace.png" alt="Gplus" /></a>
-		<?php endif;?>
-		<?php if ($hidemyspace == '1' AND $myspace == '' ):?>
-			<a href="https://myspace.com" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/<?php echo $folder; ?>/myspace.png" alt="Gplus" /></a>
 		<?php endif;?>
 		<?php if ($hidelinkedin == '1' AND $linkedin != '' ):?>
 			<a href="<?php echo $linkedin ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/<?php echo $folder; ?>/linkedin.png" alt="LinkedIn" /></a>
