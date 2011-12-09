@@ -19,13 +19,9 @@
 * Core global actions
 */
 add_action( 'chimps_post_byline', 'chimps_post_byline_content' );
-
 add_action( 'chimps_edit_link', 'chimps_edit_link_content' );
-
 add_action( 'chimps_link_pages', 'chimps_link_pages_content' );
-
 add_action( 'chimps_post_tags', 'chimps_post_tags_content' );
-
 
 /**
 * Sets the post byline information (author, date, category). 

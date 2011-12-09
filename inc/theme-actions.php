@@ -17,8 +17,51 @@
 
 
 add_action( 'ifeature_post_bar', 'ifeature_post_bar_content' );
-
 add_action( 'ifeature_fb_like_plus_one', 'ifeature_fb_like_plus_one_content' );
+add_action( 'chimps_head_tag', 'ifeature_link_rel' );
+
+/**
+* Sets the header link rel attributes
+*
+* @since 1.0
+*/
+function ifeature_link_rel() {
+	global $themeslug, $options; //Call global variables
+	$favicon = $options->get($themeslug.'_favicon'); //Calls the favicon URL from the theme options 
+	
+	if ($options->get($themeslug.'_font') == "" AND $options->get($themeslug.'_custom_font') == "") {
+		$font = apply_filters( 'chimps_default_font', 'Arial' );
+	}		
+	elseif ($options->get($themeslug.'_custom_font') != "" && $options->get($themeslug.'_font') == 'custom') {
+		$font = $options->get($themeslug.'_custom_font');	
+	}	
+	else {
+		$font = $options->get($themeslug.'_font'); 
+	} 
+	if ($options->get($themeslug.'_color_scheme') == '') {
+		$color = 'blue';
+	}
+	else {
+		$color = $options->get($themeslug.'_color_scheme');
+	}?>
+	
+<link rel="shortcut icon" href="<?php echo stripslashes($favicon['url']); ?>" type="image/x-icon" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/960/reset.css" type="text/css" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/960/text.css" type="text/css" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/grid.css" type="text/css" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/shortcode.css" type="text/css" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/style.css" type="text/css" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/color/<?php echo $color; ?>.css" type="text/css" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/elements.css" type="text/css" />
+
+<?php if (is_child_theme()) :  //add support for child themes?>
+	<link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory') ; ?>/style.css" type="text/css" />
+<?php endif; ?>
+
+<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+
+<link href='http://fonts.googleapis.com/css?family=<?php echo $font ; ?>' rel='stylesheet' type='text/css' /> <?php
+}
 
 /**
 * Sets up the Facebook Like and Google Plus One area
