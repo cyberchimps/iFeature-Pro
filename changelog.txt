@@ -2,15 +2,15 @@ iFeature Pro Changelog
 
 ****************************
 
-Version 3.0.4 (12-05-11)
+Version 3.0.4 (12-09-11)
 -Removed cursor: pointer; from all iMenu css. 
 -Fixed menu grid variable when search and home button are disabled. 
 -Removed special charcters filter from Custom CSS option.
 -Added class to archive title H2 tags. 
+-Fixed post formats icon bug. 
 -Added link hover color option.
 -jQuery no-conflict fix.
--Centered theme options panel.
--WordPress 3.3 options panel fix.
+-Centered theme options panel, added WordPress 3.3 fix. 
 -Button shortcode css. 
 
 Version 3.0.3 (12-01-11)
