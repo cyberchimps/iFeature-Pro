@@ -64,7 +64,7 @@
 				<!--End @Core post edit link hook-->
 			
 				<!--Begin @Core FB like hook-->
-					<?php chimps_fb_like_plus_one(); ?>
+					<?php ifeature_fb_like_plus_one(); ?>
 				<!--End @Core FB like hook-->
 			
 				<!--Begin @Core post tags hook-->

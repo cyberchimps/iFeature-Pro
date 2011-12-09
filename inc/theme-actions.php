@@ -18,6 +18,30 @@
 
 add_action( 'ifeature_post_bar', 'ifeature_post_bar_content' );
 
+add_action( 'ifeature_fb_like_plus_one', 'ifeature_fb_like_plus_one_content' );
+
+/**
+* Sets up the Facebook Like and Google Plus One area
+*
+* @since 3.0.5
+*/
+function ifeature_fb_like_plus_one_content() {
+	global $options, $themeslug; ?>
+
+	<?php if ($options->get($themeslug.'_show_gplus') == "1"):?>
+		<div class="gplusone">	
+			<g:plusone size="standard" count="true"></g:plusone>
+		</div>
+	<?php endif;?>
+						
+	<?php if ($options->get($themeslug.'_show_fb_like') == "1"):?>			
+		<div id="fb">
+			<iframe src="http://www.facebook.com/plugins/like.php?href=<?php the_permalink() ?>&layout=standard&show_faces=true&width=450&action=like&colorscheme=light" scrolling="no" frameborder="0"  allowTransparency="true" style="border:none; overflow:hidden; width:330px; height:28px"></iframe>
+		</div>
+	<?php endif;
+}
+
+
 /**
 * Sets up the HTML for the post share section
 *

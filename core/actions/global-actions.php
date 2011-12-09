@@ -26,7 +26,6 @@ add_action( 'chimps_link_pages', 'chimps_link_pages_content' );
 
 add_action( 'chimps_post_tags', 'chimps_post_tags_content' );
 
-add_action( 'chimps_fb_like_plus_one', 'chimps_fb_like_plus_one_content' );
 
 /**
 * Sets the post byline information (author, date, category). 
@@ -77,27 +76,6 @@ function chimps_post_tags_content() {
 			<?php the_tags('Tags: ', ', ', '<br />'); ?>
 		
 	</div><!--end tags--> 
-	<?php endif;
-}
-
-/**
-* Sets up the Facebook Like and Google Plus One area
-*
-* @since 1.0
-*/
-function chimps_fb_like_plus_one_content() {
-	global $options, $themeslug; ?>
-
-	<?php if ($options->get($themeslug.'_show_gplus') == "1"):?>
-		<div class="gplusone">	
-			<g:plusone size="standard" count="true"></g:plusone>
-		</div>
-	<?php endif;?>
-						
-	<?php if ($options->get($themeslug.'_show_fb_like') == "1"):?>			
-		<div id="fb">
-			<iframe src="http://www.facebook.com/plugins/like.php?href=<?php the_permalink() ?>&layout=standard&show_faces=true&width=450&action=like&colorscheme=light" scrolling="no" frameborder="0"  allowTransparency="true" style="border:none; overflow:hidden; width:330px; height:28px"></iframe>
-		</div>
 	<?php endif;
 }
 

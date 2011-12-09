@@ -2,6 +2,9 @@ iFeature Pro Changelog
 
 ****************************
 
+Version 3.0.5 (12-10-11)
+-Changes to CyberChimps Core Framework. 
+
 Version 3.0.4 (12-09-11)
 -Removed cursor: pointer; from all iMenu css. 
 -Fixed menu grid variable when search and home button are disabled. 
