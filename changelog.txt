@@ -10,6 +10,8 @@ Version 3.0.4 (12-05-11)
 -Added link hover color option.
 -jQuery no-conflict fix.
 -Centered theme options panel.
+-WordPress 3.3 options panel fix.
+-Button shortcode css. 
 
 Version 3.0.3 (12-01-11)
 -Various IE visual fixes.

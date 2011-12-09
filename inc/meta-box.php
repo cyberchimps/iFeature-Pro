@@ -171,16 +171,16 @@ class RW_Meta_Box {
 		wp_nonce_field(basename(__FILE__), 'rw_meta_box_nonce');
 
 		echo '<div class="metabox-tabs-div">';
-		echo '<ul class="metabox-tabs" id="metabox-tabs">';
-		foreach($this->tabs as $counter => $tab) {
-			$counter++;
-			echo '<li class="' . ($counter == 1 ? 'active ' : '') . 'tab' . $counter . '"><a class="' . ($counter == 1 ? 'active' : '') . '" href="javascript:void(null);">' . $tab['title'] . '</a></li>';
-		}
-		echo '</ul>';
 
 		foreach($this->_meta_box['tabs'] as $counter => $tab) {
 			$counter++;
+			$id = preg_replace("/[^a-zA-Z0-9]+/", "-", $tab['title']);
+			echo "<div class='subsection' id='subsection-{$id}'>";
+			echo "<h4>{$tab['title']}<span class='plus'></span></h4>";
+			echo "<div class='subsection-items'>";
 			$this->render_fields($tab['fields'], "tab{$counter}");
+			echo "</div>";
+			echo "</div>";
 		}
 		echo '</div>';
 
@@ -427,7 +427,7 @@ class RW_Meta_Box {
 				base.find('.right_list .list_items span').each(function() {
 					val.push($(this).data('key'));
 				})
-				hidden.val(val.join(","));
+				hidden.val(val.join(",")).change();
 				$('.right_list .action').show();
 				$('.left_list .action').hide();
 			}

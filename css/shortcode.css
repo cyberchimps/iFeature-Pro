@@ -61,7 +61,7 @@
 /* ------- Default Sliding Door Buttons ------- */
 .button_link{
 	font-family: Tahoma, Arial, sans-serif;
-	background:url(../images/pro/button_sprite.png) no-repeat scroll right -165px transparent;
+	background: #777;
 	text-decoration:none !important;
 	color:#eee !important;
 	text-shadow:0 -1px 0 #888888;
@@ -69,31 +69,39 @@
 	font-size:11px;
 	letter-spacing:1.6px;
 	margin:5px 10px 5px 0;
-	border:0 none;
 	padding:0 24px 0 0;
 	text-transform:uppercase;
+	border-radius: 3px;
 }
 
 .button_link span{
-	background:url(../images/pro/button_sprite.png) no-repeat scroll -6px -122px transparent;
+	background: #777;
 	text-decoration:none !important;
 	display:block;
 	line-height:10px;
 	padding:15px 0 17px 21px;
+	border-radius: 3px;
+}
+
+.button_link span:hover{
+	background: #444;
+	text-decoration:none !important;
+	display:block;
+	line-height:10px;
+	padding:15px 0 17px 21px;
+	border-radius: 3px;
 }
 
 .button_link.large_button{
-	background-position:right -61px;
 	font-size:24px;
 	height:56px;
 	padding-right:24px;
 }
 
 .button_link.large_button span{
-	background-position:-6px -3px;
 	line-height:20px;
 	padding:17px 0 20px 20px;
 	text-transform:none;
 }
 
-.button_link:hover{ text-decoration:none !important; }
+.button_link:hover{ text-decoration:none !important; background: #444; }
