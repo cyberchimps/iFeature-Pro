@@ -19,6 +19,7 @@
 add_action( 'ifeature_post_bar', 'ifeature_post_bar_content' );
 add_action( 'ifeature_fb_like_plus_one', 'ifeature_fb_like_plus_one_content' );
 
+remove_action( 'chimps_head_tag', 'chimps_link_rel' );
 add_action( 'chimps_head_tag', 'ifeature_link_rel' );
 
 remove_action( 'chimps_box_section', 'chimps_box_section_content' );
@@ -61,7 +62,7 @@ function ifeature_box_section_content() {
 		<?php endif; ?>
 </div>
 	</div><!--end box_container--> <div class='clear'>&nbsp;</div><?php
-	}
+}
 
 
 /**

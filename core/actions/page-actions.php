@@ -30,7 +30,6 @@ function chimps_page_section_content() {
 		</div>
 	<?php endif;?>
 	
-	
 <?php if (function_exists('chimps_breadcrumbs')) chimps_breadcrumbs(); ?>
 		
 		<div id="content" class="<?php echo $content_grid; ?>">
@@ -67,8 +66,6 @@ function chimps_page_section_content() {
 			<?php endwhile; endif; ?>
 			</div><!--end post_container-->
 				
-		
-		
 	</div><!--end content_left-->
 	
 	<?php if ($sidebar == "0" OR $sidebar == ""): ?>

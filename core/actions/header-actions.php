@@ -22,6 +22,7 @@ add_action( 'chimps_after_head_tag', 'chimps_font' );
 add_action( 'chimps_head_tag', 'chimps_html_attributes' );
 add_action( 'chimps_head_tag', 'chimps_meta_tags' );
 add_action( 'chimps_head_tag', 'chimps_title_tag' );
+add_action( 'chimps_head_tag', 'chimps_link_rel' );
 
 add_action( 'chimps_header_sitename', 'chimps_header_sitename_content');
 add_action( 'chimps_header_site_description', 'chimps_header_site_description_content' );
@@ -155,6 +156,42 @@ function chimps_title_tag() {
 	}
 	echo "</title>";    
 }
+
+/**
+* Sets the header link rel attributes
+*
+* @since 1.0
+*/
+function chimps_link_rel() {
+	global $themeslug, $options; //Call global variables
+	$favicon = $options->get($themeslug.'_favicon'); //Calls the favicon URL from the theme options 
+	
+	if ($options->get($themeslug.'_font') == "" AND $options->get($themeslug.'_custom_font') == "") {
+		$font = apply_filters( 'chimps_default_font', 'Arial' );
+	}		
+	elseif ($options->get($themeslug.'_custom_font') != "" && $options->get($themeslug.'_font') == 'custom') {
+		$font = $options->get($themeslug.'_custom_font');	
+	}	
+	else {
+		$font = $options->get($themeslug.'_font'); 
+	}?>
+	
+<link rel="shortcut icon" href="<?php echo stripslashes($favicon['url']); ?>" type="image/x-icon" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/960/reset.css" type="text/css" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/960/text.css" type="text/css" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/grid.css" type="text/css" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/style.css" type="text/css" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/elements.css" type="text/css" />
+
+<?php if (is_child_theme()) :  //add support for child themes?>
+	<link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory') ; ?>/style.css" type="text/css" />
+<?php endif; ?>
+
+<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
+
+<link href='http://fonts.googleapis.com/css?family=<?php echo $font ; ?>' rel='stylesheet' type='text/css' /> <?php
+}
+
 
 /**
 * Header left content (sitename or logo)
