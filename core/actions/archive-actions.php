@@ -29,9 +29,6 @@ add_action( 'chimps_archive', 'chimps_archive_loop' );
 function chimps_archive_page_title() { 
 	global $post; ?>
 	
-
- 	
-
 			<?php if (is_category()) { ?>
 				<h2 class="archivetitle"><?php printf( __( 'Archive for the &#8216;', 'core' )); ?><?php single_cat_title(); ?><?php printf( __( '&#8217; Category:', 'core' )); ?></h2><br />
 
