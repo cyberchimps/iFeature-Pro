@@ -169,3 +169,18 @@ img.action {
 	cursor: pointer;
 	padding: 2px;
 }
+
+.subsection h4 {
+	cursor: pointer;
+}
+
+.subsection h4 span {
+	background: url(../images/plus.png);
+	display: block;
+	height: 8px;
+	width: 8px;
+	float: right;
+}
+.subsection h4 span.minus {
+	background: url(../images/minus.png);
+}

@@ -176,7 +176,7 @@ class RW_Meta_Box {
 			$counter++;
 			$id = preg_replace("/[^a-zA-Z0-9]+/", "-", $tab['title']);
 			echo "<div class='subsection' id='subsection-{$id}'>";
-			echo "<h4>{$tab['title']}<span class='plus'></span></h4>";
+			echo "<h4>{$tab['title']}<span></span></h4>";
 			echo "<div class='subsection-items'>";
 			$this->render_fields($tab['fields'], "tab{$counter}");
 			echo "</div>";
