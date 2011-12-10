@@ -54,4 +54,15 @@ jQuery(document).ready(function($) {
 			}
 		});
 	}).change();
+
+
+	// image_select
+	$(".image_select").each(function(){
+		$(this).find("img").click(function(){
+			if($(this).hasClass('selected')) return;
+			$(this).siblings("img").removeClass('selected');
+			$(this).addClass('selected');
+			$(this).siblings("input").val($(this).attr("src"));
+		});
+	});
 });

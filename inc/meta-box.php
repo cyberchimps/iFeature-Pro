@@ -474,6 +474,18 @@ class RW_Meta_Box {
 		$this->show_field_end($field, $meta);
 	}
 
+	function show_field_image_select($field, $meta) {
+		$this->show_field_begin($field, $meta);
+		// var_dump($field, $meta);
+		echo "<div class='image_select'>";
+		foreach($field['options'] as $option) {
+			echo "<img class='" . ($option === $meta ? ' selected' : '' ) . "' src='{$option}' />";
+		}
+		echo "<input type='hidden' name='{$field['id']}' />";
+		echo "</div>";
+		// $this->show_field_end($field, $meta);
+	}
+
 	/******************** END META BOX FIELDS **********************/
 
 	/******************** BEGIN META BOX SAVE **********************/
@@ -943,7 +955,15 @@ function initialize_the_meta_boxes() {
 				'type' => 'select',
 				'options' => array('Sidebar Right (default)', 'Two Sidebar Right', 'Sidebar Right and Left', 'Full-Width'),
 				'std' => ''
-			 ),	
+			),
+			array(
+				'name' => 'Select Page Layout Image',
+				'desc' => "Select",
+				'id' => 'page_sidebar_image',
+				'type' => 'image_select',
+				'options' => array('http://placehold.it/100x100', 'http://placehold.it/100x50'),
+				'std' => ''
+			),
 			 
 			 array(
 				'name' => "Page Elements",
