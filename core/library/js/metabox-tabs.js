@@ -29,21 +29,20 @@ jQuery(document).ready(function($) {
 		var $this = $(this);
 		$this.find("span.minus").removeClass('minus');
 		if($this.siblings('div').is(":visible")) {
-			$this.siblings('div').slideUp();
+			$this.siblings('div').fadeOut();
 		} else {
-			$this.siblings('div').slideDown();
+			$this.siblings('div').fadeIn();
 			$this.find("span").addClass('minus');
 		}
 	});
 
 	// show by default
-	$("#subsection-Page-Options .subsection-items").show();
+	$("#subsection-Page-Options .subsection-items, #subsection-SEO-Options .subsection-items").show();
 	var page_subsection_map = {
 		page_slider: "subsection-iFeature-Pro-Slider-Options",
 		callout_section: "subsection-Callout-Options",
 		twitterbar_section: "subsection-Twitter-Options",
-		box_section: "subsection-Carousel-Options",
-		carousel_section: "subsection-SEO-Options"
+		carousel_section: "subsection-Carousel-Options"
 	};
 	$("#page_section_order").change(function(){
 		var array = $(this).val().split(",");
