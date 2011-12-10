@@ -983,6 +983,41 @@ function initialize_the_meta_boxes() {
 
 			)),
 
+				array(
+				'title' => "SEO Options",
+				'fields' => array(
+				array(
+						'name' => 'Title',
+						'desc' => 'Enter your title',
+						'id' => 'seo_title',
+						'type' => 'text',
+						'std' => ''
+					),
+					array(
+						'name' => 'Description',
+						'desc' => 'Enter your description',
+						'id' => 'seo_description',
+						'type' => 'textarea',
+						'std' => ''
+					),
+
+					array(
+						'name' => 'Keywords',
+						'desc' => 'Enter your keywords',
+						'id' => 'seo_keywords',
+						'type' => 'text',
+						'std' => ''
+					),	 
+				
+					array(
+						'name' => 'Need help?',
+						'desc' => '',
+						'id' => '',
+						'type' => 'pagehelp',
+						'std' => ''
+			),
+
+		)),
 			array(
 				'title' => $themenamefull." Slider Options",
 				'fields' => array(
@@ -1236,41 +1271,6 @@ function initialize_the_meta_boxes() {
 
 				
 				
-				array(
-				'title' => "SEO Options",
-				'fields' => array(
-				array(
-						'name' => 'Title',
-						'desc' => 'Enter your title',
-						'id' => 'seo_title',
-						'type' => 'text',
-						'std' => ''
-					),
-					array(
-						'name' => 'Description',
-						'desc' => 'Enter your description',
-						'id' => 'seo_description',
-						'type' => 'textarea',
-						'std' => ''
-					),
-
-					array(
-						'name' => 'Keywords',
-						'desc' => 'Enter your keywords',
-						'id' => 'seo_keywords',
-						'type' => 'text',
-						'std' => ''
-					),	 
-				
-					array(
-						'name' => 'Need help?',
-						'desc' => '',
-						'id' => '',
-						'type' => 'pagehelp',
-						'std' => ''
-			),
-
-		)),
 		
 
 		)
