@@ -187,7 +187,9 @@ img.action {
 
 .image_select img {
 	margin-right: 10px;
+  padding: 1px;
 }
 .image_select img.selected {
 	border: 1px solid #900;
+  padding: 0;
 }
