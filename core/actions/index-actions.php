@@ -18,10 +18,6 @@
 /**
 * Core Index actions
 */
-//add_action( 'chimps_before_entry', 'chimps_breadcrumbs' );  
-
-//add_action( 'chimps_after_entry', 'chimps_share_section' );
-
 
 add_action( 'chimps_index_after_entry', 'chimps_index_after_entry_sidebar' );
 

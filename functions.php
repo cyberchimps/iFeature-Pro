@@ -27,6 +27,12 @@ function bbpress_support() {
 }
 add_action('after_setup_theme', 'bbpress_support' );
 	
+// Post formats support
+add_theme_support(
+	'post-formats',
+	array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat')
+);
+
 //Gallery options 
 
 function custom_gallery_post_format( $content ) {

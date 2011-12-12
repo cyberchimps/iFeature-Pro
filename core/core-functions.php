@@ -30,11 +30,6 @@ function chimps_text_domain() {
 		
 		return;    
 }
-
-	add_theme_support(
-		'post-formats',
-		array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat')
-	);
 	
 //Add title to untitled posts
 
