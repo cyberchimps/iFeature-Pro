@@ -501,6 +501,7 @@ do_action('chimps_init');
 // Call additional template files
 require_once ( get_template_directory() . '/inc/classy-options-init.php' );
 require_once ( get_template_directory() . '/inc/options-functions.php' );
+require_once ( get_template_directory() . '/inc/meta-box-class.php' );	
 require_once ( get_template_directory() . '/inc/meta-box.php' );	
 require_once ( get_template_directory() . '/inc/update.php' ); // Include automatic updater
 require_once ( get_template_directory() . '/inc/theme-hooks.php' ); // Include automatic updater
