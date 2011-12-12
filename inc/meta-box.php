@@ -1300,6 +1300,15 @@ function initialize_the_meta_boxes() {
 	foreach ($meta_boxes as $meta_box) {
 		$my_box = new RW_Meta_Box_Taxonomy($meta_box);
 	}
+
+	$metabox = new CyberChimps_Metabox('the_id', 'the_title', array('pages' => array('post')));
+
+	$metabox
+		->tab("First Tab")
+			->image("image_id", "image_name", "image_desc")
+		->end()
+	;
+
 }
 
 

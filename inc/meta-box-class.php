@@ -1,10 +1,10 @@
 <?php
 
 class CyberChimps_Metabox {
-	function initialize($id, $title, $options) {
+	function __construct($id, $title, $options) {
 		$this->id = $id;
 		$this->title = $title;
-		$this->pages = $options['pages'];
+		$this->options = $options;
 
 		$this->fields = array();
 	}
@@ -36,14 +36,13 @@ class CyberChimps_Metabox {
 		);
 
 		new RW_Meta_Box_Taxonomy($final);
-
 	}
 
 	/**
 	 * Helper Functions
 	 */
-	function image($id, $name, $desc, $options) {
-		$this->add($options + array('id' => $id, 'name' => $name, 'desc' => $desc));
+	function image($id, $name, $desc, $options = array()) {
+		$this->add($options + array('type' => 'image', 'id' => $id, 'name' => $name, 'desc' => $desc));
 		return $this;
 	}
 }
