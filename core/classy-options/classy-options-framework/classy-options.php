@@ -82,7 +82,7 @@ class ClassyOptions {
 						<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options' ); ?>" />
 					</p>
 				<div class="menu">
-					<ul>
+					<ul class="buttons">
 						<li><a href="http://cyberchimps.com/store/" target="_blank"><?php printf( __( 'CyberChimps Store', 'ifeature' )); ?></a></li>
 						<li><a href="http://cyberchimps.com/support" target="_blank"><?php printf( __( 'Support', 'ifeature' )); ?></a></li>
 						<li><a href="http://cyberchimps.com/ifeaturepro/docs/" target="_blank"> <?php printf( __( 'Documentation', 'ifeature' )); ?></a></li>
@@ -97,7 +97,7 @@ class ClassyOptions {
 			<div id="main">
 				<?php $return = $this->fields(); ?>
 				<div id="of-nav">
-					<ul>
+					<ul class="nav">
 						<?php echo $return[1]; ?>
 					</ul>
 				</div>
