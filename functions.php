@@ -115,17 +115,6 @@ function mytheme_comment($comment, $args, $depth) {
 <?php
 }
 	
-/* Localization */
-	    
-	load_theme_textdomain( 'core', TEMPLATEPATH . '/languages' );
-
-	    $locale = get_locale();
-	    $locale_file = TEMPLATEPATH . "/languages/$locale.php";
-	    if ( is_readable( $locale_file ) )
-		    require_once( $locale_file );
-
-/* End global variables. */	
-
 /* Begin custom excerpt functions. */	
 
 function new_excerpt_more($more) {
