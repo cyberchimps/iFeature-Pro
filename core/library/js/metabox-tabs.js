@@ -37,7 +37,7 @@ jQuery(document).ready(function($) {
 	});
 
 	// show by default
-	$("#subsection-Page-Options > h4, #subsection-SEO-Options > h4").click();
+	$("#subsection-Page-Options > h4").click();
 	var page_subsection_map = {
 		page_slider: "subsection-iFeature-Pro-Slider-Options",
 		callout_section: "subsection-Callout-Options",
