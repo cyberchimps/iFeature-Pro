@@ -45,4 +45,54 @@ class CyberChimps_Metabox {
 		$this->add($options + array('type' => 'image', 'id' => $id, 'name' => $name, 'desc' => $desc));
 		return $this;
 	}
+
+	function text($id, $name, $desc, $options = array()) {
+		$this->add($options + array('type' => 'text', 'id' => $id, 'name' => $name, 'desc' => $desc));
+		return $this;
+	}
+
+	function checkbox($id, $name, $desc, $options = array()) {
+		$this->add($options + array('type' => 'checkbox', 'id' => $id, 'name' => $name, 'desc' => $desc));
+		return $this;
+	}
+
+	function sliderhelp($id, $name, $desc, $options = array()) {
+		$this->add($options + array('type' => 'sliderhelp', 'id' => $id, 'name' => $name, 'desc' => $desc));
+		return $this;
+	}
+
+	function reorder($id, $name, $desc, $options = array()) {
+		$this->add($options + array('type' => 'reorder', 'id' => $id, 'name' => $name, 'desc' => $desc));
+		return $this;
+	}
+
+	function select($id, $name, $desc, $options = array()) {
+		$this->add($options + array('type' => 'select', 'id' => $id, 'name' => $name, 'desc' => $desc));
+		return $this;
+	}
+
+	function section_order($id, $name, $desc, $options = array()) {
+		$this->add($options + array('type' => 'section_order', 'id' => $id, 'name' => $name, 'desc' => $desc));
+		return $this;
+	}
+
+	function pagehelp($id, $name, $desc, $options = array()) {
+		$this->add($options + array('type' => 'pagehelp', 'id' => $id, 'name' => $name, 'desc' => $desc));
+		return $this;
+	}
+
+	function textarea($id, $name, $desc, $options = array()) {
+		$this->add($options + array('type' => 'textarea', 'id' => $id, 'name' => $name, 'desc' => $desc));
+		return $this;
+	}
+
+	function color($id, $name, $desc, $options = array()) {
+		$this->add($options + array('type' => 'color', 'id' => $id, 'name' => $name, 'desc' => $desc));
+		return $this;
+	}
+
+	function image_select($id, $name, $desc, $options = array()) {
+		$this->add($options + array('type' => 'image_select', 'id' => $id, 'name' => $name, 'desc' => $desc));
+		return $this;
+	}
 }

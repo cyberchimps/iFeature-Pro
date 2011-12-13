@@ -1306,6 +1306,8 @@ function initialize_the_meta_boxes() {
 	$metabox
 		->tab("First Tab")
 			->image("image_id", "image_name", "image_desc")
+		->tab("Second Tab")
+			->image("image_id", "image_name", "image_desc")
 		->end()
 	;
 
