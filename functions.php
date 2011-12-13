@@ -327,6 +327,22 @@ function custom_taxonomy_default( $post_id, $post ) {
 
 add_action( 'save_post', 'custom_taxonomy_default', 100, 2 );
 
+// Menu JS
+
+function menu_script(){
+	
+	$path =  get_template_directory_uri() ."/core/library/js";
+
+	$script = "
+		
+		<script type=\"text/javascript\" src=\"".$path."/menu.js\"></script>
+		";
+	
+	echo $script;
+}
+add_action('wp_footer', 'menu_script');
+
+
 // Nivo Slider 
 
 function nivoslider(){
