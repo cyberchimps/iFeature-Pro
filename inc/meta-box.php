@@ -736,6 +736,16 @@ function initialize_the_meta_boxes() {
 
 	$meta_boxes = array();
 
+	$mb = new CyberChimps_Metabox('feature_new', $themenamefull.' Slider Options New', array('pages' => array('post')));
+	$mb
+		->tab("Slider Options")
+			->image($prefix . 'image', $themenamefull . ' Pro Slider Image', 'Upload your image here:')
+			->text($prefix . 'text', $themenamefull. ' Pro Slider Text', 'Enter your slider text here')
+			->checkbox($prefix . 'hidetitle', 'Hide Title Bar', 'Click to disable the title bar on this slide:')
+			->image($prefix . 'custom_thumb', 'Custom Thumbnail', 'Use the image uploader to upload a custom navigation thumbnail')
+			->sliderhelp('', 'Need Help?', '')
+		->end();
+
 	$meta_boxes[] = array(
 		'id' => 'feature',
 		'title' => $themenamefull.' Slider Options',
