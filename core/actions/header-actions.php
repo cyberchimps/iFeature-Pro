@@ -222,29 +222,6 @@ function chimps_header_site_description_content() {
 	</div> <?php
 }
 
-/**
-* Sets up the header contact area
-*
-* @since 1.0
-*/
-function chimps_header_contact_area_content() { 
-	global $themeslug, $options; 
-	$contactdefault = apply_filters( 'chimps_header_contact_default_text', 'Enter Contact Information Here' ); 
-	
-	if ($options->get($themeslug.'_header_contact') == '' ) {
-		echo "<div id='header_contact'>";
-			printf( __( $contactdefault, 'core' )); 
-		echo "</div>";
-	}
-	if ($options->get($themeslug.'_header_contact') != 'hide' ) {
-		echo "<div id='header_contact1'>";
-		echo stripslashes ($options->get($themeslug.'_header_contact')); 
-		echo "</div>";
-	}	
-	if ($options->get($themeslug.'_header_contact') == 'hide' ) {
-		echo "<div style ='height: 10%;'>&nbsp;</div> ";
-	}
-}
 
 /**
 * Social icons
