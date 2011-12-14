@@ -23,9 +23,6 @@
 
 add_action ('chimps_blog_slider', 'chimps_blog_slider_content' );
 
-
-
-
 /**
 * Extend slider functions
 */
@@ -293,7 +290,7 @@ echo "<div id='slider-wrapper'>";
 
 			/* Controls slide title based on page meta setting */	
 
-			if ($hidetitlebar != 'on' AND $captionstyle != 'none') {
+			if ($hidetitlebar != 'on' AND $captionstyle != 'key4') {
 	   			$titlevar = "#caption$i";
 	   		}
 
