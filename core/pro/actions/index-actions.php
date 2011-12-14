@@ -106,7 +106,6 @@ function chimps_pro_index_after_entry_sidebar() {
 	<?php endif;?> <?php 
 }
 
-
 /**
 * End
 */
