@@ -8,12 +8,8 @@ function chimps_page_section_content() {
 	
 	$hidetitle = get_post_meta($post->ID, 'hide_page_title' , true);
 	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);
-	
-	if ($sidebar == "1" OR $sidebar == "2" ) {
-		$content_grid = 'grid_6';
-	}
-	
-	elseif ($sidebar == "3") {
+
+	if ($sidebar == "1" ) {
 		$content_grid = 'grid_12';
 	}
 	
@@ -30,12 +26,11 @@ function chimps_page_section_content() {
 		</div>
 	<?php endif;?>
 	
+	
 <?php if (function_exists('chimps_breadcrumbs')) chimps_breadcrumbs(); ?>
 		
 		<div id="content" class="<?php echo $content_grid; ?>">
-		
-		<?php chimps_page_content_slider(); ?>
-		
+			
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		
 			<div class="post_container">
@@ -66,6 +61,8 @@ function chimps_page_section_content() {
 			<?php endwhile; endif; ?>
 			</div><!--end post_container-->
 				
+		
+		
 	</div><!--end content_left-->
 	
 	<?php if ($sidebar == "0" OR $sidebar == ""): ?>
@@ -74,23 +71,11 @@ function chimps_page_section_content() {
 		</div>
 	<?php endif;?>
 	
-	<?php if ($sidebar == "1"): ?>
-		<div id="sidebar" class="grid_3">
-			<?php get_sidebar('left'); ?>
-		</div>
-	<?php endif;?>
-	
-	<?php if ($sidebar == "1" OR $sidebar == "2"): ?>
-		<div id="sidebar" class="grid_3">
-			<?php get_sidebar('right'); ?>
-		</div>
-	<?php endif;?>
-
 </div><!--end container_12-->
 
 <div class='clear'>&nbsp;</div>
+
 <?php
 }
 
 
-?>

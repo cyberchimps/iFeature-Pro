@@ -67,7 +67,7 @@ function ifeature_archive_loop() {
 <?php }
 
 /**
-* Navigation
+* iFeature Navigation
 *
 * @since 1.0
 */
@@ -107,7 +107,6 @@ function ifeature_nav() {
 </div>
  <?php
 }
-
 
 /**
 * Sets up the header contact area

@@ -1,21 +1,14 @@
 <?php
 
-add_action('chimps_page_section', 'chimps_page_section_content' );
+remove_action('chimps_page_section', 'chimps_page_section_content' );
+add_action('chimps_page_section', 'chimps_pro_page_section_content' );
 
 
-function chimps_page_section_content() { 
+function chimps_pro_page_section_content() { 
 	global $options, $themeslug, $post;
 	
-	
-	$enable = get_post_meta($post->ID, 'page_enable_slider' , true);
-	$size = get_post_meta($post->ID, 'page_slider_size' , true);
 	$hidetitle = get_post_meta($post->ID, 'hide_page_title' , true);
 	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);
-	$callout = get_post_meta($post->ID, 'enable_callout_section' , true);
-	$twitterbar = get_post_meta($post->ID, 'enable_twitter_bar' , true);
-	$enableboxes = get_post_meta($post->ID, 'enable_box_section' , true);
-	$pagecontent = get_post_meta($post->ID, 'hide_page_content' , true);
-	$test = get_post_meta($post->ID, 'page_section_order' , true);
 	
 	if ($sidebar == "1" OR $sidebar == "2" ) {
 		$content_grid = 'grid_6';
@@ -29,8 +22,6 @@ function chimps_page_section_content() {
 		$content_grid = 'grid_8';
 	}
 
-
-
 ?>
 <div class="container_12">
 
@@ -39,7 +30,6 @@ function chimps_page_section_content() {
 			<?php get_sidebar('left'); ?>
 		</div>
 	<?php endif;?>
-	
 	
 <?php if (function_exists('chimps_breadcrumbs')) chimps_breadcrumbs(); ?>
 		
@@ -77,8 +67,6 @@ function chimps_page_section_content() {
 			<?php endwhile; endif; ?>
 			</div><!--end post_container-->
 				
-		
-		
 	</div><!--end content_left-->
 	
 	<?php if ($sidebar == "0" OR $sidebar == ""): ?>
@@ -102,7 +90,6 @@ function chimps_page_section_content() {
 </div><!--end container_12-->
 
 <div class='clear'>&nbsp;</div>
-
 <?php
 }
 
