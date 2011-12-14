@@ -22,7 +22,6 @@
 	if(!$page_section_order) {
 		$page_section_order = 'page_section';
 	}
-	$test = get_post_meta($post->ID, 'page_section_order' , true); //RENAME THIS VARIABLE
 
 /* End define global variables. */
 
@@ -33,12 +32,11 @@ add_action ('chimps_page_slider', 'chimps_page_slider_content' );
 
 }
 
-if (preg_match("/page_slider/", $test ) && $size == "1" ) {
+if (preg_match("/page_slider/", $page_section_order ) && $size == "1" ) {
 
 add_action ('chimps_page_content_slider', 'chimps_page_slider_content' );
 
 }
-
 
 ?>
 
