@@ -19,28 +19,10 @@
 * Core Index actions
 */
 
-
 add_action( 'chimps_index_loop', 'chimps_index_loop_content' );
-
-add_action( 'chimps_index_entry', 'chimps_index_content_slider' );
 
 add_action( 'chimps_index_after_entry', 'chimps_index_after_entry_sidebar' );
 
-/**
-* Index content slider
-*
-* @since 1.0
-*/
-function chimps_index_content_slider() { 
-	global $options, $themeslug; ?>
-		
-		<?php if ($options->get($themeslug.'_hide_slider_blog') == '1' && $options->get($themeslug.'_slider_size') != "key2"): ?>
-		
-			<?php chimps_blog_slider(); ?>
-		
-		<?php endif;
-
-}
 
 /**
 * After entry sidebar

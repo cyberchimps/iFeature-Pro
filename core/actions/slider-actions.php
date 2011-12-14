@@ -468,8 +468,8 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
     
     $out .= <<<OUT
 	<script type="text/javascript">
-		var $ = jQuery.noConflict();
-
+	
+	jQuery(document).ready(function($) {
 	$(window).load(function() {
     $('#slider').nivoSlider({
         effect: '$animation', // Specify sets like: 'fold,fade,sliceDown'
@@ -500,6 +500,7 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 	$('#slider').each(function(){
     var \$this = $(this), \$control = $(".nivo-controlNav", this);
     \$control.css({left: (\$this.width() - \$control.width()) / 2}); 
+});
 });
 });
 
