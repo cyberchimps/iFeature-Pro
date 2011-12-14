@@ -77,18 +77,11 @@ function chimps_after_content() {
 
 
 /** 
-* Entry 
+* Index
 */
-function chimps_index_before_entry() {
-	do_action('chimps_index_before_entry');
-}
 
 function chimps_index_after_entry() {
 	do_action('chimps_index_after_entry');
-}
-
-function chimps_meta() {
-	do_action('chimps_meta');
 }
 
 function chimps_index_entry() {
@@ -129,6 +122,10 @@ function chimps_after_footer() {
 /** 
 * Global 
 */
+
+function chimps_meta() {
+	do_action('chimps_meta');
+}
 
 function chimps_post_byline() {
 	do_action('chimps_post_byline');

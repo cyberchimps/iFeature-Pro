@@ -1,8 +1,8 @@
 <?php
 /**
-* CyberChimps Core Framework functions
+* CyberChimps Core Framework Pro Init
 *
-* Authors: Tyler Cunningham, Ben Allfree
+* Authors: Tyler Cunningham
 * Copyright: © 2011
 * {@link http://cyberchimps.com/ CyberChimps LLC}
 *
@@ -11,7 +11,7 @@
 * along with this software. In the main directory, see: /licensing/
 * If not, see: {@link http://www.gnu.org/licenses/}.
 *
-* @package Core
+* @package Pro
 * @since 1.0
 */
 
@@ -32,7 +32,6 @@ require_once ( get_template_directory() . '/core/pro/actions/slider-actions.php'
 require_once ( get_template_directory() . '/core/pro/actions/twitterbar-actions.php' );
 
 //Call Extras
-
 require_once ( get_template_directory() . '/core/pro/inc/shortcodes.php' );
 
 /**

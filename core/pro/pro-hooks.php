@@ -15,8 +15,6 @@
 * @since 1.0
 */
 
-
-
 /** 
 * Box Section
 */
@@ -40,6 +38,13 @@ function chimps_index_carousel_section() {
 
 function chimps_carousel_section() {
 	do_action ('chimps_carousel_section');
+}
+
+/** 
+* Entry 
+*/
+function chimps_index_before_entry() {
+	do_action('chimps_index_before_entry');
 }
 
 /** 
