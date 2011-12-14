@@ -21,7 +21,6 @@
 
 add_action( 'chimps_index_after_entry', 'chimps_index_after_entry_sidebar' );
 
-add_action( 'chimps_index_before_entry', 'chimps_index_before_entry_slider' );
 add_action( 'chimps_index_before_entry', 'chimps_index_before_entry_sidebar' );
 
 add_action( 'chimps_index_loop', 'chimps_index_loop_content' );
@@ -45,21 +44,6 @@ function chimps_index_content_slider() {
 
 }
 
-/**
-* Index content before entry slider
-*
-* @since 1.0
-*/
-function chimps_index_before_entry_slider() { 
-	global $options, $themeslug; ?>
-		
-		<?php if ($options->get($themeslug.'_hide_slider_blog') == '1' && $options->get($themeslug.'_slider_size') == "key2"): ?>
-	
-			<?php chimps_blog_slider(); ?>
-		
-		<?php endif;
-
-}
 
 /**
 * Before entry sidebar

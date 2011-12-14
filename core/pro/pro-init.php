@@ -24,6 +24,9 @@ require_once ( get_template_directory() . '/core/pro/pro-hooks.php' );
 //Call actions
 require_once ( get_template_directory() . '/core/pro/actions/box-actions.php' );
 require_once ( get_template_directory() . '/core/pro/actions/callout-actions.php' );
+require_once ( get_template_directory() . '/core/pro/actions/header-actions.php' );
+require_once ( get_template_directory() . '/core/pro/actions/index-actions.php' );
+require_once ( get_template_directory() . '/core/pro/actions/page-actions.php' );
 require_once ( get_template_directory() . '/core/pro/actions/carousel-actions.php' );
 require_once ( get_template_directory() . '/core/pro/actions/slider-actions.php' );
 require_once ( get_template_directory() . '/core/pro/actions/twitterbar-actions.php' );
