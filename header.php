@@ -34,7 +34,7 @@
 	<?php chimps_before_header(); ?> 
 <!-- End @Core before_header hook content -->
 			
-	<header id="head">
+	<header>
 		
 	<?php if ($options->get($themeslug.'_disable_header') != "0"):?>
 	

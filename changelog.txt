@@ -8,6 +8,7 @@ Version 3.0.5 (12-13-11)
 -Moved menu JavaScript code. 
 -Removed extra localization function in theme functions file. 
 -Minor tweak to comments hook. 
+-Minor HTML markup tweak.
 
 Version 3.0.4 (12-09-11)
 -Removed cursor: pointer; from all iMenu css. 
