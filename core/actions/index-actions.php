@@ -19,14 +19,12 @@
 * Core Index actions
 */
 
-add_action( 'chimps_index_after_entry', 'chimps_index_after_entry_sidebar' );
-
-add_action( 'chimps_index_before_entry', 'chimps_index_before_entry_sidebar' );
 
 add_action( 'chimps_index_loop', 'chimps_index_loop_content' );
 
 add_action( 'chimps_index_entry', 'chimps_index_content_slider' );
 
+add_action( 'chimps_index_after_entry', 'chimps_index_after_entry_sidebar' );
 
 /**
 * Index content slider
@@ -44,9 +42,8 @@ function chimps_index_content_slider() {
 
 }
 
-
 /**
-* Before entry sidebar
+* After entry sidebar
 *
 * @since 1.0
 */
@@ -62,39 +59,8 @@ function chimps_index_after_entry_sidebar() {
 		<?php get_sidebar(); ?>
 	</div>
 	<?php endif;?>
-	
-	<?php if ($sidebar == "3" OR $blogsidebar == 'two-right' ): ?>
-	<div id="sidebar" class="grid_3">
-		<?php get_sidebar('left'); ?>
-	</div>
-	<?php endif;?> 
-	
-	<?php if ($sidebar == "2" OR $sidebar == "3" OR $blogsidebar == 'two-right' OR $blogsidebar == 'right-left' ): ?>
-	<div id="sidebar" class="grid_3">
-		<?php get_sidebar('right'); ?>
-	</div>
-	<?php endif;?> <?php 
+ <?php 
 }
-
-/**
-* Before entry sidebar
-*
-* @since 1.0
-*/
-function chimps_index_before_entry_sidebar() { 
-	global $options, $themeslug, $post; // call globals
-	
-	$blogsidebar = $options->get($themeslug.'_blog_sidebar');
-	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);?>
-				
-	<?php if ($sidebar == "3" OR $blogsidebar == 'right-left' ): ?>
-	<div id="sidebar" class="grid_3">
-		<?php get_sidebar('left'); ?>
-	</div>
-	<?php endif;
-	
-	}
-
 
 /**
 * Check for post format type, apply filter based on post format name for easy modification.

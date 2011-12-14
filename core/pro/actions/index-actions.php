@@ -1,6 +1,6 @@
 <?php
 /**
-* Box section actions used by the CyberChimps Core Framework Pro Extension
+* Index actions used by the CyberChimps Core Framework Pro Extension
 *
 * Author: Tyler Cunningham
 * Copyright: © 2011
@@ -17,6 +17,11 @@
 
 add_action( 'chimps_index_before_entry', 'chimps_pro_index_before_entry_slider' );
 
+add_action( 'chimps_index_before_entry', 'chimps_index_before_entry_sidebar' );
+
+remove_action( 'chimps_index_after_entry', 'chimps_index_after_entry_sidebar' );
+add_action( 'chimps_index_after_entry', 'chimps_pro_index_after_entry_sidebar' );
+
 
 /**
 * Pro index content before entry slider
@@ -32,6 +37,56 @@ function chimps_pro_index_before_entry_slider() {
 		
 		<?php endif;
 
+}
+
+/**
+* Before entry sidebar
+*
+* @since 1.0
+*/
+function chimps_index_before_entry_sidebar() { 
+	global $options, $themeslug, $post; // call globals
+	
+	$blogsidebar = $options->get($themeslug.'_blog_sidebar');
+	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);?>
+				
+	<?php if ($sidebar == "3" OR $blogsidebar == 'right-left' ): ?>
+	<div id="sidebar" class="grid_3">
+		<?php get_sidebar('left'); ?>
+	</div>
+	<?php endif;
+	
+}
+
+/**
+* After entry sidebar
+*
+* @since 1.0
+*/
+function chimps_pro_index_after_entry_sidebar() {
+	global $options, $themeslug, $post; // call globals
+	
+	$blogsidebar = $options->get($themeslug.'_blog_sidebar');
+	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);?>
+	
+	
+	<?php if ($sidebar == "0" OR $blogsidebar == 'right' OR $blogsidebar == '' ): ?>
+	<div id="sidebar" class="grid_4">
+		<?php get_sidebar(); ?>
+	</div>
+	<?php endif;?>
+	
+	<?php if ($sidebar == "3" OR $blogsidebar == 'two-right' ): ?>
+	<div id="sidebar" class="grid_3">
+		<?php get_sidebar('left'); ?>
+	</div>
+	<?php endif;?> 
+	
+	<?php if ($sidebar == "2" OR $sidebar == "3" OR $blogsidebar == 'two-right' OR $blogsidebar == 'right-left' ): ?>
+	<div id="sidebar" class="grid_3">
+		<?php get_sidebar('right'); ?>
+	</div>
+	<?php endif;?> <?php 
 }
 
 
