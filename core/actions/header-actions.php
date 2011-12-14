@@ -41,12 +41,9 @@ function chimps_font() {
 	global $themeslug, $options; //Call global variables
 	$family = apply_filters( 'chimps_default_font_family', 'Helvetica, serif' );
 	
-	if ($options->get($themeslug.'_font') == "" AND $options->get($themeslug.'_custom_font') == "") {
+	if ($options->get($themeslug.'_font') == "" ) {
 		$font = apply_filters( 'chimps_default_font', 'Arial' );
 	}		
-	elseif ($options->get($themeslug.'_custom_font') != "" && $options->get($themeslug.'_font') == 'custom') {
-		$font = $options->get($themeslug.'_custom_font');	
-	}	
 	else {
 		$font = $options->get($themeslug.'_font'); 
 	} ?>
