@@ -28,6 +28,44 @@ add_action( 'chimps_box_section', 'ifeature_box_section_content' );
 remove_action( 'chimps_navigation', 'chimps_nav' );
 add_action( 'chimps_navigation', 'ifeature_nav' );
 
+remove_action( 'chimps_archive', 'chimps_archive_loop' );
+add_action( 'chimps_archive', 'ifeature_archive_loop' );
+
+/**
+* iFeatre archive page loop. 
+*
+* @since 1.0
+*/
+function ifeature_archive_loop() { 
+?>
+	<div class="post_container">
+			
+		<div <?php post_class() ?>>
+				
+			<h2 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+				
+				<!--Begin @Core post tags hook-->
+					<?php chimps_post_byline(); ?>
+				<!--Begin @Core post tags hook-->
+						
+					<div class="entry">
+						<?php the_excerpt(); ?>
+					</div>
+				
+				<!--Begin @Core post tags hook-->
+					<?php chimps_post_tags(); ?>
+				<!--End @Core post tags hook-->	
+				
+				<!--Begin @iFeature post bar hook-->
+					<?php ifeature_post_bar(); ?>
+				<!--End @iFeature post bar hook-->					
+							
+		</div><!--end post-->
+				
+	</div><!--end post_container-->
+			
+<?php }
+
 /**
 * Navigation
 *
