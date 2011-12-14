@@ -260,23 +260,17 @@ function chimps_header_social_icons_content() {
 	
 		$folder = $options->get($themeslug.'_icon_style');
 	
-	}
+	} ?>
 
-	echo "<div id='social'>"; ?>
+	<div id="social">
 
-	<div class="icons">
+		<div class="icons">
 
 		<?php if ($hidefacebook == '1' AND $facebook != '' ):?>
 			<a href="<?php echo $facebook ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/<?php echo $folder; ?>/facebook.png" alt="Facebook" /></a>
 		<?php endif;?>
-		<?php if ($hidefacebook == '1' AND $facebook == '' ):?>
-			<a href="http://facebook.com" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/<?php echo $folder; ?>/facebook.png" alt="Facebook" /></a>
-		<?php endif;?>
 		<?php if ($hidetwitter == '1' AND $twitter != '' ):?>
 			<a href="<?php echo $twitter ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/<?php echo $folder; ?>/twitter.png" alt="Twitter" /></a>
-		<?php endif;?>
-		<?php if ($hidetwitter == '1' AND $twitter == '' ):?>
-			<a href="http://twitter.com" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/<?php echo $folder; ?>/twitter.png" alt="Twitter" /></a>
 		<?php endif;?>
 		<?php if ($hidegplus == '1' AND $gplus != '' ):?>
 			<a href="<?php echo $gplus ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/<?php echo $folder; ?>/gplus.png" alt="Gplus" /></a>
@@ -293,20 +287,11 @@ function chimps_header_social_icons_content() {
 		<?php if ($hidelinkedin == '1' AND $linkedin != '' ):?>
 			<a href="<?php echo $linkedin ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/<?php echo $folder; ?>/linkedin.png" alt="LinkedIn" /></a>
 		<?php endif;?>
-		<?php if ($hidelinkedin == '1' AND $linkedin == '' ):?>
-			<a href="http://linkedin.com" target="_blank" ><img src="<?php echo get_template_directory_uri(); ?>/images/social/<?php echo $folder; ?>/linkedin.png" alt="LinkedIn" /></a>
-		<?php endif;?>
 		<?php if ($hideyoutube == '1' AND $youtube != '' ):?>
 			<a href="<?php echo $youtube ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/<?php echo $folder; ?>/youtube.png" alt="YouTube" /></a>
 		<?php endif;?>
-		<?php if ($hideyoutube == '1' AND $youtube == '' ):?>
-			<a href="http://youtube.com" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/<?php echo $folder; ?>/youtube.png" alt="YouTube" /></a>
-		<?php endif;?>
 		<?php if ($hidegooglemaps == '1' AND $googlemaps != ''):?>
 			<a href="<?php echo $googlemaps ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/<?php echo $folder; ?>/googlemaps.png" alt="Google Maps" /></a>
-		<?php endif;?>
-		<?php if ($hidegooglemaps == '1' AND $googlemaps == ''):?>
-			<a href="http://google.com/maps" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/<?php echo $folder; ?>/googlemaps.png" alt="Google Maps" /></a>
 		<?php endif;?>
 		<?php if ($hideemail == '1' AND $email != ''):?>
 			<a href="mailto:<?php echo $email ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/<?php echo $folder; ?>/email.png" alt="E-mail" /></a>
@@ -321,7 +306,8 @@ function chimps_header_social_icons_content() {
 			<a href="<?php bloginfo('rss2_url'); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/social/<?php echo $folder; ?>/rss.png" alt="RSS" /></a>
 		<?php endif;?>
 	
-	</div><!--end icons--> 
+		</div><!--end icons--> 
+		
 	</div><!--end social--> <?php
 }
 
@@ -333,7 +319,7 @@ function chimps_header_social_icons_content() {
 function chimps_nav() {
 	global $options, $themeslug; //call globals 
 	
-	if ($options->get($themeslug.'_hide_home_icon') == "0" && $options->get($themeslug.'_hide_search') == "0" OR $options->get($themeslug.'_hide_home_icon') == "1" && $options->get($themeslug.'_hide_search') == "0" ) {
+	if  ($options->get($themeslug.'_hide_search') == "0" ) {
 		$grid = 'grid_12';
 	}
 	
@@ -345,10 +331,9 @@ function chimps_nav() {
 	
 	<div class="container_12">
 
-	<div class="grid_12" id="imenu">
+	<div class="grid_12" id="menu">
 
 		<div id="nav" class="<?php echo $grid; ?>">
-			<?php if ($options->get($themeslug.'_hide_home_icon') != "0"):?><div id="home"><a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri() ;?>/images/home.png" alt="home" /></a></div><?php endif;?>
 		    <?php wp_nav_menu( array(
 		    'theme_location' => 'header-menu', // Setting up the location for the main-menu, Main Navigation.
 		    'fallback_cb' => 'menu_fallback', //if wp_nav_menu is unavailable, WordPress displays wp_page_menu function, which displays the pages of your blog.
