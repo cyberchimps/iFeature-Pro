@@ -339,7 +339,7 @@ echo "<div id='slider-wrapper'>";
 	    	}
 	    	
 	    	elseif ($customimage == '' && $size2 == "two-right" && $size != "key2" && $wordenable == '1' OR $customimage == '' && $size2 == "right-left" && $size != "key2" && $wordenable == '1'){ // No custom image, no custom thumb, half-width slider, two sidebars, WordThumb enabled. 
-	    		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro3-470.jpg&a=c&h=$height&w=480";
+	    		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro3-470.jpg&a=c&h=$height&w=470";
 	    		$thumbnail = "$root/images/pro/iFeaturePro3thumb.jpg";
 	    	}
 	    	
@@ -853,7 +853,7 @@ function chimps_page_slider_content() { ?>
 	    	
 	    	/* End slider text */	
 
-/* Controls slide image and thumbnails */
+			/* Controls slide image and thumbnails */
 
 	    	if ($customimage != '' && $customthumb == '' && $wordenable == 'on'){ // Custom image, no custom thumb, WordThumb enabled. 
 	    		$image = $customsized;
@@ -880,9 +880,14 @@ function chimps_page_slider_content() { ?>
 	    		$thumbnail = "$root/images/pro/iFeaturePro3thumb.jpg";
 	    	}
 	    	
-	    	elseif ($customimage == '' && $size2 == "1" && $size != "0" && $wordenable == 'on' OR $customimage == '' && $size2 == "2" && $size != "0" && $wordenable == 'on'){ // No custom image, no custom thumb, half-width slider, two sidebars, WordThumb enabled. 
+	    	elseif ($customimage == '' && $size2 == "1" && $size != "0" && $wordenable == 'on' OR $customimage == '' && $size2 == "2" && $size != "0" && $wordenable == 'on'){ // No custom image, half-width slider, two sidebars, WordThumb enabled. 
 	    		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro3-470.jpg&a=c&h=$height&w=470";
 	    		$thumbnail = "$root/images/pro/iFeaturePro3thumb.jpg";
+	    	}
+	    	
+	    	elseif ($customimage == '' && $customthumb != '' && $size2 == "1" && $size != "0" && $wordenable == 'on' OR $customimage == '' && $customthumb != '' && $size2 == "2" && $size != "0" && $wordenable == 'on'){ // No custom image, no custom thumb, half-width slider, two sidebars, WordThumb enabled. 
+	    		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro3-470.jpg&a=c&h=$height&w=470";
+	    		$thumbnail = $customthumb;	    	
 	    	}
 	    	
 	    		elseif ($customimage == '' && $size2 == "1" && $size != "0" && $wordenable != 'on' OR $customimage == '' && $size2 == "2" && $size != "0" && $wordenable != 'on'){ // No custom image, no custom thumb, half-width slider, two sidebars, WordThumb disabled. 
@@ -905,7 +910,7 @@ function chimps_page_slider_content() { ?>
 	    		$thumbnail = "$root/core/library/wt/wordthumb.php?src=$customthumb&a=c&h=30&w=50";
 	    	}
 
-	    	elseif ($customimage == '' && $size2 == "default" && $size != "0" && $wordenable == 'on'){ // No custom image, no custom thumb, half-width slider, WordThumb enabled. 
+	    	elseif ($customimage == '' && $size2 == "0" && $size != "0" && $wordenable == 'on'){ // No custom image, no custom thumb, half-width slider, WordThumb enabled. 
 
 	    		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro3-640.jpg&a=c&h=$height&w=640";
 	    		$thumbnail = "$root/images/pro/iFeaturePro3thumb.jpg";
