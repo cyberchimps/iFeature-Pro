@@ -2,6 +2,23 @@
  * Metabox Tabs
  */
  
+.js .checkbox{
+  display:none;
+}
+
+.toggle{
+   background:url("../images/toggle.png") bottom left;
+    display:block;
+    width:70px;
+    height:22px;
+ 
+}
+
+.toggle.checked{
+  background-position:top left;
+}
+
+ 
 ul.metabox-tabs {
 display: none;
 margin-top: 12px;
