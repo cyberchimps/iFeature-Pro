@@ -2,6 +2,8 @@
  * Metabox Tabs
  */
  
+#pages .inside {background: url(../images/whitey.png) #fbfbfb; padding: 10px; margin: 0px 0px;}
+ 
 .js .checkbox{
   display:none;
 }
@@ -187,7 +189,7 @@ img.action {
 	padding: 2px;
 }
 
-h4 {margin-top: 0px; margin-bottom: 0px;}
+h4 {margin-top: 0px; margin-bottom: 0px; font-size: 1.17em;}
 
 .subsection h4 {
 	padding: 7px 10px;
