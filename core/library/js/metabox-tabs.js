@@ -67,4 +67,42 @@ jQuery(document).ready(function($) {
 			$(this).siblings("input").val($(this).attr("src"));
 		});
 	});
+
+	 /*
+      Add toggle switch after each checkbox.  If checked, then toggle the switch.
+    */
+     $('.checkbox').after(function(){
+       if ($(this).is(":checked")) {
+         return "<a href='#' class='toggle checked' ref='"+$(this).attr("id")+"'></a>";
+       }else{
+         return "<a href='#' class='toggle' ref='"+$(this).attr("id")+"'></a>";
+       }
+       
+     });
+     
+     /*
+      When the toggle switch is clicked, check off / de-select the associated checkbox
+     */
+    $('.toggle').click(function(e) {
+       var checkboxID = $(this).attr("ref");
+       var checkbox = $('#'+checkboxID);
+
+       if (checkbox.is(":checked")) {
+         checkbox.removeAttr("checked").change();
+       }else{
+         checkbox.attr("checked","checked").change();
+       }
+       $(this).toggleClass("checked");
+
+       e.preventDefault();
+
+    });
+
+    /*
+      For demo purposes only....shows/hides checkboxes.
+    */
+    $('#showCheckboxes').click(function(e) {
+     $('.checkbox').toggle()
+     e.preventDefault();
+    });
 });
