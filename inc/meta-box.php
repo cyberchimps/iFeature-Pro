@@ -741,7 +741,7 @@ function initialize_the_meta_boxes() {
 		->tab("Slider Options")
 			->image($prefix . 'image', $themenamefull . ' Pro Slider Image', 'Upload your image here:')
 			->text($prefix . 'text', $themenamefull. ' Pro Slider Text', 'Enter your slider text here')
-			->checkbox($prefix . 'hidetitle', 'Hide Title Bar', 'Click to disable the title bar on this slide:', array('std' => true))
+			->checkbox($prefix . 'hidetitle', 'Hide Title Bar', 'Click to disable the title bar on this slide:', array('std' => ''))
 			->image($prefix . 'custom_thumb', 'Custom Thumbnail', 'Use the image uploader to upload a custom navigation thumbnail')
 			->sliderhelp('', 'Need Help?', '')
 		->end();
