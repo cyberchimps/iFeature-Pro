@@ -30,7 +30,6 @@ require_once ( get_template_directory() . '/core/pro/actions/footer-actions.php'
 require_once ( get_template_directory() . '/core/pro/actions/page-actions.php' );
 require_once ( get_template_directory() . '/core/pro/actions/carousel-actions.php' );
 require_once ( get_template_directory() . '/core/pro/actions/slider-actions.php' );
-require_once ( get_template_directory() . '/core/pro/actions/twitterbar-actions.php' );
 
 //Call Extras
 require_once ( get_template_directory() . '/core/pro/inc/shortcodes.php' );

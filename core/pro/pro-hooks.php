@@ -60,13 +60,6 @@ function chimps_page_content_slider() {
 	do_action ('chimps_page_content_slider');
 }
 
-/** 
-* Twitterbar Section
-*/
-function chimps_twitterbar_section() {
-	do_action ('chimps_twitterbar_section');
-}
-
 /**
 * End
 */

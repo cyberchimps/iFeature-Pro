@@ -221,6 +221,13 @@ function chimps_after_search() {
 	do_action('chimps_after_search');
 }
 
+/** 
+* Twitterbar Section
+*/
+function chimps_twitterbar_section() {
+	do_action ('chimps_twitterbar_section');
+}
+
 /**
 * End
 */
