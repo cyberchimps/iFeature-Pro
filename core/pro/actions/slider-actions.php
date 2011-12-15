@@ -311,7 +311,7 @@ echo "<div id='slider-wrapper'>";
 	    	
 	    	/* End slider text */	
 
-	    	  	/* Controls slide image and thumbnails */
+	    	/* Controls slide image and thumbnails */
 
 	    	if ($customimage != '' && $customthumb == '' && $wordenable == '1'){ // Custom image, no custom thumb, WordThumb enabled. 
 	    		$image = $customsized;
@@ -853,55 +853,83 @@ function chimps_page_slider_content() { ?>
 	    	
 	    	/* End slider text */	
 
-	    	/* Controls slide image and thumbnails */
+/* Controls slide image and thumbnails */
 
-	    	if ($customimage != '' && $customthumb == '' && $wordenable == 'on'){
+	    	if ($customimage != '' && $customthumb == '' && $wordenable == 'on'){ // Custom image, no custom thumb, WordThumb enabled. 
 	    		$image = $customsized;
-	    		$thumbnail = "$root/library/wt/wordthumb.php?src=$customimage&a=c&h=30&w=50";
+	    		$thumbnail = "$root/core/library/wt/wordthumb.php?src=$customimage&a=c&h=30&w=50";
 	    	}
 	    	
-	    	elseif ($customimage != '' && $customthumb == '' && $wordenable != 'on'){
+	    	elseif ($customimage != '' && $customthumb != '' && $wordenable == 'on'){ // Custom image, custom thumb, WordThumb enabled. 
+	    		$image = $customimage;
+	    		$thumbnail = "$root/core/library/wt/wordthumb.php?src=$customthumb&a=c&h=30&w=50";
+	    	}
+	    	
+	    	elseif ($customimage != '' && $customthumb != '' && $wordenable != 'on'){ // Custom image, custom thumb, WordThumb disabled. 
+	    		$image = $customimage;
+	    		$thumbnail = $customthumb;
+	    	}
+	    	
+	    	elseif ($customimage != '' && $customthumb == '' && $wordenable != 'on'){ // Custom image, no custom thumb, WordThumb disabled. 
 	    		$image = $customimage;
 	    		$thumbnail = "$root/images/pro/iFeaturePro3thumb.jpg";
 	    	}
 	    	
-	    	elseif ($customimage == ''&& $customthumb != '' && $wordenable != 'on'){
-	    		$image = "$root/images/pro/iFeaturePro3-980.jpg";
+	    	elseif ($customimage != '' && $customthumb == '' && $wordenable == 'on'){ // Custom image, no custom thumb, WordThumb enabled. 
+	    		$image = $customsized;
+	    		$thumbnail = "$root/images/pro/iFeaturePro3thumb.jpg";
+	    	}
+	    	
+	    	elseif ($customimage == '' && $size2 == "1" && $size != "0" && $wordenable == 'on' OR $customimage == '' && $size2 == "2" && $size != "0" && $wordenable == 'on'){ // No custom image, no custom thumb, half-width slider, two sidebars, WordThumb enabled. 
+	    		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro3-470.jpg&a=c&h=$height&w=470";
+	    		$thumbnail = "$root/images/pro/iFeaturePro3thumb.jpg";
+	    	}
+	    	
+	    		elseif ($customimage == '' && $size2 == "1" && $size != "0" && $wordenable != 'on' OR $customimage == '' && $size2 == "2" && $size != "0" && $wordenable != 'on'){ // No custom image, no custom thumb, half-width slider, two sidebars, WordThumb disabled. 
+	    		$image = "$root/images/pro/iFeaturePro3-470.jpg";
+	    		$thumbnail = "$root/images/pro/iFeaturePro3thumb.jpg";
+	    	}
+	    	
+	    	elseif ($customimage == '' && $customthumb == '' && $size != "0" && $wordenable != 'on'){ // No custom image, no custom thumb, half-width slider, WordThumb disabled. 
+	    		$image = "$root/images/pro/iFeaturePro3-640.jpg";
+	    		$thumbnail = "$root/images/pro/iFeaturePro3thumb.jpg";
+	    	}
+	    	
+	    	elseif ($customimage == '' && $customthumb != '' && $size != "0" && $wordenable != 'on'){ // No custom image, custom thumb, half-width slider, WordThumb disabled. 
+	    		$image = "$root/images/pro/iFeaturePro3-640.jpg";
 	    		$thumbnail = $customthumb;
 	    	}
 	    	
-	    	elseif ($customimage == ''&& $customthumb == '' && $wordenable != 'on'){
-	    		$image = "$root/images/pro/iFeaturePro3-980.jpg";
-	    		$thumbnail = "$root/images/pro/iFeaturePro3thumb.jpg";
-	    	}
-	    	
-	    	elseif ($customimage != '' && $customthumb != '' && $wordenable == 'on' ){
-	    		$image = $customsized;
+	    	elseif ($customimage == '' && $customthumb != '' && $size != "0" && $wordenable == 'on' ){ // No custom image, custom thumb, half-width slider, WordThumb enabled. 
+	    		$image = "$root/images/pro/iFeaturePro3-640.jpg";
 	    		$thumbnail = "$root/core/library/wt/wordthumb.php?src=$customthumb&a=c&h=30&w=50";
 	    	}
 
-	    	elseif ($customimage == '' && $size2 == "0" && $size != "0" && $wordenable == 'on'){
+	    	elseif ($customimage == '' && $size2 == "default" && $size != "0" && $wordenable == 'on'){ // No custom image, no custom thumb, half-width slider, WordThumb enabled. 
+
 	    		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro3-640.jpg&a=c&h=$height&w=640";
 	    		$thumbnail = "$root/images/pro/iFeaturePro3thumb.jpg";
 	    	}
+	    	
+	    	elseif ($customimage == '' && $size == "0" && $wordenable == 'on'){ // No custom image, no custom thumb, full-width slider, WordThumb enabled. 
 
-	    	elseif ($customimage == '' && $size2 == '4' && $size != "0" && $wordenable == 'on'){
-	    		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro3-640.jpg&a=c&h=$height&w=640";
+	    		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro3-980.jpg&a=c&h=$height&w=980";
+	    		$thumbnail = "$root/images/pro/iFeaturePro3thumb.jpg";
+	    	}
+	    	
+	    	elseif ($customimage == '' && $size == "0" && $wordenable != 'on'){ // No custom image, no custom thumb, full-width slider, WordThumb enabled. 
+
+	    		$image = "$root/images/pro/iFeaturePro3-980.jpg";
 	    		$thumbnail = "$root/images/pro/iFeaturePro3thumb.jpg";
 	    	}
 
-	    	elseif ($customimage == '' && $size2 == "1" && $size != "0" && $wordenable == 'on' OR $customimage == '' && $size2 == "2" && $size != "0" && $wordenable == 'on'){
-	    		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro3-470.jpg&a=c&h=$height&w=480";
-	    		$thumbnail = "$root/images/pro/iFeaturePro3thumb.jpg";
-	    	}
-
-	   		elseif ($wordenable == 'on') {
+	    	
+	   		elseif ($wordenable == 'on' && $size == "0") { // all else 
 	       		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/iFeaturePro3-980.jpg&a=c&h=$height&w=980";
 	       		$thumbnail = "$root/images/pro/iFeaturePro3thumb.jpg";
 	       	}
 	       	
 	     	/* End image/thumb */	
-
 	     	/* Markup for slides */
 
 	    	$out .= "<a href='$link'>	
