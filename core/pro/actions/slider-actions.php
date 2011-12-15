@@ -19,8 +19,6 @@
 * Extend slider actions
 */
 
-
-
 add_action ('chimps_blog_slider', 'chimps_blog_slider_content' );
 
 /**
@@ -50,8 +48,6 @@ function chimps_blog_slider_content() {
 	$wordenable = $options->get($themeslug.'_enable_wordthumb');
 	$slideranimation = $options->get($themeslug.'_slider_animation');
 	
-
-   
 echo "<div id='slider-wrapper'>";
 	
 /* End define variables. */	
@@ -171,28 +167,19 @@ echo "<div id='slider-wrapper'>";
 
 /* Define slider caption style */      
 
-	if ($captionstyle == 'key3') {
+	if ($captionstyle == 'key3') { ?>
 		
-		?>
-		
-			<style type="text/css">
-			.nivo-caption {height: <?php echo $height ?>px; width: 30%;}
-			</style>
-		
-		<?php
+		<style type="text/css">
+		.nivo-caption {height: <?php echo $height ?>px; width: 30%;}
+		</style> <?php
 	}
 	
-	elseif ($captionstyle == 'key2') {
+	elseif ($captionstyle == 'key2') { ?>
 		
-		?>
-		
-			<style type="text/css">
-			.nivo-caption {position: relative; float: right; height: <?php echo $height ?>px; width: 30%;}
-			</style>
-		
-		<?php
+		<style type="text/css">
+		.nivo-caption {position: relative; float: right; height: <?php echo $height ?>px; width: 30%;}
+		</style><?php
 	}    
-
 
 /* Define wordthumb default height and widths. */		
 
@@ -386,7 +373,6 @@ echo "<div id='slider-wrapper'>";
 	       		$thumbnail = "$root/images/pro/iFeaturePro3thumb.jpg";
 	       	}
 	       	
-	       
 	     	/* End image/thumb */	
 
 	     	/* Markup for slides */
@@ -404,7 +390,6 @@ echo "<div id='slider-wrapper'>";
 	      	$i++;
 	      	endwhile;
 	      	
-	
 	      	$out .= "</div>";
 	      	
 	      	else:
@@ -415,9 +400,7 @@ echo "<div id='slider-wrapper'>";
 To learn how to create a custom slide please <a href='http://cyberchimps.com/question/using-the-ifeature-slider/' target='_blank'><font color='blue'>read the documentation</font></a>.<br /><br />
 
 To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once you have created your first Custom Slide it will display here instead of this warning.<br /><br />
-
-	    					
-	    				
+		
 	    			";
 	endif; 	    
 	$wp_query = $tmp_query;    
@@ -447,7 +430,6 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 	}
 
 /* End slider navigation variable */ 
-
 
 	?>
 	
@@ -627,26 +609,18 @@ function chimps_page_slider_content() { ?>
 
 /* Define slider caption style */      
 
-	if ($captionstyle == '2') {
+	if ($captionstyle == '2') { ?>
 		
-		?>
-		
-			<style type="text/css">
-			.nivo-caption {height: <?php echo $height ?>px; width: 30%;}
-			</style>
-		
-		<?php
+		<style type="text/css">
+		.nivo-caption {height: <?php echo $height ?>px; width: 30%;}
+		</style> <?php
 	}
 	
-	elseif ($captionstyle == '3') {
+	elseif ($captionstyle == '3') { ?>
 		
-		?>
-		
-			<style type="text/css">
-			.nivo-caption {position: relative; float: right; height: <?php echo $height ?>px; width: 30%;}
-			</style>
-		
-		<?php
+		<style type="text/css">
+		.nivo-caption {position: relative; float: right; height: <?php echo $height ?>px; width: 30%;}
+		</style> <?php
 	}    
 	
 /* End slider caption */ 
@@ -785,8 +759,6 @@ function chimps_page_slider_content() { ?>
 	    $out = "<div id='slider' class='nivoSlider'>"; 
 	    $i = 0;
 
-
-	
 	if ($postnumber == '' && $type != '0') {
 	    $no = '5';    	
 	}   	
@@ -914,8 +886,6 @@ function chimps_page_slider_content() { ?>
 	       		$thumbnail = "$root/images/pro/iFeaturePro3thumb.jpg";
 	       	}
 	       	
-	      
-
 	     	/* End image/thumb */	
 
 	     	/* Markup for slides */
@@ -944,8 +914,6 @@ To learn how to create a custom slide please <a href='http://cyberchimps.com/que
 
 To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once you have created your first Custom Slide it will display here instead of this warning.<br /><br />
 
-	    					
-	    				
 	    			";
 	      
 	endif; 	    
@@ -953,12 +921,8 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 
 /* End slide creation */		
 
-
- 
-
 	?>
 
-	
 <!-- Apply slider CSS based on user settings -->
 
 	<style type="text/css" media="screen">
@@ -973,26 +937,23 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 /* Define slider navigation style */      
 
 	if ($navigationstyle == '0' OR $navigationstyle == '') {
-		
 		echo '<style type="text/css">';
 		echo ".nivo-controlNav a {background: url($root/images/slider/bullets.png) no-repeat; display:block; width:22px; height:22px; 	text-indent:-9999px; border:0; margin-right:3px; float:left;}";
 		echo ".nivo-controlNav a.active {background-position:0 -22px;} ";
 		echo '</style>';
-		
 	}
 	
 	elseif ($navigationstyle == '2') {
-		
-			echo '<style type="text/css">';
-			echo '.nivo-controlNav {display: none;}';
-			echo ".slider_nav {display: none;}";
-			echo '#slider-wrapper {margin-bottom: 20px;}';
-			echo '</style>';
+		echo '<style type="text/css">';
+		echo '.nivo-controlNav {display: none;}';
+		echo ".slider_nav {display: none;}";
+		echo '#slider-wrapper {margin-bottom: 20px;}';
+		echo '</style>';
 	}    
 
 /* End slider navigation */ 
 
-	    wp_reset_query(); /* Reset post query */ 
+	wp_reset_query(); /* Reset post query */ 
 
 /* Begin NivoSlider javascript */ 
     
@@ -1052,9 +1013,6 @@ echo "</div>";
 <?php
 
 }
-
-
-
 
 /**
 * End
