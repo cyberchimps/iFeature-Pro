@@ -26,7 +26,6 @@ add_action( 'chimps_head_tag', 'chimps_link_rel' );
 
 add_action( 'chimps_header_sitename', 'chimps_header_sitename_content');
 add_action( 'chimps_header_site_description', 'chimps_header_site_description_content' );
-add_action( 'chimps_header_contact_area', 'chimps_header_contact_area_content' );
 add_action( 'chimps_header_social_icons', 'chimps_header_social_icons_content' );
 
 add_action( 'chimps_navigation', 'chimps_nav' );

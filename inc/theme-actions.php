@@ -20,6 +20,7 @@
 */
 add_action( 'ifeature_post_bar', 'ifeature_post_bar_content' );
 add_action( 'ifeature_fb_like_plus_one', 'ifeature_fb_like_plus_one_content' );
+add_action( 'chimps_header_contact_area', 'ifeature_header_contact_area_content' );
 
 remove_action( 'chimps_head_tag', 'chimps_link_rel' );
 add_action( 'chimps_head_tag', 'ifeature_link_rel' );
@@ -115,7 +116,7 @@ function ifeature_nav() {
 *
 * @since 1.0
 */
-function chimps_header_contact_area_content() { 
+function ifeature_header_contact_area_content() { 
 	global $themeslug, $options; 
 	$contactdefault = apply_filters( 'chimps_header_contact_default_text', 'Enter Contact Information Here' ); 
 	
