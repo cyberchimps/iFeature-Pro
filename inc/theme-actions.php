@@ -20,7 +20,7 @@
 */
 add_action( 'ifeature_post_bar', 'ifeature_post_bar_content' );
 add_action( 'ifeature_fb_like_plus_one', 'ifeature_fb_like_plus_one_content' );
-add_action( 'chimps_header_contact_area', 'ifeature_header_contact_area_content' );
+add_action( 'ifeature_header_contact_area', 'ifeature_header_contact_area_content' );
 
 remove_action( 'chimps_head_tag', 'chimps_link_rel' );
 add_action( 'chimps_head_tag', 'ifeature_link_rel' );
@@ -326,7 +326,7 @@ global $options, $themeslug;?>
 			<?php if ($options->get($themeslug.'_enable_header_contact') == '1'	): ?>
 
 		<!-- Begin @Core header contact area hook -->
-			<?php chimps_header_contact_area(); ?>
+			<?php ifeature_header_contact_area(); ?>
 		<!-- End @Core header contact area hook -->
 					<?php endif ; ?>
 		</div>	

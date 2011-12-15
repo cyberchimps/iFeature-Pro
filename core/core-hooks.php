@@ -170,10 +170,6 @@ function chimps_header_site_description() {
 	do_action('chimps_header_site_description');
 }
 
-function chimps_header_contact_area() {
-	do_action('chimps_header_contact_area');
-}
-
 function chimps_header_social_icons() {
 	do_action('chimps_header_social_icons');
 }

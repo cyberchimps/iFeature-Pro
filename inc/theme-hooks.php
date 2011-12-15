@@ -42,3 +42,12 @@ function ifeature_post_bar() {
 function ifeature_fb_like_plus_one() { //this will be renamed I promise
 	do_action('ifeature_fb_like_plus_one');
 }
+
+/**
+* Hook for the Header Contact Area
+*
+* @since 3.0.5
+*/
+function ifeature_header_contact_area() {
+	do_action('ifeature_header_contact_area');
+}
