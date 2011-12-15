@@ -170,13 +170,24 @@ img.action {
 	padding: 2px;
 }
 
+h4 {margin-top: 0px; margin-bottom: 0px;}
+
 .subsection h4 {
-	background: #fff;
-	cursor: pointer;
-	border: 1px solid #444;
-	padding: 5px;
+	padding: 7px 10px;
+	background: white;
 	border-radius: 4px;
+	-moz-border-radius: 4px;
+	cursor: pointer;
 }
+
+.subsection {
+	border: 1px solid #CCC; 
+	background: white; 
+	border-radius: 4px;
+	margin-top: 8px; margin-bottom: 8px;
+}
+
+tr {background: white; border-top: 1px solid #CCC;}
 
 .subsection h4 span {
 	background: url(../images/plus.png);
