@@ -988,11 +988,11 @@ function initialize_the_meta_boxes() {
 		
 		
 			array(
-				'name' => 'Hide Page Title',
+				'name' => 'Page Title',
 				'desc' => '',
 				'id' => 'hide_page_title',
 				'type' => 'checkbox',
-				'std' => ''
+				'std' => 'true'
 			),
 			
 				array(
