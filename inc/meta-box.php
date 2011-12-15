@@ -248,7 +248,7 @@ class RW_Meta_Box {
 
 	function show_field_checkbox($field, $meta) {
 		$this->show_field_begin($field, $meta);
-		echo "<input type='checkbox' class='checkbox' name='{$field['id']}'" . checked(!empty($meta), true, false) . " /> {$field['desc']}</td>";
+		echo "<input type='checkbox' class='checkbox' name='{$field['id']}' id='checkbox-{$field['id']}' " . checked(!empty($meta), true, false) . " /> {$field['desc']}</td>";
 	}
 
 	function show_field_wysiwyg($field, $meta) {
@@ -741,62 +741,62 @@ function initialize_the_meta_boxes() {
 		->tab("Slider Options")
 			->image($prefix . 'image', $themenamefull . ' Pro Slider Image', 'Upload your image here:')
 			->text($prefix . 'text', $themenamefull. ' Pro Slider Text', 'Enter your slider text here')
-			->checkbox($prefix . 'hidetitle', 'Hide Title Bar', 'Click to disable the title bar on this slide:')
+			->checkbox($prefix . 'hidetitle', 'Hide Title Bar', 'Click to disable the title bar on this slide:', array('std' => true))
 			->image($prefix . 'custom_thumb', 'Custom Thumbnail', 'Use the image uploader to upload a custom navigation thumbnail')
 			->sliderhelp('', 'Need Help?', '')
 		->end();
 
-	$meta_boxes[] = array(
-		'id' => 'feature',
-		'title' => $themenamefull.' Slider Options',
-		'pages' => array('post'),
+	// $meta_boxes[] = array(
+	// 	'id' => 'feature',
+	// 	'title' => $themenamefull.' Slider Options',
+	// 	'pages' => array('post'),
 
-		'tabs' => array(
-			array(
-				'fields' => array(
+	// 	'tabs' => array(
+	// 		array(
+	// 			'fields' => array(
 
-					array(
-						'name' => $themenamefull.' Pro Slider Image',
-						'desc' => 'Upload your image here:',
-						'id' => $prefix . 'image',
-						'type' => 'image',
-						'std' => ''
-					),
-					array(
-						'name' => $themenamefull.' Pro Slider Text',
-						'desc' => 'Enter your slider text here (optional):',
-						'id' => $prefix . 'text',
-						'type' => 'text',
-						'std' => ''
-					),
-					array(
-						'name' => 'Hide Title Bar',
-						'desc' => 'Click to disable the title bar on this slide:',
-						'id' => $prefix . 'hidetitle',
-						'type' => 'checkbox',
-						'std' => ''
-					),
-					
-					array(
-						'name' => 'Custom Thumbnail',
-						'desc' => 'Use the image uploader to upload a custom navigation thumbnail',
-						'id' => $prefix . 'custom_thumb',
-						'type' => 'image'
-					),
-					
-					array(
-						'name' => 'Need help?',
-						'desc' => '',
-						'id' => '',
-						'type' => 'sliderhelp',
-						'std' => ''
-			),
+	// 				array(
+	// 					'name' => $themenamefull.' Pro Slider Image',
+	// 					'desc' => 'Upload your image here:',
+	// 					'id' => $prefix . 'image',
+	// 					'type' => 'image',
+	// 					'std' => ''
+	// 				),
+	// 				array(
+	// 					'name' => $themenamefull.' Pro Slider Text',
+	// 					'desc' => 'Enter your slider text here (optional):',
+	// 					'id' => $prefix . 'text',
+	// 					'type' => 'text',
+	// 					'std' => ''
+	// 				),
+	// 				array(
+	// 					'name' => 'Hide Title Bar',
+	// 					'desc' => 'Click to disable the title bar on this slide:',
+	// 					'id' => $prefix . 'hidetitle',
+	// 					'type' => 'checkbox',
+	// 					'std' => ''
+	// 				),
+	// 				
+	// 				array(
+	// 					'name' => 'Custom Thumbnail',
+	// 					'desc' => 'Use the image uploader to upload a custom navigation thumbnail',
+	// 					'id' => $prefix . 'custom_thumb',
+	// 					'type' => 'image'
+	// 				),
+	// 				
+	// 				array(
+	// 					'name' => 'Need help?',
+	// 					'desc' => '',
+	// 					'id' => '',
+	// 					'type' => 'sliderhelp',
+	// 					'std' => ''
+	// 		),
 
 
-				)
-			)
-		)
-	);
+	// 			)
+	// 		)
+	// 	)
+	// );
 	
 	$meta_boxes[] = array(
 		'id' => 'slides',
