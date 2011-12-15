@@ -64,7 +64,7 @@ jQuery(document).ready(function($) {
 			if($(this).hasClass('selected')) return;
 			$(this).siblings("img").removeClass('selected');
 			$(this).addClass('selected');
-			$(this).siblings("input").val($(this).attr("src"));
+			$(this).siblings("input").val($(this).data("key"));
 		});
 	});
 

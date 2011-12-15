@@ -478,8 +478,8 @@ class RW_Meta_Box {
 		$this->show_field_begin($field, $meta);
 		// var_dump($field, $meta);
 		echo "<div class='image_select'>";
-		foreach($field['options'] as $option) {
-			echo "<img class='" . ($option === $meta ? ' selected' : '' ) . "' src='{$option}' />";
+		foreach($field['options'] as $key=>$option) {
+			echo "<img data-key='{$key}' class='" . ($key === $meta ? ' selected' : '' ) . "' src='{$option}' />";
 		}
 		echo "<input type='hidden' name='{$field['id']}' />";
 		echo "</div>";
