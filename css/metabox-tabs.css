@@ -205,8 +205,9 @@ tr {border-top: 1px solid #CCC;}
 .subsection select {float: right; }
 
 .image_select img {
-	margin-right: 10px;
+  margin-right: 10px;
   padding: 1px;
+  float: right;
 }
 .image_select img.selected {
 	border: 1px solid #900;

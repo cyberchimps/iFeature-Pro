@@ -960,14 +960,6 @@ function initialize_the_meta_boxes() {
 					
 			array(
 				'name' => 'Select Page Layout',
-				'desc' => 'Select your sidebar options',
-				'id' => 'page_sidebar',
-				'type' => 'select',
-				'options' => array('Sidebar Right (default)', 'Two Sidebar Right', 'Sidebar Right and Left', 'Full-Width'),
-				'std' => ''
-			),
-			array(
-				'name' => 'Select Page Layout Image',
 				'desc' => "Select",
 				'id' => 'page_sidebar_image',
 				'type' => 'image_select',
