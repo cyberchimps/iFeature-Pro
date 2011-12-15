@@ -15,7 +15,9 @@
 * @since 3.0
 */
 
-
+/**
+* iFeature Actions
+*/
 add_action( 'ifeature_post_bar', 'ifeature_post_bar_content' );
 add_action( 'ifeature_fb_like_plus_one', 'ifeature_fb_like_plus_one_content' );
 
@@ -271,8 +273,6 @@ function ifeature_post_bar_content() {
 *
 * @since 3.0
 */
-
-
 function ifeature_header_standard_content() {
 ?>
 	<div class="container_12">
@@ -301,7 +301,6 @@ function ifeature_header_standard_content() {
 
 <?php
 }
-
 
 /**
 * Header content extra
@@ -379,4 +378,3 @@ function ifeature_header_content_init() {
 			add_action( 'ifeature_header_content', 'ifeature_header_extra_content');
 	}
 }
-

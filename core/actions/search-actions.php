@@ -53,7 +53,7 @@ function chimps_search_content() {
 
 			</div>
 
-	</div><!--end post_container-->
+		</div><!--end post_container-->
 		<?php endwhile; ?>
 
 		<?php chimps_pagination(); ?>

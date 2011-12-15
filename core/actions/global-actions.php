@@ -39,7 +39,6 @@ function chimps_post_byline_content() {
 		</div> <?php
 }
 
-
 /**
 * Sets up the WP edit link
 *
