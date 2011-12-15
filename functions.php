@@ -22,12 +22,6 @@
 if ( is_admin() && isset($_GET['activated'] ) && $pagenow ==	"themes.php" )
 	wp_redirect( 'themes.php?page=ifeature' );
 	
-/* Add Theme Support for bbPress */
-function bbpress_support() {
-	add_theme_support( 'bbpress' );
-}
-add_action('after_setup_theme', 'bbpress_support' );
-	
 // Post formats support
 add_theme_support(
 	'post-formats',
