@@ -989,7 +989,7 @@ function initialize_the_meta_boxes() {
 		
 			array(
 				'name' => 'Hide Page Title',
-				'desc' => 'Check this box to hide the title on this page',
+				'desc' => '',
 				'id' => 'hide_page_title',
 				'type' => 'checkbox',
 				'std' => ''

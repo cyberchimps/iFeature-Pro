@@ -1,5 +1,10 @@
 jQuery(document).ready(function($) {
 
+ 	/*
+      Progressive enhancement.  If javascript is enabled we change the body class.  Which in turn hides the checkboxes with css.
+    */
+    $('body').addClass("js");
+
 	 /*
       Add toggle switch after each checkbox.  If checked, then toggle the switch.
     */
