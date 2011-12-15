@@ -29,7 +29,7 @@ add_action( 'chimps_post_tags', 'chimps_post_tags_content' );
 * @since 1.0
 */
 function chimps_post_byline_content() {
-	global $options, $themeslug; //call globals  
+	global $options, $themeslug; //call globals.  
 	$hidden = $options->get($themeslug.'_hide_byline');?>
 	
 	<div class="meta">
