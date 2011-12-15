@@ -187,18 +187,22 @@ h4 {margin-top: 0px; margin-bottom: 0px;}
 	margin-top: 8px; margin-bottom: 8px;
 }
 
-tr {background: white; border-top: 1px solid #CCC;}
+tr {border-top: 1px solid #CCC;}
+
+.form-table {margin-top: 0em;}
 
 .subsection h4 span {
-	background: url(../images/plus.png);
+	background: url(../images/uparrow.png);
 	display: block;
-	height: 8px;
-	width: 8px;
+	height: 16px;
+	width: 16px;
 	float: right;
 }
 .subsection h4 span.minus {
-	background: url(../images/minus.png);
+	background: url(../images/downarrow.png);
 }
+
+.subsection select {float: right; }
 
 .image_select img {
 	margin-right: 10px;
