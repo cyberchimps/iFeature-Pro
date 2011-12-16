@@ -945,7 +945,16 @@ function initialize_the_meta_boxes() {
 
 	}
 
-	
+	$meta_boxes = array();
+
+	$mb = new CyberChimps_Metabox('feature_new', $themenamefull.' New Page Options', array('pages' => array('page')));
+	$mb
+		->tab("Page Options ")
+			->image_select('page_sidebar', 'Select Page Layout', '')
+			->checkbox($prefix . 'hide_page_title', 'Page Title', '', array('std' => 'true'))
+			->sliderhelp('', 'Need Help?', '')
+		->end();
+
 
 	$meta_boxes[] = array(
 		'id' => 'pages',
