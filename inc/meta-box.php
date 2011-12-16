@@ -1006,7 +1006,15 @@ function initialize_the_meta_boxes() {
 			->text('callout_button_text', 'Callout Button Text', '')
 			->text('callout_url', 'Callout Button URL', '')
 			->image('callout_image', 'Custom Button Image', '')
-			
+			->color('custom_callout_color', 'Custom Background Color', '')
+			->color('custom_callout_title_color', 'Custom Title Color', '')
+			->color('custom_callout_text_color', 'Custom Text Color', '')
+			->color('custom_callout_button_color', 'Custom Button Color', '')
+			->pagehelp('', 'Need help?', '')
+		->tab("Twitter Options")
+			->text('twitter_handle', 'Twitter Handle', 'Enter your Twitter handle if using the Twitter bar - Requires <a href="http://wordpress.org/extend/plugins/twitter-for-wordpress/" target="_blank">Twitter for WordPress Plugin')
+		->tab("Carousel Options")
+			->select('carousel_category', 'Carousel Category', '', array('options' => $carouseloptions) )
 		->end();
 
 
