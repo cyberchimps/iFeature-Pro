@@ -732,17 +732,15 @@ function initialize_the_meta_boxes() {
 
 	global  $themename, $themeslug, $themenamefull, $options;
 	
-	$prefix = 'slider_';
-
 	$meta_boxes = array();
 
-	$mb = new CyberChimps_Metabox('feature_new', $themenamefull.' Slider Options New', array('pages' => array('post')));
+	$mb = new CyberChimps_Metabox('feature_new', $themenamefull.' Slider Options', array('pages' => array('post')));
 	$mb
 		->tab("Slider Options")
-			->image($prefix . 'image', $themenamefull . ' Pro Slider Image', 'Upload your image here:')
-			->text($prefix . 'text', $themenamefull. ' Pro Slider Text', 'Enter your slider text here')
-			->checkbox($prefix . 'hidetitle', 'Hide Title Bar', 'Click to disable the title bar on this slide:', array('std' => ''))
-			->image($prefix . 'custom_thumb', 'Custom Thumbnail', 'Use the image uploader to upload a custom navigation thumbnail')
+			->image('slider_image', $themenamefull . ' Pro Slider Image', 'Upload your image here:')
+			->text('slider_text', $themenamefull. ' Pro Slider Text', 'Enter your slider text here')
+			->checkbox('slider_hidetitle', 'Hide Title Bar', 'Click to disable the title bar on this slide:', array('std' => ''))
+			->image('slider_custom_thumb', 'Custom Thumbnail', 'Use the image uploader to upload a custom navigation thumbnail')
 			->sliderhelp('', 'Need Help?', '')
 		->end();
 
@@ -767,57 +765,6 @@ function initialize_the_meta_boxes() {
 			->color('color_id', 'color name', 'color desc', array('std' => '#e4e4e4'))
 			->image_select('image_select_id', 'Image select name', 'Image select desc', array('options' => array('url1', 'url2')))
 		->end();
-	// $meta_boxes[] = array(
-	// 	'id' => 'feature',
-	// 	'title' => $themenamefull.' Slider Options',
-	// 	'pages' => array('post'),
-
-	// 	'tabs' => array(
-	// 		array(
-	// 			'fields' => array(
-
-	// 				array(
-	// 					'name' => $themenamefull.' Pro Slider Image',
-	// 					'desc' => 'Upload your image here:',
-	// 					'id' => $prefix . 'image',
-	// 					'type' => 'image',
-	// 					'std' => ''
-	// 				),
-	// 				array(
-	// 					'name' => $themenamefull.' Pro Slider Text',
-	// 					'desc' => 'Enter your slider text here (optional):',
-	// 					'id' => $prefix . 'text',
-	// 					'type' => 'text',
-	// 					'std' => ''
-	// 				),
-	// 				array(
-	// 					'name' => 'Hide Title Bar',
-	// 					'desc' => 'Click to disable the title bar on this slide:',
-	// 					'id' => $prefix . 'hidetitle',
-	// 					'type' => 'checkbox',
-	// 					'std' => ''
-	// 				),
-	// 				
-	// 				array(
-	// 					'name' => 'Custom Thumbnail',
-	// 					'desc' => 'Use the image uploader to upload a custom navigation thumbnail',
-	// 					'id' => $prefix . 'custom_thumb',
-	// 					'type' => 'image'
-	// 				),
-	// 				
-	// 				array(
-	// 					'name' => 'Need help?',
-	// 					'desc' => '',
-	// 					'id' => '',
-	// 					'type' => 'sliderhelp',
-	// 					'std' => ''
-	// 		),
-
-
-	// 			)
-	// 		)
-	// 	)
-	// );
 	
 	$meta_boxes[] = array(
 		'id' => 'slides',
