@@ -971,7 +971,7 @@ function initialize_the_meta_boxes() {
 	$mb = new CyberChimps_Metabox('feature_new', $themenamefull.' New Page Options', array('pages' => array('page')));
 	$mb
 		->tab("Page Options ")
-			->image_select('page_sidebar', 'Select Page Layout', '',  array('options' => array('url1', 'url2')))
+			->image_select('page_sidebar', 'Select Page Layout', '',  array('options' => array('http://placehold.it/100x100', 'http://placehold.it/100x100')))
 			->section_order('page_section_order', 'Page Elements', '', array('options' => array(
 					'page_slider' => 'iFeature Slider',
 					'callout_section' => 'Callout',
@@ -986,6 +986,20 @@ function initialize_the_meta_boxes() {
 			->checkbox('hide_page_title', 'Page Title', '', array('std' => 'true'))
 			->sliderhelp('', 'Need Help?', '')
 		->tab($themenamefull." Slider Options")
+			->select('page_slider_size', 'Select Slider Size', '', array('options' => array('Full-Width', 'Half-Width')) )
+			->select('page_slider_type', 'Select Slider Type', '', array('options' => array('Custom Slides', 'Blog Posts')) )
+			->select('slider_category', 'Custom Slide Category', '', array('options' => $slideroptions) )
+			->select('slider_blog_category', 'Blog Post Category', '', array('options' => $blogoptions, 'all') )
+			->text('slider_blog_posts_number', 'Number of Featured Blog Posts', '', array('std' => '5'))
+			->text('slider_height', 'Slider Height', '', array('std' => '330'))
+			->text('slider_delay', 'Slider Delay Time (MS)', '', array('std' => '3500'))
+			->select('page_slider_animation', 'Slider Animation Type', '', array('options' => array('Random (default)', 'Slice Down', 'Slice Down-Left', 'Slice Up', 'Slice Up-Left', 'Slice Up-Down', 'Slice Up-Down-Left', 'Fold', 'Fade', 'Slide In-Right', 'Slide In-Left', 'Box Random', 'Box Rain', 'Box Rain-Reverse', 'Box Rain-Grow', 'Box Rain-Grow-Reverse')) )
+			->select('page_slider_navigation_style', 'Slider Navigation Style', '', array('options' => array('Dots (default)', 'Thumbnails', 'None')) )
+			->checkbox('hide_arrows', 'Navigation Arrows', '', array('std' => 'true'))
+			->checkbox('disable_autohide', 'Navigation Arrows Autohide', '', array('std' => 'true'))
+			->checkbox('enable_wordthumb', 'WordThumb Image Resizing', '')
+			->sliderhelp('', 'Need Help?', '')
+
 		->end();
 
 
