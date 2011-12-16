@@ -951,7 +951,7 @@ function initialize_the_meta_boxes() {
 	$mb
 		->tab("Page Options ")
 			->image_select('page_sidebar', 'Select Page Layout', '')
-			->checkbox($prefix . 'hide_page_title', 'Page Title', '', array('std' => 'true'))
+			->checkbox('hide_page_title', 'Page Title', '', array('std' => 'true'))
 			->sliderhelp('', 'Need Help?', '')
 		->end();
 
