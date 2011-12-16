@@ -479,7 +479,7 @@ class RW_Meta_Box {
 		// var_dump($field, $meta);
 		echo "<div class='image_select'>";
 		foreach($field['options'] as $key=>$option) {
-			echo "<img data-key='{$key}' class='" . ($key === $meta ? ' selected' : '' ) . "' src='{$option}' />";
+			echo "<img data-key='{$key}' class='" . ($key == $meta ? ' selected' : '' ) . "' src='{$option}' />";
 		}
 		echo "<input type='hidden' name='{$field['id']}' />";
 		echo "</div>";
