@@ -999,7 +999,14 @@ function initialize_the_meta_boxes() {
 			->checkbox('disable_autohide', 'Navigation Arrows Autohide', '', array('std' => 'true'))
 			->checkbox('enable_wordthumb', 'WordThumb Image Resizing', '')
 			->sliderhelp('', 'Need Help?', '')
-
+		->tab("Callout Options")
+			->text('callout_title', 'Callout Title', '')
+			->textarea('callout_text', 'Callout Text', '')
+			->checkbox('disable_callout_button', 'Callout Button', '', array('std' => 'true'))
+			->text('callout_button_text', 'Callout Button Text', '')
+			->text('callout_url', 'Callout Button URL', '')
+			->image('callout_image', 'Custom Button Image', '')
+			
 		->end();
 
 
