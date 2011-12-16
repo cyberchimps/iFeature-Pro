@@ -971,9 +971,21 @@ function initialize_the_meta_boxes() {
 	$mb = new CyberChimps_Metabox('feature_new', $themenamefull.' New Page Options', array('pages' => array('page')));
 	$mb
 		->tab("Page Options ")
-			->image_select('page_sidebar', 'Select Page Layout', '')
+			->image_select('page_sidebar', 'Select Page Layout', '',  array('options' => array('url1', 'url2')))
+			->section_order('page_section_order', 'Page Elements', '', array('options' => array(
+					'page_slider' => 'iFeature Slider',
+					'callout_section' => 'Callout',
+					'twitterbar_section' => 'Twitter Bar',
+					'page_section' => 'Page',
+					'box_section' => 'Boxes',
+					'carousel_section' => 'Carousel',			
+					),
+					'std' => 'page_section'
+				))
+
 			->checkbox('hide_page_title', 'Page Title', '', array('std' => 'true'))
 			->sliderhelp('', 'Need Help?', '')
+		->tab($themenamefull." Slider Options")
 		->end();
 
 
