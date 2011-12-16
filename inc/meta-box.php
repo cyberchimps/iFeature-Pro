@@ -961,7 +961,7 @@ function initialize_the_meta_boxes() {
 			array(
 				'name' => 'Select Page Layout',
 				'desc' => "Select",
-				'id' => 'page_sidebar_image',
+				'id' => 'page_sidebar',
 				'type' => 'image_select',
 				'options' => array('http://placehold.it/100x100', 'http://placehold.it/100x50'),
 				'std' => ''
