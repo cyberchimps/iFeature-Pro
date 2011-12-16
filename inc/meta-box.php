@@ -746,6 +746,27 @@ function initialize_the_meta_boxes() {
 			->sliderhelp('', 'Need Help?', '')
 		->end();
 
+	$mb = new CyberChimps_Metabox('foo', 'foo', array('pages' => array('post')));
+	$mb
+		->tab('First tab')
+			->textarea('textarea_id', 'Textarea Name', 'Textarea Desc', array('std' => 'Default'))
+			->reorder('reorder_id', 'Reorder Name', 'Reorder Desc' )
+			->select('select_id', 'Select Name', 'Select Desc', array('options' => array('Choice 1', 'Choice 2')) )
+			->section_order('so_id', 'SO Name', 'SO Desc', array('options' => array(
+					'page_slider' => 'iFeature Slider',
+					'callout_section' => 'Callout',
+					'twitterbar_section' => 'Twitter Bar',
+					'page_section' => 'Page',
+					'box_section' => 'Boxes',
+					'carousel_section' => 'Carousel',			
+					),
+					'std' => 'page_section'
+				))
+			->pagehelp('', 'Need help?', '')
+			->textarea('textarea_id', 'Textarea Name', 'Textarea Desc', array('std' => 'defaults..'))
+			->color('color_id', 'color name', 'color desc', array('std' => '#e4e4e4'))
+			->image_select('image_select_id', 'Image select name', 'Image select desc', array('options' => array('url1', 'url2')))
+		->end();
 	// $meta_boxes[] = array(
 	// 	'id' => 'feature',
 	// 	'title' => $themenamefull.' Slider Options',
