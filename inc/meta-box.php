@@ -766,7 +766,7 @@ function initialize_the_meta_boxes() {
 			->image_select('image_select_id', 'Image select name', 'Image select desc', array('options' => array('url1', 'url2')))
 		->end();
 		
-	$mb = new CyberChimps_Metabox('slides', 'Featured Post Carousel', array('pages' => array($themeslug.'_featured_posts')));
+	$mb = new CyberChimps_Metabox('Carousel', 'Featured Post Carousel', array('pages' => array($themeslug.'_featured_posts')));
 	$mb
 		->tab("Carousel Options")
 			->text('post_title', 'Featured Post Title', '')
@@ -775,55 +775,18 @@ function initialize_the_meta_boxes() {
 			->reorder('reorder_id', 'Reorder Name', 'Reorder Desc' )
 		->end();
 
-	
-	
-	$meta_boxes[] = array(
-		'id' => 'slides',
-		'title' => 'Featured Post Carousel',
-		'pages' => array($themeslug.'_featured_posts'),
-
-		'tabs' => array(
-			array(
-				'fields' => array(
-
-				
-					array(
-						'name' => 'Featured Post Title',
-						'desc' => 'Enter your title here',
-						'id' => 'post_title',
-						'type' => 'text',
-						'std' => ''
-					),
-					
-					array(
-						'name' => 'Featured Post Image',
-						'desc' => 'Upload your image here:',
-						'id' => 'post_image',
-						'type' => 'image',
-						'std' => ''
-					),
-					
-						array(
-						'name' => 'Featured Post Link',
-						'desc' => 'Enter your link here',
-						'id' => 'post_url',
-						'type' => 'text',
-						'std' => ''
-					),
-												
-					array(
-						'name' => 'Want to re-order your slides?',
-						'desc' => '',
-						'id' => '',
-						'type' => 'reorder',
-						'std' => ''
-			),
-				)
-			)
-		)
-	);
-
-
+	$mb = new CyberChimps_Metabox('slides', 'Custom Feature Slides', array('pages' => array($themeslug.'_custom_slides')));
+	$mb
+		->tab("Custom Slide Options")
+			->text('slider_caption', 'Custom Slide Caption', '')
+			->text('slider_url', 'Custom Slide Link', '')
+			->image('slider_image', 'Custom Slide Image', '')
+			->checkbox('slider_hidetitle', 'Slide Title Bar', '', array('std' => 'true'))
+			->image('slider_custom_thumb', 'Custom Thumbnail', '')
+			->sliderhelp('', 'Need Help?', '')
+			->reorder('reorder_id', 'Reorder Name', 'Reorder Desc' )
+		->end();
+		
 	$meta_boxes[] = array(
 		'id' => 'slides',
 		'title' => 'Custom Feature Slides',
