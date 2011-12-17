@@ -1,5 +1,7 @@
 <?php
 
+
+
 class CyberChimps_Metabox {
 	function __construct($id, $title, $options) {
 		$this->id = $id;

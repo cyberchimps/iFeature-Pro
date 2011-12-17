@@ -744,7 +744,7 @@ function initialize_the_meta_boxes() {
 			->sliderhelp('', 'Need Help?', '')
 		->end();
 
-	$mb = new CyberChimps_Metabox('foo', 'foo', array('pages' => array('post')));
+	$mb = new CyberChimps_Metabox('foo', 'foo', array('pages' => array($themeslug.'_custom_slides')));
 	$mb
 		->tab('First tab')
 			->textarea('textarea_id', 'Textarea Name', 'Textarea Desc', array('std' => 'Default'))
@@ -765,6 +765,17 @@ function initialize_the_meta_boxes() {
 			->color('color_id', 'color name', 'color desc', array('std' => '#e4e4e4'))
 			->image_select('image_select_id', 'Image select name', 'Image select desc', array('options' => array('url1', 'url2')))
 		->end();
+		
+	$mb = new CyberChimps_Metabox('slides', 'Featured Post Carousel', array('pages' => array($themeslug.'_featured_posts')));
+	$mb
+		->tab("Carousel Options")
+			->text('post_title', 'Featured Post Title', '')
+			->image('post_image', 'Featured Post Image', '')
+			->text('post_url', 'Featured Post URL', '')
+			->reorder('reorder_id', 'Reorder Name', 'Reorder Desc' )
+		->end();
+
+	
 	
 	$meta_boxes[] = array(
 		'id' => 'slides',
