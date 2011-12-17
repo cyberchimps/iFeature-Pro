@@ -730,29 +730,72 @@ add_action('init', 'initialize_the_meta_boxes');
 
 function initialize_the_meta_boxes() {
 
-	global  $themename, $themeslug, $themenamefull, $options;
+	global  $themename, $themeslug, $themenamefull, $options; // call globals.
 	
-	$prefix = 'slider_';
+	// Call taxonomies for select options
+	
+	$carouselterms = get_terms('carousel_categories', 'hide_empty=0');
+	$carouseloptions = array();
 
+		foreach($carouselterms as $term) {
+			$carouseloptions[$term->slug] = $term->name;
+		}
+
+	$terms = get_terms('slide_categories', 'hide_empty=0');
+	$slideroptions = array();
+
+		foreach($terms as $term) {
+			$slideroptions[$term->slug] = $term->name;
+		}
+
+	$terms2 = get_terms('category', 'hide_empty=0');
+	$blogoptions = array();
+	$blogoptions['all'] = "All";
+
+		foreach($terms2 as $term) {
+			$blogoptions[$term->slug] = $term->name;
+		}
+	
+	// End taxonomy call
+	
 	$meta_boxes = array();
 
-	$mb = new CyberChimps_Metabox('feature_new', $themenamefull.' Slider Options New', array('pages' => array('post')));
+	$mb = new CyberChimps_Metabox('post_slide_options', $themenamefull.' Slider Options', array('pages' => array('post')));
 	$mb
 		->tab("Slider Options")
-			->image($prefix . 'image', $themenamefull . ' Pro Slider Image', 'Upload your image here:')
-			->text($prefix . 'text', $themenamefull. ' Pro Slider Text', 'Enter your slider text here')
-			->checkbox($prefix . 'hidetitle', 'Hide Title Bar', 'Click to disable the title bar on this slide:', array('std' => ''))
-			->image($prefix . 'custom_thumb', 'Custom Thumbnail', 'Use the image uploader to upload a custom navigation thumbnail')
+			->image('slider_image', $themenamefull . ' Pro Slider Image', 'Upload your image here:')
+			->text('slider_text', $themenamefull. ' Pro Slider Text', 'Enter your slider text here')
+			->checkbox('slider_hidetitle', 'Hide Title Bar', 'Click to disable the title bar on this slide:', array('std' => ''))
+			->image('slider_custom_thumb', 'Custom Thumbnail', 'Use the image uploader to upload a custom navigation thumbnail')
 			->sliderhelp('', 'Need Help?', '')
 		->end();
-
-	$mb = new CyberChimps_Metabox('foo', 'foo', array('pages' => array('post')));
+		
+	$mb = new CyberChimps_Metabox('Carousel', 'Featured Post Carousel', array('pages' => array($themeslug.'_featured_posts')));
 	$mb
-		->tab('First tab')
-			->textarea('textarea_id', 'Textarea Name', 'Textarea Desc', array('std' => 'Default'))
+		->tab("Carousel Options")
+			->text('post_title', 'Featured Post Title', '')
+			->image('post_image', 'Featured Post Image', '')
+			->text('post_url', 'Featured Post URL', '')
 			->reorder('reorder_id', 'Reorder Name', 'Reorder Desc' )
-			->select('select_id', 'Select Name', 'Select Desc', array('options' => array('Choice 1', 'Choice 2')) )
-			->section_order('so_id', 'SO Name', 'SO Desc', array('options' => array(
+		->end();
+
+	$mb = new CyberChimps_Metabox('slides', 'Custom Feature Slides', array('pages' => array($themeslug.'_custom_slides')));
+	$mb
+		->tab("Custom Slide Options")
+			->text('slider_caption', 'Custom Slide Caption', '')
+			->text('slider_url', 'Custom Slide Link', '')
+			->image('slider_image', 'Custom Slide Image', '')
+			->checkbox('slider_hidetitle', 'Slide Title Bar', '', array('std' => 'true'))
+			->image('slider_custom_thumb', 'Custom Thumbnail', '')
+			->sliderhelp('', 'Need Help?', '')
+			->reorder('reorder_id', 'Reorder Name', 'Reorder Desc' )
+		->end();
+
+	$mb = new CyberChimps_Metabox('pages', $themenamefull.' Page Options', array('pages' => array('page')));
+	$mb
+		->tab("Page Options ")
+			->image_select('page_sidebar', 'Select Page Layout', '',  array('options' => array('http://placehold.it/100x100', 'http://placehold.it/100x100')))
+			->section_order('page_section_order', 'Page Elements', '', array('options' => array(
 					'page_slider' => 'iFeature Slider',
 					'callout_section' => 'Callout',
 					'twitterbar_section' => 'Twitter Bar',
@@ -762,589 +805,51 @@ function initialize_the_meta_boxes() {
 					),
 					'std' => 'page_section'
 				))
-			->pagehelp('', 'Need help?', '')
-			->textarea('textarea_id', 'Textarea Name', 'Textarea Desc', array('std' => 'defaults..'))
-			->color('color_id', 'color name', 'color desc', array('std' => '#e4e4e4'))
-			->image_select('image_select_id', 'Image select name', 'Image select desc', array('options' => array('url1', 'url2')))
-		->end();
-	// $meta_boxes[] = array(
-	// 	'id' => 'feature',
-	// 	'title' => $themenamefull.' Slider Options',
-	// 	'pages' => array('post'),
 
-	// 	'tabs' => array(
-	// 		array(
-	// 			'fields' => array(
-
-	// 				array(
-	// 					'name' => $themenamefull.' Pro Slider Image',
-	// 					'desc' => 'Upload your image here:',
-	// 					'id' => $prefix . 'image',
-	// 					'type' => 'image',
-	// 					'std' => ''
-	// 				),
-	// 				array(
-	// 					'name' => $themenamefull.' Pro Slider Text',
-	// 					'desc' => 'Enter your slider text here (optional):',
-	// 					'id' => $prefix . 'text',
-	// 					'type' => 'text',
-	// 					'std' => ''
-	// 				),
-	// 				array(
-	// 					'name' => 'Hide Title Bar',
-	// 					'desc' => 'Click to disable the title bar on this slide:',
-	// 					'id' => $prefix . 'hidetitle',
-	// 					'type' => 'checkbox',
-	// 					'std' => ''
-	// 				),
-	// 				
-	// 				array(
-	// 					'name' => 'Custom Thumbnail',
-	// 					'desc' => 'Use the image uploader to upload a custom navigation thumbnail',
-	// 					'id' => $prefix . 'custom_thumb',
-	// 					'type' => 'image'
-	// 				),
-	// 				
-	// 				array(
-	// 					'name' => 'Need help?',
-	// 					'desc' => '',
-	// 					'id' => '',
-	// 					'type' => 'sliderhelp',
-	// 					'std' => ''
-	// 		),
-
-
-	// 			)
-	// 		)
-	// 	)
-	// );
-	
-	$meta_boxes[] = array(
-		'id' => 'slides',
-		'title' => 'Featured Post Carousel',
-		'pages' => array($themeslug.'_featured_posts'),
-
-		'tabs' => array(
-			array(
-				'fields' => array(
-
-				
-					array(
-						'name' => 'Featured Post Title',
-						'desc' => 'Enter your title here',
-						'id' => 'post_title',
-						'type' => 'text',
-						'std' => ''
-					),
-					
-					array(
-						'name' => 'Featured Post Image',
-						'desc' => 'Upload your image here:',
-						'id' => 'post_image',
-						'type' => 'image',
-						'std' => ''
-					),
-					
-						array(
-						'name' => 'Featured Post Link',
-						'desc' => 'Enter your link here',
-						'id' => 'post_url',
-						'type' => 'text',
-						'std' => ''
-					),
-												
-					array(
-						'name' => 'Want to re-order your slides?',
-						'desc' => '',
-						'id' => '',
-						'type' => 'reorder',
-						'std' => ''
-			),
-				)
-			)
-		)
-	);
-
-
-	$meta_boxes[] = array(
-		'id' => 'slides',
-		'title' => 'Custom Feature Slides',
-		'pages' => array($themeslug.'_custom_slides'),
-
-		'tabs' => array(
-			array(
-				'fields' => array(
-
-					
-					array(
-						'name' => 'Custom Slide Caption',
-						'desc' => 'Enter your caption here',
-						'id' => $prefix . 'caption',
-						'type' => 'text',
-						'std' => ''
-					),
-					array(
-						'name' => 'Custom Slide Link',
-						'desc' => 'Enter your link here',
-						'id' => $prefix . 'url',
-						'type' => 'text',
-						'std' => ''
-					),
-					array(
-						'name' => 'Custom Slide Image',
-						'desc' => 'Upload your image here:',
-						'id' => $prefix . 'image',
-						'type' => 'image',
-						'std' => ''
-					),
-					array(
-						'name' => 'Hide Title Bar',
-						'desc' => 'Click to disable the title bar on this post:',
-						'id' => $prefix . 'hidetitle',
-						'type' => 'checkbox',
-						'std' => ''
-					),
-
-					array(
-						'name' => 'Custom Thumbnail',
-						'desc' => 'Use the image uploader to upload a custom navigation thumbnail',
-						'id' => $prefix . 'custom_thumb',
-						'type' => 'image'
-					),
-					
-					array(
-						'name' => 'Need help?',
-						'desc' => '',
-						'id' => '',
-						'type' => 'sliderhelp',
-						'std' => ''
-			),
-					
-					array(
-						'name' => 'Want to re-order your slides?',
-						'desc' => '',
-						'id' => '',
-						'type' => 'reorder',
-						'std' => ''
-			),
-				)
-			)
-		)
-	);
-
-	$carouselterms = get_terms('carousel_categories', 'hide_empty=0');
-
-	$carouseloptions = array();
-
-	foreach($carouselterms as $term) {
-
-		$carouseloptions[$term->slug] = $term->name;
-
-	}
-
-
-	$terms = get_terms('slide_categories', 'hide_empty=0');
-
-	$slideroptions = array();
-
-	foreach($terms as $term) {
-
-		$slideroptions[$term->slug] = $term->name;
-
-	}
-
-	
-	$terms2 = get_terms('category', 'hide_empty=0');
-
-	$blogoptions = array();
-	
-	$blogoptions['all'] = "All";
-
-	foreach($terms2 as $term) {
-
-		$blogoptions[$term->slug] = $term->name;
-
-	}
-
-	$meta_boxes = array();
-
-	$mb = new CyberChimps_Metabox('feature_new', $themenamefull.' New Page Options', array('pages' => array('page')));
-	$mb
-		->tab("Page Options ")
-			->image_select('page_sidebar', 'Select Page Layout', '')
 			->checkbox('hide_page_title', 'Page Title', '', array('std' => 'true'))
 			->sliderhelp('', 'Need Help?', '')
+		->tab($themenamefull." Slider Options")
+			->select('page_slider_size', 'Select Slider Size', '', array('options' => array('Full-Width', 'Half-Width')) )
+			->select('page_slider_type', 'Select Slider Type', '', array('options' => array('Custom Slides', 'Blog Posts')) )
+			->select('slider_category', 'Custom Slide Category', '', array('options' => $slideroptions) )
+			->select('slider_blog_category', 'Blog Post Category', '', array('options' => $blogoptions, 'all') )
+			->text('slider_blog_posts_number', 'Number of Featured Blog Posts', '', array('std' => '5'))
+			->text('slider_height', 'Slider Height', '', array('std' => '330'))
+			->text('slider_delay', 'Slider Delay Time (MS)', '', array('std' => '3500'))
+			->select('page_slider_animation', 'Slider Animation Type', '', array('options' => array('Random (default)', 'Slice Down', 'Slice Down-Left', 'Slice Up', 'Slice Up-Left', 'Slice Up-Down', 'Slice Up-Down-Left', 'Fold', 'Fade', 'Slide In-Right', 'Slide In-Left', 'Box Random', 'Box Rain', 'Box Rain-Reverse', 'Box Rain-Grow', 'Box Rain-Grow-Reverse')) )
+			->select('page_slider_navigation_style', 'Slider Navigation Style', '', array('options' => array('Dots (default)', 'Thumbnails', 'None')) )
+			->checkbox('hide_arrows', 'Navigation Arrows', '', array('std' => 'true'))
+			->checkbox('disable_autohide', 'Navigation Arrows Autohide', '', array('std' => 'true'))
+			->checkbox('enable_wordthumb', 'WordThumb Image Resizing', '')
+			->sliderhelp('', 'Need Help?', '')
+		->tab("Callout Options")
+			->text('callout_title', 'Callout Title', '')
+			->textarea('callout_text', 'Callout Text', '')
+			->checkbox('disable_callout_button', 'Callout Button', '', array('std' => 'true'))
+			->text('callout_button_text', 'Callout Button Text', '')
+			->text('callout_url', 'Callout Button URL', '')
+			->image('callout_image', 'Custom Button Image', '')
+			->color('custom_callout_color', 'Custom Background Color', '')
+			->color('custom_callout_title_color', 'Custom Title Color', '')
+			->color('custom_callout_text_color', 'Custom Text Color', '')
+			->color('custom_callout_button_color', 'Custom Button Color', '')
+			->pagehelp('', 'Need help?', '')
+		->tab("Twitter Options")
+			->text('twitter_handle', 'Twitter Handle', 'Enter your Twitter handle if using the Twitter bar - Requires <a href="http://wordpress.org/extend/plugins/twitter-for-wordpress/" target="_blank">Twitter for WordPress Plugin')
+		->tab("Carousel Options")
+			->select('carousel_category', 'Carousel Category', '', array('options' => $carouseloptions) )
+		->tab("SEO Options")
+			->text('seo_title', 'SEO Title', '')
+			->textarea('seo_description', 'SEO Description', '')
+			->textarea('seo_keywords', 'SEO Keywords', '')
+			->pagehelp('', 'Need help?', '')
 		->end();
-
-
-	$meta_boxes[] = array(
-		'id' => 'pages',
-		'title' => $themenamefull.' Page Options',
-		'pages' => array('page'),
-
-		'tabs' => array(
-
-		array(
-				'title' => 'Page Options',
-				'fields' => array(
-					
-			array(
-				'name' => 'Select Page Layout',
-				'desc' => "Select",
-				'id' => 'page_sidebar',
-				'type' => 'image_select',
-				'options' => array('http://placehold.it/100x100', 'http://placehold.it/100x50'),
-				'std' => ''
-			),
-			 
-			 array(
-				'name' => "Page Elements",
-				'desc' => "",
-				'id' => 'page_section_order',
-				'type' => 'section_order',
-				'options' => array(
-					'page_slider' => "iFeature Slider",
-					'callout_section' => "Callout",
-					'twitterbar_section' => "Twitter Bar",
-					'page_section' => "Page",
-					'box_section' => "Boxes",
-					'carousel_section' => "Carousel",			
-					),
-					'std' => 'page_section'
-				),
-
-			
-		
-		
-		
-			array(
-				'name' => 'Page Title',
-				'desc' => '',
-				'id' => 'hide_page_title',
-				'type' => 'checkbox',
-				'std' => 'true'
-			),
-			
-				array(
-				'name' => 'Need help?',
-				'desc' => '',
-				'id' => '',
-				'type' => 'pagehelp',
-				'std' => ''
-			),
-
-			)),
-
-			array(
-				'title' => $themenamefull." Slider Options",
-				'fields' => array(
-
-			array(
-				'name' => 'Select Slider Size',
-				'desc' => 'Select the size of the slider',
-				'id' => 'page_slider_size',
-				'type' => 'select',
-				'options' => array('Full-Width', 'Half-Width'),
-				'std' => ''
-			 ),
-
-			array(
-				'name' => 'Select Slider Type',
-				'desc' => 'Select the type of slider',
-				'id' => 'page_slider_type',
-				'type' => 'select',
-				'options' => array('Custom Slides', 'Blog Posts'),
-				'std' => ''
-			),
-
-				array(
-				'name' => 'Custom Slide Category',
-				'desc' => 'Select the slide category you would like to use',
-				'id' => $prefix . 'category',
-				'type' => 'select',
-				'options' => $slideroptions,
-				'std' => ''
-			),	
-			
-			array(
-				'name' => 'Blog Post Category',
-				'desc' => 'Select the blog post category you would like to use',
-				'id' => 'slider_blog_category',
-				'type' => 'select',
-				'options' => $blogoptions, 'all',
-				'std' => ''
-			),	
-			 
-			array(
-				'name' => 'Number of featured blog posts',
-				'desc' => 'Default is 5 (for blog posts only)',
-				'id' => 'slider_blog_posts_number',
-				'type' => 'text',
-				'std' => ''
-			), 
-	
-			array(
-				'name' => 'Slider Height',
-				'desc' => 'Default is 300',
-				'id' => 'slider_height',
-				'type' => 'text',
-				'std' => ''
-			),
-			
-			array(
-				'name' => 'Slider Delay Time (in milliseconds)',
-				'desc' => 'Default is 3500',
-				'id' => 'slider_delay',
-				'type' => 'text',
-				'std' => ''
-			),
-			
-			array(
-				'name' => 'Select Slider Animation Type',
-				'desc' => 'Default is random',
-				'id' => 'page_slider_animation',
-				'type' => 'select',
-				'options' => array('Random (default)', 'Slice Down', 'Slice Down-Left', 'Slice Up', 'Slice Up-Left', 'Slice Up-Down', 'Slice Up-Down-Left', 'Fold', 'Fade', 'Slide In-Right', 'Slide In-Left', 'Box Random', 'Box Rain', 'Box Rain-Reverse', 'Box Rain-Grow', 'Box Rain-Grow-Reverse'),
-				'std' => ''
-			 ),
-			 
-			 array(
-				'name' => 'Select Slider Navigation Style',
-				'desc' => 'Default is dots',
-				'id' => 'page_slider_navigation_style',
-				'type' => 'select',
-				'options' => array('Dots (default)', 'Thumbnails', 'None'),
-				'std' => ''
-			 ),
-			 
-			 array(
-				'name' => 'Select Slider Caption Style',
-				'desc' => 'Default is none',
-				'id' => 'page_slider_caption_style',
-				'type' => 'select',
-				'options' => array('None (default)', 'Bottom', 'Left', 'Right'),
-				'std' => ''
-			 ),
-			 
-			 array(
-				'name' => 'Hide Arrows',
-				'desc' => 'Check this box to hide the navigation arrows on the slider',
-				'id' => 'hide_arrows',
-				'type' => 'checkbox',
-				'std' => ''
-			),
-			
-			array(
-				'name' => 'Disable Arrow Auto-Hide',
-				'desc' => 'Check this box to disable the navigation arrow auto-hide',
-				'id' => 'disable_autohide',
-				'type' => 'checkbox',
-				'std' => ''
-			),
-			
-			array(
-				'name' => 'Enable WordThumb Image Resizing',
-				'desc' => 'Check this box to enable the use of WordThumb image resizing.',
-				'id' => 'enable_wordthumb',
-				'type' => 'checkbox',
-				'std' => ''
-			),
-			
-			array(
-				'name' => 'Need help?',
-				'desc' => '',
-				'id' => '',
-				'type' => 'pagehelp',
-				'std' => ''
-			),
-
-				)),
-
-
-			array(
-				'title' => 'Callout Options',
-				'fields' => array(
-			
-					
-				array(
-						'name' => 'Title',
-						'desc' => 'Enter your Callout Section title',
-						'id' => 'callout_title',
-						'type' => 'text',
-						'std' => ''
-					),
-					
-				array(
-						'name' => 'Callout Text',
-						'desc' => 'Enter your Callout Section text',
-						'id' => 'callout_text',
-						'type' => 'textarea',
-						'std' => ''
-					),
-					
-				array(
-						'name' => 'Disable Callout Button',
-						'desc' => 'Check this box to disable the callout button',
-						'id' => 'disable_callout_button',
-						'type' => 'checkbox',
-						'std' => ''
-					),
-					
-				array(
-						'name' => 'Callout Button Text',
-						'desc' => 'Enter the text for your Callout Button',
-						'id' => 'callout_button_text',
-						'type' => 'text',
-						'std' => ''
-					),
-				
-				array(
-						'name' => 'Callout Button URL',
-						'desc' => 'Enter the link for your Callout Button',
-						'id' => 'callout_url',
-						'type' => 'text',
-						'std' => ''
-					),
-				
-				array(
-						'name' => 'Custom Callout Button Image',
-						'desc' => 'Upload a custom Callout Buttom image here:',
-						'id' => 'callout_image',
-						'type' => 'image',
-						'std' => ''
-					),
-					
-				
-				array(
-						'name' => 'Custom Background Color',
-						'desc' => 'Use the color picker to select a custom background color for the Callout Section',
-						'id' => 'custom_callout_color',
-						'type' => 'color'
-					),
-					
-				array(
-						'name' => 'Callout Title Color',
-						'desc' => 'Use the color picker to select the callout section title color',
-						'id' => 'custom_callout_title_color',
-						'type' => 'color'
-					),
-
-				array(
-						'name' => 'Callout Text Color',
-						'desc' => 'Use the color picker to select the callout section text color',
-						'id' => 'custom_callout_text_color',
-						'type' => 'color'
-					),
-					
-				array(
-						'name' => 'Callout Button Color',
-						'desc' => 'Use the color picker to select the callout button color',
-						'id' => 'custom_callout_button_color',
-						'type' => 'color'
-					),
-
-				array(
-					'name' => 'Need help?',
-					'desc' => '',
-					'id' => '',
-					'type' => 'pagehelp',
-					'std' => ''
-					),
-
-				)),
-				
-				array(
-				'title' => 'Twitter Options',
-				'fields' => array(
-			
-					
-				array(
-				'name' => 'Twitter Handle',
-				'desc' => 'Enter your Twitter handle if using the Twitter bar - Requires <a href="http://wordpress.org/extend/plugins/twitter-for-wordpress/" target="_blank">Twitter for WordPress Plugin',
-				'id' => 'twitter_handle',
-				'type' => 'text',
-				'std' => ''
-			),
-					
-				
-				)),
-
-				array(
-				'title' => 'Carousel Options',
-				'fields' => array(
-			
-		
-					
-				array(
-				'name' => 'Carousel Category',
-				'desc' => 'Select the category you would like to use.',
-				'id' => 'carousel_category',
-				'type' => 'select',
-				'options' => $carouseloptions, 'all',
-				'std' => ''
-			),	
-				
-				)),
-
-				
-				
-				array(
-				'title' => "SEO Options",
-				'fields' => array(
-				array(
-						'name' => 'Title',
-						'desc' => 'Enter your title',
-						'id' => 'seo_title',
-						'type' => 'text',
-						'std' => ''
-					),
-					array(
-						'name' => 'Description',
-						'desc' => 'Enter your description',
-						'id' => 'seo_description',
-						'type' => 'textarea',
-						'std' => ''
-					),
-
-					array(
-						'name' => 'Keywords',
-						'desc' => 'Enter your keywords',
-						'id' => 'seo_keywords',
-						'type' => 'text',
-						'std' => ''
-					),	 
-				
-					array(
-						'name' => 'Need help?',
-						'desc' => '',
-						'id' => '',
-						'type' => 'pagehelp',
-						'std' => ''
-			),
-
-		)),
-		
-
-		)
-	);
-
 
 	foreach ($meta_boxes as $meta_box) {
 		$my_box = new RW_Meta_Box_Taxonomy($meta_box);
 	}
 
-	$metabox = new CyberChimps_Metabox('the_id', 'the_title', array('pages' => array('post')));
-
-	$metabox
-		->tab("First Tab")
-			->image("image_id", "image_name", "image_desc")
-		->tab("Second Tab")
-			->image("image_id", "image_name", "image_desc")
-		->end()
-	;
-
 }
-
 
 add_action( 'admin_print_styles-post-new.php', 'metabox_enqueue' );
 add_action( 'admin_print_styles-post.php', 'metabox_enqueue' );
@@ -1363,11 +868,9 @@ function metabox_enqueue() {
 	wp_enqueue_script('jf-metabox-tabs');
 	wp_enqueue_script('jquerycustom', get_template_directory_uri().'/core/library/js/jquery-custom.js', array('jquery') );
 	
-	
 	wp_enqueue_style('metabox-tabs-css');
 }
 
 /********************* END DEFINITION OF META BOXES ***********************/
-
 
 ?>
