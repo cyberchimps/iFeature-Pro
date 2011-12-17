@@ -730,11 +730,37 @@ add_action('init', 'initialize_the_meta_boxes');
 
 function initialize_the_meta_boxes() {
 
-	global  $themename, $themeslug, $themenamefull, $options;
+	global  $themename, $themeslug, $themenamefull, $options; // call globals.
+	
+	// Call taxonomies for select options
+	
+	$carouselterms = get_terms('carousel_categories', 'hide_empty=0');
+	$carouseloptions = array();
+
+		foreach($carouselterms as $term) {
+			$carouseloptions[$term->slug] = $term->name;
+		}
+
+	$terms = get_terms('slide_categories', 'hide_empty=0');
+	$slideroptions = array();
+
+		foreach($terms as $term) {
+			$slideroptions[$term->slug] = $term->name;
+		}
+
+	$terms2 = get_terms('category', 'hide_empty=0');
+	$blogoptions = array();
+	$blogoptions['all'] = "All";
+
+		foreach($terms2 as $term) {
+			$blogoptions[$term->slug] = $term->name;
+		}
+	
+	// End taxonomy call
 	
 	$meta_boxes = array();
 
-	$mb = new CyberChimps_Metabox('feature_new', $themenamefull.' Slider Options', array('pages' => array('post')));
+	$mb = new CyberChimps_Metabox('post_slide_options', $themenamefull.' Slider Options', array('pages' => array('post')));
 	$mb
 		->tab("Slider Options")
 			->image('slider_image', $themenamefull . ' Pro Slider Image', 'Upload your image here:')
@@ -742,28 +768,6 @@ function initialize_the_meta_boxes() {
 			->checkbox('slider_hidetitle', 'Hide Title Bar', 'Click to disable the title bar on this slide:', array('std' => ''))
 			->image('slider_custom_thumb', 'Custom Thumbnail', 'Use the image uploader to upload a custom navigation thumbnail')
 			->sliderhelp('', 'Need Help?', '')
-		->end();
-
-	$mb = new CyberChimps_Metabox('foo', 'foo', array('pages' => array($themeslug.'_custom_slides')));
-	$mb
-		->tab('First tab')
-			->textarea('textarea_id', 'Textarea Name', 'Textarea Desc', array('std' => 'Default'))
-			->reorder('reorder_id', 'Reorder Name', 'Reorder Desc' )
-			->select('select_id', 'Select Name', 'Select Desc', array('options' => array('Choice 1', 'Choice 2')) )
-			->section_order('so_id', 'SO Name', 'SO Desc', array('options' => array(
-					'page_slider' => 'iFeature Slider',
-					'callout_section' => 'Callout',
-					'twitterbar_section' => 'Twitter Bar',
-					'page_section' => 'Page',
-					'box_section' => 'Boxes',
-					'carousel_section' => 'Carousel',			
-					),
-					'std' => 'page_section'
-				))
-			->pagehelp('', 'Need help?', '')
-			->textarea('textarea_id', 'Textarea Name', 'Textarea Desc', array('std' => 'defaults..'))
-			->color('color_id', 'color name', 'color desc', array('std' => '#e4e4e4'))
-			->image_select('image_select_id', 'Image select name', 'Image select desc', array('options' => array('url1', 'url2')))
 		->end();
 		
 	$mb = new CyberChimps_Metabox('Carousel', 'Featured Post Carousel', array('pages' => array($themeslug.'_featured_posts')));
@@ -786,108 +790,6 @@ function initialize_the_meta_boxes() {
 			->sliderhelp('', 'Need Help?', '')
 			->reorder('reorder_id', 'Reorder Name', 'Reorder Desc' )
 		->end();
-		
-	$meta_boxes[] = array(
-		'id' => 'slides',
-		'title' => 'Custom Feature Slides',
-		'pages' => array($themeslug.'_custom_slides'),
-
-		'tabs' => array(
-			array(
-				'fields' => array(
-
-					
-					array(
-						'name' => 'Custom Slide Caption',
-						'desc' => 'Enter your caption here',
-						'id' => 'slider_caption',
-						'type' => 'text',
-						'std' => ''
-					),
-					array(
-						'name' => 'Custom Slide Link',
-						'desc' => 'Enter your link here',
-						'id' => 'slider_url',
-						'type' => 'text',
-						'std' => ''
-					),
-					array(
-						'name' => 'Custom Slide Image',
-						'desc' => 'Upload your image here:',
-						'id' => 'slider_image',
-						'type' => 'image',
-						'std' => ''
-					),
-					array(
-						'name' => 'Hide Title Bar',
-						'desc' => 'Click to disable the title bar on this post:',
-						'id' => 'slider_hidetitle',
-						'type' => 'checkbox',
-						'std' => ''
-					),
-
-					array(
-						'name' => 'Custom Thumbnail',
-						'desc' => 'Use the image uploader to upload a custom navigation thumbnail',
-						'id' => 'slider_custom_thumb',
-						'type' => 'image'
-					),
-					
-					array(
-						'name' => 'Need help?',
-						'desc' => '',
-						'id' => '',
-						'type' => 'sliderhelp',
-						'std' => ''
-			),
-					
-					array(
-						'name' => 'Want to re-order your slides?',
-						'desc' => '',
-						'id' => '',
-						'type' => 'reorder',
-						'std' => ''
-			),
-				)
-			)
-		)
-	);
-
-	$carouselterms = get_terms('carousel_categories', 'hide_empty=0');
-
-	$carouseloptions = array();
-
-	foreach($carouselterms as $term) {
-
-		$carouseloptions[$term->slug] = $term->name;
-
-	}
-
-
-	$terms = get_terms('slide_categories', 'hide_empty=0');
-
-	$slideroptions = array();
-
-	foreach($terms as $term) {
-
-		$slideroptions[$term->slug] = $term->name;
-
-	}
-
-	
-	$terms2 = get_terms('category', 'hide_empty=0');
-
-	$blogoptions = array();
-	
-	$blogoptions['all'] = "All";
-
-	foreach($terms2 as $term) {
-
-		$blogoptions[$term->slug] = $term->name;
-
-	}
-
-	$meta_boxes = array();
 
 	$mb = new CyberChimps_Metabox('pages', $themenamefull.' Page Options', array('pages' => array('page')));
 	$mb
@@ -947,18 +849,7 @@ function initialize_the_meta_boxes() {
 		$my_box = new RW_Meta_Box_Taxonomy($meta_box);
 	}
 
-	$metabox = new CyberChimps_Metabox('the_id', 'the_title', array('pages' => array('post')));
-
-	$metabox
-		->tab("First Tab")
-			->image("image_id", "image_name", "image_desc")
-		->tab("Second Tab")
-			->image("image_id", "image_name", "image_desc")
-		->end()
-	;
-
 }
-
 
 add_action( 'admin_print_styles-post-new.php', 'metabox_enqueue' );
 add_action( 'admin_print_styles-post.php', 'metabox_enqueue' );
@@ -977,11 +868,9 @@ function metabox_enqueue() {
 	wp_enqueue_script('jf-metabox-tabs');
 	wp_enqueue_script('jquerycustom', get_template_directory_uri().'/core/library/js/jquery-custom.js', array('jquery') );
 	
-	
 	wp_enqueue_style('metabox-tabs-css');
 }
 
 /********************* END DEFINITION OF META BOXES ***********************/
-
 
 ?>
