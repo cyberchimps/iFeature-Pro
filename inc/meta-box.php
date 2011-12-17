@@ -793,7 +793,7 @@ function initialize_the_meta_boxes() {
 
 	$mb = new CyberChimps_Metabox('pages', $themenamefull.' Page Options', array('pages' => array('page')));
 	$mb
-		->tab("Page Options ")
+		->tab("Page Options")
 			->image_select('page_sidebar', 'Select Page Layout', '',  array('options' => array('http://placehold.it/100x100', 'http://placehold.it/100x100')))
 			->section_order('page_section_order', 'Page Elements', '', array('options' => array(
 					'page_slider' => 'iFeature Slider',
