@@ -193,7 +193,7 @@ class RW_Meta_Box {
 		echo '<table class="form-table">';
 		foreach($fields as $field) {
 			$meta = get_post_meta($post->ID, $field['id'], !(isset($field['multiple']) && $field['multiple']));
-			$meta = !empty($meta) ? $meta : $field['std'];
+			$meta = !empty($meta) ? $meta : (isset($field['std']) ? $field['std'] : '');
 			
 			echo '<tr class="'.$field['id'].'">';
 			// call separated methods for displaying each type of field
