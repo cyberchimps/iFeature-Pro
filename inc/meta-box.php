@@ -486,6 +486,17 @@ class RW_Meta_Box {
 		// $this->show_field_end($field, $meta);
 	}
 
+	function show_field_single_image($field, $meta) {
+		$this->show_field_begin($field, $meta);
+
+		if($meta) {
+			echo "<img src='{$meta}' />";
+		}
+
+		echo "<input type='file' name='{$field['id']}' />";
+		$this->show_field_end($field, $meta);
+	}
+
 	/******************** END META BOX FIELDS **********************/
 
 	/******************** BEGIN META BOX SAVE **********************/
@@ -594,6 +605,14 @@ class RW_Meta_Box {
 	// Save images, call save_field_file, cause they use the same mechanism
 	function save_field_image($post_id, $field, $old, $new) {
 		$this->save_field_file($post_id, $field, $old, $new);
+	}
+
+	function save_field_single_image($post_id, $field, $old, $new) {
+		if(isset($_FILES[$field['id']])) {
+			$overrides = array('test_form' => false);
+			$file = wp_handle_upload($_FILES[$field['id']], $overrides);
+			update_post_meta($post_id, $field['id'], $file['url']);
+		}
 	}
 
 	/******************** END META BOX SAVE **********************/
@@ -763,10 +782,10 @@ function initialize_the_meta_boxes() {
 	$mb = new CyberChimps_Metabox('post_slide_options', $themenamefull.' Slider Options', array('pages' => array('post')));
 	$mb
 		->tab("Slider Options")
-			->image('slider_image', $themenamefull . ' Pro Slider Image', 'Upload your image here:')
+			->single_image('slider_image', $themenamefull . ' Pro Slider Image', 'Upload your image here:')
 			->text('slider_text', $themenamefull. ' Pro Slider Text', 'Enter your slider text here')
 			->checkbox('slider_hidetitle', 'Hide Title Bar', 'Click to disable the title bar on this slide:', array('std' => ''))
-			->image('slider_custom_thumb', 'Custom Thumbnail', 'Use the image uploader to upload a custom navigation thumbnail')
+			->single_image('slider_custom_thumb', 'Custom Thumbnail', 'Use the image uploader to upload a custom navigation thumbnail')
 			->sliderhelp('', 'Need Help?', '')
 		->end();
 		
@@ -774,7 +793,7 @@ function initialize_the_meta_boxes() {
 	$mb
 		->tab("Carousel Options")
 			->text('post_title', 'Featured Post Title', '')
-			->image('post_image', 'Featured Post Image', '')
+			->single_image('post_image', 'Featured Post Image', '')
 			->text('post_url', 'Featured Post URL', '')
 			->reorder('reorder_id', 'Reorder Name', 'Reorder Desc' )
 		->end();
@@ -784,9 +803,9 @@ function initialize_the_meta_boxes() {
 		->tab("Custom Slide Options")
 			->text('slider_caption', 'Custom Slide Caption', '')
 			->text('slider_url', 'Custom Slide Link', '')
-			->image('slider_image', 'Custom Slide Image', '')
+			->single_image('slider_image', 'Custom Slide Image', '')
 			->checkbox('slider_hidetitle', 'Slide Title Bar', '', array('std' => 'true'))
-			->image('slider_custom_thumb', 'Custom Thumbnail', '')
+			->single_image('slider_custom_thumb', 'Custom Thumbnail', '')
 			->sliderhelp('', 'Need Help?', '')
 			->reorder('reorder_id', 'Reorder Name', 'Reorder Desc' )
 		->end();
@@ -828,7 +847,7 @@ function initialize_the_meta_boxes() {
 			->checkbox('disable_callout_button', 'Callout Button', '', array('std' => 'true'))
 			->text('callout_button_text', 'Callout Button Text', '')
 			->text('callout_url', 'Callout Button URL', '')
-			->image('callout_image', 'Custom Button Image', '')
+			->single_image('callout_image', 'Custom Button Image', '')
 			->color('custom_callout_color', 'Custom Background Color', '')
 			->color('custom_callout_title_color', 'Custom Title Color', '')
 			->color('custom_callout_text_color', 'Custom Text Color', '')

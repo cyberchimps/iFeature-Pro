@@ -97,4 +97,9 @@ class CyberChimps_Metabox {
 		$this->add($options + array('type' => 'image_select', 'id' => $id, 'name' => $name, 'desc' => $desc));
 		return $this;
 	}
+
+	function single_image($id, $name, $desc, $options = array()) {
+		$this->add($options + array('type' => 'single_image', 'id' => $id, 'name' => $name, 'desc' => $desc));
+		return $this;
+	}
 }
