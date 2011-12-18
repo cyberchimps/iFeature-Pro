@@ -490,7 +490,7 @@ class RW_Meta_Box {
 		$this->show_field_begin($field, $meta);
 
 		if($meta) {
-			echo "<img src='{$meta}' />";
+			echo "<img src='{$meta}' /><br/>";
 		}
 
 		echo "<input type='file' name='{$field['id']}' />";
@@ -608,10 +608,12 @@ class RW_Meta_Box {
 	}
 
 	function save_field_single_image($post_id, $field, $old, $new) {
-		if(isset($_FILES[$field['id']])) {
+		if(isset($_FILES[$field['id']]) && $_FILES[$field['id']]['tmp_name']) {
 			$overrides = array('test_form' => false);
 			$file = wp_handle_upload($_FILES[$field['id']], $overrides);
-			update_post_meta($post_id, $field['id'], $file['url']);
+			if(!is_wp_error($file)) {
+				update_post_meta($post_id, $field['id'], $file['url']);
+			}
 		}
 	}
 
@@ -892,4 +894,7 @@ function metabox_enqueue() {
 
 /********************* END DEFINITION OF META BOXES ***********************/
 
-?>
+function cyberchimps_add_edit_form_multipart_encoding() {
+	echo ' enctype="multipart/form-data"';
+}
+add_action('post_edit_form_tag', 'cyberchimps_add_edit_form_multipart_encoding');
