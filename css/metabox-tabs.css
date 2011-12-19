@@ -4,6 +4,8 @@
  
 #pages .inside {background: url(../images/whitey.png) #fbfbfb; padding: 10px; margin: 0px 0px;}
 
+#pages label {font-weight: bold;}
+
 #pages .hndle {border-bottom-color: #ccc;}
  
 .js .checkbox{
@@ -23,6 +25,7 @@
   background-position:top left;
 }
 
+.form-table td {text-align: right;}
  
 ul.metabox-tabs {
 display: none;
@@ -89,9 +92,11 @@ background: #fff;
 border-radius: 0px 4px 4px;
 }
 
+.farbtastic {float: right;}
+
 /** Page Elements */
 .section_order {
-	background: #222;
+	text-align: left;
 }
 
 .right_list {
@@ -233,8 +238,9 @@ tr {border-top: 1px solid #E7E7E7;}
 .image_select img {
   margin-right: 10px;
   padding: 1px;
+  border: 3px solid #EEE;
 }
 .image_select img.selected {
-	border: 1px solid #900;
-  padding: 0;
+	border: 3px solid #AAA;
+  padding: 1px;
 }

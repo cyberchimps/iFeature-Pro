@@ -43,8 +43,8 @@ jQuery(document).ready(function($) {
 	var page_subsection_map = {
 		page_slider: "subsection-iFeature-Pro-Slider-Options",
 		callout_section: "subsection-Callout-Options",
-		twitterbar_section: "subsection-Twitter-Options",
-		carousel_section: "subsection-Carousel-Options"
+		carousel_section: "subsection-Carousel-Options",
+		twitterbar_section: "subsection-Twitter-Options"
 	};
 	$("#page_section_order").change(function(){
 		var array = $(this).val().split(",");

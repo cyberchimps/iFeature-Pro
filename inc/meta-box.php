@@ -821,6 +821,7 @@ function initialize_the_meta_boxes() {
 	$mb
 		->tab("Page Options")
 			->image_select('page_sidebar', 'Select Page Layout', '',  array('options' => array(TEMPLATE_URL . '/images/options/right.png', TEMPLATE_URL . '/images/options/none.png', TEMPLATE_URL . '/images/options/tworight.png', TEMPLATE_URL . '/images/options/rightleft.png')))
+			->checkbox('hide_page_title', 'Page Title', '', array('std' => 'true'))
 			->section_order('page_section_order', 'Page Elements', '', array('options' => array(
 					'page_slider' => 'iFeature Slider',
 					'callout_section' => 'Callout',
@@ -832,8 +833,7 @@ function initialize_the_meta_boxes() {
 					'std' => 'page_section'
 				))
 
-			->checkbox('hide_page_title', 'Page Title', '', array('std' => 'true'))
-			->sliderhelp('', 'Need Help?', '')
+			->pagehelp('', 'Need Help?', '')
 		->tab($themenamefull." Slider Options")
 			->select('page_slider_size', 'Select Slider Size', '', array('options' => array('Full-Width', 'Half-Width')) )
 			->select('page_slider_type', 'Select Slider Type', '', array('options' => array('Custom Slides', 'Blog Posts')) )
@@ -860,10 +860,10 @@ function initialize_the_meta_boxes() {
 			->color('custom_callout_text_color', 'Custom Text Color', '')
 			->color('custom_callout_button_color', 'Custom Button Color', '')
 			->pagehelp('', 'Need help?', '')
-		->tab("Twitter Options")
-			->text('twitter_handle', 'Twitter Handle', 'Enter your Twitter handle if using the Twitter bar - Requires <a href="http://wordpress.org/extend/plugins/twitter-for-wordpress/" target="_blank">Twitter for WordPress Plugin')
 		->tab("Carousel Options")
 			->select('carousel_category', 'Carousel Category', '', array('options' => $carouseloptions) )
+		->tab("Twitter Options")
+			->text('twitter_handle', 'Twitter Handle', 'Enter your Twitter handle if using the Twitter bar - Requires <a href="http://wordpress.org/extend/plugins/twitter-for-wordpress/" target="_blank">Twitter for WordPress Plugin')
 		->tab("SEO Options")
 			->text('seo_title', 'SEO Title', '')
 			->textarea('seo_description', 'SEO Description', '')
