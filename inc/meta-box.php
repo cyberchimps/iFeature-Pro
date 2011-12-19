@@ -60,7 +60,7 @@ function initialize_the_meta_boxes() {
 		
 	$mb = new CyberChimps_Metabox('Carousel', 'Featured Post Carousel', array('pages' => array($themeslug.'_featured_posts')));
 	$mb
-		->tab("Carousel Options")
+		->tab("Featured Post Carousel Options")
 			->text('post_title', 'Featured Post Title', '')
 			->single_image('post_image', 'Featured Post Image', '')
 			->text('post_url', 'Featured Post URL', '')
