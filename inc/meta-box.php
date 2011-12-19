@@ -494,6 +494,8 @@ class RW_Meta_Box {
 		}
 
 		echo "<input type='file' name='{$field['id']}' />";
+		echo "<br/>or enter URL<br/>";
+		echo "<input type='text' size='50' name='{$field['id']}_url' value='{$meta}'/>";
 		$this->show_field_end($field, $meta);
 	}
 
@@ -614,6 +616,9 @@ class RW_Meta_Box {
 			if(!is_wp_error($file)) {
 				update_post_meta($post_id, $field['id'], $file['url']);
 			}
+		} elseif(isset($_POST[$field['id'] . '_url'])) {
+			$url = $_POST[$field['id'] . '_url'];
+			update_post_meta($post_id, $field['id'], $url);
 		}
 	}
 
