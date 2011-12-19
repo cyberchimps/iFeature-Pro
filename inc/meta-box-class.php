@@ -565,7 +565,7 @@ class RW_Meta_Box {
 		$this->show_field_begin($field, $meta);
 
 		if($meta) {
-			echo "<img src='{$meta}' /><br/>";
+			echo "<img class='image_preview' src='{$meta}' /><br/>";
 		}
 
 		echo "<input type='file' name='{$field['id']}' />";
@@ -821,3 +821,29 @@ class RW_Meta_Box_Taxonomy extends RW_Meta_Box {
 
 /********************* END EXTENDING CLASS ***********************/
 
+add_action( 'admin_print_styles-post-new.php', 'metabox_enqueue' );
+add_action( 'admin_print_styles-post.php', 'metabox_enqueue' );
+
+function metabox_enqueue() {
+	$path =  get_template_directory_uri()."/core/library/js/";
+	$path2 = get_template_directory_uri()."/css/";
+	$color = get_user_meta( get_current_user_id(), 'admin_color', true );
+
+	wp_register_style(  'metabox-tabs-css', $path2. 'metabox-tabs.css');
+
+	wp_register_script ( 'jf-metabox-tabs', $path. 'metabox-tabs.js');
+
+	wp_enqueue_script('jf-metabox-tabs');
+	
+	wp_enqueue_script('jf-metabox-tabs');
+	wp_enqueue_script('jquerycustom', get_template_directory_uri().'/core/library/js/jquery-custom.js', array('jquery') );
+	
+	wp_enqueue_style('metabox-tabs-css');
+}
+
+/********************* END DEFINITION OF META BOXES ***********************/
+
+function cyberchimps_add_edit_form_multipart_encoding() {
+	echo ' enctype="multipart/form-data"';
+}
+add_action('post_edit_form_tag', 'cyberchimps_add_edit_form_multipart_encoding');
