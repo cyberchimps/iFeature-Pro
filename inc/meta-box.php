@@ -789,7 +789,7 @@ function initialize_the_meta_boxes() {
 	$mb = new CyberChimps_Metabox('post_slide_options', $themenamefull.' Slider Options', array('pages' => array('post')));
 	$mb
 		->tab("Slider Options")
-			->single_image('slider_image', $themenamefull . ' Pro Slider Image', 'Upload your image here:')
+			->single_image('slider_image', $themenamefull . ' Pro Slider Image', '')
 			->text('slider_text', $themenamefull. ' Pro Slider Text', 'Enter your slider text here')
 			->checkbox('slider_hidetitle', 'Hide Title Bar', 'Click to disable the title bar on this slide:', array('std' => ''))
 			->single_image('slider_custom_thumb', 'Custom Thumbnail', 'Use the image uploader to upload a custom navigation thumbnail')
@@ -820,7 +820,7 @@ function initialize_the_meta_boxes() {
 	$mb = new CyberChimps_Metabox('pages', $themenamefull.' Page Options', array('pages' => array('page')));
 	$mb
 		->tab("Page Options")
-			->image_select('page_sidebar', 'Select Page Layout', '',  array('options' => array('http://placehold.it/100x100', 'http://placehold.it/100x100')))
+			->image_select('page_sidebar', 'Select Page Layout', '',  array('options' => array(TEMPLATE_URL . '/images/options/right.png', TEMPLATE_URL . '/images/options/none.png', TEMPLATE_URL . '/images/options/tworight.png', TEMPLATE_URL . '/images/options/rightleft.png')))
 			->section_order('page_section_order', 'Page Elements', '', array('options' => array(
 					'page_slider' => 'iFeature Slider',
 					'callout_section' => 'Callout',
