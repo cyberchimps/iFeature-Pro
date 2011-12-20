@@ -70,6 +70,9 @@ jQuery(document).ready(function($) {
 			$(this).addClass('selected');
 			$(this).siblings("input").val($(this).data("key"));
 		});
+    if($(this).find("img.selected").length) {
+			$(this).find("input").val($(this).find("img.selected").data("key"));
+    }
 	});
 
 	 /*
