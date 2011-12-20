@@ -323,7 +323,7 @@ class RW_Meta_Box {
 
 	function show_field_checkbox($field, $meta) {
 		$this->show_field_begin($field, $meta);
-		echo "<input type='checkbox' class='checkbox' name='{$field['id']}' id='checkbox-{$field['id']}' " . checked(!empty($meta), true, false) . " /> {$field['desc']}</td>";
+		echo "<input type='checkbox' class='checkbox' name='{$field['id']}' id='checkbox-{$field['id']}' " . checked($meta, '1', false) . " value='1'/> {$field['desc']}</td>";
 	}
 
 	function show_field_wysiwyg($field, $meta) {
