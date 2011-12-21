@@ -53,7 +53,7 @@ function initialize_the_meta_boxes() {
 		->tab("Slider Options")
 			->single_image('slider_image', 'Slider Image', '')
 			->text('slider_text', 'Slider Text', 'Enter your slider text here')
-			->checkbox('slider_hidetitle', 'Title Bar', '', array('std' => '1'))
+			->checkbox('slider_hidetitle', 'Title Bar', '', array('std' => 'true'))
 			->single_image('slider_custom_thumb', 'Custom Thumbnail', 'Use the image uploader to upload a custom navigation thumbnail')
 			->sliderhelp('', 'Need Help?', '')
 		->end();
@@ -73,7 +73,7 @@ function initialize_the_meta_boxes() {
 			->text('slider_caption', 'Custom Slide Caption', '')
 			->text('slider_url', 'Custom Slide Link', '')
 			->single_image('slider_image', 'Custom Slide Image', '')
-			->checkbox('slider_hidetitle', 'Slide Title Bar', '', array('std' => '1'))
+			->checkbox('slider_hidetitle', 'Slide Title Bar', '', array('std' => 'true'))
 			->single_image('slider_custom_thumb', 'Custom Thumbnail', '')
 			->sliderhelp('', 'Need Help?', '')
 			->reorder('reorder_id', 'Reorder Name', 'Reorder Desc' )
@@ -83,7 +83,7 @@ function initialize_the_meta_boxes() {
 	$mb
 		->tab("Page Options")
 			->image_select('page_sidebar', 'Select Page Layout', '',  array('options' => array(TEMPLATE_URL . '/images/options/right.png', TEMPLATE_URL . '/images/options/tworight.png', TEMPLATE_URL . '/images/options/rightleft.png', TEMPLATE_URL . '/images/options/none.png')))
-			->checkbox('hide_page_title', 'Page Title', '', array('std' => '1'))
+			->checkbox('hide_page_title', 'Page Title', '', array('std' => 'true'))
 			->section_order('page_section_order', 'Page Elements', '', array('options' => array(
 					'page_slider' => 'iFeature Slider',
 					'callout_section' => 'Callout',
@@ -106,14 +106,14 @@ function initialize_the_meta_boxes() {
 			->text('slider_delay', 'Slider Delay Time (MS)', '', array('std' => '3500'))
 			->select('page_slider_animation', 'Slider Animation Type', '', array('options' => array('Random (default)', 'Slice Down', 'Slice Down-Left', 'Slice Up', 'Slice Up-Left', 'Slice Up-Down', 'Slice Up-Down-Left', 'Fold', 'Fade', 'Slide In-Right', 'Slide In-Left', 'Box Random', 'Box Rain', 'Box Rain-Reverse', 'Box Rain-Grow', 'Box Rain-Grow-Reverse')) )
 			->select('page_slider_navigation_style', 'Slider Navigation Style', '', array('options' => array('Dots (default)', 'Thumbnails', 'None')) )
-			->checkbox('hide_arrows', 'Navigation Arrows', '', array('std' => '1'))
-			->checkbox('disable_autohide', 'Navigation Arrows Autohide', '', array('std' => '1'))
+			->checkbox('hide_arrows', 'Navigation Arrows', '', array('std' => 'true'))
+			->checkbox('disable_autohide', 'Navigation Arrows Autohide', '', array('std' => 'true'))
 			->checkbox('enable_wordthumb', 'WordThumb Image Resizing', '')
 			->sliderhelp('', 'Need Help?', '')
 		->tab("Callout Options")
 			->text('callout_title', 'Callout Title', '')
 			->textarea('callout_text', 'Callout Text', '')
-			->checkbox('disable_callout_button', 'Callout Button', '', array('std' => '1'))
+			->checkbox('disable_callout_button', 'Callout Button', '', array('std' => 'true'))
 			->text('callout_button_text', 'Callout Button Text', '')
 			->text('callout_url', 'Callout Button URL', '')
 			->single_image('callout_image', 'Custom Button Image', '')
