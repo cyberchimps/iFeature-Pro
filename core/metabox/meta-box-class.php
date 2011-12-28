@@ -1,6 +1,6 @@
 <?php
 
-class CyberChimps_Metabox {
+class Chimps_Metabox {
 	function __construct($id, $title, $options) {
 		$this->id = $id;
 		$this->title = $title;

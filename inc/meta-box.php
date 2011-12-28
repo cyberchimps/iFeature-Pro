@@ -48,7 +48,7 @@ function initialize_the_meta_boxes() {
 	
 	$meta_boxes = array();
 
-	$mb = new CyberChimps_Metabox('post_slide_options', $themenamefull.' Slider Options', array('pages' => array('post')));
+	$mb = new Chimps_Metabox('post_slide_options', $themenamefull.' Slider Options', array('pages' => array('post')));
 	$mb
 		->tab("Slider Options")
 			->single_image('slider_image', 'Slider Image', '')
@@ -58,7 +58,7 @@ function initialize_the_meta_boxes() {
 			->sliderhelp('', 'Need Help?', '')
 		->end();
 		
-	$mb = new CyberChimps_Metabox('Carousel', 'Featured Post Carousel', array('pages' => array($themeslug.'_featured_posts')));
+	$mb = new Chimps_Metabox('Carousel', 'Featured Post Carousel', array('pages' => array($themeslug.'_featured_posts')));
 	$mb
 		->tab("Featured Post Carousel Options")
 			->text('post_title', 'Featured Post Title', '')
@@ -67,7 +67,7 @@ function initialize_the_meta_boxes() {
 			->reorder('reorder_id', 'Reorder Name', 'Reorder Desc' )
 		->end();
 
-	$mb = new CyberChimps_Metabox('slides', 'Custom Feature Slides', array('pages' => array($themeslug.'_custom_slides')));
+	$mb = new Chimps_Metabox('slides', 'Custom Feature Slides', array('pages' => array($themeslug.'_custom_slides')));
 	$mb
 		->tab("Custom Slide Options")
 			->text('slider_caption', 'Custom Slide Caption', '')
@@ -79,7 +79,7 @@ function initialize_the_meta_boxes() {
 			->reorder('reorder_id', 'Reorder Name', 'Reorder Desc' )
 		->end();
 
-	$mb = new CyberChimps_Metabox('pages', $themenamefull.' Page Options', array('pages' => array('page')));
+	$mb = new Chimps_Metabox('pages', $themenamefull.' Page Options', array('pages' => array('page')));
 	$mb
 		->tab("Page Options")
 			->image_select('page_sidebar', 'Select Page Layout', '',  array('options' => array(TEMPLATE_URL . '/images/options/right.png', TEMPLATE_URL . '/images/options/tworight.png', TEMPLATE_URL . '/images/options/rightleft.png', TEMPLATE_URL . '/images/options/none.png')))
