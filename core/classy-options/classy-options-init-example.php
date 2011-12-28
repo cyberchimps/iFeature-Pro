@@ -1,4 +1,19 @@
 <?php
+/**
+* Sample Theme Options Init Page
+*
+* Author: Tyler Cunningham
+* Copyright: © 2011
+* {@link http://cyberchimps.com/ CyberChimps LLC}
+*
+* Released under the terms of the GNU General Public License.
+* You should have received a copy of the GNU General Public License,
+* along with this software. In the main directory, see: /licensing/
+* If not, see: {@link http://www.gnu.org/licenses/}.
+*
+* @package Core
+* @since 1.0
+*/
 
 require( get_template_directory() . '/core/classy-options/classy-options-framework/classy-options-framework.php');
 
@@ -43,56 +58,7 @@ $terms2 = get_terms('category', 'hide_empty=0');
 
 
 $options
-	->section("Welcome")
-		->info("<h1>iFeature Pro 3</h1>
-		<h2>A Different Kind of WordPress Theme</h2>
-<strong>Introducing Drag &amp; Drop Page Elements. Intuitive New Theme Options. New Design.</strong>
-<p>iFeature Pro 3 is one of the most advanced personal content management WordPress Themes in the world and now offers intuitive theme options which make using iFeature Pro even more personal and fun than ever before.</p>
-
-<p>To get started simply work your way through the menus to the left, select your options, add your content, and always remember to hit save after making any changes.</p>
-
-<p>We have moved many of your favorite options including the iFeature Pro Slider to the iFeature Pro Page Options which are available below the Page content entry area in WP-Admin when you edit a page. This way you can configure each page individually. You will also find the new Drag & Drop Page Elements editor within the new iFeature Pro Page Options as well.</p>
-
-<p>If you are using the iFeature Pro Slider on a Page you can upload, and edit your slides from the iFeature Slides menu available in the WP-Admin menu to the far left. Look for the CyberChimps logo.</p>
-
-<p>We tried to make iFeature Pro 3 as easy to use as possible, but if you still need help please read the <a href='http://cyberchimps.com/ifeaturepro/docs/' target='_blank'>documentation</a>, and visit our <a href='http://cyberchimps.com/forum/pro/' target='_blank'>support forum</a>.</p>
-
-<p>Thank you for using iFeature Pro, a <a href='http://cyberchimps.com' target='_blank'>CyberChimps WordPress Theme</a>.</p>
-")
-	->section("Design")
-		->open_outersection()
-			->select($themeslug."_color_scheme", "Select a Color Scheme", array( 'options' => array("blue" => "Blue (default)", "black" => "Black", "darkblue" => "Dark Blue", "green" => "Green", "grey" => "Grey", "orange" => "Orange", "pink" => "Pink", "red" => "Red", "white" => "White"), 'default' => 'blue'))
-		->close_outersection()
-		->subsection("Typopgraphy")
-			->select($themeslug."_font", "Choose a Font", array( 'options' => array("Arial" => "Arial (default)", "Courier New" => "Courier New", "Georgia" => "Georgia", "Helvetica" => "Helvetica", "Lucida Grande" => "Lucida Grande", "Tahoma" => "Tahoma", "Times New Roman" => "Times New Roman", "Verdana" => "Verdana", "Actor" => "Actor", "Coda" => "Coda", "Maven+Pro" => "Maven Pro", "Metrophobic" => "Metrophobic", "News+Cycle" => "News Cycle", "Nobile" => "Nobile", "Tenor+Sans" => "Tenor Sans", "Quicksand" => "Quicksand", "Ubuntu" => "Ubuntu", 'custom' => "Custom")))
-			->text($themeslug."_custom_font", "Enter a Custom Font")
-						->textarea($themeslug."_typekit", "Enter your TypeKit Code")
-		->subsection_end()
-		->subsection("Background")
-			->images($themeslug."_background_image", "Select a background", array( 'options' => array(  'dark' => TEMPLATE_URL . '/images/backgrounds/thumbs/dark.png', 'wood' => TEMPLATE_URL . '/images/backgrounds/thumbs/wood.png', 'default' => TEMPLATE_URL . '/images/backgrounds/thumbs/noise.png','space' => TEMPLATE_URL . '/images/backgrounds/thumbs/space.png', 'blue' => TEMPLATE_URL . '/images/backgrounds/thumbs/blue.png', 'metal' => TEMPLATE_URL . '/images/backgrounds/thumbs/metal.png' ), 'default' => 'default'))
-			->checkbox($themeslug."_custom_background", "Toggle to use a custom background")
-			->upload($themeslug."_background_upload", "Background Image")
-			->radio($themeslug."_bg_image_position", "Select the Image Position", array( 'options' => array("top left" => "Left", "top center" => "Center", "top right" => "Right")))
-			->radio($themeslug."_bg_image_repeat", "Select the Image Repeat", array( 'options' => array( "repeat" => "Tile", "repeat-x" => "Tile Horizontally", "repeat-y" => "Tile Vertically", "no-repeat" => "No Tile")))
-			->radio($themeslug."_bg_image_attachment", "Select the Image Attachment", array( 'options' => array("scroll" => "Scroll", "fixed" => "Fixed")))
-			->color($themeslug."_background_color", "Select a Background Color")
-		->subsection_end()
-		->subsection("Custom Colors")
-			->color($themeslug."_menulink_color", "Menu Link Color")
-			->color($themeslug."_sitetitle_color", "Site Title Color")
-			->color($themeslug."_tagline_color", "Site Description Color")
-			->color($themeslug."_link_color", "Link Color")
-			->color($themeslug."_link_hover_color", "Link Hover Color")
-			->color($themeslug."_posttitle_color", "Post Title Color")
-			->color($themeslug."_footer_color", "Footer Color")
-		->subsection_end()
-		->subsection("Custom CSS")
-			->textarea($themeslug."_css_options", "Custom CSS")
-		->subsection_end()
-			->open_outersection()
-				->checkbox($themeslug."_widget_title_background", "Widget Title Background", array('default' => true))
-			->close_outersection()
-	->section("Header")
+		->section("Header")
 		->open_outersection()
 		->checkbox($themeslug."_disable_header", "Toggle to show the header", array('default' => true))
 		->close_outersection()
