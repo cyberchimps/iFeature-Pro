@@ -122,23 +122,6 @@ function background_option() {
 }
 add_action( 'wp_head', 'background_option');
 
-/* Disable breadcrumbs*/
- 
-function disable_breadcrumbs() {
-
-	global $options, $themeslug;
-	$root = get_template_directory_uri();
-	
-	if ($options->get($themeslug.'_disable_breadcrumbs') != "1") {
-		
-		echo '<style type="text/css">';
-		echo "#crumbs {display: none;}";
-		echo '</style>';
-
-	}
-}
-add_action( 'wp_head', 'disable_breadcrumbs');
-
 /* Plus 1 Allignment */
 
 function plusone_alignment() {

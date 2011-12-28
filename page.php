@@ -34,7 +34,8 @@ if (preg_match("/page_slider/", $page_section_order ) && $size == "1" ) {
 ?>
 
 <div class="container_12">
-<?php if (function_exists('chimps_breadcrumbs')) chimps_breadcrumbs(); ?>
+<?php if (function_exists('chimps_breadcrumbs') && ($options->get($themeslug.'_disable_breadcrumbs') == "1")) { chimps_breadcrumbs(); }?>
+<div style=clear:both;></div>
 
 <?php
 	foreach(explode(",", $page_section_order) as $key) {

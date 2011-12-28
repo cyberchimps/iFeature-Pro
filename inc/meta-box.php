@@ -121,6 +121,7 @@ function initialize_the_meta_boxes() {
 			->color('custom_callout_title_color', 'Custom Title Color', '')
 			->color('custom_callout_text_color', 'Custom Text Color', '')
 			->color('custom_callout_button_color', 'Custom Button Color', '')
+			->color('custom_callout_button_text_color', 'Custom Button Text Color', '')
 			->pagehelp('', 'Need help?', '')
 		->tab("Carousel Options")
 			->select('carousel_category', 'Carousel Category', '', array('options' => $carouseloptions) )

@@ -35,6 +35,7 @@ function chimps_callout_section_content() {
 	$callout = get_post_meta($post->ID, 'enable_callout_section' , true);
 	$calloutbgcolor = get_post_meta($post->ID, 'callout_background_color' , true);
 	$bcolor = get_post_meta($post->ID, 'custom_callout_button_color' , true);
+	$btcolor = get_post_meta($post->ID, 'custom_callout_button_text_color' , true);
 	$tcolor = get_post_meta($post->ID, 'custom_callout_text_color' , true);
 	$ticolor = get_post_meta($post->ID, 'custom_callout_title_color' , true);
 	$title = get_post_meta($post->ID, 'callout_title' , true);
@@ -61,7 +62,7 @@ function chimps_callout_section_content() {
 	if ($bcolor != "") {
 	
 		echo '<style type="text/css" media="screen">';
-		echo ".calloutbutton {background: $bcolor ;}";
+		echo "#calloutbutton {background: $bcolor ;}";
 		echo '</style>';
 	
 	}
@@ -69,12 +70,26 @@ function chimps_callout_section_content() {
 
 /* End custom button color. */
 
+/* Echo custom button text color. */
+
+	if ($bcolor != "") {
+	
+		echo '<style type="text/css" media="screen">';
+		echo "#calloutbutton a {color: $btcolor ;}";
+		echo '</style>';
+	
+	}
+	
+
+/* End custom button color. */
+
+
 /* Echo custom text color. */
 
 	if ($tcolor != "") {
 	
 		echo '<style type="text/css" media="screen">';
-		echo ".callout_text {color: $tcolor ;}";
+		echo "#callout_text {color: $tcolor ;}";
 		echo '</style>';
 	
 	}
