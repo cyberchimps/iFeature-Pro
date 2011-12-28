@@ -44,10 +44,6 @@ require_once ( get_template_directory() . '/core/pro/pro-init.php' );
 
 require_once ( get_template_directory() . '/core/classy-options/options-themes.php' );
 
-
-
-
-
 /**
 * End
 */
