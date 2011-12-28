@@ -54,7 +54,7 @@ function chimps_comments_loop() {
 		</div>
 
 		<ol class="commentlist">
-			<?php wp_list_comments('type=comment&callback=mytheme_comment'); ?>
+			<?php wp_list_comments('callback=chimps_comment'); ?>
 		</ol>
 
 		<div class="navigation">
@@ -95,8 +95,6 @@ function chimps_comments_loop() {
 		
 		<!--<p>You can use these tags: <code><?php echo allowed_tags(); ?></code></p>-->	
 		
-		<?php do_action('comment_form', $post->ID); ?>
-
 	</form>
 	
 </div>

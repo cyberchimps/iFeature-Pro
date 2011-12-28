@@ -2,6 +2,12 @@ iFeature Pro Changelog
 
 ****************************
 
+Version 3.1 (12-30-11)
+-Revised metabox code/styling. 
+-Removed border-left on OL comment lists.
+-Added rel=me to social icon URLs.
+-Fix for comment pingbacks, moved custom comment function to Core functions file.
+
 Version 3.0.5 (12-13-11)
 -Changes to CyberChimps Core Framework. 
 -Additional visual tweaks for WordPress 3.3.

@@ -34,6 +34,7 @@ if (preg_match("/page_slider/", $page_section_order ) && $size == "1" ) {
 ?>
 
 <div class="container_12">
+<?php if (function_exists('chimps_breadcrumbs')) chimps_breadcrumbs(); ?>
 
 <?php
 	foreach(explode(",", $page_section_order) as $key) {

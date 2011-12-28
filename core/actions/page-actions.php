@@ -48,9 +48,7 @@ function chimps_page_section_content() {
 			<?php get_sidebar('left'); ?>
 		</div>
 	<?php endif;?>
-	
-<?php if (function_exists('chimps_breadcrumbs')) chimps_breadcrumbs(); ?>
-		
+			
 		<div id="content" class="<?php echo $content_grid; ?>">
 			
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
