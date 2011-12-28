@@ -218,6 +218,13 @@ function chimps_after_search() {
 }
 
 /** 
+* Slider
+*/
+function chimps_blog_slider_lite() {
+	do_action('chimps_blog_slider_lite');
+}
+
+/** 
 * Twitterbar Section
 */
 function chimps_twitterbar_section() {
