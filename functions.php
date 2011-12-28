@@ -28,7 +28,7 @@ add_theme_support(
 	array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat')
 );
 
-//Gallery options 
+//Custom gallery post formating.  
 
 function custom_gallery_post_format( $content ) {
 global $options, $themeslug, $post;
