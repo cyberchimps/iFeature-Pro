@@ -59,11 +59,11 @@ function chimps_pro_page_section_content() {
 			<div class="post_container">
 			
 				<div class="post" id="post-<?php the_ID(); ?>">
-			
+				<?php if ($hidetitle == "on"): ?>
 				
 
-					<h2 class="posts_title"><?php echo $hidetitle; ?></h2>
-						
+					<h2 class="posts_title"><?php the_title(); ?></h2>
+						<?php endif;?>
 
 					<div class="entry">
 

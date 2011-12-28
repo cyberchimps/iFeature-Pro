@@ -581,7 +581,7 @@ function chimps_page_slider_content() { ?>
 
 /* Slider navigation options */
 
-	if ($hidenav == 'on') {
+	if ($hidenav == 'off') {
 		$hidenavigation = 'false';
 	}
 
@@ -589,7 +589,7 @@ function chimps_page_slider_content() { ?>
 		$hidenavigation = 'true';
 	}
 	
-	if ($navautohide == 'on') {
+	if ($navautohide == 'off') {
 		$autohide = 'false';
 	}
 	
@@ -821,7 +821,7 @@ function chimps_page_slider_content() { ?>
 
 			/* Controls slide title based on page meta setting */	
 
-			if ($hidetitlebar != 'on' AND $captionstyle != '0') {
+			if ($hidetitlebar == 'on' AND $captionstyle != '0') {
 	   			$titlevar = "#caption$i";
 	   		}
 
