@@ -35,7 +35,7 @@ global $options, $themeslug;
 		<div id="afterfooterwrap">
 		
 		<!-- Begin @Core afterfooter hook content-->
-			<?php chimps_afterfooter(); ?>
+			<?php chimps_secondary_footer(); ?>
 		<!-- End @Core afterfooter hook content-->
 				
 		</div>  <!--end afterfooterwrap-->	
