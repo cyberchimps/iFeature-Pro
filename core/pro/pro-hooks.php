@@ -47,6 +47,10 @@ function chimps_index_before_entry() {
 	do_action('chimps_index_before_entry');
 }
 
+function chimps_index_entry() {
+	do_action('chimps_index_entry');
+}
+
 /** 
 * Slider
 */
