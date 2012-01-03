@@ -15,15 +15,15 @@
 * @since 1.0
 */
 
-remove_action ( 'chimps_afterfooter', 'chimps_afterfooter_credit' );
-add_action ( 'chimps_afterfooter', 'chimps_pro_afterfooter_credit' );
+remove_action ( 'chimps_secondary_footer', 'chimps_secondary_footer_credit' );
+add_action ( 'chimps_secondary_footer', 'chimps_pro_secondary_footer_credit' );
 
 /**
 * Adds the CyberChimps Pro credit link.
 *
 * @since 1.0
 */
-function chimps_pro_afterfooter_credit() { 
+function chimps_pro_secondary_footer_credit() { 
 	global $options, $themeslug; //call globals
 	
 	if ($options->get($themeslug.'_hide_link') == "1") {?>
