@@ -272,7 +272,7 @@ echo "<div id='slider-wrapper'>";
 	   		$blogtext 			= get_post_meta($post->ID, 'slider_text' , true); /* Gets slide caption from post meta option */  		
 	   		$title				= get_the_title() ; /* Gets slide title from post/custom slide title */
 	   		$hidetitlebar       = get_post_meta($post->ID, 'slider_hidetitle' , true); /* Gets page/post meta option for disabling slide title bar */
-	   		$customsized        = "$root/core/library/wt/wordthumb.php?src=$customimage&a=c&$wordthumb"; /* Gets custom image from page/post meta option, applies wordthumb code  */
+	   		$customsized        = "$root/core/pro/library/wt/wordthumb.php?src=$customimage&a=c&$wordthumb"; /* Gets custom image from page/post meta option, applies wordthumb code  */
 	   		$customthumb 		= get_post_meta($post->ID, 'slider_custom_thumb' , true); /* Gets custom thumbnail from page/post meta option */
 
 			/* End variables */	
@@ -317,12 +317,12 @@ echo "<div id='slider-wrapper'>";
 
 	    	if ($customimage != '' && $customthumb == '' && $wordenable == '1'){ // Custom image, no custom thumb, WordThumb enabled. 
 	    		$image = $customsized;
-	    		$thumbnail = "$root/core/library/wt/wordthumb.php?src=$customimage&a=c&h=30&w=50";
+	    		$thumbnail = "$root/core/pro/library/wt/wordthumb.php?src=$customimage&a=c&h=30&w=50";
 	    	}
 	    	
 	    	elseif ($customimage != '' && $customthumb != '' && $wordenable == '1'){ // Custom image, custom thumb, WordThumb enabled. 
 	    		$image = $customimage;
-	    		$thumbnail = "$root/core/library/wt/wordthumb.php?src=$customthumb&a=c&h=30&w=50";
+	    		$thumbnail = "$root/core/pro/library/wt/wordthumb.php?src=$customthumb&a=c&h=30&w=50";
 	    	}
 	    	
 	    	elseif ($customimage != '' && $customthumb != '' && $wordenable != '1'){ // Custom image, custom thumb, WordThumb disabled. 
@@ -341,7 +341,7 @@ echo "<div id='slider-wrapper'>";
 	    	}
 	    	
 	    	elseif ($customimage == '' && $size2 == "two-right" && $size != "key2" && $wordenable == '1' OR $customimage == '' && $size2 == "right-left" && $size != "key2" && $wordenable == '1'){ // No custom image, no custom thumb, half-width slider, two sidebars, WordThumb enabled. 
-	    		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/slider-470.jpg&a=c&h=$height&w=470";
+	    		$image = "$root/core/pro/library/wt/wordthumb.php?src=$root/images/pro/slider-470.jpg&a=c&h=$height&w=470";
 	    		$thumbnail = "$root/images/pro/sliderthumb.jpg";
 	    	}
 	    	
@@ -362,18 +362,18 @@ echo "<div id='slider-wrapper'>";
 	    	
 	    	elseif ($customimage == '' && $customthumb != '' && $size != "key2" && $wordenable == '1' ){ // No custom image, custom thumb, half-width slider, WordThumb enabled. 
 	    		$image = "$root/images/pro/slider-640.jpg";
-	    		$thumbnail = "$root/core/library/wt/wordthumb.php?src=$customthumb&a=c&h=30&w=50";
+	    		$thumbnail = "$root/core/pro/library/wt/wordthumb.php?src=$customthumb&a=c&h=30&w=50";
 	    	}
 
 	    	elseif ($customimage == '' && $size2 == "default" && $size != "key2" && $wordenable == '1'){ // No custom image, no custom thumb, half-width slider, WordThumb enabled. 
 
-	    		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/slider-640.jpg&a=c&h=$height&w=640";
+	    		$image = "$root/core/pro/library/wt/wordthumb.php?src=$root/images/pro/slider-640.jpg&a=c&h=$height&w=640";
 	    		$thumbnail = "$root/images/pro/sliderthumb.jpg";
 	    	}
 	    	
 	    	elseif ($customimage == '' && $size == "key2" && $wordenable == '1'){ // No custom image, no custom thumb, full-width slider, WordThumb enabled. 
 
-	    		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/slider-980.jpg&a=c&h=$height&w=980";
+	    		$image = "$root/core/pro/library/wt/wordthumb.php?src=$root/images/pro/slider-980.jpg&a=c&h=$height&w=980";
 	    		$thumbnail = "$root/images/pro/sliderthumb.jpg";
 	    	}
 	    	
@@ -385,7 +385,7 @@ echo "<div id='slider-wrapper'>";
 
 	    	
 	   		elseif ($wordenable == '1' && $size != "key2") { // all else 
-	       		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/slider-640.jpg&a=c&h=$height&w=640";
+	       		$image = "$root/core/pro/library/wt/wordthumb.php?src=$root/images/pro/slider-640.jpg&a=c&h=$height&w=640";
 	       		$thumbnail = "$root/images/pro/sliderthumb.jpg";
 	       	}
 	       	
@@ -805,7 +805,7 @@ function chimps_page_slider_content() { ?>
 	   		$blogtext 			= get_post_meta($post->ID, 'slider_text' , true); /* Gets slide caption from post meta option */  		
 		   	$title				= get_the_title() ; /* Gets slide title from post/custom slide title */
 	   		$hidetitlebar       = get_post_meta($post->ID, 'slider_hidetitle' , true); /* Gets page/post meta option for disabling slide title bar */
-	   		$customsized        = "$root/core/library/wt/wordthumb.php?src=$customimage&a=c&$wordthumb"; /* Gets custom image from page/post meta option, applies word thumb code  */
+	   		$customsized        = "$root/core/pro/library/wt/wordthumb.php?src=$customimage&a=c&$wordthumb"; /* Gets custom image from page/post meta option, applies word thumb code  */
 	   		$customthumb 		= get_post_meta($post->ID, 'slider_custom_thumb' , true); /* Gets custom thumbnail from page/post meta option */
 	   		
 						
@@ -859,12 +859,12 @@ function chimps_page_slider_content() { ?>
 
 	    	if ($customimage != '' && $customthumb == '' && $wordenable == 'on'){ // Custom image, no custom thumb, WordThumb enabled. 
 	    		$image = $customsized;
-	    		$thumbnail = "$root/core/library/wt/wordthumb.php?src=$customimage&a=c&h=30&w=50";
+	    		$thumbnail = "$root/core/pro/library/wt/wordthumb.php?src=$customimage&a=c&h=30&w=50";
 	    	}
 	    	
 	    	elseif ($customimage != '' && $customthumb != '' && $wordenable == 'on'){ // Custom image, custom thumb, WordThumb enabled. 
 	    		$image = $customimage;
-	    		$thumbnail = "$root/core/library/wt/wordthumb.php?src=$customthumb&a=c&h=30&w=50";
+	    		$thumbnail = "$root/core/pro/library/wt/wordthumb.php?src=$customthumb&a=c&h=30&w=50";
 	    	}
 	    	
 	    	elseif ($customimage != '' && $customthumb != '' && $wordenable != 'on'){ // Custom image, custom thumb, WordThumb disabled. 
@@ -883,12 +883,12 @@ function chimps_page_slider_content() { ?>
 	    	}
 	    	
 	    	elseif ($customimage == '' && $size2 == "1" && $size != "0" && $wordenable == 'on' OR $customimage == '' && $size2 == "2" && $size != "0" && $wordenable == 'on'){ // No custom image, half-width slider, two sidebars, WordThumb enabled. 
-	    		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/slider-470.jpg&a=c&h=$height&w=470";
+	    		$image = "$root/core/pro/library/wt/wordthumb.php?src=$root/images/pro/slider-470.jpg&a=c&h=$height&w=470";
 	    		$thumbnail = "$root/images/pro/sliderthumb.jpg";
 	    	}
 	    	
 	    	elseif ($customimage == '' && $customthumb != '' && $size2 == "1" && $size != "0" && $wordenable == 'on' OR $customimage == '' && $customthumb != '' && $size2 == "2" && $size != "0" && $wordenable == 'on'){ // No custom image, no custom thumb, half-width slider, two sidebars, WordThumb enabled. 
-	    		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/slider-470.jpg&a=c&h=$height&w=470";
+	    		$image = "$root/core/pro/library/wt/wordthumb.php?src=$root/images/pro/slider-470.jpg&a=c&h=$height&w=470";
 	    		$thumbnail = $customthumb;	    	
 	    	}
 	    	
@@ -909,18 +909,18 @@ function chimps_page_slider_content() { ?>
 	    	
 	    	elseif ($customimage == '' && $customthumb != '' && $size != "0" && $wordenable == 'on' ){ // No custom image, custom thumb, half-width slider, WordThumb enabled. 
 	    		$image = "$root/images/pro/slider-640.jpg";
-	    		$thumbnail = "$root/core/library/wt/wordthumb.php?src=$customthumb&a=c&h=30&w=50";
+	    		$thumbnail = "$root/core/pro/library/wt/wordthumb.php?src=$customthumb&a=c&h=30&w=50";
 	    	}
 
 	    	elseif ($customimage == '' && $size2 == "0" && $size != "0" && $wordenable == 'on'){ // No custom image, no custom thumb, half-width slider, WordThumb enabled. 
 
-	    		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/slider-640.jpg&a=c&h=$height&w=640";
+	    		$image = "$root/core/pro/library/wt/wordthumb.php?src=$root/images/pro/slider-640.jpg&a=c&h=$height&w=640";
 	    		$thumbnail = "$root/images/pro/sliderthumb.jpg";
 	    	}
 	    	
 	    	elseif ($customimage == '' && $size == "0" && $wordenable == 'on'){ // No custom image, no custom thumb, full-width slider, WordThumb enabled. 
 
-	    		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/slider-980.jpg&a=c&h=$height&w=980";
+	    		$image = "$root/core/pro/library/wt/wordthumb.php?src=$root/images/pro/slider-980.jpg&a=c&h=$height&w=980";
 	    		$thumbnail = "$root/images/pro/sliderthumb.jpg";
 	    	}
 	    	
@@ -932,7 +932,7 @@ function chimps_page_slider_content() { ?>
 
 	    	
 	   		elseif ($wordenable == 'on' && $size == "0") { // all else 
-	       		$image = "$root/core/library/wt/wordthumb.php?src=$root/images/pro/slider-980.jpg&a=c&h=$height&w=980";
+	       		$image = "$root/core/pro/library/wt/wordthumb.php?src=$root/images/pro/slider-980.jpg&a=c&h=$height&w=980";
 	       		$thumbnail = "$root/images/pro/sliderthumb.jpg";
 	       	}
 	       	
