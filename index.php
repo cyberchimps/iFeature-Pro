@@ -36,13 +36,13 @@
 
 
 	<!--Begin @Core index entry hook-->
-		<?php chimps_index_before_entry(); ?>
+		<?php chimps_pro_before_entry(); ?>
 	<!--End @Core index entry hook-->
 
 		<div id="content" class="<?php echo $content_grid; ?>">
 		
 		<!--Begin @Core index entry hook-->
-		<?php chimps_index_entry(); ?>
+		<?php chimps_pro_entry(); ?>
 		<!--End @Core index entry hook-->
 
 

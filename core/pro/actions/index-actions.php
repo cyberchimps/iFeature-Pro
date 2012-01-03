@@ -15,13 +15,13 @@
 * @since 1.0
 */
 
-add_action( 'chimps_index_entry', 'chimps_index_content_slider' );
-add_action( 'chimps_index_before_entry', 'chimps_pro_index_before_entry_slider' );
+add_action( 'chimps_pro_before_entry', 'chimps_pro_before_entry_slider' );
+add_action( 'chimps_pro_before_entry', 'chimps_before_entry_sidebar' );
 
-add_action( 'chimps_index_before_entry', 'chimps_index_before_entry_sidebar' );
+add_action( 'chimps_pro_entry', 'chimps_index_content_slider' );
 
-remove_action( 'chimps_index_after_entry', 'chimps_index_after_entry_sidebar' );
-add_action( 'chimps_index_after_entry', 'chimps_pro_index_after_entry_sidebar' );
+remove_action( 'chimps_after_entry', 'chimps_after_entry_sidebar' );
+add_action( 'chimps_after_entry', 'chimps_pro_after_entry_sidebar' );
 
 
 /**
@@ -29,7 +29,7 @@ add_action( 'chimps_index_after_entry', 'chimps_pro_index_after_entry_sidebar' )
 *
 * @since 1.0
 */
-function chimps_pro_index_before_entry_slider() { 
+function chimps_pro_before_entry_slider() { 
 	global $options, $themeslug; ?>
 		
 		<?php if ($options->get($themeslug.'_hide_slider_blog') == '1' && $options->get($themeslug.'_slider_size') == "key2"): ?>
@@ -61,7 +61,7 @@ function chimps_index_content_slider() {
 *
 * @since 1.0
 */
-function chimps_index_before_entry_sidebar() { 
+function chimps_before_entry_sidebar() { 
 	global $options, $themeslug, $post; // call globals
 	
 	$blogsidebar = $options->get($themeslug.'_blog_sidebar');
@@ -80,7 +80,7 @@ function chimps_index_before_entry_sidebar() {
 *
 * @since 1.0
 */
-function chimps_pro_index_after_entry_sidebar() {
+function chimps_pro_after_entry_sidebar() {
 	global $options, $themeslug, $post; // call globals
 	
 	$blogsidebar = $options->get($themeslug.'_blog_sidebar');
