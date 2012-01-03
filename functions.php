@@ -481,6 +481,9 @@ require_once ( get_template_directory() . '/core/core-init.php' );
 
 do_action('chimps_init');
 
+//Call extend (this is only tempoaray)
+require_once ( get_template_directory() . '/core/pro/pro-init.php' );
+
 // Call additional template files
 require_once ( get_template_directory() . '/inc/classy-options-init.php' );
 require_once ( get_template_directory() . '/inc/options-functions.php' );
@@ -489,7 +492,6 @@ require_once ( get_template_directory() . '/inc/update.php' ); // Include automa
 require_once ( get_template_directory() . '/inc/theme-hooks.php' ); // Include automatic updater
 require_once ( get_template_directory() . '/inc/theme-actions.php' ); // Include automatic updater
 
-//Call extend (this is only tempoaray)
-require_once ( get_template_directory() . '/core/pro/pro-init.php' );
+
 
 ?>
