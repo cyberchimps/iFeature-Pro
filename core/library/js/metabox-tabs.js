@@ -124,7 +124,7 @@ jQuery(document).ready(function($) {
     }).trigger('change');
 
     $('#checkbox-disable_callout_button').change(function(){
-	    var items = $("tr.callout_button_text, tr.callout_url, tr.custom_callout_button_color, tr.custom_callout_button_text_color");
+	    var items = $("tr.callout_button_text, tr.callout_url");
 		if($(this).is(':checked')) {
 			items.show();
 		} else {
