@@ -117,6 +117,7 @@ function initialize_the_meta_boxes() {
 			->checkbox('disable_callout_button', 'Callout Button', '', array('std' => 'on'))
 			->text('callout_button_text', 'Callout Button Text', '')
 			->text('callout_url', 'Callout Button URL', '')
+			->checkbox('extra_callout_options', 'Custom Callout Options', '', array('std' => 'off'))
 			->single_image('callout_image', 'Custom Button Image', '')
 			->color('custom_callout_color', 'Custom Background Color', '')
 			->color('custom_callout_title_color', 'Custom Title Color', '')

@@ -46,7 +46,7 @@ function chimps_callout_section_content() {
 	$hidebutton = get_post_meta($post->ID, 'disable_callout_button' , true);
 	$customcalloutbgcolor = get_post_meta($post->ID, 'custom_callout_color' , true);
 	
-	if ($hidebutton != "on") {
+	if ($hidebutton == "on") {
 		$grid = 'grid_9';
 	}
 	
@@ -184,7 +184,7 @@ function chimps_callout_section_content() {
 		<p><?php echo $callouttext  ?></p>
 	</div>
 		
-<?php if ($image == '' && $hidebutton != 'on'): ?>
+<?php if ($image == '' && $hidebutton == 'on'): ?>
 	<div id="calloutbutton" class="grid_2">
 		<a href="<?php echo $calloutlink ?>"><?php echo $calloutbuttontext ;?></a>
 	</div>
