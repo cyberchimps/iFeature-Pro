@@ -210,6 +210,7 @@ class ClassyOptions {
 				if ( has_filter( 'cof_sanitize_' . $option['type'] ) && isset( $input[$id] ) ) {
 					$clean[$id] = apply_filters( 'cof_sanitize_' . $option['type'], $input[$id], $option );
 				}
+
 			}
 
 			add_settings_error( $this->id, 'save_options', __( 'Options saved.', 'optionsframework' ), 'updated fade' );

@@ -19,7 +19,7 @@ class ClassyOptionsSanitize {
 		add_filter( 'cof_sanitize_select', array( __CLASS__, 'sanitize_enum' ), 10, 2);
 		add_filter( 'cof_sanitize_textarea', array( __CLASS__, 'sanitize_textarea' ) );
 		add_filter( 'cof_sanitize_text', 'sanitize_text_field' );
-		add_filter( 'cof_sanitize_section_order', 'sanitize_section_order' );
+		add_filter( 'cof_sanitize_section_order', array( __CLASS__, 'sanitize_section_order' ) );
 	}
 
 	static function sanitize_textarea($input) {
