@@ -39,6 +39,7 @@ class ClassyOptions {
 		
 		// Enqueued scripts
 		wp_enqueue_script('jquery-ui-core');
+		wp_enqueue_script('jquery-ui-sortable');
 		wp_enqueue_script('thickbox');
 		wp_enqueue_script('color-picker', CLASSY_OPTIONS_FRAMEWORK_URL.'js/colorpicker.js', array('jquery'));
 		wp_enqueue_script('options-custom', CLASSY_OPTIONS_FRAMEWORK_URL.'js/options-custom.js', array('jquery'));
@@ -531,6 +532,43 @@ class ClassyOptions {
 			case "close_outersection":
 				$output .= "</div>";
 			break;
+
+			case "section_order":
+				$root = get_template_directory_uri();  
+				$vals = explode(",", $val);
+				$output .=  "<div class='section_order' id=" . esc_attr($value['id']) . ">";
+				$output .=  "<div class='left_list'>";
+				$output .=  "<div class='inactive'>Inactive Elements</div>";
+				$output .=  "<div class='list_items'>";
+				foreach($value['options'] as $key => $left_value) {
+					if(in_array($key, $vals)) continue;
+					$output .=  "<div class='list_item'>";
+					$output .=  "<img src='$root/images/minus.png' class='action' title='Remove'/>";
+					$output .=  "<span data-key='{$key}'>{$left_value}</span>";
+					$output .=  "</div>";
+				}
+				$output .=  "</div>";
+				$output .=  "</div>";
+				$output .=  "<div class='arrow'><img src='$root/images/arrowdrag.png' /></div>";
+				$output .=  "<div class='right_list'>";
+				$output .=  "<div class='active'>Active Elements</div>";
+				$output .=  "<div class='drag'>Drag & Drop Elements</div>";
+				$output .=  "<div class='list_items'>";
+				foreach($vals as $key => $right_value) {
+					if(!$key) continue;
+					$value = $field['options'][$key];
+					$output .=  "<div class='list_item'>";
+					$output .=  "<img src='$root/images/minus.png' class='action' title='Remove'/>";
+					$output .=  "<span data-key='{$key}'>{$right_value}</span>";
+					$output .=  "</div>";
+				}
+				$output .=  "</div>";
+				$output .=  "</div>";
+				$output .=  "<input type='hidden' id='{$value['id']}' name='{$value['id']}' />";
+				$output .=  "</div>";
+
+			break;
+
 			}
 
 			if ( ($value['type'] != "heading") && ($value['type'] != "info" && $value['type'] != "subsection" && $value['type'] != "subsection_end") && $value['type'] != "open_outersection" && $value['type'] != "close_outersection" ) {
@@ -623,6 +661,11 @@ class ClassyOptions {
 
 	function select( $key, $label = "", $options = array() ) {
 		$this->add( $options + array( 'id' => $key, 'type' => 'select', 'name' => $label ) );
+		return $this;
+	}
+
+	function section_order( $key, $label = "", $options = array() ) {
+		$this->add( $options + array( 'id' => $key, 'type' => 'section_order', 'name' => $label ) );
 		return $this;
 	}
 

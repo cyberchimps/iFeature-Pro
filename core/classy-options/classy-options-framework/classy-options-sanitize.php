@@ -19,6 +19,7 @@ class ClassyOptionsSanitize {
 		add_filter( 'cof_sanitize_select', array( __CLASS__, 'sanitize_enum' ), 10, 2);
 		add_filter( 'cof_sanitize_textarea', array( __CLASS__, 'sanitize_textarea' ) );
 		add_filter( 'cof_sanitize_text', 'sanitize_text_field' );
+		add_filter( 'cof_sanitize_section_order', 'sanitize_section_order' );
 	}
 
 	static function sanitize_textarea($input) {
@@ -315,6 +316,15 @@ class ClassyOptionsSanitize {
 		else {
 			return true;
 		}
+	}
+
+	static function sanitize_section_order($input, $option) {
+		$exploded = explode($input, ",");
+		foreach($option['options'] as $key => $value) {
+			if(in_array($key, $exploded))
+				$output[] = $key;
+		}
+		return implode($output, ',');
 	}
 }
 

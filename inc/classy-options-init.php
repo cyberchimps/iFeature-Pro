@@ -202,5 +202,9 @@ TEMPLATE_URL . '/images/social/thumbs/icons-default.png' ), 'default' => 'defaul
 			->export("Export Settings")
 			->import("Import Settings")
 		->close_outersection()
+	->section("Test Section")
+		->open_outersection()
+			->section_order("a_key", "Order things here", array('options' => array("a" => "Apple", "b" => "Boat", "c" => "Cat", "d" => "Dog")))
+		->close_outersection()
 ;
 }
