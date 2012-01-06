@@ -10,6 +10,10 @@
 
 #pages .hndle, #post_slide_options .hndle, #slides .hndle, #Carousel .hndle {border-bottom-color: #ccc;}
 
+#pages .inside .form-table td, #post_slide_options .inside td, #slides .inside .form-table td, #Carousel .inside .form-table td {text-align: right;}
+
+
+
  
 .js .checkbox{
   display:none;
@@ -28,7 +32,7 @@
   background-position:top left;
 }
 
-.form-table td {text-align: right;}
+
  
 ul.metabox-tabs {
 display: none;
