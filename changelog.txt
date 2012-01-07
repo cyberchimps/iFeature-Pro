@@ -2,6 +2,10 @@ iFeature Pro Changelog
 
 ****************************
 
+Version 3.1.1 (01-08-12)
+-Called missing globals in page.php.
+-CSS fix related to page options.
+
 Version 3.1 (01-04-12)
 -Changes to CyberChimps Core Framework. 
 -Revised metabox code/styling. 
