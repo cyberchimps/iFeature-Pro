@@ -288,6 +288,8 @@ jQuery(function($) {
 		el.find(".left_list .list_items").sortable({
 			connectWith: '#' + id + ' .right_list .list_items'
 		});
+
+		update(el);
 	}
 
 	$('.section_order').each(function() {

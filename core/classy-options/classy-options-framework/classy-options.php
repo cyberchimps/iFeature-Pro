@@ -536,16 +536,16 @@ class ClassyOptions {
 
 			case "section_order":
 				$root = get_template_directory_uri();  
-				$vals = explode(",", $val);
+				$values = explode(",", $val);
 				$output .=  "<div class='section_order' id=" . esc_attr($value['id']) . ">";
 				$output .=  "<div class='left_list'>";
 				$output .=  "<div class='inactive'>Inactive Elements</div>";
 				$output .=  "<div class='list_items'>";
-				foreach($value['options'] as $key => $left_value) {
-					if(in_array($key, $vals)) continue;
+				foreach($value['options'] as $k => $v) {
+					if(in_array($k, $values)) continue;
 					$output .=  "<div class='list_item'>";
 					$output .=  "<img src='$root/images/minus.png' class='action' title='Remove'/>";
-					$output .=  "<span data-key='{$key}'>{$left_value}</span>";
+					$output .=  "<span data-key='{$k}'>{$v}</span>";
 					$output .=  "</div>";
 				}
 				$output .=  "</div>";
@@ -555,17 +555,17 @@ class ClassyOptions {
 				$output .=  "<div class='active'>Active Elements</div>";
 				$output .=  "<div class='drag'>Drag & Drop Elements</div>";
 				$output .=  "<div class='list_items'>";
-				foreach($vals as $key => $right_value) {
-					if(!$key) continue;
-					$value = $field['options'][$key];
+				foreach($values as $k) {
+					if(!$k) continue;
+					$val = $value['options'][$k];
 					$output .=  "<div class='list_item'>";
 					$output .=  "<img src='$root/images/minus.png' class='action' title='Remove'/>";
-					$output .=  "<span data-key='{$key}'>{$right_value}</span>";
+					$output .=  "<span data-key='{$k}'>{$val}</span>";
 					$output .=  "</div>";
 				}
 				$output .=  "</div>";
 				$output .=  "</div>";
-				$output .=  "<input type='hidden' id='{$value['id']}' name='{$value['id']}' />";
+				$output .=  "<input type='hidden' id='{$value['id']}' name='{$option_name}[{$value['id']}]' />";
 				$output .=  "</div>";
 
 			break;
