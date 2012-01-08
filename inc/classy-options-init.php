@@ -205,6 +205,7 @@ TEMPLATE_URL . '/images/social/thumbs/icons-default.png' ), 'default' => 'defaul
 	->section("Test Section")
 		->open_outersection()
 			->section_order("a_key", "Order things here", array('options' => array("a" => "Apple", "b" => "Boat", "c" => "Cat", "d" => "Dog")))
+			->section_order("header_section_order", "Drag drop sections for the Header", array('options' => array("ifeature_header_content" => "Header Content", "chimps_navigation" => "Navigation")))
 		->close_outersection()
 ;
 }
