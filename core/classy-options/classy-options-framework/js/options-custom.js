@@ -223,6 +223,14 @@ jQuery(document).ready(function($) {
     } else {
       toShow.hide();
     }
+   }).change();
+      $("#if_custom_menu_color_toggle").change(function() {
+    var toShow = $("#section-if_custom_menu_color, #section-if_custom_dropdown_color, #section-if_menulink_color, #section-if_menulink_hover_color ");
+    if($(this).is(':checked')) {
+      toShow.show();
+    } else {
+      toShow.hide();
+    }
   }).change();
   $("#if_slider_type").change(function(){
     var val = $(this).val(),
