@@ -49,6 +49,12 @@ function chimps_pro_page_section_content() {
 			<?php get_sidebar('left'); ?>
 		</div>
 	<?php endif;?>
+	
+	<?php if ($sidebar == "4"): ?>
+		<div id="sidebar" class="grid_4">
+			<?php get_sidebar(); ?>
+		</div>
+	<?php endif;?>
 			
 		<div id="content" class="<?php echo $content_grid; ?>">
 		
