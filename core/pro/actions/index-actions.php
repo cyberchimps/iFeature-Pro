@@ -71,6 +71,12 @@ function chimps_before_entry_sidebar() {
 	<div id="sidebar" class="grid_3">
 		<?php get_sidebar('left'); ?>
 	</div>
+	<?php endif; ?>
+	
+	<?php if ($sidebar == "4" OR $blogsidebar == 'left' ): ?>
+	<div id="sidebar" class="grid_4">
+		<?php get_sidebar(); ?>
+	</div>
 	<?php endif;
 	
 }
