@@ -11,14 +11,13 @@
 
 	global $options, $themeslug, $post; // call globals
 	
-	$blogsidebar = $options->get($themeslug.'_blog_sidebar');
-	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);
+	$sidebar = $options->get($themeslug.'_single_sidebar');
 	
-	if ($sidebar == "1" OR $sidebar == "2" OR $blogsidebar == 'two-right' OR $blogsidebar == 'right-left' ) {
+	if ($sidebar == 'two-right' OR $sidebar == 'right-left' ) {
 		$content_grid = 'grid_6';
 	}
 	
-	elseif ($sidebar == "3" OR $blogsidebar == 'none' ) {
+	elseif ($sidebar == 'none' ) {
 		$content_grid = 'grid_12';
 	}
 	
@@ -35,6 +34,10 @@ get_header(); ?>
 <div class="container_12">
 
 <?php if (function_exists('chimps_breadcrumbs') && ($options->get($themeslug.'_disable_breadcrumbs') == "1")) { chimps_breadcrumbs(); }?>
+
+<!--Begin @Core index after entry hook-->
+	<?php chimps_single_before_entry(); ?>
+	<!--End @Core index after entry hook-->
 
 	
 		<div id="content" class="<?php echo $content_grid; ?>">
@@ -88,7 +91,7 @@ get_header(); ?>
 		</div><!--end content-->
 
 	<!--Begin @Core index after entry hook-->
-	<?php chimps_after_entry(); ?>
+	<?php chimps_single_after_entry(); ?>
 	<!--End @Core index after entry hook-->
 
 

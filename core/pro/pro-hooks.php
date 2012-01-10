@@ -52,6 +52,17 @@ function chimps_pro_entry() {
 }
 
 /** 
+* Single 
+*/
+function chimps_single_before_entry() {
+	do_action('chimps_single_before_entry');
+}
+
+function chimps_single_after_entry() {
+	do_action('chimps_single_after_entry');
+}
+
+/** 
 * Slider
 */
 function chimps_blog_slider() {
