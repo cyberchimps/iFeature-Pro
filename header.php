@@ -36,20 +36,37 @@
 			
 	<header>
 		
-	<?php foreach(explode(",",$options->get('header_section_order')) as $function): ?>
-		<?php if($function == 'ifeature_header_content') { ?>
-			<?php if ($options->get($themeslug.'_disable_header') != "0"):?>
-				<!-- Begin @iFeature header content hook-->
-					<?php ifeature_header_content(); ?> 
-				<!-- End @iFeature header content hook -->	
-			<?php endif;?>
-		<?php } elseif($function == 'chimps_navigation') { ?>
-			<!-- Begin @Core navigation contact area hook -->
-				<?php chimps_navigation(); ?> 
-			<!-- End @Core navigation contact area hook -->
-		<?php } ?>
-	<?php endforeach; ?>
-				<div class='clear'>&nbsp;</div>
+	<?php if ($options->get($themeslug.'_disable_header') != "0"):?>
+
+	<div class="container" style="">
+		<div class="row">
+		
+			<div class="eight columns">
+				
+				<!-- Begin @Core header sitename hook -->
+					<?php chimps_header_sitename(); ?> 
+				<!-- End @Core header sitename hook -->
+			
+				
+			</div>	
+			
+			<div class="four columns">
+				
+			<!-- Begin @Core header social icon hook -->
+				<?php chimps_header_social_icons(); ?> 
+			<!-- End @Core header contact social icon hook -->	
+				
+			</div>	
+		</div><!--end row-->
+		
+	</div><!--end container-->
+	
+		
+		<!-- Begin @Core navigation contact area hook -->
+			<?php chimps_navigation(); ?> 
+		<!-- End @Core navigation contact area hook -->
+				
+	<?php endif;?>
 			</header>
 
 <div class="container"><!--main wrap-->	
