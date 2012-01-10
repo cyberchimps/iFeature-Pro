@@ -56,8 +56,6 @@
 		<!--End @Core after_archive hook-->
 	
 		</div><!--end content_padding-->
-		
-
 
 		<div id="sidebar" class="grid_4">
 				<?php get_sidebar(); ?>

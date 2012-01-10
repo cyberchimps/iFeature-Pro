@@ -42,6 +42,7 @@ add_action( 'chimps_archive', 'ifeature_archive_loop' );
 * @since 3.1
 */
 function ifeature_archive_loop() { 
+	global $options, $themeslug;
 ?>
 	<div class="post_container">
 			
@@ -54,7 +55,14 @@ function ifeature_archive_loop() {
 				<!--Begin @Core post tags hook-->
 						
 					<div class="entry">
-						<?php the_excerpt(); ?>
+							<?php 
+						if ($options->get($themeslug.'_archive_show_excerpts') == '1') {
+							the_excerpt();
+						}
+						else {
+							the_content();
+						}
+					 ?>
 					</div>
 				
 				<!--Begin @Core post tags hook-->
