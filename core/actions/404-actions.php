@@ -26,7 +26,14 @@ add_action( 'chimps_404', 'chimps_404_content' );
 * @since 1.0 
 */
 function chimps_404_content() {
-	$message_text = apply_filters( 'chimps_404_message', 'Error 404' ); ?>
+	global $options, $themeslug; // call globals
+	
+	if ($options->get($themeslug.'_custom_404') != '') {
+		$message_text = $options->get($themeslug.'_custom_404');
+	}
+	else {
+		$message_text = apply_filters( 'chimps_404_message', 'Error 404' );
+	} ?>
 	<div class="error"><?php printf( __( $message_text, 'core' )); ?><br />	</div> 
 	<?php
 }

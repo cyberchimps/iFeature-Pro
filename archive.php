@@ -86,7 +86,7 @@
 	
 		</div><!--end content_padding-->
 
-		<?php if ($sidebar == 'right' OR $sidebar == '' ): ?>
+	<?php if ($sidebar == 'right' OR $sidebar == '' ): ?>
 	<div id="sidebar" class="grid_4">
 		<?php get_sidebar(); ?>
 	</div>

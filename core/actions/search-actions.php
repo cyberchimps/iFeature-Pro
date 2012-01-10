@@ -26,6 +26,7 @@ add_action( 'chimps_search', 'chimps_search_content' );
 * @since 1.0
 */
 function chimps_search_content() { 
+	global $options, $themeslug;
 	$results = apply_filters( 'chimps_search_results_message', 'Search Results For: %s' ); 
 	$noresults = apply_filters( 'chimps_no_search_results_message', 'No posts found.' ); ?>
 	
@@ -47,7 +48,14 @@ function chimps_search_content() {
 
 				<div class="entry">
 
-					<?php the_excerpt(); ?>
+					<?php 
+						if ($options->get($themeslug.'_search_show_excerpts') == '1') {
+							the_excerpt();
+						}
+						else {
+							the_content();
+						}
+					 ?>
 
 				</div>
 

@@ -66,15 +66,17 @@ function chimps_html_attributes() { ?>
 *
 * @since 1.0
 */
-function chimps_meta_tags() {
+function chimps_meta_tags() { ?>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> <?php
 	global $themeslug, $options, $post; //Call global variables
+	if(!$post) return; // in case of 404 page or something
 	$title = get_post_meta($post->ID, 'seo_title' , true);
 	$pagedescription = get_post_meta($post->ID, 'seo_description' , true);
 	$keywords = get_post_meta($post->ID, 'seo_keywords' , true);  ?>
 
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <meta name="distribution" content="global" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
 <meta name="language" content="en" /> <?php
 
 	if ($options->get($themeslug.'_home_title') != '' AND is_front_page()) { ?>
@@ -106,7 +108,12 @@ function chimps_meta_tags() {
 function chimps_title_tag() {
 	global $options, $themeslug, $query, $post; 
 	$blogtitle = ($options->get($themeslug.'_home_title'));
-	$title = get_post_meta($post->ID, 'seo_title' , true);
+	if (!is_404()) {
+		$title = get_post_meta($post->ID, 'seo_title' , true);
+	}
+	else {
+		$title = '';
+	}
 
 	echo "<title>";
 	

@@ -223,7 +223,6 @@ TEMPLATE_URL . '/images/social/thumbs/icons-default.png' ), 'default' => 'defaul
 		->subsection_end()
 		->subsection("404")
 			->images($themeslug."_404_sidebar", "Select the Sidebar Type", array( 'options' => array("left" => TEMPLATE_URL . '/images/options/left.png', "two-right" => TEMPLATE_URL . '/images/options/tworight.png', "right-left" => TEMPLATE_URL . '/images/options/rightleft.png', "none" => TEMPLATE_URL . '/images/options/none.png', "right" => TEMPLATE_URL . '/images/options/right.png'), 'default' => 'right'))
-			->checkbox($themeslug."search_show_excerpts", "Post Excerpts", array('default' => true))
 			->textarea($themeslug."_custom_404", "Custom 404 Content")
 		->subsection_end()
 			->section("Footer")
