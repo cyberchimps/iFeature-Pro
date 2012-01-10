@@ -344,25 +344,25 @@ function chimps_nav() {
 	
 	?>
 	
-	<div class="container_12">
+	<div class="container">
+		<div class="row">
+			<div class="twelve columns" id="menu">
 
-	<div class="grid_12" id="menu">
-
-		<div id="nav" class="<?php echo $grid; ?>">
-		    <?php wp_nav_menu( array(
-		    'theme_location' => 'header-menu', // Setting up the location for the main-menu, Main Navigation.
-		    'fallback_cb' => 'menu_fallback', //if wp_nav_menu is unavailable, WordPress displays wp_page_menu function, which displays the pages of your blog.
-		    )
-		);
-    	?>
-   		</div>
-   		<?php if ($options->get($themeslug.'_hide_search') != "0"):?>
-		<div class="grid_2">
-			<?php get_search_form(); ?>
+				<div id="nav" class="<?php echo $grid; ?>">
+				    <?php wp_nav_menu( array(
+				    'theme_location' => 'header-menu', // Setting up the location for the main-menu, Main Navigation.
+				    'fallback_cb' => 'menu_fallback', //if wp_nav_menu is unavailable, WordPress displays wp_page_menu function, which displays the pages of your blog.
+				    )
+				);
+    			?>
+   				</div>
+   				<?php if ($options->get($themeslug.'_hide_search') != "0"):?>
+				<div class="grid_2">
+					<?php get_search_form(); ?>
+				</div>
+				<?php endif;?>
+			</div>
 		</div>
-		<?php endif;?>
-	</div>
-	
 </div>
  <?php
 }
