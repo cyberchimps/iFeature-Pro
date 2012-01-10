@@ -214,6 +214,16 @@ function chimps_single_post_byline() {
 }
 
 /**
+* Post byline content (archive.php). 
+*
+* @since 1.0
+*/
+function chimps_archive_post_byline() {
+	do_action('chimps_archive_post_byline');
+}
+
+
+/**
 * Calls post tags (single.php). 
 *
 * @since 1.0

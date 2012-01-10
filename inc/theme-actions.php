@@ -20,8 +20,13 @@
 */
 add_action( 'ifeature_post_bar', 'ifeature_post_bar_content' );
 add_action( 'ifeature_fb_like_plus_one', 'ifeature_fb_like_plus_one_content' );
+
 add_action( 'ifeature_single_post_bar', 'ifeature_single_post_bar_content' );
 add_action( 'ifeature_single_fb_like_plus_one', 'ifeature_single_fb_like_plus_one_content' );
+
+add_action( 'ifeature_archive_post_bar', 'ifeature_archive_post_bar_content' );
+add_action( 'ifeature_archive_fb_like_plus_one', 'ifeature_archive_fb_like_plus_one_content' );
+
 add_action( 'ifeature_header_contact_area', 'ifeature_header_contact_area_content' );
 
 remove_action( 'chimps_head_tag', 'chimps_link_rel' );
@@ -67,7 +72,7 @@ function ifeature_archive_loop($content) {
 			<h2 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
 				
 				<!--Begin @Core post tags hook-->
-					<?php chimps_post_byline(); ?>
+					<?php chimps_archive_post_byline(); ?>
 				<!--Begin @Core post tags hook-->
 						
 					<div class="entry">
@@ -93,7 +98,7 @@ function ifeature_archive_loop($content) {
 				<!--End @Core post tags hook-->	
 				
 				<!--Begin @iFeature post bar hook-->
-					<?php ifeature_post_bar(); ?>
+					<?php ifeature_archive_post_bar(); ?>
 				<!--End @iFeature post bar hook-->					
 							
 		</div><!--end post-->
@@ -348,6 +353,56 @@ function ifeature_single_post_bar_content() {
 		<?php endif;?>	
 	</div><!--end postmetadata--> <?php
 }
+
+/**
+* Sets up the Facebook Like and Google Plus One area (single.php)
+*
+* @since 3.2
+*/
+function ifeature_archive_fb_like_plus_one_content() {
+	global $options, $themeslug; ?>
+
+	<?php if ($options->get($themeslug.'_archive_show_gplus') == "1"):?>
+		<div class="gplusone">	
+			<g:plusone size="standard" count="true"></g:plusone>
+		</div>
+	<?php endif;?>
+						
+	<?php if ($options->get($themeslug.'_archive_show_fb_like') == "1"):?>			
+		<div id="fb">
+			<iframe src="http://www.facebook.com/plugins/like.php?href=<?php the_permalink() ?>&layout=standard&show_faces=true&width=450&action=like&colorscheme=light" scrolling="no" frameborder="0"  allowTransparency="true" style="border:none; overflow:hidden; width:330px; height:28px"></iframe>
+		</div>
+	<?php endif;
+}
+
+
+/**
+* Sets up the HTML for the post share section (single.php)
+*
+* @since 3.2
+*/
+function ifeature_archive_post_bar_content() { 
+	global $options, $themeslug; 
+	$hidden = $options->get($themeslug.'_archive_hide_byline'); ?>
+	
+	
+		<div class="postbar" class="grid_8">
+		<?php if (($hidden[$themeslug.'_archive_hide_share']) != '0'):?>
+			<div class="share">
+		<a href="http://www.facebook.com/share.php?u=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/facebook.png" alt="Share on Facebook" height="16px" width="16px" /></a> 
+		<a href="http://twitter.com/home?status=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/twitter.png" alt="Share on Twitter" height="16px" width="16px" /></a> 
+		<a href="http://reddit.com/submit?url=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/reddit.png" alt="Share on Reddit" height="16px" width="16px" /></a> <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/linkedin.png" alt="Share on LinkedIn" height="16px" width="16px" /></a>	
+		</div><!--end share-->
+	<?php endif;?>		
+		<?php if (($hidden[$themeslug.'_archive_hide_comments']) != '0'):?>
+		<div class="comments">
+			<img src="<?php echo get_template_directory_uri(); ?>/images/Commentsgrey.png" height="21px" width="21px" alt="comments"/>&nbsp;
+				<?php comments_popup_link( __('No Comments &#187;', 'core' ), __('1 Comment &#187;', 'core' ), __('% Comments &#187;' , 'core' )); //need a filer here ?>
+		</div><!--end comments-->
+		<?php endif;?>	
+	</div><!--end postmetadata--> <?php
+}
+
 
 
 

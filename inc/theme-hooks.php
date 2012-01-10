@@ -62,6 +62,24 @@ function ifeature_single_fb_like_plus_one() { //this will be renamed I promise
 }
 
 /**
+* Hook for the post bar (archive.php)
+*
+* @since 3.2
+*/
+function ifeature_archive_post_bar() {
+	do_action('ifeature_archive_post_bar');
+}
+
+/**
+* Hook for the Facebook and Plus One buttons (archive.php)
+*
+* @since 3.2
+*/
+function ifeature_archvie_fb_like_plus_one() { //this will be renamed I promise
+	do_action('ifeature_archive_fb_like_plus_one');
+}
+
+/**
 * Hook for the Header Contact Area
 *
 * @since 3.0.5

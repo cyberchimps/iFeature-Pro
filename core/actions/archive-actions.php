@@ -21,6 +21,25 @@
 add_action( 'chimps_archive_title', 'chimps_archive_page_title' );
 add_action( 'chimps_archive', 'chimps_archive_loop' );
 
+add_action( 'chimps_archive_post_byline', 'chimps_archive_post_byline_content' );
+
+/**
+* Sets the post byline information (author, date, category). 
+*
+* @since 1.0
+*/
+function chimps_archive_post_byline_content() {
+	global $options, $themeslug; //call globals.  
+	$hidden = $options->get($themeslug.'_archive_hide_byline');?>
+	
+	<div class="meta">
+		<?php if (($hidden[$themeslug.'_archive_hide_date']) != '0'):?> <?php printf( __( 'Published on', 'core' )); ?> <a href="<?php the_permalink() ?>"><?php the_time('F jS, Y') ?></a><?php endif;?>
+		<?php if (($hidden[$themeslug.'_archive_hide_author']) != '0'):?><?php printf( __( 'by', 'core' )); ?> <?php the_author_posts_link(); ?> <?php endif;?> 
+		<?php if (($hidden[$themeslug.'_archive_hide_categories']) != '0'):?><?php printf( __( 'in', 'core' )); ?> <?php the_category(', ') ?> <?php endif;?>
+	</div> <?php
+}
+
+
 /**
 * Output archive page title based on archive type. 
 *
