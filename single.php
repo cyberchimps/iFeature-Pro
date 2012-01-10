@@ -48,7 +48,7 @@ get_header(); ?>
 				<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 		
 				<!--Begin @Core index loop hook-->
-					<?php chimps_loop(); ?>
+					<?php chimps_single_loop(); ?>
 				<!--End @Core index loop hook-->	
 			
 				<!--Begin @Core link pages hook-->
@@ -64,7 +64,7 @@ get_header(); ?>
 				<!--End @Core FB like hook-->
 			
 				<!--Begin @Core post tags hook-->
-					<?php chimps_post_tags(); ?>
+					<?php chimps_single_post_tags(); ?>
 				<!--End @Core post tags hook-->
 				
 				<!--Begin @Core post pagination hook-->

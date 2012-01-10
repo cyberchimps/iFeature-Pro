@@ -1,6 +1,6 @@
 <?php
 /**
-* Index actions used by the CyberChimps Core Framework Pro Extension
+* Single post actions used by the CyberChimps Core Framework Pro Extension
 *
 * Author: Tyler Cunningham
 * Copyright: © 2011

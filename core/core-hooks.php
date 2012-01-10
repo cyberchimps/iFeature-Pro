@@ -151,6 +151,15 @@ function chimps_loop() {
 }
 
 /**
+* The loop (single.php). 
+*
+* @since 1.0
+*/
+function chimps_single_loop() {
+	do_action('chimps_single_loop');
+}
+
+/**
 * For use after the loop. 
 *
 * @since 1.0
@@ -193,6 +202,24 @@ function chimps_after_footer() {
 */
 function chimps_secondary_footer() { 
 	do_action('chimps_secondary_footer');
+}
+
+/**
+* Post byline content (single.php). 
+*
+* @since 1.0
+*/
+function chimps_single_post_byline() {
+	do_action('chimps_single_post_byline');
+}
+
+/**
+* Calls post tags (single.php). 
+*
+* @since 1.0
+*/
+function chimps_single_post_tags() {
+	do_action('chimps_single_post_tags');
 }
 
 /**
