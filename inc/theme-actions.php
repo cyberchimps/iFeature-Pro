@@ -41,12 +41,28 @@ add_action( 'chimps_archive', 'ifeature_archive_loop' );
 *
 * @since 3.1
 */
-function ifeature_archive_loop() { 
-	global $options, $themeslug;
+function ifeature_archive_loop($content) { 
+	global $options, $themeslug, $post; //call globals
+	
+	if (get_post_format() == '') {
+		$format = "default";
+	}
+	else {
+		$format = get_post_format();
+	}
 ?>
 	<div class="post_container">
 			
 		<div <?php post_class() ?>>
+		
+		<?php ob_start(); ?>
+		
+		<?php if ($options->get($themeslug.'_archive_post_formats') != '0') : ?>
+			<div class="postformats"><!--begin format icon-->
+				<img src="<?php echo get_template_directory_uri(); ?>/images/formats/<?php echo $format ;?>.png" alt="formats" />
+			</div><!--end format-icon-->
+			<?php endif; ?>
+
 				
 			<h2 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
 				
@@ -64,6 +80,13 @@ function ifeature_archive_loop() {
 						}
 					 ?>
 					</div>
+					
+			<?php	
+				$content = ob_get_clean();
+				$content = apply_filters( 'chimps_post_formats_'.$format.'_content', $content );
+	
+				echo $content; 
+			?>
 				
 				<!--Begin @Core post tags hook-->
 					<?php chimps_post_tags(); ?>
