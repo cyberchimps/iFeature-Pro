@@ -92,9 +92,13 @@ function ifeature_archive_loop($content) {
 	
 				echo $content; 
 			?>
+			
+				<!--Begin @Core FB like hook-->
+					<?php ifeature_archive_fb_like_plus_one(); ?>
+				<!--End @Core FB like hook-->
 				
 				<!--Begin @Core post tags hook-->
-					<?php chimps_post_tags(); ?>
+					<?php chimps_archive_post_tags(); ?>
 				<!--End @Core post tags hook-->	
 				
 				<!--Begin @iFeature post bar hook-->

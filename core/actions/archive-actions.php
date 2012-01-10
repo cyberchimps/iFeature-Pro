@@ -21,7 +21,26 @@
 add_action( 'chimps_archive_title', 'chimps_archive_page_title' );
 add_action( 'chimps_archive', 'chimps_archive_loop' );
 
+add_action( 'chimps_archive_post_tags', 'chimps_archive_post_tags_content' );
+
 add_action( 'chimps_archive_post_byline', 'chimps_archive_post_byline_content' );
+
+/**
+* Sets up the tag area
+*
+* @since 1.0
+*/
+function chimps_archive_post_tags_content() {
+	global $options, $themeslug; 
+	$hidden = $options->get($themeslug.'_archive_hide_byline'); ?>
+
+	<?php if (has_tag() AND ($hidden[$themeslug.'_archive_hide_tags']) != '0'):?>
+	<div class="tags">
+			<?php the_tags('Tags: ', ', ', '<br />'); ?>
+		
+	</div><!--end tags--> 
+	<?php endif;
+}
 
 /**
 * Sets the post byline information (author, date, category). 

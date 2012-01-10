@@ -75,7 +75,7 @@ function ifeature_archive_post_bar() {
 *
 * @since 3.2
 */
-function ifeature_archvie_fb_like_plus_one() { //this will be renamed I promise
+function ifeature_archive_fb_like_plus_one() { //this will be renamed I promise
 	do_action('ifeature_archive_fb_like_plus_one');
 }
 

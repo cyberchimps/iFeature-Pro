@@ -251,6 +251,15 @@ function chimps_post_tags() {
 }
 
 /**
+* Calls post tags (archive.php). 
+*
+* @since 1.0
+*/
+function chimps_archive_post_tags() {
+	do_action('chimps_archive_post_tags');
+}
+
+/**
 * Post pagination. 
 *
 * @since 1.0
