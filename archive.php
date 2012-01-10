@@ -7,6 +7,22 @@
 	Version 2.0
 */
 
+	global $options, $themeslug, $post; // call globals
+	
+	$sidebar = $options->get($themeslug.'_archive_sidebar');
+	
+		if ($sidebar == 'two-right' OR $sidebar == 'right-left' ) {
+		$content_grid = 'grid_6';
+	}
+	
+	elseif ($sidebar == 'none' ) {
+		$content_grid = 'grid_12';
+	}
+	
+	else {
+		$content_grid = 'grid_8';
+	}
+
 /* Header call. */
 
 	get_header(); 
@@ -21,7 +37,20 @@
 
 	<div id="main">
 	
-		<div id="content" class="grid_8">
+	<?php if ($sidebar == 'right-left' ): ?>
+	<div id="sidebar" class="grid_3">
+		<?php get_sidebar('left'); ?>
+	</div>
+	<?php endif; ?>
+	
+	<?php if ($sidebar == "4" OR $sidebar == 'left' ): ?>
+	<div id="sidebar" class="grid_4">
+		<?php get_sidebar(); ?>
+	</div>
+	<?php endif; ?>
+
+	
+		<div id="content" class="<?php echo $content_grid; ?>">
 		
 		<!--Begin @Core before_archive hook-->
 			<?php chimps_before_archive(); ?>
@@ -57,9 +86,23 @@
 	
 		</div><!--end content_padding-->
 
-		<div id="sidebar" class="grid_4">
-				<?php get_sidebar(); ?>
-		</div>
+		<?php if ($sidebar == 'right' OR $sidebar == '' ): ?>
+	<div id="sidebar" class="grid_4">
+		<?php get_sidebar(); ?>
+	</div>
+	<?php endif;?>
+	
+	<?php if ($sidebar == 'two-right' ): ?>
+	<div id="sidebar" class="grid_3">
+		<?php get_sidebar('left'); ?>
+	</div>
+	<?php endif;?> 
+	
+	<?php if ($sidebar == 'two-right' OR $sidebar == 'right-left' ): ?>
+	<div id="sidebar" class="grid_3">
+		<?php get_sidebar('right'); ?>
+	</div>
+	<?php endif;?>
 	
 </div><!--end content_wrap-->
 

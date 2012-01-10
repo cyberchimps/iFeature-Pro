@@ -211,6 +211,11 @@ TEMPLATE_URL . '/images/social/thumbs/icons-default.png' ), 'default' => 'defaul
 		->subsection("Archive")
 			->images($themeslug."_archive_sidebar", "Select the Sidebar Type", array( 'options' => array("left" => TEMPLATE_URL . '/images/options/left.png', "two-right" => TEMPLATE_URL . '/images/options/tworight.png', "right-left" => TEMPLATE_URL . '/images/options/rightleft.png', "none" => TEMPLATE_URL . '/images/options/none.png', "right" => TEMPLATE_URL . '/images/options/right.png'), 'default' => 'right'))
 			->checkbox($themeslug."_archive_show_excerpts", "Post Excerpts", array('default' => true))
+			->checkbox($themeslug."_archive_post_formats", "Post Format Icons",  array('default' => true))
+			->multicheck($themeslug."_archive_hide_byline", "Post Byline Elements", array( 'options' => array($themeslug."_archive_hide_author" => "Author" , $themeslug."_archive_hide_categories" => "Categories", $themeslug."_archive_hide_date" => "Date", $themeslug."_archive_hide_comments" => "Comments", $themeslug."_archive_hide_share" => "Share", $themeslug."_archive_hide_tags" => "Tags"), 'default' => array( $themeslug."_archive_hide_tags" => true, $themeslug."_archive_hide_share" => true, $themeslug."_archive_hide_author" => true, $themeslug."_archive_hide_date" => true, $themeslug."_archive_hide_comments" => true, $themeslug."_archive_hide_categories" => true ) ) )
+			->checkbox($themeslug."_archive_show_fb_like", "Facebook Like Button")
+			->checkbox($themeslug."_archive_show_gplus", "Google Plus One Button")
+
 			->subsection_end()
 		->subsection("Search")
 			->images($themeslug."_search_sidebar", "Select the Sidebar Type", array( 'options' => array("left" => TEMPLATE_URL . '/images/options/left.png', "two-right" => TEMPLATE_URL . '/images/options/tworight.png', "right-left" => TEMPLATE_URL . '/images/options/rightleft.png', "none" => TEMPLATE_URL . '/images/options/none.png', "right" => TEMPLATE_URL . '/images/options/right.png'), 'default' => 'right'))
