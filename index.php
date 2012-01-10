@@ -14,23 +14,23 @@
 	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);
 	
 	if ($sidebar == "1" OR $sidebar == "2" OR $blogsidebar == 'two-right' OR $blogsidebar == 'right-left' ) {
-		$content_grid = 'grid_6';
+		$content_grid = 'six columns';
 	}
 	
 	elseif ($sidebar == "3" OR $blogsidebar == 'none' ) {
-		$content_grid = 'grid_12';
+		$content_grid = 'twelve columns';
 	}
 	
 	else {
-		$content_grid = 'grid_8';
+		$content_grid = 'eight columns';
 	}
 
 ?>
 
 <?php get_header(); ?>
 
-<div class="container_12">
-
+<div class="container">
+	<div class="row">
 
 		<?php chimps_index_carousel_section() ?>	
 
@@ -97,7 +97,7 @@
 	<!--End @Core index after entry hook-->
 
 	
-
+	</div>
 </div><!--end container_12-->
 
 <div class='clear'>&nbsp;</div>
