@@ -28,7 +28,7 @@ function ifeature_header_content() {
 /**
 * Hook for the post bar
 *
-* @since 3.0.5
+* @since 3.1
 */
 function ifeature_post_bar() {
 	do_action('ifeature_post_bar');
@@ -37,10 +37,28 @@ function ifeature_post_bar() {
 /**
 * Hook for the Facebook and Plus One buttons
 *
-* @since 3.0.5
+* @since 3.1
 */
 function ifeature_fb_like_plus_one() { //this will be renamed I promise
 	do_action('ifeature_fb_like_plus_one');
+}
+
+/**
+* Hook for the post bar (single.php)
+*
+* @since 3.2
+*/
+function ifeature_single_post_bar() {
+	do_action('ifeature_single_post_bar');
+}
+
+/**
+* Hook for the Facebook and Plus One buttons (single.php)
+*
+* @since 3.2
+*/
+function ifeature_single_fb_like_plus_one() { //this will be renamed I promise
+	do_action('ifeature_single_fb_like_plus_one');
 }
 
 /**

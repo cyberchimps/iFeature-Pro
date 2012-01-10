@@ -60,7 +60,7 @@ get_header(); ?>
 				<!--End @Core post edit link hook-->
 			
 				<!--Begin @Core FB like hook-->
-					<?php ifeature_fb_like_plus_one(); ?>
+					<?php ifeature_single_fb_like_plus_one(); ?>
 				<!--End @Core FB like hook-->
 			
 				<!--Begin @Core post tags hook-->
@@ -72,7 +72,7 @@ get_header(); ?>
 				<!--End @Core post pagination hook-->
 			
 				<!--Begin @iFeature post bar hook-->
-					<?php ifeature_post_bar(); ?>
+					<?php ifeature_single_post_bar(); ?>
 				<!--End @iFeature post bar hook-->
 			
 				</div><!--end post_class-->	
