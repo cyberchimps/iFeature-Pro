@@ -38,11 +38,10 @@
 		
 	<?php foreach(explode(",",$options->get('header_section_order')) as $function): ?>
 		<?php if($function == 'ifeature_header_content') { ?>
-			<?php if ($options->get($themeslug.'_disable_header') != "0"):?>
 				<!-- Begin @iFeature header content hook-->
 					<?php ifeature_header_content(); ?> 
 				<!-- End @iFeature header content hook -->	
-			<?php endif;?>
+			
 		<?php } elseif($function == 'chimps_navigation') { ?>
 			<!-- Begin @Core navigation contact area hook -->
 				<?php chimps_navigation(); ?> 

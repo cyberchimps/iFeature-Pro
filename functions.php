@@ -492,6 +492,4 @@ require_once ( get_template_directory() . '/inc/update.php' ); // Include automa
 require_once ( get_template_directory() . '/inc/theme-hooks.php' ); // Include automatic updater
 require_once ( get_template_directory() . '/inc/theme-actions.php' ); // Include automatic updater
 
-
-
 ?>
