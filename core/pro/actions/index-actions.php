@@ -48,6 +48,8 @@ function chimps_pro_index_content() {
 	}
 ?>
 
+<div class="container_12">
+
 <!--Begin @Core index entry hook-->
 		<?php chimps_pro_before_entry(); ?>
 	<!--End @Core index entry hook-->
@@ -108,6 +110,9 @@ function chimps_pro_index_content() {
 	<?php chimps_after_entry(); ?>
 	<!--End @Core index after entry hook-->
 
+
+</div><!--end container_12-->
+<div class='clear'>&nbsp;</div>
 <?php }
 
 
@@ -133,7 +138,6 @@ function chimps_before_entry_sidebar() {
 		<?php get_sidebar(); ?>
 	</div>
 	<?php endif;
-	
 }
 
 /**

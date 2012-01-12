@@ -40,7 +40,7 @@
 
 <?php get_header(); ?>
 
-<div class="container_12">
+
 
 	<?php
 		foreach(explode(",", $options->get($themeslug.'_blog_section_order')) as $fn) {
@@ -50,7 +50,7 @@
 		}
 	?>
 
-</div><!--end container_12-->
+
 
 <div class='clear'>&nbsp;</div>
 
