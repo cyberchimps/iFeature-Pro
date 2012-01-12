@@ -32,8 +32,9 @@ function chimps_box_section_content() {
 	$root = get_template_directory_uri(); ?>
 	
 
-	<div id="box_container" class="container_12"> <!--box container-->
-		<div class="grid_12">
+	<div id="box_container" class="container"> <!--box container-->
+		<div class="row"> 
+		<div class="twelve columns">
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box Left") ) : ?>
 			<div class="box1">
 				<h2 class="box-widget-title">Box Left</h2>
@@ -52,6 +53,7 @@ function chimps_box_section_content() {
 				<p>This is the box right widgetized area.</p>
 			</div><!--end box3-->
 		<?php endif; ?>
+		</div>
 </div>
 	</div><!--end box_container--> <div class='clear'>&nbsp;</div><?php
 	}

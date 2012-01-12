@@ -293,7 +293,7 @@ function ifeature_post_bar_content() {
 	$hidden = $options->get($themeslug.'_hide_byline'); ?>
 	
 	
-		<div class="postbar" class="grid_8">
+		<div class="postbar" class="eight columns">
 		<?php if (($hidden[$themeslug.'_hide_share']) != '0'):?>
 			<div class="share">
 		<a href="http://www.facebook.com/share.php?u=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/facebook.png" alt="Share on Facebook" height="16px" width="16px" /></a> 
@@ -342,7 +342,7 @@ function ifeature_single_post_bar_content() {
 	$hidden = $options->get($themeslug.'_single_hide_byline'); ?>
 	
 	
-		<div class="postbar" class="grid_8">
+		<div class="postbar" class="eight columns">
 		<?php if (($hidden[$themeslug.'_single_hide_share']) != '0'):?>
 			<div class="share">
 		<a href="http://www.facebook.com/share.php?u=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/facebook.png" alt="Share on Facebook" height="16px" width="16px" /></a> 
@@ -391,7 +391,7 @@ function ifeature_archive_post_bar_content() {
 	$hidden = $options->get($themeslug.'_archive_hide_byline'); ?>
 	
 	
-		<div class="postbar" class="grid_8">
+		<div class="postbar" class="eight columns">
 		<?php if (($hidden[$themeslug.'_archive_hide_share']) != '0'):?>
 			<div class="share">
 		<a href="http://www.facebook.com/share.php?u=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/facebook.png" alt="Share on Facebook" height="16px" width="16px" /></a> 
@@ -420,7 +420,7 @@ function ifeature_header_standard_content() {
 ?>
 	<div class="container_12">
 		
-			<div class="grid_6">
+			<div class="six columns">
 				
 				<!-- Begin @Core header sitename hook -->
 					<?php chimps_header_sitename(); ?> 
