@@ -12,15 +12,15 @@
 	$sidebar = $options->get($themeslug.'_archive_sidebar');
 	
 		if ($sidebar == 'two-right' OR $sidebar == 'right-left' ) {
-		$content_grid = 'grid_6';
+		$content_grid = 'six columns';
 	}
 	
 	elseif ($sidebar == 'none' ) {
-		$content_grid = 'grid_12';
+		$content_grid = 'twevle columns';
 	}
 	
 	else {
-		$content_grid = 'grid_8';
+		$content_grid = 'eight columns';
 	}
 
 /* Header call. */
@@ -31,26 +31,27 @@
 
 ?>
 
-<div class="container_12">
+<div class="container">
+	<div class="row"> 
 
 <?php if (function_exists('chimps_breadcrumbs') && ($options->get($themeslug.'_disable_breadcrumbs') == "1")) { chimps_breadcrumbs(); }?>
 
 	<div id="main">
 	
 	<?php if ($sidebar == 'right-left' ): ?>
-	<div id="sidebar" class="grid_3">
+	<div id="sidebar" class="three columns">
 		<?php get_sidebar('left'); ?>
 	</div>
 	<?php endif; ?>
 	
 	<?php if ($sidebar == "4" OR $sidebar == 'left' ): ?>
-	<div id="sidebar" class="grid_4">
+	<div id="sidebar" class="four columns">
 		<?php get_sidebar(); ?>
 	</div>
 	<?php endif; ?>
 
 	
-		<div id="content" class="<?php echo $content_grid; ?>">
+		<div id="content" class="eight columns">
 		
 		<!--Begin @Core before_archive hook-->
 			<?php chimps_before_archive(); ?>
@@ -87,27 +88,26 @@
 		</div><!--end content_padding-->
 
 	<?php if ($sidebar == 'right' OR $sidebar == '' ): ?>
-	<div id="sidebar" class="grid_4">
+	<div id="sidebar" class="four columns">
 		<?php get_sidebar(); ?>
 	</div>
 	<?php endif;?>
 	
 	<?php if ($sidebar == 'two-right' ): ?>
-	<div id="sidebar" class="grid_3">
+	<div id="sidebar" class="four columns">
 		<?php get_sidebar('left'); ?>
 	</div>
 	<?php endif;?> 
 	
 	<?php if ($sidebar == 'two-right' OR $sidebar == 'right-left' ): ?>
-	<div id="sidebar" class="grid_3">
+	<div id="sidebar" class="three columns">
 		<?php get_sidebar('right'); ?>
 	</div>
 	<?php endif;?>
 	
+	</div>
 </div><!--end content_wrap-->
 
 	</div><!--end content_left-->
-
-<div class='clear'>&nbsp;</div>
 
 <?php get_footer(); ?>

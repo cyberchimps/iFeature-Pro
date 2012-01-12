@@ -33,23 +33,24 @@ function chimps_page_section_content() {
 	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);
 
 	if ($sidebar == "1" ) {
-		$content_grid = 'grid_12';
+		$content_grid = 'twelve columns';
 	}
 	
 	else {
-		$content_grid = 'grid_8';
+		$content_grid = 'eight columns';
 	}
 
 ?>
-<div class="container_12">
+<div class="container">
+	<div class="row">
 
 	<?php if ($sidebar == "2"): ?>
-		<div id="sidebar" class="grid_3">
+		<div id="sidebar" class="three columns">
 			<?php get_sidebar('left'); ?>
 		</div>
 	<?php endif;?>
 			
-		<div id="content" class="<?php echo $content_grid; ?>">
+		<div id="content" class="eight columns">
 			
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		
@@ -84,7 +85,7 @@ function chimps_page_section_content() {
 	</div><!--end content_left-->
 	
 	<?php if ($sidebar == "0" OR $sidebar == ""): ?>
-		<div id="sidebar" class="grid_4">
+		<div id="sidebar" class="four columns">
 			<?php get_sidebar(); ?>
 		</div>
 	<?php endif;?>

@@ -14,15 +14,15 @@
 	$sidebar = $options->get($themeslug.'_single_sidebar');
 	
 	if ($sidebar == 'two-right' OR $sidebar == 'right-left' ) {
-		$content_grid = 'grid_6';
+		$content_grid = 'six columns';
 	}
 	
 	elseif ($sidebar == 'none' ) {
-		$content_grid = 'grid_12';
+		$content_grid = 'twelve columns';
 	}
 	
 	else {
-		$content_grid = 'grid_8';
+		$content_grid = 'eight columns';
 	}
 
 
@@ -31,7 +31,8 @@
 
 get_header(); ?>
 
-<div class="container_12">
+<div class="container">
+	<div class="row">
 
 <?php if (function_exists('chimps_breadcrumbs') && ($options->get($themeslug.'_disable_breadcrumbs') == "1")) { chimps_breadcrumbs(); }?>
 
@@ -40,7 +41,7 @@ get_header(); ?>
 	<!--End @Core index after entry hook-->
 
 	
-		<div id="content" class="<?php echo $content_grid; ?>">
+		<div id="content" class="eight columns">
 
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			
@@ -95,9 +96,7 @@ get_header(); ?>
 	<!--End @Core index after entry hook-->
 
 
-
-</div><!--end container_12-->
-
-<div style="clear:both;"></div>
+	</div>
+</div><!--end container-->
 
 <?php get_footer(); ?>

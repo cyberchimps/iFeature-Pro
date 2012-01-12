@@ -36,7 +36,7 @@ function chimps_after_entry_sidebar() {
 	
 	
 	<?php if ($sidebar == "0" OR $blogsidebar == 'right' OR $blogsidebar == '' ): ?>
-	<div id="sidebar" class="grid_4">
+	<div id="sidebar" class="four columns">
 		<?php get_sidebar(); ?>
 	</div>
 	<?php endif;?>

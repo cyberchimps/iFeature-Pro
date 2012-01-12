@@ -34,6 +34,8 @@ if (preg_match("/page_slider/", $page_section_order ) && $size == "1" ) {
 ?>
 
 <div class="container">
+	<div class="row">
+
 <?php if (function_exists('chimps_breadcrumbs') && ($options->get($themeslug.'_disable_breadcrumbs') == "1")) { chimps_breadcrumbs(); }?>
 <div style=clear:both;></div>
 
@@ -45,8 +47,7 @@ if (preg_match("/page_slider/", $page_section_order ) && $size == "1" ) {
 		}
 	}
 ?>
-	
+	</div>
 </div>
 
-<div style=clear:both;></div>
 <?php get_footer(); ?>

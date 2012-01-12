@@ -39,7 +39,7 @@
 		<?php chimps_pro_before_entry(); ?>
 	<!--End @Core index entry hook-->
 
-		<div id="content" class="<?php echo $content_grid; ?>">
+		<div id="content" class="eight columns">
 		
 		<!--Begin @Core index entry hook-->
 		<?php chimps_pro_entry(); ?>
@@ -98,8 +98,6 @@
 
 	
 	</div>
-</div><!--end container_12-->
-
-<div class='clear'>&nbsp;</div>
+</div><!--end container-->
 
 <?php get_footer(); ?>

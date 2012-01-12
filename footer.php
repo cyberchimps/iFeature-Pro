@@ -15,17 +15,19 @@ global $options, $themeslug;
 	
 <?php if ($options->get($themeslug.'_disable_footer') != "0"):?>	
 
-</div><!--end container 12 main wrap-->
+</div><!--end container wrap-->
 
 <div id="footer">
-     <div class="container_12">
+     <div class="container">
+     		<div class="row">
     	
 	<!-- Begin @Core footer hook content-->
 		<?php chimps_footer(); ?>
 	<!-- End @Core footer hook content-->
 	
 	<?php endif;?>
-			   
+	
+		</div> 
 	</div><!--end footer_wrap-->
 </div><!--end footer-->
 
