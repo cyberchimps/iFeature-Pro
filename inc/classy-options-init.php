@@ -108,7 +108,7 @@ $options
 			->close_outersection()
 	->section("Header")
 		->open_outersection()
-			->section_order("header_section_order", "Drag drop sections for the Header", array('options' => array("ifeature_header_content" => "Header Content", "chimps_navigation" => "Navigation")))
+			->section_order("header_section_order", "Drag drop sections for the Header", array('options' => array("ifeature_header_content" => "Header Content", "chimps_navigation" => "Navigation"), 'default' => 'ifeature_header_content,chimps_navigation'))
 		->close_outersection()
 			->subsection("Header Options")
 			->upload($themeslug."_logo", "Custom Logo")
