@@ -36,18 +36,13 @@
 			
 	<header>
 		
-	<?php foreach(explode(",",$options->get('header_section_order')) as $function): ?>
-		<?php if($function == 'ifeature_header_content') { ?>
-				<!-- Begin @iFeature header content hook-->
-					<?php ifeature_header_content(); ?> 
-				<!-- End @iFeature header content hook -->	
-			
-		<?php } elseif($function == 'chimps_navigation') { ?>
-			<!-- Begin @Core navigation contact area hook -->
-				<?php chimps_navigation(); ?> 
-			<!-- End @Core navigation contact area hook -->
-		<?php } ?>
-	<?php endforeach; ?>
+	<?php
+		foreach(explode(",", $options->get('header_section_order')) as $fn) {
+			if(function_exists($fn)) {
+				call_user_func_array($fn, array());
+			}
+		}
+	?>
 				<div class='clear'>&nbsp;</div>
 			</header>
 
