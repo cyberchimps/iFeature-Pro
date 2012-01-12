@@ -52,6 +52,13 @@ function chimps_pro_entry() {
 }
 
 /** 
+* Index
+*/
+function chimps_pro_index() {
+	do_action('chimps_pro_index');
+}
+
+/** 
 * Single 
 */
 function chimps_single_before_entry() {
@@ -67,6 +74,9 @@ function chimps_single_after_entry() {
 */
 function chimps_blog_slider() {
 	do_action ('chimps_blog_slider');
+}
+function chimps_blog_content_slider() {
+	do_action ('chimps_blog_content_slider');
 }
 function chimps_page_slider() {
 	do_action ('chimps_page_slider');

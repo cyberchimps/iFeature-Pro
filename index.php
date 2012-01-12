@@ -10,6 +10,8 @@
 
 	global $options, $themeslug, $post; // call globals
 	
+	$reorder = $options->get($themeslug.'_blog_section_order');
+	$slidersize = $options->get($themeslug.'_slider_size');
 	$blogsidebar = $options->get($themeslug.'_blog_sidebar');
 	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);
 	
@@ -24,6 +26,15 @@
 	else {
 		$content_grid = 'grid_8';
 	}
+	
+/* Set slider hook based on page option */
+
+	if (preg_match("/chimps_blog_slider/", $reorder ) && $slidersize != "key2" ) {
+		remove_action ( 'chimps_blog_slider', 'chimps_blog_slider_content' );
+		add_action ( 'chimps_blog_content_slider', 'chimps_blog_slider_content');
+	}
+	
+/* End set slider hook*/
 
 ?>
 
@@ -31,72 +42,13 @@
 
 <div class="container_12">
 
-
-		<?php chimps_index_carousel_section() ?>	
-
-
-	<!--Begin @Core index entry hook-->
-		<?php chimps_pro_before_entry(); ?>
-	<!--End @Core index entry hook-->
-
-		<div id="content" class="<?php echo $content_grid; ?>">
-		
-		<!--Begin @Core index entry hook-->
-		<?php chimps_pro_entry(); ?>
-		<!--End @Core index entry hook-->
-
-
-			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			
-			<div class="post_container">
-				<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
-		
-				<!--Begin @Core index loop hook-->
-					<?php chimps_loop(); ?>
-				<!--End @Core index loop hook-->	
-			
-				<!--Begin @Core link pages hook-->
-					<?php chimps_link_pages(); ?>
-				<!--End @Core link pages hook-->
-			
-				<!--Begin @Core post edit link hook-->
-					<?php chimps_edit_link(); ?>
-				<!--End @Core post edit link hook-->
-			
-				<!--Begin @Core FB like hook-->
-					<?php ifeature_fb_like_plus_one(); ?>
-				<!--End @Core FB like hook-->
-			
-				<!--Begin @Core post tags hook-->
-					<?php chimps_post_tags(); ?>
-				<!--End @Core post tags hook-->
-			
-				<!--Begin @iFeature post bar hook-->
-					<?php ifeature_post_bar(); ?>
-				<!--End @iFeature post bar hook-->
-			
-				</div><!--end post_class-->	
-		</div><!--end post container--> 
-	
-			<?php endwhile; ?>
-		
-			<?php else : ?>
-
-				<h2>Not Found</h2>
-
-			<?php endif; ?>
-			
-				<!--Begin @Core pagination hook-->
-			<?php chimps_pagination(); ?>
-			<!--End @Core pagination loop hook-->
-		
-		</div><!--end content-->
-
-	<!--Begin @Core index after entry hook-->
-	<?php chimps_after_entry(); ?>
-	<!--End @Core index after entry hook-->
-
-	
+	<?php
+		foreach(explode(",", $options->get($themeslug.'_blog_section_order')) as $fn) {
+			if(function_exists($fn)) {
+				call_user_func_array($fn, array());
+			}
+		}
+	?>
 
 </div><!--end container_12-->
 

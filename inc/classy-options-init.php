@@ -157,7 +157,7 @@ TEMPLATE_URL . '/images/social/thumbs/icons-default.png' ), 'default' => 'defaul
 		->subsection_end()
 	->section("Blog")
 		->open_outersection()
-			->section_order("blog_section_order", "Blog Page Re-Order", array('options' => array("blog_loop" => "Post Loop", "chimps_blog_slider" => "iFeature Slider", "chimps_blog_callout" => "Callout Section", "chimps_blog_twitterbar" => "Twitter Bar", "chimps_blog_carousel" => "Carousel", "chimps_blog_boxes" => "Widgetized Boxes"), "default" => "blog_loop"))
+			->section_order($themeslug."_blog_section_order", "Blog Page Re-Order", array('options' => array("chimps_pro_index" => "Post Page", "chimps_blog_slider" => "iFeature Slider", "chimps_blog_callout" => "Callout Section", "chimps_blog_twitterbar" => "Twitter Bar", "chimps_blog_carousel" => "Carousel", "chimps_blog_boxes" => "Widgetized Boxes"), "default" => "blog_loop"))
 		->close_outersection()
 		->subsection("Blog Options")
 			->images($themeslug."_blog_sidebar", "Select the Sidebar Type", array( 'options' => array("left" => TEMPLATE_URL . '/images/options/left.png', "two-right" => TEMPLATE_URL . '/images/options/tworight.png', "right-left" => TEMPLATE_URL . '/images/options/rightleft.png', "none" => TEMPLATE_URL . '/images/options/none.png', "right" => TEMPLATE_URL . '/images/options/right.png'), 'default' => 'right'))
