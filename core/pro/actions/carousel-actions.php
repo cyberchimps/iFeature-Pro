@@ -209,7 +209,7 @@ function chimps_index_carousel_section_content() {
 	
 /* End define variables. */	 
 
-if ($options->get($themeslug.'_show_carousel') == '1') {
+
 ?>
 
 
@@ -365,7 +365,7 @@ echo $out;
 
 }
 
-}
+
 
 /**
 * End
