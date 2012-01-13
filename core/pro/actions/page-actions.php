@@ -30,33 +30,34 @@ function chimps_pro_page_section_content() {
 	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);
 	
 	if ($sidebar == "1" OR $sidebar == "2" ) {
-		$content_grid = 'grid_6';
+		$content_grid = 'six columns';
 	}
 	
 	elseif ($sidebar == "3") {
-		$content_grid = 'grid_12';
+		$content_grid = 'twelve columns';
 	}
 	
 	else {
-		$content_grid = 'grid_8';
+		$content_grid = 'eight columns';
 	}
 
 ?>
-<div class="container_12">
+<div class="container">
+	<div class="row">
 
 	<?php if ($sidebar == "2"): ?>
-		<div id="sidebar" class="grid_3">
+		<div id="sidebar" class="three columns">
 			<?php get_sidebar('left'); ?>
 		</div>
 	<?php endif;?>
 	
 	<?php if ($sidebar == "4"): ?>
-		<div id="sidebar" class="grid_4">
+		<div id="sidebar" class="four columns">
 			<?php get_sidebar(); ?>
 		</div>
 	<?php endif;?>
 			
-		<div id="content" class="<?php echo $content_grid; ?>">
+		<div id="content" class="eight columns">
 		
 		<?php chimps_page_content_slider(); ?>
 		
@@ -93,19 +94,19 @@ function chimps_pro_page_section_content() {
 	</div><!--end content_left-->
 	
 	<?php if ($sidebar == "0" OR $sidebar == ""): ?>
-		<div id="sidebar" class="grid_4">
+		<div id="sidebar" class="four columns">
 			<?php get_sidebar(); ?>
 		</div>
 	<?php endif;?>
 	
 	<?php if ($sidebar == "1"): ?>
-		<div id="sidebar" class="grid_3">
+		<div id="sidebar" class="three columns">
 			<?php get_sidebar('left'); ?>
 		</div>
 	<?php endif;?>
 	
 	<?php if ($sidebar == "1" OR $sidebar == "2"): ?>
-		<div id="sidebar" class="grid_3">
+		<div id="sidebar" class="three columns">
 			<?php get_sidebar('right'); ?>
 		</div>
 	<?php endif;?>

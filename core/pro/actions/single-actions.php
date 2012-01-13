@@ -29,13 +29,13 @@ function chimps_single_before_entry_sidebar() {
 	$sidebar = $options->get($themeslug.'_single_sidebar');?>
 				
 	<?php if ($sidebar == 'right-left' ): ?>
-	<div id="sidebar" class="grid_3">
+	<div id="sidebar" class="three columns">
 		<?php get_sidebar('left'); ?>
 	</div>
 	<?php endif; ?>
 	
 	<?php if ($sidebar == "4" OR $sidebar == 'left' ): ?>
-	<div id="sidebar" class="grid_4">
+	<div id="sidebar" class="four columns">
 		<?php get_sidebar(); ?>
 	</div>
 	<?php endif;
@@ -54,19 +54,19 @@ function chimps_single_after_entry_sidebar() {
 	
 	
 	<?php if ($sidebar == 'right' OR $sidebar == '' ): ?>
-	<div id="sidebar" class="grid_4">
+	<div id="sidebar" class="four columns">
 		<?php get_sidebar(); ?>
 	</div>
 	<?php endif;?>
 	
 	<?php if ($sidebar == 'two-right' ): ?>
-	<div id="sidebar" class="grid_3">
+	<div id="sidebar" class="three columns">
 		<?php get_sidebar('left'); ?>
 	</div>
 	<?php endif;?> 
 	
 	<?php if ($sidebar == 'two-right' OR $sidebar == 'right-left' ): ?>
-	<div id="sidebar" class="grid_3">
+	<div id="sidebar" class="three columns">
 		<?php get_sidebar('right'); ?>
 	</div>
 	<?php endif;?> <?php 

@@ -190,8 +190,9 @@ function ifeature_box_section_content() {
 	$root = get_template_directory_uri(); ?>
 	
 
-	<div id="box_container" class="container_12"> <!--box container-->
-		<div class="grid_12">
+	<div id="box_container" class="container"> <!--box container-->
+		<div class="row">
+		<div class="twelve columns">
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box Left") ) : ?>
 			<div class="box1">
 				<h2 class="box-widget-title">iFeature Pro Slider</h2>
@@ -213,6 +214,7 @@ function ifeature_box_section_content() {
 				<p>We designed iFeature Pro to be as easy to design with as possible, if you do run into trouble we provide a <a href="http://cyberchimps.com/forum">support forum</a>, and <a href="http://www.cyberchimps.com/ifeaturepro/docs/">precise documentation</a>.</p>
 			</div><!--end box3-->
 		<?php endif; ?>
+		</div>
 </div>
 	</div><!--end box_container--> <div class='clear'>&nbsp;</div><?php
 }
@@ -418,7 +420,8 @@ function ifeature_archive_post_bar_content() {
 */
 function ifeature_header_standard_content() {
 ?>
-	<div class="container_12">
+	<div class="container">
+		<div class="row"> 
 		
 			<div class="six columns">
 				
@@ -429,7 +432,7 @@ function ifeature_header_standard_content() {
 				
 			</div>	
 			
-			<div class="grid_6">
+			<div class="six columns">
 			
 			
 				<!-- Begin @Core header social icon hook -->
@@ -437,11 +440,9 @@ function ifeature_header_standard_content() {
 				<!-- End @Core header contact social icon hook -->
 				
 			</div>	
-		
+		</div>
 	</div><!--end container 12-->
 		
-	<div class='clear'>&nbsp;</div>
-
 <?php
 }
 
@@ -453,9 +454,9 @@ function ifeature_header_standard_content() {
 function ifeature_header_extra_content() {
 global $options, $themeslug;?>
 	
-	<div class="container_12">
+	<div class="container">
 		
-		<div class="grid_6">
+		<div class="six columns">
 				
 			<!-- Begin @Core header sitename hook -->
 				<?php chimps_header_sitename(); ?> 
@@ -463,7 +464,7 @@ global $options, $themeslug;?>
 				
 		</div>	
 			
-				<div id="header_contact" class="grid_6">
+				<div id="header_contact" class="six columns">
 				&nbsp;
 			<?php if ($options->get($themeslug.'_enable_header_contact') == '1'	): ?>
 
@@ -477,9 +478,10 @@ global $options, $themeslug;?>
 		
 	<div class='clear'>&nbsp;</div>
 		
-	<div class="container_12" id="head2">
+	<div class="container" id="head2">
+		<div class="row">
 				
-		<div class="grid_6">
+		<div class="six colums">
 		&nbsp;
 			<?php if ($options->get($themeslug.'_show_description') == '1'	): ?>
 			<!-- Begin @Core header description hook -->
@@ -488,17 +490,16 @@ global $options, $themeslug;?>
 			<?php endif; ?>
 		</div>
 			
-		<div class="grid_6">
+		<div class="six columns">
 			
 			<!-- Begin @Core header social icon hook -->
 				<?php chimps_header_social_icons(); ?> 
 			<!-- End @Core header contact social icon hook -->	
 				
 		</div>
-			
+		</div>
 	</div>
 		
-	<div class='clear'>&nbsp;</div>
 
 <?php
 }
