@@ -458,6 +458,15 @@ function chimps_index() {
 }
 
 /**
+* Index content. 
+*
+* @since 1.0
+*/
+function chimps_post_bar() {
+	do_action ('chimps_post_bar');
+}
+
+/**
 * End
 */
 
