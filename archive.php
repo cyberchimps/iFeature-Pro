@@ -37,17 +37,9 @@
 
 	<div id="main">
 	
-	<?php if ($sidebar == 'right-left' ): ?>
-	<div id="sidebar" class="grid_3">
-		<?php get_sidebar('left'); ?>
-	</div>
-	<?php endif; ?>
-	
-	<?php if ($sidebar == "4" OR $sidebar == 'left' ): ?>
-	<div id="sidebar" class="grid_4">
-		<?php get_sidebar(); ?>
-	</div>
-	<?php endif; ?>
+	<!--Begin @Core before content sidebar hook-->
+		<?php chimps_before_content_sidebar(); ?>
+	<!--End @Core before content sidebar hook-->
 
 	
 		<div id="content" class="<?php echo $content_grid; ?>">
@@ -86,23 +78,9 @@
 	
 		</div><!--end content_padding-->
 
-	<?php if ($sidebar == 'right' OR $sidebar == '' ): ?>
-	<div id="sidebar" class="grid_4">
-		<?php get_sidebar(); ?>
-	</div>
-	<?php endif;?>
-	
-	<?php if ($sidebar == 'two-right' ): ?>
-	<div id="sidebar" class="grid_3">
-		<?php get_sidebar('left'); ?>
-	</div>
-	<?php endif;?> 
-	
-	<?php if ($sidebar == 'two-right' OR $sidebar == 'right-left' ): ?>
-	<div id="sidebar" class="grid_3">
-		<?php get_sidebar('right'); ?>
-	</div>
-	<?php endif;?>
+	<!--Begin @Core after content sidebar hook-->
+		<?php chimps_after_content_sidebar(); ?>
+	<!--End @Core after content sidebar hook-->
 	
 </div><!--end content_wrap-->
 

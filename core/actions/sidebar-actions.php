@@ -15,16 +15,7 @@
 * @since 1.0
 */
 
-add_action( 'chimps_before_content_sidebar', 'chimps_before_content_sidebar_markup' );
-add_action( 'chimps_after_content_sidebar', 'chimps_after_content_sidebar_markup' );
-
-/**
-* Before entry sidebar
-*
-* @since 1.0
-*/
-function chimps_before_content_sidebar_markup() { 
-	global $options, $themeslug, $post; // call globals
+	global $options, $themeslug, $post;
 	
 	if (is_single()) {
 	$sidebar = $options->get($themeslug.'_single_sidebar');
@@ -40,9 +31,20 @@ function chimps_before_content_sidebar_markup() {
 	}
 	if (is_page()) {
 	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);
-	}?>
+	}
+
+add_action( 'chimps_before_content_sidebar', 'chimps_before_content_sidebar_markup' );
+add_action( 'chimps_after_content_sidebar', 'chimps_after_content_sidebar_markup' );
+
+/**
+* Before entry sidebar
+*
+* @since 1.0
+*/
+function chimps_before_content_sidebar_markup() { 
+	global $options, $themeslug, $post, $sidebar; // call globals ?>
 				
-	<?php if ($sidebar == 'right-left'  OR $sidebar == "2"): ?>
+	<?php if ($sidebar == 'right-left' OR $sidebar == "2"): ?>
 	<div id="sidebar" class="grid_3">
 		<?php get_sidebar('left'); ?>
 	</div>
@@ -53,7 +55,6 @@ function chimps_before_content_sidebar_markup() {
 		<?php get_sidebar(); ?>
 	</div>
 	<?php endif;
-	
 }
 
 /**
@@ -62,23 +63,7 @@ function chimps_before_content_sidebar_markup() {
 * @since 1.0
 */
 function chimps_after_content_sidebar_markup() {
-	global $options, $themeslug, $post; // call globals
-	
-	if (is_single()) {
-	$sidebar = $options->get($themeslug.'_single_sidebar');
-	}
-	if (is_archive()) {
-	$sidebar = $options->get($themeslug.'_archive_sidebar');
-	}
-	if (is_search()) {
-	$sidebar = $options->get($themeslug.'_search_sidebar');
-	}
-	if (is_front_page()) {
-	$sidebar = $options->get($themeslug.'_blog_sidebar');
-	}
-	if (is_page()) {
-	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);
-	}?>
+	global $options, $themeslug, $post, $sidebar; // call globals ?>
 	
 	<?php if ($sidebar == 'right' OR $sidebar == '' ): ?>
 	<div id="sidebar" class="grid_4">

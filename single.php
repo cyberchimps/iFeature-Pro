@@ -35,9 +35,9 @@ get_header(); ?>
 
 <?php if (function_exists('chimps_breadcrumbs') && ($options->get($themeslug.'_disable_breadcrumbs') == "1")) { chimps_breadcrumbs(); }?>
 
-<!--Begin @Core index after entry hook-->
-	<?php chimps_before_content_sidebar(); ?>
-	<!--End @Core index after entry hook-->
+	<!--Begin @Core before content sidebar hook-->
+		<?php chimps_before_content_sidebar(); ?>
+	<!--End @Core before content sidebar hook-->
 
 	
 		<div id="content" class="<?php echo $content_grid; ?>">
@@ -90,9 +90,9 @@ get_header(); ?>
 		
 		</div><!--end content-->
 
-<!--Begin @Core index after entry hook-->
-	<?php chimps_after_content_sidebar(); ?>
-	<!--End @Core index after entry hook-->
+	<!--Begin @Core after content sidebar hook-->
+		<?php chimps_after_content_sidebar(); ?>
+	<!--End @Core after content sidebar hook-->
 
 
 
