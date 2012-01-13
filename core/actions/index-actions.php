@@ -21,27 +21,8 @@
 
 add_action( 'chimps_loop', 'chimps_loop_content' );
 
-add_action( 'chimps_after_entry', 'chimps_after_entry_sidebar' );
+add_action( 'chimps_index', 'chimps_index_content');
 
-/**
-* After entry sidebar
-*
-* @since 1.0
-*/
-function chimps_after_entry_sidebar() {
-	global $options, $themeslug, $post; // call globals
-	
-	$blogsidebar = $options->get($themeslug.'_blog_sidebar');
-	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);?>
-	
-	
-	<?php if ($sidebar == "0" OR $blogsidebar == 'right' OR $blogsidebar == '' ): ?>
-	<div id="sidebar" class="grid_4">
-		<?php get_sidebar(); ?>
-	</div>
-	<?php endif;?>
- <?php 
-}
 
 /**
 * Check for post format type, apply filter based on post format name for easy modification.
@@ -97,6 +78,94 @@ function chimps_loop_content($content) {
 	
 		echo $content; 
 }
+
+/**
+* Index content
+*
+* @since 1.0
+*/
+function chimps_index_content() { 
+
+	global $options, $themeslug, $post, $sidebar; // call globals
+	$sidebar = $options->get($themeslug.'_blog_sidebar');
+	
+	if ($sidebar == 'two-right' OR $sidebar == 'right-left' ) {
+		$content_grid = 'grid_6';
+	}
+	elseif ($sidebar == 'none' ) {
+		$content_grid = 'grid_12';
+	}
+	else {
+		$content_grid = 'grid_8';
+	}
+?>
+
+<div class="container_12">
+
+<!--Begin @Core before content sidebar hook-->
+		<?php chimps_before_content_sidebar(); ?>
+	<!--End @Core before content sidebar hook-->
+
+		<div id="content" class="<?php echo $content_grid; ?>">
+		
+		<!--Begin @Core index entry hook-->
+		<?php chimps_blog_content_slider(); ?>
+		<!--End @Core index entry hook-->
+
+			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+			
+			<div class="post_container">
+				<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
+		
+				<!--Begin @Core index loop hook-->
+					<?php chimps_loop(); ?>
+				<!--End @Core index loop hook-->	
+			
+				<!--Begin @Core link pages hook-->
+					<?php chimps_link_pages(); ?>
+				<!--End @Core link pages hook-->
+			
+				<!--Begin @Core post edit link hook-->
+					<?php chimps_edit_link(); ?>
+				<!--End @Core post edit link hook-->
+			
+				<!--Begin @Core FB like hook-->
+					<?php ifeature_fb_like_plus_one(); ?>
+				<!--End @Core FB like hook-->
+			
+				<!--Begin @Core post tags hook-->
+					<?php chimps_post_tags(); ?>
+				<!--End @Core post tags hook-->
+			
+				<!--Begin @iFeature post bar hook-->
+					<?php ifeature_post_bar(); ?>
+				<!--End @iFeature post bar hook-->
+			
+				</div><!--end post_class-->	
+		</div><!--end post container--> 
+	
+			<?php endwhile; ?>
+		
+			<?php else : ?>
+
+				<h2>Not Found</h2>
+
+			<?php endif; ?>
+			
+				<!--Begin @Core pagination hook-->
+			<?php chimps_pagination(); ?>
+			<!--End @Core pagination loop hook-->
+		
+		</div><!--end content-->
+
+	<!--Begin @Core after content sidebar hook-->
+		<?php chimps_after_content_sidebar(); ?>
+	<!--End @Core after content sidebar hook-->
+
+
+</div><!--end container_12-->
+<div class='clear'>&nbsp;</div>
+<?php }
 
 /**
 * End

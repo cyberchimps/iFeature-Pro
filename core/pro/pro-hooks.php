@@ -52,24 +52,6 @@ function chimps_pro_entry() {
 }
 
 /** 
-* Index
-*/
-function chimps_pro_index() {
-	do_action('chimps_pro_index');
-}
-
-/** 
-* Single 
-*/
-function chimps_single_before_entry() {
-	do_action('chimps_single_before_entry');
-}
-
-function chimps_single_after_entry() {
-	do_action('chimps_single_after_entry');
-}
-
-/** 
 * Slider
 */
 function chimps_blog_slider() {

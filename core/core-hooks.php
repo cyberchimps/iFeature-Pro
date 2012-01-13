@@ -449,6 +449,15 @@ function chimps_after_content_sidebar() {
 }
 
 /**
+* Index content. 
+*
+* @since 1.0
+*/
+function chimps_index() {
+	do_action ('chimps_index');
+}
+
+/**
 * End
 */
 
