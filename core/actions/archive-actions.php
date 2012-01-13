@@ -96,26 +96,65 @@ function chimps_archive_page_title() {
 *
 * @since 1.0
 */
-function chimps_archive_loop() { 
+function chimps_archive_loop($content) { 
+	global $options, $themeslug, $post; //call globals
+	
+	if (get_post_format() == '') {
+		$format = "default";
+	}
+	else {
+		$format = get_post_format();
+	}
 ?>
 	<div class="post_container">
 			
 		<div <?php post_class() ?>>
+		
+		<?php ob_start(); ?>
+		
+		<?php if ($options->get($themeslug.'_archive_post_formats') != '0') : ?>
+			<div class="postformats"><!--begin format icon-->
+				<img src="<?php echo get_template_directory_uri(); ?>/images/formats/<?php echo $format ;?>.png" alt="formats" />
+			</div><!--end format-icon-->
+			<?php endif; ?>
+
 				
 			<h2 id="post-<?php the_ID(); ?>"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
 				
 				<!--Begin @Core post tags hook-->
-					<?php chimps_post_byline(); ?>
+					<?php chimps_archive_post_byline(); ?>
 				<!--Begin @Core post tags hook-->
 						
 					<div class="entry">
-						<?php the_excerpt(); ?>
+							<?php 
+						if ($options->get($themeslug.'_archive_show_excerpts') == '1') {
+							the_excerpt();
+						}
+						else {
+							the_content();
+						}
+					 ?>
 					</div>
+					
+			<?php	
+				$content = ob_get_clean();
+				$content = apply_filters( 'chimps_post_formats_'.$format.'_content', $content );
+	
+				echo $content; 
+			?>
+			
+				<!--Begin @Core FB like hook-->
+					<?php ifeature_archive_fb_like_plus_one(); ?>
+				<!--End @Core FB like hook-->
 				
 				<!--Begin @Core post tags hook-->
-					<?php chimps_post_tags(); ?>
+					<?php chimps_archive_post_tags(); ?>
 				<!--End @Core post tags hook-->	
-											
+				
+				<!--Begin @iFeature post bar hook-->
+					<?php ifeature_archive_post_bar(); ?>
+				<!--End @iFeature post bar hook-->					
+							
 		</div><!--end post-->
 				
 	</div><!--end post_container-->

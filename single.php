@@ -10,21 +10,17 @@
 
 
 	global $options, $themeslug, $post; // call globals
-	
 	$sidebar = $options->get($themeslug.'_single_sidebar');
 	
 	if ($sidebar == 'two-right' OR $sidebar == 'right-left' ) {
 		$content_grid = 'grid_6';
 	}
-	
 	elseif ($sidebar == 'none' ) {
 		$content_grid = 'grid_12';
 	}
-	
 	else {
 		$content_grid = 'grid_8';
 	}
-
 
 /* End variable definition. */	
 
