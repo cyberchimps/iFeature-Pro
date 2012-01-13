@@ -431,6 +431,24 @@ function chimps_twitterbar_section() {
 }
 
 /**
+* Generates the before content sidebar. 
+*
+* @since 1.0
+*/
+function chimps_before_content_sidebar() {
+	do_action ('chimps_before_content_sidebar');
+}
+
+/**
+* Generates the after content sidebar. 
+*
+* @since 1.0
+*/
+function chimps_after_content_sidebar() {
+	do_action ('chimps_after_content_sidebar');
+}
+
+/**
 * End
 */
 
