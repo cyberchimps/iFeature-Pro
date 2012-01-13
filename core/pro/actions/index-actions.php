@@ -16,13 +16,7 @@
 */
 
 
-add_action( 'chimps_pro_before_entry', 'chimps_before_entry_sidebar' );
-
 add_action( 'chimps_pro_index', 'chimps_pro_index_content');
-
-remove_action( 'chimps_after_entry', 'chimps_after_entry_sidebar' );
-add_action( 'chimps_after_entry', 'chimps_pro_after_entry_sidebar' );
-
 
 /**
 * Pro index content
@@ -31,18 +25,15 @@ add_action( 'chimps_after_entry', 'chimps_pro_after_entry_sidebar' );
 */
 function chimps_pro_index_content() { 
 
-	global $options, $themeslug, $post; // call globals
+	global $options, $themeslug, $post, $sidebar; // call globals
+	$sidebar = $options->get($themeslug.'_blog_sidebar');
 	
-	$blogsidebar = $options->get($themeslug.'_blog_sidebar');
-	
-	if ($blogsidebar == 'two-right' OR $blogsidebar == 'right-left' ) {
+	if ($sidebar == 'two-right' OR $sidebar == 'right-left' ) {
 		$content_grid = 'grid_6';
 	}
-	
-	elseif ($blogsidebar == 'none' ) {
+	elseif ($sidebar == 'none' ) {
 		$content_grid = 'grid_12';
 	}
-	
 	else {
 		$content_grid = 'grid_8';
 	}
@@ -50,9 +41,9 @@ function chimps_pro_index_content() {
 
 <div class="container_12">
 
-<!--Begin @Core index entry hook-->
-		<?php chimps_pro_before_entry(); ?>
-	<!--End @Core index entry hook-->
+<!--Begin @Core before content sidebar hook-->
+		<?php chimps_before_content_sidebar(); ?>
+	<!--End @Core before content sidebar hook-->
 
 		<div id="content" class="<?php echo $content_grid; ?>">
 		
@@ -106,70 +97,14 @@ function chimps_pro_index_content() {
 		
 		</div><!--end content-->
 
-	<!--Begin @Core index after entry hook-->
-	<?php chimps_after_entry(); ?>
-	<!--End @Core index after entry hook-->
+	<!--Begin @Core after content sidebar hook-->
+		<?php chimps_after_content_sidebar(); ?>
+	<!--End @Core after content sidebar hook-->
 
 
 </div><!--end container_12-->
 <div class='clear'>&nbsp;</div>
 <?php }
-
-
-/**
-* Before entry sidebar
-*
-* @since 1.0
-*/
-function chimps_before_entry_sidebar() { 
-	global $options, $themeslug, $post; // call globals
-	
-	$blogsidebar = $options->get($themeslug.'_blog_sidebar');
-	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);?>
-				
-	<?php if ($sidebar == "3" OR $blogsidebar == 'right-left' ): ?>
-	<div id="sidebar" class="grid_3">
-		<?php get_sidebar('left'); ?>
-	</div>
-	<?php endif; ?>
-	
-	<?php if ($sidebar == "4" OR $blogsidebar == 'left' ): ?>
-	<div id="sidebar" class="grid_4">
-		<?php get_sidebar(); ?>
-	</div>
-	<?php endif;
-}
-
-/**
-* After entry sidebar
-*
-* @since 1.0
-*/
-function chimps_pro_after_entry_sidebar() {
-	global $options, $themeslug, $post; // call globals
-	
-	$blogsidebar = $options->get($themeslug.'_blog_sidebar');
-	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);?>
-	
-	
-	<?php if ($sidebar == "0" OR $blogsidebar == 'right' OR $blogsidebar == '' ): ?>
-	<div id="sidebar" class="grid_4">
-		<?php get_sidebar(); ?>
-	</div>
-	<?php endif;?>
-	
-	<?php if ($sidebar == "3" OR $blogsidebar == 'two-right' ): ?>
-	<div id="sidebar" class="grid_3">
-		<?php get_sidebar('left'); ?>
-	</div>
-	<?php endif;?> 
-	
-	<?php if ($sidebar == "2" OR $sidebar == "3" OR $blogsidebar == 'two-right' OR $blogsidebar == 'right-left' ): ?>
-	<div id="sidebar" class="grid_3">
-		<?php get_sidebar('right'); ?>
-	</div>
-	<?php endif;?> <?php 
-}
 
 /**
 * End

@@ -24,7 +24,7 @@ add_action('chimps_page_section', 'chimps_pro_page_section_content' );
 * @since 1.0
 */
 function chimps_pro_page_section_content() { 
-	global $options, $themeslug, $post;
+	global $options, $themeslug, $post, $sidebar;
 	
 	$hidetitle = get_post_meta($post->ID, 'hide_page_title' , true);
 	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);
@@ -44,17 +44,9 @@ function chimps_pro_page_section_content() {
 ?>
 <div class="container_12">
 
-	<?php if ($sidebar == "2"): ?>
-		<div id="sidebar" class="grid_3">
-			<?php get_sidebar('left'); ?>
-		</div>
-	<?php endif;?>
-	
-	<?php if ($sidebar == "4"): ?>
-		<div id="sidebar" class="grid_4">
-			<?php get_sidebar(); ?>
-		</div>
-	<?php endif;?>
+	<!--Begin @Core before content sidebar hook-->
+		<?php chimps_before_content_sidebar(); ?>
+	<!--End @Core before content sidebar hook-->
 			
 		<div id="content" class="<?php echo $content_grid; ?>">
 		
@@ -92,23 +84,9 @@ function chimps_pro_page_section_content() {
 				
 	</div><!--end content_left-->
 	
-	<?php if ($sidebar == "0" OR $sidebar == ""): ?>
-		<div id="sidebar" class="grid_4">
-			<?php get_sidebar(); ?>
-		</div>
-	<?php endif;?>
-	
-	<?php if ($sidebar == "1"): ?>
-		<div id="sidebar" class="grid_3">
-			<?php get_sidebar('left'); ?>
-		</div>
-	<?php endif;?>
-	
-	<?php if ($sidebar == "1" OR $sidebar == "2"): ?>
-		<div id="sidebar" class="grid_3">
-			<?php get_sidebar('right'); ?>
-		</div>
-	<?php endif;?>
+	<!--Begin @Core after content sidebar hook-->
+		<?php chimps_after_content_sidebar(); ?>
+	<!--End @Core after content sidebar hook-->
 
 </div><!--end container_12-->
 
