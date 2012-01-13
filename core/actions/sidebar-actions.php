@@ -26,22 +26,29 @@ add_action( 'chimps_after_content_sidebar', 'chimps_after_content_sidebar_markup
 function chimps_before_content_sidebar_markup() { 
 	global $options, $themeslug, $post; // call globals
 	
-	$sidebar_single = $options->get($themeslug.'_single_sidebar');
-	$sidebar_blog = $options->get($themeslug.'_blog_sidebar');
-	$sidebar_page = get_post_meta($post->ID, 'page_sidebar' , true);
-	
 	if (is_single()) {
 	$sidebar = $options->get($themeslug.'_single_sidebar');
 	}
-	?>
+	if (is_archive()) {
+	$sidebar = $options->get($themeslug.'_archive_sidebar');
+	}
+	if (is_search()) {
+	$sidebar = $options->get($themeslug.'_search_sidebar');
+	}
+	if (is_front_page()) {
+	$sidebar = $options->get($themeslug.'_blog_sidebar');
+	}
+	if (is_page()) {
+	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);
+	}?>
 				
-	<?php if ($sidebar_single == 'right-left' OR $sidebar_blog == 'right-left' OR $sidebar_page == "2"): ?>
+	<?php if ($sidebar == 'right-left'  OR $sidebar == "2"): ?>
 	<div id="sidebar" class="grid_3">
 		<?php get_sidebar('left'); ?>
 	</div>
 	<?php endif; ?>
 	
-	<?php if ($sidebar == 'left' OR $sidebar_page == "4"): ?>
+	<?php if ($sidebar == 'left' OR $sidebar == "4"): ?>
 	<div id="sidebar" class="grid_4">
 		<?php get_sidebar(); ?>
 	</div>
@@ -57,36 +64,40 @@ function chimps_before_content_sidebar_markup() {
 function chimps_after_content_sidebar_markup() {
 	global $options, $themeslug, $post; // call globals
 	
-	$sidebar_single = $options->get($themeslug.'_single_sidebar');
-	$sidebar_blog = $options->get($themeslug.'_blog_sidebar');
-	$sidebar_page = get_post_meta($post->ID, 'page_sidebar' , true);
-
-	if (!is_single()) {
+	if (is_single()) {
 	$sidebar = $options->get($themeslug.'_single_sidebar');
 	}
-	?>
+	if (is_archive()) {
+	$sidebar = $options->get($themeslug.'_archive_sidebar');
+	}
+	if (is_search()) {
+	$sidebar = $options->get($themeslug.'_search_sidebar');
+	}
+	if (is_front_page()) {
+	$sidebar = $options->get($themeslug.'_blog_sidebar');
+	}
+	if (is_page()) {
+	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);
+	}?>
 	
-	
-	<?php if ($sidebar == 'right' OR $sidebar_page == '' ): ?>
+	<?php if ($sidebar == 'right' OR $sidebar == '' ): ?>
 	<div id="sidebar" class="grid_4">
 		<?php get_sidebar(); ?>
 	</div>
 	<?php endif;?>
 	
-	<?php if ($sidebar == 'two-right' OR  $sidebar_page == '1' ): ?>
+	<?php if ($sidebar == 'two-right' OR  $sidebar == '1' ): ?>
 	<div id="sidebar" class="grid_3">
 		<?php get_sidebar('left'); ?>
 	</div>
 	<?php endif;?> 
 	
-	<?php if ($sidebar_single == 'two-right' OR $sidebar_single == 'right-left' OR $sidebar_blog == 'two-right' OR $sidebar_blog == 'right-left' OR $sidebar_page == '1' OR $sidebar_page == '2'): ?>
+	<?php if ($sidebar == 'two-right' OR $sidebar == 'right-left' OR $sidebar == '1' OR $sidebar == '2'): ?>
 	<div id="sidebar" class="grid_3">
 		<?php get_sidebar('right'); ?>
 	</div>
 	<?php endif;?> <?php 
 }
-
-
 
 /**
 * End
