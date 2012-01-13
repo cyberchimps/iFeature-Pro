@@ -42,7 +42,6 @@ function chimps_pro_page_section_content() {
 	}
 
 ?>
-<div class="container">
 	<div class="row">
 
 	<?php if ($sidebar == "2"): ?>
