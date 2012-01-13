@@ -458,12 +458,21 @@ function chimps_index() {
 }
 
 /**
-* Index content. 
+* Postbar. 
 *
 * @since 1.0
 */
 function chimps_post_bar() {
 	do_action ('chimps_post_bar');
+}
+
+/**
+* Facebook like and plus one. 
+*
+* @since 1.0
+*/
+function chimps_fb_like_plus_one() {
+	do_action ('chimps_fb_like_plus_one');
 }
 
 /**

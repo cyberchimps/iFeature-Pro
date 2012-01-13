@@ -18,11 +18,9 @@
 	if ($sidebar == "1" OR $sidebar == "2" OR $blogsidebar == 'two-right' OR $blogsidebar == 'right-left' ) {
 		$content_grid = 'grid_6';
 	}
-	
 	elseif ($sidebar == "3" OR $blogsidebar == 'none' ) {
 		$content_grid = 'grid_12';
 	}
-	
 	else {
 		$content_grid = 'grid_8';
 	}
@@ -40,8 +38,6 @@
 
 <?php get_header(); ?>
 
-
-
 	<?php
 		foreach(explode(",", $options->get($themeslug.'_blog_section_order')) as $fn) {
 			if(function_exists($fn)) {
@@ -50,8 +46,5 @@
 		}
 	?>
 
-
-
 <div class='clear'>&nbsp;</div>
-
 <?php get_footer(); ?>

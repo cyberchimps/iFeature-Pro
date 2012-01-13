@@ -27,51 +27,6 @@ add_action( 'chimps_head_tag', 'ifeature_link_rel' );
 remove_action( 'chimps_box_section', 'chimps_box_section_content' );
 add_action( 'chimps_box_section', 'ifeature_box_section_content' );
 
-remove_action( 'chimps_navigation', 'chimps_nav' );
-add_action( 'chimps_navigation', 'ifeature_nav' );
-
-/**
-* iFeature Navigation
-*
-* @since 3.1
-*/
-function ifeature_nav() {
-	global $options, $themeslug; //call globals 
-	
-	if ($options->get($themeslug.'_hide_home_icon') == "0" && $options->get($themeslug.'_hide_search') == "0" OR $options->get($themeslug.'_hide_home_icon') == "1" && $options->get($themeslug.'_hide_search') == "0" ) {
-		$grid = 'grid_12';
-	}
-	
-	else {
-		$grid = 'grid_9';
-	}
-	
-	?>
-	
-	<div class="container_12">
-
-	<div class="grid_12" id="imenu">
-
-		<div id="nav" class="<?php echo $grid; ?>">
-			<?php if ($options->get($themeslug.'_hide_home_icon') != "0"):?><div id="home"><a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri() ;?>/images/home.png" alt="home" /></a></div><?php endif;?>
-		    <?php wp_nav_menu( array(
-		    'theme_location' => 'header-menu', // Setting up the location for the main-menu, Main Navigation.
-		    'fallback_cb' => 'menu_fallback', //if wp_nav_menu is unavailable, WordPress displays wp_page_menu function, which displays the pages of your blog.
-		    )
-		);
-    	?>
-   		</div>
-   		<?php if ($options->get($themeslug.'_hide_search') != "0"):?>
-		<div class="grid_2">
-			<?php get_search_form(); ?>
-		</div>
-		<?php endif;?>
-	</div>
-	
-</div>
- <?php
-}
-
 /**
 * Sets up the header contact area
 *
@@ -177,71 +132,6 @@ function ifeature_link_rel() {
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
 <link href='http://fonts.googleapis.com/css?family=<?php echo $font ; ?>' rel='stylesheet' type='text/css' /> <?php
-}
-
-/**
-* Sets up the Facebook Like and Google Plus One area
-*
-* @since 3.1
-*/
-function ifeature_fb_like_plus_one_content() {
-	global $options, $themeslug; ?>
-
-	<?php if ($options->get($themeslug.'_show_gplus') == "1"):?>
-		<div class="gplusone">	
-			<g:plusone size="standard" count="true"></g:plusone>
-		</div>
-	<?php endif;?>
-						
-	<?php if ($options->get($themeslug.'_show_fb_like') == "1"):?>			
-		<div id="fb">
-			<iframe src="http://www.facebook.com/plugins/like.php?href=<?php the_permalink() ?>&layout=standard&show_faces=true&width=450&action=like&colorscheme=light" scrolling="no" frameborder="0"  allowTransparency="true" style="border:none; overflow:hidden; width:330px; height:28px"></iframe>
-		</div>
-	<?php endif;
-}
-
-
-/**
-* Sets up the Facebook Like and Google Plus One area (single.php)
-*
-* @since 3.2
-*/
-function ifeature_single_fb_like_plus_one_content() {
-	global $options, $themeslug; ?>
-
-	<?php if ($options->get($themeslug.'_single_show_gplus') == "1"):?>
-		<div class="gplusone">	
-			<g:plusone size="standard" count="true"></g:plusone>
-		</div>
-	<?php endif;?>
-						
-	<?php if ($options->get($themeslug.'_single_show_fb_like') == "1"):?>			
-		<div id="fb">
-			<iframe src="http://www.facebook.com/plugins/like.php?href=<?php the_permalink() ?>&layout=standard&show_faces=true&width=450&action=like&colorscheme=light" scrolling="no" frameborder="0"  allowTransparency="true" style="border:none; overflow:hidden; width:330px; height:28px"></iframe>
-		</div>
-	<?php endif;
-}
-
-
-/**
-* Sets up the Facebook Like and Google Plus One area (single.php)
-*
-* @since 3.2
-*/
-function ifeature_archive_fb_like_plus_one_content() {
-	global $options, $themeslug; ?>
-
-	<?php if ($options->get($themeslug.'_archive_show_gplus') == "1"):?>
-		<div class="gplusone">	
-			<g:plusone size="standard" count="true"></g:plusone>
-		</div>
-	<?php endif;?>
-						
-	<?php if ($options->get($themeslug.'_archive_show_fb_like') == "1"):?>			
-		<div id="fb">
-			<iframe src="http://www.facebook.com/plugins/like.php?href=<?php the_permalink() ?>&layout=standard&show_faces=true&width=450&action=like&colorscheme=light" scrolling="no" frameborder="0"  allowTransparency="true" style="border:none; overflow:hidden; width:330px; height:28px"></iframe>
-		</div>
-	<?php endif;
 }
 
 /**
