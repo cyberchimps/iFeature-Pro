@@ -15,6 +15,8 @@
 * @since 1.0
 */
 
+/* Setup variables. */
+
 	global $options, $themeslug, $post;
 	
 	if (is_single()) {
@@ -32,6 +34,7 @@
 	if (is_page()) {
 	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);
 	}
+/* End variable setup. */
 
 add_action( 'chimps_before_content_sidebar', 'chimps_before_content_sidebar_markup' );
 add_action( 'chimps_after_content_sidebar', 'chimps_after_content_sidebar_markup' );

@@ -6,8 +6,7 @@
 	Copyright (C) 2011 CyberChimps
 */
 
-global $options, $themeslug, $post, $sidebar; // call globals
-	
+	global $options, $themeslug, $post, $sidebar; // call globals
 	$sidebar = $options->get($themeslug.'_404_sidebar');
 	
 	if ($sidebar == 'two-right' OR $sidebar == 'right-left' ) {
