@@ -37,7 +37,6 @@ function chimps_single_post_byline_content() {
 	</div> <?php
 }
 
-
 /**
 * Sets up the tag area
 *
@@ -96,7 +95,6 @@ function chimps_single_loop_content($content) {
 	
 		echo $content; 
 }
-
 
 /**
 * End

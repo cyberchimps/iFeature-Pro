@@ -144,7 +144,7 @@ function chimps_archive_loop($content) {
 			?>
 			
 				<!--Begin @Core FB like hook-->
-					<?php ifeature_archive_fb_like_plus_one(); ?>
+					<?php chimps_fb_like_plus_one(); ?>
 				<!--End @Core FB like hook-->
 				
 				<!--Begin @Core post tags hook-->

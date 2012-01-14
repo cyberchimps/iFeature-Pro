@@ -19,65 +19,7 @@
 * Core Index actions
 */
 
-add_action( 'chimps_loop', 'chimps_loop_content' );
-
 add_action( 'chimps_index', 'chimps_index_content');
-
-
-/**
-* Check for post format type, apply filter based on post format name for easy modification.
-*
-* @since 1.0
-*/
-function chimps_loop_content($content) { 
-
-	global $options, $themeslug, $post; //call globals
-	
-	if (get_post_format() == '') {
-		$format = "default";
-	}
-	else {
-		$format = get_post_format();
-	} ?>
-		
-		<?php ob_start(); ?>
-			
-			<?php if ($options->get($themeslug.'_post_formats') != '0') : ?>
-			<div class="postformats"><!--begin format icon-->
-				<img src="<?php echo get_template_directory_uri(); ?>/images/formats/<?php echo $format ;?>.png" alt="formats" />
-			</div><!--end format-icon-->
-			<?php endif; ?>
-				<h2 class="posts_title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-					<!--Call @Core Meta hook-->
-			<?php chimps_post_byline(); ?>
-				<?php
-				if ( has_post_thumbnail() && $options->get($themeslug.'_show_featured_images') == '1'  && !is_single()) {
- 		 			echo '<div class="featured-image">';
- 		 			echo '<a href="' . get_permalink($post->ID) . '" >';
- 		 				the_post_thumbnail();
-  					echo '</a>';
-  					echo '</div>';
-				}
-			?>	
-				<div class="entry" <?php if ( has_post_thumbnail() && $options->get($themeslug.'_show_featured_images') == '1' && !is_single()  ) { echo 'style="min-height: 115px;" '; }?>>
-					<?php 
-						if ($options->get($themeslug.'_show_excerpts') == '1' && !is_single() ) {
-						the_excerpt();
-						}
-						else {
-							the_content();
-						}
-					 ?>
-				</div><!--end entry-->
-				
-				<div class='clear'>&nbsp;</div>
-			<?php	
-		
-		$content = ob_get_clean();
-		$content = apply_filters( 'chimps_post_formats_'.$format.'_content', $content );
-	
-		echo $content; 
-}
 
 /**
 * Index content
@@ -130,7 +72,7 @@ function chimps_index_content() {
 				<!--End @Core post edit link hook-->
 			
 				<!--Begin @Core FB like hook-->
-					<?php ifeature_fb_like_plus_one(); ?>
+					<?php chimps_fb_like_plus_one(); ?>
 				<!--End @Core FB like hook-->
 			
 				<!--Begin @Core post tags hook-->
@@ -138,7 +80,7 @@ function chimps_index_content() {
 				<!--End @Core post tags hook-->
 			
 				<!--Begin @iFeature post bar hook-->
-					<?php ifeature_post_bar(); ?>
+					<?php chimps_post_bar(); ?>
 				<!--End @iFeature post bar hook-->
 			
 				</div><!--end post_class-->	
