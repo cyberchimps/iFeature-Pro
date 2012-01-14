@@ -28,19 +28,11 @@ add_action( 'chimps_index', 'chimps_index_content');
 */
 function chimps_index_content() { 
 
-	global $options, $themeslug, $post, $sidebar; // call globals
-	$sidebar = $options->get($themeslug.'_blog_sidebar');
+	global $options, $themeslug, $post, $sidebar, $content_grid; // call globals ?>
 	
-	if ($sidebar == 'two-right' OR $sidebar == 'right-left' ) {
-		$content_grid = 'grid_6';
-	}
-	elseif ($sidebar == 'none' ) {
-		$content_grid = 'grid_12';
-	}
-	else {
-		$content_grid = 'grid_8';
-	}
-?>
+	<!--Begin @Core sidebar init-->
+		<?php chimps_sidebar_init(); ?>
+	<!--End @Core sidebar init-->
 
 <div class="container_12">
 

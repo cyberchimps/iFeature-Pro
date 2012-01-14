@@ -15,9 +15,19 @@
 * @since 1.0
 */
 
-/* Setup variables. */
+add_action( 'chimps_sidebar_init', 'chimps_sidebar_init_content' );
+add_action( 'chimps_before_content_sidebar', 'chimps_before_content_sidebar_markup' );
+add_action( 'chimps_after_content_sidebar', 'chimps_after_content_sidebar_markup' );
 
-	global $options, $themeslug, $post;
+
+/**
+* Set sidebar and grid variables.
+*
+* @since 1.0
+*/
+function chimps_sidebar_init_content() {
+
+	global $options, $themeslug, $post, $sidebar, $content_grid;
 	
 	if (is_single()) {
 	$sidebar = $options->get($themeslug.'_single_sidebar');
@@ -34,10 +44,17 @@
 	if (is_page()) {
 	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);
 	}
-/* End variable setup. */
-
-add_action( 'chimps_before_content_sidebar', 'chimps_before_content_sidebar_markup' );
-add_action( 'chimps_after_content_sidebar', 'chimps_after_content_sidebar_markup' );
+	
+	if ($sidebar == 'two-right' OR $sidebar == 'right-left' ) {
+		$content_grid = 'grid_6';
+	}
+	elseif ($sidebar == 'none' ) {
+		$content_grid = 'grid_12';
+	}
+	else {
+		$content_grid = 'grid_8';
+	}
+}
 
 /**
 * Before entry sidebar

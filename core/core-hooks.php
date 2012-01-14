@@ -16,6 +16,15 @@
 */
 
 /**
+* Facebook like and plus one. 
+*
+* @since 1.0
+*/
+function chimps_sidebar_init() {
+	do_action ('chimps_sidebar_init');
+}
+
+/**
 * Placed before the 404 message content (404.php).
 *
 * @since 1.0

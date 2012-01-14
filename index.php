@@ -12,19 +12,7 @@
 	
 	$reorder = $options->get($themeslug.'_blog_section_order');
 	$slidersize = $options->get($themeslug.'_slider_size');
-	$blogsidebar = $options->get($themeslug.'_blog_sidebar');
-	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);
-	
-	if ($sidebar == "1" OR $sidebar == "2" OR $blogsidebar == 'two-right' OR $blogsidebar == 'right-left' ) {
-		$content_grid = 'grid_6';
-	}
-	elseif ($sidebar == "3" OR $blogsidebar == 'none' ) {
-		$content_grid = 'grid_12';
-	}
-	else {
-		$content_grid = 'grid_8';
-	}
-	
+			
 /* Set slider hook based on page option */
 
 	if (preg_match("/chimps_blog_slider/", $reorder ) && $slidersize != "key2" ) {
