@@ -23,6 +23,14 @@
 
 <?php if (function_exists('chimps_breadcrumbs') && ($options->get($themeslug.'_disable_breadcrumbs') == "1")) { chimps_breadcrumbs(); }?>
 
+	<?php if (have_posts()) : ?>
+		
+			<!--Begin @Core archive hook-->
+			<?php chimps_archive_title(); ?>
+			<!--End @Core archive hook-->
+
+<div class="container_12">
+
 	<!--Begin @Core before content sidebar hook-->
 		<?php chimps_before_content_sidebar(); ?>
 	<!--End @Core before content sidebar hook-->
@@ -34,17 +42,19 @@
 			<?php chimps_before_archive(); ?>
 		<!--End @Core before_archive hook-->
 		
-		<?php if (have_posts()) : ?>
-		
-			<!--Begin @Core archive hook-->
-			<?php chimps_archive_title(); ?>
-			<!--End @Core archive hook-->
+	
 		
 		<?php while (have_posts()) : the_post(); ?>
+		
+		<div class="post_container">
+			<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 		
 			<!--Begin @Core archive hook-->
 				<?php chimps_loop(); ?>
 			<!--End @Core archive hook-->
+			
+			</div><!--end post_class-->	
+		</div><!--end post container--> 
 		
 		 <?php endwhile; ?>
 	 
@@ -69,7 +79,7 @@
 	<!--End @Core after content sidebar hook-->
 	
 		</div><!--end content-->
-
+</div><!--end container_12-->
 	</div><!--end row-->
 </div><!--end container-->
 
