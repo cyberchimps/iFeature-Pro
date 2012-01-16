@@ -65,13 +65,13 @@ function chimps_before_content_sidebar_markup() {
 	global $options, $themeslug, $post, $sidebar; // call globals ?>
 				
 	<?php if ($sidebar == 'right-left' OR $sidebar == "2"): ?>
-	<div id="sidebar" class="grid_3">
+	<div id="sidebar" class="three columns">
 		<?php get_sidebar('left'); ?>
 	</div>
 	<?php endif; ?>
 	
 	<?php if ($sidebar == 'left' OR $sidebar == "4"): ?>
-	<div id="sidebar" class="grid_4">
+	<div id="sidebar" class="four columns">
 		<?php get_sidebar(); ?>
 	</div>
 	<?php endif;
@@ -86,19 +86,19 @@ function chimps_after_content_sidebar_markup() {
 	global $options, $themeslug, $post, $sidebar; // call globals ?>
 	
 	<?php if ($sidebar == 'right' OR $sidebar == '' ): ?>
-	<div id="sidebar" class="grid_4">
+	<div id="sidebar" class="four columns">
 		<?php get_sidebar(); ?>
 	</div>
 	<?php endif;?>
 	
 	<?php if ($sidebar == 'two-right' OR  $sidebar == '1' ): ?>
-	<div id="sidebar" class="grid_3">
+	<div id="sidebar" class="three columns">
 		<?php get_sidebar('left'); ?>
 	</div>
 	<?php endif;?> 
 	
 	<?php if ($sidebar == 'two-right' OR $sidebar == 'right-left' OR $sidebar == '1' OR $sidebar == '2'): ?>
-	<div id="sidebar" class="grid_3">
+	<div id="sidebar" class="three columns">
 		<?php get_sidebar('right'); ?>
 	</div>
 	<?php endif;?> <?php 
