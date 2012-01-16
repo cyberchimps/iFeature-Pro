@@ -10,23 +10,12 @@
 
 global $options, $themeslug, $post, $sidebar; // call globals
 	
-	$sidebar = $options->get($themeslug.'_search_sidebar');
-	
-	if ($sidebar == 'two-right' OR $sidebar == 'right-left' ) {
-		$content_grid = 'grid_6';
-	}
-	elseif ($sidebar == 'none' ) {
-		$content_grid = 'grid_12';
-	}
-	else {
-		$content_grid = 'grid_8';
-	}
-
 get_header(); 
 
 ?>
 
-<div class="container_12">
+<div class="container">
+	<div class="row">
 
 	<!--Begin @Core before content sidebar hook-->
 		<?php chimps_before_content_sidebar(); ?>
@@ -52,7 +41,7 @@ get_header();
 		<?php chimps_after_content_sidebar(); ?>
 	<!--End @Core after content sidebar hook-->
 	
-</div><!--end content_wrap-->
-<div class="clear"></div>
+	</div><!--end row-->
+</div><!--end container-->
 
 <?php get_footer(); ?>

@@ -31,12 +31,11 @@
 
 ?>
 
-<div class="container_12">
+<div class="container">
+	<div class="row">
 
 <?php if (function_exists('chimps_breadcrumbs') && ($options->get($themeslug.'_disable_breadcrumbs') == "1")) { chimps_breadcrumbs(); }?>
 
-	<div id="main">
-	
 	<!--Begin @Core before content sidebar hook-->
 		<?php chimps_before_content_sidebar(); ?>
 	<!--End @Core before content sidebar hook-->
@@ -82,10 +81,9 @@
 		<?php chimps_after_content_sidebar(); ?>
 	<!--End @Core after content sidebar hook-->
 	
-</div><!--end content_wrap-->
+		</div><!--end content-->
 
-	</div><!--end content_left-->
-
-<div class='clear'>&nbsp;</div>
+	</div><!--end row-->
+</div><!--end container-->
 
 <?php get_footer(); ?>

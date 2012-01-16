@@ -16,7 +16,8 @@
 
 get_header(); ?>
 
-<div class="container_12">
+<div class="container">
+	<div class="row">
 
 <?php if (function_exists('chimps_breadcrumbs') && ($options->get($themeslug.'_disable_breadcrumbs') == "1")) { chimps_breadcrumbs(); }?>
 
@@ -24,8 +25,7 @@ get_header(); ?>
 		<?php chimps_index(); ?>
 	<!--End @Core post area-->
 	
-</div><!--end container_12-->
-
-<div style="clear:both;"></div>
+	</div>
+</div><!--end container-->
 
 <?php get_footer(); ?>
