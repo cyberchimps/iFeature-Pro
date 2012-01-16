@@ -33,7 +33,9 @@ if (preg_match("/page_slider/", $page_section_order ) && $size == "1" ) {
 /* End set slider hook*/
 ?>
 
-<div class="container_12">
+<div class="container">
+	<div class="row">
+	
 <?php if (function_exists('chimps_breadcrumbs') && ($options->get($themeslug.'_disable_breadcrumbs') == "1")) { chimps_breadcrumbs(); }?>
 <div style=clear:both;></div>
 
@@ -46,7 +48,6 @@ if (preg_match("/page_slider/", $page_section_order ) && $size == "1" ) {
 	}
 ?>
 	
-</div>
-
-<div style=clear:both;></div>
+	</div><!--end row-->
+</div><!--end container-->
 <?php get_footer(); ?>
