@@ -7,24 +7,11 @@
 	Version 2.0
 */
 
-	global $options, $themeslug, $post; // call globals
+	global $options, $themeslug, $post, $content_grid; // call globals
 	
-	$sidebar = $options->get($themeslug.'_archive_sidebar');
-	
-		if ($sidebar == 'two-right' OR $sidebar == 'right-left' ) {
-		$content_grid = 'grid_6';
-	}
-	
-	elseif ($sidebar == 'none' ) {
-		$content_grid = 'grid_12';
-	}
-	
-	else {
-		$content_grid = 'grid_8';
-	}
-
 /* Header call. */
 
+	chimps_sidebar_init();
 	get_header(); 
 	
 /* End header. */
@@ -56,7 +43,7 @@
 		<?php while (have_posts()) : the_post(); ?>
 		
 			<!--Begin @Core archive hook-->
-				<?php chimps_archive(); ?>
+				<?php chimps_loop(); ?>
 			<!--End @Core archive hook-->
 		
 		 <?php endwhile; ?>

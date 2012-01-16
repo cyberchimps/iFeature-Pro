@@ -115,7 +115,7 @@ function chimps_post_bar_content() {
 		$hidden = $options->get($themeslug.'_hide_byline'); 
 	}?>
 	
-		<div class="postbar" class="grid_8">
+		<div class="postbar" class="eight columns">
 		<?php if (($hidden[$themeslug.'_hide_share']) != '0'):?>
 			<div class="share">
 		<a href="http://www.facebook.com/share.php?u=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/facebook.png" alt="Share on Facebook" height="16px" width="16px" /></a> 
