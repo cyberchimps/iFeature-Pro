@@ -288,6 +288,36 @@ function custom_taxonomy_default( $post_id, $post ) {
 
 add_action( 'save_post', 'custom_taxonomy_default', 100, 2 );
 
+// Foundation JS
+
+function foundation_script(){
+	
+	$path =  get_template_directory_uri() ."/core/library/js";
+
+	$script = "
+		
+		<script type=\"text/javascript\" src=\"".$path."/foundation.js\"></script>
+		";
+	
+	echo $script;
+}
+add_action('wp_head', 'foundation_script');
+
+// Foundation App JS
+
+function app_script(){
+	
+	$path =  get_template_directory_uri() ."/core/library/js";
+
+	$script = "
+		
+		<script type=\"text/javascript\" src=\"".$path."/app.js\"></script>
+		";
+	
+	echo $script;
+}
+add_action('wp_head', 'app_script');
+
 // Menu JS
 
 function menu_script(){
