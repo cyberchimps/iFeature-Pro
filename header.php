@@ -46,8 +46,6 @@
 				<div class='clear'>&nbsp;</div>
 			</header>
 
-<div class="container_12"><!--main wrap-->	
-
 <!-- Begin @Core after_header hook -->
 	<?php chimps_after_header(); ?> 
 <!-- End @Core after_header hook -->

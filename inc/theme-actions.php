@@ -141,9 +141,10 @@ function ifeature_link_rel() {
 */
 function ifeature_header_standard_content() {
 ?>
-	<div class="container_12">
+<div class="container" style="">
+		<div class="row">
 		
-			<div class="grid_6">
+			<div class="eight columns">
 				
 				<!-- Begin @Core header sitename hook -->
 					<?php chimps_header_sitename(); ?> 
@@ -152,18 +153,17 @@ function ifeature_header_standard_content() {
 				
 			</div>	
 			
-			<div class="grid_6">
-			
-			
-				<!-- Begin @Core header social icon hook -->
-					<?php chimps_header_social_icons(); ?> 
-				<!-- End @Core header contact social icon hook -->
+			<div class="four columns">
+				
+			<!-- Begin @Core header social icon hook -->
+				<?php chimps_header_social_icons(); ?> 
+			<!-- End @Core header contact social icon hook -->	
 				
 			</div>	
+		</div><!--end row-->
 		
-	</div><!--end container 12-->
-		
-	<div class='clear'>&nbsp;</div>
+	</div><!--end container-->
+
 
 <?php
 }
