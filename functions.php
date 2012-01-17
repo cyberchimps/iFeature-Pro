@@ -336,18 +336,18 @@ add_action('wp_footer', 'menu_script');
 
 // Nivo Slider 
 
-function nivoslider(){
+function orbit(){
 	 
-	$path =  get_template_directory_uri() ."/core/library/ns";
+	$path =  get_template_directory_uri() ."/core/library/js";
 
 	$script = "
 		
-		<script type=\"text/javascript\" src=\"".$path."/jquery.nivo.slider.js\"></script>
+		<script type=\"text/javascript\" src=\"".$path."/jquery.orbit.min.js\"></script>
 		";
 	
 	echo $script;
 }
-add_action('wp_head', 'nivoslider');
+add_action('wp_head', 'orbit');
 
 // Carousel Javascript
 
