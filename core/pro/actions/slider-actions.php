@@ -50,7 +50,7 @@ function chimps_blog_slider_content() {
 	$wordenable = $options->get($themeslug.'_enable_wordthumb');
 	$slideranimation = $options->get($themeslug.'_slider_animation');
 	
-echo "<div id='slider-wrapper'>";
+echo "<div id='orbit-wrapper'style='width: inherit; height: inherit; margin-bottom: 20px;'>";
 	
 /* End define variables. */	
 
