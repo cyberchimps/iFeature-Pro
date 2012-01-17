@@ -50,7 +50,7 @@ function chimps_blog_slider_content() {
 	$wordenable = $options->get($themeslug.'_enable_wordthumb');
 	$slideranimation = $options->get($themeslug.'_slider_animation');
 	
-echo "<div class='orbit-wrapper'style='width: inherit; height: inherit; margin-bottom: 20px;'>";
+
 	
 /* End define variables. */	
 
@@ -240,7 +240,7 @@ echo "<div class='orbit-wrapper'style='width: inherit; height: inherit; margin-b
 /* Establish post counter */  
   	
 	if (have_posts()) :
-	    $out = "<div id='featured'>"; 
+	    $out = "<div id='orbitDemo'>"; 
 	    $i = 0;
 
 	if ($options->get($themeslug.'_slider_posts_number') == '') {
@@ -394,7 +394,7 @@ echo "<div class='orbit-wrapper'style='width: inherit; height: inherit; margin-b
 	     	/* Markup for slides */
 
 	    	$out .= "<a href='$link'>	
-	    				<img src='$image' height='$height' width='$csWidth' title='$titlevar' alt='Slider' />
+	    				<img src='$image' alt='Slider' />
 	    					<span class='orbit-caption' id='htmlCaption'>
                 				<font size='4'>$title </font> <br />
                 				$text 
@@ -489,8 +489,10 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
     
     $out .= <<<OUT
 <script type="text/javascript">
-     $(window).load(function() {
-         $('#featured').orbit();
+   $(window).load(function() {
+    $('#orbitDemo').orbit({
+         animation: 'horizontal-push'
+     });
      });
 </script>
 OUT;
@@ -501,7 +503,7 @@ echo $out;
 
 /* END */ 
 
-echo "</div>";
+
 
 ?>
 
