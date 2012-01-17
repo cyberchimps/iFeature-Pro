@@ -394,7 +394,7 @@ function chimps_blog_slider_content() {
 	     	/* Markup for slides */
 
 	    	$out .= "<a href='$link'>	
-	    				<img src='$image' alt='Slider' />
+	    				<img src='$image' height='$height' width='$csWidth' alt='Slider' />
 	    					<span class='orbit-caption' id='htmlCaption'>
                 				<font size='4'>$title </font> <br />
                 				$text 
