@@ -488,7 +488,8 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 <script type="text/javascript">
    $(window).load(function() {
     $('#orbitDemo').orbit({
-         animation: 'horizontal-push'
+         animation: 'horizontal-push',
+         bullets: true
      });
      });
 </script>
