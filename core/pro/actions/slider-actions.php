@@ -393,7 +393,7 @@ function chimps_blog_slider_content() {
 
 	     	/* Markup for slides */
 
-	    	$out .= "<a href='$link' data-caption='#htmlCaption$i' data-thumb='sliderthumb.jpg'>
+	    	$out .= "<a href='$link' data-caption='#htmlCaption$i' data-thumb='$image'>
 	    				<img src='$image' alt='Slider' />
 	    					<span class='orbit-caption' id='htmlCaption$i'>$title <br /> $text</span>
 	    				</a>
@@ -490,8 +490,8 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
     $('#orbitDemo').orbit({
          animation: 'horizontal-push',
          bullets: true,
-         bulletThumbs: true,
-         bulletThumbLocation: '$root/images/pro/'
+         bulletThumbs: true
+       
      });
      });
 </script>
