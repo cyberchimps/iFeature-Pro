@@ -395,7 +395,7 @@ function chimps_blog_slider_content() {
 
 	    	$out .= "<a href='$link' data-caption='#htmlCaption$i'>
 	    				<img src='$image' alt='Slider' />
-	    					<span class='orbit-caption' id='htmlCaption$i'>$title</span>
+	    					<span class='orbit-caption' id='htmlCaption$i'>$title <br /> $text</span>
 	    				</a>
 	    			";
 
