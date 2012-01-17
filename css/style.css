@@ -90,7 +90,7 @@ header {margin-top: 15px;}
 
 /* Home Button */
 
-#home {float: left;border-right:#777 1px solid;margin-right:4px;}
+#home {float: left;border-right:#777 1px solid;margin-right:4px;margin-left:18px;}
 #home a:hover{opacity: .5}
 
 /* Search Bar */
