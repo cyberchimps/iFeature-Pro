@@ -927,8 +927,9 @@ div.slider-nav span.left {
 
 .orbit-bullets li.has-thumb {
     background: none;
-    width: 100px;
-    height: 75px; }
+    width: 50px;
+    height: 30px;
+    margin-bottom: -1px; }
 
 .orbit-bullets li.active {
     color: #222;
@@ -936,7 +937,7 @@ div.slider-nav span.left {
 
 .orbit-bullets li.active.has-thumb {
     background-position: 0 0;
-    border-top: 2px solid #000; }
+    border: 2px solid #000; }
 /*	--------------------------------------------------
 	Reveal Modals
 	-------------------------------------------------- */
