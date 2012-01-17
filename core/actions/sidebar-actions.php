@@ -85,7 +85,7 @@ function chimps_before_content_sidebar_markup() {
 function chimps_after_content_sidebar_markup() {
 	global $options, $themeslug, $post, $sidebar; // call globals ?>
 	
-	<?php if ($sidebar == 'right' OR $sidebar == '' ): ?>
+	<?php if ($sidebar == 'right' OR $sidebar == '0' OR $sidebar == '' ): ?>
 	<div id="sidebar" class="four columns">
 		<?php get_sidebar(); ?>
 	</div>
