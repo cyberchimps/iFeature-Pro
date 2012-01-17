@@ -45,10 +45,10 @@ function chimps_sidebar_init_content() {
 	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);
 	}
 	
-	if ($sidebar == 'two-right' OR $sidebar == 'right-left' ) {
+	if ($sidebar == 'two-right' OR $sidebar == 'right-left' OR $sidebar == "1" OR $sidebar == "2") {
 		$content_grid = 'six columns';
 	}
-	elseif ($sidebar == 'none' ) {
+	elseif ($sidebar == 'none' OR $sidebar == "3") {
 		$content_grid = 'twelve columns';
 	}
 	else {

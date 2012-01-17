@@ -27,22 +27,12 @@ add_action('chimps_page_section', 'chimps_page_section_content' );
 * @since 1.0
 */
 function chimps_page_section_content() { 
-	global $options, $themeslug, $post, $sidebar;
+	global $options, $themeslug, $post, $sidebar, $content_grid;
+	
+	chimps_sidebar_init();
 	
 	$hidetitle = get_post_meta($post->ID, 'hide_page_title' , true);
-	$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);
-	
-	if ($sidebar == "1" OR $sidebar == "2" ) {
-		$content_grid = 'grid_6';
-	}
-	
-	elseif ($sidebar == "3") {
-		$content_grid = 'grid_12';
-	}
-	
-	else {
-		$content_grid = 'grid_8';
-	}
+
 
 ?>
 <div class="container_12">
