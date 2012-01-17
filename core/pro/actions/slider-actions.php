@@ -393,12 +393,9 @@ function chimps_blog_slider_content() {
 
 	     	/* Markup for slides */
 
-	    	$out .= "<a href='$link'>	
+	    	$out .= "<a href='$link' data-caption='#htmlCaption$i'>
 	    				<img src='$image' alt='Slider' />
-	    					<span class='orbit-caption' id='htmlCaption'>
-                				<font size='4'>$title </font> <br />
-                				$text 
-                			</span>
+	    					<span class='orbit-caption' id='htmlCaption$i'>$title</span>
 	    				</a>
 	    			";
 

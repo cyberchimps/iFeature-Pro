@@ -678,7 +678,7 @@
 #orbitDemo { background: url(orbit/spinner.gif) no-repeat center center #000; max-height: 330px !important; margin-bottom: 20px; }
 #orbitDemo.orbit { height: auto; }
 #orbitDemo img, #orbitDemo div { display: none; }
-#orbitDemo.orbit img, #orbitDemo.orbit div { display: block; }
+#orbitDemo.orbit img, #orbitDemo.orbit div { display: block;}
 
 @media handheld, only screen and (max-width: 767px) {
 
