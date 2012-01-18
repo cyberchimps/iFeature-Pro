@@ -66,72 +66,56 @@ function chimps_callout_section_content() {
 	if ($hidebutton == "on" OR $hidebutton == "1") {
 		$grid = 'eight columns';
 	}
-	
 	else {
 		$grid = 'twelve columns';
 	}
 	
-
 /* End variable definition. */	
 
 /* Echo custom button color. */
 
 	if ($bcolor != "") {
-	
 		echo '<style type="text/css" media="screen">';
 		echo "#calloutbutton {background: $bcolor ;}";
 		echo '</style>';
-	
 	}
 	
-
 /* End custom button color. */
 
 /* Echo custom button text color. */
 
 	if ($bcolor != "") {
-	
 		echo '<style type="text/css" media="screen">';
 		echo "#calloutbutton a {color: $btcolor ;}";
 		echo '</style>';
-	
 	}
 	
-
 /* End custom button color. */
-
 
 /* Echo custom text color. */
 
 	if ($tcolor != "") {
-	
 		echo '<style type="text/css" media="screen">';
 		echo "#callout_text {color: $tcolor ;}";
 		echo '</style>';
-	
 	}
 	
 /* Echo custom title color. */
 
 	if ($ticolor != "") {
-	
 		echo '<style type="text/css" media="screen">';
 		echo ".callout_title {color: $ticolor ;}";
 		echo '</style>';
-	
 	}
-	
 
 /* End custom text color. */
 
 /* Echo background color CSS. */	
 
 	if ($customcalloutbgcolor != ''){
-	
 		echo '<style type="text/css" media="screen">';
 		echo "#calloutwrap {background: $customcalloutbgcolor ;}";
 		echo '</style>';
-	
 	}
 		
 /* End CSS. */	
@@ -141,7 +125,6 @@ function chimps_callout_section_content() {
 	if ($title == '') {
 		$callouttitle = 'This is the Callout Section';
 	}
-
 	else {
 		$callouttitle = $title;
 	}
@@ -153,7 +136,6 @@ function chimps_callout_section_content() {
 	if ($text == '') {
 		$callouttext = 'CyberChimps gives you the tools to turn WordPress into a modern feature rich Content Management System (CMS)';
 	}
-
 	else {
 		$callouttext = $text;
 	}
@@ -165,7 +147,6 @@ function chimps_callout_section_content() {
 	if ($btext == '') {
 		$calloutbuttontext = 'Buy Now';
 	}
-
 	else {
 		$calloutbuttontext = $btext;
 	}
@@ -185,7 +166,6 @@ function chimps_callout_section_content() {
 	if ($link == '') {
 		$calloutlink = 'http://cyberchimps.com';
 	}
-
 	else {
 		$calloutlink = $link;
 	}
@@ -193,8 +173,7 @@ function chimps_callout_section_content() {
 /* End define Callout button link. */	
 
 ?>
-
-<div id="calloutwrap"><!--id="calloutwrap"-->
+		<div id="calloutwrap" class="twelve columns"><!--id="calloutwrap"-->
 
 	<div id="callout_text" class="<?php echo $grid; ?>">
 		<h2 class="callout_title"><?php echo $callouttitle ?></h2>
@@ -214,12 +193,8 @@ function chimps_callout_section_content() {
 <?php endif;?>
 
 </div><!--end calloutwrap--><?php
-
+	
 }
-
-
-
-add_shortcode ('callout', 'chimps_callout_section_content' );
 
 /**
 * End
