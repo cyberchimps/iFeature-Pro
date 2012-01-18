@@ -176,7 +176,7 @@ function chimps_callout_section_content() {
 		<div id="calloutwrap" class="twelve columns"><!--id="calloutwrap"-->
 
 	<div id="callout_text" class="<?php echo $grid; ?>">
-		<h2 class="callout_title"><?php echo $callouttitle ?></h2>
+		<h2 class="callout_title" ><?php echo $callouttitle ?></h2>
 		<p><?php echo $callouttext  ?></p>
 	</div>
 		

@@ -34,7 +34,7 @@ function chimps_twitterbar_section_content() {
 	$handle = $options->get($themeslug.'_blog_twitter');
 	}?>
 	
-		<div id="twitterbar"><!--id="twitterbar"-->
+		<div id="twitterbar" class="twelve columns"><!--id="twitterbar"-->
 			<div class="twittertext">
 				<a href=" http://twitter.com/<?php echo $handle ; ?>" > <img src="<?php echo "$root/images/twitterbird.png" ?>" /> <?php echo $handle ;?> - </a><?php twitter_messages($handle); ?>
 			</div>
