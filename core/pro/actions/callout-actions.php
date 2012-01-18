@@ -28,30 +28,47 @@ add_action ( 'chimps_callout_section', 'chimps_callout_section_content' );
 function chimps_callout_section_content() {
 
 	global $options, $themeslug, $post; //call globals
+	$root = get_template_directory_uri();  
 
 /* Define variables. */	
 
-	$root = get_template_directory_uri();  
-	$callout = get_post_meta($post->ID, 'enable_callout_section' , true);
-	$calloutbgcolor = get_post_meta($post->ID, 'callout_background_color' , true);
-	$bcolor = get_post_meta($post->ID, 'custom_callout_button_color' , true);
-	$btcolor = get_post_meta($post->ID, 'custom_callout_button_text_color' , true);
-	$tcolor = get_post_meta($post->ID, 'custom_callout_text_color' , true);
-	$ticolor = get_post_meta($post->ID, 'custom_callout_title_color' , true);
-	$title = get_post_meta($post->ID, 'callout_title' , true);
-	$text = get_post_meta($post->ID, 'callout_text' , true);
-	$btext = get_post_meta($post->ID, 'callout_button_text' , true);
-	$link = get_post_meta($post->ID, 'callout_url' , true);
-	$image = get_post_meta($post->ID, 'callout_image' , true);
-	$hidebutton = get_post_meta($post->ID, 'disable_callout_button' , true);
-	$customcalloutbgcolor = get_post_meta($post->ID, 'custom_callout_color' , true);
+	if (is_page()) {
+		$callout = get_post_meta($post->ID, 'enable_callout_section' , true);
+		$calloutbgcolor = get_post_meta($post->ID, 'callout_background_color' , true);
+		$bcolor = get_post_meta($post->ID, 'custom_callout_button_color' , true);
+		$btcolor = get_post_meta($post->ID, 'custom_callout_button_text_color' , true);
+		$tcolor = get_post_meta($post->ID, 'custom_callout_text_color' , true);
+		$ticolor = get_post_meta($post->ID, 'custom_callout_title_color' , true);
+		$title = get_post_meta($post->ID, 'callout_title' , true);
+		$text = get_post_meta($post->ID, 'callout_text' , true);
+		$btext = get_post_meta($post->ID, 'callout_button_text' , true);
+		$link = get_post_meta($post->ID, 'callout_url' , true);
+		$image = get_post_meta($post->ID, 'callout_image' , true);
+		$hidebutton = get_post_meta($post->ID, 'disable_callout_button' , true);
+		$customcalloutbgcolor = get_post_meta($post->ID, 'custom_callout_color' , true);
+	}
 	
-	if ($hidebutton == "on") {
-		$grid = 'grid_9';
+	if (is_front_page()) {
+		$calloutbgcolor = $options->get($themeslug.'_blog_callout_bg_color');
+		$bcolor = $options->get($themeslug.'_blog_callout_button_color');
+		$btcolor = $options->get($themeslug.'_blog_callout_button_text_color');
+		$tcolor = $options->get($themeslug.'_blog_callout_text_color');
+		$ticolor = $options->get($themeslug.'_blog_callout_title_color');
+		$title = $options->get($themeslug.'_blog_callout_title');
+		$text = $options->get($themeslug.'_blog_callout_text');
+		$btext = $options->get($themeslug.'_blog_callout_button_text');
+		$link = $options->get($themeslug.'_blog_callout_button_url');
+		$image = $options->get($themeslug.'_blog_custom_callout_button');
+		$hidebutton = $options->get($themeslug.'_blog_callout_button');
+		$customcalloutbgcolor = $options->get($themeslug.'_blog_callout_bg_color');
+	}
+	
+	if ($hidebutton == "on" OR $hidebutton == "1") {
+		$grid = 'eight columns';
 	}
 	
 	else {
-		$grid = 'grid_12';
+		$grid = 'twelve columns';
 	}
 	
 
@@ -184,14 +201,14 @@ function chimps_callout_section_content() {
 		<p><?php echo $callouttext  ?></p>
 	</div>
 		
-<?php if ($image == '' && $hidebutton == 'on'): ?>
-	<div id="calloutbutton" class="grid_2">
+<?php if ($image == '' && $hidebutton == 'on' OR $image == '' && $hidebutton == '1'): ?>
+	<div id="calloutbutton" class="two columns">
 		<a href="<?php echo $calloutlink ?>"><?php echo $calloutbuttontext ;?></a>
 	</div>
 <?php endif;?>
 
 <?php if ($image != ''): ?>
-	<div id="calloutimg" class="grid_2">
+	<div id="calloutimg" class="two columns">
 		<a href="<?php echo $calloutlink ?>"><img src="<?php echo $image?>" alt="Callout" /></a>
 	</div>
 <?php endif;?>

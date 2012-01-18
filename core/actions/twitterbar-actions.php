@@ -24,20 +24,23 @@ add_action( 'chimps_twitterbar_section', 'chimps_twitterbar_section_content' );
 * Retrieves the Twitterbar options and sets up the HTML
 */
 function chimps_twitterbar_section_content() {
-	global $post; //call globals
+	global $options, $themeslug, $post; //call globals
+	$root = get_template_directory_uri();
 	
-	$twitterbar = get_post_meta($post->ID, 'enable_twitter_bar' , true);
-	$handle = get_post_meta($post->ID, 'twitter_handle' , true);
-	$root = get_template_directory_uri(); ?>
+	if (is_page()) {
+	$handle = get_post_meta($post->ID, 'twitter_handle' , true); 
+	}
+	if (is_front_page()) {
+	$handle = $options->get($themeslug.'_blog_twitter');
+	}?>
 	
 		<div id="twitterbar"><!--id="twitterbar"-->
 			<div class="twittertext">
 				<a href=" http://twitter.com/<?php echo $handle ; ?>" > <img src="<?php echo "$root/images/twitterbird.png" ?>" /> <?php echo $handle ;?> - </a><?php twitter_messages($handle); ?>
 			</div>
 		</div><!--end twitterbar--> 
-		<div class='clear'>&nbsp;</div><?php
-
-	}	
+		<?php
+}	
 
 /**
 * End
