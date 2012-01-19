@@ -10,13 +10,13 @@
 	$sidebar = $options->get($themeslug.'_404_sidebar');
 	
 	if ($sidebar == 'two-right' OR $sidebar == 'right-left' ) {
-		$content_grid = 'grid_6';
+		$content_grid = 'six columns';
 	}
 	elseif ($sidebar == 'none' ) {
-		$content_grid = 'grid_12';
+		$content_grid = 'twelve columns';
 	}
 	else {
-		$content_grid = 'grid_8';
+		$content_grid = 'eight columns';
 	}
 
 /* Header call. */

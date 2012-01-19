@@ -28,15 +28,13 @@
 
 <div class="container">
 	<div class="row">
-
-	<?php
-		foreach(explode(",", $options->get($themeslug.'_blog_section_order')) as $fn) {
-			if(function_exists($fn)) {
-				call_user_func_array($fn, array());
+		<?php
+			foreach(explode(",", $options->get($themeslug.'_blog_section_order')) as $fn) {
+				if(function_exists($fn)) {
+					call_user_func_array($fn, array());
+				}
 			}
-		}
-	?>
-
+		?>
 	</div>
 </div><!--end container-->
 <?php get_footer(); ?>

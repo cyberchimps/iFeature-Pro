@@ -35,19 +35,17 @@ if (preg_match("/page_slider/", $page_section_order ) && $size == "1" ) {
 
 <div class="container">
 	<div class="row">
-	
-<?php if (function_exists('chimps_breadcrumbs') && ($options->get($themeslug.'_disable_breadcrumbs') == "1")) { chimps_breadcrumbs(); }?>
-
-
-<?php
-	foreach(explode(",", $page_section_order) as $key) {
-		$fn = 'chimps_' . $key;
-		if(function_exists($fn)) {
-			call_user_func_array($fn, array());
-		}
-	}
-?>
-	
+		<?php if (function_exists('chimps_breadcrumbs') && ($options->get($themeslug.'_disable_breadcrumbs') == "1")) { chimps_breadcrumbs(); }?>
+	</div>
+	<div class="row"> 
+		<?php
+			foreach(explode(",", $page_section_order) as $key) {
+				$fn = 'chimps_' . $key;
+				if(function_exists($fn)) {
+					call_user_func_array($fn, array());
+				}
+			}
+		?>	
 	</div><!--end row-->
 </div><!--end container-->
 <?php get_footer(); ?>
