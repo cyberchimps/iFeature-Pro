@@ -51,6 +51,7 @@ function chimps_slider_content() {
 		$slideranimation = $options->get($themeslug.'_slider_animation');
 		$postnumber = $options->get($themeslug.'_slider_posts_number');
 		$sliderdelay = $options->get($themeslug.'_slider_delay');
+		$navigationstyle = $options->get($themeslug.'_slider_nav');
 		
 	}
 	if (is_page()) {
@@ -327,11 +328,18 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 
 /* Define slider navigation variable */ 
   	
-	if ($options->get($themeslug.'_slider_navigation') == '1') {
-	    $csNavigation = 'false';
+	if ($navigationstyle == 'key1' OR $navigationstyle == '0') {
+	    $dots = 'true';
 	}
 	else {
-		$csNavigation = 'true';
+		$dots = 'false';
+	}
+	
+	if ($navigationstyle == 'key2' OR $navigationstyle == '1') {
+	    $thumbs = 'true';
+	}
+	else {
+		$thumbs = 'false';
 	}
 
 /* End slider navigation variable */ 
@@ -361,8 +369,8 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
     $('#orbitDemo').orbit({
          animation: '$animation',
          advanceSpeed: '$sliderdelay',
-         bullets: true,
-         bulletThumbs: false
+         bullets: $dots,
+         bulletThumbs: $thumbs
      });
      });
 </script>
