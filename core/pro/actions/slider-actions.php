@@ -38,20 +38,37 @@ function chimps_blog_slider_content() {
 
     $tmp_query = $wp_query; 
 	$root = get_template_directory_uri(); 
-	$size = $options->get($themeslug.'_slider_size');
-	$size2 = $options->get($themeslug.'_blog_sidebar');
-	$type = $options->get($themeslug.'_slider_type'); 
-	$category = $options->get($themeslug.'_slider_category'); 
-	$customcategory = $options->get($themeslug.'_customslider_category');
-	$captionstyle = $options->get($themeslug.'_caption_style');
-	$sliderheight = $options->get($themeslug.'_slider_height');
-	$navautohide = $options->get($themeslug.'_disable_nav_autohide');
-	$hidenav = $options->get($themeslug.'_hide_slider_arrows');
-	$wordenable = $options->get($themeslug.'_enable_wordthumb');
-	$slideranimation = $options->get($themeslug.'_slider_animation');
 	
+	if (is_front_page()) {
+		$size = $options->get($themeslug.'_slider_size');
+		$size2 = $options->get($themeslug.'_blog_sidebar');
+		$type = $options->get($themeslug.'_slider_type'); 
+		$category = $options->get($themeslug.'_slider_category'); 
+		$customcategory = $options->get($themeslug.'_customslider_category');
+		$captionstyle = $options->get($themeslug.'_caption_style');
+		$sliderheight = $options->get($themeslug.'_slider_height');
+		$navautohide = $options->get($themeslug.'_disable_nav_autohide');
+		$hidenav = $options->get($themeslug.'_hide_slider_arrows');
+		$wordenable = $options->get($themeslug.'_enable_wordthumb');
+		$slideranimation = $options->get($themeslug.'_slider_animation');
+	}
 	
-
+	if (is_page()) {
+		
+		$size = get_post_meta($post->ID, 'page_slider_size' , true);
+		$size2 = get_post_meta($post->ID, 'page_sidebar' , true);
+		$type = get_post_meta($post->ID, 'page_slider_type' , true);
+		$category = get_post_meta($post->ID, 'slider_blog_category' , true);
+		$postnumber  = get_post_meta($post->ID, 'slider_blog_posts_number' , true);
+		$sliderheight = get_post_meta($post->ID, 'slider_height' , true);
+		$sliderdelay = get_post_meta($post->ID, 'slider_delay' , true);
+		$slideranimation = get_post_meta($post->ID, 'page_slider_animation' , true);
+		$captionstyle = get_post_meta($post->ID, 'page_slider_caption_style' , true);
+		$navigationstyle = get_post_meta($post->ID, 'page_slider_navigation_style' , true);
+		$navautohide = get_post_meta($post->ID, 'disable_autohide' , true);
+		$hidenav = get_post_meta($post->ID, 'hide_arrows' , true);
+		$wordenable = get_post_meta($post->ID, 'enable_wordthumb' , true);	
+	}
 	
 /* End define variables. */	
 
@@ -280,7 +297,7 @@ function chimps_blog_slider_content() {
 
 			/* Controls slide title based on page meta setting */	
 
-			if ($hidetitlebar != 'on' AND $captionstyle != 'key4') {
+			if ($hidetitlebar == 'on' AND $captionstyle != 'key4') {
 	   			$caption = "data-caption='#htmlCaption$i'";
 	   		}
 
