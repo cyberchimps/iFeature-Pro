@@ -349,7 +349,7 @@ function chimps_nav() {
 
 			<div class="twelve columns" id="imenu">
 
-			<div id="nav" class="nine columns">
+			<div id="nav" class="<?php echo $grid; ?>">
 			<?php if ($options->get($themeslug.'_hide_home_icon') != "0"):?><div id="home"><a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri() ;?>/images/home.png" alt="home" /></a></div><?php endif;?>
 		    <?php wp_nav_menu( array(
 		    'theme_location' => 'header-menu', // Setting up the location for the main-menu, Main Navigation.
