@@ -167,7 +167,7 @@ header {margin-top: 15px;}
 	-moz-border-radius: 0px 0px 4px 4px;
 	padding: 0 10px 0 10px;
 	position: absolute;
-	width: 96.7%;
+	width: 96.4%;
 	height: 22px;
 	background: #f8f8f8; /* Old browsers */
 	background: -moz-linear-gradient(top,  #f8f8f8 0%, #ededed 40%, #dddddd 100%); /* FF3.6+ */
@@ -179,17 +179,17 @@ header {margin-top: 15px;}
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8f8f8', endColorstr='#dddddd',GradientType=0 ); /* IE6-9 */
 }
 
-.next-posts-single {text-align:right;padding:5px; margin-top:-35px;}
+#comments {text-align:right;float:right;padding-top: 3px;font-size: 12px;}
 
-.prev-posts-single {text-align:left;padding:5px; margin-top: -10px; margin-bottom: 5px; margin-left: -5px; max-width:300px;}
-
-.comments {text-align: left;float: left;padding-top: 3px;font-size: 12px;}
-
-.share {text-align:right;float:right;}
+#share {text-align:left;float:left;padding-top: 3px;}
 
 .share a img {opacity:.8;}
 
 .share a:hover img {opacity:1;}
+
+.next-posts-single {text-align:right;padding:5px; margin-top:-35px;}
+
+.prev-posts-single {text-align:left;padding:5px; margin-top: -10px; margin-bottom: 5px; margin-left: -5px; max-width:300px;}
 
 .tags {margin-bottom: 15px;font-size: 12px;}
 
