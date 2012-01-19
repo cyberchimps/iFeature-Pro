@@ -8,16 +8,6 @@
 
 	global $options, $themeslug, $post, $sidebar; // call globals
 	$sidebar = $options->get($themeslug.'_404_sidebar');
-	
-	if ($sidebar == 'two-right' OR $sidebar == 'right-left' ) {
-		$content_grid = 'six columns';
-	}
-	elseif ($sidebar == 'none' ) {
-		$content_grid = 'twelve columns';
-	}
-	else {
-		$content_grid = 'eight columns';
-	}
 
 /* Header call. */
 

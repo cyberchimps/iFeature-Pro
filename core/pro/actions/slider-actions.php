@@ -334,7 +334,6 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 	else {
 		$dots = 'false';
 	}
-	
 	if ($navigationstyle == 'key2' OR $navigationstyle == '1') {
 	    $thumbs = 'true';
 	}
@@ -369,7 +368,7 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
     $('#orbitDemo').orbit({
          animation: '$animation',
          advanceSpeed: $sliderdelay,
-         captionAnimation: 'none',		// fade, slideOpen, none
+         captionAnimation: 'slideOpen',		// fade, slideOpen, none
          captionAnimationSpeed: 800,  
          bullets: $dots,
          bulletThumbs: $thumbs
