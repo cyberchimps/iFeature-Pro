@@ -35,7 +35,6 @@ function chimps_page_section_content() {
 
 
 ?>
-<div class="container_12">
 
 	<!--Begin @Core before content sidebar hook-->
 		<?php chimps_before_content_sidebar(); ?>
@@ -81,9 +80,6 @@ function chimps_page_section_content() {
 		<?php chimps_after_content_sidebar(); ?>
 	<!--End @Core after content sidebar hook-->
 
-</div><!--end container_12-->
-
-<div class='clear'>&nbsp;</div>
 <?php
 }
 

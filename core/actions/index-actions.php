@@ -34,8 +34,6 @@ function chimps_index_content() {
 		<?php chimps_sidebar_init(); ?>
 	<!--End @Core sidebar init-->
 
-<div class="container_12">
-
 <!--Begin @Core before content sidebar hook-->
 		<?php chimps_before_content_sidebar(); ?>
 	<!--End @Core before content sidebar hook-->
@@ -97,8 +95,6 @@ function chimps_index_content() {
 	<!--End @Core after content sidebar hook-->
 
 
-</div><!--end container_12-->
-<div class='clear'>&nbsp;</div>
 <?php }
 
 /**
