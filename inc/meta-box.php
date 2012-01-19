@@ -104,7 +104,7 @@ function initialize_the_meta_boxes() {
 			->text('slider_blog_posts_number', 'Number of Featured Blog Posts', '', array('std' => '5'))
 			->text('slider_height', 'Slider Height', '', array('std' => '330'))
 			->text('slider_delay', 'Slider Delay Time (MS)', '', array('std' => '3500'))
-			->select('page_slider_animation', 'Slider Animation Type', '', array('options' => array('Random (default)', 'Slice Down', 'Slice Down-Left', 'Slice Up', 'Slice Up-Left', 'Slice Up-Down', 'Slice Up-Down-Left', 'Fold', 'Fade', 'Slide In-Right', 'Slide In-Left', 'Box Random', 'Box Rain', 'Box Rain-Reverse', 'Box Rain-Grow', 'Box Rain-Grow-Reverse')) )
+			->select('page_slider_animation', 'Slider Animation Type', '', array('options' => array('Horizontal-Push (default)', 'Fade', 'Horizontal-Slide', 'Vertical-Slide')) )
 			->select('page_slider_navigation_style', 'Slider Navigation Style', '', array('options' => array('Dots (default)', 'Thumbnails', 'None')) )
 			->select('page_slider_caption_style', 'Slider Caption Style', '', array('options' => array('None (default)', 'Bottom', 'Left', 'Right')) )
 			->checkbox('hide_arrows', 'Navigation Arrows', '', array('std' => 'on'))

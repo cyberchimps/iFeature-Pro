@@ -47,7 +47,6 @@ function chimps_blog_slider_content() {
 		$customcategory = $options->get($themeslug.'_customslider_category');
 		$captionstyle = $options->get($themeslug.'_caption_style');
 		$sliderheight = $options->get($themeslug.'_slider_height');
-		$navautohide = $options->get($themeslug.'_disable_nav_autohide');
 		$hidenav = $options->get($themeslug.'_hide_slider_arrows');
 		$wordenable = $options->get($themeslug.'_enable_wordthumb');
 		$slideranimation = $options->get($themeslug.'_slider_animation');
@@ -65,7 +64,6 @@ function chimps_blog_slider_content() {
 		$slideranimation = get_post_meta($post->ID, 'page_slider_animation' , true);
 		$captionstyle = get_post_meta($post->ID, 'page_slider_caption_style' , true);
 		$navigationstyle = get_post_meta($post->ID, 'page_slider_navigation_style' , true);
-		$navautohide = get_post_meta($post->ID, 'disable_autohide' , true);
 		$hidenav = get_post_meta($post->ID, 'hide_arrows' , true);
 		$wordenable = get_post_meta($post->ID, 'enable_wordthumb' , true);	
 	}
@@ -94,7 +92,7 @@ function chimps_blog_slider_content() {
 
 /* Slider navigation options */
 
-	if ($hidenav == '1') {
+	if ($hidenav == '1' OR $hidenav == "on") {
 		$hidenavigation = 'true';
 	}
 
@@ -102,14 +100,6 @@ function chimps_blog_slider_content() {
 		$hidenavigation = 'false';
 	}
 	
-	if ($navautohide == '1') {
-		$autohide = 'true';
-	}
-	
-	else {
-		$autohide = 'false';
-	}
-
 /* End navigation options */
 
 
@@ -139,17 +129,17 @@ function chimps_blog_slider_content() {
 
 /* Define slider caption style */      
 
-	if ($captionstyle == 'key3') { ?>
+	if ($captionstyle == 'key3' OR $captionstyle == '3') { ?>
 		
 		<style type="text/css">
-		.nivo-caption {height: <?php echo $height ?>px; width: 30%;}
+		.orbit-caption {height: <?php echo $height ?>px; width: 30% !important;}
 		</style> <?php
 	}
 	
-	elseif ($captionstyle == 'key2') { ?>
+	elseif ($captionstyle == 'key2' OR $captionstyle == '2') { ?>
 		
 		<style type="text/css">
-		.nivo-caption {position: relative; float: right; height: <?php echo $height ?>px; width: 30%;}
+		.orbit-caption {position: relative; float: right; height: <?php echo $height ?>px; width: 30% !important;}
 		</style><?php
 	}    
 
