@@ -160,14 +160,15 @@ header {margin-top: 15px;}
 	border-left: 1px solid #ccc;
 }
 
-.postbar {
-	margin: -3px -15px -10px -15px;
+#postbar {
+	margin: -39px 0px 0px 0px;
+	width: 99.7%;
 	border-top: 1px #e5e5e5 solid;
+	border-left: 1px solid #CCC;
+	border-right: 1px solid #BBB;
 	border-radius: 0px 0px 4px 4px;
 	-moz-border-radius: 0px 0px 4px 4px;
-	padding: 0 10px 0 10px;
 	position: absolute;
-	width: 96.4%;
 	height: 22px;
 	background: #f8f8f8; /* Old browsers */
 	background: -moz-linear-gradient(top,  #f8f8f8 0%, #ededed 40%, #dddddd 100%); /* FF3.6+ */
