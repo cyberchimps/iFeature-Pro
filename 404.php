@@ -27,8 +27,6 @@
 
 ?>
 
-<div class="container_12">
-
 	<!--Begin @Core before content sidebar hook-->
 		<?php chimps_before_content_sidebar(); ?>
 	<!--End @Core before content sidebar hook-->
@@ -56,6 +54,5 @@
 	<!--End @Core after content sidebar hook-->
 	
 </div><!--end content_wrap-->
-<div class='clear'>&nbsp;</div>
 
 <?php get_footer(); ?>

@@ -200,7 +200,7 @@ global $options, $themeslug;?>
 		
 	<div class='clear'>&nbsp;</div>
 		
-	<div class="container_12" id="head2">
+	<div class="container" id="head2">
 				
 		<div class="grid_6">
 		&nbsp;

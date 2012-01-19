@@ -29,8 +29,6 @@
 			<?php chimps_archive_title(); ?>
 			<!--End @Core archive hook-->
 
-<div class="container_12">
-
 	<!--Begin @Core before content sidebar hook-->
 		<?php chimps_before_content_sidebar(); ?>
 	<!--End @Core before content sidebar hook-->
@@ -79,7 +77,6 @@
 	<!--End @Core after content sidebar hook-->
 	
 		</div><!--end content-->
-</div><!--end container_12-->
 	</div><!--end row-->
 </div><!--end container-->
 
