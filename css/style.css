@@ -205,7 +205,7 @@ header {margin-top: 15px;}
 
 .prev-posts { float: right;padding: 5px 0 5px 0; }
 
-#crumbs {padding: 2px 5px 0px 5px;}
+#crumbs {padding: 0px 5px 5px 5px;}
 
 .pagnext-posts {float: left;padding: 5px;margin-bottom: 10px;}
 
