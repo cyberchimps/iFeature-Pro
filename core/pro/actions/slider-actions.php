@@ -74,68 +74,20 @@ function chimps_blog_slider_content() {
 
 /* Define animation styles. */	
 
-	if ($slideranimation == 'key2') {
-		$animation = 'sliceDown';
+	if ($slideranimation == 'key2' OR $slideranimation == '1') {
+		$animation = 'fade';
 	}
 	
-	elseif ($slideranimation == 'key3') {
-		$animation = 'sliceDownLeft' ;
+	elseif ($slideranimation == 'key3' OR $slideranimation == '2') {
+		$animation = 'horizontal-slide' ;
 	}
 
-	elseif ($slideranimation == 'key4') {
-		$animation = 'sliceUp' ;
-	}
-
-	elseif ($slideranimation == 'key5') {
-		$animation = 'sliceUpLeft' ;
-	}
-
-	elseif ($slideranimation == 'key6') {
-		$animation = 'sliceUpDown' ;
-	}
-
-	elseif ($slideranimation == 'key7') {
-		$animation = 'sliceUpDownLeft' ;
-	}
-
-	elseif ($slideranimation == 'key8') {
-		$animation = 'fold' ;
-	}
-
-	elseif ($slideranimation == 'key9') {
-		$animation = 'fade' ;
-	}
-
-	elseif ($slideranimation == 'key10') {
-		$animation = 'slideInRight' ;
-	}
-
-	elseif ($slideranimation == 'key11') {
-		$animation = 'slideInLeft' ;
-	}
-
-	elseif ($slideranimation == 'key12') {
-		$animation = 'boxRandom' ;
-	}
-
-	elseif ($slideranimation == 'key13') {
-		$animation = 'boxRain' ;
-	}
-
-	elseif ($slideranimation == 'key14') {
-		$animation = 'boxRainReverse' ;
-	}
-
-	elseif ($slideranimation == 'key15') {
-		$animation = 'boxRainGrow' ;
-	}
-	
-	elseif ($slideranimation == 'key16') {
-		$animation = 'boxRainGrowReverse' ;
+	elseif ($slideranimation == 'key4' OR $slideranimation == '3') {
+		$animation = 'vertical-slide' ;
 	}
 	
 	else {
-		$animation = 'random';
+		$animation = 'horizontal-push';
 	}
 
 /* End animation styles. */		
@@ -509,7 +461,7 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 <script type="text/javascript">
    $(window).load(function() {
     $('#orbitDemo').orbit({
-         animation: 'horizontal-push',
+         animation: '$animation',
          bullets: true,
          bulletThumbs: false
        
