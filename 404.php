@@ -6,11 +6,11 @@
 	Copyright (C) 2011 CyberChimps
 */
 
-	global $options, $themeslug, $post, $sidebar; // call globals
-	$sidebar = $options->get($themeslug.'_404_sidebar');
+	global $options, $themeslug, $post, $sidebar, $content_grid; // call globals
 
 /* Header call. */
 
+	chimps_sidebar_init();
 	get_header(); 
 	
 /* End header. */
@@ -20,7 +20,8 @@
 	<!--Begin @Core before content sidebar hook-->
 		<?php chimps_before_content_sidebar(); ?>
 	<!--End @Core before content sidebar hook-->
-
+<div class="container">
+	<div class="row">
 	<div id="content" class="<?php echo $content_grid; ?>">
 		<div class="content_padding">
 		
@@ -44,5 +45,7 @@
 	<!--End @Core after content sidebar hook-->
 	
 </div><!--end content_wrap-->
+	</div><!--end row-->
+</div><!--end container-->
 
 <?php get_footer(); ?>
