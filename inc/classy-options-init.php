@@ -180,7 +180,7 @@ TEMPLATE_URL . '/images/social/thumbs/icons-default.png' ), 'default' => 'defaul
 			->select($themeslug.'_customslider_category', 'Select the custom slide category', array( 'options' => $customslider ))
 			->text($themeslug."_slider_posts_number", "Number of Featured Blog Posts")
 			->text($themeslug."_slider_height", "Slider height")
-			->text($themeslug."_slider_delay", "Slider Delay")
+			->text($themeslug."_slider_delay", "Slider Delay", array('default' => '3500'))
 			->select($themeslug."_caption_style", "Select the Caption Style", array( 'options' => array("key1" => "Bottom", "key2" => "Right", "key3" => "Left", "key4" => "None")))
 			->select($themeslug."_slider_animation", "Select the Sidebar Animation", array( 'options' => array("key1" => "Horizontal-Push", "key2" => "Fade", "key3" => "Horizontal-Slide", "key4" => "Vertical-Slide")))
 			->select($themeslug."_slider_nav", "Select the Slider Navigation", array( 'options' => array("key1" => "Dots", "key2" => "Thumbnails", "key3" => "none")))

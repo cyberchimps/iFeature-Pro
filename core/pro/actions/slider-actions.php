@@ -341,7 +341,7 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 <!-- Apply slider CSS based on user settings -->
 
 	<style type="text/css" media="screen">
-		#slider-wrapper { width: <?php echo $csWidth ?>px; height: <?php echo $height ?>px; margin: auto; }
+		#orbitDemo { max-height: <?php echo $height ?>px !important; }
 		#slider { width: <?php echo $csWidth ?>px; height: <?php echo $height ?>px; margin: auto; }
 	</style>
 
@@ -360,6 +360,7 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
    $(window).load(function() {
     $('#orbitDemo').orbit({
          animation: '$animation',
+         advanceSpeed: '$sliderdelay',
          bullets: true,
          bulletThumbs: false
      });
