@@ -50,6 +50,9 @@ function chimps_blog_slider_content() {
 		$hidenav = $options->get($themeslug.'_hide_slider_arrows');
 		$wordenable = $options->get($themeslug.'_enable_wordthumb');
 		$slideranimation = $options->get($themeslug.'_slider_animation');
+		$postnumber = $options->get($themeslug.'_slider_posts_number');
+		$sliderdelay = $options->get($themeslug.'_slider_delay');
+		
 	}
 	
 	if (is_page()) {
@@ -75,15 +78,12 @@ function chimps_blog_slider_content() {
 	if ($slideranimation == 'key2' OR $slideranimation == '1') {
 		$animation = 'fade';
 	}
-	
 	elseif ($slideranimation == 'key3' OR $slideranimation == '2') {
 		$animation = 'horizontal-slide' ;
 	}
-
 	elseif ($slideranimation == 'key4' OR $slideranimation == '3') {
 		$animation = 'vertical-slide' ;
 	}
-	
 	else {
 		$animation = 'horizontal-push';
 	}
@@ -95,7 +95,6 @@ function chimps_blog_slider_content() {
 	if ($hidenav == '1' OR $hidenav == "on") {
 		$hidenavigation = 'true';
 	}
-
 	else {
 		$hidenavigation = 'false';
 	}
@@ -108,7 +107,6 @@ function chimps_blog_slider_content() {
 	if ($category != 'all') {
 		$blogcategory = $category;
 	}
-	
 	else {
 		$blogcategory = "";
 	}
@@ -130,14 +128,11 @@ function chimps_blog_slider_content() {
 /* Define slider caption style */      
 
 	if ($captionstyle == 'key3' OR $captionstyle == '3') { ?>
-		
 		<style type="text/css">
 		.orbit-caption {height: <?php echo $height ?>px; width: 30% !important;}
 		</style> <?php
 	}
-	
 	elseif ($captionstyle == 'key2' OR $captionstyle == '2') { ?>
-		
 		<style type="text/css">
 		.orbit-caption {position: relative; float: right; height: <?php echo $height ?>px; width: 30% !important;}
 		</style><?php
@@ -145,14 +140,12 @@ function chimps_blog_slider_content() {
 
 /* Define wordthumb default height and widths. */		
 
-	if ($size == "key2") {
+	if ($size == "key2" OR $size == '0') {
 		$wordthumb = "h=$height&w=980";
 	}
-
-	elseif ($size2 == "two-right" OR $size2 == "right-left") {
+	elseif ($size2 == "two-right" OR $size2 == "right-left" OR $size2 == "1" OR $size2 == "2") {
 		$wordthumb = "h=$height&w=480";
 	}
-
 	else {
 		$wordthumb = "h=$height&w=640";
 	}
@@ -161,14 +154,12 @@ function chimps_blog_slider_content() {
 
 /* Define slider width variable */ 
 
-	if ($size == 'key2' ) {
+	if ($size == 'key2' OR $size == '0' ) {
 	  	$csWidth = '980';
 	}		
-
-	elseif ($size2 == 'right-left' && $size != 'key2' OR $size2 == 'two-right' && $size != 'key2') {
+	elseif ($size2 == 'right-left' && $size != 'key2' OR $size2 == 'two-right' && $size != 'key2' OR $size2 == '1' && $size != '0' OR $size2 == '2' && $size != '0') {
 		$csWidth = '470';
 	}  	
-
 	else {
 		$csWidth = '640';
 	}
@@ -180,17 +171,15 @@ function chimps_blog_slider_content() {
 	if ($options->get($themeslug.'_slider_type') == '') {
 		$usecustomslides = 'posts';
 	}	
-
 	else {
 		$usecustomslides = $options->get($themeslug.'_slider_type');
 	}
 
 /* Query posts based on theme/meta options */
 
-	if ( $type == 'custom') {
+	if ( $type == 'custom' OR $type == '0') {
     	query_posts( array ('post_type' => $themeslug.'_custom_slides', 'showposts' => 20,  'slide_categories' => $customcategory  ) );
     }
-    	
     else {
     	query_posts('category_name='.$blogcategory.'&showposts=50');
 	}
@@ -202,17 +191,14 @@ function chimps_blog_slider_content() {
 	if (have_posts()) :
 	    $out = "<div id='orbitDemo'>"; 
 	    $i = 0;
-
-	if ($options->get($themeslug.'_slider_posts_number') == '') {
+	if ($options->get($themeslug.'_slider_posts_number') == '' OR $postnumber == '' && $type != '0') {
 	    $no = '5';    	
 	}   	
-
-	elseif ($usecustomslides == 'custom') {
+	elseif ($usecustomslides == 'custom' OR $type == '0') {
 	    $no = '20';
 	}
-
 	else {
-		$no = $options->get($themeslug.'_slider_posts_number');
+		$no = $postnumber;
 	}
 
 /* End post counter */	    	
@@ -242,7 +228,6 @@ function chimps_blog_slider_content() {
 			if ($hidetitlebar == 'on' AND $captionstyle != 'key4') {
 	   			$caption = "data-caption='#htmlCaption$i'";
 	   		}
-
 	   		else {
 	   			$caption = '';
 	   		}
@@ -251,10 +236,9 @@ function chimps_blog_slider_content() {
 
 	    	/* Controls slide link */
 
-	    	if ( $type == 'custom') {
+	    	if ( $type == 'custom' OR $type == '0') {
 	    		$link = get_post_meta($post->ID, 'slider_url' , true);
 	    	}
-
 	    	else {
 	    		$link = get_permalink();
 	    	}
@@ -263,10 +247,9 @@ function chimps_blog_slider_content() {
 	    	
 	    	/* Establish slider text */
 	    	
-	    	if ($type == 'custom') {
+	    	if ($type == 'custom' OR $type == '0') {
 	    		$text = $customtext;
 	    	}
-	    	
 	    	else {
 	    		$text = $blogtext;
 	    	}
@@ -275,88 +258,37 @@ function chimps_blog_slider_content() {
 
 	    	/* Controls slide image and thumbnails */
 
-	    	if ($customimage != '' && $customthumb == '' && $wordenable == '1'){ // Custom image, no custom thumb, WordThumb enabled. 
+	    	if ($customimage != '' && $customthumb == '' && $wordenable == '1' OR $customimage != '' && $customthumb == '' && $wordenable == 'on'){ // Custom image, no custom thumb, WordThumb enabled. 
 	    		$image = $customsized;
 	    		$thumbnail = "$root/core/pro/library/wt/wordthumb.php?src=$customimage&a=c&h=30&w=50";
 	    	}
-	    	
-	    	elseif ($customimage != '' && $customthumb != '' && $wordenable == '1'){ // Custom image, custom thumb, WordThumb enabled. 
+	    	elseif ($customimage != '' && $customthumb != '' && $wordenable == '1' OR $customimage != '' && $customthumb != '' && $wordenable == 'on'){ // Custom image, custom thumb, WordThumb enabled. 
 	    		$image = $customimage;
 	    		$thumbnail = "$root/core/pro/library/wt/wordthumb.php?src=$customthumb&a=c&h=30&w=50";
 	    	}
-	    	
-	    	elseif ($customimage != '' && $customthumb != '' && $wordenable != '1'){ // Custom image, custom thumb, WordThumb disabled. 
+	    	elseif ($customimage != '' && $customthumb != '' && $wordenable != '1' OR $customimage != '' && $customthumb != '' && $wordenable != 'on'){ // Custom image, custom thumb, WordThumb disabled. 
 	    		$image = $customimage;
 	    		$thumbnail = $customthumb;
 	    	}
-	    	
-	    	elseif ($customimage != '' && $customthumb == '' && $wordenable != '1'){ // Custom image, no custom thumb, WordThumb disabled. 
+	    	elseif ($customimage != '' && $customthumb == '' && $wordenable != '1' OR $customimage != '' && $customthumb == '' && $wordenable != 'on'){ // Custom image, no custom thumb, WordThumb disabled. 
 	    		$image = $customimage;
 	    		$thumbnail = "$root/images/pro/sliderthumb.jpg";
 	    	}
-	    	
-	    	elseif ($customimage != '' && $customthumb == '' && $wordenable == '1'){ // Custom image, no custom thumb, WordThumb enabled. 
+	    	elseif ($customimage != '' && $customthumb == '' && $wordenable == '1' OR $customimage != '' && $customthumb == '' && $wordenable == 'on'){ // Custom image, no custom thumb, WordThumb enabled. 
 	    		$image = $customsized;
 	    		$thumbnail = "$root/images/pro/sliderthumb.jpg";
-	    	}
-	    	
-	    	elseif ($customimage == '' && $size2 == "two-right" && $size != "key2" && $wordenable == '1' OR $customimage == '' && $size2 == "right-left" && $size != "key2" && $wordenable == '1'){ // No custom image, no custom thumb, half-width slider, two sidebars, WordThumb enabled. 
-	    		$image = "$root/core/pro/library/wt/wordthumb.php?src=$root/images/pro/slider-470.jpg&a=c&h=$height&w=470";
-	    		$thumbnail = "$root/images/pro/sliderthumb.jpg";
-	    	}
-	    	
-	    		elseif ($customimage == '' && $size2 == "two-right" && $size != "key2" && $wordenable != '1' OR $customimage == '' && $size2 == "right-left" && $size != "key2" && $wordenable != '1'){ // No custom image, no custom thumb, half-width slider, two sidebars, WordThumb disabled. 
-	    		$image = "$root/images/pro/slider-470.jpg";
-	    		$thumbnail = "$root/images/pro/sliderthumb.jpg";
-	    	}
-	    	
-	    	elseif ($customimage == '' && $customthumb == '' && $size != "key2" && $wordenable != '1'){ // No custom image, no custom thumb, half-width slider, WordThumb disabled. 
-	    		$image = "$root/images/pro/slider-640.jpg";
-	    		$thumbnail = "$root/images/pro/sliderthumb.jpg";
-	    	}
-	    	
-	    	elseif ($customimage == '' && $customthumb != '' && $size != "key2" && $wordenable != '1'){ // No custom image, custom thumb, half-width slider, WordThumb disabled. 
-	    		$image = "$root/images/pro/slider-640.jpg";
-	    		$thumbnail = $customthumb;
-	    	}
-	    	
-	    	elseif ($customimage == '' && $customthumb != '' && $size != "key2" && $wordenable == '1' ){ // No custom image, custom thumb, half-width slider, WordThumb enabled. 
-	    		$image = "$root/images/pro/slider-640.jpg";
-	    		$thumbnail = "$root/core/pro/library/wt/wordthumb.php?src=$customthumb&a=c&h=30&w=50";
-	    	}
-
-	    	elseif ($customimage == '' && $size2 == "default" && $size != "key2" && $wordenable == '1'){ // No custom image, no custom thumb, half-width slider, WordThumb enabled. 
-
-	    		$image = "$root/core/pro/library/wt/wordthumb.php?src=$root/images/pro/slider-640.jpg&a=c&h=$height&w=640";
-	    		$thumbnail = "$root/images/pro/sliderthumb.jpg";
-	    	}
-	    	
-	    	elseif ($customimage == '' && $size == "key2" && $wordenable == '1'){ // No custom image, no custom thumb, full-width slider, WordThumb enabled. 
-
-	    		$image = "$root/core/pro/library/wt/wordthumb.php?src=$root/images/pro/slider-980.jpg&a=c&h=$height&w=980";
-	    		$thumbnail = "$root/images/pro/sliderthumb.jpg";
-	    	}
-	    	
-	    	elseif ($customimage == '' && $size == "key2" && $wordenable != '1'){ // No custom image, no custom thumb, full-width slider, WordThumb enabled. 
+	    	}  	
+	    	elseif ($customimage == '' && $size == "key2" && $wordenable != '1' OR $customimage == '' && $size == "0" && $wordenable != 'on'){ // No custom image, no custom thumb, full-width slider, WordThumb enabled. 
 
 	    		$image = "$root/images/pro/slider-980.jpg";
 	    		$thumbnail = "$root/images/pro/sliderthumb.jpg";
 	    	}
 
-	    	
-	   		elseif ($wordenable == '1' && $size != "key2") { // all else 
-	       		$image = "$root/core/pro/library/wt/wordthumb.php?src=$root/images/pro/slider-640.jpg&a=c&h=$height&w=640";
-	       		$thumbnail = "$root/images/pro/sliderthumb.jpg";
-	       	}
-	       	
-	       	
-	       
-	       	
-	     	/* End image/thumb */	
+		    /* End image/thumb */	
 
 	     	/* Markup for slides */
 
-	    	$out .= "<a href='$link' $caption data-thumb='$image'>
+	    	$out .= "<a href='$link' $caption data-thumb='$thumbnail'>
 	    				<img src='$image' alt='Slider' />
 	    						<span class='orbit-caption' id='htmlCaption$i'>$title <br /> $text</span>
 	    				</a>
@@ -385,12 +317,12 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 
 /* Define slider delay variable */ 
     
-	if ($options->get($themeslug.'_slider_delay') == '') {
+	if ($sliderdelay == '') {
 	    $delay = '3500';
 	}    
 
 	else {
-		$delay = $options->get($themeslug.'_slider_delay');
+		$delay = $sliderdelay;
 	}
 
 /* End slider delay variable */ 	
@@ -400,7 +332,6 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 	if ($options->get($themeslug.'_slider_navigation') == '1') {
 	    $csNavigation = 'false';
 	}
-
 	else {
 		$csNavigation = 'true';
 	}
@@ -420,30 +351,9 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 
 	<?php
 	
-/* Define slider navigation style */ 		
-	
-	if ($options->get($themeslug.'_slider_nav') == 'key1' OR $options->get($themeslug.'_slider_nav') == '') {
-		
-		echo '<style type="text/css">';
-		echo ".nivo-controlNav a {background: url($root/images/slider/bullets.png) no-repeat; display:block; width:22px; height:22px; 	text-indent:-9999px; border:0; margin-right:3px; float:left;}";
-		echo ".nivo-controlNav a.active {background-position:0 -22px;} ";
-		echo '</style>';
-		
-	}
- 
-	if ($options->get($themeslug.'_slider_nav') == "key3")  {
-			
-		echo '<style type="text/css">';
-		echo ".nivo-controlNav {display: none;}";
-		echo ".slider_nav {display: none;}";
-		echo '#slider-wrapper {margin-bottom: 20px;}';
-		echo '</style>';
-
-	}	
-
 /* End slider navigation style */ 
 	
-	    wp_reset_query(); /* Reset post query */ 
+	wp_reset_query(); /* Reset post query */ 
 
 /* Begin NivoSlider javascript */ 
     
@@ -454,7 +364,6 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
          animation: '$animation',
          bullets: true,
          bulletThumbs: false
-       
      });
      });
 </script>
@@ -465,12 +374,6 @@ OUT;
 echo $out;
 
 /* END */ 
-
-
-
-?>
-
-<?php
 
 }
 
