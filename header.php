@@ -36,15 +36,14 @@
 			
 	<header>
 		
-	<?php
-		foreach(explode(",", $options->get('header_section_order')) as $fn) {
-			if(function_exists($fn)) {
-				call_user_func_array($fn, array());
+		<?php
+			foreach(explode(",", $options->get('header_section_order')) as $fn) {
+				if(function_exists($fn)) {
+					call_user_func_array($fn, array());
+				}
 			}
-		}
-	?>
-				<div class='clear'>&nbsp;</div>
-			</header>
+		?>
+	</header>
 
 <!-- Begin @Core after_header hook -->
 	<?php chimps_after_header(); ?> 
