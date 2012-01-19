@@ -69,12 +69,11 @@ function chimps_index_content() {
 					<?php chimps_post_tags(); ?>
 				<!--End @Core post tags hook-->
 			
-				<!--Begin @iFeature post bar hook-->
-					<?php chimps_post_bar(); ?>
-				<!--End @iFeature post bar hook-->
-			
-				</div><!--end post_class-->	
-		</div><!--end post container--> 
+				</div><!--end post_class-->
+			</div><!--end post container-->
+			<!--Begin @iFeature post bar hook-->
+				<?php chimps_post_bar(); ?>
+			<!--End @iFeature post bar hook-->
 	
 			<?php endwhile; ?>
 		
