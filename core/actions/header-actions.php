@@ -359,7 +359,7 @@ function chimps_nav() {
 	    	?>
    			</div>
    			<?php if ($options->get($themeslug.'_hide_search') != "0"):?>
-			<div class="two columns">
+			<div class="three columns">
 				<?php get_search_form(); ?>
 			</div>
 			<?php endif;?>
