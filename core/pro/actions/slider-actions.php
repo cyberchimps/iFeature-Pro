@@ -20,7 +20,6 @@
 */
 
 add_action ('chimps_blog_slider', 'chimps_slider_content' );
-
 add_action ('chimps_page_slider', 'chimps_slider_content' );
 
 /**
@@ -54,7 +53,6 @@ function chimps_slider_content() {
 		$sliderdelay = $options->get($themeslug.'_slider_delay');
 		
 	}
-	
 	if (is_page()) {
 		
 		$size = get_post_meta($post->ID, 'page_slider_size' , true);
@@ -278,9 +276,9 @@ function chimps_slider_content() {
 	    		$image = $customsized;
 	    		$thumbnail = "$root/images/pro/sliderthumb.jpg";
 	    	}  	
-	    	elseif ($customimage == '' && $size == "key2" && $wordenable != '1' OR $customimage == '' && $size == "0" && $wordenable != 'on'){ // No custom image, no custom thumb, full-width slider, WordThumb enabled. 
+	    	elseif ($customimage == '' && $wordenable != '1' OR $customimage == '' && $size == "0" && $wordenable != 'on'){ // No custom image, no custom thumb, full-width slider, WordThumb enabled. 
 
-	    		$image = "$root/images/pro/slider-980.jpg";
+	    		$image = "$root/images/pro/slider-640.jpg";
 	    		$thumbnail = "$root/images/pro/sliderthumb.jpg";
 	    	}
 
@@ -372,8 +370,6 @@ OUT;
 /* End NivoSlider javascript */ 
 
 echo $out;
-
-/* END */ 
 
 }
 
