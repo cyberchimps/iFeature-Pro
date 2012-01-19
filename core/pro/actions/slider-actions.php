@@ -90,12 +90,12 @@ function chimps_slider_content() {
 
 /* Slider navigation options */
 
-	if ($hidenav == '1' OR $hidenav == "on") {
-		$hidenavigation = 'true';
+	if ($hidenav == '0' OR $hidenav == "off") { ?>
+		<style type="text/css">
+		div.slider-nav {display: none;}
+		</style> <?php
 	}
-	else {
-		$hidenavigation = 'false';
-	}
+	
 	
 /* End navigation options */
 

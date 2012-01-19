@@ -185,7 +185,6 @@ TEMPLATE_URL . '/images/social/thumbs/icons-default.png' ), 'default' => 'defaul
 			->select($themeslug."_slider_animation", "Select the Sidebar Animation", array( 'options' => array("key1" => "Horizontal-Push", "key2" => "Fade", "key3" => "Horizontal-Slide", "key4" => "Vertical-Slide")))
 			->select($themeslug."_slider_nav", "Select the Slider Navigation", array( 'options' => array("key1" => "Dots", "key2" => "Thumbnails", "key3" => "none")))
 			->checkbox($themeslug."_hide_slider_arrows", "Slider Arrows", array('default' => true))
-			->checkbox($themeslug."_disable_nav_autohide", "Slider Arrow Auto-Hide", array('default' => true))
 			->checkbox($themeslug."_enable_wordthumb", "WordThumb Image Resizing")
 		->subsection_end()
 		->subsection("Callout Options")
