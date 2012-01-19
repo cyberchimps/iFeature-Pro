@@ -50,6 +50,7 @@ function chimps_blog_slider_content() {
 	$wordenable = $options->get($themeslug.'_enable_wordthumb');
 	$slideranimation = $options->get($themeslug.'_slider_animation');
 	
+	
 
 	
 /* End define variables. */	
@@ -280,11 +281,11 @@ function chimps_blog_slider_content() {
 			/* Controls slide title based on page meta setting */	
 
 			if ($hidetitlebar != 'on' AND $captionstyle != 'key4') {
-	   			$titlevar = "#caption$i";
+	   			$caption = "data-caption='#htmlCaption$i'";
 	   		}
 
 	   		else {
-	   			$titlevar = '';
+	   			$caption = '';
 	   		}
 
 	    	/* End slide title */
@@ -389,13 +390,16 @@ function chimps_blog_slider_content() {
 	       		$thumbnail = "$root/images/pro/sliderthumb.jpg";
 	       	}
 	       	
+	       	
+	       
+	       	
 	     	/* End image/thumb */	
 
 	     	/* Markup for slides */
 
-	    	$out .= "<a href='$link' data-caption='#htmlCaption$i' data-thumb='$image'>
+	    	$out .= "<a href='$link' $caption data-thumb='$image'>
 	    				<img src='$image' alt='Slider' />
-	    					<span class='orbit-caption' id='htmlCaption$i'>$title <br /> $text</span>
+	    						<span class='orbit-caption' id='htmlCaption$i'>$title <br /> $text</span>
 	    				</a>
 	    			";
 
@@ -490,7 +494,7 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
     $('#orbitDemo').orbit({
          animation: 'horizontal-push',
          bullets: true,
-         bulletThumbs: true
+         bulletThumbs: false
        
      });
      });
