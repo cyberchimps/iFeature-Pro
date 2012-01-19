@@ -16,8 +16,8 @@
 /* Set slider hook based on page option */
 
 	if (preg_match("/chimps_blog_slider/", $reorder ) && $slidersize != "key2" ) {
-		remove_action ( 'chimps_blog_slider', 'chimps_blog_slider_content' );
-		add_action ( 'chimps_blog_content_slider', 'chimps_blog_slider_content');
+		remove_action ( 'chimps_blog_slider', 'chimps_slider_content' );
+		add_action ( 'chimps_blog_content_slider', 'chimps_slider_content');
 	}
 	
 /* End set slider hook*/
