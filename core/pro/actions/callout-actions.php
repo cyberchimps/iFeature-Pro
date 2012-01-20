@@ -173,7 +173,8 @@ function chimps_callout_section_content() {
 /* End define Callout button link. */	
 
 ?>
-		<div id="calloutwrap" class="twelve columns"><!--id="calloutwrap"-->
+	<div class="row">
+	<div id="calloutwrap" class="twelve columns"><!--id="calloutwrap"-->
 
 	<div id="callout_text" class="<?php echo $grid; ?>">
 		<h2 class="callout_title" ><?php echo $callouttitle ?></h2>
@@ -181,18 +182,19 @@ function chimps_callout_section_content() {
 	</div>
 		
 <?php if ($image == '' && $hidebutton == 'on' OR $image == '' && $hidebutton == '1'): ?>
-	<div id="calloutbutton" class="two columns">
+	<div id="calloutbutton" class="three columns">
 		<a href="<?php echo $calloutlink ?>"><?php echo $calloutbuttontext ;?></a>
 	</div>
 <?php endif;?>
 
 <?php if ($image != ''): ?>
-	<div id="calloutimg" class="two columns">
+	<div id="calloutimg" class="three columns">
 		<a href="<?php echo $calloutlink ?>"><img src="<?php echo $image?>" alt="Callout" /></a>
 	</div>
 <?php endif;?>
 
-</div><!--end calloutwrap--><?php
+</div><!--end calloutwrap-->
+</div><?php
 	
 }
 
