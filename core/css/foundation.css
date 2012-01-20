@@ -597,7 +597,7 @@
 
 @media handheld, only screen and (max-width: 767px) {
 
- 
+	#box1, #box2 {margin-right: 0px !important;} 
 
     dl.nice.tabs.mobile { margin-bottom: 0px; }
     .nice.tabs.mobile dd a { padding: 12px 20px; }
