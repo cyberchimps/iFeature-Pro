@@ -33,7 +33,7 @@ function chimps_index_content() {
 	<!--Begin @Core sidebar init-->
 		<?php chimps_sidebar_init(); ?>
 	<!--End @Core sidebar init-->
-
+	<div class="row">
 <!--Begin @Core before content sidebar hook-->
 		<?php chimps_before_content_sidebar(); ?>
 	<!--End @Core before content sidebar hook-->
@@ -93,7 +93,7 @@ function chimps_index_content() {
 		<?php chimps_after_content_sidebar(); ?>
 	<!--End @Core after content sidebar hook-->
 
-
+</div>
 <?php }
 
 /**
