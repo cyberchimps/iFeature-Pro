@@ -33,9 +33,7 @@ function chimps_index_content() {
 	<!--Begin @Core sidebar init-->
 		<?php chimps_sidebar_init(); ?>
 	<!--End @Core sidebar init-->
-
-<div class="container_12">
-
+	<div class="row">
 <!--Begin @Core before content sidebar hook-->
 		<?php chimps_before_content_sidebar(); ?>
 	<!--End @Core before content sidebar hook-->
@@ -71,12 +69,11 @@ function chimps_index_content() {
 					<?php chimps_post_tags(); ?>
 				<!--End @Core post tags hook-->
 			
-				<!--Begin @iFeature post bar hook-->
-					<?php chimps_post_bar(); ?>
-				<!--End @iFeature post bar hook-->
-			
-				</div><!--end post_class-->	
-		</div><!--end post container--> 
+				</div><!--end post_class-->
+			</div><!--end post container-->
+			<!--Begin @iFeature post bar hook-->
+				<?php chimps_post_bar(); ?>
+			<!--End @iFeature post bar hook-->
 	
 			<?php endwhile; ?>
 		
@@ -96,9 +93,7 @@ function chimps_index_content() {
 		<?php chimps_after_content_sidebar(); ?>
 	<!--End @Core after content sidebar hook-->
 
-
-</div><!--end container_12-->
-<div class='clear'>&nbsp;</div>
+</div>
 <?php }
 
 /**

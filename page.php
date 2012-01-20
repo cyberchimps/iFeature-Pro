@@ -27,27 +27,25 @@
 /* Set slider hook based on page option */
 
 if (preg_match("/page_slider/", $page_section_order ) && $size == "1" ) {
-	remove_action ('chimps_page_slider', 'chimps_page_slider_content' );
-	add_action ('chimps_page_content_slider', 'chimps_page_slider_content' );
+	remove_action ('chimps_page_slider', 'chimps_slider_content' );
+	add_action ('chimps_page_content_slider', 'chimps_slider_content' );
 }
 /* End set slider hook*/
 ?>
 
 <div class="container">
 	<div class="row">
-	
-<?php if (function_exists('chimps_breadcrumbs') && ($options->get($themeslug.'_disable_breadcrumbs') == "1")) { chimps_breadcrumbs(); }?>
-
-
-<?php
-	foreach(explode(",", $page_section_order) as $key) {
-		$fn = 'chimps_' . $key;
-		if(function_exists($fn)) {
-			call_user_func_array($fn, array());
-		}
-	}
-?>
-	
+		<?php if (function_exists('chimps_breadcrumbs') && ($options->get($themeslug.'_disable_breadcrumbs') == "1")) { chimps_breadcrumbs(); }?>
+	</div>
+	<div class="row"> 
+		<?php
+			foreach(explode(",", $page_section_order) as $key) {
+				$fn = 'chimps_' . $key;
+				if(function_exists($fn)) {
+					call_user_func_array($fn, array());
+				}
+			}
+		?>	
 	</div><!--end row-->
 </div><!--end container-->
 <?php get_footer(); ?>

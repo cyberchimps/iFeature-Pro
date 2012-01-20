@@ -24,7 +24,7 @@
 <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?> <!-- wp_enqueue_script( 'comment-reply' );-->
 <?php wp_head(); ?> <!-- wp_head();-->
 	
-</head> <!-- closing head tag-->
+</head><!-- closing head tag-->
 
 <!-- Begin @Core after_head_tag hook content-->
 	<?php chimps_after_head_tag(); ?>
@@ -34,8 +34,7 @@
 	<?php chimps_before_header(); ?> 
 <!-- End @Core before_header hook content -->
 			
-	<header>
-		
+<header>		
 	<?php
 		foreach(explode(",", $options->get('header_section_order')) as $fn) {
 			if(function_exists($fn)) {
@@ -43,8 +42,7 @@
 			}
 		}
 	?>
-				<div class='clear'>&nbsp;</div>
-			</header>
+</header>
 
 <!-- Begin @Core after_header hook -->
 	<?php chimps_after_header(); ?> 

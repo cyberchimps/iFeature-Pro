@@ -20,16 +20,14 @@
 
 <div class="container">
 	<div class="row">
-
-<?php if (function_exists('chimps_breadcrumbs') && ($options->get($themeslug.'_disable_breadcrumbs') == "1")) { chimps_breadcrumbs(); }?>
-
+		<?php if (function_exists('chimps_breadcrumbs') && ($options->get($themeslug.'_disable_breadcrumbs') == "1")) { chimps_breadcrumbs(); }?>
+	</div>
+	<div class="row">
 	<?php if (have_posts()) : ?>
 		
 			<!--Begin @Core archive hook-->
 			<?php chimps_archive_title(); ?>
 			<!--End @Core archive hook-->
-
-<div class="container_12">
 
 	<!--Begin @Core before content sidebar hook-->
 		<?php chimps_before_content_sidebar(); ?>
@@ -79,7 +77,6 @@
 	<!--End @Core after content sidebar hook-->
 	
 		</div><!--end content-->
-</div><!--end container_12-->
 	</div><!--end row-->
 </div><!--end container-->
 

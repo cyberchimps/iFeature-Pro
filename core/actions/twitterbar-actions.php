@@ -33,12 +33,13 @@ function chimps_twitterbar_section_content() {
 	if (is_front_page()) {
 	$handle = $options->get($themeslug.'_blog_twitter');
 	}?>
-	
+	<div class="row">
 		<div id="twitterbar" class="twelve columns"><!--id="twitterbar"-->
-			<div class="twittertext">
+			<div id="twittertext">
 				<a href=" http://twitter.com/<?php echo $handle ; ?>" > <img src="<?php echo "$root/images/twitterbird.png" ?>" /> <?php echo $handle ;?> - </a><?php twitter_messages($handle); ?>
 			</div>
 		</div><!--end twitterbar--> 
+	</div>
 		<?php
 }	
 

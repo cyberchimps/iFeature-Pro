@@ -539,7 +539,7 @@ span.minus {
 }
 #of_container .left_list, .right_list {
 	float: left;
-	margin: 20px;
+	margin: 5px 20px 20px 20px;
 	width: 130px;
 }
 #of_container .list_items {
