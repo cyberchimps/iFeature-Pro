@@ -44,6 +44,89 @@ class iFeature_Tabbed_Widget extends WP_Widget {
 			echo $title;
 			echo $args['after_title'];
 		}
+		
+
+?>
+<div class="ifeature-tabbed-widget">
+	<div class="ifeature-tabbed-wrap">
+		<ul class="ifeature-tabbed-header">
+			<li class="first"><a href="#tab-1"><?php echo $instance['tab1'] ?></a></li>
+			<li class=""><a href="#tab-2"><?php echo $instance['tab2'] ?></a></li>
+			<li class=""><a href="#tab-3"><?php echo $instance['tab3'] ?></a></li>
+			<li class="last"><a href="#tab-4"><?php echo $instance['tab4'] ?></a></li>
+		</ul>
+		<div class="ifeature-tabbed-tab" id="tab-1">
+			<ul class="ifeature-tabbed-popular-posts">
+				<?php
+					$popular_posts = new WP_Query();
+					$popular_posts->query(array('ignore_sticky_posts' => '1', 'posts_per_page' => 5, 'orderby' => 'comment_count'));
+					while($popular_posts->have_posts()): $popular_posts->the_post();
+
+					?>
+						<li>
+							<div class="image">
+								<a href="<?php the_permalink() ?>"><?php the_post_thumbnail("ifeature-tabbed") ?>
+							</div>
+
+							<div class="details">
+								<h5><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h5>
+								<span class="date">
+									<?php the_time(get_option('date_format')) ?>,
+									<?php comments_popup_link(__('No comments', 'ifeature'), __('1 Comment', 'ifeature'), __('% Comments', 'ifeature')); ?>
+								</span>
+							</div>
+						</li>
+					<?php
+					endwhile;
+				?>
+			</ul>
+		</div>
+		<div class="ifeature-tabbed-tab" id="tab-2">
+			<ul class="ifeature-tabbed-recent-posts">
+				<?php
+					$recent_posts = new WP_Query();
+					$recent_posts->query(array('ignore_sticky_posts' => '1', 'posts_per_page' => 5));
+					while($recent_posts->have_posts()): $recent_posts->the_post();
+
+					?>
+						<li>
+							<div class="image">
+								<a href="<?php the_permalink() ?>"><?php the_post_thumbnail("ifeature-tabbed") ?>
+							</div>
+
+							<div class="details">
+								<h5><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h5>
+								<span class="date">
+									<?php the_time(get_option('date_format')) ?>,
+									<?php comments_popup_link(__('No comments', 'ifeature'), __('1 Comment', 'ifeature'), __('% Comments', 'ifeature')); ?>
+								</span>
+							</div>
+						</li>
+					<?php
+					endwhile;
+				?>
+			</ul>
+		</div>
+		<div class="ifeature-tabbed-tab" id="tab-3">
+			<ul>
+				<?php foreach(get_comments(array('number' => 5)) as $comment): ?>
+					<li>
+						<div class="image">
+						<a href="<?php echo get_permalink($comment->ID); ?>#comment-<?php echo $comment->comment_ID; ?>" title="<?php echo strip_tags($comment->comment_author); ?> <?php _e('on ', 'ifeature'); ?><?php echo $comment->post_title; ?>"><?php echo get_avatar( $comment, '45' ); ?></a>
+						</div>
+
+						<div class="details">
+						<h5><a href="<?php echo get_permalink($comment->ID); ?>#comment-<?php echo $comment->comment_ID; ?>" title="<?php echo strip_tags($comment->comment_author); ?> <?php _e('on ', 'ifeature'); ?><?php echo $comment->post_title; ?>"><?php echo strip_tags($comment->comment_author); ?>: <?php echo substr(strip_tags($comment->comment_content), 0, 50); ?></a></h5>
+						</div>
+					</li>
+				<?php endforeach; ?>
+			</ul>
+		</div>
+		<div class="ifeature-tabbed-tab" id="tab-4">
+		</div>
+	</div>
+</div>
+	<?php
 	}
 
 	function update($new_instance, $old_instance) {
