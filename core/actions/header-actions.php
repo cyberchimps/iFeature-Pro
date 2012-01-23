@@ -77,7 +77,8 @@ function chimps_meta_tags() { ?>
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 <meta name="distribution" content="global" />
 
-<meta name="language" content="en" /> <?php
+<meta name="language" content="en" /> 
+<meta name="viewport" content="initial-scale=1.6; maximum-scale=1.0; width=device-width; "/><?php
 
 	if ($options->get($themeslug.'_home_title') != '' AND is_front_page()) { ?>
 <meta name='title' content='<?php echo ($options->get($themeslug.'_home_title')) ;?>'/> <?php
