@@ -187,7 +187,7 @@ function chimps_slider_content() {
 /* Establish post counter */  
   	
 	if (have_posts()) :
-	    $out = "<div class='row'> <div id='orbitDemo'>"; 
+	    $out = "<div id='orbitDemo'>"; 
 	    $i = 0;
 	if ($options->get($themeslug.'_slider_posts_number') == '' OR $postnumber == '' && $type != '0') {
 	    $no = '5';    	
@@ -296,7 +296,7 @@ function chimps_slider_content() {
 	      	$i++;
 	      	endwhile;
 	      	
-	      	$out .= "</div></div>";
+	      	$out .= "</div>";
 	      	
 	      	else:
 	      
