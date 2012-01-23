@@ -78,6 +78,7 @@ function chimps_meta_tags() { ?>
 <meta name="distribution" content="global" />
 
 <meta name="language" content="en" /> 
+<!-- Set the viewport width to device width for mobile -->
 <meta name="viewport" content="initial-scale=1.6; maximum-scale=1.0; width=device-width; "/><?php
 
 	if ($options->get($themeslug.'_home_title') != '' AND is_front_page()) { ?>
