@@ -54,7 +54,7 @@ function chimps_page_carousel_section_content() {
 /* Establish post counter */  
   	
 	if (have_posts()) :
-	    $out = "<div class='carousel'>
+	    $out = "
 	    <ul>
 	    
 	    "; 
@@ -85,8 +85,8 @@ function chimps_page_carousel_section_content() {
 	    	$out .= "
 	    	
 				<li>
-	    			<a href='$link' title='$title'>	
-	    				<img src='$image' alt='$title' class='captify'/>
+	    			<a href='$link'>	
+	    				<img src='$image' alt='$title'/>
 	    			</a>
 	    		</li>
 	    	
@@ -96,7 +96,7 @@ function chimps_page_carousel_section_content() {
 
 	      	$i++;
 	      	endwhile;
-	      	$out .= "</ul></div>";	 
+	      	$out .= "</ul>";	 
 	      	
 	      	else:
 	      
@@ -141,40 +141,13 @@ function chimps_page_carousel_section_content() {
     
     $out .= <<<OUT
 	<script type="text/javascript">
-		jQuery(document).ready(function($) {
-    		$(".carousel").jCarouselLite({
-        		btnNext: ".next",
-        		btnPrev: ".prev",
-        		visible: 6
-    		});
-		});
-
-		$(document).ready(function(){
-			$('img.captify').captify({
-				// all of these options are… optional
-				// ---
-				// speed of the mouseover effect
-				speedOver: 'fast',
-				// speed of the mouse out effect
-				speedOut: 'normal',
-				// how long to delay the hiding of the caption after mouse out (ms)
-				hideDelay: 500,	
-				// 'fade', 'slide', 'always-on'
-				animation: 'always-on',		
-				// text/html to be placed at the beginning of every caption
-				prefix: '',		
-				// opacity of the caption on mouse over
-				opacity: '0.7',					
-				// the name of the CSS class to apply to the caption box
-				className: 'caption-bottom',	
-				// position of the caption (top or bottom)
-				position: 'bottom',
-				// caption span % of the image
-				spanWidth: '100%'
+			
+			$('#carousel').elastislide({
+				imageW 	: 180,
+				minItems	: 5
 			});
-		});
-
-	</script>
+			
+		</script>
 OUT;
 
 /* End Carousel javascript */ 
@@ -184,7 +157,7 @@ echo $out;
 /* END */ 
 ?>
 
-				<div class="next"><img src="<?php echo $root ;?>/images/next.png" alt="next" /></div>
+				</div>
 			</div>
 </div> <?php
 
@@ -257,8 +230,8 @@ function chimps_index_carousel_section_content() {
 	    	$out .= "
 	    	
 				<li>
-	    			<a href='$link' title='$title'>	
-	    				<img src='$image' alt='$title' class='captify'/>
+	    			<a href='$link' title='$link'>	
+	    				<img src='$image' alt='$title'/>
 	    			</a>
 	    		</li>
 	    	
