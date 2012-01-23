@@ -3,89 +3,58 @@
 /*============================*/
 /*===== Carousel Styles ======*/
 /*============================*/
-#carousel_list {
-	height:130px;
-	width:950px; 
-	margin:15px auto; 
-	background: #fff;
-	border-top: 1px solid #CCC;
-	border-left: 1px solid #CCC;
-	border-right: 1px solid #BBB;
-	border-bottom: 1px solid #BBB;
-	border-radius: 4px;
-	-moz-border-radius: 4px;
-	box-shadow:inset 0 0 2px #ccc;
-	padding: 5px 15px 5px 15px;
+/* Elastislide Style */
+.es-carousel-wrapper{
+	background: #101010;
+	padding:10px 37px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	position:relative;
 }
-
-.carousel {
-	float:left;
-	left: -5000px; 
-	margin:15px; 
-	position:relative; 
-	visibility:hidden;	
-}
-	
-.carousel ul {
-	height:100px;
-	width:600px; 
-}
-
-.carousel ul li {
-	padding:0 13px;
-}
-
-.carousel ul li img {
-	cursor:pointer;
-	height:100px; 
-	padding-top:3px;
-	width:120px;  
-}
-
-.prev {
-	cursor:pointer; 
-	float:left;
-	padding-top:60px;
-}
-
-.next {
-	cursor:pointer; 
-	float:right; 
-	padding-top:60px;
-}
-
-/************************************************
-	      CAPTIFY CAPTION		
-************************************************/
-.caption-top, .caption-bottom {
-	background: #000000;
-	color: #ffffff; 
-	cursor:default;
-	padding:2px; 
-	font-size:13px;   
-	text-align:center;
-}
-
-.caption-top {
-	border-width:0px;
-}
-
-.caption-bottom {
-	border-width:0px;
-	height: 25px;
-}
-
-.caption a, .caption a {
+.es-carousel{
+	overflow:hidden;
 	background:#000;
-	border:none; 
-	text-decoration:none;  
-	padding:2px;
 }
-
-.caption a:hover, .caption a:hover {
-	background:#202020;
+.es-carousel ul{
+	display:none;
 }
-
+.es-carousel ul li{
+	height:100%;
+	float:left;
+	display:block;
+}
+.es-carousel ul li a{
+	display:block;
+	border-style:solid;
+	border-color:#222;
+}
+.es-carousel ul li a img{
+	display:block;
+	border:none;
+	max-height:100%;
+	max-width:100%;
+}
+.es-nav span{
+	position:absolute;
+	top:50%;
+	left:12px;
+	background:transparent url(../images/nav.png) no-repeat top left;
+	width:14px;
+	height:26px;
+	margin-top:-13px;
+	text-indent:-9000px;
+	cursor:pointer;
+	opacity:0.8;
+}
+.es-nav span.es-nav-next{
+	right:12px;
+	left:auto;
+	background-position:top right;
+}
+.es-nav span:hover{
+	opacity:1.0;
+}
 /*============================*/
 /*======= Twitter Bar ========*/
 /*============================*/

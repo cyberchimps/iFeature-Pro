@@ -39,11 +39,10 @@ function chimps_page_carousel_section_content() {
 ?>
 
 
-
-<div id="carousel_wrapper">
-			<div id="carousel_list">
-				<div class="prev"><img src="<?php echo $root ;?>/images/prev.png" alt="prev" /></div>
-<?php
+<div class="row">
+	<div id="carousel" class="es-carousel-wrapper">
+					<div class="es-carousel">
+	<?php
 
 
 /* Query posts  */
@@ -213,11 +212,9 @@ function chimps_index_carousel_section_content() {
 ?>
 
 
-
-<div id="carousel_wrapper">
-			<div id="carousel_list">
-				<div class="prev"><img src="<?php echo $root ;?>/images/prev.png" alt="prev" /></div>
-<?php
+<div class="row">
+	<div id="carousel" class="es-carousel-wrapper">
+					<div class="es-carousel">		<?php
 
 
 /* Query posts  */
@@ -316,40 +313,13 @@ function chimps_index_carousel_section_content() {
     
     $out .= <<<OUT
 	<script type="text/javascript">
-		jQuery(document).ready(function($) {
-    		$(".carousel").jCarouselLite({
-        		btnNext: ".next",
-        		btnPrev: ".prev",
-        		visible: 6
-    		});
-		});
-
-		$(document).ready(function(){
-			$('img.captify').captify({
-				// all of these options are… optional
-				// ---
-				// speed of the mouseover effect
-				speedOver: 'fast',
-				// speed of the mouse out effect
-				speedOut: 'normal',
-				// how long to delay the hiding of the caption after mouse out (ms)
-				hideDelay: 500,	
-				// 'fade', 'slide', 'always-on'
-				animation: 'always-on',		
-				// text/html to be placed at the beginning of every caption
-				prefix: '',		
-				// opacity of the caption on mouse over
-				opacity: '0.7',					
-				// the name of the CSS class to apply to the caption box
-				className: 'caption-bottom',	
-				// position of the caption (top or bottom)
-				position: 'bottom',
-				// caption span % of the image
-				spanWidth: '100%'
+			
+			$('#carousel').elastislide({
+				imageW 	: 180,
+				minItems	: 5
 			});
-		});
-
-	</script>
+			
+		</script>
 OUT;
 
 /* End Carousel javascript */ 
@@ -358,10 +328,8 @@ echo $out;
 
 /* END */ 
 ?>
-
-				<div class="next"><img src="<?php echo $root ;?>/images/next.png" alt="next" /></div>
 			</div>
-</div> <?php
+</div> </div><?php
 
 }
 
