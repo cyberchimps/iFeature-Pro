@@ -289,6 +289,7 @@ function chimps_index_carousel_section_content() {
 			
 			$('#carousel').elastislide({
 				imageW 	: 150,
+				speed		: 1150,
 				minItems	: 5
 			});
 			
