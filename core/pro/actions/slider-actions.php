@@ -55,7 +55,6 @@ function chimps_slider_content() {
 		
 	}
 	if (is_page()) {
-		
 		$size = get_post_meta($post->ID, 'page_slider_size' , true);
 		$size2 = get_post_meta($post->ID, 'page_sidebar' , true);
 		$type = get_post_meta($post->ID, 'page_slider_type' , true);
