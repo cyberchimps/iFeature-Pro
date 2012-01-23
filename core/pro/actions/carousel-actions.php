@@ -34,9 +34,12 @@ function chimps_carousel_section_content() {
 	
 	if (is_page()) {
 		$customcategory = get_post_meta($post->ID, 'carousel_category' , true);
+		$speed = get_post_meta($post->ID, 'carousel_speed' , true);
+
 	}
 	if (is_front_page()) {
 		$customcategory = $options->get($themeslug.'_carousel_category');
+		$speed = $options->get($themeslug.'_carousel_speed');
 	}
 	
 /* End define variables. */	 
@@ -145,7 +148,7 @@ query_posts( array ('post_type' => $themeslug.'_featured_posts', 'showposts' => 
 			
 			$('#carousel').elastislide({
 				imageW 		: 140,
-				speed 		: 750,
+				speed 		: $speed,
 				margin		: 8,
 				minItems 	: 5
 			});

@@ -209,6 +209,7 @@ TEMPLATE_URL . '/images/social/thumbs/icons-default.png' ), 'default' => 'defaul
 		->subsection_end()
 		->subsection("Carousel Options")
 			->select($themeslug.'_carousel_category', 'Select the carousel category', array( 'options' => $customcarousel ))
+			->text($themeslug."_carousel_speed", "Carousel Animation Speed (ms)", array('default' => '750'))
 		->subsection_end()
 		->subsection("SEO")
 			->textarea($themeslug."_home_description", "Home Description")
