@@ -143,7 +143,7 @@ function chimps_page_carousel_section_content() {
 	<script type="text/javascript">
 			
 			$('#carousel').elastislide({
-				imageW 	: 180,
+				imageW 	: 140,
 				minItems	: 5
 			});
 			
@@ -288,7 +288,7 @@ function chimps_index_carousel_section_content() {
 	<script type="text/javascript">
 			
 			$('#carousel').elastislide({
-				imageW 	: 180,
+				imageW 	: 150,
 				minItems	: 5
 			});
 			
