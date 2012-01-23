@@ -17,8 +17,8 @@ global $options, $themeslug;
 
 </div><!--end container wrap-->
 
-<div id="footer">
-     <div class="container">
+	<div id="footer">
+     	<div class="container">
      		<div class="row">
     	
 	<!-- Begin @Core footer hook content-->
@@ -27,22 +27,23 @@ global $options, $themeslug;
 	
 	<?php endif;?>
 	
-		</div> 
-	</div><!--end footer_wrap-->
-</div><!--end footer-->
+
+		</div><!--end footer_wrap-->
+	</div><!--end footer-->
+</div> 
 
 <?php if ($options->get($themeslug.'_disable_afterfooter') != "0"):?>
-	
+
 	<div id="afterfooter">
 		<div id="afterfooterwrap">
-		
+		<div class="row">	
 		<!-- Begin @Core afterfooter hook content-->
 			<?php chimps_secondary_footer(); ?>
 		<!-- End @Core afterfooter hook content-->
 				
 		</div>  <!--end afterfooterwrap-->	
 	</div> <!--end afterfooter-->	
-	
+		</div> 	
 	<?php endif;?>
 	
 	<?php wp_footer(); ?>	
