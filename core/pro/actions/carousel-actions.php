@@ -15,10 +15,10 @@
 * @since 1.0
 */
 
-add_action( 'chimps_index_carousel_section', 'chimps_index_carousel_section_content' );
-add_action( 'chimps_carousel_section', 'chimps_page_carousel_section_content' );
+add_action( 'chimps_index_carousel_section', 'chimps_carousel_section_content' );
+add_action( 'chimps_carousel_section', 'chimps_carousel_section_content' );
 
-function chimps_page_carousel_section_content() {
+function chimps_carousel_section_content() {
 
 /* Call globals. */	
 
@@ -31,23 +31,24 @@ function chimps_page_carousel_section_content() {
     $tmp_query = $wp_query; 
 	$root = get_template_directory_uri(); 
 	$default = "$root/images/pro/carousel.jpg";
-	$customcategory = get_post_meta($post->ID, 'carousel_category' , true);
+	
+	if (is_page()) {
+		$customcategory = get_post_meta($post->ID, 'carousel_category' , true);
+	}
+	if (is_front_page()) {
+		$customcategory = $options->get($themeslug.'_carousel_category');
+	}
 	
 /* End define variables. */	 
-
-
 ?>
-
 
 <div class="row">
 	<div id="carousel" class="es-carousel-wrapper">
-					<div class="es-carousel">
-	<?php
-
+		<div class="es-carousel"><?php 
 
 /* Query posts  */
 
-    query_posts( array ('post_type' => $themeslug.'_featured_posts', 'showposts' => 20, true, 'carousel_categories' => $customcategory ));
+query_posts( array ('post_type' => $themeslug.'_featured_posts', 'showposts' => 20, true, 'carousel_categories' => $customcategory ));
 
 /* End query posts based on theme/meta options */
     	
@@ -143,8 +144,9 @@ function chimps_page_carousel_section_content() {
 	<script type="text/javascript">
 			
 			$('#carousel').elastislide({
-				imageW 	: 140,
-				minItems	: 5
+				imageW 		: 140,
+				speed 		: 750,
+				minItems 	: 5
 			});
 			
 		</script>
@@ -157,157 +159,11 @@ echo $out;
 /* END */ 
 ?>
 
-				</div>
-			</div>
+		</div>
+	</div>
 </div> <?php
 
 }
-
-
-function chimps_index_carousel_section_content() {
-
-/* Call globals. */	
-
-	global $themename, $themeslug, $options, $post, $wp_query;
-
-/* End globals. */	
-
-/* Define variables. */	
-
-    $tmp_query = $wp_query; 
-	$root = get_template_directory_uri(); 
-	$default = "$root/images/pro/carousel.jpg";
-	$customcategory = $options->get($themeslug.'_carousel_category');
-	
-/* End define variables. */	 
-
-
-?>
-
-
-<div class="row">
-	<div id="carousel" class="es-carousel-wrapper">
-					<div class="es-carousel">		<?php
-
-
-/* Query posts  */
-
-    query_posts( array ('post_type' => $themeslug.'_featured_posts', 'showposts' => 20, true, 'carousel_categories' => $customcategory ));
-
-/* End query posts based on theme/meta options */
-    	
-/* Establish post counter */  
-  	
-	if (have_posts()) :
-	    $out = "<div class='carousel'>
-	    <ul>
-	    
-	    "; 
-	    $i = 0;
-
-		    $no = '20';
-
-
-/* End post counter */	    	
-
-/* Initialize slide creation */	
-
-	while (have_posts() && $i<$no) : 
-
-		the_post(); 
-
-	    	/* Post-specific variables */	
-
-	    	$image 		= get_post_meta($post->ID, 'post_image' , true);  
-	    	$title 		= get_the_title();  
-	    	$link 		= get_post_meta($post->ID, 'post_url' , true);
-	
-
-			/* End variables */	
-
-	     	/* Markup for carousel */
-
-	    	$out .= "
-	    	
-				<li>
-	    			<a href='$link' title='$link'>	
-	    				<img src='$image' alt='$title'/>
-	    			</a>
-	    		</li>
-	    	
-	    	";
-
-	    	/* End slide markup */	
-
-	      	$i++;
-	      	endwhile;
-	      	$out .= "</ul></div>";	 
-	      	
-	      	else:
-	      
-	      	$out .= "	<div class='carousel'>
-	    <ul>
-	      			<li>
-	      				
-	    				<img src='$default' alt='Post 1' class='captify'/>
-	    				
-	    			</li>
-					<li>
-	    				<img src='$default' alt='Post 2' class='captify'/>
-	    			</li>
-					<li>
-	    				<img src='$default' alt='Post 3' class='captify'/>
-	    			</li>
-					<li>
-	    				<img src='$default' alt='Post 4' class='captify'/>
-	    			</li>
-					<li>
-	    				<img src='$default' alt='Post 5' class='captify'/>
-	    			</li>
-	    			
-	    			<li>
-	    				<img src='$default' alt='Post 6' class='captify'/>
-	    			</li>
-
-	      				
-	    			</ul>
-	    				</div>		
-	    				
-	    			";
-     
-	endif; 	    
-	$wp_query = $tmp_query;    
-
-/* End slide creation */		
-
-	    wp_reset_query(); /* Reset post query */ 
-
-/* Begin Carousel javascript */ 
-    
-    $out .= <<<OUT
-	<script type="text/javascript">
-			
-			$('#carousel').elastislide({
-				imageW 	: 150,
-				speed		: 750,
-				minItems	: 5
-			});
-			
-		</script>
-OUT;
-
-/* End Carousel javascript */ 
-
-echo $out;
-
-/* END */ 
-?>
-			</div>
-</div> </div><?php
-
-}
-
-
 
 /**
 * End
