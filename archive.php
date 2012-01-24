@@ -32,15 +32,12 @@
 	<!--Begin @Core before content sidebar hook-->
 		<?php chimps_before_content_sidebar(); ?>
 	<!--End @Core before content sidebar hook-->
-
 	
 		<div id="content" class="<?php echo $content_grid; ?>">
 		
 		<!--Begin @Core before_archive hook-->
 			<?php chimps_before_archive(); ?>
 		<!--End @Core before_archive hook-->
-		
-	
 		
 		<?php while (have_posts()) : the_post(); ?>
 		
