@@ -69,6 +69,21 @@ function synapse_slider_content() {
 		$wordenable = get_post_meta($post->ID, 'enable_wordthumb' , true);	
 	}
 	
+/* Row div variable. */	
+if ($size == 'key2' OR $size == '0' ) {
+	$openrow = '<div class="row">';
+	$closerow = '</div>';
+}
+
+else {
+	$openrow = '';
+	$closerow = '';
+}?>	
+
+<?php echo $openrow; 
+	
+/* End row riv variables. */	
+	
 /* End define variables. */	
 
 /* Define animation styles. */	
@@ -378,7 +393,9 @@ OUT;
 
 /* End NivoSlider javascript */ 
 
-echo $out;
+echo $out; ?>
+
+<?php echo $closerow; 
 
 }
 
