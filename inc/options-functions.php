@@ -292,7 +292,7 @@ function add_menulink_color() {
 }
 add_action( 'wp_head', 'add_menulink_color');
 
-/* Menu Link Color */
+/* Menu Dropdown Color */
 
 function add_menu_dropdown_color() {
 
@@ -311,6 +311,26 @@ function add_menu_dropdown_color() {
 		echo '</style>';
 }
 add_action( 'wp_head', 'add_menu_dropdown_color');
+
+/* Menu Hover Color */
+
+function add_menu_hover_color() {
+
+	global $themename, $themeslug, $options;
+
+	if (!$options->get($themeslug.'_menu_hover_color')) {
+		$hover = '#444';
+	}
+	
+	else{ 
+		$hover = $options->get($themeslug.'_menu_hover_color'); 
+	}	
+		
+		echo '<style type="text/css">';
+		echo "#nav ul li a:hover {background: $hover;}";
+		echo '</style>';
+}
+add_action( 'wp_head', 'add_menu_hover_color');
 
 /* Tagline Color */
 

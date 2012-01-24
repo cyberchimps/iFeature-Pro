@@ -225,7 +225,7 @@ jQuery(document).ready(function($) {
     }
    }).change();
       $("#if_custom_menu_color_toggle").change(function() {
-    var toShow = $("#section-if_custom_menu_color, #section-if_custom_dropdown_color, #section-if_menulink_color, #section-if_menulink_hover_color ");
+    var toShow = $("#section-if_custom_menu_color, #section-if_custom_dropdown_color, #section-if_menulink_color, #section-if_menu_hover_color ");
     if($(this).is(':checked')) {
       toShow.show();
     } else {
