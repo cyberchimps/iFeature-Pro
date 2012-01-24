@@ -317,14 +317,13 @@ ol, ul {list-style-position: inside;margin-left: 21px;}
 }
 
 #afterfooterwrap {
-	width: 980px; 
+
 	height:45px; 
 	margin: auto;
 	padding-top: 10px;
 }
 
 #afterfootercopyright {
-	max-width: 200px;
 	float: right;
 	position: relative;
 	margin-top: 5px;
@@ -333,7 +332,6 @@ ol, ul {list-style-position: inside;margin-left: 21px;}
 #afterfootermenu {
 	float:left;
 	position: absolute;
-	width: 400px;
 	height: 40px;
 	overflow: hidden;
 	margin-top: 5px;

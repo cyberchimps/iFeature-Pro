@@ -357,8 +357,8 @@ function carousel(){
 
 	$script = "
 		
-		<script type=\"text/javascript\" src=\"".$path."/captify.tiny.js\"></script>
-		<script type=\"text/javascript\" src=\"".$path."/jcarousellite_1.0.1.pack.js\"></script>
+		<script type=\"text/javascript\" src=\"".$path."/jquery.elastislide.js\"></script>
+		<script type=\"text/javascript\" src=\"".$path."/jquery.easing.1.3.js\"></script>
 		";
 	
 	echo $script;
