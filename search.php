@@ -8,8 +8,9 @@
 	Copyright (C) 2011 CyberChimps
 */
 
-global $options, $themeslug, $post, $sidebar; // call globals
+global $options, $themeslug, $post, $sidebar, $content_grid; // call globals
 	
+synapse_sidebar_init();
 get_header(); 
 
 ?>
