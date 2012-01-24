@@ -35,7 +35,7 @@ function synapse_page_section_content() {
 
 
 ?>
-
+<div class="row">
 	<!--Begin @Core before content sidebar hook-->
 		<?php synapse_before_content_sidebar(); ?>
 	<!--End @Core before content sidebar hook-->
@@ -79,7 +79,7 @@ function synapse_page_section_content() {
 	<!--Begin @Core after content sidebar hook-->
 		<?php synapse_after_content_sidebar(); ?>
 	<!--End @Core after content sidebar hook-->
-
+</div>
 <?php
 }
 
