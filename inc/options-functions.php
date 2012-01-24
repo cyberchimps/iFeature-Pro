@@ -261,7 +261,7 @@ function add_menu_color() {
 
 	global $themename, $themeslug, $options;
 
-	if ($options->get($themeslug.'_custom_menu_color') != '') {
+	if ($options->get($themeslug.'_custom_menu_color') != '' && $options->get($themeslug.'_custom_menu_color_toggle') != '0') {
 		$color = $options->get($themeslug.'_custom_menu_color'); 
 	
 
@@ -282,7 +282,7 @@ function add_menulink_color() {
 		$sitelink = '#FFFFFF';
 	}
 	
-	else{ 
+	elseif ($options->get($themeslug.'_custom_menu_color_toggle') == '1'){ 
 		$sitelink = $options->get($themeslug.'_menulink_color'); 
 	}	
 		
@@ -302,7 +302,7 @@ function add_menu_dropdown_color() {
 		$dropdown = '#555';
 	}
 	
-	else{ 
+	elseif ($options->get($themeslug.'_custom_menu_color_toggle') == '1'){ 
 		$dropdown = $options->get($themeslug.'_custom_dropdown_color'); 
 	}	
 		
@@ -322,7 +322,7 @@ function add_menu_hover_color() {
 		$hover = '#444';
 	}
 	
-	else{ 
+	elseif ($options->get($themeslug.'_custom_menu_color_toggle') == '1'){ 
 		$hover = $options->get($themeslug.'_menu_hover_color'); 
 	}	
 		
