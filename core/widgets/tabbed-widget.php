@@ -1,6 +1,7 @@
 <?php
 
 add_action('widgets_init', 'ifeature_tabbed_widget');
+add_image_size('ifeature-tabbed', 45, 45, true);
 
 function ifeature_tabbed_widget() {
 	register_widget('iFeature_Tabbed_Widget');
@@ -80,7 +81,8 @@ class iFeature_Tabbed_Widget extends WP_Widget {
 					endwhile;
 				?>
 			</ul>
-		</div>
+		</div><!-- #tab-1 -->
+
 		<div class="ifeature-tabbed-tab" id="tab-2">
 			<ul class="ifeature-tabbed-recent-posts">
 				<?php
@@ -106,27 +108,32 @@ class iFeature_Tabbed_Widget extends WP_Widget {
 					endwhile;
 				?>
 			</ul>
-		</div>
+		</div><!-- #tab-2 -->
+
 		<div class="ifeature-tabbed-tab" id="tab-3">
 			<ul>
 				<?php foreach(get_comments(array('number' => 5)) as $comment): ?>
+					<?php $post = get_post($comment->comment_post_ID); ?>
 					<li>
 						<div class="image">
-						<a href="<?php echo get_permalink($comment->ID); ?>#comment-<?php echo $comment->comment_ID; ?>" title="<?php echo strip_tags($comment->comment_author); ?> <?php _e('on ', 'ifeature'); ?><?php echo $comment->post_title; ?>"><?php echo get_avatar( $comment, '45' ); ?></a>
+						<a href="<?php echo get_permalink($post->ID); ?>#comment-<?php echo $comment->comment_ID; ?>" title="<?php echo strip_tags($comment->comment_author); ?> <?php _e('on ', 'ifeature'); ?><?php echo $post->post_title; ?>"><?php echo get_avatar( $comment, '45' ); ?></a>
 						</div>
 
 						<div class="details">
-						<h5><a href="<?php echo get_permalink($comment->ID); ?>#comment-<?php echo $comment->comment_ID; ?>" title="<?php echo strip_tags($comment->comment_author); ?> <?php _e('on ', 'ifeature'); ?><?php echo $comment->post_title; ?>"><?php echo strip_tags($comment->comment_author); ?>: <?php echo substr(strip_tags($comment->comment_content), 0, 50); ?></a></h5>
+						<h5><a href="<?php echo get_permalink($post->ID); ?>#comment-<?php echo $comment->comment_ID; ?>" title="<?php echo strip_tags($comment->comment_author); ?> <?php _e('on ', 'ifeature'); ?><?php echo $post->post_title; ?>"><?php echo strip_tags($comment->comment_author); ?>: <?php echo substr(strip_tags($comment->comment_content), 0, 50); ?></a></h5>
 						</div>
 					</li>
 				<?php endforeach; ?>
 			</ul>
-		</div>
+		</div><!-- #tab-3 -->
+
 		<div class="ifeature-tabbed-tab" id="tab-4">
-		</div>
-	</div>
-</div>
+			<?php wp_tag_cloud(array('largest' => 12, 'smallest' => 12, 'unix' => 'px')) ?>
+		</div><!-- #tab-4 -->
+	</div> <!-- .ifeature-tabbed-wrap -->
+</div> <!-- .ifeature-tabbed-widget -->
 	<?php
+		wp_reset_query();
 	}
 
 	function update($new_instance, $old_instance) {
