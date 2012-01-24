@@ -1,6 +1,6 @@
 <?php
 /**
-* Slider actions used by the CyberChimps Core Framework Pro Extension
+* Slider section actions used by the CyberChimps Synapse Core Framework Pro Extension
 *
 * Author: Tyler Cunningham
 * Copyright: © 2011
@@ -19,13 +19,13 @@
 * Extend slider actions
 */
 
-add_action ('chimps_blog_slider', 'chimps_slider_content' );
-add_action ('chimps_page_slider', 'chimps_slider_content' );
+add_action ('synapse_blog_slider', 'synapse_slider_content' );
+add_action ('synapse_page_slider', 'synapse_slider_content' );
 
 /**
 * Extend slider functions
 */
-function chimps_slider_content() {
+function synapse_slider_content() {
 
 /* Call globals. */	
 

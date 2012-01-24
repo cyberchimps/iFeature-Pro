@@ -1,6 +1,6 @@
 <?php
 /**
-* Twitterbar actions used by the CyberChimps Core Framework
+* Twitterbar actions used by the CyberChimps Synapse Core Framework
 *
 * Author: Tyler Cunningham
 * Copyright: © 2011
@@ -11,19 +11,19 @@
 * along with this software. In the main directory, see: /licensing/
 * If not, see: {@link http://www.gnu.org/licenses/}.
 *
-* @package Core
+* @package Synapse
 * @since 1.0
 */
 
 /**
-* Core Twitterbar actions
+* Synapse Twitterbar actions
 */
-add_action( 'chimps_twitterbar_section', 'chimps_twitterbar_section_content' );
+add_action( 'synapse_twitterbar_section', 'synapse_twitterbar_section_content' );
 
 /**
 * Retrieves the Twitterbar options and sets up the HTML
 */
-function chimps_twitterbar_section_content() {
+function synapse_twitterbar_section_content() {
 	global $options, $themeslug, $post; //call globals
 	$root = get_template_directory_uri();
 	

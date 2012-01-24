@@ -1,6 +1,6 @@
 <?php
 /**
-* Page actions used by the CyberChimps Core Framework 
+* Page actions used by the CyberChimps Synapse Core Framework
 *
 * Author: Tyler Cunningham
 * Copyright: © 2011
@@ -11,25 +11,25 @@
 * along with this software. In the main directory, see: /licensing/
 * If not, see: {@link http://www.gnu.org/licenses/}.
 *
-* @package Core
+* @package Synapse
 * @since 1.0
 */
 
 /**
-* Core page actions
+* Synapse page actions
 */
 
-add_action('chimps_page_section', 'chimps_page_section_content' );
+add_action('synapse_page_section', 'synapse_page_section_content' );
 
 /**
 * Sets up the page content. 
 *
 * @since 1.0
 */
-function chimps_page_section_content() { 
+function synapse_page_section_content() { 
 	global $options, $themeslug, $post, $sidebar, $content_grid;
 	
-	chimps_sidebar_init();
+	synapse_sidebar_init();
 	
 	$hidetitle = get_post_meta($post->ID, 'hide_page_title' , true);
 
@@ -37,12 +37,12 @@ function chimps_page_section_content() {
 ?>
 
 	<!--Begin @Core before content sidebar hook-->
-		<?php chimps_before_content_sidebar(); ?>
+		<?php synapse_before_content_sidebar(); ?>
 	<!--End @Core before content sidebar hook-->
 			
 		<div id="content" class="<?php echo $content_grid; ?>">
 		
-		<?php chimps_page_content_slider(); ?>
+		<?php synapse_page_content_slider(); ?>
 		
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		
@@ -77,7 +77,7 @@ function chimps_page_section_content() {
 	</div><!--end content_left-->
 	
 	<!--Begin @Core after content sidebar hook-->
-		<?php chimps_after_content_sidebar(); ?>
+		<?php synapse_after_content_sidebar(); ?>
 	<!--End @Core after content sidebar hook-->
 
 <?php

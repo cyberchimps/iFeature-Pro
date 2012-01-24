@@ -4,7 +4,7 @@
 *
 * Author: Tyler Cunningham
 * Copyright: © 2011
-* {@link http://cyberchimps.com/ CyberChimps LLC}
+* {@link http://cyberchimpscom/ CyberChimps LLC}
 *
 * Released under the terms of the GNU General Public License.
 * You should have received a copy of the GNU General Public License,
@@ -21,11 +21,11 @@
 
 add_action( 'ifeature_header_contact_area', 'ifeature_header_contact_area_content' );
 
-remove_action( 'chimps_head_tag', 'chimps_link_rel' );
-add_action( 'chimps_head_tag', 'ifeature_link_rel' );
+remove_action( 'synapse_head_tag', 'synapse_link_rel' );
+add_action( 'synapse_head_tag', 'ifeature_link_rel' );
 
-remove_action( 'chimps_box_section', 'chimps_box_section_content' );
-add_action( 'chimps_box_section', 'ifeature_box_section_content' );
+remove_action( 'synapse_box_section', 'synapse_box_section_content' );
+add_action( 'synapse_box_section', 'ifeature_box_section_content' );
 
 /**
 * Sets up the header contact area
@@ -34,7 +34,7 @@ add_action( 'chimps_box_section', 'ifeature_box_section_content' );
 */
 function ifeature_header_contact_area_content() { 
 	global $themeslug, $options; 
-	$contactdefault = apply_filters( 'chimps_header_contact_default_text', 'Enter Contact Information Here' ); 
+	$contactdefault = apply_filters( 'synapse_header_contact_default_text', 'Enter Contact Information Here' ); 
 	
 	if ($options->get($themeslug.'_header_contact') == '' ) {
 		echo "<div id='header_contact'>";
@@ -75,14 +75,14 @@ function ifeature_box_section_content() {
 			<div id="box2" class="four columns">
 				<h2 class="box-widget-title">New Design</h2>
 					<img src="<?php echo $root ; ?>/images/icons/blueprint.png" height="100" alt="blueprint" class="aligncenter" />
-					<p>With <a href="http://cyberchimps.com/ifeaturepro/">iFeature Pro</a> we’ve done the design work for you, all you need to do is pick a color scheme, select your options, and add your content.</p>
+					<p>With <a href="http://cybersynapse.com/ifeaturepro/">iFeature Pro</a> we’ve done the design work for you, all you need to do is pick a color scheme, select your options, and add your content.</p>
 			</div><!--end box2-->
 			<?php endif; ?>
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box Right") ) : ?>
 			<div id="box3" class="four columns">
 				<h2 class="box-widget-title">Excellent Support</h2>
 				<img src="<?php echo $root ; ?>/images/icons/docs.png" height="100" alt="docs" class="aligncenter" />
-				<p>We designed iFeature Pro to be as easy to design with as possible, if you do run into trouble we provide a <a href="http://cyberchimps.com/forum">support forum</a>, and <a href="http://www.cyberchimps.com/ifeaturepro/docs/">precise documentation</a>.</p>
+				<p>We designed iFeature Pro to be as easy to design with as possible, if you do run into trouble we provide a <a href="http://cybersynapse.com/forum">support forum</a>, and <a href="http://www.cybersynapse.com/ifeaturepro/docs/">precise documentation</a>.</p>
 			</div><!--end box3-->
 		<?php endif; ?>
 </div>
@@ -100,7 +100,7 @@ function ifeature_link_rel() {
 	$favicon = $options->get($themeslug.'_favicon'); //Calls the favicon URL from the theme options 
 	
 	if ($options->get($themeslug.'_font') == "" AND $options->get($themeslug.'_custom_font') == "") {
-		$font = apply_filters( 'chimps_default_font', 'Arial' );
+		$font = apply_filters( 'synapse_default_font', 'Arial' );
 	}		
 	elseif ($options->get($themeslug.'_custom_font') != "" && $options->get($themeslug.'_font') == 'custom') {
 		$font = $options->get($themeslug.'_custom_font');	
@@ -152,7 +152,7 @@ function ifeature_header_standard_content() {
 			<div class="eight columns">
 				
 				<!-- Begin @Core header sitename hook -->
-					<?php chimps_header_sitename(); ?> 
+					<?php synapse_header_sitename(); ?> 
 				<!-- End @Core header sitename hook -->
 			
 				
@@ -161,7 +161,7 @@ function ifeature_header_standard_content() {
 			<div class="four columns">
 				
 			<!-- Begin @Core header social icon hook -->
-				<?php chimps_header_social_icons(); ?> 
+				<?php synapse_header_social_icons(); ?> 
 			<!-- End @Core header contact social icon hook -->	
 				
 			</div>	
@@ -186,7 +186,7 @@ global $options, $themeslug;?>
 		<div class="grid_6">
 				
 			<!-- Begin @Core header sitename hook -->
-				<?php chimps_header_sitename(); ?> 
+				<?php synapse_header_sitename(); ?> 
 			<!-- End @Core header sitename hook -->
 				
 		</div>	
@@ -211,7 +211,7 @@ global $options, $themeslug;?>
 		&nbsp;
 			<?php if ($options->get($themeslug.'_show_description') == '1'	): ?>
 			<!-- Begin @Core header description hook -->
-				<?php chimps_header_site_description(); ?> 
+				<?php synapse_header_site_description(); ?> 
 			<!-- End @Core header description hook -->
 			<?php endif; ?>
 		</div>
@@ -219,7 +219,7 @@ global $options, $themeslug;?>
 		<div class="grid_6">
 			
 			<!-- Begin @Core header social icon hook -->
-				<?php chimps_header_social_icons(); ?> 
+				<?php synapse_header_social_icons(); ?> 
 			<!-- End @Core header contact social icon hook -->	
 				
 		</div>

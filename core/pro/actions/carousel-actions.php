@@ -1,6 +1,6 @@
 <?php
 /**
-* Carousel section actions used by the CyberChimps Core Framework Pro Extension
+* Carousel section actions used by the CyberChimps Synapse Core Framework Pro Extension
 *
 * Author: Tyler Cunningham
 * Copyright: © 2011
@@ -15,10 +15,10 @@
 * @since 1.0
 */
 
-add_action( 'chimps_index_carousel_section', 'chimps_carousel_section_content' );
-add_action( 'chimps_carousel_section', 'chimps_carousel_section_content' );
+add_action( 'synapse_index_carousel_section', 'synapse_carousel_section_content' );
+add_action( 'synapse_carousel_section', 'synapse_carousel_section_content' );
 
-function chimps_carousel_section_content() {
+function synapse_carousel_section_content() {
 
 /* Call globals. */	
 

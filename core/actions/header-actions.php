@@ -1,6 +1,6 @@
 <?php
 /**
-* Header actions used by the CyberChimps Core Framework
+* Header actions used by the CyberChimps Synapse Core Framework
 *
 * Author: Tyler Cunningham
 * Copyright: © 2011
@@ -11,37 +11,37 @@
 * along with this software. In the main directory, see: /licensing/
 * If not, see: {@link http://www.gnu.org/licenses/}.
 *
-* @package Core
+* @package Synapse
 * @since 1.0
 */
 
 /**
-* Core header actions
+* Synapse header actions
 */
-add_action( 'chimps_after_head_tag', 'chimps_font' );
-add_action( 'chimps_head_tag', 'chimps_html_attributes' );
-add_action( 'chimps_head_tag', 'chimps_meta_tags' );
-add_action( 'chimps_head_tag', 'chimps_title_tag' );
-add_action( 'chimps_head_tag', 'chimps_link_rel' );
+add_action( 'synapse_after_head_tag', 'synapse_font' );
+add_action( 'synapse_head_tag', 'synapse_html_attributes' );
+add_action( 'synapse_head_tag', 'synapse_meta_tags' );
+add_action( 'synapse_head_tag', 'synapse_title_tag' );
+add_action( 'synapse_head_tag', 'synapse_link_rel' );
 
-add_action( 'chimps_header_sitename', 'chimps_header_sitename_content');
-add_action( 'chimps_header_site_description', 'chimps_header_site_description_content' );
-add_action( 'chimps_header_social_icons', 'chimps_header_social_icons_content' );
+add_action( 'synapse_header_sitename', 'synapse_header_sitename_content');
+add_action( 'synapse_header_site_description', 'synapse_header_site_description_content' );
+add_action( 'synapse_header_social_icons', 'synapse_header_social_icons_content' );
 
-add_action( 'chimps_navigation', 'chimps_nav' );
-add_action( 'chimps_404_content', 'chimps_404_content_handler' );
+add_action( 'synapse_navigation', 'synapse_nav' );
+add_action( 'synapse_404_content', 'synapse_404_content_handler' );
 
 /**
 * Establishes the theme font family.
 *
 * @since 1.0
 */
-function chimps_font() {
+function synapse_font() {
 	global $themeslug, $options; //Call global variables
-	$family = apply_filters( 'chimps_default_font_family', 'Helvetica, serif' );
+	$family = apply_filters( 'synapse_default_font_family', 'Helvetica, serif' );
 	
 	if ($options->get($themeslug.'_font') == "" ) {
-		$font = apply_filters( 'chimps_default_font', 'Arial' );
+		$font = apply_filters( 'synapse_default_font', 'Arial' );
 	}		
 	else {
 		$font = $options->get($themeslug.'_font'); 
@@ -55,7 +55,7 @@ function chimps_font() {
 *
 * @since 1.0
 */
-function chimps_html_attributes() { ?>
+function synapse_html_attributes() { ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes('xhtml'); ?>>
 <head profile="http://gmpg.org/xfn/11"> <?php 
@@ -66,7 +66,7 @@ function chimps_html_attributes() { ?>
 *
 * @since 1.0
 */
-function chimps_meta_tags() { ?>
+function synapse_meta_tags() { ?>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> <?php
 	global $themeslug, $options, $post; //Call global variables
 	if(!$post) return; // in case of 404 page or something
@@ -107,7 +107,7 @@ function chimps_meta_tags() { ?>
 *
 * @since 1.0
 */
-function chimps_title_tag() {
+function synapse_title_tag() {
 	global $options, $themeslug, $query, $post; 
 	$blogtitle = ($options->get($themeslug.'_home_title'));
 	if (!is_404()) {
@@ -166,12 +166,12 @@ function chimps_title_tag() {
 *
 * @since 1.0
 */
-function chimps_link_rel() {
+function synapse_link_rel() {
 	global $themeslug, $options; //Call global variables
 	$favicon = $options->get($themeslug.'_favicon'); //Calls the favicon URL from the theme options 
 	
 	if ($options->get($themeslug.'_font') == "" AND $options->get($themeslug.'_custom_font') == "") {
-		$font = apply_filters( 'chimps_default_font', 'Arial' );
+		$font = apply_filters( 'synapse_default_font', 'Arial' );
 	}		
 	elseif ($options->get($themeslug.'_custom_font') != "" && $options->get($themeslug.'_font') == 'custom') {
 		$font = $options->get($themeslug.'_custom_font');	
@@ -202,7 +202,7 @@ function chimps_link_rel() {
 *
 * @since 1.0
 */
-function chimps_header_sitename_content() {
+function synapse_header_sitename_content() {
 	global $themeslug, $options; //Call global variables
 	$logo = $options->get($themeslug.'_logo'); //Calls the logo URL from the theme options
 
@@ -218,7 +218,7 @@ function chimps_header_sitename_content() {
 	}						 
 }
 
-function chimps_header_site_description_content() {
+function synapse_header_site_description_content() {
 	global $themeslug, $options; ?>
 	
 	<div id="description">
@@ -232,7 +232,7 @@ function chimps_header_site_description_content() {
 *
 * @since 1.0
 */
-function chimps_header_social_icons_content() { 
+function synapse_header_social_icons_content() { 
 	global $options, $themeslug; //call globals
 	
 	$facebook		= $options->get($themeslug.'_facebook');
@@ -333,7 +333,7 @@ function chimps_header_social_icons_content() {
 *
 * @since 1.0
 */
-function chimps_nav() {
+function synapse_nav() {
 	global $options, $themeslug; //call globals 
 	
 	if ($options->get($themeslug.'_hide_home_icon') == "0" && $options->get($themeslug.'_hide_search') == "0" OR $options->get($themeslug.'_hide_home_icon') == "1" && $options->get($themeslug.'_hide_search') == "0" ) {

@@ -1,6 +1,6 @@
 <?php
 /**
-* Search actions used by the CyberChimps Core Framework 
+* Search actions used by the CyberChimps Synapse Core Framework
 *
 * Author: Tyler Cunningham
 * Copyright: © 2011
@@ -11,24 +11,24 @@
 * along with this software. In the main directory, see: /licensing/
 * If not, see: {@link http://www.gnu.org/licenses/}.
 *
-* @package Core
+* @package Synapse
 * @since 1.0
 */
 
 /**
-* Core search actions
+* Synapse search actions
 */
-add_action( 'chimps_search', 'chimps_search_content' );
+add_action( 'synapse_search', 'synapse_search_content' );
 
 /**
 * Search results output
 *
 * @since 1.0
 */
-function chimps_search_content() { 
+function synapse_search_content() { 
 	global $options, $themeslug;
-	$results = apply_filters( 'chimps_search_results_message', 'Search Results For: %s' ); 
-	$noresults = apply_filters( 'chimps_no_search_results_message', 'No posts found.' ); ?>
+	$results = apply_filters( 'synapse_search_results_message', 'Search Results For: %s' ); 
+	$noresults = apply_filters( 'synapse_no_search_results_message', 'No posts found.' ); ?>
 	
 	<div id="content_left">
 		<div class="content_padding">
@@ -64,7 +64,7 @@ function chimps_search_content() {
 		</div><!--end post_container-->
 		<?php endwhile; ?>
 
-		<?php chimps_pagination(); ?>
+		<?php synapse_pagination(); ?>
 
 	<?php else : ?>
 

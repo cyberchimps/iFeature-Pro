@@ -1,6 +1,6 @@
 <?php
 /**
-* Global actions used by the CyberChimps Core Framework 
+* Global actions used by the CyberChimps Synapse Core Framework
 *
 * Author: Tyler Cunningham
 * Copyright: © 2011
@@ -11,27 +11,27 @@
 * along with this software. In the main directory, see: /licensing/
 * If not, see: {@link http://www.gnu.org/licenses/}.
 *
-* @package Core
+* @package Synapse
 * @since 1.0
 */
 
 /**
-* Core global actions
+* Synapse global actions
 */
 
-add_action( 'chimps_loop', 'chimps_loop_content' );
-add_action( 'chimps_post_byline', 'chimps_post_byline_content' );
-add_action( 'chimps_edit_link', 'chimps_edit_link_content' );
-add_action( 'chimps_post_tags', 'chimps_post_tags_content' );
-add_action( 'chimps_post_bar', 'chimps_post_bar_content' );
-add_action( 'chimps_fb_like_plus_one', 'chimps_fb_like_plus_one_content' );
+add_action( 'synapse_loop', 'synapse_loop_content' );
+add_action( 'synapse_post_byline', 'synapse_post_byline_content' );
+add_action( 'synapse_edit_link', 'synapse_edit_link_content' );
+add_action( 'synapse_post_tags', 'synapse_post_tags_content' );
+add_action( 'synapse_post_bar', 'synapse_post_bar_content' );
+add_action( 'synapse_fb_like_plus_one', 'synapse_fb_like_plus_one_content' );
 
 /**
 * Check for post format type, apply filter based on post format name for easy modification.
 *
 * @since 1.0
 */
-function chimps_loop_content($content) { 
+function synapse_loop_content($content) { 
 
 	global $options, $themeslug, $post; //call globals
 	
@@ -67,7 +67,7 @@ function chimps_loop_content($content) {
 			<?php endif; ?>
 				<h2 class="posts_title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
 					<!--Call @Core Meta hook-->
-			<?php chimps_post_byline(); ?>
+			<?php synapse_post_byline(); ?>
 				<?php
 				if ( has_post_thumbnail() && $featured_images == '1'  && !is_single()) {
  		 			echo '<div class="featured-image">';
@@ -92,7 +92,7 @@ function chimps_loop_content($content) {
 			<?php	
 		
 		$content = ob_get_clean();
-		$content = apply_filters( 'chimps_post_formats_'.$format.'_content', $content );
+		$content = apply_filters( 'synapse_post_formats_'.$format.'_content', $content );
 	
 		echo $content; 
 }
@@ -102,7 +102,7 @@ function chimps_loop_content($content) {
 *
 * @since 3.1
 */
-function chimps_post_bar_content() { 
+function synapse_post_bar_content() { 
 	global $options, $themeslug; 
 	
 	if (is_single()) {
@@ -137,7 +137,7 @@ function chimps_post_bar_content() {
 *
 * @since 1.0
 */
-function chimps_post_byline_content() {
+function synapse_post_byline_content() {
 	global $options, $themeslug; //call globals.  
 	if (is_single()) {
 		$hidden = $options->get($themeslug.'_single_hide_byline'); 
@@ -161,7 +161,7 @@ function chimps_post_byline_content() {
 *
 * @since 1.0
 */
-function chimps_edit_link_content() {
+function synapse_edit_link_content() {
 	edit_post_link('Edit', '<p>', '</p>');
 }
 
@@ -170,7 +170,7 @@ function chimps_edit_link_content() {
 *
 * @since 1.0
 */
-function chimps_post_tags_content() {
+function synapse_post_tags_content() {
 	global $options, $themeslug; 
 	if (is_single()) {
 		$hidden = $options->get($themeslug.'_single_hide_byline'); 
@@ -195,7 +195,7 @@ function chimps_post_tags_content() {
 *
 * @since 3.1
 */
-function chimps_fb_like_plus_one_content() {
+function synapse_fb_like_plus_one_content() {
 	global $options, $themeslug; 
 	
 	if (is_single()) {

@@ -1,6 +1,6 @@
 <?php
 /**
-* Callout actions used by the CyberChimps Core Framework Pro Extension
+* Callout section actions used by the CyberChimps Synapse Core Framework Pro Extension
 *
 * Author: Tyler Cunningham
 * Copyright: © 2011
@@ -18,14 +18,14 @@
 /**
 * Pro callout actions
 */
-add_action ( 'chimps_callout_section', 'chimps_callout_section_content' );
+add_action ( 'synapse_callout_section', 'synapse_callout_section_content' );
 
 /**
 * Retrieves the Callout Section options and sets up the HTML
 *
 * @since 1.0
 */
-function chimps_callout_section_content() {
+function synapse_callout_section_content() {
 
 	global $options, $themeslug, $post; //call globals
 	$root = get_template_directory_uri();  
@@ -134,7 +134,7 @@ function chimps_callout_section_content() {
 /* Define Callout text. */	
 
 	if ($text == '') {
-		$callouttext = 'CyberChimps gives you the tools to turn WordPress into a modern feature rich Content Management System (CMS)';
+		$callouttext = 'Cybersynapse gives you the tools to turn WordPress into a modern feature rich Content Management System (CMS)';
 	}
 	else {
 		$callouttext = $text;
@@ -164,7 +164,7 @@ function chimps_callout_section_content() {
 /* Define Callout button link. */
 
 	if ($link == '') {
-		$calloutlink = 'http://cyberchimps.com';
+		$calloutlink = 'http://cybersynapse.com';
 	}
 	else {
 		$calloutlink = $link;

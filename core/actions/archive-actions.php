@@ -1,6 +1,6 @@
 <?php
 /**
-* Archive actions used by the CyberChimps Core Framework 
+* Archive actions used by the CyberChimps Synapse Core Framework
 *
 * Author: Tyler Cunningham
 * Copyright: © 2011
@@ -11,21 +11,21 @@
 * along with this software. In the main directory, see: /licensing/
 * If not, see: {@link http://www.gnu.org/licenses/}.
 *
-* @package Core
+* @package Synapse
 * @since 1.0
 */
 
 /**
-* Core archive actions
+* Synapse archive actions
 */
-add_action( 'chimps_archive_title', 'chimps_archive_page_title' );
+add_action( 'synapse_archive_title', 'synapse_archive_page_title' );
 
 /**
 * Output archive page title based on archive type. 
 *
 * @since 1.0
 */
-function chimps_archive_page_title() { 
+function synapse_archive_page_title() { 
 	global $post; ?>
 	
 		<?php if (is_category()) { ?>
