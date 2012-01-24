@@ -21,9 +21,9 @@ global $options, $themeslug;
      	<div class="container">
      		<div class="row">
     	
-	<!-- Begin @Core footer hook content-->
-		<?php chimps_footer(); ?>
-	<!-- End @Core footer hook content-->
+	<!-- Begin @synapse footer hook content-->
+		<?php synapse_footer(); ?>
+	<!-- End @synapse footer hook content-->
 	
 	<?php endif;?>
 	
@@ -37,9 +37,9 @@ global $options, $themeslug;
 	<div id="afterfooter">
 		<div id="afterfooterwrap">
 		<div class="row">	
-		<!-- Begin @Core afterfooter hook content-->
-			<?php chimps_secondary_footer(); ?>
-		<!-- End @Core afterfooter hook content-->
+		<!-- Begin @synapse afterfooter hook content-->
+			<?php synapse_secondary_footer(); ?>
+		<!-- End @synapse afterfooter hook content-->
 				
 		</div>  <!--end afterfooterwrap-->	
 	</div> <!--end afterfooter-->	

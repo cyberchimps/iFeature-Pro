@@ -17,22 +17,22 @@
 /* End globals. */
 	
 ?>
-<!-- Begin @Core head_tag hook content-->
-	<?php chimps_head_tag(); ?>
-<!-- End @Core head_tag hook content-->
+<!-- Begin @synapse head_tag hook content-->
+	<?php synapse_head_tag(); ?>
+<!-- End @synapse head_tag hook content-->
 
 <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?> <!-- wp_enqueue_script( 'comment-reply' );-->
 <?php wp_head(); ?> <!-- wp_head();-->
 	
 </head><!-- closing head tag-->
 
-<!-- Begin @Core after_head_tag hook content-->
-	<?php chimps_after_head_tag(); ?>
-<!-- End @Core after_head_tag hook content-->
+<!-- Begin @synapse after_head_tag hook content-->
+	<?php synapse_after_head_tag(); ?>
+<!-- End @synapse after_head_tag hook content-->
 	
-<!-- Begin @Core before_header hook  content-->
-	<?php chimps_before_header(); ?> 
-<!-- End @Core before_header hook content -->
+<!-- Begin @synapse before_header hook  content-->
+	<?php synapse_before_header(); ?> 
+<!-- End @synapse before_header hook content -->
 			
 <header>		
 	<?php
@@ -44,6 +44,6 @@
 	?>
 </header>
 
-<!-- Begin @Core after_header hook -->
-	<?php chimps_after_header(); ?> 
-<!-- End @Core after_header hook -->
+<!-- Begin @synapse after_header hook -->
+	<?php synapse_after_header(); ?> 
+<!-- End @synapse after_header hook -->

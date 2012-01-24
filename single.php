@@ -18,11 +18,11 @@ get_header(); ?>
 
 <div class="container">
 	<div class="row">
-		<?php if (function_exists('chimps_breadcrumbs') && ($options->get($themeslug.'_disable_breadcrumbs') == "1")) { chimps_breadcrumbs(); }?>
+		<?php if (function_exists('synapse_breadcrumbs') && ($options->get($themeslug.'_disable_breadcrumbs') == "1")) { synapse_breadcrumbs(); }?>
 	</div>
 	<div class="row">
 	<!--Begin @Core post area-->
-		<?php chimps_index(); ?>
+		<?php synapse_index(); ?>
 	<!--End @Core post area-->
 	</div>
 </div><!--end container-->

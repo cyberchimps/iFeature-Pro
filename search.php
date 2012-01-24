@@ -16,25 +16,25 @@ get_header();
 
 <div class="container">
 	<div class="row">
-		<!--Begin @Core before content sidebar hook-->
-			<?php chimps_before_content_sidebar(); ?>
-		<!--End @Core before content sidebar hook-->
+		<!--Begin @synapse before content sidebar hook-->
+			<?php synapse_before_content_sidebar(); ?>
+		<!--End @synapse before content sidebar hook-->
 		<div id="content" class="<?php echo $content_grid; ?>">
-			<!-- Begin @Core before_search hook -->
-				<?php chimps_before_search(); ?>
-			<!-- End @Core before_search hook -->
+			<!-- Begin @synapse before_search hook -->
+				<?php synapse_before_search(); ?>
+			<!-- End @synapse before_search hook -->
 	
-			<!-- Begin @Core search hook -->
-				<?php chimps_search(); ?>
-			<!-- End @Core search hook -->
+			<!-- Begin @synapse search hook -->
+				<?php synapse_search(); ?>
+			<!-- End @synapse search hook -->
 	
-			<!-- Begin @Core after_search hook -->
-				<?php chimps_after_search(); ?>
-			<!-- End @Core after_search hook -->		
+			<!-- Begin @synapse after_search hook -->
+				<?php synapse_after_search(); ?>
+			<!-- End @synapse after_search hook -->		
 		</div>	
-		<!--Begin @Core after content sidebar hook-->
-			<?php chimps_after_content_sidebar(); ?>
-		<!--End @Core after content sidebar hook-->
+		<!--Begin @synapse after content sidebar hook-->
+			<?php synapse_after_content_sidebar(); ?>
+		<!--End @synapse after content sidebar hook-->
 	</div><!--end row-->
 </div><!--end container-->
 
