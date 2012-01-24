@@ -332,6 +332,20 @@ function add_menu_hover_color() {
 }
 add_action( 'wp_head', 'add_menu_hover_color');
 
+/* Corners */
+
+function menu_rounded_corners() {
+
+	global $themename, $themeslug, $options;
+
+	if ($options->get($themeslug.'_menu_corners') == '0') {
+		echo '<style type="text/css">';
+		echo "#imenu {-webkit-border-radius: 0px;border-radius: 0px;}";
+		echo '</style>';
+	}
+}
+add_action( 'wp_head', 'menu_rounded_corners');
+
 /* Tagline Color */
 
 function add_tagline_color() {

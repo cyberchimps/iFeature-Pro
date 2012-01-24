@@ -128,6 +128,7 @@ $options
 			->color($themeslug."_menulink_color", "Custom Menu Text Color")
 			->color($themeslug."_custom_dropdown_color", "Custom Menu Dropdown Color")
 			->color($themeslug."_menu_hover_color", "Custom Menu Hover Color")
+			->checkbox($themeslug."_menu_corners", "Menu Rounded Corners", array('default' => true))
 			->checkbox($themeslug."_hide_home_icon", "Home Icon", array('default' => true))
 			->checkbox($themeslug."_hide_search", "Searchbar", array('default' => true))
 		->subsection_end()
