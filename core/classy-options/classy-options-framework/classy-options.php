@@ -61,11 +61,20 @@ class ClassyOptions {
 		do_action( 'optionsframework_custom_scripts' );
 	}
 
-	function get($key) {
-		return isset( $this->data[$key] ) ? $this->data[$key] :
-			( isset( $this->options[$key] ) ? $this->options[$key]['default'] : null );
+	function get($id) {
+		$option = $this->find_option_by_id($id);
+		return isset( $this->data[$id] ) ? $this->data[$id] :
+			( $option && isset($option['default'] )) ? $option['default'] : null;
 	}
 
+	function find_option_by_id($id) {
+		foreach($this->options as $option) {
+			if(isset($option['id']) && $option['id'] == $id) {
+				return $option;
+			}
+		}
+		return false;
+	}
 	function add( $option ) {
 		$this->options[] = $option;
 	}
