@@ -150,6 +150,11 @@ else {
 		.orbit-caption {position: relative !important; float: left; height: <?php echo $height ?>px; width: 30% !important; top: -375px;}
 		</style><?php
 	}    
+	elseif ($captionstyle == '0') { ?>
+		<style type="text/css">
+		.orbit-caption {display: none !important;}
+		</style><?php
+	}    
 
 /* Define wordthumb default height and widths. */		
 
