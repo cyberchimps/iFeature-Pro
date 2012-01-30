@@ -403,7 +403,7 @@ OUT;
 
 /* End NivoSlider javascript */ 
 
-echo $out; ?> <div class="slider_nav" style="width: 100%;"></div>
+echo $out; ?> <div class="slider_nav"></div>
 
 <?php echo $closerow; 
 
