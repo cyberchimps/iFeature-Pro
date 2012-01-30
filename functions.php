@@ -288,66 +288,7 @@ function custom_taxonomy_default( $post_id, $post ) {
 
 add_action( 'save_post', 'custom_taxonomy_default', 100, 2 );
 
-// Foundation JS
 
-function foundation_script(){
-	
-	$path =  get_template_directory_uri() ."/core/library/js";
-
-	$script = "
-		
-		<script type=\"text/javascript\" src=\"".$path."/foundation.js\"></script>
-		";
-	
-	echo $script;
-}
-add_action('wp_head', 'foundation_script');
-
-// Foundation App JS
-
-function app_script(){
-	
-	$path =  get_template_directory_uri() ."/core/library/js";
-
-	$script = "
-		
-		<script type=\"text/javascript\" src=\"".$path."/app.js\"></script>
-		";
-	
-	echo $script;
-}
-add_action('wp_head', 'app_script');
-
-// Menu JS
-
-function menu_script(){
-	
-	$path =  get_template_directory_uri() ."/core/library/js";
-
-	$script = "
-		
-		<script type=\"text/javascript\" src=\"".$path."/menu.js\"></script>
-		";
-	
-	echo $script;
-}
-add_action('wp_footer', 'menu_script');
-
-
-// Nivo Slider 
-
-function orbit(){
-	 
-	$path =  get_template_directory_uri() ."/core/library/js";
-
-	$script = "
-		
-		<script type=\"text/javascript\" src=\"".$path."/jquery.orbit.min.js\"></script>
-		";
-	
-	echo $script;
-}
-add_action('wp_head', 'orbit');
 
 // Carousel Javascript
 
@@ -365,22 +306,6 @@ function carousel(){
 }
 add_action('wp_head', 'carousel');
 
-
-// + 1 Button 
-
-function plusone(){
-	
-	$path =  get_template_directory_uri() ."/core/library/js";
-
-	$script = "
-		
-		<script type=\"text/javascript\" src=\"".$path."/plusone.js\"></script>
-		";
-	
-	echo $script;
-}
-add_action('wp_head', 'plusone');
-
 // Typekit
 
 function typekit_support() {
@@ -396,8 +321,6 @@ add_action('wp_head', 'typekit_support');
 // Load jQuery
 function if_jquery() {
 	if ( !is_admin() ) {
-	   wp_deregister_script('jquery');
-	   wp_register_script('jquery', ("http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"), false);
 	   wp_enqueue_script('jquery');
 	   wp_enqueue_script('jquery-ui-tabs');
 	}
