@@ -288,24 +288,6 @@ function custom_taxonomy_default( $post_id, $post ) {
 
 add_action( 'save_post', 'custom_taxonomy_default', 100, 2 );
 
-
-
-// Carousel Javascript
-
-function carousel(){
-	 
-	$path =  get_template_directory_uri() ."/core/library/js";
-
-	$script = "
-		
-		<script type=\"text/javascript\" src=\"".$path."/jquery.elastislide.js\"></script>
-		<script type=\"text/javascript\" src=\"".$path."/jquery.easing.1.3.js\"></script>
-		";
-	
-	echo $script;
-}
-add_action('wp_head', 'carousel');
-
 // Typekit
 
 function typekit_support() {

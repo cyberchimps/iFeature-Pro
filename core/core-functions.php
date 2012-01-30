@@ -57,7 +57,6 @@ function synapse_scripts() {
 }
 add_action('wp_enqueue_scripts', 'synapse_scripts');	
 
-	
 /**
 * Adds "untitled" to posts with no title.
 *
