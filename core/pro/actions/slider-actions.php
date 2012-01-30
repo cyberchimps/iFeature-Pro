@@ -147,7 +147,7 @@ else {
 	}
 	elseif ($captionstyle == 'key2' OR $captionstyle == '2') { ?>
 		<style type="text/css">
-		.orbit-caption {position: relative; float: right; height: <?php echo $height ?>px; width: 30% !important;}
+		.orbit-caption {position: relative !important; float: left; height: <?php echo $height ?>px; width: 30% !important; top: -375px;}
 		</style><?php
 	}    
 
