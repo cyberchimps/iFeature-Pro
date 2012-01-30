@@ -303,4 +303,23 @@ jQuery(function($) {
 	$('.section_order').each(function() {
 		initialize($(this).attr('id'));
 	});
+
+	$("input[name='ifeature[if_blog_section_order]']").change(function(){
+		var show = $(this).val().split(",");
+		var map = {
+			synapse_blog_slider: "subsection-blogslider",
+			synapse_callout_section: "subsection-calloutoptions",
+			synapse_twitterbar_section: "subsection-twtterbaroptions",
+			synapse_index_carousel_section: "subsection-carouseloptions"
+			// , synapse_box_section: ""
+		};
+
+		$.each(map, function(key, value) {
+			$("#" + value).hide();
+			$.each(show, function(i, show_key) {
+				if(key == show_key)
+					$("#" + value).show();
+			});
+		});
+	}).trigger('change');
 });
