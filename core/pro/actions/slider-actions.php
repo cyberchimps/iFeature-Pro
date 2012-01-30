@@ -347,7 +347,7 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 
 /* Define slider navigation variable */ 
   	
-	if ($navigationstyle == 'key1' OR $navigationstyle == '0') {
+	if ($navigationstyle == 'key1' OR $navigationstyle == '0'  OR $navigationstyle == '1') {
 	    $dots = 'true';
 	}
 	else {
@@ -363,6 +363,8 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 	else {
 		$thumbs = 'false';
 	}
+	
+	var_dump($thumbs, $dots);
 
 /* End slider navigation variable */ 
 
@@ -393,8 +395,8 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
          advanceSpeed: $sliderdelay,
          captionAnimation: 'slideOpen',		// fade, slideOpen, none
          captionAnimationSpeed: 800,  
-         bullets: true,
-         bulletThumbs: false
+         bullets: $dots,
+         bulletThumbs: $thumbs
      });
      });
 </script>
