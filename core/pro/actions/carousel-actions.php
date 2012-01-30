@@ -90,7 +90,7 @@ query_posts( array ('post_type' => $themeslug.'_featured_posts', 'showposts' => 
 	    	
 				<li>
 	    			<a href='$link'>	
-	    				<img src='$image' alt='$title'/>
+	    				<img src='$image' alt='$title'/>$title
 	    			</a>
 	    		</li>
 	    	
