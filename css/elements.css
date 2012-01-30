@@ -57,6 +57,7 @@
 .es-nav span:hover{
 	opacity:1.0;
 }
+.carousel_caption {text-align: center; margin-top: -25px; background: rgba(0, 0, 0, .6); color: white; width: 100%; position: relative; }
 /*============================*/
 /*======= Twitter Bar ========*/
 /*============================*/

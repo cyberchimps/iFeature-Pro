@@ -90,8 +90,9 @@ query_posts( array ('post_type' => $themeslug.'_featured_posts', 'showposts' => 
 	    	
 				<li>
 	    			<a href='$link'>	
-	    				<img src='$image' alt='$title'/>$title
+	    				<img src='$image' alt='$title'/>
 	    			</a>
+	    			<div class='carousel_caption'>$title</div>
 	    		</li>
 	    	
 	    	";
