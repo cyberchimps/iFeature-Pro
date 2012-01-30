@@ -1,5 +1,4 @@
 <?php
-
 /*
 	Functions
 	Author: Tyler Cunningham
@@ -8,8 +7,7 @@
 	Version 3.0
 */
 
-
-/* Define global variables. */	
+// Define global variables
 
 	$themename = 'ifeature';
 	$themenamefull = 'iFeature Pro';
@@ -18,17 +16,25 @@
 	$slider_default = "$root/images/ifeaturefree.jpg";
 	$pagedocs = 'http://cyberchimps.com/question/using-the-ifeature-pro-page-options/';
 	$sliderdocs = 'http://cyberchimps.com/question/how-to-use-the-ifeature-pro-3-slider/';
+
+//Redirect after activation	
+function if_theme_setup() {
+	if ( ! isset( $content_width ) ) $content_width = 608; //Set content width
 	
-	
+	add_theme_support(
+		'post-formats',
+		array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat')
+	);
+
+	add_theme_support( 'post-thumbnails' );
+	add_theme_support('automatic-feed-links');
+	add_editor_style();
+}
+add_action( 'after_setup_theme', 'if_theme_setup' );
+
 //Redirect after activation
 if ( is_admin() && isset($_GET['activated'] ) && $pagenow ==	"themes.php" )
 	wp_redirect( 'themes.php?page=ifeature' );
-	
-// Post formats support
-add_theme_support(
-	'post-formats',
-	array('aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat')
-);
 
 //Custom gallery post formating.  
 
@@ -123,9 +129,6 @@ function new_excerpt_length($length) {
 add_filter('excerpt_length', 'new_excerpt_length');
 
 /* End excerpt functions. */
-
-/* Add auto-feed links support. */	
-add_theme_support('automatic-feed-links');
 	
 /* Add post-thumb support. */
 
@@ -156,12 +159,6 @@ if ( function_exists( 'add_theme_support' ) ) {
 }
 add_action( 'init', 'init_featured_image', 11);	
 
-// Featured image support.
-add_theme_support( 'post-thumbnails' );
-
-// This theme styles the visual editor with editor-style.css to match the theme style.
-add_editor_style();
-
 /**
 * Attach CSS3PIE behavior to elements
 * Add elements here that need PIE applied
@@ -179,7 +176,6 @@ function render_ie_pie() { ?>
 }
 
 add_action('wp_head', 'render_ie_pie', 8);
-	
 
 // Create custom post type for Slider
 
@@ -279,11 +275,8 @@ function custom_taxonomy_default( $post_id, $post ) {
 				wp_set_object_terms( $post_id, $defaults[$taxonomy], $taxonomy );
 
 			}
-
 		}
-
 	}
-
 }
 
 add_action( 'save_post', 'custom_taxonomy_default', 100, 2 );
@@ -300,27 +293,18 @@ function typekit_support() {
 }
 add_action('wp_head', 'typekit_support');
 	
-// Load jQuery
-function if_jquery() {
-	if ( !is_admin() ) {
-	   wp_enqueue_script('jquery');
-	   wp_enqueue_script('jquery-ui-tabs');
-	}
-}
-add_action('wp_enqueue_scripts', 'if_jquery');	
+// Register menu names
 	
-	// Register menu names
-	
-	function register_menus() {
+function register_menus() {
 	register_nav_menus(
 	array( 'header-menu' => __( 'Header Menu' ), 'footer-menu' => __( 'Footer Menu' ))
   );
 }
-	add_action( 'init', 'register_menus' );
+add_action( 'init', 'register_menus' );
 	
-	// Menu fallback
+// Menu fallback
 	
-	function menu_fallback() {
+function menu_fallback() {
 	global $post; ?>
 	
 	<ul id="menu-nav" class="sf-menu">
@@ -406,10 +390,6 @@ function admin_link() {
   
 }
 add_action( 'admin_bar_menu', 'admin_link', 113 );
-
-//Set content width
-
-if ( ! isset( $content_width ) ) $content_width = 608;
 
 //hooks
 
