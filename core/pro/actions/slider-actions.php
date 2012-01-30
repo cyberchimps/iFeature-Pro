@@ -364,8 +364,6 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 	else {
 		$thumbs = 'false';
 	}
-	
-	var_dump($thumbs, $dots);
 
 /* End slider navigation variable */ 
 
@@ -405,7 +403,7 @@ OUT;
 
 /* End NivoSlider javascript */ 
 
-echo $out; ?> <div class="slider_nav" style="width: <?php echo $csWidth ?>px;"></div>
+echo $out; ?> <div class="slider_nav" style="width: 100%;"></div>
 
 <?php echo $closerow; 
 
