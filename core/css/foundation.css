@@ -840,7 +840,7 @@ div.slider-nav span.left {
     cursor: pointer;
     color: #999;
     text-indent: -9999px;
-    background: url(orbit/bullets-new.png) no-repeat -12px 0;
+    background: url(orbit/bullets2.png) no-repeat 0px 0;
     width: 13px;
     height: 12px;
     overflow: hidden; }
@@ -853,7 +853,7 @@ div.slider-nav span.left {
 
 .orbit-bullets li.active {
     color: #222;
-    background-position: 0px; }
+    background-position: -12px 0; }
 
 .orbit-bullets li.active.has-thumb {
     background-position: 0 0;
