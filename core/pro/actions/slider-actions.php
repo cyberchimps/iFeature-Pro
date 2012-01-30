@@ -179,7 +179,8 @@ else {
 		$csWidth = '470';
 	}  	
 	else {
-		$csWidth = '760';
+		$csWidth = '640';
+		$imgwidth = '760';
 	}
 
 /* End slider width variable */ 
@@ -307,7 +308,7 @@ else {
 	     	/* Markup for slides */
 
 	    	$out .= "<a href='$link' $caption data-thumb='$thumbnail'>
-	    				<img src='$image' width='$csWidth' alt='Slider' />
+	    				<img src='$image' width='$imgwidth' alt='Slider' />
 	    						<span class='orbit-caption' id='htmlCaption$i'>$title <br /> $text</span>
 	    				</a>
 	    			";
@@ -404,7 +405,7 @@ OUT;
 
 /* End NivoSlider javascript */ 
 
-echo $out; ?>
+echo $out; ?> <div class="slider_nav" style="width: <?php echo $csWidth ?>px;"></div>
 
 <?php echo $closerow; 
 
