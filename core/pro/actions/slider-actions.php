@@ -179,7 +179,7 @@ else {
 		$csWidth = '470';
 	}  	
 	else {
-		$csWidth = '640';
+		$csWidth = '760';
 	}
 
 /* End slider width variable */ 
@@ -307,7 +307,7 @@ else {
 	     	/* Markup for slides */
 
 	    	$out .= "<a href='$link' $caption data-thumb='$thumbnail'>
-	    				<img src='$image' alt='Slider' />
+	    				<img src='$image' width='$csWidth' alt='Slider' />
 	    						<span class='orbit-caption' id='htmlCaption$i'>$title <br /> $text</span>
 	    				</a>
 	    			";
