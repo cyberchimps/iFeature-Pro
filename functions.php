@@ -38,8 +38,9 @@ add_action( 'after_setup_theme', 'if_theme_setup' );
 /**
 * Redirect user to theme options page after activation.
 */ 
-if ( is_admin() && isset($_GET['activated'] ) && $pagenow =="themes.php" )
+if ( is_admin() && isset($_GET['activated'] ) && $pagenow =="themes.php" ) {
 	wp_redirect( 'themes.php?page=ifeature' );
+}
 
 /**
 * Add link to theme options in Admin bar.
@@ -100,7 +101,6 @@ function custom_gallery_post_format( $content ) {
 				<?php endif;?>
 				</div><!--end entry-->
 
-				
 				<div style=clear:both;></div>
 	<?php	
 	$content = ob_get_clean();
@@ -409,5 +409,9 @@ require_once ( get_template_directory() . '/inc/meta-box.php' ); // Meta options
 require_once ( get_template_directory() . '/inc/update.php' ); // Notify user of theme update on "Updates" page in Dashboard.
 require_once ( get_template_directory() . '/inc/theme-hooks.php' ); // Theme specific hooks.
 require_once ( get_template_directory() . '/inc/theme-actions.php' ); // Actions for theme specific hooks.
+
+/**
+* End
+*/
 
 ?>
