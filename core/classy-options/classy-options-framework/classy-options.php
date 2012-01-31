@@ -64,7 +64,7 @@ class ClassyOptions {
 	function get($id) {
 		$option = $this->find_option_by_id($id);
 		return isset( $this->data[$id] ) ? $this->data[$id] :
-			( $option && isset($option['default'] )) ? $option['default'] : null;
+			(( $option && isset($option['default'] )) ? $option['default'] : null);
 	}
 
 	function find_option_by_id($id) {
