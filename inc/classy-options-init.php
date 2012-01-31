@@ -109,7 +109,7 @@ $options
 			->close_outersection()
 	->section("Header")
 		->open_outersection()
-			->section_order("header_section_order", "Drag drop sections for the Header", array('options' => array("ifeature_header_content" => "Header Content", "synapse_navigation" => "Navigation"), 'default' => 'ifeature_header_content,synapse_navigation'))
+			->section_order("header_section_order", "Drag drop sections for the Header", array('options' => array("ifeature_header_content" => "Header Content", "synapse_navigation" => "Navigation", "ifeature_sitename_register" => "Sitename/Register"), 'default' => 'ifeature_header_content,synapse_navigation'))
 		->close_outersection()
 			->subsection("Header Options")
 			->upload($themeslug."_logo", "Custom Logo")

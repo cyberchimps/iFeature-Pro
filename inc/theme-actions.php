@@ -21,6 +21,8 @@
 
 add_action( 'ifeature_header_contact_area', 'ifeature_header_contact_area_content' );
 
+add_action( 'ifeature_sitename_register', 'ifeature_sitename_register_content');
+
 remove_action( 'synapse_head_tag', 'synapse_link_rel' );
 add_action( 'synapse_head_tag', 'ifeature_link_rel' );
 
@@ -140,6 +142,46 @@ function ifeature_link_rel() {
 }
 
 /**
+* Sitename/Register
+*
+* @since 3.0
+*/
+function ifeature_sitename_register_content() {
+?>
+<div class="container" style="">
+		<div class="row">
+		
+			<div class="seven columns">
+				
+				<!-- Begin @Core header sitename hook -->
+					<?php synapse_header_sitename(); ?> 
+				<!-- End @Core header sitename hook -->
+			
+				
+			</div>	
+			
+			<div id="register" class="five columns">
+			
+			<?php if(!$user_ID ) :?>
+
+		<li><?php wp_loginout(); ?></li> <?php wp_meta(); ?><li> |<?php wp_register(); ?>  </li>
+
+			<?php else :?>
+
+			Welcome back <strong><?php global $current_user; get_currentuserinfo(); echo ($current_user->user_login); ?></strong> | <?php wp_loginout(); ?>
+
+		<?php endif;?>
+				
+			</div>	
+		</div><!--end row-->
+		
+	</div><!--end container-->
+
+
+<?php
+}
+
+/**
 * Header content standard
 *
 * @since 3.0
@@ -149,7 +191,7 @@ function ifeature_header_standard_content() {
 <div class="container" style="">
 		<div class="row">
 		
-			<div class="eight columns">
+			<div class="seven columns">
 				
 				<!-- Begin @Core header sitename hook -->
 					<?php synapse_header_sitename(); ?> 
@@ -158,7 +200,7 @@ function ifeature_header_standard_content() {
 				
 			</div>	
 			
-			<div class="four columns">
+			<div id ="register" class="five columns">
 				
 			<!-- Begin @Core header social icon hook -->
 				<?php synapse_header_social_icons(); ?> 
