@@ -22,6 +22,8 @@
 add_action( 'ifeature_header_contact_area', 'ifeature_header_contact_area_content' );
 
 add_action( 'ifeature_sitename_register', 'ifeature_sitename_register_content');
+add_action( 'ifeature_sitename_contact', 'ifeature_sitename_contact_content');
+add_action( 'ifeature_description_icons', 'ifeature_description_icons_content');
 
 remove_action( 'synapse_head_tag', 'synapse_link_rel' );
 add_action( 'synapse_head_tag', 'ifeature_link_rel' );
@@ -181,6 +183,75 @@ global $current_user;
 
 <?php
 }
+
+/**
+* Sitename/Contact
+*
+* @since 3.0
+*/
+function ifeature_sitename_contact_content() {
+?>
+<div class="container" style="">
+		<div class="row">
+		
+			<div class="seven columns">
+				
+				<!-- Begin @Core header sitename hook -->
+					<?php synapse_header_sitename(); ?> 
+				<!-- End @Core header sitename hook -->
+			
+				
+			</div>	
+			
+			<div class="five columns">
+			
+			<!-- Begin @Core header contact area hook -->
+			<?php ifeature_header_contact_area(); ?>
+		<!-- End @Core header contact area hook -->
+						
+			</div>	
+		</div><!--end row-->
+		
+	</div><!--end container-->
+
+
+<?php
+}
+
+/**
+* Description/Icons
+*
+* @since 3.0
+*/
+function ifeature_description_icons_content() {
+?>
+<div class="container" style="">
+		<div class="row">
+		
+			<div class="seven columns">
+				
+			<!-- Begin @Core header description hook -->
+				<?php synapse_header_site_description(); ?> 
+			<!-- End @Core header description hook -->
+			
+				
+			</div>	
+			
+			<div class="five columns">
+			
+			<!-- Begin @Core header social icon hook -->
+				<?php synapse_header_social_icons(); ?> 
+			<!-- End @Core header contact social icon hook -->	
+						
+			</div>	
+		</div><!--end row-->
+		
+	</div><!--end container-->
+
+
+<?php
+}
+
 
 /**
 * Header content standard

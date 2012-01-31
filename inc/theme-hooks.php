@@ -37,3 +37,11 @@ function ifeature_header_contact_area() {
 function ifeature_sitename_register() {
 	do_action('ifeature_sitename_register');
 }
+
+function ifeature_sitename_contact() {
+	do_action('ifeature_sitename_contact');
+}
+
+function ifeature_description_icons() {
+	do_action('ifeature_description_icons');
+}
