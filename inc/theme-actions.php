@@ -147,6 +147,7 @@ function ifeature_link_rel() {
 * @since 3.0
 */
 function ifeature_sitename_register_content() {
+global $current_user;
 ?>
 <div class="container" style="">
 		<div class="row">
@@ -162,7 +163,7 @@ function ifeature_sitename_register_content() {
 			
 			<div id="register" class="five columns">
 			
-			<?php if(!$user_ID ) :?>
+			<?php if(!is_user_logged_in()) :?>
 
 		<li><?php wp_loginout(); ?></li> <?php wp_meta(); ?><li> |<?php wp_register(); ?>  </li>
 
