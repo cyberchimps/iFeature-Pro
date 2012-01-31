@@ -22,8 +22,6 @@
 		$page_section_order = 'page_section';
 	}
 	
-	full_size_image();
-
 /* End define global variables. */
 
 /* Set slider hook based on page option */

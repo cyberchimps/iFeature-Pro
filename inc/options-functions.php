@@ -24,7 +24,7 @@ function full_size_image() {
 		$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);
 		
 		if ($sidebar == '1' OR $sidebar == '4'){
-			$width = '610px';
+			$width = '608px';
 		}
 		
 		elseif ($sidebar == '2' OR $sidebar == '3'){

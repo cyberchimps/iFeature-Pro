@@ -404,7 +404,7 @@ a img.aligncenter {
 }
 
 img.size-full {
-	max-width: 610px;
+	max-width: 100%;
 	height: auto;
 }
 
