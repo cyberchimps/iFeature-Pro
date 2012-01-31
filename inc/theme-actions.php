@@ -24,6 +24,7 @@ add_action( 'ifeature_header_contact_area', 'ifeature_header_contact_area_conten
 add_action( 'ifeature_sitename_register', 'ifeature_sitename_register_content');
 add_action( 'ifeature_sitename_contact', 'ifeature_sitename_contact_content');
 add_action( 'ifeature_description_icons', 'ifeature_description_icons_content');
+add_action( 'ifeature_description_menu', 'ifeature_description_menu_content');
 
 remove_action( 'synapse_head_tag', 'synapse_link_rel' );
 add_action( 'synapse_head_tag', 'ifeature_link_rel' );
@@ -251,6 +252,43 @@ function ifeature_description_icons_content() {
 
 <?php
 }
+
+/**
+* Description/Icons
+*
+* @since 3.0
+*/
+function ifeature_description_menu_content() {
+?>
+
+		<div class="row">
+		
+			<div class="five columns">
+				
+			<!-- Begin @Core header description hook -->
+				<?php synapse_header_site_description(); ?> 
+			<!-- End @Core header description hook -->
+			
+				
+			</div>	
+			
+			<div class="seven columns">
+			
+			<?php wp_nav_menu( array(
+		    'theme_location' => 'sub-menu' // Setting up the location for the main-menu, Main Navigation.
+			    )
+			);
+	    	?>
+									
+			</div>	
+		</div><!--end row-->
+		
+
+
+
+<?php
+}
+
 
 
 /**

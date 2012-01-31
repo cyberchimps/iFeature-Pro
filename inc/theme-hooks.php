@@ -45,3 +45,7 @@ function ifeature_sitename_contact() {
 function ifeature_description_icons() {
 	do_action('ifeature_description_icons');
 }
+
+function ifeature_description_menu() {
+	do_action('ifeature_description_menu');
+}
