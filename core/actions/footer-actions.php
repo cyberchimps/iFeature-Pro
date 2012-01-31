@@ -19,7 +19,6 @@
 * Synapse footer actions
 */
 add_action ( 'synapse_footer', 'synapse_footer_widgets' );
-add_action ( 'synapse_footer', 'synapse_analytics' );
 
 add_action ( 'synapse_secondary_footer', 'synapse_secondary_footer_copyright' );
 add_action ( 'synapse_secondary_footer', 'synapse_secondary_footer_menu' );
@@ -69,17 +68,6 @@ function synapse_footer_widgets() {
 			<?php }
 			
 			echo "<div class='clear'></div> ";
-}
-
-/**
-* Inserts the Google Analytics script from the theme options.
-*
-* @since 1.0
-*/
-function synapse_analytics() {
-	global $options, $themeslug; //call globals
-	
-	echo stripslashes ($options->get($themeslug.'_ga_code'));
 }
 
 /**

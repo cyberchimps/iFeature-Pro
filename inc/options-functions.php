@@ -15,6 +15,20 @@
 * @since 3.1
 */
 
+/* Full size image size based on theme options*/
+
+function full_size_image() {
+	global $options, $themeslug, $post;
+		
+	if ($options->get($themeslug.'_widget_title_background') == '0' ) {
+		echo '<style type="text/css">';
+		echo ".widget-title {background: none; border-bottom: none;}";
+		echo '</style>';
+	}
+
+}
+add_action( 'wp_head', 'full-size-image' );
+
 /* Widget Title Background*/
 
 function widget_title_background() {
