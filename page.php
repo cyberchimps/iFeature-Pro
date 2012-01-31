@@ -21,7 +21,7 @@
 	if(!$page_section_order) {
 		$page_section_order = 'page_section';
 	}
-
+	
 /* End define global variables. */
 
 /* Set slider hook based on page option */

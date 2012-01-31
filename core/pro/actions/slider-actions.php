@@ -147,7 +147,12 @@ else {
 	}
 	elseif ($captionstyle == 'key2' OR $captionstyle == '2') { ?>
 		<style type="text/css">
-		.orbit-caption {position: relative; float: right; height: <?php echo $height ?>px; width: 30% !important;}
+		.orbit-caption {position: relative !important; float: left; height: <?php echo $height ?>px; width: 30% !important; top: -375px;}
+		</style><?php
+	}    
+	elseif ($captionstyle == '0') { ?>
+		<style type="text/css">
+		.orbit-caption {display: none !important;}
 		</style><?php
 	}    
 
@@ -175,6 +180,7 @@ else {
 	}  	
 	else {
 		$csWidth = '640';
+		$imgwidth = '760';
 	}
 
 /* End slider width variable */ 
@@ -302,7 +308,7 @@ else {
 	     	/* Markup for slides */
 
 	    	$out .= "<a href='$link' $caption data-thumb='$thumbnail'>
-	    				<img src='$image' alt='Slider' />
+	    				<img src='$image' width='$imgwidth' alt='Slider' />
 	    						<span class='orbit-caption' id='htmlCaption$i'>$title <br /> $text</span>
 	    				</a>
 	    			";
@@ -342,14 +348,18 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 
 /* Define slider navigation variable */ 
   	
-	if ($navigationstyle == 'key1' OR $navigationstyle == '0') {
+	if ($navigationstyle == 'key1' OR $navigationstyle == '0'  OR $navigationstyle == '1') {
 	    $dots = 'true';
 	}
 	else {
 		$dots = 'false';
 	}
 	if ($navigationstyle == 'key2' OR $navigationstyle == '1') {
-	    $thumbs = 'true';
+	    $thumbs = 'true'; ?>
+	    
+	    <style type="text/css">
+		.orbit-bullets {bottom: -50px !important;}
+		</style> <?php
 	}
 	else {
 		$thumbs = 'false';
@@ -393,7 +403,7 @@ OUT;
 
 /* End NivoSlider javascript */ 
 
-echo $out; ?>
+echo $out; ?> <div class="slider_nav"></div>
 
 <?php echo $closerow; 
 

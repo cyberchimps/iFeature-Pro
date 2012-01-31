@@ -609,11 +609,13 @@
     #nav ul ul li:hover ul, #nav ul ul ul li:hover ul {margin: 0px !important;}
     
     #nav ul ul .parent > a, #nav ul ul .parent:hover > a:hover, #nav ul ul li:hover ul .parent > a, #nav ul ul li:hover ul .parent > a:hover{background-image:url(../../images/arrow.png) !important;background-position:right !important;background-repeat:no-repeat !important;}
+    .carousel_caption {font-size: 10px;}
 }
 
 @media handheld, only screen and (max-width: 400px) {
    #orbitDemo { max-height: 180px !important; }
     #orbitDemo.orbit { max-height: 180px !important; }
+        .carousel_caption {font-size: 6px;}
 }
 
 #featured { 
@@ -745,7 +747,7 @@ span.pause.active {
     z-index: 1000;
     color: #fff;
 	text-align: center;
-	padding: 7px 0;
+	padding: 7px 0px;
     font-size: 13px;
     position: absolute;
     right: 0;
@@ -834,11 +836,11 @@ div.slider-nav span.left {
 
 .orbit-bullets li {
     float: left;
-    margin-left: 5px;
+    margin-left: 10px;
     cursor: pointer;
     color: #999;
     text-indent: -9999px;
-    background: url(orbit/bullets.jpg) no-repeat 4px 0;
+    background: url(orbit/bullets2.png) no-repeat 0px 0;
     width: 13px;
     height: 12px;
     overflow: hidden; }
@@ -851,7 +853,7 @@ div.slider-nav span.left {
 
 .orbit-bullets li.active {
     color: #222;
-    background-position: -8px 0; }
+    background-position: -12px 0; }
 
 .orbit-bullets li.active.has-thumb {
     background-position: 0 0;
