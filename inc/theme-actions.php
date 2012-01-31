@@ -151,7 +151,7 @@ function ifeature_link_rel() {
 function ifeature_sitename_register_content() {
 global $current_user;
 ?>
-<div class="container" style="">
+
 		<div class="row">
 		
 			<div class="seven columns">
@@ -178,7 +178,7 @@ global $current_user;
 			</div>	
 		</div><!--end row-->
 		
-	</div><!--end container-->
+
 
 
 <?php
@@ -191,7 +191,7 @@ global $current_user;
 */
 function ifeature_sitename_contact_content() {
 ?>
-<div class="container" style="">
+
 		<div class="row">
 		
 			<div class="seven columns">
@@ -212,7 +212,7 @@ function ifeature_sitename_contact_content() {
 			</div>	
 		</div><!--end row-->
 		
-	</div><!--end container-->
+	
 
 
 <?php
@@ -225,7 +225,7 @@ function ifeature_sitename_contact_content() {
 */
 function ifeature_description_icons_content() {
 ?>
-<div class="container" style="">
+
 		<div class="row">
 		
 			<div class="seven columns">
@@ -246,7 +246,7 @@ function ifeature_description_icons_content() {
 			</div>	
 		</div><!--end row-->
 		
-	</div><!--end container-->
+
 
 
 <?php
@@ -260,7 +260,7 @@ function ifeature_description_icons_content() {
 */
 function ifeature_header_standard_content() {
 ?>
-<div class="container" style="">
+
 		<div class="row">
 		
 			<div class="seven columns">
@@ -281,7 +281,7 @@ function ifeature_header_standard_content() {
 			</div>	
 		</div><!--end row-->
 		
-	</div><!--end container-->
+
 
 
 <?php
