@@ -260,8 +260,7 @@ function ifeature_description_icons_content() {
 */
 function ifeature_description_menu_content() {
 ?>
-
-		<div class="row">
+	<div class="row">
 		
 			<div class="five columns">
 				
@@ -269,10 +268,9 @@ function ifeature_description_menu_content() {
 				<?php synapse_header_site_description(); ?> 
 			<!-- End @Core header description hook -->
 			
-				
 			</div>	
 			
-			<div class="seven columns">
+		<div class="seven columns">
 			
 			<?php wp_nav_menu( array(
 		    'theme_location' => 'sub-menu' // Setting up the location for the main-menu, Main Navigation.
@@ -280,12 +278,10 @@ function ifeature_description_menu_content() {
 			);
 	    	?>
 									
-			</div>	
-		</div><!--end row-->
+		</div>	
 		
-
-
-
+	</div><!--end row-->
+		
 <?php
 }
 

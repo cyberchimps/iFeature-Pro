@@ -20,8 +20,8 @@
 */
 add_action ( 'synapse_footer', 'synapse_footer_widgets' );
 
-add_action ( 'synapse_secondary_footer', 'synapse_secondary_footer_copyright' );
 add_action ( 'synapse_secondary_footer', 'synapse_secondary_footer_menu' );
+add_action ( 'synapse_secondary_footer', 'synapse_secondary_footer_copyright' );
 add_action ( 'synapse_secondary_footer', 'synapse_secondary_footer_credit' );
 
 
