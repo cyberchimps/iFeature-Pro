@@ -15,37 +15,6 @@
 * @since 3.1
 */
 
-/* Full size image size based on theme options*/
-
-function full_size_image() {
-	global $options, $themeslug, $post;
-	
-	if (is_page()) {
-		$sidebar = get_post_meta($post->ID, 'page_sidebar' , true);
-		
-		if ($sidebar == '1' OR $sidebar == '4'){
-			$width = '608px';
-		}
-		
-		elseif ($sidebar == '2' OR $sidebar == '3'){
-			$width = '435px';
-		}
-		
-		elseif ($sidebar == '3'){
-			$width = '950px';
-		}
-	}
-	if (is_front_page()) {
-	
-	}
-		
-		echo '<style type="text/css">';
-		echo "img.size-full {max-width: $width;}";
-		echo '</style>';
-	
-}
-add_action( 'wp_head', 'full-size-image' );
-
 /* Widget Title Background*/
 
 function widget_title_background() {
