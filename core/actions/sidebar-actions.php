@@ -38,6 +38,9 @@ function synapse_sidebar_init_content() {
 	elseif (is_archive()) {
 	$sidebar = $options->get($themeslug.'_archive_sidebar');
 	}
+	elseif (is_404()) {
+	$sidebar = $options->get($themeslug.'_404_sidebar');
+	}
 	elseif (is_search()) {
 	$sidebar = $options->get($themeslug.'_search_sidebar');
 	}
