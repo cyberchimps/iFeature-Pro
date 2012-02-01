@@ -174,7 +174,7 @@ function synapse_callout_section_content() {
 
 ?>
 	<div class="row">
-	<div id="calloutwrap" class="twelve columns"><!--id="calloutwrap"-->
+	<div id="calloutwrap"><!--id="calloutwrap"-->
 
 	<div id="callout_text" class="<?php echo $grid; ?>">
 		<h2 class="callout_title" ><?php echo $callouttitle ?></h2>
@@ -182,8 +182,10 @@ function synapse_callout_section_content() {
 	</div>
 		
 <?php if ($image == '' && $hidebutton == 'on' OR $image == '' && $hidebutton == '1'): ?>
-	<div id="calloutbutton" class="three columns">
-		<a href="<?php echo $calloutlink ?>"><?php echo $calloutbuttontext ;?></a>
+	<div id="button_wrap" class="three columns">
+		<div id="calloutbutton" >
+			<h3 class="callout_link"><a href="<?php echo $calloutlink ?>"><?php echo $calloutbuttontext ;?></a></h3>
+		</div>
 	</div>
 <?php endif;?>
 
@@ -194,7 +196,9 @@ function synapse_callout_section_content() {
 <?php endif;?>
 
 </div><!--end calloutwrap-->
-</div><?php
+</div>
+
+<?php
 	
 }
 
