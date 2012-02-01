@@ -414,12 +414,12 @@ require_once ( get_template_directory() . '/core/pro/pro-init.php' );
 /**
 * Call additional files required by theme.
 */ 
-require_once ( get_template_directory() . '/inc/classy-options-init.php' ); // Theme options markup.
-require_once ( get_template_directory() . '/inc/options-functions.php' ); // Custom functions based on theme options.
-require_once ( get_template_directory() . '/inc/meta-box.php' ); // Meta options markup.
-require_once ( get_template_directory() . '/inc/update.php' ); // Notify user of theme update on "Updates" page in Dashboard.
-require_once ( get_template_directory() . '/inc/theme-hooks.php' ); // Theme specific hooks.
-require_once ( get_template_directory() . '/inc/theme-actions.php' ); // Actions for theme specific hooks.
+require_once ( get_template_directory() . '/includes/classy-options-init.php' ); // Theme options markup.
+require_once ( get_template_directory() . '/includes/options-functions.php' ); // Custom functions based on theme options.
+require_once ( get_template_directory() . '/includes/meta-box.php' ); // Meta options markup.
+require_once ( get_template_directory() . '/includes/update.php' ); // Notify user of theme update on "Updates" page in Dashboard.
+require_once ( get_template_directory() . '/includes/theme-hooks.php' ); // Theme specific hooks.
+require_once ( get_template_directory() . '/includes/theme-actions.php' ); // Actions for theme specific hooks.
 
 /**
 * End
