@@ -128,7 +128,6 @@
 	box-shadow:inset 0 0 2px #ccc;}
 
 #callout_text {
-
 	font-size: 14px;
 	margin-left: 0;
 	padding: 10px 15px 10px 15px;
@@ -141,16 +140,14 @@
 
 #calloutbutton {
 	padding: 10px 5px 10px 5px;
-	margin-top: 28px;
-	margin-right: 20px;
+
 	background: #333;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	color: #fff;
 	text-align: center;
 	position: relative;
-	width: 150px;
-	height: 30px;
+	
 }
 
 #calloutimg{
@@ -159,7 +156,7 @@
 	float:right;
 }
 
-.callout_link {position: absolute; text-align: center;}
+.callout_link {text-align: center;}
 
 #calloutbutton:hover{
 	background: #222;
