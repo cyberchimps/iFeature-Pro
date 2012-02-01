@@ -40,12 +40,12 @@ function synapse_loop_content($content) {
 		 $featured_images = $options->get($themeslug.'_single_show_featured_images');
 		 $excerpts = $options->get($themeslug.'_single_show_excerpts');
 	}
-	if (is_archive()) {
+	elseif (is_archive()) {
 		 $post_formats = $options->get($themeslug.'_archive_post_formats');
 		 $featured_images = $options->get($themeslug.'_archive_show_featured_images');
 		 $excerpts = $options->get($themeslug.'_archive_show_excerpts');
 	}
-	if (is_front_page()) {
+	else {
 		 $post_formats = $options->get($themeslug.'_post_formats');
 		 $featured_images = $options->get($themeslug.'_show_featured_images');
 		 $excerpts = $options->get($themeslug.'_show_excerpts');
@@ -108,10 +108,10 @@ function synapse_post_bar_content() {
 	if (is_single()) {
 		$hidden = $options->get($themeslug.'_single_hide_byline'); 
 	}
-	if (is_archive()) {
+	elseif (is_archive()) {
 		$hidden = $options->get($themeslug.'_archive_hide_byline'); 
 	}
-	if (is_front_page()) {
+	else {
 		$hidden = $options->get($themeslug.'_hide_byline'); 
 	}?>
 	
@@ -142,10 +142,10 @@ function synapse_post_byline_content() {
 	if (is_single()) {
 		$hidden = $options->get($themeslug.'_single_hide_byline'); 
 	}
-	if (is_archive()) {
+	elseif (is_archive()) {
 		$hidden = $options->get($themeslug.'_archive_hide_byline'); 
 	}
-	if (is_front_page()) {
+	else {
 		$hidden = $options->get($themeslug.'_hide_byline'); 
 	}?>
 	
@@ -175,10 +175,10 @@ function synapse_post_tags_content() {
 	if (is_single()) {
 		$hidden = $options->get($themeslug.'_single_hide_byline'); 
 	}
-	if (is_archive()) {
+	elseif (is_archive()) {
 		$hidden = $options->get($themeslug.'_archive_hide_byline'); 
 	}
-	if (is_front_page()) {
+	else {
 		$hidden = $options->get($themeslug.'_hide_byline'); 
 	}?>
 
@@ -202,11 +202,11 @@ function synapse_fb_like_plus_one_content() {
 		 $fb = $options->get($themeslug.'_single_show_fb_like');
 		 $gplus = $options->get($themeslug.'_single_show_gplus');
 	}
-	if (is_archive()) {
+	elseif (is_archive()) {
 		 $fb = $options->get($themeslug.'_archive_show_fb_like');
 		 $gplus = $options->get($themeslug.'_archive_show_gplus');
 	}
-	if (is_front_page()) {
+	else {
 		 $fb = $options->get($themeslug.'_show_fb_like');
 		 $gplus = $options->get($themeslug.'_show_gplus');
 	}?>
