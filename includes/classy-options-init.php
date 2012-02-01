@@ -121,7 +121,7 @@ $options
 		->subsection("iMenu Options")
 			->select($themeslug."_menu_font", "Choose a Menu Font", array( 'options' => array("Arial" => "Arial (default)", "Courier New" => "Courier New", "Georgia" => "Georgia", "Helvetica" => "Helvetica", "Lucida Grande" => "Lucida Grande", "Tahoma" => "Tahoma", "Times New Roman" => "Times New Roman", "Verdana" => "Verdana", "Actor" => "Actor", "Coda" => "Coda", "Maven+Pro" => "Maven Pro", "Metrophobic" => "Metrophobic", "News+Cycle" => "News Cycle", "Nobile" => "Nobile", "Tenor+Sans" => "Tenor Sans", "Quicksand" => "Quicksand", "Ubuntu" => "Ubuntu", 'custom' => "Custom")))
 			->text($themeslug."_custom_menu_font", "Enter a Custom Menu Font")
-			->checkbox($themeslug."_custom_menu_color_toggle", "Custom Menu Colors")
+			->checkbox($themeslug."_custom_menu_color_toggle", "Custom Menu Color Options")
 			->color($themeslug."_custom_menu_color", "Custom Menu Bar Color")
 			->color($themeslug."_menulink_color", "Custom Menu Text Color")
 			->color($themeslug."_custom_dropdown_color", "Custom Menu Dropdown Color")

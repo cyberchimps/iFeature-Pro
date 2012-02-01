@@ -174,4 +174,21 @@ jQuery(function($) {
 			});
 		});
 	}).trigger('change');
+	
+	$("input[name='ifeature[header_section_order]']").change(function(){
+		var show = $(this).val().split(",");
+		var map = {
+			ifeature_sitename_contact: "section-if_header_contact",
+			// , synapse_box_section: ""
+		};
+
+		$.each(map, function(key, value) {
+			$("#" + value).hide();
+			$.each(show, function(i, show_key) {
+				if(key == show_key)
+					$("#" + value).show();
+			});
+		});
+	}).trigger('change');
+
 });
