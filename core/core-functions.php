@@ -44,7 +44,7 @@ function synapse_scripts() {
 	$path =  get_template_directory_uri() ."/core/library";
 	
 	wp_register_script( 'foundation' ,$path.'/js/foundation.js');
-	wp_register_script( 'orbit' ,$path.'/js/jquery.orbit.min.js');
+	wp_register_script( 'orbit' ,$path.'/js/jquery.orbit.js');
 	wp_register_script( 'apps' ,$path.'/js/app.js');
 	wp_register_script( 'menu' ,$path.'/js/menu.js');
 	wp_register_script( 'plusone' ,$path.'/js/plusone.js');
