@@ -134,7 +134,7 @@ function synapse_callout_section_content() {
 /* Define Callout text. */	
 
 	if ($text == '') {
-		$callouttext = 'Cybersynapse gives you the tools to turn WordPress into a modern feature rich Content Management System (CMS)';
+		$callouttext = 'CyberChimps gives you the tools to turn WordPress into a modern feature rich Content Management System (CMS)';
 	}
 	else {
 		$callouttext = $text;
@@ -164,7 +164,7 @@ function synapse_callout_section_content() {
 /* Define Callout button link. */
 
 	if ($link == '') {
-		$calloutlink = 'http://cybersynapse.com';
+		$calloutlink = 'http://cyberchimps.com';
 	}
 	else {
 		$calloutlink = $link;
@@ -196,6 +196,7 @@ function synapse_callout_section_content() {
 <?php endif;?>
 
 </div><!--end calloutwrap-->
+
 </div>
 
 <?php
