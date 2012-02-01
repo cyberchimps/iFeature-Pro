@@ -37,17 +37,17 @@ add_action('after_setup_theme', 'synapse_text_domain');
 */ 
 function synapse_scripts() {
 	if ( !is_admin() ) {
-	   wp_enqueue_script('jquery');
-	    wp_enqueue_script('jquery-ui-tabs');
+	wp_enqueue_script('jquery');
+	wp_enqueue_script('jquery-ui-tabs');
 	}
 	
-	$path =  get_template_directory_uri() ."/core/library/";
+	$path =  get_template_directory_uri() ."/core/library";
 	
-	wp_register_script( 'apps' ,$path.'/js/foundation.js');
+	wp_register_script( 'foundation' ,$path.'/js/foundation.js');
 	wp_register_script( 'orbit' ,$path.'/js/jquery.orbit.min.js');
 	wp_register_script( 'apps' ,$path.'/js/app.js');
-	wp_register_script( 'menu' ,$path.'js/menu.js');
-	wp_register_script( 'plusone' ,$path.'js/plusone.js');
+	wp_register_script( 'menu' ,$path.'/js/menu.js');
+	wp_register_script( 'plusone' ,$path.'/js/plusone.js');
 	
 	wp_enqueue_script ('foundation');
 	wp_enqueue_script ('orbit');
