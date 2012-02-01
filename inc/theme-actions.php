@@ -153,6 +153,7 @@ function ifeature_sitename_register_content() {
 global $current_user;
 ?>
 
+	<div class="container">
 		<div class="row">
 		
 			<div class="seven columns">
@@ -178,9 +179,7 @@ global $current_user;
 				
 			</div>	
 		</div><!--end row-->
-		
-
-
+	</div>
 
 <?php
 }
@@ -192,7 +191,7 @@ global $current_user;
 */
 function ifeature_sitename_contact_content() {
 ?>
-
+	<div class="container">
 		<div class="row">
 		
 			<div class="seven columns">
@@ -212,10 +211,8 @@ function ifeature_sitename_contact_content() {
 						
 			</div>	
 		</div><!--end row-->
-		
+	</div>
 	
-
-
 <?php
 }
 
@@ -226,7 +223,7 @@ function ifeature_sitename_contact_content() {
 */
 function ifeature_description_icons_content() {
 ?>
-
+	<div class="container">
 		<div class="row">
 		
 			<div class="seven columns">
@@ -246,9 +243,7 @@ function ifeature_description_icons_content() {
 						
 			</div>	
 		</div><!--end row-->
-		
-
-
+	</div>	
 
 <?php
 }
@@ -260,8 +255,10 @@ function ifeature_description_icons_content() {
 */
 function ifeature_description_menu_content() {
 ?>
-	<div class="row">
-		
+	
+	<div class="container">
+		<div class="row">	
+			
 			<div class="five columns">
 				
 			<!-- Begin @Core header description hook -->
@@ -270,7 +267,7 @@ function ifeature_description_menu_content() {
 			
 			</div>	
 			
-		<div class="seven columns">
+			<div class="seven columns">
 			
 			<?php wp_nav_menu( array(
 		    'theme_location' => 'sub-menu' // Setting up the location for the main-menu, Main Navigation.
@@ -278,10 +275,10 @@ function ifeature_description_menu_content() {
 			);
 	    	?>
 									
-		</div>	
+			</div>	
 		
-	</div><!--end row-->
-		
+		</div><!--end row-->
+	</div>
 <?php
 }
 
@@ -294,7 +291,7 @@ function ifeature_description_menu_content() {
 */
 function ifeature_header_standard_content() {
 ?>
-
+	<div class="container">
 		<div class="row">
 		
 			<div class="seven columns">
@@ -314,9 +311,7 @@ function ifeature_header_standard_content() {
 				
 			</div>	
 		</div><!--end row-->
-		
-
-
+	</div>
 
 <?php
 }
