@@ -48,7 +48,7 @@ function synapse_callout_section_content() {
 		$customcalloutbgcolor = get_post_meta($post->ID, 'custom_callout_color' , true);
 	}
 	
-	if (is_front_page()) {
+	else {
 		$calloutbgcolor = $options->get($themeslug.'_blog_callout_bg_color');
 		$bcolor = $options->get($themeslug.'_blog_callout_button_color');
 		$btcolor = $options->get($themeslug.'_blog_callout_button_text_color');

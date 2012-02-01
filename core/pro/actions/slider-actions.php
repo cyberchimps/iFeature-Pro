@@ -38,7 +38,22 @@ function synapse_slider_content() {
     $tmp_query = $wp_query; 
 	$root = get_template_directory_uri(); 
 	
-	if (is_front_page()) {
+	if (is_page()) {
+		$size = get_post_meta($post->ID, 'page_slider_size' , true);
+		$size2 = get_post_meta($post->ID, 'page_sidebar' , true);
+		$type = get_post_meta($post->ID, 'page_slider_type' , true);
+		$category = get_post_meta($post->ID, 'slider_blog_category' , true);
+		$postnumber  = get_post_meta($post->ID, 'slider_blog_posts_number' , true);
+		$sliderheight = get_post_meta($post->ID, 'slider_height' , true);
+		$sliderdelay = get_post_meta($post->ID, 'slider_delay' , true);
+		$slideranimation = get_post_meta($post->ID, 'page_slider_animation' , true);
+		$captionstyle = get_post_meta($post->ID, 'page_slider_caption_style' , true);
+		$navigationstyle = get_post_meta($post->ID, 'page_slider_navigation_style' , true);
+		$hidenav = get_post_meta($post->ID, 'hide_arrows' , true);
+		$wordenable = get_post_meta($post->ID, 'enable_wordthumb' , true);	
+	}
+	
+	else {
 		$size = $options->get($themeslug.'_slider_size');
 		$size2 = $options->get($themeslug.'_blog_sidebar');
 		$type = $options->get($themeslug.'_slider_type'); 
@@ -54,20 +69,7 @@ function synapse_slider_content() {
 		$navigationstyle = $options->get($themeslug.'_slider_nav');
 		
 	}
-	if (is_page()) {
-		$size = get_post_meta($post->ID, 'page_slider_size' , true);
-		$size2 = get_post_meta($post->ID, 'page_sidebar' , true);
-		$type = get_post_meta($post->ID, 'page_slider_type' , true);
-		$category = get_post_meta($post->ID, 'slider_blog_category' , true);
-		$postnumber  = get_post_meta($post->ID, 'slider_blog_posts_number' , true);
-		$sliderheight = get_post_meta($post->ID, 'slider_height' , true);
-		$sliderdelay = get_post_meta($post->ID, 'slider_delay' , true);
-		$slideranimation = get_post_meta($post->ID, 'page_slider_animation' , true);
-		$captionstyle = get_post_meta($post->ID, 'page_slider_caption_style' , true);
-		$navigationstyle = get_post_meta($post->ID, 'page_slider_navigation_style' , true);
-		$hidenav = get_post_meta($post->ID, 'hide_arrows' , true);
-		$wordenable = get_post_meta($post->ID, 'enable_wordthumb' , true);	
-	}
+
 	
 /* Row div variable. */	
 if ($size == 'key2' OR $size == '0' ) {
