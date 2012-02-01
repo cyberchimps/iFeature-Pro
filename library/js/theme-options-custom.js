@@ -36,36 +36,12 @@ jQuery(document).ready(function($) {
       toShow.hide();
     }
   }).change();
-  $("#if_hide_slider_blog").change(function() {
-    var toShow = $("#section-if_hide_slider_blog").siblings();
-    if($(this).is(':checked')) {
-      toShow.show();
-    } else {
-      toShow.hide();
-    }
-  }).change();
     $("#if_disable_footer").change(function() {
     var toShow = $("#section-if_footer_text, #section-if_hide_link");
     if($(this).is(':checked')) {
       toShow.fadeIn();
     } else {
       toShow.fadeOut();
-    }
-   }).change();
-    $("#if_show_carousel").change(function() {
-    var toShow = $("#section-if_carousel_category");
-    if($(this).is(':checked')) {
-      toShow.fadeIn();
-    } else {
-      toShow.hide();
-    }
-  }).change();
-      $("#if_enable_header_contact").change(function() {
-    var toShow = $("#section-if_header_contact");
-    if($(this).is(':checked')) {
-      toShow.show();
-    } else {
-      toShow.hide();
     }
   }).change();
       $("#if_custom_background").change(function() {
