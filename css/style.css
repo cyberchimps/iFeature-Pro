@@ -200,9 +200,9 @@ header {margin-top: 15px;}
 
 .tags {margin-bottom: 15px;font-size: 12px;}
 
-#fb {width: 440px;}
+#fb {width: 440px; margin-bottom: 5px;}
 
-.gplusone {margin-bottom: 6px;}
+.gplusone {margin-bottom: 10px;}
 
 .post-edit-link {background-color: #757575;padding: 2px 3px;color: white;font-size: 10px;border-radius: 3px;-moz-border-radius: 3px;}
 
