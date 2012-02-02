@@ -65,7 +65,7 @@ class iFeature_Tabbed_Widget extends WP_Widget {
 
 					?>
 						<li>
-							<div class="image">
+							<div class="tab-image" style="float: left">
 								<a href="<?php the_permalink() ?>"><?php the_post_thumbnail("ifeature-tabbed") ?>
 							</div>
 
@@ -92,7 +92,7 @@ class iFeature_Tabbed_Widget extends WP_Widget {
 
 					?>
 						<li>
-							<div class="image">
+							<div class="tab-image" >
 								<a href="<?php the_permalink() ?>"><?php the_post_thumbnail("ifeature-tabbed") ?>
 							</div>
 

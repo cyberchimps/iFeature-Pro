@@ -261,7 +261,7 @@
 
 .ifeature-tabbed-header li {
 	float: left;
-	
+	padding: 10px;
 }
 
 .ifeature-tabbed-tab {
@@ -279,6 +279,8 @@
 .ifeature-tabbed-header {
 
 }
+
+.tab-image {float: left;}
 
 .ui-state-default {
 	background: #f4f4f4;
