@@ -69,7 +69,7 @@ function synapse_index_content() {
 					<?php synapse_post_tags(); ?>
 				<!--End @Core post tags hook-->
 				
-				<?php if (is_single()) : ?>
+				<?php if (is_single() && $options->get($themeslug.'_post_pagination') == "1") : ?>
 				<!--Begin @Core post pagination hook-->
 					<?php synapse_post_pagination(); ?>
 				<!--End @Core post pagination hook-->			
