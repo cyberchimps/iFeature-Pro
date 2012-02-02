@@ -43,8 +43,7 @@
 }
 .es-carousel{
 	overflow:hidden;
-	background:#000;
-
+	background:#fff;
 }
 .es-carousel ul{
 	display:none;
