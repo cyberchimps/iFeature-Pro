@@ -26,7 +26,7 @@ add_action( 'ifeature_sitename_contact', 'ifeature_sitename_contact_content');
 add_action( 'ifeature_description_icons', 'ifeature_description_icons_content');
 add_action( 'ifeature_logo_menu', 'ifeature_logo_menu_content');
 add_action( 'ifeature_logo_description', 'ifeature_logo_description_content');
-add_action( 'ifeature_logo_full', 'ifeature_logo_full_content');
+add_action( 'ifeature_banner', 'ifeature_banner_content');
 
 remove_action( 'synapse_head_tag', 'synapse_link_rel' );
 add_action( 'synapse_head_tag', 'ifeature_link_rel' );
@@ -223,17 +223,16 @@ function ifeature_sitename_contact_content() {
 *
 * @since 3.0
 */
-function ifeature_logo_full_content() {
+function ifeature_banner_content() {
+global $themeslug, $options; //Call global variables
+$banner = $options->get($themeslug.'_banner'); //Calls the logo URL from the theme options
 ?>
 	<div class="container">
 		<div class="row">
 		
 			<div class="twelve columns">
 				
-			<!-- Begin @Core header sitename hook -->
-					<?php synapse_header_sitename(); ?> 
-			<!-- End @Core header sitename hook -->
-			
+			<a href="<?php echo home_url(); ?>/"><img src="<?php echo stripslashes($banner['url']); ?>" alt="logo"></a>			
 				
 			</div>	
 		</div><!--end row-->

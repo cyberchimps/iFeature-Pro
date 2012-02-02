@@ -54,6 +54,6 @@ function ifeature_logo_description() {
 	do_action('ifeature_logo_description');
 }
 
-function ifeature_logo_full() {
-	do_action('ifeature_logo_full');
+function ifeature_banner() {
+	do_action('ifeature_banner');
 }
