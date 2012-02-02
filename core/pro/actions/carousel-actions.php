@@ -78,10 +78,15 @@ query_posts( array ('post_type' => $themeslug.'_featured_posts', 'showposts' => 
 	    	/* Post-specific variables */	
 
 	    	$image 		= get_post_meta($post->ID, 'post_image' , true);  
-	    	$title 		= get_the_title();  
+	    	$realtitle 		= get_the_title();  
 	    	$link 		= get_post_meta($post->ID, 'post_url' , true);
-	
-
+	    	
+	    	if ($realtitle != "Untitled") {
+				$title = get_the_title();
+			}
+			else {
+				$$title =  '';
+			}
 			/* End variables */	
 
 	     	/* Markup for carousel */
@@ -105,33 +110,42 @@ query_posts( array ('post_type' => $themeslug.'_featured_posts', 'showposts' => 
 	      	
 	      	else:
 	      
-	      	$out .= "	<div class='carousel'>
+	      	$out .= "	
 	    <ul>
 	      			<li>
 	      				
-	    				<img src='$default' alt='Post 1' class='captify'/>
+	    				<img src='$default' alt='Post 1'/>
 	    				
 	    			</li>
 					<li>
-	    				<img src='$default' alt='Post 2' class='captify'/>
+	    				<img src='$default' alt='Post 2' />
 	    			</li>
 					<li>
-	    				<img src='$default' alt='Post 3' class='captify'/>
+	    				<img src='$default' alt='Post 3' />
 	    			</li>
 					<li>
-	    				<img src='$default' alt='Post 4' class='captify'/>
+	    				<img src='$default' alt='Post 4' />
 	    			</li>
 					<li>
-	    				<img src='$default' alt='Post 5' class='captify'/>
+	    				<img src='$default' alt='Post 5' />
 	    			</li>
 	    			
 	    			<li>
-	    				<img src='$default' alt='Post 6' class='captify'/>
+	    				<img src='$default' alt='Post 6' />
 	    			</li>
+	    			
+	    			<li>
+	    				<img src='$default' alt='Post 6' />
+	    			</li>
+
+					<li>
+	    				<img src='$default' alt='Post 6' />
+	    			</li>
+
 
 	      				
 	    			</ul>
-	    				</div>		
+	    				
 	    				
 	    			";
      

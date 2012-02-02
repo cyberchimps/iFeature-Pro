@@ -605,7 +605,7 @@
 @media handheld, only screen and (max-width: 400px) {
    #orbitDemo { max-height: 180px !important; }
     #orbitDemo.orbit { max-height: 180px !important; }
-        .carousel_caption {font-size: 6px;}
+    
 }
 
 /* CONTAINER
