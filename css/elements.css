@@ -263,8 +263,12 @@
 	float: left;
 }
 
-.ifeature-tabbed-popular-posts li {
+.ifeature-tabbed-popular-posts li, .ifeature-tabbed-recent-posts li {
 	padding: 10px;
+}
+
+.ifeature-tabbed-comments li {
+	padding: 15px;
 }
 
 .ifeature-tabbed-tab {
