@@ -176,9 +176,11 @@ else {
 
 	if ($size == 'key2' OR $size == '0' ) {
 	  	$csWidth = '980';
+	  	$imgwidth = '980';
 	}		
 	elseif ($size2 == 'right-left' && $size != 'key2' OR $size2 == 'two-right' && $size != 'key2' OR $size2 == '1' && $size != '0' OR $size2 == '2' && $size != '0') {
 		$csWidth = '470';
+		$imgwidth = '470';
 	}  	
 	else {
 		$csWidth = '640';
@@ -350,7 +352,7 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 
 /* Define slider navigation variable */ 
   	
-	if ($navigationstyle == 'key1' OR $navigationstyle == '0'  OR $navigationstyle == '1') {
+	if ($navigationstyle == 'key1' OR $navigationstyle == '0'  OR $navigationstyle == '1' OR $navigationstyle == '') {
 	    $dots = 'true';
 	}
 	else {
