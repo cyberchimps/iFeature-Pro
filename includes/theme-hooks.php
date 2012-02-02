@@ -46,6 +46,10 @@ function ifeature_description_icons() {
 	do_action('ifeature_description_icons');
 }
 
-function ifeature_description_menu() {
-	do_action('ifeature_description_menu');
+function ifeature_logo_menu() {
+	do_action('ifeature_logo_menu');
+}
+
+function ifeature_logo_description() {
+	do_action('ifeature_logo_description');
 }
