@@ -602,25 +602,11 @@
     div.foundation-header h1 { font-size: 32px; font-size: 3.2rem; }
 }
 
-
-
 @media handheld, only screen and (max-width: 400px) {
    #orbitDemo { max-height: 180px !important; }
     #orbitDemo.orbit { max-height: 180px !important; }
         .carousel_caption {font-size: 6px;}
 }
-
-#featured { 
-	width: 1px;
-	height: 340px;
-	background: #000 url('orbit/loading.gif') no-repeat center center;
-	overflow: hidden; }
-#featured>img,  
-#featured>div,
-#featured>a { display: none; }
-
-
-
 
 /* CONTAINER
    ================================================== */
