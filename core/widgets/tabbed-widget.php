@@ -65,8 +65,8 @@ class iFeature_Tabbed_Widget extends WP_Widget {
 							</div>
 
 							<div class="details">
-								<h5><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h5>
-								<span class="date">
+								<h5 class="tabbed-title"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h5>
+								<span class="tabbed-date">
 									<?php the_time(get_option('date_format')) ?>,
 									<?php comments_popup_link(__('No comments', 'ifeature'), __('1 Comment', 'ifeature'), __('% Comments', 'ifeature')); ?>
 								</span>
