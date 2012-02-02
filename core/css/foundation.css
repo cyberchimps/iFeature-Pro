@@ -597,21 +597,9 @@
 
 @media handheld, only screen and (max-width: 767px) {
 
-	#box1, #box2 {margin-right: 0px !important;} 
-
     dl.nice.tabs.mobile { margin-bottom: 0px; }
     .nice.tabs.mobile dd a { padding: 12px 20px; }
-    
     div.foundation-header h1 { font-size: 32px; font-size: 3.2rem; }
-    
-    .searchform {display: none;}
-    
-    #nav ul ul li:hover ul, #nav ul ul ul li:hover ul {margin: 0px !important;}
-    
-    #nav ul ul .parent > a, #nav ul ul .parent:hover > a:hover, #nav ul ul li:hover ul .parent > a, #nav ul ul li:hover ul .parent > a:hover{background-image:url(../../images/arrow.png) !important;background-position:right !important;background-repeat:no-repeat !important;}
-    .carousel_caption {font-size: 10px;}
-    .callout_title {text-align: center;}
-    #calloutbutton {width: 200px; margin: auto; margin-bottom: 30px;}
 }
 
 
