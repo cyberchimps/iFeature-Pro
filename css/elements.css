@@ -268,7 +268,7 @@
 }
 
 .ifeature-tabbed-comments li {
-	padding: 15px;
+	padding: 10px 10px 25px 10px;
 }
 
 .ifeature-tabbed-tab {
@@ -287,7 +287,7 @@
 
 }
 
-.tab-image {float: left; margin-right: 5px;}
+.tab-image {float: left; margin-right: 10px; border: 2px solid #444;}
 
 .ui-state-default {
 	background: #f4f4f4;
@@ -301,6 +301,11 @@
 	border-bottom: none;
 }
 
+#tab-4 {padding: 10px;}
+
+#tab-4 a {
+	padding: 3px 8px; background: #f4f4f4; font-size: 12px; margin: 0 4px 4px 0; border-radius: 3px;
+}
 .tabbed-title {font-size: 15px;}
 
 .tabbed-date {font-size: 12px; font-style: italic;}
