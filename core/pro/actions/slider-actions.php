@@ -380,7 +380,7 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 
 <!-- End style -->
 
-<?php if ($navigationstyle == 'key3' OR $navigationstyle == '0') :?>
+<?php if ($navigationstyle == 'key3' OR $navigationstyle == '2') :?>
 	<style type="text/css" media="screen">
 		.slider_nav {display: none;}
 		#orbitDemo {margin-bottom: 0px;}
