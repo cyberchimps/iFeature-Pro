@@ -87,6 +87,10 @@ query_posts( array ('post_type' => $themeslug.'_featured_posts', 'showposts' => 
 			else {
 				$$title =  '';
 			}
+			
+			if ($image == '') {
+				$image = $default;
+			}
 			/* End variables */	
 
 	     	/* Markup for carousel */
