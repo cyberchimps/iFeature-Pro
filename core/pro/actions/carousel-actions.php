@@ -105,33 +105,42 @@ query_posts( array ('post_type' => $themeslug.'_featured_posts', 'showposts' => 
 	      	
 	      	else:
 	      
-	      	$out .= "	<div class='carousel'>
+	      	$out .= "	
 	    <ul>
 	      			<li>
 	      				
-	    				<img src='$default' alt='Post 1' class='captify'/>
+	    				<img src='$default' alt='Post 1'/>
 	    				
 	    			</li>
 					<li>
-	    				<img src='$default' alt='Post 2' class='captify'/>
+	    				<img src='$default' alt='Post 2' />
 	    			</li>
 					<li>
-	    				<img src='$default' alt='Post 3' class='captify'/>
+	    				<img src='$default' alt='Post 3' />
 	    			</li>
 					<li>
-	    				<img src='$default' alt='Post 4' class='captify'/>
+	    				<img src='$default' alt='Post 4' />
 	    			</li>
 					<li>
-	    				<img src='$default' alt='Post 5' class='captify'/>
+	    				<img src='$default' alt='Post 5' />
 	    			</li>
 	    			
 	    			<li>
-	    				<img src='$default' alt='Post 6' class='captify'/>
+	    				<img src='$default' alt='Post 6' />
 	    			</li>
+	    			
+	    			<li>
+	    				<img src='$default' alt='Post 6' />
+	    			</li>
+
+					<li>
+	    				<img src='$default' alt='Post 6' />
+	    			</li>
+
 
 	      				
 	    			</ul>
-	    				</div>		
+	    				
 	    				
 	    			";
      
