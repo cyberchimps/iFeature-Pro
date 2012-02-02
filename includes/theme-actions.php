@@ -231,9 +231,9 @@ $banner = $options->get($themeslug.'_banner'); //Calls the logo URL from the the
 		<div class="row">
 		
 			<div class="twelve columns">
-				
-			<a href="<?php echo home_url(); ?>/"><img src="<?php echo stripslashes($banner['url']); ?>" alt="logo"></a>			
-				
+			<div id="banner">
+				<a href="<?php echo home_url(); ?>/"><img src="<?php echo stripslashes($banner['url']); ?>" alt="logo"></a>			
+			</div>		
 			</div>	
 		</div><!--end row-->
 	</div>	
