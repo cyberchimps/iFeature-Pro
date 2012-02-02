@@ -53,3 +53,7 @@ function ifeature_logo_menu() {
 function ifeature_logo_description() {
 	do_action('ifeature_logo_description');
 }
+
+function ifeature_logo_full() {
+	do_action('ifeature_logo_full');
+}

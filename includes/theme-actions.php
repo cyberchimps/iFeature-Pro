@@ -26,6 +26,7 @@ add_action( 'ifeature_sitename_contact', 'ifeature_sitename_contact_content');
 add_action( 'ifeature_description_icons', 'ifeature_description_icons_content');
 add_action( 'ifeature_logo_menu', 'ifeature_logo_menu_content');
 add_action( 'ifeature_logo_description', 'ifeature_logo_description_content');
+add_action( 'ifeature_logo_full', 'ifeature_logo_full_content');
 
 remove_action( 'synapse_head_tag', 'synapse_link_rel' );
 add_action( 'synapse_head_tag', 'ifeature_link_rel' );
@@ -214,6 +215,30 @@ function ifeature_sitename_contact_content() {
 		</div><!--end row-->
 	</div>
 	
+<?php
+}
+
+/**
+* Full-Width Logo
+*
+* @since 3.0
+*/
+function ifeature_logo_full_content() {
+?>
+	<div class="container">
+		<div class="row">
+		
+			<div class="twelve columns">
+				
+			<!-- Begin @Core header sitename hook -->
+					<?php synapse_header_sitename(); ?> 
+			<!-- End @Core header sitename hook -->
+			
+				
+			</div>	
+		</div><!--end row-->
+	</div>	
+
 <?php
 }
 
