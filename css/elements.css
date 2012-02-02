@@ -261,6 +261,9 @@
 
 .ifeature-tabbed-header li {
 	float: left;
+}
+
+.ifeature-tabbed-popular-posts li {
 	padding: 10px;
 }
 
