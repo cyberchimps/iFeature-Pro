@@ -268,7 +268,7 @@ function ifeature_description_menu_content() {
 			</div>	
 			
 			<div class="seven columns">
-			<div id="halfnav" class="<?php echo $grid; ?>">
+			<div id="halfnav">
 			<?php wp_nav_menu( array(
 		    'theme_location' => 'sub-menu' // Setting up the location for the main-menu, Main Navigation.
 			    )
