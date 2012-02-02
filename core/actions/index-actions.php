@@ -68,6 +68,12 @@ function synapse_index_content() {
 				<!--Begin @Core post tags hook-->
 					<?php synapse_post_tags(); ?>
 				<!--End @Core post tags hook-->
+				
+				<?php if (is_single()) : ?>
+				<!--Begin @Core post pagination hook-->
+					<?php synapse_post_pagination(); ?>
+				<!--End @Core post pagination hook-->			
+				<?php endif;?>
 			
 				</div><!--end post_class-->
 			</div><!--end post container-->
