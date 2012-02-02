@@ -595,35 +595,6 @@
 #orbitDemo img, #orbitDemo div { display: none; }
 #orbitDemo.orbit img, #orbitDemo.orbit div { display: block;}
 
-@media handheld, only screen and (max-width: 767px) {
-
-    #orbitDemo { height: 165px; }
-    #orbitDemo.orbit { height: auto; }
-
-    dl.nice.tabs.mobile { margin-bottom: 0px; }
-    .nice.tabs.mobile dd a { padding: 12px 20px; }
-    
-    div.foundation-header h1 { font-size: 32px; font-size: 3.2rem; }
-    
-    .searchform, #home {display: none;}
-    
-    #nav ul ul li:hover ul, #nav ul ul ul li:hover ul {margin: 0px !important;}
-    
-    #nav ul ul .parent > a, #nav ul ul .parent:hover > a:hover, #nav ul ul li:hover ul .parent > a, #nav ul ul li:hover ul .parent > a:hover{background-image:url(../../images/arrow.png) !important;background-position:right !important;background-repeat:no-repeat !important;}
-}
-
-#featured { 
-	width: 1px;
-	height: 340px;
-	background: #000 url('orbit/loading.gif') no-repeat center center;
-	overflow: hidden; }
-#featured>img,  
-#featured>div,
-#featured>a { display: none; }
-
-
-
-
 /* CONTAINER
    ================================================== */
 
@@ -741,7 +712,7 @@ span.pause.active {
     z-index: 1000;
     color: #fff;
 	text-align: center;
-	padding: 7px 0;
+	padding: 7px 0px;
     font-size: 13px;
     position: absolute;
     right: 0;
@@ -824,18 +795,17 @@ div.slider-nav span.left {
     position: absolute;
     z-index: 1000;
     list-style: none;
-    bottom: -50px;
     left: 50%;
 	margin-left: -50px;
     padding: 0; }
 
 .orbit-bullets li {
     float: left;
-    margin-left: 5px;
+    margin-left: 10px;
     cursor: pointer;
     color: #999;
     text-indent: -9999px;
-    background: url(orbit/bullets.jpg) no-repeat 4px 0;
+    background: url(orbit/bullets2.png) no-repeat 0px 0;
     width: 13px;
     height: 12px;
     overflow: hidden; }
@@ -848,12 +818,13 @@ div.slider-nav span.left {
 
 .orbit-bullets li.active {
     color: #222;
-    background-position: -8px 0; }
+    background-position: -12px 0; }
 
 .orbit-bullets li.active.has-thumb {
     background-position: 0 0;
     border: 2px solid #000; }
-/*	--------------------------------------------------
+    
+    /*	--------------------------------------------------
 	Reveal Modals
 	-------------------------------------------------- */
 		
