@@ -261,20 +261,20 @@ function ifeature_description_menu_content() {
 			
 			<div class="five columns">
 				
-			<!-- Begin @Core header description hook -->
-				<?php synapse_header_site_description(); ?> 
-			<!-- End @Core header description hook -->
+				<!-- Begin @Core header sitename hook -->
+					<?php synapse_header_sitename(); ?> 
+				<!-- End @Core header sitename hook -->
 			
 			</div>	
 			
 			<div class="seven columns">
-			
+			<div id="halfnav" class="<?php echo $grid; ?>">
 			<?php wp_nav_menu( array(
 		    'theme_location' => 'sub-menu' // Setting up the location for the main-menu, Main Navigation.
 			    )
 			);
 	    	?>
-									
+			</div>					
 			</div>	
 		
 		</div><!--end row-->
