@@ -56,7 +56,7 @@
 .es-carousel ul li a{
 	display:block;
 	border-style:solid;
-	border-color:#222;
+	border-color:#ccc;
 }
 .es-carousel ul li a img{
 	display:block;
@@ -84,7 +84,7 @@
 .es-nav span:hover{
 	opacity:1.0;
 }
-.carousel_caption {text-align: center; margin-top: -25px; background: rgba(0, 0, 0, .6); color: white; width: 100%; position: relative; }
+.carousel_caption {text-align: center; margin-top: -21px; background: rgba(0, 0, 0, .6); color: white; width: 100%; position: relative; }
 /*============================*/
 /*======= Twitter Bar ========*/
 /*============================*/
@@ -173,7 +173,7 @@
 }
 
 /*============================*/
-/*====== Wigitized Boxes =====*/
+/*====== Widgitized Boxes =====*/
 /*============================*/
 
 #box_container {
@@ -253,3 +253,42 @@
 }
 
 .boxes ul { padding-left: 15px; }
+
+/*============================*/
+/*====== Tabbed Widgit =====*/
+/*============================*/
+
+/* Tabs */
+
+.ifeature-tabbed-header li {
+	float: left;
+	
+}
+
+.ifeature-tabbed-tab {
+	clear: both;
+}
+
+.ui-tabs-hide {
+	display: none;
+}
+
+.ifeature-tabbed-widget {
+	margin: 10px 0 0 0;
+}
+
+.ifeature-tabbed-header {
+
+}
+
+.ui-state-default {
+	background: #f4f4f4;
+	border-bottom: 1px solid #d9d9d9;
+	border-left: 1px solid #d9d9d9;
+	border-right: 1px solid #d9d9d9;
+}
+
+.ui-state-active {
+	background: #fff;
+	border-bottom: none;
+}

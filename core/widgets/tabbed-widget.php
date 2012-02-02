@@ -48,7 +48,7 @@ class iFeature_Tabbed_Widget extends WP_Widget {
 		
 
 ?>
-<div class="ifeature-tabbed-widget widget-container">
+<div class="ifeature-tabbed-widget">
 	<div class="ifeature-tabbed-wrap">
 		<ul class="ifeature-tabbed-header">
 			<li class="first"><a href="#tab-1"><?php echo $instance['tab1'] ?></a></li>
