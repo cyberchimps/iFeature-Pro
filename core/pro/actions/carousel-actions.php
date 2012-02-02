@@ -78,10 +78,15 @@ query_posts( array ('post_type' => $themeslug.'_featured_posts', 'showposts' => 
 	    	/* Post-specific variables */	
 
 	    	$image 		= get_post_meta($post->ID, 'post_image' , true);  
-	    	$title 		= get_the_title();  
+	    	$realtitle 		= get_the_title();  
 	    	$link 		= get_post_meta($post->ID, 'post_url' , true);
-	
-
+	    	
+	    	if ($realtitle != "Untitled") {
+				$title = get_the_title();
+			}
+			else {
+				$$title =  '';
+			}
 			/* End variables */	
 
 	     	/* Markup for carousel */
