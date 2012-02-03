@@ -177,14 +177,17 @@ else {
 	if ($size == 'key2' OR $size == '0' ) {
 	  	$csWidth = '980';
 	  	$imgwidth = '980';
+	  	$defaultimage = "$root/images/pro/slider-980.jpg";
 	}		
 	elseif ($size2 == 'right-left' && $size != 'key2' OR $size2 == 'two-right' && $size != 'key2' OR $size2 == '1' && $size != '0' OR $size2 == '2' && $size != '0') {
 		$csWidth = '470';
 		$imgwidth = '470';
+		$defaultimage = "$root/images/pro/slider-470.jpg";
 	}  	
 	else {
 		$csWidth = '640';
 		$imgwidth = '760';
+		$defaultimage = "$root/images/pro/slider-640.jpg";
 	}
 
 /* End slider width variable */ 
@@ -301,11 +304,18 @@ else {
 	    		$image = $customsized;
 	    		$thumbnail = "$root/images/pro/sliderthumb.jpg";
 	    	}  	
-	    	elseif ($customimage == '' && $wordenable != '1' OR $customimage == '' && $size == "0" && $wordenable != 'on'){ // No custom image, no custom thumb, full-width slider, WordThumb enabled. 
+	    	elseif ($customimage == '' && $wordenable != '1' OR $customimage == '' && $wordenable != 'on'){ // No custom image, no custom thumb, full-width slider, WordThumb enabled. 
 
-	    		$image = "$root/images/pro/slider-640.jpg";
+	    		$image = $defaultimage;
 	    		$thumbnail = "$root/images/pro/sliderthumb.jpg";
 	    	}
+	    	
+	    	elseif ($customimage == '' && $wordenable == '1' OR $customimage == '' && $wordenable == 'on'){ // No custom image, no custom thumb, full-width slider, WordThumb enabled. 
+
+	    		$image = $defaultimage;
+	    		$thumbnail = "$root/images/pro/sliderthumb.jpg";
+	    	}
+
 
 		    /* End image/thumb */	
 
