@@ -4,8 +4,6 @@ a {color: #0085CF;}
 
 a:hover {color: #5ca9d6;}
 
-
-
 #imenu {
 	background: #0085cf; /* Old browsers */
 	background: -moz-linear-gradient(top,  #6cafd8 0%, #2593ce 44%, #0085cf 100%); /* FF3.6+ */
@@ -58,4 +56,4 @@ a:hover {color: #5ca9d6;}
 	border-radius: 4px;
 }
 #halfnav ul li a:hover{	border: 1px solid #222;box-shadow:inner 0 0 5px #000;-moz-box-shadow:inset 0 0 5px #000;-webkit-box-shadow:inset 0 0 5px#000;background:#444}
-#halfnav .current-menu-item a{	border: 1px solid #222;box-shadow:inner 0 0 5px #000;-moz-box-shadow:inset 0 0 5px #000;-webkit-box-shadow:inset 0 0 5px#000;background:#444}
+#halfnav .current-menu-item a{border: 1px solid #222;}
