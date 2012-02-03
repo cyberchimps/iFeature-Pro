@@ -159,7 +159,7 @@
 	float:right;
 }
 
-.callout_link {text-align: center;}
+.callout_link {text-align: center; margin-bottom: 0px;}
 
 #calloutbutton:hover{
 	background: #222;
@@ -261,7 +261,14 @@
 
 .ifeature-tabbed-header li {
 	float: left;
-	
+}
+
+.ifeature-tabbed-popular-posts li, .ifeature-tabbed-recent-posts li {
+	padding: 10px;
+}
+
+.ifeature-tabbed-comments li {
+	padding: 10px 10px 25px 10px;
 }
 
 .ifeature-tabbed-tab {
@@ -280,14 +287,30 @@
 
 }
 
+.tab-image {float: left; margin-right: 10px; border: 2px solid #444; }
+
 .ui-state-default {
 	background: #f4f4f4;
 	border-bottom: 1px solid #d9d9d9;
 	border-left: 1px solid #d9d9d9;
 	border-right: 1px solid #d9d9d9;
+
+}
+
+li.ui-state-default  {
+	margin-left: 0px; padding-left: 5px; padding-right: 5px;
 }
 
 .ui-state-active {
 	background: #fff;
 	border-bottom: none;
 }
+
+#tab-4 {padding: 10px;}
+
+#tab-4 a {
+	padding: 3px 8px; background: #f4f4f4; font-size: 12px; margin: 0 4px 4px 0; border-radius: 3px;
+}
+.tabbed-title {font-size: 15px;}
+
+.tabbed-date {font-size: 12px; font-style: italic;}

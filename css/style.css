@@ -335,7 +335,7 @@ ol, ul {list-style-position: inside;margin-left: 21px;}
 #form-allowed-tags code{font-size:12px}
 #respond input, #respond textarea{margin:0 5px 5px 0;overflow:auto}
 #respond textarea{width:99%;height:150px}
-.avatar{margin:0 5px 5px 0;float:left}
+.avatar{float:left}
 
 /* Footer  */
 

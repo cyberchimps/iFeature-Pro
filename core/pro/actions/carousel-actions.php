@@ -85,7 +85,7 @@ query_posts( array ('post_type' => $themeslug.'_featured_posts', 'showposts' => 
 				$title = get_the_title();
 			}
 			else {
-				$$title =  '';
+				$title =  '';
 			}
 			
 			if ($image == '') {

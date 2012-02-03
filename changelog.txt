@@ -2,6 +2,16 @@ iFeature Pro Changelog
 
 ****************************
 
+Version 4.0 (02-02-12)
+-Added Foundation CSS grid, offering both responsive and static design.
+-Drag and Drop Header and Blog elements added.
+-Added WordPress Template Options (404, Search, Archive, Single)
+-Replaced NivoSlider with Orbit.
+-Added new responsive Carousel.
+-Added Left-Sidebar option.
+-New design options.
+-General bug and style fixes.
+
 Version 3.1.1 (01-08-12)
 -Called missing globals in page.php.
 -CSS fix related to page options.
