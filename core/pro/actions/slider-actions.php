@@ -142,12 +142,12 @@ else {
 
 /* Define slider caption style */      
 
-	if ($captionstyle == 'key3' OR $captionstyle == '3') { ?>
+	if ($captionstyle == 'key2' OR $captionstyle == '3') { ?>
 		<style type="text/css">
 		.orbit-caption {height: <?php echo $height ?>px; width: 30% !important;}
 		</style> <?php
 	}
-	elseif ($captionstyle == 'key2' OR $captionstyle == '2') { ?>
+	elseif ($captionstyle == 'key3' OR $captionstyle == '2') { ?>
 		<style type="text/css">
 		.orbit-caption {position: relative !important; float: left; height: <?php echo $height ?>px; width: 30% !important; top: -375px;}
 		</style><?php
