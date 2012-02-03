@@ -109,7 +109,7 @@ $options
 			->close_outersection()
 	->section("Header")
 		->open_outersection()
-			->section_order("header_section_order", "Drag drop sections for the Header", array('options' => array("ifeature_header_content" => "Logo + Icons", "ifeature_sitename_contact" => "Logo + Contact", "ifeature_description_icons" => "Description + Icons", "ifeature_logo_menu" => "Logo + Menu", "ifeature_logo_Description" => "Logo + Description", "ifeature_banner" => "Banner", "synapse_navigation" => "Navigation", "ifeature_sitename_register" => "Logo + Login"), 'default' => 'ifeature_header_content,synapse_navigation'))
+			->section_order("header_section_order", "Drag drop sections for the Header", array('options' => array("ifeature_header_content" => "Logo + Icons", "ifeature_sitename_contact" => "Logo + Contact", "ifeature_description_icons" => "Description + Icons", "ifeature_logo_menu" => "Logo + Menu", "ifeature_logo_Description" => "Logo + Description", "ifeature_banner" => "Banner", "synapse_navigation" => "iMenu", "ifeature_sitename_register" => "Logo + Login"), 'default' => 'ifeature_header_content,synapse_navigation'))
 			->upload($themeslug."_banner", "Banner Image")
 			->textarea($themeslug."_header_contact", "Contact Information")
 		->close_outersection()

@@ -19,8 +19,8 @@
 * iFeature Actions
 */
 
+add_action( 'ifeature_header_content', 'ifeature_header_standard_content');
 add_action( 'ifeature_header_contact_area', 'ifeature_header_contact_area_content' );
-
 add_action( 'ifeature_sitename_register', 'ifeature_sitename_register_content');
 add_action( 'ifeature_sitename_contact', 'ifeature_sitename_contact_content');
 add_action( 'ifeature_description_icons', 'ifeature_description_icons_content');
@@ -349,8 +349,6 @@ function ifeature_logo_menu_content() {
 <?php
 }
 
-
-
 /**
 * Header content standard
 *
@@ -383,79 +381,4 @@ function ifeature_header_standard_content() {
 <?php
 }
 
-/**
-* Header content extra
-*
-* @since 3.0
-*/
-function ifeature_header_extra_content() {
-global $options, $themeslug;?>
-	
-	<div class="container_12">
-		
-		<div class="grid_6">
-				
-			<!-- Begin @Core header sitename hook -->
-				<?php synapse_header_sitename(); ?> 
-			<!-- End @Core header sitename hook -->
-				
-		</div>	
-			
-				<div id="header_contact" class="grid_6">
-				&nbsp;
-			<?php if ($options->get($themeslug.'_enable_header_contact') == '1'	): ?>
-
-		<!-- Begin @Core header contact area hook -->
-			<?php ifeature_header_contact_area(); ?>
-		<!-- End @Core header contact area hook -->
-					<?php endif ; ?>
-		</div>	
-		
-	</div>
-		
-	<div class='clear'>&nbsp;</div>
-		
-	<div class="container" id="head2">
-				
-		<div class="grid_6">
-		&nbsp;
-			<?php if ($options->get($themeslug.'_show_description') == '1'	): ?>
-			<!-- Begin @Core header description hook -->
-				<?php synapse_header_site_description(); ?> 
-			<!-- End @Core header description hook -->
-			<?php endif; ?>
-		</div>
-			
-		<div class="grid_6">
-			
-			<!-- Begin @Core header social icon hook -->
-				<?php synapse_header_social_icons(); ?> 
-			<!-- End @Core header contact social icon hook -->	
-				
-		</div>
-			
-	</div>
-		
-	<div class='clear'>&nbsp;</div>
-
-<?php
-}
-
-/**
-* Define header contact based on theme options
-*
-* @since 3.0
-*/
-function ifeature_header_content_init() {
-	global $options, $themeslug;
-	
-	if ($options->get($themeslug.'_enable_header_contact') != '1' && $options->get($themeslug.'_show_description') != '1') {
-	
-			add_action( 'ifeature_header_content', 'ifeature_header_standard_content');
-	}
-	
-	if ($options->get($themeslug.'_enable_header_contact') == '1' OR $options->get($themeslug.'_show_description') == '1') {
-	
-			add_action( 'ifeature_header_content', 'ifeature_header_extra_content');
-	}
-}
+?>
