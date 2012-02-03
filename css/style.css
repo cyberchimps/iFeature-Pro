@@ -351,6 +351,7 @@ ol, ul {list-style-position: inside;margin-left: 21px;}
 	float: right;
 	position: relative;
 	margin-top: 5px;
+	text-align: right;
 }
 
 #afterfootermenu {
@@ -376,7 +377,7 @@ ol, ul {list-style-position: inside;margin-left: 21px;}
 	display: inline; 
 }
 
-#credit { height: 22px; z-index: 99; margin-top: 5px;	}
+#credit { height: 22px; z-index: 99; margin-top: 5px; text-align: center;}
 
 /* WordPress Styles  */
 

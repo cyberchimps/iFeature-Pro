@@ -2,7 +2,7 @@ iFeature Pro Changelog
 
 ****************************
 
-Version 4.0 (02-02-12)
+Version 4.0 (02-03-12)
 -Added Foundation CSS grid, offering both responsive and static design.
 -Drag and Drop Header and Blog elements added.
 -Added WordPress Template Options (404, Search, Archive, Single)
