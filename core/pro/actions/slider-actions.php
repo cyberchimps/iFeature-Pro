@@ -194,11 +194,11 @@ else {
 
 /* Query posts based on theme/meta options */
 
-	if ($type == 'posts' OR $type == '1') {
-		$usecustomslides = 'posts';
+	if ($type == 'custom' OR $type == '0' OR $type= "") {
+		$usecustomslides = 'custom';
 	}	
 	else {
-		$usecustomslides = 'custom';
+		$usecustomslides = 'posts';
 	}
 
 /* Query posts based on theme/meta options */
@@ -226,6 +226,7 @@ else {
 	else {
 		$no = $postnumber;
 	}
+	
 /* End post counter */	    	
 
 /* Initialize slide creation */	
