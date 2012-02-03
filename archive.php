@@ -49,7 +49,10 @@
 			
 			</div><!--end post_class-->	
 		</div><!--end post container--> 
-		
+		<!--Begin @iFeature post bar hook-->
+				<?php synapse_post_bar(); ?>
+			<!--End @iFeature post bar hook-->
+
 		 <?php endwhile; ?>
 	 
 	 <?php else : ?>
