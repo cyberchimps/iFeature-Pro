@@ -350,7 +350,7 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 
 /* Define slider delay variable */ 
     
-	if ($sliderdelay == '') {
+	if ($sliderdelay == "") {
 	    $delay = '3500';
 	}    
 
@@ -412,7 +412,7 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
    $(window).load(function() {
     $('#orbitDemo').orbit({
          animation: '$animation',
-         advanceSpeed: $sliderdelay,
+         advanceSpeed: $delay,
          captionAnimation: 'slideOpen',		// fade, slideOpen, none
          captionAnimationSpeed: 800,  
          bullets: $dots,
