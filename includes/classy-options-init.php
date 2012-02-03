@@ -185,7 +185,6 @@ TEMPLATE_URL . '/images/social/thumbs/icons-default.png' ), 'default' => 'defaul
 			->select($themeslug."_slider_animation", "Select the Sidebar Animation", array( 'options' => array("key1" => "Horizontal-Push", "key2" => "Fade", "key3" => "Horizontal-Slide", "key4" => "Vertical-Slide")))
 			->select($themeslug."_caption_style", "Select the Caption Style", array( 'options' => array("key1" => "Bottom", "key2" => "Right", "key3" => "Left", "key4" => "None")))	
 			->select($themeslug."_caption_animation", "Select the Caption Animation", array( 'options' => array("key1" => "Fade", "key2" => "Slide Open", "key3" => "None")))
-			->text($themeslug."_slider_animation_delay", "Slider Animation Delay", array('default' => '800'))			
 			->select($themeslug."_slider_nav", "Select the Slider Navigation", array( 'options' => array("key1" => "Dots", "key2" => "Thumbnails", "key3" => "none")))
 			->checkbox($themeslug."_hide_slider_arrows", "Slider Arrows", array('default' => true))
 			->checkbox($themeslug."_enable_wordthumb", "WordThumb Image Resizing")
