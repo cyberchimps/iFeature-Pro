@@ -293,7 +293,7 @@ function ifeature_description_icons_content() {
 	<div class="container">
 		<div class="row">
 		
-			<div class="seven columns">
+			<div class="five columns">
 				
 			<!-- Begin @Core header description hook -->
 				<?php synapse_header_site_description(); ?> 
@@ -302,7 +302,7 @@ function ifeature_description_icons_content() {
 				
 			</div>	
 			
-			<div class="five columns">
+			<div class="seven columns">
 			
 			<!-- Begin @Core header social icon hook -->
 				<?php synapse_header_social_icons(); ?> 

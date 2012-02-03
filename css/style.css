@@ -77,7 +77,7 @@ header {margin-top: 15px;}
 
 /* Social Icons  */
 
-#social {margin-bottom: 5px;}
+#social {margin-bottom: 0px;}
 
 .icons {text-align:right;margin-top: 10px;}
 
@@ -616,9 +616,11 @@ h6 {
 	font-weight: 400;
 }
 
+h1.description, h1.sitename {margin-bottom: 0px;}
+
 .description {	
 	font-size: 16px;
-	margin-top:20px;
+	margin-top:27px;
 }
 
 .sitename {
