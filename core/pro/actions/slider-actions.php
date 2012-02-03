@@ -194,11 +194,11 @@ else {
 
 /* Query posts based on theme/meta options */
 
-	if ($options->get($themeslug.'_slider_type') == '') {
+	if ($type == 'posts' OR $type == '1') {
 		$usecustomslides = 'posts';
 	}	
 	else {
-		$usecustomslides = $options->get($themeslug.'_slider_type');
+		$usecustomslides = 'custom';
 	}
 
 /* Query posts based on theme/meta options */
@@ -217,7 +217,7 @@ else {
 	if (have_posts()) :
 	    $out = "<div id='orbitDemo'>"; 
 	    $i = 0;
-	if ($options->get($themeslug.'_slider_posts_number') == '' OR $postnumber == '' && $type != '0') {
+	if ($usecustomslides == 'posts' OR $postnumber == '' && $type != '0') {
 	    $no = '5';    	
 	}   	
 	elseif ($usecustomslides == 'custom' OR $type == '0') {
@@ -226,7 +226,6 @@ else {
 	else {
 		$no = $postnumber;
 	}
-
 /* End post counter */	    	
 
 /* Initialize slide creation */	
