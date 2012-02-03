@@ -397,7 +397,7 @@ function ifp_widgets_init() {
 		'name' => 'Footer',
 		'id' => 'footer-widgets',
 		'description' => 'These are the footer widgets',
-		'before_widget' => '<div class="grid_3 footer-widgets">',
+		'before_widget' => '<div class="three columns footer-widgets">',
 		'after_widget' => '</div>',
 		'before_title' => '<h3 class="footer-widget-title">',
 		'after_title' => '</h3>',
