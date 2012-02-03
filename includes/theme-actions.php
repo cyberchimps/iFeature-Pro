@@ -73,16 +73,16 @@ function ifeature_box_section_content() {
 	<div id="box_container" class="twelve columns"> <!--box container-->
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box Left") ) : ?>
 			<div id="box1" class="four columns">
-				<h2 class="box-widget-title">iFeature Pro Slider</h2>
+				<h2 class="box-widget-title">Responsive iFeature Pro Slider</h2>
 					<img src="<?php echo $root ; ?>/images/icons/slidericon.png" height="100" alt="slider" class="aligncenter" />
-					<p>The iFeature Pro Slider includes auto-image resizing, new transitions, thumbnails, custom categories, improved captions, and the ability to have a slider on every page.</p>
+					<p>The Responsive iFeature Pro Slider now adjusts dynamically when being viewed by a mobile device such as an iPhone or iPad. It also includes image resizing, and thumbnails.</p>
 			</div><!--end box1-->
 			<?php endif; ?>
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box Middle") ) : ?>
 			<div id="box2" class="four columns">
-				<h2 class="box-widget-title">New Design</h2>
+				<h2 class="box-widget-title">Responsive Design</h2>
 					<img src="<?php echo $root ; ?>/images/icons/blueprint.png" height="100" alt="blueprint" class="aligncenter" />
-					<p>With <a href="http://cybersynapse.com/ifeaturepro/">iFeature Pro</a> we’ve done the design work for you, all you need to do is pick a color scheme, select your options, and add your content.</p>
+					<p>With Responsive Design, and <a href="http://cybersynapse.com/ifeaturepro/">iFeature Pro</a> your website will now magically adjust to mobile devices such as the iPhone, iPad, and Android devices.</p>
 			</div><!--end box2-->
 			<?php endif; ?>
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box Right") ) : ?>
