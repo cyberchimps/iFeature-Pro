@@ -43,6 +43,7 @@ function synapse_slider_content() {
 		$size2 = get_post_meta($post->ID, 'page_sidebar' , true);
 		$type = get_post_meta($post->ID, 'page_slider_type' , true);
 		$category = get_post_meta($post->ID, 'slider_blog_category' , true);
+		$customcategory = get_post_meta($post->ID, 'slider_category' , true);
 		$postnumber  = get_post_meta($post->ID, 'slider_blog_posts_number' , true);
 		$sliderheight = get_post_meta($post->ID, 'slider_height' , true);
 		$sliderdelay = get_post_meta($post->ID, 'slider_delay' , true);
@@ -373,7 +374,7 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 
 /* Define slider navigation variable */ 
   	
-	if ($navigationstyle == 'key1' OR $navigationstyle == '0'  OR $navigationstyle == '1' OR $navigationstyle == '') {
+	if ($navigationstyle == 'key1' OR $navigationstyle == 'key2' OR $navigationstyle == '0'  OR $navigationstyle == '1' OR $navigationstyle == '') {
 	    $dots = 'true';
 	}
 	else {
