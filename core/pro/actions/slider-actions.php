@@ -321,10 +321,21 @@ else {
 
 	     	/* Markup for slides */
 
-	    	$out .= "<a href='$link' $caption data-thumb='$thumbnail'>
+	    	
+	    $out .= "
+	    	<!--[if !IE]> -->
+	    	<a href='$link' $caption data-thumb='$thumbnail'>
 	    				<img src='$image' width='$imgwidth' alt='Slider' />
 	    						<span class='orbit-caption' id='htmlCaption$i'>$title <br /> $text</span>
 	    				</a>
+	    	<!-- <![endif]-->
+	    	
+	    	<!--[if IE]>
+			<a href='$link' $caption data-thumb='$thumbnail'>
+	    				<img src='$image' alt='Slider' />
+	    						<span class='orbit-caption' id='htmlCaption$i'>$title <br /> $text</span>
+	    				</a>
+			<![endif]-->
 	    			";
 
 	    	/* End slide markup */
