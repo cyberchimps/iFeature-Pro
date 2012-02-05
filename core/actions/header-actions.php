@@ -267,7 +267,7 @@ function synapse_header_social_icons_content() {
 	<div id="social">
 
 		<div class="icons">
-
+	
 		<?php if ($hidefacebook == '1' AND $facebook != '' OR $hidefacebook == '' AND $facebook != '' ):?>
 			<a href="<?php echo $facebook ?>" target="_blank" rel="me"><img src="<?php echo get_template_directory_uri(); ?>/images/social/<?php echo $folder; ?>/facebook.png" alt="Facebook" /></a>
 		<?php endif;?>
