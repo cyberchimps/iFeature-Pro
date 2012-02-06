@@ -192,6 +192,7 @@ TEMPLATE_URL . '/images/social/thumbs/icons-default.png' ), 'default' => 'defaul
 			->select($themeslug."_caption_animation", "Select the Caption Animation", array( 'options' => array("key1" => "Fade", "key2" => "Slide Open", "key3" => "None")))
 			->select($themeslug."_slider_nav", "Select the Slider Navigation", array( 'options' => array("key1" => "Dots", "key2" => "Thumbnails", "key3" => "none")))
 			->checkbox($themeslug."_hide_slider_arrows", "Slider Arrows", array('default' => true))
+			->checkbox($themeslug."_slider_timer", "Slider Timer", array('default' => true))
 			->checkbox($themeslug."_enable_wordthumb", "WordThumb Image Resizing")
 		->subsection_end()
 		->subsection("Callout Options")

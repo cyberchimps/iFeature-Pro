@@ -8,6 +8,7 @@ Version 4.0.1 (02-05-12)
 -Minor CSS tweaks.
 -Fixed postbar bug on single pages.
 -Fixed default social icons bug.
+-Replaced slider arrows with previous style.
 
 Version 4.0 (02-03-12)
 -Added Foundation CSS grid, offering both responsive and static design.
