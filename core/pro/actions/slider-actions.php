@@ -421,8 +421,6 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 
 	<?php
 	
-	var_dump($timer);
-	
 /* End slider navigation style */ 
 	
 	wp_reset_query(); /* Reset post query */ 

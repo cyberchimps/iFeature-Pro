@@ -2,7 +2,7 @@ iFeature Pro Changelog
 
 ****************************
 
-Version 4.0.1 (02-05-12)
+Version 4.0.1 (02-06-12)
 -Fixed custom slide category bug for pages.
 -Fixed slider thumbs not displaying on blog index. 
 -Minor CSS tweaks.
