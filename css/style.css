@@ -686,10 +686,11 @@ figure {
 	#register {text-align: center;}
 	.description{text-align: center;}
 	#header_contact {text-align: center;}
-	#halfnav {float: center;}
-	#home {border-right: 0px;border-bottom:1px solid #777;width:97.2%;margin:auto;padding-left:10px;}
+	#halfnav {text-align: center; float: none;}
 	#afterfootermenu {display:none;}
 	#credit {float:right;margin-right:15px;margin-top:4px;}
 	#afterfootercopyright {float: left;margin-left:15px;margin-bottom:2px;}
+	#mobileMenu_nav_menu {float: right; margin-top: 10px; margin-right: 10px;}
+	#imenu {height: 35px;}
 }
 
