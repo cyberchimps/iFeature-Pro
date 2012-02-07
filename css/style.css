@@ -676,11 +676,15 @@ figure {
     .callout_title {text-align: center;}
     #calloutbutton {width: 200px; margin: auto; margin-bottom: 30px;}
     #banner {margin-top: 10px;}
-    .icons{text-align: center;}
-
 }
 
 @media handheld, only screen and (max-width: 400px) {
 	.carousel_caption {font-size: 6px;}
+	.icons{text-align: left;}
+	#register {text-align: left;}
+	.description{text-align: left;}
+	#header_contact {text-align: left;}
+	#halfnav {float: left;}
+
 }
 
