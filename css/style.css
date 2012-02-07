@@ -16,8 +16,6 @@ input[type=reset]{font-size: 12px;padding: 2px;margin-top: 5px;border: 1px solid
 a img{border:none}
 a{outline:none}
 
-#sidebar {right: -3px;}
-
 #register {text-align: right; list-style: none;}
 
 #register li {float: right; display: block; padding-left: 5px;}
@@ -312,6 +310,7 @@ ol, ul {list-style-position: inside;margin-left: 21px;}
 .footer-widgets li {
 	list-style-type: none;
 	padding-left: 0;
+	color: #ccc;
 }
 
 .footer-item ul {
@@ -326,8 +325,6 @@ ol, ul {list-style-position: inside;margin-left: 21px;}
 }
 
 #afterfooterwrap {
-
-	height:45px; 
 	margin: auto;
 	padding-top: 10px;
 }
@@ -679,12 +676,19 @@ figure {
 }
 
 @media handheld, only screen and (max-width: 400px) {
+	#box1 {margin-top:0px;margin-bottom:7px;}
+	#box2 {margin-top:7px;margin-bottom:7px;}
+	#box3 {margin-top:7px;margin-bottom:14px;}
 	.carousel_caption {font-size: 6px;}
 	.icons{text-align: left;}
 	#register {text-align: left;}
 	.description{text-align: left;}
 	#header_contact {text-align: left;}
 	#halfnav {float: left;}
-
+	#home {border-right: 0px;border-bottom:1px solid #777;width:97.2%;margin:auto;padding-left:10px;}
+	#nav ul, #nav ul li {display:block;}
+	#nav ul li a {border-right: 0px;border-bottom:1px solid #777;width:91.5%;margin:auto;}
+	#nav ul ul, #nav ul li:hover ul ul, #nav ul ul li:hover ul ul {display: block;}
+	#credit {float:right;}
 }
 
