@@ -16,24 +16,6 @@ input[type=reset]{font-size: 12px;padding: 2px;margin-top: 5px;border: 1px solid
 a img{border:none}
 a{outline:none}
 
-@media handheld, only screen and (max-width: 767px) {
-
-	#box1, #box2 {margin-right: 0px !important;} 
-	.searchform {display: none;}
-    #nav ul ul li:hover ul, #nav ul ul ul li:hover ul {margin: 0px !important;}
-    #nav ul ul .parent > a, #nav ul ul .parent:hover > a:hover, #nav ul ul li:hover ul .parent > a, #nav ul ul li:hover ul .parent > a:hover{background-image:url(../images/arrow.png) !important;background-position:right !important;background-repeat:no-repeat !important;}
-    .carousel_caption {font-size: 10px;}
-    .callout_title {text-align: center;}
-    #calloutbutton {width: 200px; margin: auto; margin-bottom: 30px;}
-    #banner {margin-top: 10px;}
-    .icons{text-align: center;}
-
-}
-
-@media handheld, only screen and (max-width: 400px) {
-	.carousel_caption {font-size: 6px;}
-}
-
 #sidebar {right: -3px;}
 
 #register {text-align: right; list-style: none;}
@@ -682,3 +664,23 @@ figure {
 .ui-tabs-hide {
 	display: none;
 }
+
+
+@media handheld, only screen and (max-width: 767px) {
+
+	#box1, #box2 {margin-right: 0px !important;} 
+	.searchform {display: none;}
+    #nav ul ul li:hover ul, #nav ul ul ul li:hover ul {margin: 0px !important;}
+    #nav ul ul .parent > a, #nav ul ul .parent:hover > a:hover, #nav ul ul li:hover ul .parent > a, #nav ul ul li:hover ul .parent > a:hover{background-image:url(../images/arrow.png) !important;background-position:right !important;background-repeat:no-repeat !important;}
+    .carousel_caption {font-size: 10px;}
+    .callout_title {text-align: center;}
+    #calloutbutton {width: 200px; margin: auto; margin-bottom: 30px;}
+    #banner {margin-top: 10px;}
+    .icons{text-align: center;}
+
+}
+
+@media handheld, only screen and (max-width: 400px) {
+	.carousel_caption {font-size: 6px;}
+}
+
