@@ -1,75 +1,150 @@
-/**
- * jQuery Mobile Menu 
- * Turn unordered list menu into dropdown select menu
- * version 1.0(31-OCT-2011)
- * 
- * Built on top of the jQuery library
- *   http://jquery.com
- * 
- * Documentation
- * 	 http://github.com/mambows/mobilemenu
- */
 (function($){
-$.fn.mobileMenu = function(options) {
-	
-	var defaults = {
-			defaultText: 'Navigate to...',
-			className: 'select-menu',
-			subMenuClass: 'sub-menu',
-			subMenuDash: '&ndash;'
-		},
-		settings = $.extend( defaults, options ),
-		el = $(this);
-	
-	this.each(function(){
-		// ad class to submenu list
-		el.find('ul').addClass(settings.subMenuClass);
 
-		// Create base menu
-		$('<select />',{
-			'class' : settings.className
-		}).insertAfter( el );
+  //variable for storing the menu count when no ID is present
+  var menuCount = 0;
+  
+  //plugin code
+  $.fn.mobileMenu = function(options){
+    
+    //plugin's default options
+    var settings = {
+      switchWidth: 400,
+      topOptionText: 'Select a page',
+      indentString: '&nbsp;&nbsp;&nbsp;'
+    };
+    
+    
+    //function to check if selector matches a list
+    function isList($this){
+      return $this.is('ul, ol');
+    }
+  
+  
+    //function to decide if mobile or not
+    function isMobile(){
+      return ($(window).width() < settings.switchWidth);
+    }
+    
+    
+    //check if dropdown exists for the current element
+    function menuExists($this){
+      
+      //if the list has an ID, use it to give the menu an ID
+      if($this.attr('id')){
+        return ($('#mobileMenu_'+$this.attr('id')).length > 0);
+      } 
+      
+      //otherwise, give the list and select elements a generated ID
+      else {
+        menuCount++;
+        $this.attr('id', 'mm'+menuCount);
+        return ($('#mobileMenu_mm'+menuCount).length > 0);
+      }
+    }
+    
+    
+    //change page on mobile menu selection
+    function goToPage($this){
+      if($this.val() !== null){document.location.href = $this.val()}
+    }
+    
+    
+    //show the mobile menu
+    function showMenu($this){
+      $this.css('display', 'none');
+      $('#mobileMenu_'+$this.attr('id')).show();
+    }
+    
+    
+    //hide the mobile menu
+    function hideMenu($this){
+      $this.css('display', '');
+      $('#mobileMenu_'+$this.attr('id')).hide();
+    }
+    
+    
+    //create the mobile menu
+    function createMenu($this){
+      if(isList($this)){
+                
+        //generate select element as a string to append via jQuery
+        var selectString = '<select id="mobileMenu_'+$this.attr('id')+'" class="mobileMenu">';
+        
+        //create first option (no value)
+        selectString += '<option value="">'+settings.topOptionText+'</option>';
+        
+        //loop through list items
+        $this.find('li').each(function(){
+          
+          //when sub-item, indent
+          var levelStr = '';
+          var len = $(this).parents('ul, ol').length;
+          for(i=1;i<len;i++){levelStr += settings.indentString;}
+          
+          //get url and text for option
+          var link = $(this).find('a:first-child').attr('href');
+          var text = levelStr + $(this).clone().children('ul, ol').remove().end().text();
+          
+          //add option
+          selectString += '<option value="'+link+'">'+text+'</option>';
+        });
+        
+        selectString += '</select>';
+        
+        //append select element to ul/ol's container
+        $this.parent().append(selectString);
+        
+        //add change event handler for mobile menu
+        $('#mobileMenu_'+$this.attr('id')).change(function(){
+          goToPage($(this));
+        });
+        
+        //hide current menu, show mobile menu
+        showMenu($this);
+      } else {
+        alert('mobileMenu will only work with UL or OL elements!');
+      }
+    }
+    
+    
+    //plugin functionality
+    function run($this){
+      
+      //menu doesn't exist
+      if(isMobile() && !menuExists($this)){
+        createMenu($this);
+      }
+      
+      //menu already exists
+      else if(isMobile() && menuExists($this)){
+        showMenu($this);
+      }
+      
+      //not mobile browser
+      else if(!isMobile() && menuExists($this)){
+        hideMenu($this);
+      }
 
-		// Create default option
-		$('<option />', {
-			"value"		: '#',
-			"text"		: settings.defaultText
-		}).appendTo( '.' + settings.className );
+    }
+    
+    //run plugin on each matched ul/ol
+    //maintain chainability by returning "this"
+    return this.each(function() {
+      
+      //override the default settings if user provides some
+      if(options){$.extend(settings, options);}
+      
+      //cache "this"
+      var $this = $(this);
+    
+      //bind event to browser resize
+      $(window).resize(function(){run($this);});
 
-		// Create select option from menu
-		el.find('a').each(function(){
-			var $this 	= $(this),
-					optText	= '&nbsp;' + $this.text(),
-					optSub	= $this.parents( '.' + settings.subMenuClass ),
-					len			= optSub.length,
-					dash;
-			
-			// if menu has sub menu
-			if( $this.parents('ul').hasClass( settings.subMenuClass ) ) {
-				dash = Array( len+1 ).join( settings.subMenuDash );
-				optText = dash + optText;
-			}
+      //run plugin
+      run($this);
 
-			// Now build menu and append it
-			$('<option />', {
-				"value"	: this.href,
-				"html"	: optText,
-				"selected" : (this.href == window.location.href)
-			}).appendTo( '.' + settings.className );
-
-		}); // End el.find('a').each
-
-		// Change event on select element
-		$('.' + settings.className).change(function(){
-			var locations = $(this).val();
-			if( locations !== '#' ) {
-				window.location.href = $(this).val();
-			};
-		});
-
-	}); // End this.each
-
-	return this;
-
-};
+    });
+    
+  };
+  
 })(jQuery);
