@@ -346,6 +346,12 @@ function synapse_nav() {
 	
 	?>
 	
+	<script>
+		$(document).ready(function(){
+				$('#menu-navigation').mobileMenu();
+		});
+	</script>
+	
 	<div class="container">
 		<div class="row">
 

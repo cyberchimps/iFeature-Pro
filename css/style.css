@@ -686,11 +686,10 @@ figure {
 	#header_contact {text-align: left;}
 	#halfnav {float: left;}
 	#home {border-right: 0px;border-bottom:1px solid #777;width:97.2%;margin:auto;padding-left:10px;}
-	#nav ul, #nav ul li {display:block;}
-	#nav ul li a {border-right: 0px;border-bottom:1px solid #777;width:91.5%;margin:auto;}
-	#nav ul ul, #nav ul li:hover ul ul, #nav ul ul li:hover ul ul {display: block;}
 	#afterfootermenu {display:none;}
 	#credit {float:right;margin-right:15px;margin-top:4px;}
 	#afterfootercopyright {float: left;margin-left:15px;margin-bottom:2px;}
+	
+
 }
 
