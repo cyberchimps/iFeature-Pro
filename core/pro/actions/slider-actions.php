@@ -189,7 +189,7 @@ else {
 	}  	
 	else {
 		$csWidth = '640';
-		$imgwidth = '760';
+		$imgwidth = '640';
 		$defaultimage = "$root/images/pro/slider-640.jpg";
 	}
 
