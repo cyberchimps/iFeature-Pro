@@ -230,7 +230,6 @@ else {
 		$no = $postnumber;
 	}
 	
-	var_dump($no);
 /* End post counter */	    	
 
 /* Initialize slide creation */	
