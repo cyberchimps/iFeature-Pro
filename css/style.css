@@ -357,6 +357,7 @@ ol, ul {list-style-position: inside;margin-left: 21px;}
 
 #afterfootermenu li {
 	display: inline; 
+	margin-right: 5px;
 }
 
 #credit { height: 22px; z-index: 99; margin-top: 5px; text-align: center;}
@@ -694,4 +695,3 @@ figure {
 	#mobileMenu_nav_menu {float: right; margin-top: 10px; margin-right: 10px;}
 	#imenu {height: 35px;}
 }
-

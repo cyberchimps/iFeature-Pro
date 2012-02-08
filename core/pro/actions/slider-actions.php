@@ -220,7 +220,7 @@ else {
 	if (have_posts()) :
 	    $out = "<div id='orbitDemo'>"; 
 	    $i = 0;
-	if ($usecustomslides == 'posts' OR $postnumber == '' && $type != '0') {
+	if ($usecustomslides == 'posts' AND $postnumber == '' OR $type != '0' AND $postnumber == '') {
 	    $no = '5';    	
 	}   	
 	elseif ($usecustomslides == 'custom' OR $type == '0') {
@@ -230,6 +230,7 @@ else {
 		$no = $postnumber;
 	}
 	
+	var_dump($no);
 /* End post counter */	    	
 
 /* Initialize slide creation */	
