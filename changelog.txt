@@ -10,6 +10,7 @@ Version 4.0.2 (02-08-12)
 -Added body text color option.
 -Further revision to slider arrows.
 -Fixed slider loading screen.
+-Added default styling for Disqus comment system.
 
 Version 4.0.1 (02-06-12)
 -Fixed custom slide category bug for pages.
