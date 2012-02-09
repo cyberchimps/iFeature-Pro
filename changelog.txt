@@ -9,6 +9,7 @@ Version 4.0.2 (02-08-12)
 -Fixed search widget style issue. 
 -Added body text color option.
 -Further revision to slider arrows.
+-Fixed slider loading screen.
 
 Version 4.0.1 (02-06-12)
 -Fixed custom slide category bug for pages.
