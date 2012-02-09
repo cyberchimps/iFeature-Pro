@@ -12,6 +12,7 @@ Version 4.0.2 (02-09-12)
 -Fixed slider loading screen.
 -Added default styling for Disqus comment system.
 -Moved responsive-only styling out of general stylesheet to fix issues with static design.
+-Several tweaks to both responsive and static design elements.
 
 Version 4.0.1 (02-06-12)
 -Fixed custom slide category bug for pages.
