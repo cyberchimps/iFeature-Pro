@@ -904,3 +904,16 @@ div.slider-nav span.left {
 			.reveal-modal.large,
 			.reveal-modal.xlarge { width: 80%; top: 15%; left: 5%; margin-left: 0; padding: 5%; height: auto; }
 		}
+
+@media handheld, only screen and (max-width: 767px) {
+
+	#footer {width: 1000px !important;}
+	#afterfooter {width: 1000px !important;}
+}
+
+@media handheld, only screen and (max-width: 400px) {
+
+	#footer {width: 1000px !important;}
+	#afterfooter {width: 1000px !important;}
+
+}

@@ -1142,6 +1142,7 @@ div.slider-nav span.left {
 }
 
 @media handheld, only screen and (max-width: 400px) {
+	#orbitDemo {height: 180px !important}
 	#box1 {margin-top:0px !important; margin-bottom:7px !important;}
 	#box2 {margin-top:7px !important; margin-bottom:7px !important;}
 	#box3 {margin-top:7px !important; margin-bottom:14px !important;}
