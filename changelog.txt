@@ -2,7 +2,7 @@ iFeature Pro Changelog
 
 ****************************
 
-Version 4.0.2 (02-08-12)
+Version 4.0.2 (02-09-12)
 -Better handling of slider responsive breaking point widths (fixes FireFox bug).
 -Fixed default afterfooter menu item spacing.
 -Fixed five slide limit for sliders using blog posts.

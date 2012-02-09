@@ -1125,4 +1125,37 @@ div.slider-nav span.left {
 	@media only screen and (max-device-width: 800px), only screen and (device-width: 1024px) and (device-height: 600px), only screen and (width: 1280px) and (orientation: landscape), only screen and (device-width: 800px), only screen and (max-width: 767px) {
 		.video { padding-top: 0; }
 	}
+
+/* Custom */
 	
+@media handheld, only screen and (max-width: 767px) {
+
+	#box1, #box2 {margin-right: 0px !important;} 
+	.searchform {display: none !important;}
+    #nav ul ul li:hover ul, #nav ul ul ul li:hover ul {margin: 0px !important;}
+    #nav ul ul .parent > a, #nav ul ul .parent:hover > a:hover, #nav ul ul li:hover ul .parent > a, #nav ul ul li:hover ul .parent > a:hover{background-image:url(../images/arrow.png) !important;background-position:right !important;background-repeat:no-repeat !important;}
+    .carousel_caption {font-size: 10px !important;}
+    .callout_title {text-align: center !important;}
+    #calloutbutton {width: 200px !important; margin: auto !important; margin-bottom: 30px !important;}
+    #banner {margin-top: 10px !important;}
+    #orbitDemo.orbit img {width: 710px !important;}
+}
+
+@media handheld, only screen and (max-width: 400px) {
+	#box1 {margin-top:0px !important; margin-bottom:7px !important;}
+	#box2 {margin-top:7px !important; margin-bottom:7px !important;}
+	#box3 {margin-top:7px !important; margin-bottom:14px !important;}
+	.carousel_caption {font-size: 6px !important;}
+	.icons{text-align: center !important;}
+	#logo{text-align:center !important;}
+	.sitename {text-align:center !important;}
+	#register {text-align: center !important;}
+	.description{text-align: center !important;}
+	#header_contact {text-align: center !important;}
+	#halfnav {text-align: center !important; float: none !important;}
+	#afterfootermenu {display:none !important;}
+	#credit {float:right !important; margin-right:15px !important; margin-top:4px !important;}
+	#afterfootercopyright {float: left !important;margin-left:15px !important;margin-bottom:2px !important;}
+	#mobileMenu_nav_menu {float: right !important; margin-top: 10px !important; margin-right: 10px !important;}
+	#imenu {height: 35px !important;}
+}
