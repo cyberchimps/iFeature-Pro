@@ -36,7 +36,8 @@ a:hover {color: #ccc;}
 #halfnav ul li a{
 	display:inline-block;
 	margin: 5px;
-	font-family:'Lucida Grande',Helvetica,Arial,Verdana,sans-serif;
+	font-family: Helvetica Neue,Verdana,sans-serif;
+	font-weight: 300;
 	font-size:16px;
 	padding: 5px;
 	color:#000;
@@ -51,5 +52,5 @@ a:hover {color: #ccc;}
 	background: linear-gradient(top,  #ffffff 0%,#f3f3f3 50%,#ededed 51%,#ffffff 100%); /* W3C */	
 	border: 2px solid #ccc;	
 }
-#halfnav ul li a:hover{	border: 2px solid #222;background:#e5e5e5}
+#halfnav ul li a:hover{	border: 2px solid #ccc;background:#e5e5e5}
 #halfnav .current-menu-item a{border: 2px solid #84001e;}

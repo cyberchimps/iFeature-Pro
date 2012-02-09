@@ -32,7 +32,7 @@ function synapse_box_section_content() {
 	$root = get_template_directory_uri(); ?>
 	
 <div class="row">
-	<div id="box_container" class="twelve columns"> <!--box container-->
+	<div id="box_container" class="twelve columns"><!--box container-->
 		
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box Left") ) : ?>
 			<div class="box1">
@@ -46,12 +46,6 @@ function synapse_box_section_content() {
 					<p>This is the box middle widgetized area.</p>
 			</div><!--end box2-->
 			<?php endif; ?>
-			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box Right") ) : ?>
-			<div class="box3">
-				<h2 class="box-widget-title">Box Right</h2>
-				<p>This is the box right widgetized area.</p>
-			</div><!--end box3-->
-		<?php endif; ?>
 </div>
 	</div><!--end box_container--> <?php
 	}

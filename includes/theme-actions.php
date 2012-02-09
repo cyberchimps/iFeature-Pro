@@ -69,31 +69,22 @@ function ifeature_box_section_content() {
 	$enableboxes = get_post_meta($post->ID, 'enable_box_section' , true);
 	$root = get_template_directory_uri(); ?>
 	
-<div class="row">
-	<div id="box_container" class="twelve columns"> <!--box container-->
+
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box Left") ) : ?>
-			<div id="box1" class="four columns">
+			<div id="box1" class="six columns">
 				<h2 class="box-widget-title">Responsive iFeature Pro Slider</h2>
 					<img src="<?php echo $root ; ?>/images/icons/slidericon.png" height="100" alt="slider" class="aligncenter" />
 					<p>The Responsive iFeature Pro Slider now adjusts dynamically when being viewed by a mobile device such as an iPhone or iPad. It also includes image resizing, and thumbnails.</p>
 			</div><!--end box1-->
 			<?php endif; ?>
-			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box Middle") ) : ?>
-			<div id="box2" class="four columns">
+			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box Right") ) : ?>
+			<div id="box3" class="six columns">
 				<h2 class="box-widget-title">Responsive Design</h2>
 					<img src="<?php echo $root ; ?>/images/icons/blueprint.png" height="100" alt="blueprint" class="aligncenter" />
 					<p>With Responsive Design, and <a href="http://cybersynapse.com/ifeaturepro/">iFeature Pro</a> your website will now magically adjust to mobile devices such as the iPhone, iPad, and Android devices.</p>
 			</div><!--end box2-->
-			<?php endif; ?>
-			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box Right") ) : ?>
-			<div id="box3" class="four columns">
-				<h2 class="box-widget-title">Excellent Support</h2>
-				<img src="<?php echo $root ; ?>/images/icons/docs.png" height="100" alt="docs" class="aligncenter" />
-				<p>We designed iFeature Pro to be as easy to design with as possible, if you do run into trouble we provide a <a href="http://cybersynapse.com/forum">support forum</a>, and <a href="http://www.cybersynapse.com/ifeaturepro/docs/">precise documentation</a>.</p>
-			</div><!--end box3-->
 		<?php endif; ?>
-</div>
-	</div><!--end box_container--><?php
+<?php
 }
 
 
@@ -326,7 +317,7 @@ function ifeature_logo_menu_content() {
 	<div class="container">
 		<div class="row">	
 			
-			<div class="five columns">
+			<div class="four columns">
 				
 				<!-- Begin @Core header sitename hook -->
 					<?php synapse_header_sitename(); ?> 
@@ -334,7 +325,7 @@ function ifeature_logo_menu_content() {
 			
 			</div>	
 			
-			<div class="seven columns">
+			<div class="six columns">
 			<div id="halfnav">
 			<?php wp_nav_menu( array(
 		    'theme_location' => 'sub-menu' // Setting up the location for the main-menu, Main Navigation.
@@ -342,7 +333,11 @@ function ifeature_logo_menu_content() {
 			);
 	    	?>
 			</div>					
-			</div>	
+			</div>
+			
+			<div class="two columns">
+			<?php synapse_header_social_icons(); ?> 
+			</div>
 		
 		</div><!--end row-->
 	</div>

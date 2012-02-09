@@ -96,7 +96,7 @@ function synapse_secondary_footer_copyright() {
 * @since 1.0
 */
 function synapse_secondary_footer_menu() {
-	echo "<div id='afterfootermenu' class='four columns'>";
+	echo "<div id='afterfootermenu' class='six columns'>";
 	wp_nav_menu( array(
 		'theme_location' => 'footer-menu', 
 	)); 
