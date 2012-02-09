@@ -7,6 +7,8 @@ Version 4.0.2 (02-08-12)
 -Fixed default afterfooter menu item spacing.
 -Fixed five slide limit for sliders using blog posts.
 -Fixed search widget style issue. 
+-Added body text color option.
+-Further revision to slider arrows.
 
 Version 4.0.1 (02-06-12)
 -Fixed custom slide category bug for pages.

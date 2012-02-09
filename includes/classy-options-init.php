@@ -99,6 +99,7 @@ $options
 			->color($themeslug."_background_color", "Select a Background Color")
 		->subsection_end()
 		->subsection("Custom Colors")
+			->color($themeslug."_text_color", "Text Color")
 			->color($themeslug."_sitetitle_color", "Site Title Color")
 			->color($themeslug."_tagline_color", "Site Description Color")
 			->color($themeslug."_link_color", "Link Color")

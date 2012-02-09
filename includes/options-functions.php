@@ -17,6 +17,21 @@
 
 /* Widget Title Background*/
 
+function custom_text_color() {
+	global $options, $themeslug;
+	$color = $options->get($themeslug.'_text_color');
+	
+	if ($options->get($themeslug.'_text_color') != '' ) {
+		echo '<style type="text/css">';
+		echo "body {color: $color;}";
+		echo '</style>';
+	}
+
+}
+add_action( 'wp_head', 'custom_text_color' );
+
+/* Widget Title Background*/
+
 function widget_title_background() {
 	global $options, $themeslug;
 		
