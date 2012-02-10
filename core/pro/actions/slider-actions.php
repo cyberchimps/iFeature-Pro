@@ -72,7 +72,7 @@ function synapse_nivoslider_content() {
 		$sliderdelay = $options->get($themeslug.'_nivo_slider_delay');
 		$navigationstyle = $options->get($themeslug.'_nivo_slider_nav');	
 	}
-	
+		
 echo "<div id='slider-wrapper'>";
 
 
@@ -295,13 +295,14 @@ echo "<div id='slider-wrapper'>";
 
 			/* End variables */	
 
-			/* Controls slide title based on page meta setting */	
+				/* Controls slide title based on page meta setting */	
 
-			if ($hidetitlebar == 'on' AND $captionstyle != 'key4') {
-	   			$caption = "data-caption='#htmlCaption$i'";
+			if ($hidetitlebar == 'on' AND $captionstyle != '0') {
+	   			$titlevar = "#caption$i";
 	   		}
-	   		else {
-	   			$caption = '';
+
+	   		else{
+	   			$titlevar = '';
 	   		}
 
 	    	/* End slide title */
