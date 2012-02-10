@@ -21,7 +21,7 @@
 		add_action ( 'synapse_blog_content_slider', 'synapse_slider_content');
 	}
 	
-	if (preg_match("/synapse_blog_nivoslider/", $reorder ) && $slidersize == "key1" ) {
+	if (preg_match("/synapse_blog_nivoslider/", $reorder ) && $nivoslidersize != "key1" ) {
 		remove_action ( 'synapse_blog_nivoslider', 'synapse_nivoslider_content' );
 		add_action ( 'synapse_blog_content_slider', 'synapse_nivoslider_content');
 	}
