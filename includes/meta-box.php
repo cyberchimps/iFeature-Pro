@@ -90,7 +90,8 @@ function initialize_the_meta_boxes() {
 					'twitterbar_section' => 'Twitter Bar',
 					'page_section' => 'Page',
 					'box_section' => 'Boxes',
-					'carousel_section' => 'Carousel',			
+					'carousel_section' => 'Carousel',
+					'page_nivoslider' => 'NivoSlider'		
 					),
 					'std' => 'page_section'
 				))
@@ -110,6 +111,21 @@ function initialize_the_meta_boxes() {
 			->checkbox('hide_arrows', 'Navigation Arrows', '', array('std' => 'on'))
 			->checkbox('slider_timer', 'Slider Timer', '', array('std' => 'on'))
 			->checkbox('enable_wordthumb', 'WordThumb Image Resizing', '', array('std' => 'off'))
+			->sliderhelp('', 'Need Help?', '')
+		->tab($themenamefull." NivoSlider Options")
+			->select('page_nivoslider_size', 'Select Slider Size', '', array('options' => array('Full-Width', 'Half-Width')) )
+			->select('page_nivoslider_type', 'Select Slider Type', '', array('options' => array('Custom Slides', 'Blog Posts')) )
+			->select('nivoslider_category', 'Custom Slide Category', '', array('options' => $slideroptions) )
+			->select('nivoslider_blog_category', 'Blog Post Category', '', array('options' => $blogoptions, 'all') )
+			->text('nivoslider_blog_posts_number', 'Number of Featured Blog Posts', '', array('std' => '5'))
+			->text('nivoslider_height', 'Slider Height', '', array('std' => '330'))
+			->text('nivoslider_delay', 'Slider Delay Time (MS)', '', array('std' => '3500'))
+			->select('page_nivoslider_animation', 'Slider Animation Type', '', array('options' => array('Horizontal-Push (default)', 'Fade', 'Horizontal-Slide', 'Vertical-Slide')) )
+			->select('page_nivoslider_navigation_style', 'Slider Navigation Style', '', array('options' => array('Dots (default)', 'Thumbnails', 'None')) )
+			->select('page_nivoslider_caption_style', 'Slider Caption Style', '', array('options' => array('None (default)', 'Bottom', 'Left', 'Right')) )
+			->checkbox('nivo_hide_arrows', 'Navigation Arrows', '', array('std' => 'on'))
+			->checkbox('nivo_slider_timer', 'Slider Timer', '', array('std' => 'on'))
+			->checkbox('nivo_enable_wordthumb', 'WordThumb Image Resizing', '', array('std' => 'off'))
 			->sliderhelp('', 'Need Help?', '')
 		->tab("Callout Options")
 			->text('callout_title', 'Callout Title', '')

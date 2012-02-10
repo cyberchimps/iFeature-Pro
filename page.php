@@ -17,6 +17,7 @@
 /* Define global variables. */
 	global $options, $post, $themeslug;
 	$size = get_post_meta($post->ID, 'page_slider_size' , true);
+	$nivosize = get_post_meta($post->ID, 'page_nivoslider_size' , true);
 	$page_section_order = get_post_meta($post->ID, 'page_section_order' , true);
 	if(!$page_section_order) {
 		$page_section_order = 'page_section';
@@ -30,6 +31,12 @@ if (preg_match("/page_slider/", $page_section_order ) && $size == "1" ) {
 	remove_action ('synapse_page_slider', 'synapse_slider_content' );
 	add_action ('synapse_page_content_slider', 'synapse_slider_content' );
 }
+
+if (preg_match("/page_nivoslider/", $page_section_order ) && $nivosize == "1" ) {
+	remove_action ('synapse_page_nivoslider', 'synapse_nivoslider_content' );
+	add_action ('synapse_page_content_slider', 'synapse_nivoslider_content' );
+}
+
 /* End set slider hook*/
 ?>
 
