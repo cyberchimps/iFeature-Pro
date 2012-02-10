@@ -75,18 +75,7 @@ function synapse_nivoslider_content() {
 	
 echo "<div id='slider-wrapper'>";
 
-/* Row div variable. */	
-if ($size == 'key2' OR $size == '0' ) {
-	$openrow = '<div class="row">';
-	$closerow = '</div>';
-}
 
-else {
-	$openrow = '';
-	$closerow = '';
-}?>	
-
-<?php echo $openrow; 
 	
 /* End row riv variables. */	
 	
@@ -533,7 +522,7 @@ OUT;
 echo $out; ?> </div> <div class="nivoslider_nav" style="width: <?php echo $csWidth ?>px;"></div>
 
 
-<?php echo $closerow; 
+<?php 
 
 }
 
