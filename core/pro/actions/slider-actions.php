@@ -94,11 +94,70 @@ else {
 
 /* Define animation styles. */	
 
-	if ($slideranimation == '') {
-		$animation = 'random';
+	/* Define animation styles. */	
+
+	if ($slideranimation == 'sliceDown' OR $slideranimation == '1') {
+		$animation = 'sliceDown';
 	}
+	
+	elseif ($slideranimation == 'sliceDownLeft' OR $slideranimation == '2') {
+		$animation = 'sliceDownLeft' ;
+	}
+
+	elseif ($slideranimation == 'sliceUp' OR $slideranimation == '3') {
+		$animation = 'sliceUp' ;
+	}
+
+	elseif ($slideranimation == 'sliceUpLeft' OR $slideranimation == '4') {
+		$animation = 'sliceUpLeft' ;
+	}
+
+	elseif ($slideranimation == 'sliceUpDown' OR $slideranimation == '5') {
+		$animation = 'sliceUpDown' ;
+	}
+
+	elseif ($slideranimation == 'sliceUpDownLeft' OR $slideranimation == '6') {
+		$animation = 'sliceUpDownLeft' ;
+	}
+
+	elseif ($slideranimation == 'fold' OR $slideranimation == '7') {
+		$animation = 'fold' ;
+	}
+
+	elseif ($slideranimation == 'fade' OR $slideranimation == '8') {
+		$animation = 'fade' ;
+	}
+
+	elseif ($slideranimation == 'slideInRight' OR $slideranimation == '9') {
+		$animation = 'slideInRight' ;
+	}
+
+	elseif ($slideranimation == 'slideInLeft' OR $slideranimation == '10') {
+		$animation = 'slideInLeft' ;
+	}
+
+	elseif ($slideranimation == 'boxRandom' OR $slideranimation == '11') {
+		$animation = 'boxRandom' ;
+	}
+
+	elseif ($slideranimation == 'boxRain' OR $slideranimation == '12') {
+		$animation = 'boxRain' ;
+	}
+
+	elseif ($slideranimation == 'boxRainReverse' OR $slideranimation == '13') {
+		$animation = 'boxRainReverse' ;
+	}
+
+	elseif ($slideranimation == 'boxRainGrow' OR $slideranimation == '14') {
+		$animation = 'boxRainGrow' ;
+	}
+	
+	elseif ($slideranimation == 'boxRainGrowReverse' OR $slideranimation == '15') {
+		$animation = 'boxRainGrowReverse' ;
+	}
+	
 	else {
-		$animation = $slideranimation;
+		$animation = 'random';
 	}
 	
 /* End animation styles. */		
