@@ -70,6 +70,17 @@ jQuery(document).ready(function($) {
       post.show(); custom.hide();
     }
   }).change();
+   $("#if_nivo_slider_type").change(function(){
+    var val = $(this).val(),
+      post = $("#section-if_nivo_slider_category"),
+      custom = $("#section-if_nivo_customslider_category");
+    if(val == 'custom') {
+      post.hide(); custom.show();
+    } else {
+      post.show(); custom.hide();
+    }
+  }).change();
+
 
   $.each(['twitter', 'facebook', 'gplus', 'flickr', 'linkedin', 'youtube', 'googlemaps', 'email', 'rsslink'], function(i, val) {
 	  $("#section-if_" + val).each(function(){
