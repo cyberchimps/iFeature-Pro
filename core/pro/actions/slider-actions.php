@@ -42,24 +42,24 @@ function synapse_nivoslider_content() {
 	$root = get_template_directory_uri(); 
 	
 	if (is_page()) {
-		$size = get_post_meta($post->ID, 'nivo_page_slider_size' , true);
-		$size2 = get_post_meta($post->ID, 'nivo_page_sidebar' , true);
-		$type = get_post_meta($post->ID, 'nivo_page_slider_type' , true);
-		$category = get_post_meta($post->ID, 'nivo_slider_blog_category' , true);
-		$customcategory = get_post_meta($post->ID, 'nivo_slider_category' , true);
-		$postnumber  = get_post_meta($post->ID, 'nivo_slider_blog_posts_number' , true);
-		$sliderheight = get_post_meta($post->ID, 'nivo_slider_height' , true);
-		$sliderdelay = get_post_meta($post->ID, 'nivo_slider_delay' , true);
-		$slideranimation = get_post_meta($post->ID, 'nivo_page_slider_animation' , true);
-		$captionstyle = get_post_meta($post->ID, 'nivo_page_slider_caption_style' , true);
-		$navigationstyle = get_post_meta($post->ID, 'nivo_page_slider_navigation_style' , true);
+		$size = get_post_meta($post->ID, 'page_nivoslider_size' , true);
+		$size2 = get_post_meta($post->ID, 'page_sidebar' , true);
+		$type = get_post_meta($post->ID, 'page_nivoslider_type' , true);
+		$category = get_post_meta($post->ID, 'nivoslider_blog_category' , true);
+		$customcategory = get_post_meta($post->ID, 'nivoslider_category' , true);
+		$postnumber  = get_post_meta($post->ID, 'nivoslider_blog_posts_number' , true);
+		$sliderheight = get_post_meta($post->ID, 'nivoslider_height' , true);
+		$sliderdelay = get_post_meta($post->ID, 'nivoslider_delay' , true);
+		$slideranimation = get_post_meta($post->ID, 'page_nivoslider_animation' , true);
+		$captionstyle = get_post_meta($post->ID, 'page_nivoslider_caption_style' , true);
+		$navigationstyle = get_post_meta($post->ID, 'page_nivoslider_navigation_style' , true);
 		$hidenav = get_post_meta($post->ID, 'nivo_hide_arrows' , true);
 		$wordenable = get_post_meta($post->ID, 'nivo_enable_wordthumb' , true);	
 	}
 	
 	else {
 		$size = $options->get($themeslug.'_nivo_slider_size');
-		$size2 = $options->get($themeslug.'_nivo_blog_sidebar');
+		$size2 = $options->get($themeslug.'_blog_sidebar');
 		$type = $options->get($themeslug.'_nivo_slider_type'); 
 		$category = $options->get($themeslug.'_nivo_slider_category'); 
 		$customcategory = $options->get($themeslug.'_nivo_customslider_category');

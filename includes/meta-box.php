@@ -124,7 +124,6 @@ function initialize_the_meta_boxes() {
 			->select('page_nivoslider_navigation_style', 'Slider Navigation Style', '', array('options' => array('Dots (default)', 'Thumbnails', 'None')) )
 			->select('page_nivoslider_caption_style', 'Slider Caption Style', '', array('options' => array('None (default)', 'Bottom', 'Left', 'Right')) )
 			->checkbox('nivo_hide_arrows', 'Navigation Arrows', '', array('std' => 'on'))
-			->checkbox('nivo_slider_timer', 'Slider Timer', '', array('std' => 'on'))
 			->checkbox('nivo_enable_wordthumb', 'WordThumb Image Resizing', '', array('std' => 'off'))
 			->sliderhelp('', 'Need Help?', '')
 		->tab("Callout Options")
