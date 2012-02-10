@@ -67,6 +67,19 @@ function synapse_page_content_slider() {
 	do_action ('synapse_page_content_slider');
 }
 
+function synapse_blog_nivoslider() {
+	do_action ('synapse_blog_nivoslider');
+}
+function synapse_blog_content_nivoslider() {
+	do_action ('synapse_blog_content_nivoslider');
+}
+function synapse_page_nivoslider() {
+	do_action ('synapse_page_nivoslider');
+}
+function synapse_page_content_nivoslider() {
+	do_action ('synapse_page_content_nivoslider');
+}
+
 /**
 * End
 */

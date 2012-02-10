@@ -22,6 +22,8 @@
 add_action ('synapse_blog_slider', 'synapse_slider_content' );
 add_action ('synapse_page_slider', 'synapse_slider_content' );
 
+add_action ('synapse_blog_nivoslider', 'synapse_nivoslider_content' );
+add_action ('synapse_page_nivoslider', 'synapse_nivoslider_content' );
 
 /**
 * Nivoslider
@@ -70,6 +72,8 @@ function synapse_nivoslider_content() {
 		$sliderdelay = $options->get($themeslug.'_nivo_slider_delay');
 		$navigationstyle = $options->get($themeslug.'_nivo_slider_nav');	
 	}
+	
+echo "<div id='slider-wrapper'>";
 
 /* Row div variable. */	
 if ($size == 'key2' OR $size == '0' ) {
@@ -209,7 +213,7 @@ else {
 /* Establish post counter */  
   	
 	if (have_posts()) :
-	    $out = "<div id='orbitDemo'>"; 
+	    $out = "<div id='slider' class='nivoSlider'>"; 
 	    $i = 0;
 	if ($usecustomslides == 'posts' AND $postnumber == '' OR $type != '0' AND $postnumber == '') {
 	    $no = '5';    	
@@ -423,8 +427,8 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
         animSpeed:500, // Slide transition speed
         pauseTime:'$delay', // How long each slide will show
         startSlide:0, // Set starting Slide (0 index)
-        directionNav:$hidenavigation, // Next  Prev navigation
-        directionNavHide:$autohide, // Only show on hover
+        directionNav:true, // Next  Prev navigation
+        directionNavHide:true, // Only show on hover
         controlNavThumbs:true, // Use thumbnails for Control Nav
         controlNavThumbsFromRel:true, // Use image rel for thumbs
         controlNavThumbsSearch: '.jpg', // Replace this with...
@@ -454,7 +458,7 @@ OUT;
 
 /* End NivoSlider javascript */ 
 
-echo $out; ?> <div class="slider_nav"></div>
+echo $out; ?> 
 
 <?php echo $closerow; 
 

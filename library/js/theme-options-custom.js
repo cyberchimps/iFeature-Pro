@@ -139,7 +139,7 @@ jQuery(function($) {
 			synapse_callout_section: "subsection-calloutoptions",
 			synapse_twitterbar_section: "subsection-twtterbaroptions",
 			synapse_index_carousel_section: "subsection-carouseloptions",
-			synapse_nivo_slider: "subsection-nivoslider"
+			synapse_blog_nivoslider: "subsection-nivoslider"
 			// , synapse_box_section: ""
 		};
 
