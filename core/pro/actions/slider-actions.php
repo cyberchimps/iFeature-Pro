@@ -188,23 +188,30 @@ echo "<div id='slider-wrapper'>";
 
 /* Define slider caption style */      
 
-	if ($captionstyle == 'key2' OR $captionstyle == '3') { ?>
+	if ($captionstyle == 'key3' OR $captionstyle == '2') { ?>
+		
 		<style type="text/css">
-		.orbit-caption {height: <?php echo $height ?>px; width: 30% !important;}
+		.nivo-caption {height: <?php echo $height ?>px; width: 30%;}
 		</style> <?php
 	}
-	elseif ($captionstyle == 'key3' OR $captionstyle == '2') { ?>
+	
+	elseif ($captionstyle == 'key2' OR $captionstyle == '1') { ?>
+		
 		<style type="text/css">
-		.orbit-caption {position: relative !important; float: left; height: <?php echo $height ?>px; width: 30% !important; top: -375px;}
-		</style><?php
+		.nivo-caption {position: relative; float: right; height: <?php echo $height ?>px; width: 30%;}
+		</style> <?php
 	}    
-	elseif ($captionstyle == '0') { ?>
+	
+	elseif ($captionstyle == 'key4' OR $captionstyle == '3') { ?>
+		
 		<style type="text/css">
-		.orbit-caption {display: none !important;}
-		</style><?php
+		.nivo-caption {display: none !important;}
+		</style> <?php
 	}    
 
-/* Define wordthumb default height and widths. */		
+	
+/* End slider caption */ 
+
 
 	if ($size == "key2" OR $size == '0') {
 		$wordthumb = "h=$height&w=980";
