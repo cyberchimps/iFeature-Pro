@@ -440,14 +440,23 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 
 /* Define slider navigation style */ 		
 	
-	if ($options->get($themeslug.'_nivoslider_nav') == 'key1' OR $options->get($themeslug.'_nivoslider_nav') == '') {
+	if ($navigationstyle == 'key1' OR $navigationstyle == '' OR $navigationstyle == '1') {
 		
 		echo '<style type="text/css">';
 		echo ".nivo-controlNav a {background: url($root/images/slider/bullets.png) no-repeat; display:block; width:22px; height:22px; 	text-indent:-9999px; border:0; margin-right:3px; float:left;}";
 		echo ".nivo-controlNav a.active {background-position:0 -22px;} ";
-		echo '</style>';
-		
+		echo '</style>';	
 	}
+	if ($navigationstyle == 'key3' OR $navigationstyle == '2') {
+		
+		echo '<style type="text/css">';
+		echo ".nivo-controlNav {display: none;}";
+		echo ".nivoslider_nav {display: none;}";
+		echo '#slider-wrapper {margin-bottom: 20px !important;}';
+		echo '</style>';
+
+	}
+
 
 
 	?>
