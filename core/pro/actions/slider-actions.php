@@ -399,7 +399,7 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 <!-- Apply slider CSS based on user settings -->
 
 	<style type="text/css" media="screen">
-		#slider-wrapper { width: <?php echo $csWidth ?>px; height: <?php echo $height ?>px; margin: auto; margin-bottom:50px;}
+		#slider-wrapper { width: <?php echo $csWidth ?>px; height: <?php echo $height ?>px; margin: auto; margin-bottom:45px;}
 		#slider { width: <?php echo $csWidth ?>px; height: <?php echo $height ?>px; margin: auto; }
 	</style>
 
@@ -471,7 +471,8 @@ OUT;
 
 /* End NivoSlider javascript */ 
 
-echo $out; ?> </div>
+echo $out; ?> </div> <div class="slider_nav" style="width: <?php echo $csWidth ?>px;"></div>
+
 
 <?php echo $closerow; 
 
