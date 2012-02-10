@@ -12,7 +12,7 @@
 	
 	$reorder = $options->get($themeslug.'_blog_section_order');
 	$slidersize = $options->get($themeslug.'_slider_size');
-	$nivoslidersize = $options->get($themeslug.'_nivoslider_size');
+	$nivoslidersize = $options->get($themeslug.'_nivo_slider_size');
 			
 /* Set slider hook based on page option */
 
@@ -21,7 +21,7 @@
 		add_action ( 'synapse_blog_content_slider', 'synapse_slider_content');
 	}
 	
-	if (preg_match("/synapse_blog_nivoslider/", $reorder ) && $nivoslidersize != "key1" ) {
+	if (preg_match("/synapse_blog_nivoslider/", $reorder ) && $nivoslidersize == "key1" ) {
 		remove_action ( 'synapse_blog_nivoslider', 'synapse_nivoslider_content' );
 		add_action ( 'synapse_blog_content_slider', 'synapse_nivoslider_content');
 	}
