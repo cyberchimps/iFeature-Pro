@@ -153,15 +153,23 @@ echo "<div id='slider-wrapper'>";
 
 /* Slider navigation options */
 
-	if ($hidenav == '0' OR $hidenav == "off") { ?>
-		<style type="text/css">
-		div.slider-nav {display: none;}
-		</style> <?php
+	if ($hidenav == '1' OR $hidenav == 'on') {
+		$hidenavigation = 'true';
+	}
+
+	else {
+		$hidenavigation = 'false';
 	}
 	
+	if ($navautohide == '1' or $navautohide == 'on') {
+		$autohide = 'true';
+	}
 	
-/* End navigation options */
+	else {
+		$autohide = 'false';
+	}
 
+/* End navigation options */
 
 /* Define blog category */
 
@@ -505,8 +513,8 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
         animSpeed:500, // Slide transition speed
         pauseTime:'$delay', // How long each slide will show
         startSlide:0, // Set starting Slide (0 index)
-        directionNav:true, // Next  Prev navigation
-        directionNavHide:true, // Only show on hover
+        directionNav:$hidenavigation, // Next  Prev navigation
+        directionNavHide:$autohide, // Only show on hover
         controlNavThumbs:true, // Use thumbnails for Control Nav
         controlNavThumbsFromRel:true, // Use image rel for thumbs
         controlNavThumbsSearch: '.jpg', // Replace this with...
