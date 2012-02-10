@@ -46,6 +46,7 @@ jQuery(document).ready(function($) {
 	$("#subsection-Page-Options > h4").click();
 	var page_subsection_map = {
 		page_slider: "subsection-iFeature-Pro-Slider-Options",
+		page_nivoslider: "subsection-iFeature-Pro-NivoSlider-Options",
 		callout_section: "subsection-Callout-Options",
 		carousel_section: "subsection-Carousel-Options",
 		twitterbar_section: "subsection-Twitter-Options"
