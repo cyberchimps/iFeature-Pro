@@ -3,6 +3,8 @@ iFeature Pro Changelog
 ****************************
 
 Version 4.0.3 (02-10-12)
+-Added NivoSlider option.
+-Removed "width" element from slider images. 
 
 Version 4.0.2 (02-09-12)
 -Better handling of slider responsive breaking point widths (fixes FireFox bug).
