@@ -382,16 +382,29 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 
 /* End slider navigation variable */ 
 
+/* Define slider navigation style */ 		
+	
+	if ($options->get($themeslug.'_nivoslider_nav') == 'key1' OR $options->get($themeslug.'_nivoslider_nav') == '') {
+		
+		echo '<style type="text/css">';
+		echo ".nivo-controlNav a {background: url($root/images/slider/bullets.png) no-repeat; display:block; width:22px; height:22px; 	text-indent:-9999px; border:0; margin-right:3px; float:left;}";
+		echo ".nivo-controlNav a.active {background-position:0 -22px;} ";
+		echo '</style>';
+		
+	}
+
+
 	?>
 	
 <!-- Apply slider CSS based on user settings -->
 
 	<style type="text/css" media="screen">
-		#orbitDemo { max-height: <?php echo $height ?>px !important; }
+		#slider-wrapper { width: <?php echo $csWidth ?>px; height: <?php echo $height ?>px; margin: auto; margin-bottom:50px;}
 		#slider { width: <?php echo $csWidth ?>px; height: <?php echo $height ?>px; margin: auto; }
 	</style>
 
 <!-- End style -->
+
 
 <?php if ($navigationstyle == 'key3' OR $navigationstyle == '2') :?>
 	<style type="text/css" media="screen">
@@ -458,7 +471,7 @@ OUT;
 
 /* End NivoSlider javascript */ 
 
-echo $out; ?> 
+echo $out; ?> </div>
 
 <?php echo $closerow; 
 
