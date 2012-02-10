@@ -321,7 +321,7 @@ else {
 
 	    	
 	    $out .= "<a href='$link'>	
-	    				<img src='$image' height='$height' width='$csWidth' title='$titlevar' rel='$thumbnail' alt='Slider' />
+	    				<img src='$image' height='$height' width='$csWidth' title='$titlevar' rel='$thumbnail' alt='Slider' class='nivoimg' />
 	    					<span id='caption$i' class='nivo-html-caption'>
                 				<font size='4'>$title </font> <br />
                 				$text 
@@ -399,8 +399,8 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 <!-- Apply slider CSS based on user settings -->
 
 	<style type="text/css" media="screen">
-		#slider-wrapper { width: <?php echo $csWidth ?>px; height: <?php echo $height ?>px; margin: auto; margin-bottom:45px;}
-		#slider { width: <?php echo $csWidth ?>px; height: <?php echo $height ?>px; margin: auto; }
+		#slider-wrapper { width: <?php echo $csWidth ?>px; height: <?php echo $height ?>px; margin: auto;}
+		#slider { width: <?php echo $csWidth ?>px; height: <?php echo $height ?>px; margin: auto; margin-bottom:45px; }
 	</style>
 
 <!-- End style -->
@@ -471,7 +471,7 @@ OUT;
 
 /* End NivoSlider javascript */ 
 
-echo $out; ?> </div> <div class="slider_nav" style="width: <?php echo $csWidth ?>px;"></div>
+echo $out; ?> </div> <div class="nivoslider_nav" style="width: <?php echo $csWidth ?>px;"></div>
 
 
 <?php echo $closerow; 

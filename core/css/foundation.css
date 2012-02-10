@@ -1138,7 +1138,9 @@ div.slider-nav span.left {
     .callout_title {text-align: center !important;}
     #calloutbutton {width: 200px !important; margin: auto !important; margin-bottom: 30px !important;}
     #banner {margin-top: 10px !important;}
-    #orbitDemo.orbit img {width: 710px !important;}
+    #orbitDemo.orbit img {max-width: 710px !important;}
+    
+    #slider-wrapper, #slider, .nivoslider_nav {width: 710px !important;}
 }
 
 @media handheld, only screen and (max-width: 400px) {
@@ -1159,4 +1161,6 @@ div.slider-nav span.left {
 	#afterfootercopyright {float: left !important;margin-left:15px !important;margin-bottom:2px !important;}
 	#mobileMenu_nav_menu {float: right !important; margin-top: 10px !important; margin-right: 10px !important;}
 	#imenu {height: 35px !important;}
+	#slider-wrapper, #slider, .nivoslider_nav {max-width: 330px !important; }
+	#slider-wrapper, #slider {height: 90px !important;}
 }
