@@ -908,7 +908,8 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
     
     $out .= <<<OUT
 <script type="text/javascript">
-   $(window).load(function() {
+    jQuery(document).ready(function ($) {
+    $(window).load(function() {
     $('#orbitDemo').orbit({
          animation: '$animation',
          advanceSpeed: $delay,
@@ -918,10 +919,11 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
          bulletThumbs: $thumbs
      });
      });
+     });
 </script>
 OUT;
 
-/* End NivoSlider javascript */ 
+/* End Orbit javascript */ 
 
 echo $out; ?> <div class="slider_nav"></div>
 

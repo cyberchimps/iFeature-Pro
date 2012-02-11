@@ -9,6 +9,7 @@ Version 4.0.3 (02-10-12)
 -Searchform in nav now has separate style from widget. 
 -Smaller home button.
 -Smaller slider thumbs for iPhone size.
+-jQuery no-conflict fix for better plugin compatibility. 
 
 Version 4.0.2 (02-09-12)
 -Better handling of slider responsive breaking point widths (fixes FireFox bug).
