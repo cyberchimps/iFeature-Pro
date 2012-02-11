@@ -197,12 +197,12 @@ echo "<div id='slider-wrapper'>";
 		.nivo-caption {height: <?php echo $height ?>px; width: 30%;}
 		</style> <?php
 	}
-	elseif ($captionstyle == 'key2' OR $captionstyle == '1') { ?>
+	elseif ($captionstyle == 'key2' OR $captionstyle == '3') { ?>
 		<style type="text/css">
 		.nivo-caption {position: relative; float: right; height: <?php echo $height ?>px; width: 30%;}
 		</style> <?php
 	}    
-	elseif ($captionstyle == 'key4' OR $captionstyle == '3') { ?>
+	elseif ($captionstyle == 'key4' OR $captionstyle == '0') { ?>
 		<style type="text/css">
 		.nivo-caption {display: none !important;}
 		</style> <?php
