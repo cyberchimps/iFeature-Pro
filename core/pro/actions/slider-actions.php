@@ -77,8 +77,6 @@ function synapse_nivoslider_content() {
 		
 echo "<div id='slider-wrapper'>";
 
-
-	
 /* End row riv variables. */	
 	
 /* End define variables. */	
@@ -158,15 +156,12 @@ echo "<div id='slider-wrapper'>";
 	if ($hidenav == '1' OR $hidenav == 'on') {
 		$hidenavigation = 'true';
 	}
-
 	else {
 		$hidenavigation = 'false';
 	}
-	
 	if ($navautohide == '1' or $navautohide == 'on') {
 		$autohide = 'true';
 	}
-	
 	else {
 		$autohide = 'false';
 	}
@@ -189,7 +184,6 @@ echo "<div id='slider-wrapper'>";
 	if ($sliderheight == '') {
 	    $height = '330';
 	}    
-
 	else {
 		$height = $sliderheight;
 	}
@@ -199,29 +193,22 @@ echo "<div id='slider-wrapper'>";
 /* Define slider caption style */      
 
 	if ($captionstyle == 'key3' OR $captionstyle == '2') { ?>
-		
 		<style type="text/css">
 		.nivo-caption {height: <?php echo $height ?>px; width: 30%;}
 		</style> <?php
 	}
-	
 	elseif ($captionstyle == 'key2' OR $captionstyle == '1') { ?>
-		
 		<style type="text/css">
 		.nivo-caption {position: relative; float: right; height: <?php echo $height ?>px; width: 30%;}
 		</style> <?php
 	}    
-	
 	elseif ($captionstyle == 'key4' OR $captionstyle == '3') { ?>
-		
 		<style type="text/css">
 		.nivo-caption {display: none !important;}
 		</style> <?php
 	}    
 
-	
 /* End slider caption */ 
-
 
 	if ($size == "key2" OR $size == '0') {
 		$wordthumb = "h=$height&w=980";
@@ -312,12 +299,11 @@ echo "<div id='slider-wrapper'>";
 
 			/* End variables */	
 
-				/* Controls slide title based on page meta setting */	
+			/* Controls slide title based on page meta setting */	
 
 			if ($hidetitlebar == 'on' AND $captionstyle != '0') {
 	   			$titlevar = "#caption$i";
 	   		}
-
 	   		else{
 	   			$titlevar = '';
 	   		}
@@ -380,12 +366,10 @@ echo "<div id='slider-wrapper'>";
 	    		$thumbnail = "$root/images/pro/sliderthumb.jpg";
 	    	}
 
-
 		    /* End image/thumb */	
 
 	     	/* Markup for slides */
 
-	    	
 	    $out .= "<a href='$link'>	
 	    				<img src='$image' height='$height' width='$csWidth' title='$titlevar' rel='$thumbnail' alt='Slider' class='nivoimg' />
 	    					<span id='caption$i' class='nivo-html-caption'>
@@ -420,14 +404,11 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 	if ($sliderdelay == "") {
 	    $delay = '3500';
 	}    
-
 	else {
 		$delay = $sliderdelay;
 	}
 
 /* End slider delay variable */ 	
-
-
 
 /* Define slider navigation style */ 		
 	
@@ -447,9 +428,6 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 		echo '</style>';
 
 	}
-
-
-
 	?>
 	
 <!-- Apply slider CSS based on user settings -->
@@ -460,7 +438,6 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 	</style>
 
 <!-- End style -->
-
 
 <?php if ($navigationstyle == 'key3' OR $navigationstyle == '2') :?>
 	<style type="text/css" media="screen">
@@ -529,11 +506,9 @@ OUT;
 
 echo $out; ?> </div> <div class="nivoslider_nav" style="width: <?php echo $csWidth ?>px;"></div>
 
-
 <?php 
 
 }
-
 
 /**
 * Extend slider functions
