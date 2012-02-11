@@ -8,6 +8,7 @@ Version 4.0.3 (02-10-12)
 -Fixed description color option.
 -Searchform in nav now has separate style from widget. 
 -Smaller home button.
+-Smaller slider thumbs for iPhone size.
 
 Version 4.0.2 (02-09-12)
 -Better handling of slider responsive breaking point widths (fixes FireFox bug).
