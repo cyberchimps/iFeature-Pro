@@ -55,6 +55,7 @@ function synapse_nivoslider_content() {
 		$navigationstyle = get_post_meta($post->ID, 'page_nivoslider_navigation_style' , true);
 		$hidenav = get_post_meta($post->ID, 'nivo_hide_arrows' , true);
 		$wordenable = get_post_meta($post->ID, 'nivo_enable_wordthumb' , true);	
+		$navautohide = get_post_meta($post->ID, 'nivo_nav_autohide' , true);	
 	}
 	
 	else {
@@ -70,7 +71,8 @@ function synapse_nivoslider_content() {
 		$slideranimation = $options->get($themeslug.'_nivo_slider_animation');
 		$postnumber = $options->get($themeslug.'_nivo_slider_posts_number');
 		$sliderdelay = $options->get($themeslug.'_nivo_slider_delay');
-		$navigationstyle = $options->get($themeslug.'_nivo_slider_nav');	
+		$navigationstyle = $options->get($themeslug.'_nivo_slider_nav');
+		$navautohide = $options->get($themeslug.'_nivo_disable_nav_autohide');
 	}
 		
 echo "<div id='slider-wrapper'>";
@@ -425,30 +427,11 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 
 /* End slider delay variable */ 	
 
-/* Define slider navigation variable */ 
-  	
-	if ($navigationstyle == 'key1' OR $navigationstyle == 'key2' OR $navigationstyle == '0'  OR $navigationstyle == '1' OR $navigationstyle == '') {
-	    $dots = 'true';
-	}
-	else {
-		$dots = 'false';
-	}
-	if ($navigationstyle == 'key2' OR $navigationstyle == '1') {
-	    $thumbs = 'true'; ?>
-	    
-	    <style type="text/css">
-		.orbit-bullets {bottom: -50px !important;}
-		</style> <?php
-	}
-	else {
-		$thumbs = 'false';
-	}
 
-/* End slider navigation variable */ 
 
 /* Define slider navigation style */ 		
 	
-	if ($navigationstyle == 'key1' OR $navigationstyle == '' OR $navigationstyle == '1') {
+	if ($navigationstyle == 'key1' OR $navigationstyle == '' OR $navigationstyle == '0') {
 		
 		echo '<style type="text/css">';
 		echo ".nivo-controlNav a {background: url($root/images/slider/bullets.png) no-repeat; display:block; width:22px; height:22px; 	text-indent:-9999px; border:0; margin-right:3px; float:left;}";
