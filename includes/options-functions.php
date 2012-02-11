@@ -367,18 +367,14 @@ function add_tagline_color() {
 
 	global $themename, $themeslug, $options;
 
-	if (!$options->get($themeslug.'_tagline_color')) {
-		$tagline = '#000';
-	}
-	
-	else { 
-		$tagline = $options->get($themeslug.'_tagline_color'); 
-	}		
-		
+	if ($options->get($themeslug.'_tagline_color') != '') {
+		$color = $options->get($themeslug.'_tagline_color'); 
+
 		echo '<style type="text/css">';
-		echo "#description {color: $tagline;}";
+		echo ".description {color: $color;}";
 		echo '</style>';
 
+	}	
 }
 add_action( 'wp_head', 'add_tagline_color');
 
