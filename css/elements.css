@@ -561,3 +561,5 @@ li.ui-state-default  {
 .tabbed-title {font-size: 15px;}
 
 .tabbed-date {font-size: 12px; font-style: italic;}
+
+div.timer {display: none;}
