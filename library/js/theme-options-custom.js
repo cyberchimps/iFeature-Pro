@@ -167,6 +167,7 @@ jQuery(function($) {
 		var show = $(this).val().split(",");
 		var map = {
 			ifeature_sitename_contact: "section-if_header_contact",
+			ifeature_custom_header_element: "section-if_custom_header_element",
 			ifeature_banner: "section-if_banner"
 			// , synapse_box_section: ""
 		};

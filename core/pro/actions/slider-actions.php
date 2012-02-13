@@ -446,11 +446,6 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 	</style>
 <?php endif;?>
 
-<?php if ($timer == '0' OR $timer == 'off') :?>
-	<style type="text/css" media="screen">
-		div.timer {display: none;}
-	</style>
-<?php endif;?>
 
 	<?php
 	
@@ -904,6 +899,7 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
     $('#orbitDemo').orbit({
          animation: '$animation',
          advanceSpeed: $delay,
+         timer: false, 
          captionAnimation: 'slideOpen',		// fade, slideOpen, none
          captionAnimationSpeed: 800,  
          bullets: $dots,

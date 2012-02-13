@@ -28,12 +28,37 @@ add_action( 'ifeature_logo_menu', 'ifeature_logo_menu_content');
 add_action( 'ifeature_logo_description', 'ifeature_logo_description_content');
 add_action( 'ifeature_banner', 'ifeature_banner_content');
 add_action( 'ifeature_icons', 'ifeature_icons_content');
+add_action( 'ifeature_custom_header_element', 'ifeature_custom_header_element_content');
 
 remove_action( 'synapse_head_tag', 'synapse_link_rel' );
 add_action( 'synapse_head_tag', 'ifeature_link_rel' );
 
 remove_action( 'synapse_box_section', 'synapse_box_section_content' );
 add_action( 'synapse_box_section', 'ifeature_box_section_content' );
+
+
+/**
+* Sets up the header contact area
+*
+* @since 1.0
+*/
+function ifeature_custom_header_element_content() { 
+	global $themeslug, $options; ?>
+	
+	<div class="container">
+		<div class="row">
+		
+			<div class="twelve columns">
+				
+				<?php echo stripslashes ($options->get($themeslug.'_custom_header_element')); 	?>
+						
+			</div>	
+		</div><!--end row-->
+	</div>	
+
+<?php	
+}
+
 
 /**
 * Sets up the header contact area

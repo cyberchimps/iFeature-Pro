@@ -15,6 +15,7 @@ Version 4.0.3 (02-13-12)
 -Removed slider timer. 
 -Added Custom Header Scripts option.
 -Added full-width Icons header section.
+-Added Custom Header Element.
 
 Version 4.0.2 (02-09-12)
 -Better handling of slider responsive breaking point widths (fixes FireFox bug).
