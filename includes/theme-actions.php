@@ -27,6 +27,7 @@ add_action( 'ifeature_description_icons', 'ifeature_description_icons_content');
 add_action( 'ifeature_logo_menu', 'ifeature_logo_menu_content');
 add_action( 'ifeature_logo_description', 'ifeature_logo_description_content');
 add_action( 'ifeature_banner', 'ifeature_banner_content');
+add_action( 'ifeature_icons', 'ifeature_icons_content');
 
 remove_action( 'synapse_head_tag', 'synapse_link_rel' );
 add_action( 'synapse_head_tag', 'ifeature_link_rel' );
@@ -133,9 +134,9 @@ function ifeature_link_rel() {
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/core/css/app.css" type="text/css" />
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/core/css/ie.css" type="text/css" />
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/shortcode.css" type="text/css" />
-<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/color/<?php echo $color; ?>.css" type="text/css" />
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/elements.css" type="text/css" />
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/style.css" type="text/css" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/color/<?php echo $color; ?>.css" type="text/css" />
 
 <?php if (is_child_theme()) :  //add support for child themes?>
 	<link rel="stylesheet" href="<?php echo bloginfo('stylesheet_directory') ; ?>/style.css" type="text/css" />
@@ -250,6 +251,35 @@ $default = "$root/images/pro/banner.jpg";
 
 <?php
 }
+
+/**
+* Full-Width Icons
+*
+* @since 3.0
+*/
+function ifeature_icons_content() {
+global $themeslug, $options, $root; //Call global variables
+$banner = $options->get($themeslug.'_banner'); //Calls the logo URL from the theme options
+$default = "$root/images/pro/banner.jpg";
+
+?>
+	<div class="container">
+		<div class="row">
+		
+			<div class="twelve columns">
+			
+			<!-- Begin @Core header social icon hook -->
+				<?php synapse_header_social_icons(); ?> 
+			<!-- End @Core header contact social icon hook -->	
+
+			
+			</div>	
+		</div><!--end row-->
+	</div>	
+
+<?php
+}
+
 
 /**
 * Logo/Description

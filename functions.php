@@ -304,7 +304,7 @@ function typekit_support() {
 add_action('wp_head', 'typekit_support');
 
 /**
-* Add TypeKit support based on theme option.
+* Add Google Analytics support based on theme option.
 */ 
 function google_analytics() {
 	global $themename, $themeslug, $options;
@@ -313,6 +313,18 @@ function google_analytics() {
 
 }
 add_action('wp_head', 'google_analytics');
+
+/**
+* Add custom header scripts support based on theme option.
+*/ 
+function custom_scripts() {
+	global $themename, $themeslug, $options;
+	
+	echo stripslashes ($options->get($themeslug.'_custom_header_scripts'));
+
+}
+add_action('wp_head', 'custom_scripts');
+
 	
 /**
 * Register custom menus for header, footer.

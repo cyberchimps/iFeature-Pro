@@ -2,7 +2,7 @@ iFeature Pro Changelog
 
 ****************************
 
-Version 4.0.3 (02-10-12)
+Version 4.0.3 (02-13-12)
 -Added NivoSlider option.
 -Removed "width" element from slider images. 
 -Fixed description color option.
@@ -10,6 +10,11 @@ Version 4.0.3 (02-10-12)
 -Smaller home button.
 -Smaller slider thumbs for iPhone size.
 -jQuery no-conflict fix for better plugin compatibility. 
+-Adjustment to mobile menu JS to fix conflict bug.
+-Fixed color scheme bug. 
+-Removed slider timer. 
+-Added Custom Header Scripts option.
+-Added full-width Icons header section.
 
 Version 4.0.2 (02-09-12)
 -Better handling of slider responsive breaking point widths (fixes FireFox bug).

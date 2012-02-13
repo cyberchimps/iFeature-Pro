@@ -1164,5 +1164,6 @@ div.slider-nav span.left {
     width: 25px;
     height: 15px;
     margin-bottom: -1px; }
+    #slider-wrapper, .nivoslider_nav{display: none;}
 
 }

@@ -540,7 +540,6 @@ function synapse_slider_content() {
 		$navigationstyle = get_post_meta($post->ID, 'page_slider_navigation_style' , true);
 		$hidenav = get_post_meta($post->ID, 'hide_arrows' , true);
 		$wordenable = get_post_meta($post->ID, 'enable_wordthumb' , true);	
-		$timer = get_post_meta($post->ID, 'slider_timer' , true);	
 	}
 	
 	else {
@@ -557,8 +556,6 @@ function synapse_slider_content() {
 		$postnumber = $options->get($themeslug.'_slider_posts_number');
 		$sliderdelay = $options->get($themeslug.'_slider_delay');
 		$navigationstyle = $options->get($themeslug.'_slider_nav');
-		$timer = $options->get($themeslug.'_slider_timer');
-		
 	}
 
 	
@@ -889,12 +886,6 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 	<style type="text/css" media="screen">
 		.slider_nav {display: none;}
 		#orbitDemo {margin-bottom: 0px;}
-	</style>
-<?php endif;?>
-
-<?php if ($timer == '0' OR $timer == 'off') :?>
-	<style type="text/css" media="screen">
-		div.timer {display: none;}
 	</style>
 <?php endif;?>
 

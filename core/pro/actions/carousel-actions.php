@@ -35,7 +35,6 @@ function synapse_carousel_section_content() {
 	if (is_page()) {
 		$customcategory = get_post_meta($post->ID, 'carousel_category' , true);
 		$speed = get_post_meta($post->ID, 'carousel_speed' , true);
-
 	}
 	else {
 		$customcategory = $options->get($themeslug.'_carousel_category');
@@ -51,7 +50,7 @@ function synapse_carousel_section_content() {
 
 /* Query posts  */
 
-query_posts( array ('post_type' => $themeslug.'_featured_posts', 'showposts' => 20, true, 'carousel_categories' => $customcategory ));
+query_posts( array ('post_type' => $themeslug.'_featured_posts', 'showposts' => 50, true, 'carousel_categories' => $customcategory ));
 
 /* End query posts based on theme/meta options */
     	
@@ -64,7 +63,7 @@ query_posts( array ('post_type' => $themeslug.'_featured_posts', 'showposts' => 
 	    "; 
 	    $i = 0;
 
-		    $no = '20';
+		    $no = '50';
 
 
 /* End post counter */	    	
@@ -115,7 +114,7 @@ query_posts( array ('post_type' => $themeslug.'_featured_posts', 'showposts' => 
 	      	else:
 	      
 	      	$out .= "	
-	    <ul>
+	    	<ul>
 	      			<li>
 	      				
 	    				<img src='$default' alt='Post 1'/>
@@ -145,10 +144,8 @@ query_posts( array ('post_type' => $themeslug.'_featured_posts', 'showposts' => 
 					<li>
 	    				<img src='$default' alt='Post 6' />
 	    			</li>
-
-
-	      				
-	    			</ul>
+		
+	    	</ul>
 	    				
 	    				
 	    			";

@@ -57,3 +57,7 @@ function ifeature_logo_description() {
 function ifeature_banner() {
 	do_action('ifeature_banner');
 }
+
+function ifeature_icons() {
+	do_action('ifeature_icons');
+}
