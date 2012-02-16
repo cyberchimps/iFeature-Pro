@@ -373,8 +373,7 @@ echo "<div id='slider-wrapper'>";
 	    $out .= "<a href='$link'>	
 	    				<img src='$image' height='$height' width='$csWidth' title='$titlevar' rel='$thumbnail' alt='Slider' class='nivoimg' />
 	    					<span id='caption$i' class='nivo-html-caption'>
-                				<font size='4'>$title </font> <br />
-                				$text 
+                				<span class='caption_title'>$title</span> <br /> <span class='caption_text'>$text</span>                			
                 			</span>
 	    				</a>
 	    			";
