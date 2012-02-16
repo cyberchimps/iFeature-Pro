@@ -108,7 +108,11 @@ header {margin-top: 15px;}
 
 /* Home Button */
 
+<<<<<<< HEAD
 #home {float: left;border-right:#777 1px solid;margin-right:4px;margin-left:16px; height: 36px;}
+=======
+#home {float: left;border-right:#777 1px solid;margin-right:4px;margin-left:15px;}
+>>>>>>> fa6068b... home button from 16px left to 15px
 #home a:hover{opacity: .5}
 #nohome {float: left; margin-right:4px;margin-left:5px; height: 35px;}
 
