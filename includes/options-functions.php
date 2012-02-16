@@ -169,16 +169,13 @@ function featured_image_alignment() {
 	global $themename, $themeslug, $options;
 	
 	if ($options->get($themeslug.'_featured_image_align') == "key3" ) {
-
-		else {
+	
 		echo '<!--[if !IE 8]>';
 		echo '<style type="text/css">';
 		echo ".featured-image {float: right;}";
 		echo '</style>';
 		echo '<![endif]-->';
-		
-	}
-		
+			
 	}
 	
 	elseif ($options->get($themeslug.'_featured_image_align') == "key2" ) {
