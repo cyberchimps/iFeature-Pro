@@ -199,6 +199,7 @@ header {margin-top: 15px;}
 	-moz-border-radius: 0px 0px 4px 4px;
 	position: absolute;
 	height: 22px;
+	margin-left: 0px;
 	background: #f8f8f8; /* Old browsers */
 	background: -moz-linear-gradient(top,  #f8f8f8 0%, #ededed 40%, #dddddd 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(40%,#ededed), color-stop(100%,#dddddd)); /* Chrome,Safari4+ */
@@ -319,6 +320,7 @@ ol, ul {list-style-position: inside;margin-left: 21px;}
 	color: #fff;
 	margin-top: 15px;
 	margin-bottom: 10px;
+	*margin-left: 3.3%;
 }
 
 .footer-widget-title {
@@ -380,7 +382,7 @@ ol, ul {list-style-position: inside;margin-left: 21px;}
 	margin-right: 5px;
 }
 
-#credit { height: 22px; z-index: 99; margin-top: 5px; text-align: center;}
+#credit { height: 22px; z-index: 99; margin-top: 5px; text-align: center; *margin-top: -20px;}
 
 /* WordPress Styles  */
 
