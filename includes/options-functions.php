@@ -209,14 +209,11 @@ function featured_image_alignment() {
 	
 	if ($options->get($themeslug.'_featured_image_align') == "key3" ) {
 	
-		echo '<!--[if !IE 8]>';
 		echo '<style type="text/css">';
 		echo ".featured-image {float: right;}";
 		echo '</style>';
-		echo '<![endif]-->';
 			
 	}
-	
 	elseif ($options->get($themeslug.'_featured_image_align') == "key2" ) {
 
 		echo '<style type="text/css">';
@@ -224,17 +221,12 @@ function featured_image_alignment() {
 		echo '</style>';
 		
 	}
-	
 	else {
-		echo '<!--[if !IE 8]>';
+		
 		echo '<style type="text/css">';
 		echo ".featured-image {float: left;}";
 		echo '</style>';
-		echo '<![endif]-->';
-		
 	}
-
-	
 }
 add_action( 'wp_head', 'featured_image_alignment');
 
