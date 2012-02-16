@@ -15,6 +15,45 @@
 * @since 3.1
 */
 
+/* Standard Web Layout*/
+
+function standard_web_layout() {
+	global $options, $themeslug;
+	
+	if ($options->get($themeslug.'_standard_web_layout') == '1' ) {
+		echo '<style type="text/css">';
+		echo ".row {max-width: 1000px;}";
+		echo "#sidebar.four.columns {margin-left: 1.9%; width: 32.2%;}";
+		echo "#sidebar_left.four.columns {margin-right: 1.9%; width: 32.2%;}";
+		echo "#content.eight.columns {width: 65.9%; margin-left: 0%;}";
+		echo '</style>';
+	}
+
+}
+add_action( 'wp_head', 'standard_web_layout' );
+
+/* Widget Title Background*/
+
+function custom_row_width() {
+	global $options, $themeslug;
+	$maxwidth = $options->get($themeslug.'_row_max_width');
+	$minwidth = $options->get($themeslug.'_row_min_width');
+	
+	if ($maxwidth != '0' OR $maxwidth =='980px' ) {
+		echo '<style type="text/css">';
+		echo ".row {max-width: $maxwidth;}";
+		echo '</style>';
+	}
+	
+	if ($minwidth != '0' OR $minwidth =='727px' ) {
+		echo '<style type="text/css">';
+		echo ".row {min-width: $minwidth;}";
+		echo '</style>';
+	}
+
+}
+add_action( 'wp_head', 'custom_row_width' );
+
 /* Widget Title Background*/
 
 function custom_text_color() {
