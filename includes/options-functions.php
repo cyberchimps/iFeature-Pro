@@ -170,9 +170,14 @@ function featured_image_alignment() {
 	
 	if ($options->get($themeslug.'_featured_image_align') == "key3" ) {
 
+		else {
+		echo '<!--[if !IE 8]>';
 		echo '<style type="text/css">';
 		echo ".featured-image {float: right;}";
 		echo '</style>';
+		echo '<![endif]-->';
+		
+	}
 		
 	}
 	
@@ -185,10 +190,11 @@ function featured_image_alignment() {
 	}
 	
 	else {
-
+		echo '<!--[if !IE 8]>';
 		echo '<style type="text/css">';
 		echo ".featured-image {float: left;}";
 		echo '</style>';
+		echo '<![endif]-->';
 		
 	}
 
