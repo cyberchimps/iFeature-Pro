@@ -4,6 +4,7 @@ iFeature Pro Changelog
 
 Version 4.0.4 (02-16-12)
 -Adjustment to Foundation JS calls to fix further plugin conflicts.
+-Fix for post thumbs not displaying in IE8.
 
 Version 4.0.3 (02-13-12)
 -Added NivoSlider option.
