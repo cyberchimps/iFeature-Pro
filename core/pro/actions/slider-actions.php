@@ -808,7 +808,7 @@ else {
 	    $out .= "
 	    	<a href='$link' $caption data-thumb='$thumbnail'>
 	    				<img src='$image'  alt='Slider' />
-	    						<span class='orbit-caption' id='htmlCaption$i'>$title <br /> $text</span>
+	    						<span class='orbit-caption' id='htmlCaption$i'><span class='caption_title'>$title</span> <br /> <span class='caption_text'>$text</span></span>
 	    				</a>
 	  	    	";
 
