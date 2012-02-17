@@ -530,7 +530,7 @@ a.nivo-prevNav {
 }
 
 .ifeature-tabbed-widget {
-	margin: 10px 0 0 0;
+	margin: -10px 0 0 0;
 }
 
 .ifeature-tabbed-header {
