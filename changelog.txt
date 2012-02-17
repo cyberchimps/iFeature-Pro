@@ -9,6 +9,7 @@ Version 4.0.4 (02-16-12)
 -Featured Image option available for Archive and Single templates.
 -Added .caption_title and .caption_text classes for slider caption text.
 -Fixed IE8 post thumbnail bug.
+-Added iFeature Tabbed Widget.
 
 Version 4.0.3 (02-13-12)
 -Added NivoSlider option.

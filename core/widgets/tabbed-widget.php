@@ -11,7 +11,7 @@ class iFeature_Tabbed_Widget extends WP_Widget {
 	function __construct() {
 		$widget_options = array(
 			'classname' => 'ifeature_tabbed_widget',
-			'description' => __('iFeature: A tabbed widget that display popular posts, recent posts, comments and tags.', 'ifeature')
+			'description' => __('A tabbed widget that display popular posts, recent posts, comments and tags.', 'ifeature')
 		);
 
 		$control_options = array(
