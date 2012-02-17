@@ -26,6 +26,7 @@ function standard_web_layout() {
 		echo "#sidebar.four.columns {margin-left: 1.9%; width: 32.2%;}";
 		echo "#sidebar_left.four.columns {margin-right: 1.9%; width: 32.2%;}";
 		echo "#content.eight.columns {width: 65.9%; margin-left: 0%;}";
+		echo ".ifeature-tabbed-header li a {padding-right: 13px;";
 		echo '</style>';
 	}
 
