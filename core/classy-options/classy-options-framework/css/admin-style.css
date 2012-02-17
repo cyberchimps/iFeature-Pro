@@ -4,6 +4,9 @@
 
 .nav {margin-top: -1px;}
 
+.jetpack-message .squeezer {display: none;}
+#message.updated.jetpack-message.jp-connect {display: none;}
+
 .menu {padding-top: 0em;}
 
 .section-info{
