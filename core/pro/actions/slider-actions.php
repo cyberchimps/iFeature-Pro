@@ -440,8 +440,8 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 
 <?php if ($navigationstyle == 'key3' OR $navigationstyle == '2') :?>
 	<style type="text/css" media="screen">
-		.slider_nav {display: none;}
-		#orbitDemo {margin-bottom: 0px;}
+		.slider_nav {display: none !important;}
+		#orbitDemo {margin-bottom: 0px !important;}
 	</style>
 <?php endif;?>
 

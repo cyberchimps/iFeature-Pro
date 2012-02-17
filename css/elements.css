@@ -569,4 +569,4 @@ li.ui-state-default  {
 
 .tabbed-date {font-size: 12px; font-style: italic;}
 
-div.timer {display: none;}
+div.timer {display: none !important;}
