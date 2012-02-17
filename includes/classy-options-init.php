@@ -101,7 +101,6 @@ $options
 		->subsection("Layout")
 			->checkbox($themeslug."_standard_web_layout", "Standard Web Layout")
 			->text($themeslug."_row_max_width", "Row Max Width", array('default' => '980px'))
-			->text($themeslug."_row_min_width", "Row Min Width", array('default' => '727px'))
 			->checkbox($themeslug."_widget_title_background", "Widget Title Background", array('default' => true))
 		->subsection_end()
 		->subsection("Custom Colors")
