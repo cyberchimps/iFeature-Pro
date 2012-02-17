@@ -31,8 +31,6 @@ class iFeature_Tabbed_Widget extends WP_Widget {
 	function widget($args, $instance) {
 		global $wpdb;
 
-		
-
 		$tab1 = $instance['tab1'];
 		$tab2 = $instance['tab2'];
 		$tab3 = $instance['tab3'];
@@ -40,8 +38,14 @@ class iFeature_Tabbed_Widget extends WP_Widget {
 
 		echo $args['before_widget'];
 
-				
-
+		$id = $args['widget_id']; // grab the widget ID for some custom css
+		
+		echo '<style type="text/css">';
+		echo "#$id.widget-container {padding: 0px;}";
+		echo "#$id.widget-container ul {padding-top: 10px; margin-bottom: -1px;}";
+		echo "#$id.widget-container li {margin-left: 0px;}";
+		echo '</style>';
+	
 ?>
 <div class="ifeature-tabbed-widget">
 	<div class="ifeature-tabbed-wrap">
@@ -127,6 +131,7 @@ class iFeature_Tabbed_Widget extends WP_Widget {
 		</div><!-- #tab-4 -->
 	</div> <!-- .ifeature-tabbed-wrap -->
 </div> <!-- .ifeature-tabbed-widget -->
+</div> <!-- end tabbed widget container -->
 	<?php
 		wp_reset_query();
 	}

@@ -676,9 +676,6 @@ figure {
 
 /* Tabs */
 
-#ifeature_tabbed_widget-3.widget-container {padding: 0px;}
-
-#ifeature_tabbed_widget-3.widget-container ul {padding-top: 10px; margin-bottom: -1px;}
 
 .ifeature-tabbed-header li a {
 	float: left;
@@ -687,7 +684,6 @@ figure {
 	padding-right:7px;
 }
 
-#ifeature_tabbed_widget-3.widget-container li {margin-left: 0px;}
 
 .ifeature-tabbed-tab {
 	clear: both;

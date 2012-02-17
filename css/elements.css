@@ -552,7 +552,7 @@ a.nivo-prevNav {
 }
 
 li.ui-state-default  {
-	margin-left: 0px; padding-left: 5px; padding-right: 5px;
+	margin-left: 0px !important; padding-left: 5px; padding-right: 5px;
 }
 
 .ui-state-active {
@@ -565,7 +565,7 @@ li.ui-state-default  {
 #tab-4 a {
 	padding: 3px 8px; background: #f4f4f4; font-size: 12px; margin: 0 4px 4px 0; border-radius: 3px;
 }
-.tabbed-title {font-size: 13px; margin-top: 4px;}
+.tabbed-title {font-size: 14px; margin-top: 4px;}
 
 .tabbed-date {font-size: 12px; font-style: italic;}
 
