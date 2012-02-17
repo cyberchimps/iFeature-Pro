@@ -115,7 +115,7 @@ class iFeature_Tabbed_Widget extends WP_Widget {
 						</div>
 
 						<div class="details">
-						<h5 class="tabbed-title"><a href="<?php echo get_permalink($post->ID); ?>#comment-<?php echo $comment->comment_ID; ?>" title="<?php echo strip_tags($comment->comment_author); ?> <?php _e('on ', 'ifeature'); ?><?php echo $post->post_title; ?>"><?php echo strip_tags($comment->comment_author); ?>: <?php echo substr(strip_tags($comment->comment_content), 0, 50); ?></a></h5>
+						<h5 class="tabbed-title"><a href="<?php echo get_permalink($post->ID); ?>#comment-<?php echo $comment->comment_ID; ?>" title="<?php echo strip_tags($comment->comment_author); ?> <?php _e('on ', 'ifeature'); ?><?php echo $post->post_title; ?>"><?php echo strip_tags($comment->comment_author); ?>: <?php echo substr(strip_tags($comment->comment_content), 0, 50); ?>...</a></h5>
 						</div>
 					</li>
 				<?php endforeach; ?>

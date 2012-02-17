@@ -515,10 +515,14 @@ a.nivo-prevNav {
 
 .ifeature-tabbed-popular-posts li, .ifeature-tabbed-recent-posts li {
 	padding: 10px;
+	border-bottom: 1px solid #E2E2E2;
+	padding-bottom: 20px;
 }
 
 .ifeature-tabbed-comments li {
 	padding: 10px 10px 25px 10px;
+	border-bottom: 1px solid #E2E2E2; 
+	padding-bottom: 35px;
 }
 
 .ifeature-tabbed-tab {
@@ -561,7 +565,7 @@ li.ui-state-default  {
 #tab-4 a {
 	padding: 3px 8px; background: #f4f4f4; font-size: 12px; margin: 0 4px 4px 0; border-radius: 3px;
 }
-.tabbed-title {font-size: 15px;}
+.tabbed-title {font-size: 13px; margin-top: 4px;}
 
 .tabbed-date {font-size: 12px; font-style: italic;}
 
