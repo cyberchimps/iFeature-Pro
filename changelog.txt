@@ -2,6 +2,9 @@ iFeature Pro Changelog
 
 ****************************
 
+Version 4.0.5 (02-20-12)
+-Responsive design adjustments.
+
 Version 4.0.4 (02-17-12)
 -Adjustment to Foundation JS calls to fix further plugin conflicts.
 -Added Layout options.
