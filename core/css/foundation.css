@@ -1139,13 +1139,13 @@ div.slider-nav span.left {
     #calloutbutton {width: 200px !important; margin: auto !important; margin-bottom: 30px !important;}
     #banner {margin-top: 10px !important;}
     #orbitDemo.orbit img {width: 710px !important;}
+    #box1 {margin-top:0px !important; margin-bottom:7px !important;}
+	#box2 {margin-top:7px !important; margin-bottom:7px !important;}
+	#box3 {margin-top:7px !important; margin-bottom:14px !important;}
 }
 
 @media handheld, only screen and (max-width: 400px) {
 	#orbitDemo {height: 90px;}
-	#box1 {margin-top:0px !important; margin-bottom:7px !important;}
-	#box2 {margin-top:7px !important; margin-bottom:7px !important;}
-	#box3 {margin-top:7px !important; margin-bottom:14px !important;}
 	.carousel_caption {font-size: 6px !important;}
 	.icons{text-align: center !important;}
 	#logo{text-align:center !important;}
