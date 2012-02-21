@@ -58,7 +58,7 @@ query_posts( array ('post_type' => $themeslug.'_featured_posts', 'showposts' => 
   	
 	if (have_posts()) :
 	    $out = "
-	    <ul>
+	   <ul>
 	    
 	    "; 
 	    $i = 0;
