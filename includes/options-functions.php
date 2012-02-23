@@ -200,7 +200,15 @@ function featured_image_alignment() {
 
 	global $themename, $themeslug, $options;
 	
-	if ($options->get($themeslug.'_featured_image_align') == "key3" ) {
+	if ($options->get($themeslug.'_featured_image_align') == "key4" ) {
+	
+		echo '<style type="text/css">';
+		echo ".featured-image {float: none;}";
+		echo '</style>';
+			
+	}
+
+	elseif ($options->get($themeslug.'_featured_image_align') == "key3" ) {
 	
 		echo '<style type="text/css">';
 		echo ".featured-image {float: right;}";
