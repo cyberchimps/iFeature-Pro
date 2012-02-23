@@ -591,7 +591,7 @@ else {
 
 	if ($hidenav == '0' OR $hidenav == "off") { ?>
 		<style type="text/css">
-		div.slider-nav {display: none;}
+		div.slider-nav {display: none !important;}
 		</style> <?php
 	}
 	
@@ -878,7 +878,7 @@ To create a Custom Slide please go to the Custom Slides tab in WP-Admin. Once yo
 
 <?php if ($navigationstyle == 'key3' OR $navigationstyle == '2') :?>
 	<style type="text/css" media="screen">
-		.slider_nav {display: none;}
+		.slider_nav {display: none !important;}
 		#orbitDemo {margin-bottom: 0px;}
 	</style>
 <?php endif;?>
