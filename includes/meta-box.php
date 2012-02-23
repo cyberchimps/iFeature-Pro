@@ -85,6 +85,7 @@ function initialize_the_meta_boxes() {
 			->image_select('page_sidebar', 'Select Page Layout', '',  array('options' => array(TEMPLATE_URL . '/images/options/right.png', TEMPLATE_URL . '/images/options/tworight.png', TEMPLATE_URL . '/images/options/rightleft.png', TEMPLATE_URL . '/images/options/none.png', TEMPLATE_URL . '/images/options/left.png')))
 			->checkbox('hide_page_title', 'Page Title', '', array('std' => 'on'))
 			->section_order('page_section_order', 'Page Elements', '', array('options' => array(
+					'breadcrumbs' => 'Breadcrumbs',
 					'page_slider' => 'iFeature Slider',
 					'callout_section' => 'Callout',
 					'twitterbar_section' => 'Twitter Bar',
@@ -93,7 +94,7 @@ function initialize_the_meta_boxes() {
 					'carousel_section' => 'Carousel',
 					'page_nivoslider' => 'NivoSlider'		
 					),
-					'std' => 'page_section'
+					'std' => 'breadcrumbs,page_section'
 				))
 
 			->pagehelp('', 'Need Help?', '')
