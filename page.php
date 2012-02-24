@@ -41,9 +41,6 @@ if (preg_match("/page_nivoslider/", $page_section_order ) && $nivosize == "1" ) 
 ?>
 
 <div class="container">
-	<div class="row">
-		<?php if (function_exists('synapse_breadcrumbs') && ($options->get($themeslug.'_disable_breadcrumbs') == "1")) { synapse_breadcrumbs(); }?>
-	</div>
 	<div class="row"> 
 		<?php
 			foreach(explode(",", $page_section_order) as $key) {
