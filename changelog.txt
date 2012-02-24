@@ -8,6 +8,7 @@ Version 4.0.5 (02-23-12)
 -Responsive design adjustments.
 -Added missing translation wrapper to Tags: text. 
 -Added a few IE related CSS fixes.
+-Modified breadcrumb style, made them a page element and a templates option.
 -Removed archive title and search result text from templates.
 -Improved post index pagination.
 
