@@ -168,7 +168,7 @@ jQuery(function($) {
 		var map = {
 			ifeature_sitename_contact: "section-if_header_contact",
 			ifeature_custom_header_element: "section-if_custom_header_element",
-			ifeature_banner: "section-if_banner"
+			ifeature_banner: "subsection-banneroptions"
 			// , synapse_box_section: ""
 		};
 

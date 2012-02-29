@@ -7,6 +7,8 @@ Version 4.0.6 (02-25-12)
 -Updated Foundation CSS.
 -Removed 20 slide limit from custom slides. 
 -Adjusted doctype. 
+-Removed unnecessary breadcrumb option from header options. 
+-Added Banner URL option.
 
 Version 4.0.5 (02-23-12)
 -Fix for HTML tables.
