@@ -50,6 +50,7 @@ function synapse_scripts() {
 	wp_register_script( 'reveal' ,$path.'/js/foundation/jquery.reveal.js');
 	wp_register_script( 'tooltips' ,$path.'/js/foundation/jquery.tooltips.js');
 	wp_register_script( 'modernizr' ,$path.'/js/foundation/modernizr.foundation.js');
+	wp_register_script( 'touchwipe' ,$path.'/js/jquery.touchwipe.js');
 	wp_register_script( 'menu' ,$path.'/js/menu.js');
 	wp_register_script( 'plusone' ,$path.'/js/plusone.js');
 	
@@ -59,6 +60,7 @@ function synapse_scripts() {
 	wp_enqueue_script ('reveal');
 	wp_enqueue_script ('tooltips');
 	wp_enqueue_script ('modernizr');
+	wp_enqueue_script ('touchwipe');
 	wp_enqueue_script ('menu');
 	wp_enqueue_script ('plusone');
 	
