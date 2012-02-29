@@ -127,7 +127,6 @@ $options
 			->subsection_end()
 			->subsection("Header Options")
 			->upload($themeslug."_logo", "Custom Logo")
-						->text($themeslug."_icon_margin", "Social Icon Margin Top", array('default' => '10px'))
 			->upload($themeslug."_favicon", "Custom Favicon")
 		->subsection_end()
 		->subsection("iMenu Options")
