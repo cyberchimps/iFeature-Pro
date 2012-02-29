@@ -2,7 +2,7 @@ iFeature Pro Changelog
 
 ****************************
 
-Version 4.0.6 (02-25-12)
+Version 4.0.6 (03-01-12)
 -Additional margin fix for HTML tables.
 -Updated Foundation CSS.
 -Removed 20 slide limit from custom slides. 
@@ -11,6 +11,7 @@ Version 4.0.6 (02-25-12)
 -Added Banner URL option.
 -Changed Update API function name to avoid plugin conflicts. 
 -Removed legacy icon margin option.
+-CSS tweaks.
 
 Version 4.0.5 (02-23-12)
 -Fix for HTML tables.
