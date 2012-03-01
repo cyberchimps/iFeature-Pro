@@ -2,6 +2,7 @@
 /* OptionsFramework Admin Styles */
 /*-------------------------------------------------------------------------------------------*/
 
+.upload {max-width: 350px;}
 .nav {margin-top: -1px;}
 
 .jetpack-message .squeezer {display: none;}
