@@ -703,7 +703,7 @@ else {
 	    $no = '5';    	
 	}   	
 	elseif ($usecustomslides == 'custom' OR $type == '0') {
-	    $no = '20';
+	    $no = '100';
 	}
 	else {
 		$no = $postnumber;
