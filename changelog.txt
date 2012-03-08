@@ -6,6 +6,9 @@ Version 4.0.7 (03-08-12)
 -Fixed typo in theme options panel.
 -Fix for page titles.
 -Conditional to stop breadcrumb links from appearing on attachment pages. 
+-Removed some unecessary CSS and images.
+-Added browser specific HTML classes to allow IE version specific CSS.
+-Fixed Google Font library call to be SSL friendly. 
 
 Version 4.0.6 (03-01-12)
 -Additional margin fix for HTML tables.

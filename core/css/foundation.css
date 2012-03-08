@@ -788,7 +788,6 @@ span.rotator {
     position: absolute;
     top: 0;
     left: -20px;
-    background: url(orbit/rotator-black.png) no-repeat;
     z-index: 3; }
 
 span.mask {
@@ -807,7 +806,6 @@ span.rotator.move {
 span.mask.move {
     width: 40px;
     left: 0;
-    background: url(orbit/timer-black.png) repeat 0 0; }
 
 span.pause {
     display: block;
@@ -816,12 +814,11 @@ span.pause {
     position: absolute;
     top: 0;
     left: 0;
-    background: url(orbit/pause-black.png) no-repeat;
     z-index: 4;
     opacity: 0; }
 
 span.pause.active {
-    background: url(/orbit/pause-black.png) no-repeat 0 -40px }
+}
 
 div.timer:hover span.pause,
 span.pause.active {
