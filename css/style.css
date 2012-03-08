@@ -87,7 +87,7 @@ color:#fff;
 
 .caption_title {font-size:16px;}
 
-.featured-image {float: inherit\0/ !important;}
+.ie8 .featured-image {float: none !important;}
 
 /* Fonts  */
 
