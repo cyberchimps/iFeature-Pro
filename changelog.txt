@@ -2,9 +2,10 @@ iFeature Pro Changelog
 
 ****************************
 
-Version 4.0.7 (03-03-12)
+Version 4.0.7 (03-08-12)
 -Fixed typo in theme options panel.
 -Fix for page titles.
+-Conditional to stop breadcrumb links from appearing on attachment pages. 
 
 Version 4.0.6 (03-01-12)
 -Additional margin fix for HTML tables.
