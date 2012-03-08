@@ -9,6 +9,7 @@ Version 4.0.7 (03-08-12)
 -Removed some unecessary CSS and images.
 -Added browser specific HTML classes to allow IE version specific CSS.
 -Fixed Google Font library call to be SSL friendly. 
+-Featured image fix for IE9.
 
 Version 4.0.6 (03-01-12)
 -Additional margin fix for HTML tables.
