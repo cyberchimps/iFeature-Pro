@@ -9,6 +9,7 @@ Version 4.0.8 (03-14-12)
 -Increased Slider image limit.
 -Updated static CSS stylesheet with table code.
 -Updated sidebar widget names to be more clear. 
+-Clear fix for post content.
 
 Version 4.0.7 (03-08-12)
 -Fixed typo in theme options panel.
