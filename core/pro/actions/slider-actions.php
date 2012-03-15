@@ -254,7 +254,7 @@ echo "<div id='slider-wrapper'>";
 /* Query posts based on theme/meta options */
 
 	if ( $type == 'custom' OR $type == '0') {
-    	query_posts( array ('post_type' => $themeslug.'_custom_slides', 'showposts' => 50,  'slide_categories' => $customcategory  ) );
+    	query_posts( array ('post_type' => $themeslug.'_custom_slides', 'showposts' => 500,  'slide_categories' => $customcategory  ) );
     }
     else {
     	query_posts('category_name='.$blogcategory.'&showposts=50');
@@ -271,7 +271,7 @@ echo "<div id='slider-wrapper'>";
 	    $no = '5';    	
 	}   	
 	elseif ($usecustomslides == 'custom' OR $type == '0') {
-	    $no = '20';
+	    $no = '500';
 	}
 	else {
 		$no = $postnumber;
@@ -686,7 +686,7 @@ else {
 /* Query posts based on theme/meta options */
 
 	if ( $type == 'custom' OR $type == '0') {
-    	query_posts( array ('post_type' => $themeslug.'_custom_slides', 'showposts' => 100,  'slide_categories' => $customcategory  ) );
+    	query_posts( array ('post_type' => $themeslug.'_custom_slides', 'showposts' => 500,  'slide_categories' => $customcategory  ) );
     }
     else {
     	query_posts('category_name='.$blogcategory.'&showposts=50');
@@ -703,7 +703,7 @@ else {
 	    $no = '5';    	
 	}   	
 	elseif ($usecustomslides == 'custom' OR $type == '0') {
-	    $no = '100';
+	    $no = '500';
 	}
 	else {
 		$no = $postnumber;

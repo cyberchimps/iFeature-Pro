@@ -5,6 +5,9 @@ iFeature Pro Changelog
 Version 4.0.8 (03-14-12)
 -Fix for table in calendar widget. 
 -Fixed custom slide captions.
+-Increased Carousel image limit.
+-Increased Slider image limit.
+-Updated static CSS stylesheet with table code.
 
 Version 4.0.7 (03-08-12)
 -Fixed typo in theme options panel.
