@@ -721,6 +721,7 @@ else {
 
 	    	$customimage 		= get_post_meta($post->ID, 'slider_image' , true);  /* Gets slide custom image from page/post meta option */
 	    	$customtext 		=  $post->post_content; /* Gets slide caption from custom slide meta option */
+	    	$customcaption      = get_post_meta($post->ID, 'slider_caption' , true);
 	    	$customlink 		= get_post_meta($post->ID, 'slider_url' , true); /* Gets link from custom slide meta option */
 	    	$permalink 			= get_permalink(); /* Gets post URL for blog post slides */
 	   		$blogtext 			= get_post_meta($post->ID, 'slider_text' , true); /* Gets slide caption from post meta option */  		
@@ -746,13 +747,24 @@ else {
 
 	    	if ( $type == 'custom' OR $type == '0') {
 	    		$link = get_post_meta($post->ID, 'slider_url' , true);
+	    		
 	    	}
 	    	else {
 	    		$link = get_permalink();
+	    		$title = $title;
 	    	}
 
 	    	/* End slide link */
 	    	
+	    	if ( $type == 'custom' && $customcaption != '' OR $type == '0' && $customcaption != '' ) {
+	    		$title = $customcaption;
+	    		
+	    	}
+	    	else {
+	 
+	    		$title = $title;
+	    	}
+
 	    	/* Establish slider text */
 	    	
 	    	if ($type == 'custom' OR $type == '0') {

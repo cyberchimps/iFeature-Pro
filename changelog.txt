@@ -2,8 +2,9 @@ iFeature Pro Changelog
 
 ****************************
 
-Version 4.0.8 (03-09-12)
+Version 4.0.8 (03-14-12)
 -Fix for table in calendar widget. 
+-Fixed custom slide captions.
 
 Version 4.0.7 (03-08-12)
 -Fixed typo in theme options panel.
