@@ -176,7 +176,7 @@ TEMPLATE_URL . '/images/social/thumbs/icons-default.png' ), 'default' => 'defaul
 			->images($themeslug."_blog_sidebar", "Sidebar Options", array( 'options' => array("left" => TEMPLATE_URL . '/images/options/left.png', "two-right" => TEMPLATE_URL . '/images/options/tworight.png', "right-left" => TEMPLATE_URL . '/images/options/rightleft.png', "none" => TEMPLATE_URL . '/images/options/none.png', "right" => TEMPLATE_URL . '/images/options/right.png'), 'default' => 'right'))
 			->checkbox($themeslug."_post_formats", "Post Format Icons",  array('default' => true))
 			->checkbox($themeslug."_show_excerpts", "Post Excerpts")
-			->text($themeslug."_excerpt_link_text", "Excerpt Link Text", array('default' => '(More)…'))
+			->text($themeslug."_excerpt_link_text", "Excerpt Link Text", array('default' => 'Read More…'))
 			->text($themeslug."_excerpt_length", "Excerpt Character Length", array('default' => '55'))
 			->checkbox($themeslug."_show_featured_images", "Featured Images")
 			->select($themeslug."_featured_image_align", "Featured Image Alignment", array( 'options' => array("key1" => "Left", "key2" => "Center", "key3" => "Right", "key4" => "None")))
