@@ -5,6 +5,7 @@ iFeature Pro Changelog
 Version 4.1 (03-21-12)
 -Added Croatian language files.
 -Cleaned up core.pot translation template.
+-Fixed for Google +1 button.
 
 Version 4.0.8 (03-14-12)
 -Fix for table in calendar widget. 
