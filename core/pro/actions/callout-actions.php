@@ -58,7 +58,8 @@ function synapse_callout_section_content() {
 		$text = $options->get($themeslug.'_blog_callout_text');
 		$btext = $options->get($themeslug.'_blog_callout_button_text');
 		$link = $options->get($themeslug.'_blog_callout_button_url');
-		$image = $options->get($themeslug.'_blog_custom_callout_button');
+		$imagesrc = $options->get($themeslug.'_blog_custom_callout_button');
+		$image = $imagesrc['url'];
 		$hidebutton = $options->get($themeslug.'_blog_callout_button');
 		$customcalloutbgcolor = $options->get($themeslug.'_blog_callout_bg_color');
 	}
