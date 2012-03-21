@@ -80,6 +80,23 @@ jQuery(document).ready(function($) {
       post.show(); custom.hide();
     }
   }).change();
+   $("#if_blog_custom_callout_options").change(function() {
+    var toShow = $("#section-if_blog_custom_callout_button, #section-if_blog_callout_bg_color, #section-if_blog_callout_bg_color, #section-if_blog_callout_text_color, #section-if_blog_callout_button_color, #section-if_blog_callout_button_text_color, #section-if_blog_callout_title_color ");
+    if($(this).is(':checked')) {
+      toShow.show();
+    } else {
+      toShow.hide();
+    }
+  }).change();
+	$("#if_blog_callout_button").change(function() {
+    var toShow = $("#section-if_blog_callout_button_text, #section-if_blog_callout_button_url");
+    if($(this).is(':checked')) {
+      toShow.show();
+    } else {
+      toShow.hide();
+    }
+  }).change();
+
 
 
   $.each(['twitter', 'facebook', 'gplus', 'flickr', 'linkedin', 'youtube', 'googlemaps', 'email', 'rsslink'], function(i, val) {
