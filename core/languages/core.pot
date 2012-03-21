@@ -159,11 +159,6 @@ msgstr ""
 msgid "Tags: "
 msgstr ""
 
-#: core/actions/index-actions.php:276
-#@ default
-msgid "Page"
-msgstr ""
-
 #: searchform.php:15
 #@ core
 msgid "Search"
