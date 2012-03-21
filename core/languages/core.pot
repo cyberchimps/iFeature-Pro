@@ -164,6 +164,11 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
+#: searchform.php:15
+#@ core
+msgid "Search"
+msgstr ""
+
 #: sidebar.php:19
 #@ core
 msgid "Pages"
