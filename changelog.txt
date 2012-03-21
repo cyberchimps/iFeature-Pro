@@ -3,6 +3,7 @@ iFeature Pro Changelog
 ****************************
 
 Version 4.1 (03-21-12)
+-Added Croatian language files.
 
 Version 4.0.8 (03-14-12)
 -Fix for table in calendar widget. 
