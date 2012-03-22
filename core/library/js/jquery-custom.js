@@ -41,3 +41,4 @@ jQuery(document).ready(function($) {
 		if_check_slider_value();
 	});
 });
+

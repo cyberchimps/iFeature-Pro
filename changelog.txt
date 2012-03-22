@@ -8,6 +8,7 @@ Version 4.1 (03-21-12)
 -Fixed for Google +1 button.
 -Fixed custom Callout button image for blog page. 
 -Changed <!--more--> link text to "Read more…".
+-Added JS to wrap YouTube and Vimeo embeds in flex-video class.
 
 Version 4.0.8 (03-14-12)
 -Fix for table in calendar widget. 
