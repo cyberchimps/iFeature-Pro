@@ -5,7 +5,7 @@ iFeature Pro Changelog
 Version 4.1 (03-21-12)
 -Added Croatian language files.
 -Cleaned up core.pot translation template.
--Fixed for Google +1 button.
+-Fix for Google +1 button.
 -Fixed custom Callout button image for blog page. 
 -Changed <!--more--> link text to "Read more…".
 -Added JS to wrap YouTube and Vimeo embeds in flex-video class.
