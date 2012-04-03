@@ -9,6 +9,8 @@ Version 4.1.1 (04-03-12)
 -Removed height:auto for objects in responsive stylesheet. 
 -Adjusted "viewport" initial scale for full-width mobile device view. 
 -Fixed duplicate "Read More" link bug.
+-Added Romanian language files.
+-Updated core.pot
 
 Version 4.1 (03-21-12)
 -Added Croatian language files.

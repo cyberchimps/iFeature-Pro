@@ -154,6 +154,11 @@ msgstr ""
 msgid "% Comments &#187;"
 msgstr ""
 
+#: core/actions/global-actions.php:86
+#@ core
+msgid "Read more…"
+msgstr ""
+
 #: core/actions/global-actions.php:187
 #@ core
 msgid "Tags: "
