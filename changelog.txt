@@ -3,6 +3,7 @@ iFeature Pro Changelog
 ****************************
 
 Version 4.1.1 (04-03-12)
+-Twitter Bar no longer requires Twitter for WordPress plugin.
 -Fixed bug in meta-box-class.php causing unidentified index errors.
 -Only apply div wrapper to YouTube and Vimeo embeds when responsive design enabled.
 -Fixed bug on archive template related to empty categories.
