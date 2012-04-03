@@ -2,7 +2,7 @@
 /**
 * Twitterbar actions used by the CyberChimps Synapse Core Framework
 *
-* Authors: Ben Mueller, Tyler Cunningham
+* Authors: Benjamin Mueller, Tyler Cunningham
 * Copyright: © 2012
 * {@link http://cyberchimps.com/ CyberChimps LLC}
 *
