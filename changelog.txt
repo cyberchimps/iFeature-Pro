@@ -2,6 +2,10 @@ iFeature Pro Changelog
 
 ****************************
 
+Version 4.1.1 (04-03-12)
+-Fixed bug in meta-box-class.php causing unidentified index errors.
+-Only apply div wrapper to YouTube and Vimeo embeds when responsive design enabled.
+
 Version 4.1 (03-21-12)
 -Added Croatian language files.
 -Cleaned up core.pot translation template.
