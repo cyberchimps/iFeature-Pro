@@ -232,6 +232,7 @@ TEMPLATE_URL . '/images/social/thumbs/icons-default.png' ), 'default' => 'defaul
 		->subsection_end()
 		->subsection("Twtterbar Options")
 			->text($themeslug."_blog_twitter", "Enter your Twitter handle")
+			->checkbox($themeslug."_blog_twitter_reply", "Show @ Replies")
 		->subsection_end()
 		->subsection("Carousel Options")
 			->select($themeslug.'_carousel_category', 'Select the carousel category', array( 'options' => $customcarousel ))
