@@ -89,6 +89,7 @@ function initialize_the_meta_boxes() {
 					'page_slider' => 'iFeature Slider',
 					'callout_section' => 'Callout',
 					'twitterbar_section' => 'Twitter Bar',
+					'portfolio_element' => 'Portfolio',
 					'page_section' => 'Page',
 					'box_section' => 'Boxes',
 					'carousel_section' => 'Carousel',
@@ -144,9 +145,14 @@ function initialize_the_meta_boxes() {
 		->tab("Carousel Options")
 			->select('carousel_category', 'Carousel Category', '', array('options' => $carouseloptions) )
 			->text('carousel_speed', 'Carousel Animation Speed (ms)', '', array('std' => '750'))
+		->tab("Portfolio Options")
+			->select('portfolio_row_number', 'Images per row', '', array('options' => array('Three (default)', 'Two', 'Four')) )
+			->select('portfolio_category', 'Portfolio Category', '', array('options' => $portfoliooptions) )
+			->checkbox('portfolio_title_toggle', 'Portfolio Title', '')
+			->text('portfolio_title', 'Title', '', array('std' => 'Portfolio'))
 		->tab("Twitter Options")
 			->text('twitter_handle', 'Twitter Handle', 'Enter your Twitter handle if using the Twitter bar')
-			->checkbox('twitter_reply', 'Show @ Replies', ''))
+			->checkbox('twitter_reply', 'Show @ Replies', '')
 		->tab("SEO Options")
 			->text('seo_title', 'SEO Title', '')
 			->textarea('seo_description', 'SEO Description', '')
