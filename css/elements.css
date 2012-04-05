@@ -593,7 +593,7 @@ div.timer {display: none !important;}
 	padding: 10px;
 }
 
-#portfolio {background: #3c3c3c url(../images/sliderbg.png);}
+#portfolio {background: #3c3c3c url(../images/sliderbg.png);margin-bottom: 20px;}
 #portfolio_wrap.three.columns:last-child, #portfolio_wrap.four.columns:last-child, #portfolio_wrap.six.columns:last-child {float:left;}
 
 .portfolio_title {color: white; padding-left: 20px;}
