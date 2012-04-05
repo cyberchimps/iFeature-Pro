@@ -165,6 +165,8 @@ jQuery(function($) {
 		var map = {
 			synapse_blog_slider: "subsection-blogslider",
 			synapse_callout_section: "subsection-calloutoptions",
+			synapse_portfolio_element: "subsection-portfoliooptions",
+			synapse_product_element: "subsection-productoptions",
 			synapse_twitterbar_section: "subsection-twtterbaroptions",
 			synapse_index_carousel_section: "subsection-carouseloptions",
 			synapse_blog_nivoslider: "subsection-nivoslider"
