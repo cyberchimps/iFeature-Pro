@@ -25,37 +25,29 @@ global $options, $themeslug, $themename, $themenamefull;
 $options = new ClassyOptions($themename, $themenamefull." Options");
 
 $carouselterms2 = get_terms('carousel_categories', 'hide_empty=0');
-
-	$customcarousel = array();
-                                    
+	$customcarousel = array();                          
     	foreach($carouselterms2 as $carouselterm) {
-
         	$customcarousel[$carouselterm->slug] = $carouselterm->name;
-
+        }
+        
+$portfolioterms2 = get_terms('portfolio_categories', 'hide_empty=0');
+	$customportfolio = array();                                   
+    	foreach($portfolioterms2 as $portfolioterm) {
+        	$customportfolio[$portfolioterm->slug] = $portfolioterm->name;
         }
 
 $customterms2 = get_terms('slide_categories', 'hide_empty=0');
-
-	$customslider = array();
-                                    
+	$customslider = array();                                    
     	foreach($customterms2 as $customterm) {
-
         	$customslider[$customterm->slug] = $customterm->name;
-
         }
 
 $terms2 = get_terms('category', 'hide_empty=0');
-
-	$blogoptions = array();
-                                    
+	$blogoptions = array();                                  
 	$blogoptions['all'] = "All";
-
     	foreach($terms2 as $term) {
-
         	$blogoptions[$term->slug] = $term->name;
-
-        }
-
+		}
 
 $options
 	->section("Welcome")

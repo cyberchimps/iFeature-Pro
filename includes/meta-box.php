@@ -22,20 +22,24 @@ function initialize_the_meta_boxes() {
 	
 	// Call taxonomies for select options
 	
+	$portfolioterms = get_terms('portfolio_categories', 'hide_empty=0');
+	$portfoliooptions = array();
+
+		foreach($portfolioterms as $term) {
+			$portfoliooptions[$term->slug] = $term->name;
+		}
 	$carouselterms = get_terms('carousel_categories', 'hide_empty=0');
 	$carouseloptions = array();
 
 		foreach($carouselterms as $term) {
 			$carouseloptions[$term->slug] = $term->name;
 		}
-
 	$terms = get_terms('slide_categories', 'hide_empty=0');
 	$slideroptions = array();
 
 		foreach($terms as $term) {
 			$slideroptions[$term->slug] = $term->name;
 		}
-
 	$terms2 = get_terms('category', 'hide_empty=0');
 	$blogoptions = array();
 	$blogoptions['all'] = "All";
