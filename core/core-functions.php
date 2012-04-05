@@ -52,6 +52,7 @@ function synapse_scripts() {
 	wp_register_script( 'modernizr' ,$path.'/js/foundation/modernizr.foundation.js');
 	wp_register_script( 'menu' ,$path.'/js/menu.js');
 	wp_register_script( 'plusone' ,$path.'/js/plusone.js');
+	wp_register_script( 'lazyload' ,$path.'/js/jquery.lazyload.js');
 	
 	wp_enqueue_script ('orbit');
 	wp_enqueue_script ('apps');
@@ -61,6 +62,7 @@ function synapse_scripts() {
 	wp_enqueue_script ('modernizr');
 	wp_enqueue_script ('menu');
 	wp_enqueue_script ('plusone');
+	wp_enqueue_script ('lazyload');
 	
 	if ($options->get($themeslug.'_responsive_design') == '1' ) {
 	
