@@ -138,7 +138,7 @@ function initialize_the_meta_boxes() {
 			->textarea('product_video', 'Video Embed', '')
 			->checkbox('product_link_toggle', 'Product Link', '', array('std' => 'on'))
 			->text('product_link_url', 'Link URL', '', array('std' => home_url()))
-			->text('product_link_text', 'Link URL', '', array('std' => 'Buy Now'))
+			->text('product_link_text', 'Link Text', '', array('std' => 'Buy Now'))
 		->tab("Callout Options")
 			->text('callout_title', 'Callout Title', '')
 			->textarea('callout_text', 'Callout Text', '')

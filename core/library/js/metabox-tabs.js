@@ -49,6 +49,8 @@ jQuery(document).ready(function($) {
 		page_nivoslider: "subsection-iFeature-Pro-NivoSlider-Options",
 		callout_section: "subsection-Callout-Options",
 		carousel_section: "subsection-Carousel-Options",
+		portfolio_element: "subsection-Portfolio-Options",
+		product_element: "subsection-Product-Options",
 		twitterbar_section: "subsection-Twitter-Options"
 	};
 	$("#page_section_order").change(function(){
