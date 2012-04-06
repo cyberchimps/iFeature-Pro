@@ -40,6 +40,12 @@ function initialize_the_meta_boxes() {
 		foreach($terms as $term) {
 			$slideroptions[$term->slug] = $term->name;
 		}
+	$content_terms = get_terms('content_slide_categories', 'hide_empty=0');
+	$slideroptions = array();
+
+		foreach($content_terms as $term) {
+			$content_slider_options[$term->slug] = $term->name;
+		}
 	$terms2 = get_terms('category', 'hide_empty=0');
 	$blogoptions = array();
 	$blogoptions['all'] = "All";
