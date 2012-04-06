@@ -18,68 +18,68 @@ msgstr ""
 "X-Textdomain-Support: yes"
 
 #: core/actions/archive-actions.php:36
-#@ core
+#@ ifeature
 msgid "Archive for the &#8216;"
 msgstr ""
 
 #: core/actions/archive-actions.php:36
-#@ core
+#@ ifeature
 msgid "&#8217; Category:"
 msgstr ""
 
 #: core/actions/archive-actions.php:39
-#@ core
+#@ ifeature
 msgid "Posts Tagged &#8216;"
 msgstr ""
 
 #: core/actions/archive-actions.php:39
-#@ core
+#@ ifeature
 msgid "&#8217;:"
 msgstr ""
 
 #: core/actions/archive-actions.php:42
 #: core/actions/archive-actions.php:45
-#@ core
+#@ ifeature
 msgid "Archive for"
 msgstr ""
 
 #: core/actions/archive-actions.php:48
-#@ core
+#@ ifeature
 msgid "Archive for:"
 msgstr ""
 
 #: core/actions/archive-actions.php:51
-#@ core
+#@ ifeature
 msgid "Author Archive:"
 msgstr ""
 
 #: core/actions/archive-actions.php:54
-#@ core
+#@ ifeature
 msgid "Blog Archives:"
 msgstr ""
 
 #: core/actions/comments-actions.php:49
-#@ core
+#@ ifeature
 msgid "No Responses"
 msgstr ""
 
 #: core/actions/comments-actions.php:49
-#@ core
+#@ ifeature
 msgid "One Response"
 msgstr ""
 
 #: core/actions/comments-actions.php:49
-#@ core
+#@ ifeature
 msgid "% Responses"
 msgstr ""
 
 #: core/actions/comments-actions.php:88
-#@ core
+#@ ifeature
 msgid "You must be"
 msgstr ""
 
 #: core/actions/comments-actions.php:88
-#@ core
+#@ ifeature
 msgid "logged in"
 msgstr ""
 
@@ -89,18 +89,18 @@ msgid "to post a comment."
 msgstr ""
 
 #: core/actions/footer-actions.php:39
-#@ core
+#@ ifeature
 msgid "Recent Posts"
 msgstr ""
 
 #: core/actions/footer-actions.php:46
 #: sidebar.php:26
-#@ core
+#@ ifeature
 msgid "Archives"
 msgstr ""
 
 #: core/actions/footer-actions.php:53
-#@ core
+#@ ifeature
 msgid "Links"
 msgstr ""
 
@@ -108,88 +108,88 @@ msgstr ""
 #: core/actions/footer-actions.php:64
 #: sidebar.php:40
 #: sidebar.php:44
-#@ core
+#@ ifeature
 msgid "WordPress"
 msgstr ""
 
 #: core/actions/footer-actions.php:64
 #: sidebar.php:44
-#@ core
+#@ ifeature
 msgid "http://wordpress.org/"
 msgstr ""
 
 #: core/actions/footer-actions.php:64
 #: sidebar.php:44
-#@ core
+#@ ifeature
 msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
 msgstr ""
 
 #: core/actions/global-actions.php:43
-#@ core
+#@ ifeature
 msgid "Published on"
 msgstr ""
 
 #: core/actions/global-actions.php:44
-#@ core
+#@ ifeature
 msgid "by"
 msgstr ""
 
 #: core/actions/global-actions.php:45
-#@ core
+#@ ifeature
 msgid "in"
 msgstr ""
 
 #: core/actions/global-actions.php:70
-#@ core
+#@ ifeature
 msgid "No Comments &#187;"
 msgstr ""
 
 #: core/actions/global-actions.php:70
-#@ core
+#@ ifeature
 msgid "1 Comment &#187;"
 msgstr ""
 
 #: core/actions/global-actions.php:70
-#@ core
+#@ ifeature
 msgid "% Comments &#187;"
 msgstr ""
 
 #: core/actions/global-actions.php:86
-#@ core
+#@ ifeature
 msgid "Read more…"
 msgstr ""
 
 #: core/actions/global-actions.php:187
-#@ core
+#@ ifeature
 msgid "Tags: "
 msgstr ""
 
 #: searchform.php:15
-#@ core
+#@ ifeature
 msgid "Search"
 msgstr ""
 
 #: sidebar.php:19
-#@ core
+#@ ifeature
 msgid "Pages"
 msgstr ""
 
 #: sidebar.php:33
-#@ core
+#@ ifeature
 msgid "Categories"
 msgstr ""
 
 #: sidebar.php:50
-#@ core
+#@ ifeature
 msgid "Subscribe"
 msgstr ""
 
 #: sidebar.php:52
-#@ core
+#@ ifeature
 msgid "Entries (RSS)"
 msgstr ""
 
 #: sidebar.php:53
-#@ core
+#@ ifeature
 msgid "Comments (RSS)"
 msgstr ""
