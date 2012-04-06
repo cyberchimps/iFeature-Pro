@@ -104,7 +104,7 @@ function synapse_content_slider_content() {
 /* Establish post counter */  
   	
 	if (have_posts()) :
-	    $out = "<div id='orbitDemo'>"; 
+	    $out = "<div id='content_slider'>"; 
 	    $i = 0;
 		$no = '100';
 	
@@ -221,7 +221,7 @@ function synapse_content_slider_content() {
 	      	else:
 	      
 	      	$out .= "	
-	      				<div id='orbitDemo'>
+	      				<div id='content_slider'>
 	      				<div class='slider_content'>	
 	  							<img src='$fulldefault' alt='Slider' />
 	    				</div>	
@@ -326,7 +326,7 @@ function synapse_content_slider_content() {
 <script type="text/javascript">
 	 jQuery(document).ready(function ($) {
    $(window).load(function() {
-    $('#orbitDemo').orbit({
+    $('#content_slider').orbit({
          animation: '$animation',
          advanceSpeed: $delay,
          captionAnimation: 'slideOpen',		// fade, slideOpen, none

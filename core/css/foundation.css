@@ -707,6 +707,12 @@
 /* PUT IN YOUR SLIDER ID AND SIZE TO MAKE LOAD BEAUTIFULLY
    ================================================== */
    
+#content_slider { background: url(orbit/spinner.gif) no-repeat center center #3c3c3c; height: 300px !important;  }
+#content_slider.orbit { height: 300px; }
+#content_slider img, #content_slider div { display: none; }
+#content_slider.orbit img, #content_slider.orbit div { display: block;}
+
+
 #orbitDemo { background: url(orbit/spinner.gif) no-repeat center center #000; height: 330px; margin-bottom: 45px; }
 #orbitDemo.orbit { height: auto; }
 #orbitDemo img, #orbitDemo div { display: none; }

@@ -7,7 +7,7 @@
 
 #product_media {padding: 20px 0 20px 0;}
 
-#productbg {
+#sliderbg, #productbg {
 		border-bottom: 1px solid #E1E1E1;
 		background: #bbb url(../images/sliderbg.png);
 		margin-bottom: 20px;
