@@ -346,8 +346,8 @@ function ifeature_logo_description_content() {
 */
 function ifeature_description_icons_content() {
 ?>
-	<div class="container">
-		<div class="row">
+		<div class="container">
+			<div class="row">
 		
 			<div class="five columns">
 				
@@ -365,9 +365,8 @@ function ifeature_description_icons_content() {
 			<!-- End @Core header contact social icon hook -->	
 						
 			</div>	
-		</div><!--end row-->
-	</div>	
-
+			</div><!--end row-->
+		</div>	
 <?php
 }
 
