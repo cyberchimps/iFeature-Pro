@@ -194,6 +194,22 @@ function create_post_type() {
 
 	global $themename, $themeslug, $options, $root;
 	
+	register_post_type( $themeslug.'_content_slides',
+		array(
+			'labels' => array(
+				'name' => __( 'Content Slides' ),
+				'singular_name' => __( 'Slides' )
+			),
+			'public' => true,
+			'show_ui' => true, 
+			'supports' => array('custom-fields', 'title'),
+			'taxonomies' => array( 'content_slide_categories'),
+			'has_archive' => true,
+			'menu_icon' => "$root/images/pro/slider.png",
+			'rewrite' => array('slug' => 'content_slides')
+		)
+	);
+	
 	register_post_type( $themeslug.'_custom_slides',
 		array(
 			'labels' => array(
@@ -222,7 +238,7 @@ function create_post_type() {
 			'taxonomies' => array( 'carousel_categories'),
 			'has_archive' => true,
 			'menu_icon' => "$root/images/pro/carousel.png",
-			'rewrite' => array('slug' => 'slides')
+			'rewrite' => array('slug' => 'carousel')
 		)
 	);
 	
@@ -252,6 +268,16 @@ function custom_taxonomies() {
 
 	global $themename, $themeslug, $options;
 	
+	register_taxonomy(
+		'content_slide_categories',		
+		$themeslug.'_content_slides',		
+		array(
+			'hierarchical' => true,
+			'label' => 'Content Slide Categories',	
+			'query_var' => true,	
+			'rewrite' => array( 'slug' => 'content_slide_categories' ),	
+		)
+	);
 	register_taxonomy(
 		'slide_categories',		
 		$themeslug.'_custom_slides',		
