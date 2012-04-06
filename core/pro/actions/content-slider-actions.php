@@ -97,7 +97,7 @@ function synapse_content_slider_content() {
 
 /* End slider width variable */ 
 
-	query_posts( array ('post_type' => $themeslug.'_custom_slides', 'showposts' => 100,  'slide_categories' => $customcategory  ) );
+	query_posts( array ('post_type' => $themeslug.'_content_slides', 'showposts' => 100,  'slide_categories' => $customcategory  ) );
  
 /* End query posts based on theme/meta options */
     	

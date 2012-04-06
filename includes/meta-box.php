@@ -91,6 +91,7 @@ function initialize_the_meta_boxes() {
 			->section_order('page_section_order', 'Page Elements', '', array('options' => array(
 					'breadcrumbs' => 'Breadcrumbs',
 					'page_slider' => 'iFeature Slider',
+					'content_slider' => 'Content Slider',
 					'callout_section' => 'Callout',
 					'twitterbar_section' => 'Twitter Bar',
 					'portfolio_element' => 'Portfolio',
