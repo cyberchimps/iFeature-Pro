@@ -94,7 +94,8 @@ function initialize_the_meta_boxes() {
 			->text('content_slide_url', 'Image Link', '')	
 			->textarea('content_slide_video', 'Slider Media Embed', '')
 			->sliderhelp('', 'Need Help?', '')
-			->reorder('reorder_id', 'Reorder', 'Reorder Desc' )		->end();
+			->reorder('reorder_id', 'Reorder', 'Reorder Desc' )
+		->end();
 
 	$mb = new Chimps_Metabox('pages', $themenamefull.' Page Options', array('pages' => array('page')));
 	$mb
