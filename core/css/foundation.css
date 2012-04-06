@@ -961,48 +961,6 @@ div.slider-nav span.left {
     background-position: 0 0;
     border: 2px solid #000; }
 
-/* Custom */
-	
-@media handheld, only screen and (max-width: 767px) {
-
-	#box1, #box2 {margin-right: 0px !important;} 
-	.searchform {display: none !important;}
-    #nav ul ul li:hover ul, #nav ul ul ul li:hover ul {margin: 0px !important;}
-    #nav ul ul .parent > a, #nav ul ul .parent:hover > a:hover, #nav ul ul li:hover ul .parent > a, #nav ul ul li:hover ul .parent > a:hover{background-image:url(../images/arrow.png) !important;background-position:right !important;background-repeat:no-repeat !important;}
-    .carousel_caption {font-size: 10px !important;}
-    .callout_title {text-align: center !important;}
-    #calloutbutton {width: 200px !important; margin: auto !important; margin-bottom: 30px !important;}
-    #banner {margin-top: 10px !important;}
-    #orbitDemo.orbit img {width: 710px !important;}
-    #box1 {margin-top:0px !important; margin-bottom:7px !important;}
-	#box2 {margin-top:7px !important; margin-bottom:7px !important;}
-	#box3 {margin-top:7px !important; margin-bottom:14px !important;}
-}
-
-@media handheld, only screen and (max-width: 400px) {
-	#orbitDemo {height: 90px;}
-	.carousel_caption {font-size: 6px !important;}
-	.icons{text-align: center !important;}
-	#logo{text-align:center !important;}
-	.sitename {text-align:center !important;}
-	#register {text-align: center !important;}
-	.description{text-align: center !important;}
-	#header_contact {text-align: center !important;}
-	#halfnav {text-align: center !important; float: none !important;}
-	#afterfootermenu {display:none !important;}
-	#credit {float:right !important; margin-right:15px !important; margin-top:4px !important;}
-	#afterfootercopyright {float: left !important;margin-left:15px !important;margin-bottom:2px !important;}
-	#mobileMenu_nav_menu {float: right !important; margin-top: 10px !important; margin-right: 10px !important;}
-	#imenu {height: 35px !important;}
-	.orbit-bullets li.has-thumb {
-    background: none;
-    width: 25px;
-    height: 15px;
-    margin-bottom: -1px; }
-    #slider-wrapper, .nivoslider_nav{display: none;}
-
-}
-
 /* --------------------------------------------------
 	:: Typography
 	-------------------------------------------------- */
@@ -1374,7 +1332,49 @@ div.slider-nav span.left {
 		h2, h3{ page-break-after: avoid; }
 		.hide-on-print { display: none !important; }
 		.print-only { display: block !important; }
-	}
+}
 
+/* Custom */
+	
+@media handheld, only screen and (max-width: 767px) {
+
+	#box1, #box2 {margin-right: 0px !important;} 
+	.searchform {display: none !important;}
+    #nav ul ul li:hover ul, #nav ul ul ul li:hover ul {margin: 0px !important;}
+    #nav ul ul .parent > a, #nav ul ul .parent:hover > a:hover, #nav ul ul li:hover ul .parent > a, #nav ul ul li:hover ul .parent > a:hover{background-image:url(../images/arrow.png) !important;background-position:right !important;background-repeat:no-repeat !important;}
+    .carousel_caption {font-size: 10px !important;}
+    .callout_title {text-align: center !important;}
+    #calloutbutton {width: 200px !important; margin: auto !important; margin-bottom: 30px !important;}
+    #banner {margin-top: 10px !important;}
+    #orbitDemo.orbit img {width: 710px !important;}
+    #box1 {margin-top:0px !important; margin-bottom:7px !important;}
+	#box2 {margin-top:7px !important; margin-bottom:7px !important;}
+	#box3 {margin-top:7px !important; margin-bottom:14px !important;}
+	#product_media.six.columns {float: none !important; text-align: center;}
+}
+
+@media handheld, only screen and (max-width: 400px) {
+	#orbitDemo {height: 90px;}
+	.carousel_caption {font-size: 6px !important;}
+	.icons{text-align: center !important;}
+	#logo{text-align:center !important;}
+	.sitename {text-align:center !important;}
+	#register {text-align: center !important;}
+	.description{text-align: center !important;}
+	#header_contact {text-align: center !important;}
+	#halfnav {text-align: center !important; float: none !important;}
+	#afterfootermenu {display:none !important;}
+	#credit {float:right !important; margin-right:15px !important; margin-top:4px !important;}
+	#afterfootercopyright {float: left !important;margin-left:15px !important;margin-bottom:2px !important;}
+	#mobileMenu_nav_menu {float: right !important; margin-top: 10px !important; margin-right: 10px !important;}
+	#imenu {height: 35px !important;}
+	.orbit-bullets li.has-thumb {
+    background: none;
+    width: 25px;
+    height: 15px;
+    margin-bottom: -1px; }
+    #slider-wrapper, .nivoslider_nav{display: none;}
+
+}
 
 	
