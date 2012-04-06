@@ -51,6 +51,12 @@ function initialize_the_meta_boxes() {
 	// End taxonomy call
 	
 	$meta_boxes = array();
+	
+	$mb = new Chimps_Metabox('Portfolio', 'Portfolio Element', array('pages' => array($themeslug.'_portfolio_images')));
+	$mb
+		->tab("Portfolio Element")
+			->single_image('portfolio_image', 'Portfolio Image', '')
+		->end();
 
 	$mb = new Chimps_Metabox('post_slide_options', $themenamefull.' Slider Options', array('pages' => array('post')));
 	$mb

@@ -393,8 +393,8 @@ function slides_columns_display($portfolio_columns, $post_id){
 /**
 * Edit columns for portfolio post type.
 */ 
-add_filter('manage_edit-if_portfolio_columns', 'portfolio_edit_columns');
-add_action('manage_if_portfolio_posts_custom_column',  'portfolio_columns_display', 10, 2);
+add_filter('manage_edit-if_portfolio_images_columns', 'portfolio_edit_columns');
+add_action('manage_if_portfolio_images_posts_custom_column',  'portfolio_columns_display', 10, 2);
 
 function portfolio_edit_columns($portfolio_columns){
     $portfolio_columns = array(
