@@ -38,24 +38,24 @@ function synapse_content_slider_content() {
 	$root = get_template_directory_uri(); 
 	
 	if (is_page()) {
-		$customcategory = get_post_meta($post->ID, 'slider_category' , true);
-		$height = get_post_meta($post->ID, 'slider_height' , true);
-		$sliderdelay = get_post_meta($post->ID, 'slider_delay' , true);
-		$slideranimation = get_post_meta($post->ID, 'page_slider_animation' , true);
-		$navigationstyle = get_post_meta($post->ID, 'page_slider_navigation_style' , true);
-		$hidenav = get_post_meta($post->ID, 'hide_arrows' , true);
-		$wordenable = get_post_meta($post->ID, 'enable_wordthumb' , true);	
+		$customcategory = get_post_meta($post->ID, 'content_slider_category' , true);
+		$height = get_post_meta($post->ID, 'content_slider_height' , true);
+		$sliderdelay = get_post_meta($post->ID, 'content_slider_delay' , true);
+		$slideranimation = get_post_meta($post->ID, 'content_slider_animation' , true);
+		$navigationstyle = get_post_meta($post->ID, 'content_slider_navigation_style' , true);
+		$hidenav = get_post_meta($post->ID, 'content_slider_arrows' , true);
+		$wordenable = get_post_meta($post->ID, 'content_slider_wordthumb' , true);	
 	}
 	
 	else {
-		$customcategory = $options->get($themeslug.'_blog_customslider_category');
-		$captionstyle = $options->get($themeslug.'_blog_caption_style');
-		$height = $options->get($themeslug.'_blog_slider_height');
-		$hidenav = $options->get($themeslug.'_blog_hide_slider_arrows');
-		$wordenable = $options->get($themeslug.'_blog_enable_wordthumb');
-		$slideranimation = $options->get($themeslug.'_blog_slider_animation');
-		$sliderdelay = $options->get($themeslug.'_blog_slider_delay');
-		$navigationstyle = $options->get($themeslug.'_blog_slider_nav');
+		$customcategory = $options->get($themeslug.'_blog_content_slider_category');
+		$captionstyle = $options->get($themeslug.'_blog_content_slider_caption_style');
+		$height = $options->get($themeslug.'_blog_content_slider_height');
+		$hidenav = $options->get($themeslug.'_blog_content_slider_arrows');
+		$wordenable = $options->get($themeslug.'_blog_content_slider_wordthumb');
+		$slideranimation = $options->get($themeslug.'_blog_content_slider_animation');
+		$sliderdelay = $options->get($themeslug.'_blog_content_slider_delay');
+		$navigationstyle = $options->get($themeslug.'_blog_content_slider_nav');
 	}
 	
 /* Row div variable. */	

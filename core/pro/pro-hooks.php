@@ -75,6 +75,10 @@ function synapse_page_nivoslider() {
 	do_action ('synapse_page_nivoslider');
 }
 
+function synapse_content_slider() {
+	do_action ('synapse_content_slider');
+}
+
 /** 
 * Product
 */

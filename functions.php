@@ -3,8 +3,8 @@
 	Functions
 	Author: Tyler Cunningham
 	Establishes the core theme functions.
-	Copyright (C) 2011 CyberChimps
-	Version 3.0
+	Copyright (C) 2012 CyberChimps
+	Version 5.0
 */
 
 /**
@@ -389,7 +389,6 @@ function slides_columns_display($portfolio_columns, $post_id){
         break;
 	}
 }
-
 
 /**
 * Edit columns for portfolio post type.
