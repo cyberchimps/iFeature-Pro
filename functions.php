@@ -323,7 +323,7 @@ function custom_taxonomy_default( $post_id, $post ) {
 
 		$defaults = array(
 
-			'slide_categories' => array( 'default' ), 'carousel_categories' => array( 'default' ), 'portfolio_categories' => array( 'default' ),
+			'slide_categories' => array( 'default' ), 'carousel_categories' => array( 'default' ), 'portfolio_categories' => array( 'default' ),'content_slide_categories' => array( 'default' )
 
 			);
 
@@ -343,6 +343,53 @@ function custom_taxonomy_default( $post_id, $post ) {
 }
 
 add_action( 'save_post', 'custom_taxonomy_default', 100, 2 );
+
+/**
+* Edit columns for slider post type.
+*/ 
+add_filter('manage_edit-if_content_slides_columns', 'slider_edit_columns');
+add_action('manage_if_content_slides_posts_custom_column',  'slides_columns_display', 10, 2);
+
+function slider_edit_columns($portfolio_columns){
+    $portfolio_columns = array(
+        "cb" => "<input type=\"checkbox\" />",
+        "title" => _x('Title', 'column name'),
+        "image" => __('Image'),
+        "category" => __('Categories'),
+        "author" => __('Author'),
+        "date" => __('Date'),
+    );
+   
+    return $portfolio_columns;
+}
+function slides_columns_display($portfolio_columns, $post_id){
+	global $post;
+	$cat = get_the_terms($post->ID, 'slide_categories');
+	$images = get_post_meta($post->ID, 'slider_image' , true);
+	
+    switch ($portfolio_columns)
+    {
+        case "image":
+        	if ( !empty( $images ) ) {
+        		echo '<img src="';
+        		echo $images;
+        		echo '"style="height: 50px; width: 50px;">';
+        	}
+        break;
+        
+        case "category":
+        	if ( !empty( $cat ) ) {
+                $out = array();
+                foreach ( $cat as $c )
+                    $out[] = "<a href='edit.php?slide_categories=$c->slug'> " . esc_html(sanitize_term_field('name', $c->name, $c->term_id, 'content_slide_categories', 'display')) . "</a>";
+                echo join( ', ', $out );
+            } else {
+                _e('No Category.');  //No Taxonomy term defined
+            }
+        break;
+	}
+}
+
 
 /**
 * Edit columns for portfolio post type.
