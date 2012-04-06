@@ -50,6 +50,7 @@ jQuery(document).ready(function($) {
 		page_slider: "subsection-iFeature-Pro-Slider-Options",
 		page_nivoslider: "subsection-iFeature-Pro-NivoSlider-Options",
 		callout_section: "subsection-Callout-Options",
+		content_slider: "subsection-Content-Slider-Options",
 		carousel_section: "subsection-Carousel-Options",
 		portfolio_element: "subsection-Portfolio-Options",
 		product_element: "subsection-Product-Options",
