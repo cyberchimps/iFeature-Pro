@@ -1,9 +1,9 @@
 <?php
 /**
-* Comments actions used by the CyberChimps Synapse Core Framework
+* Comments actions used by iFeature
 *
 * Author: Tyler Cunningham
-* Copyright: © 2011
+* Copyright: © 2012
 * {@link http://cyberchimps.com/ CyberChimps LLC}
 *
 * Released under the terms of the GNU General Public License.
@@ -11,8 +11,8 @@
 * along with this software. In the main directory, see: /licensing/
 * If not, see: {@link http://www.gnu.org/licenses/}.
 *
-* @package Synapse
-* @since 1.0
+* @package iFeature
+* @since 5.0
 */
 
 /**
@@ -32,7 +32,7 @@ function synapse_comments_password_required() {
 	
 	$password_text = apply_filters( 'synapse_password_required_text', 'This post is password protected. Enter the password to view comments.');
 	if ( post_password_required() ) { 
-		printf( __( $password_text, 'core' )); 
+		printf( __( $password_text, 'ifeature' )); 
 		return;
 	}
 }
@@ -46,7 +46,7 @@ function synapse_comments_loop() {
 	global $post; ?>
 <?php if ( have_comments() ) : ?>
 	<div class="comments_container">
-		<h2 class="commentsh2"><?php comments_number( __('No Responses', 'core' ), __( 'One Response', 'core' ), __('% Responses', 'core' ));?></h2>
+		<h2 class="commentsh2"><?php comments_number( __('No Responses', 'ifeature' ), __( 'One Response', 'ifeature' ), __('% Responses', 'ifeature' ));?></h2>
 
 		<div class="navigation">
 			<div class="next-posts"><?php previous_comments_link() ?></div>
@@ -86,7 +86,7 @@ function synapse_comments_loop() {
 	</div>
 
 	<?php if ( get_option('comment_registration') && !is_user_logged_in() ) : ?>
-		<p><?php printf (__( 'You must be', 'core' )); ?><a href="<?php echo wp_login_url( get_permalink() ); ?>"> <?php printf( __( 'logged in', 'core' ), '</a>', __('to post a comment.', 'core' )); ?></p>
+		<p><?php printf (__( 'You must be', 'ifeature' )); ?><a href="<?php echo wp_login_url( get_permalink() ); ?>"> <?php printf( __( 'logged in', 'ifeature' ), '</a>', __('to post a comment.', 'ifeature' )); ?></p>
 	<?php else : ?>
 	
 	<?php comment_form(); ?>

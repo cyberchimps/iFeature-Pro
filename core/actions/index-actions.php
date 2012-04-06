@@ -1,9 +1,9 @@
 <?php
 /**
-* Index actions used by the CyberChimps Synapse Core Framework
+* Index actions used by iFeature
 *
 * Author: Tyler Cunningham
-* Copyright: © 2011
+* Copyright: © 2012
 * {@link http://cyberchimps.com/ CyberChimps LLC}
 *
 * Released under the terms of the GNU General Public License.
@@ -11,8 +11,8 @@
 * along with this software. In the main directory, see: /licensing/
 * If not, see: {@link http://www.gnu.org/licenses/}.
 *
-* @package Synapse
-* @since 1.0
+* @package iFeature
+* @since 5.0
 */
 
 /**
@@ -30,49 +30,49 @@ function synapse_index_content() {
 
 	global $options, $themeslug, $post, $sidebar, $content_grid; // call globals ?>
 	
-	<!--Begin @Core sidebar init-->
+	<!--Begin @ifeature sidebar init-->
 		<?php synapse_sidebar_init(); ?>
-	<!--End @Core sidebar init-->
+	<!--End @ifeature sidebar init-->
 	<div class="row">
-<!--Begin @Core before content sidebar hook-->
+<!--Begin @ifeature before content sidebar hook-->
 		<?php synapse_before_content_sidebar(); ?>
-	<!--End @Core before content sidebar hook-->
+	<!--End @ifeature before content sidebar hook-->
 
 		<div id="content" class="<?php echo $content_grid; ?>">
 		
-		<!--Begin @Core index entry hook-->
+		<!--Begin @ifeature index entry hook-->
 		<?php synapse_blog_content_slider(); ?>
-		<!--End @Core index entry hook-->
+		<!--End @ifeature index entry hook-->
 
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			
 			<div class="post_container">
 				<div <?php post_class() ?> id="post-<?php the_ID(); ?>">
 		
-				<!--Begin @Core index loop hook-->
+				<!--Begin @ifeature index loop hook-->
 					<?php synapse_loop(); ?>
-				<!--End @Core index loop hook-->	
+				<!--End @ifeature index loop hook-->	
 			
-				<!--Begin @Core link pages hook-->
+				<!--Begin @ifeature link pages hook-->
 					<?php synapse_link_pages(); ?>
-				<!--End @Core link pages hook-->
+				<!--End @ifeature link pages hook-->
 			
-				<!--Begin @Core post edit link hook-->
+				<!--Begin @ifeature post edit link hook-->
 					<?php synapse_edit_link(); ?>
-				<!--End @Core post edit link hook-->
+				<!--End @ifeature post edit link hook-->
 			
-				<!--Begin @Core FB like hook-->
+				<!--Begin @ifeature FB like hook-->
 					<?php synapse_fb_like_plus_one(); ?>
-				<!--End @Core FB like hook-->
+				<!--End @ifeature FB like hook-->
 			
-				<!--Begin @Core post tags hook-->
+				<!--Begin @ifeature post tags hook-->
 					<?php synapse_post_tags(); ?>
-				<!--End @Core post tags hook-->
+				<!--End @ifeature post tags hook-->
 				
 				<?php if (is_single() && $options->get($themeslug.'_post_pagination') == "1") : ?>
-				<!--Begin @Core post pagination hook-->
+				<!--Begin @ifeature post pagination hook-->
 					<?php synapse_post_pagination(); ?>
-				<!--End @Core post pagination hook-->			
+				<!--End @ifeature post pagination hook-->			
 				<?php endif;?>
 			
 				</div><!--end post_class-->
@@ -94,15 +94,15 @@ function synapse_index_content() {
 
 			<?php endif; ?>
 			
-				<!--Begin @Core pagination hook-->
+				<!--Begin @ifeature pagination hook-->
 			<?php synapse_pagination(); ?>
-			<!--End @Core pagination loop hook-->
+			<!--End @ifeature pagination loop hook-->
 		
 		</div><!--end content-->
 
-	<!--Begin @Core after content sidebar hook-->
+	<!--Begin @ifeature after content sidebar hook-->
 		<?php synapse_after_content_sidebar(); ?>
-	<!--End @Core after content sidebar hook-->
+	<!--End @ifeature after content sidebar hook-->
 
 </div>
 <?php }

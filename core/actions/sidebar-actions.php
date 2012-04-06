@@ -1,9 +1,9 @@
 <?php
 /**
-* Sidebar actions used by the CyberChimps Synapse Core Framework
+* Sidebar actions used by iFeature
 *
 * Author: Tyler Cunningham
-* Copyright: © 2011
+* Copyright: © 2012
 * {@link http://cyberchimps.com/ CyberChimps LLC}
 *
 * Released under the terms of the GNU General Public License.
@@ -11,8 +11,8 @@
 * along with this software. In the main directory, see: /licensing/
 * If not, see: {@link http://www.gnu.org/licenses/}.
 *
-* @package Synapse
-* @since 1.0
+* @package iFeature
+* @since 5.0
 */
 
 /**

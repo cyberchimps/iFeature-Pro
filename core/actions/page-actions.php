@@ -1,9 +1,9 @@
 <?php
 /**
-* Page actions used by the CyberChimps Synapse Core Framework
+* Page actions used by iFeature
 *
 * Author: Tyler Cunningham
-* Copyright: © 2011
+* Copyright: © 2012
 * {@link http://cyberchimps.com/ CyberChimps LLC}
 *
 * Released under the terms of the GNU General Public License.
@@ -11,8 +11,8 @@
 * along with this software. In the main directory, see: /licensing/
 * If not, see: {@link http://www.gnu.org/licenses/}.
 *
-* @package Synapse
-* @since 1.0
+* @package iFeature
+* @since 5.0
 */
 
 /**
@@ -36,9 +36,9 @@ function synapse_page_section_content() {
 
 ?>
 <div class="row">
-	<!--Begin @Core before content sidebar hook-->
+	<!--Begin @ifeature before content sidebar hook-->
 		<?php synapse_before_content_sidebar(); ?>
-	<!--End @Core before content sidebar hook-->
+	<!--End @ifeature before content sidebar hook-->
 			
 		<div id="content" class="<?php echo $content_grid; ?>">
 		
@@ -76,9 +76,9 @@ function synapse_page_section_content() {
 				
 	</div><!--end content_left-->
 	
-	<!--Begin @Core after content sidebar hook-->
+	<!--Begin @ifeature after content sidebar hook-->
 		<?php synapse_after_content_sidebar(); ?>
-	<!--End @Core after content sidebar hook-->
+	<!--End @ifeature after content sidebar hook-->
 </div>
 <?php
 }

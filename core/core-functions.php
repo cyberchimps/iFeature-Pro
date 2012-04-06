@@ -21,7 +21,7 @@
 * @since 1.0
 */
 function synapse_text_domain() {
-	load_theme_textdomain( 'core', TEMPLATEPATH . '/core/languages' );
+	load_theme_textdomain( 'ifeature', TEMPLATEPATH . '/core/languages' );
 
 	    $locale = get_locale();
 	    $locale_file = TEMPLATEPATH . "/core/languages/$locale.php";

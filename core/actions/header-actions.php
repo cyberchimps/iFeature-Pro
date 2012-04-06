@@ -1,9 +1,9 @@
 <?php
 /**
-* Header actions used by the CyberChimps Synapse Core Framework
+* Header actions used by iFeature
 *
 * Author: Tyler Cunningham
-* Copyright: © 2011
+* Copyright: © 2012
 * {@link http://cyberchimps.com/ CyberChimps LLC}
 *
 * Released under the terms of the GNU General Public License.
@@ -11,8 +11,8 @@
 * along with this software. In the main directory, see: /licensing/
 * If not, see: {@link http://www.gnu.org/licenses/}.
 *
-* @package Synapse
-* @since 1.0
+* @package iFeature
+* @since 5.0
 */
 
 /**
@@ -38,7 +38,7 @@ add_action( 'synapse_404_content', 'synapse_404_content_handler' );
 */
 function synapse_font() {
 	global $themeslug, $options; //Call global variables
-	$family = apply_filters( 'synapse_default_font_family', 'Helvetica, serif' );
+	$family = apply_filters( 'synapse_default_font_family', 'Helvetica, sans-serif' );
 	
 	if ($options->get($themeslug.'_font') == "" ) {
 		$font = apply_filters( 'synapse_default_font', 'Arial' );
@@ -186,9 +186,9 @@ function synapse_link_rel() {
 	}?>
 <link rel="apple-touch-icon" href="<?php echo stripslashes($touch['url']); ?>"/>	
 <link rel="shortcut icon" href="<?php echo stripslashes($favicon['url']); ?>" type="image/x-icon" />
-<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/core/css/960/reset.css" type="text/css" />
-<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/core/css/960/text.css" type="text/css" />
-<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/core/css/grid.css" type="text/css" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/ifeature/css/960/reset.css" type="text/css" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/ifeature/css/960/text.css" type="text/css" />
+<link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/ifeature/css/grid.css" type="text/css" />
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/style.css" type="text/css" />
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/css/elements.css" type="text/css" />
 

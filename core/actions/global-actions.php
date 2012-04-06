@@ -1,9 +1,9 @@
 <?php
 /**
-* Global actions used by the CyberChimps Synapse Core Framework
+* Global actions used by iFeature
 *
 * Author: Tyler Cunningham
-* Copyright: © 2011
+* Copyright: © 2012
 * {@link http://cyberchimps.com/ CyberChimps LLC}
 *
 * Released under the terms of the GNU General Public License.
@@ -11,8 +11,8 @@
 * along with this software. In the main directory, see: /licensing/
 * If not, see: {@link http://www.gnu.org/licenses/}.
 *
-* @package Synapse
-* @since 1.0
+* @package iFeature
+* @since 5.0
 */
 
 /**
@@ -66,7 +66,7 @@ function synapse_loop_content($content) {
 			</div><!--end format-icon-->
 			<?php endif; ?>
 				<h2 class="posts_title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-					<!--Call @Core Meta hook-->
+					<!--Call @ifeature Meta hook-->
 			<?php synapse_post_byline(); ?>
 				<?php
 				if ( has_post_thumbnail() && $featured_images == '1') {
@@ -83,7 +83,7 @@ function synapse_loop_content($content) {
 						the_excerpt();
 						}
 						else {
-							the_content(__('Read more…', 'core'));
+							the_content(__('Read more…', 'ifeature'));
 						}
 					 ?>
 				</div><!--end entry-->
@@ -125,7 +125,7 @@ function synapse_post_bar_content() {
 				</div><!--end share-->
 				<div class="six columns" id="comments">
 					<?php if (($hidden[$themeslug.'_hide_comments']) != '0'):?>
-					<?php comments_popup_link( __('No Comments', 'core' ), __('1 Comment', 'core' ), __('% Comments' , 'core' )); //need a filer here ?>&nbsp;&nbsp;<img src="<?php echo get_template_directory_uri(); ?>/images/Commentsgrey.png" alt="comments"/>&nbsp;
+					<?php comments_popup_link( __('No Comments', 'ifeature' ), __('1 Comment', 'ifeature' ), __('% Comments' , 'ifeature' )); //need a filer here ?>&nbsp;&nbsp;<img src="<?php echo get_template_directory_uri(); ?>/images/Commentsgrey.png" alt="comments"/>&nbsp;
 					<?php endif;?>
 				</div><!--end comments-->
 		</div><!--end postbar--> 
@@ -150,9 +150,9 @@ function synapse_post_byline_content() {
 	}?>
 	
 	<div class="meta">
-		<?php if (($hidden[$themeslug.'_hide_date']) != '0'):?> <?php printf( __( 'Published on', 'core' )); ?> <a href="<?php the_permalink() ?>"><?php echo get_the_date(); ?></a><?php endif;?>
-		<?php if (($hidden[$themeslug.'_hide_author']) != '0'):?><?php printf( __( 'by', 'core' )); ?> <?php the_author_posts_link(); ?> <?php endif;?> 
-		<?php if (($hidden[$themeslug.'_hide_categories']) != '0'):?><?php printf( __( 'in', 'core' )); ?> <?php the_category(', ') ?> <?php endif;?>
+		<?php if (($hidden[$themeslug.'_hide_date']) != '0'):?> <?php printf( __( 'Published on', 'ifeature' )); ?> <a href="<?php the_permalink() ?>"><?php echo get_the_date(); ?></a><?php endif;?>
+		<?php if (($hidden[$themeslug.'_hide_author']) != '0'):?><?php printf( __( 'by', 'ifeature' )); ?> <?php the_author_posts_link(); ?> <?php endif;?> 
+		<?php if (($hidden[$themeslug.'_hide_categories']) != '0'):?><?php printf( __( 'in', 'ifeature' )); ?> <?php the_category(', ') ?> <?php endif;?>
 	</div> <?php
 }
 
@@ -184,7 +184,7 @@ function synapse_post_tags_content() {
 
 	<?php if (has_tag() AND ($hidden[$themeslug.'_hide_tags']) != '0'):?>
 	<div class="tags">
-			<?php the_tags( __('Tags: ', 'core' ), ', ', '<br />'); ?>
+			<?php the_tags( __('Tags: ', 'ifeature' ), ', ', '<br />'); ?>
 		
 	</div><!--end tags--> 
 	<?php endif;
