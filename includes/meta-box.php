@@ -82,6 +82,19 @@ function initialize_the_meta_boxes() {
 			->sliderhelp('', 'Need Help?', '')
 			->reorder('reorder_id', 'Reorder Name', 'Reorder Desc' )
 		->end();
+		
+	$mb = new Chimps_Metabox('slides', 'Content Slides', array('pages' => array($themeslug.'_content_slides')));
+	$mb
+		->tab("Content Slide Options")
+			->select('content_slide_type', 'Select Slide Type', '', array('options' => array('Text and Media', 'Media Only', 'Text Only')) )
+			->select('content_slide_text_align', 'Slide Layout', '', array('options' => array('Text Left - Image Right', 'Image Right - Text Left')) )	
+			->textarea('content_slide_caption', 'Slide Text', '')
+			->select('content_slide_media_type', 'Media Type', '', array('options' => array('Image', 'Video')) )
+			->single_image('content_slide_image', 'Slide Image', '')
+			->text('content_slide_url', 'Image Link', '')	
+			->textarea('content_slide_video', 'Slider Media Embed', '')
+			->sliderhelp('', 'Need Help?', '')
+			->reorder('reorder_id', 'Reorder', 'Reorder Desc' )		->end();
 
 	$mb = new Chimps_Metabox('pages', $themenamefull.' Page Options', array('pages' => array('page')));
 	$mb
