@@ -3,19 +3,19 @@ jQuery(document).ready(function($) {
 		var slider_value = $(value).val();
 		
 		if ( slider_value == "0" ) {
-			$(".slider_media_type, .slider_image, .slider_url, .slider_video, .slider_text_align, .slider_caption").fadeIn();
+			$(".content_slide_media_type, .content_slide_image, .content_slide_url, .content_slide_video, .content_slide_text_align, .content_slide_caption").fadeIn();
 			
-			if_check_media_value("select[name=\'slider_media_type\']");
+			if_check_media_value("select[name=\'content_slide_media_type\']");
 
 		} else if ( slider_value == "1" ) {
-			$(".slider_media_type, .slider_image, .slider_url, .slider_video").fadeIn();
-			$(".slider_text_align, .slider_caption").hide();
+			$(".content_slide_media_type, .content_slide_image, .content_slide_url, .content_slide_video").fadeIn();
+			$(".content_slide_text_align, .content_slide_caption").hide();
 			
-			if_check_media_value("select[name=\'slider_media_type\']");
+			if_check_media_value("select[name=\'content_slide_media_type\']");
 
 		} else if ( slider_value == "2" ){
-			$(".slider_text_align, .slider_caption").fadeIn();
-			$(".slider_media_type, .slider_image, .slider_url, .slider_video").hide();
+			$(".content_slide_text_align, .content_slide_caption").fadeIn();
+			$(".content_slide_media_type, .content_slide_image, .content_slide_url, .content_slide_video").hide();
 		}	
 		return false;
 	}
@@ -24,24 +24,24 @@ jQuery(document).ready(function($) {
 		var media_value = $(value).val();
 		
 		if ( media_value == "0" ) {
-			$(".slider_image, .slider_url").fadeIn();
-			$(".slider_video").hide();
+			$(".content_slide_image, .content_slide_url").fadeIn();
+			$(".content_slide_video").hide();
 			
 		} else if ( media_value == "1" ) {
-			$(".slider_video").fadeIn();
-			$(".slider_image, .slider_url").hide();
+			$(".content_slide_video").fadeIn();
+			$(".content_slide_image, .content_slide_url").hide();
 			
 		}
 		return false;
 	}
 
-	if_check_slider_value("select[name=\'slider_type\']");
+	if_check_slider_value("select[name=\'content_slider_type\']");
 
-	$("select[name=\'slider_type\']").change(function() {
+	$("select[name=\'content_slide_type\']").change(function() {
 		if_check_slider_value(this);
 	});
 	
-	$("select[name=\'slider_media_type\']").change(function() {
+	$("select[name=\'content_slide_media_type\']").change(function() {
 		if_check_media_value(this);
 	});
 });
