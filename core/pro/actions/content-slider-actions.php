@@ -130,13 +130,6 @@ function synapse_content_slider_content() {
 	   		$fullsized        = "$root/core/pro/library/wt/wordthumb.php?src=$customimage&a=c&$wordthumb2"; /* Gets custom image from page/post meta option, applies wordthumb code  */
 
 	   		
-	   		if ($align == '0' OR $align == '') {
-	   			$textalign = 'left';
-	 	   	}
-	   		elseif ($align == '1') {
-	   			$textalign = 'right';
-	   		}
-
 	    	if ($customimage != ''  && $wordenable == '1' OR $customimage != '' && $wordenable == 'on'){ // Custom image, no custom thumb, WordThumb enabled. 
 	    		$image = $customsized;
 	    	}   	
@@ -157,10 +150,13 @@ function synapse_content_slider_content() {
 	    	else {
 	    		$mediacontent = $media;
 	    	}
-
-			$textimg = "
+	    	
+	    	var_dump($align);
+	    	
+	    	if ($align == '0' OR $align == '') {
+	   			$textimg = "
 	  					<div class='slider_content'>
-	  						<div id='text_container' class='six columns' style='float: $textalign; padding-top: 20px;'>
+	  						<div id='text_container' class='six columns' style='padding-top: 20px;'>
 	  							<div class='content_title' style='padding-left: 15px; padding-right: 15px;'>$title</div><br />
 	  							<div class='content_text' style='padding-left: 15px; padding-right: 15px;'>$customtext</div>
 	  						</div>
@@ -170,6 +166,23 @@ function synapse_content_slider_content() {
 	    				</div>
 	    			   
 	    			   ";
+
+	 	   	}
+	   		elseif ($align == '1') {
+	   			$textimg = "
+	  					<div class='slider_content'>
+	  						<div id='image_container' class='six columns' style='padding-top:20px; text-align: center;  '>
+	  							<div class='media_content'><center>$mediacontent</center></div> 						
+	  						</div>
+	  						<div id='text_container' class='six columns' style='padding-top: 20px;'>
+	  							<div class='content_title' style='padding-left: 15px; padding-right: 15px;'>$title</div><br />
+	  							<div class='content_text' style='padding-left: 15px; padding-right: 15px;'>$customtext</div>
+	  						</div>
+	    				</div>
+	    			   
+	    			   ";
+
+	   		}
 	    			
 	    	$fullimg = "
 	  					<div class='slider_content'>

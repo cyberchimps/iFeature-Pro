@@ -1375,6 +1375,7 @@ div.slider-nav span.left {
     height: 15px;
     margin-bottom: -1px; }
     #slider-wrapper, .nivoslider_nav{display: none;}
+    #content_slider.orbit, #content_slider {height: 550px !important;}
 
 }
 
