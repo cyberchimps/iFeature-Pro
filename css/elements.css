@@ -22,7 +22,9 @@
 .content_text {font-size: 16px; color: #FFF;}
 
 #image_container.six.columns {margin-left: 0px !important;}
-
+#image_container.six.columns.six.columns {width: 50%;}
+#text_container.six.columns {margin-left: 0px !important;}
+#text_container.six.columns.six.columns {width: 50% ;}
 
 /* Page Elements */
 

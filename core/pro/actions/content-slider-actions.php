@@ -151,8 +151,6 @@ function synapse_content_slider_content() {
 	    		$mediacontent = $media;
 	    	}
 	    	
-	    	var_dump($align);
-	    	
 	    	if ($align == '0' OR $align == '') {
 	   			$textimg = "
 	  					<div class='slider_content'>
