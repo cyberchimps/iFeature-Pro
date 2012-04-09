@@ -132,11 +132,9 @@ function synapse_content_slider_content() {
 	   		
 	   		if ($align == '0' OR $align == '') {
 	   			$textalign = 'left';
-	   			$imagealign = 'right';
-	   		}
+	 	   	}
 	   		elseif ($align == '1') {
 	   			$textalign = 'right';
-	   			$imagealign = 'left';
 	   		}
 
 	    	if ($customimage != ''  && $wordenable == '1' OR $customimage != '' && $wordenable == 'on'){ // Custom image, no custom thumb, WordThumb enabled. 
@@ -166,7 +164,7 @@ function synapse_content_slider_content() {
 	  							<div class='content_title' style='padding-left: 15px; padding-right: 15px;'>$title</div><br />
 	  							<div class='content_text' style='padding-left: 15px; padding-right: 15px;'>$customtext</div>
 	  						</div>
-	  						<div id='image_container' class='six columns' style='padding-top:20px; float: $imagealign;  '>
+	  						<div id='image_container' class='six columns' style='padding-top:20px; text-align: center;  '>
 	  							<div class='media_content'><center>$mediacontent</center></div> 						
 	  						</div>
 	    				</div>
