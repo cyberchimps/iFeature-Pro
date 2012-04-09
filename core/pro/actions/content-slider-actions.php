@@ -164,7 +164,6 @@ function synapse_content_slider_content() {
 	    				</div>
 	    			   
 	    			   ";
-
 	 	   	}
 	   		elseif ($align == '1') {
 	   			$textimg = "
@@ -179,7 +178,6 @@ function synapse_content_slider_content() {
 	    				</div>
 	    			   
 	    			   ";
-
 	   		}
 	    			
 	    	$fullimg = "
