@@ -41,7 +41,11 @@ $customterms2 = get_terms('slide_categories', 'hide_empty=0');
     	foreach($customterms2 as $customterm) {
         	$customslider[$customterm->slug] = $customterm->name;
         }
-
+$content_terms = get_terms('content_slide_categories', 'hide_empty=0');
+	$content_slider = array();                                    
+    	foreach($content_terms as $customterm) {
+        	$contet_slider[$customterm->slug] = $customterm->name;
+        }
 $terms2 = get_terms('category', 'hide_empty=0');
 	$blogoptions = array();                                  
 	$blogoptions['all'] = "All";
