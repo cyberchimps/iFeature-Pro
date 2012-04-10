@@ -175,9 +175,9 @@ function synapse_callout_section_content() {
 
 ?>
 	<div class="row">
-	<div id="calloutwrap"><!--id="calloutwrap"-->
+	<div id="calloutwrap" class="<?php echo $grid; ?>"><!--id="calloutwrap"-->
 
-	<div id="callout_text" class="<?php echo $grid; ?>">
+	<div id="callout_text">
 		<h2 class="callout_title" ><?php echo $callouttitle ?></h2>
 		<p><?php echo $callouttext  ?></p>
 	</div>
