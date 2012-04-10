@@ -47,7 +47,7 @@ function synapse_font() {
 		$font = $options->get($themeslug.'_font'); 
 	} ?>
 	
-	<body style="font-family:'<?php echo ereg_replace("[^A-Za-z0-9]", " ", $font ); ?>', <?php echo $family; ?>" <?php body_class(); ?> > <?php
+	<body style="font-family:'<?php echo str_replace("+", " ", $font ); ?>', <?php echo $family; ?>" <?php body_class(); ?> > <?php
 }
 
 /**
@@ -183,7 +183,9 @@ function synapse_link_rel() {
 	}	
 	else {
 		$font = $options->get($themeslug.'_font'); 
-	}?>
+	}
+	$fontadd =  str_replace(" ", "+", $font );
+	?>
 <link rel="apple-touch-icon" href="<?php echo stripslashes($touch['url']); ?>"/>	
 <link rel="shortcut icon" href="<?php echo stripslashes($favicon['url']); ?>" type="image/x-icon" />
 <link rel="stylesheet" href="<?php bloginfo( 'template_url' ); ?>/ifeature/css/960/reset.css" type="text/css" />
@@ -198,7 +200,7 @@ function synapse_link_rel() {
 
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
-<link href='//fonts.googleapis.com/css?family=<?php echo $font ; ?>' rel='stylesheet' type='text/css' /> <?php
+<link href='//fonts.googleapis.com/css?family=<?php echo $fontadd ; ?>' rel='stylesheet' type='text/css' /> <?php
 }
 
 
