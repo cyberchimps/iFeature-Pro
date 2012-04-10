@@ -478,7 +478,10 @@ a.nivo-prevNav {
 }
 
  
-#box1.four.columns, #box2.four.columns, #box3.four.columns { width: 30.3%;}
+#box2.four.columns, #box3.four.columns { margin-left:2.3%;}
+
+#box1.four.columns, #box2.four.columns, #box3.four.columns {width: 31.7%;}
+
 .box_wrap {padding: 10px;}
 
 #box1 {
