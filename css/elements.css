@@ -389,6 +389,8 @@ a.nivo-prevNav {
 	padding: 10px 15px 10px 15px;
 }
 
+#callout_text.twelve.columns {width: 98% !important;}
+
 .callout_title {
 	font-size: 24px;
 	font-weight: bold;
