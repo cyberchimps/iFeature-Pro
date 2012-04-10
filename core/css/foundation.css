@@ -1352,6 +1352,8 @@ div.slider-nav span.left {
 	#box3 {margin-top:7px !important; margin-bottom:14px !important;}
 	#product_media.six.columns {float: none !important; text-align: center;}
 	#content_slider.orbit, #content_slider {height: 500px !important;}
+	#box2.four.columns { margin-left:0% !important;}
+	#box3.four.columns { margin-left:0% !important;}
 }
 
 @media handheld, only screen and (max-width: 400px) {
