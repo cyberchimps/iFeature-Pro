@@ -77,78 +77,70 @@ function synapse_nivoslider_content() {
 		
 echo "<div id='slider-wrapper'>";
 
-/* End row riv variables. */	
-	
-/* End define variables. */	
+/* Begin animation styles. */	
 
-/* Define animation styles. */	
+switch ($slideranimation) {
 
-	/* Define animation styles. */	
-
-	if ($slideranimation == 'sliceDown' OR $slideranimation == '1') {
+	case "sliceDown":
+	case 1:
 		$animation = 'sliceDown';
-	}
-	
-	elseif ($slideranimation == 'sliceDownLeft' OR $slideranimation == '2') {
-		$animation = 'sliceDownLeft' ;
-	}
-
-	elseif ($slideranimation == 'sliceUp' OR $slideranimation == '3') {
-		$animation = 'sliceUp' ;
-	}
-
-	elseif ($slideranimation == 'sliceUpLeft' OR $slideranimation == '4') {
-		$animation = 'sliceUpLeft' ;
-	}
-
-	elseif ($slideranimation == 'sliceUpDown' OR $slideranimation == '5') {
-		$animation = 'sliceUpDown' ;
-	}
-
-	elseif ($slideranimation == 'sliceUpDownLeft' OR $slideranimation == '6') {
-		$animation = 'sliceUpDownLeft' ;
-	}
-
-	elseif ($slideranimation == 'fold' OR $slideranimation == '7') {
-		$animation = 'fold' ;
-	}
-
-	elseif ($slideranimation == 'fade' OR $slideranimation == '8') {
-		$animation = 'fade' ;
-	}
-
-	elseif ($slideranimation == 'slideInRight' OR $slideranimation == '9') {
-		$animation = 'slideInRight' ;
-	}
-
-	elseif ($slideranimation == 'slideInLeft' OR $slideranimation == '10') {
-		$animation = 'slideInLeft' ;
-	}
-
-	elseif ($slideranimation == 'boxRandom' OR $slideranimation == '11') {
-		$animation = 'boxRandom' ;
-	}
-
-	elseif ($slideranimation == 'boxRain' OR $slideranimation == '12') {
-		$animation = 'boxRain' ;
-	}
-
-	elseif ($slideranimation == 'boxRainReverse' OR $slideranimation == '13') {
-		$animation = 'boxRainReverse' ;
-	}
-
-	elseif ($slideranimation == 'boxRainGrow' OR $slideranimation == '14') {
-		$animation = 'boxRainGrow' ;
-	}
-	
-	elseif ($slideranimation == 'boxRainGrowReverse' OR $slideranimation == '15') {
-		$animation = 'boxRainGrowReverse' ;
-	}
-	
-	else {
+		break;
+	case "slideDownLeft":
+	case 2:
+		$animation = 'slideDownLeft';
+		break;
+	case "sliceUp": 
+	case 3:
+		$animation = 'sliceUp';
+		break;
+	case "sliceUpLeft":
+	case 4:
+		$animation = 'sliceUpLeft';
+		break;
+	case "sliceUpDown":
+	case 5:
+		$animation = 'sliceUpDown';
+		break;
+	case "sliceUpDownLeft": 
+	case 6:
+		$animation = 'sliceUpDownLeft';
+		break;
+	case "fold": 
+	case 7:
+		$animation = 'fold';
+		break;
+	case "fade":
+	case 8:
+		$animation = 'fade';
+		break;
+	case "slideInRight": 
+	case 9:
+		$animation = 'slideInRight';
+		break;
+	case "slideInLeft":
+	case 10:
+		$animation = 'slideInLeft';
+		break;
+	case "boxRandom":
+	case 11:
+		$animation = 'boxRandom';
+		break;
+	case "boxRain":
+	case 12:
+		$animation = 'boxRain';
+		break;
+	case "boxRainReverse":
+	case 13:
+		$animation = 'boxRainReverse';
+		break;
+	case "boxRainGrowReverse":
+	case 14:
+		$animation = 'boxRainGrowReverse';
+		break;
+	default:
 		$animation = 'random';
-	}
-	
+}
+var_dump($animation);
 /* End animation styles. */		
 
 /* Slider navigation options */
