@@ -8,6 +8,7 @@ Version 4.1.2 (04-10-12)
 -Adjusted full-width callout text wrapper to fix slight blowout issue.
 -Added Hebrew translation files.
 -CSS fix for box element when viewed on an iPad.
+-Removed ereg_replace from Google Font code for PHP 5.3 compatibility. 
 
 Version 4.1.1 (04-03-12)
 -Twitter Bar no longer requires Twitter for WordPress plugin.
