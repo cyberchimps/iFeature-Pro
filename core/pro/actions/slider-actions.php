@@ -140,7 +140,7 @@ switch ($slideranimation) {
 	default:
 		$animation = 'random';
 }
-var_dump($animation);
+
 /* End animation styles. */		
 
 /* Slider navigation options */
