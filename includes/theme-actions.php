@@ -99,23 +99,29 @@ function ifeature_box_section_content() {
 	<div id="box_container" class="twelve columns"> <!--box container-->
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box Left") ) : ?>
 			<div id="box1" class="four columns">
+				<div class="box_wrap">
 				<h2 class="box-widget-title">Responsive iFeature Pro Slider</h2>
 					<img src="<?php echo $root ; ?>/images/icons/slidericon.png" height="100" alt="slider" class="aligncenter" />
 					<p>The Responsive iFeature Pro Slider now adjusts dynamically when being viewed by a mobile device such as an iPhone or iPad. It also includes image resizing, and thumbnails.</p>
+				 </div>
 			</div><!--end box1-->
 			<?php endif; ?>
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box Middle") ) : ?>
 			<div id="box2" class="four columns">
+				<div class="box_wrap">
 				<h2 class="box-widget-title">Responsive Design</h2>
 					<img src="<?php echo $root ; ?>/images/icons/blueprint.png" height="100" alt="blueprint" class="aligncenter" />
 					<p>With Responsive Design, and <a href="http://cyberchimps.com/ifeaturepro/">iFeature Pro</a> your website will now magically adjust to mobile devices such as the iPhone, iPad, and Android devices.</p>
+					 </div>
 			</div><!--end box2-->
 			<?php endif; ?>
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box Right") ) : ?>
 			<div id="box3" class="four columns">
+				<div class="box_wrap">
 				<h2 class="box-widget-title">Excellent Support</h2>
 				<img src="<?php echo $root ; ?>/images/icons/docs.png" height="100" alt="docs" class="aligncenter" />
 				<p>We designed iFeature Pro to be as easy to design with as possible, if you do run into trouble we provide a <a href="http://cyberchimps.com/forum">support forum</a>, and <a href="http://www.cyberchimps.com/ifeaturepro/docs/">precise documentation</a>.</p>
+				 </div>
 			</div><!--end box3-->
 		<?php endif; ?>
 </div>

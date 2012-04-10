@@ -478,11 +478,11 @@ a.nivo-prevNav {
 }
 
  
-#box1.four.columns, #box2.four.columns, #box3.four.columns { width: 28.2%;}
+#box1.four.columns, #box2.four.columns, #box3.four.columns { width: 30.3%;}
+.box_wrap {padding: 10px;}
 
 #box1 {
 	min-height: 250px;
-	padding: 7px;
 	color: #222;
 	background: #fff;
 	border-top: 1px solid #CCC;
@@ -496,7 +496,6 @@ a.nivo-prevNav {
 
 #box2 {
 	min-height: 250px;
-	padding: 7px;
 	color: #222;
 	background: #fff;
 	border-top: 1px solid #CCC;
@@ -510,7 +509,6 @@ a.nivo-prevNav {
 
 #box3 {
 	min-height: 250px;
-	padding: 7px;
 	color: #222;
 	background: #fff;
 	border-top: 1px solid #CCC;
