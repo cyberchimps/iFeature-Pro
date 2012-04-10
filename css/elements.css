@@ -451,13 +451,15 @@ a.nivo-prevNav {
 	text-align: center;
 }
 
+#box2.four.columns { margin-left:2.3%;}
+#box3.four.columns { margin-left:2.1%;}
+
+#box1.four.columns, #box2.four.columns, #box3.four.columns {width: 31.7%;}
+
+.box_wrap {padding: 10px;}
+
 #box1 {
-	float: left;
-	width: 290px;
-	min-height: 200px;
-	padding: 10px;
-	margin-left: 0px;
-	margin-right: 22px;
+	min-height: 260px;
 	color: #222;
 	background: #fff;
 	border-top: 1px solid #CCC;
@@ -470,12 +472,7 @@ a.nivo-prevNav {
 }
 
 #box2 {
-	float: left;
-	width: 290px;
-	min-height: 200px;
-	padding: 10px;
-	margin-left: 0px;
-	margin-right: 22px;
+	min-height: 260px;
 	color: #222;
 	background: #fff;
 	border-top: 1px solid #CCC;
@@ -488,12 +485,7 @@ a.nivo-prevNav {
 }
 
 #box3 {
-	float: left;
-	width: 290px;
-	min-height: 200px;
-	padding: 10px;
-	margin-left: 0px;
-	margin-right: 0px;
+	min-height: 260px;
 	color: #222;
 	background: #fff;
 	border-top: 1px solid #CCC;
