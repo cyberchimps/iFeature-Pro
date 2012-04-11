@@ -455,7 +455,9 @@ a.nivo-prevNav {
 #box3.four.columns { margin-left:2.1%;}
 
 @-moz-document url-prefix() {
-#box2.four.columns, #box3.four.columns {margin-left: 2.1%;}
+#box2.four.columns {margin-left: 2.2%;}
+#box3.four.columns {margin-left: 2%;}
+#box3 {right: -1px;}
 }
 
 #box1.four.columns, #box2.four.columns, #box3.four.columns {width: 31.7%;}
