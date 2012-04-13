@@ -159,6 +159,16 @@ function synapse_loop() {
 	do_action('synapse_loop');
 }
 
+
+/**
+* The magazine loop. 
+*
+* @since 1.0
+*/
+function synapse_magazine_loop() {
+	do_action('synapse_magazine_loop');
+}
+
 /**
 * The loop (single.php). 
 *

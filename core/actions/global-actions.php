@@ -20,11 +20,20 @@
 */
 
 add_action( 'synapse_loop', 'synapse_loop_content' );
+add_action( 'synapse_magazine_loop', 'synapse_magazine_loop_content' );
 add_action( 'synapse_post_byline', 'synapse_post_byline_content' );
 add_action( 'synapse_edit_link', 'synapse_edit_link_content' );
 add_action( 'synapse_post_tags', 'synapse_post_tags_content' );
 add_action( 'synapse_post_bar', 'synapse_post_bar_content' );
 add_action( 'synapse_fb_like_plus_one', 'synapse_fb_like_plus_one_content' );
+
+function synapse_magazine_loop_content() { ?>
+
+	<h2 class="posts_title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+	<?php the_excerpt() ; ?>
+
+<?php
+}
 
 /**
 * Check for post format type, apply filter based on post format name for easy modification.

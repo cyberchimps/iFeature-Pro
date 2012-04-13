@@ -35,9 +35,22 @@ function synapse_index_content() {
 	<!--End @ifeature sidebar init-->
 	
 	<div class="row">
-		<div id="magazine" >
+		<div id="magazine_wrap" >
+			<?php query_posts('showposts=6'); ?>
+			
+			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+			<div id="magazine" class="six columns">
+			<?php synapse_magazine_loop(); ?>
+			
+			</div>
+			<?php endwhile; ?>
 		
-		Test
+			<?php else : ?>
+
+				<h2>Not Found</h2>
+
+			<?php endif; ?>
+		
 		</div>
 	</div>
 	
@@ -51,7 +64,7 @@ function synapse_index_content() {
 		<!--Begin @ifeature index entry hook-->
 		<?php synapse_blog_content_slider(); ?>
 		<!--End @ifeature index entry hook-->
-
+			<?php query_posts('offset=7'); ?>
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			
 			<div class="post_container">

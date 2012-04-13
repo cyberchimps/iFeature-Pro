@@ -1,4 +1,7 @@
-#magazine {background: pink; margin-bottom:20px;}
+#magazine_wrap {background: pink; margin-bottom:20px;}
+#magazine.six.columns {margin-left: 0%;}
+#magazine {height:200px;}
+#magazine:last-child {float: left;}
 
 
 /* iFeature Pro 4 Style.css */
