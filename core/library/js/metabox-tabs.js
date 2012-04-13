@@ -53,6 +53,7 @@ jQuery(document).ready(function($) {
 		content_slider: "subsection-Content-Slider-Options",
 		carousel_section: "subsection-Carousel-Options",
 		portfolio_element: "subsection-Portfolio-Options",
+		custom_html_element: "subsection-Custom-HTML",
 		product_element: "subsection-Product-Options",
 		twitterbar_section: "subsection-Twitter-Options"
 	};

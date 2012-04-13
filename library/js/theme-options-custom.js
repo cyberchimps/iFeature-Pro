@@ -185,6 +185,7 @@ jQuery(function($) {
 			synapse_product_element: "subsection-productoptions",
 			synapse_twitterbar_section: "subsection-twtterbaroptions",
 			synapse_index_carousel_section: "subsection-carouseloptions",
+			synapse_custom_html_element: "subsection-customhtml",
 			synapse_blog_nivoslider: "subsection-nivoslider"
 			// , synapse_box_section: ""
 		};
