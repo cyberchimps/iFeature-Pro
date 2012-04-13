@@ -1,9 +1,12 @@
-#Copyright (C) 2011 
+#Copyright (C) 2012
 msgid ""
 msgstr ""
-"Project-Id-Version: Core 1.0 \n"
+"Project-Id-Version: Core 1.0\n"
 "Report-Msgid-Bugs-To: http://cyberchimps.com/forum\n"
-"POT-Creation-Date: 10-17-11 \n"
+"POT-Creation-Date: 10-17-11\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,43 +20,43 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes"
 
-#: core/actions/archive-actions.php:36
+#: core/actions/archive-actions.php:32
 #@ ifeature
 msgid "Archive for the &#8216;"
 msgstr ""
 
-#: core/actions/archive-actions.php:36
+#: core/actions/archive-actions.php:32
 #@ ifeature
 msgid "&#8217; Category:"
 msgstr ""
 
-#: core/actions/archive-actions.php:39
+#: core/actions/archive-actions.php:35
 #@ ifeature
 msgid "Posts Tagged &#8216;"
 msgstr ""
 
-#: core/actions/archive-actions.php:39
+#: core/actions/archive-actions.php:35
 #@ ifeature
 msgid "&#8217;:"
 msgstr ""
 
-#: core/actions/archive-actions.php:42
-#: core/actions/archive-actions.php:45
+#: core/actions/archive-actions.php:38
+#: core/actions/archive-actions.php:41
 #@ ifeature
 msgid "Archive for"
 msgstr ""
 
-#: core/actions/archive-actions.php:48
+#: core/actions/archive-actions.php:44
 #@ ifeature
 msgid "Archive for:"
 msgstr ""
 
-#: core/actions/archive-actions.php:51
+#: core/actions/archive-actions.php:47
 #@ ifeature
 msgid "Author Archive:"
 msgstr ""
 
-#: core/actions/archive-actions.php:54
+#: core/actions/archive-actions.php:50
 #@ ifeature
 msgid "Blog Archives:"
 msgstr ""
@@ -73,109 +76,93 @@ msgstr ""
 msgid "% Responses"
 msgstr ""
 
-#: core/actions/comments-actions.php:88
+#: core/actions/comments-actions.php:89
 #@ ifeature
 msgid "You must be"
 msgstr ""
 
-#: core/actions/comments-actions.php:88
+#: core/actions/comments-actions.php:89
 #@ ifeature
 msgid "logged in"
 msgstr ""
 
-#: core/actions/comments-actions.php:88
-#@ ifeture
+#: core/actions/comments-actions.php:89
+#@ ifeature
 msgid "to post a comment."
 msgstr ""
 
-#: core/actions/footer-actions.php:39
+#: core/actions/footer-actions.php:45
 #@ ifeature
 msgid "Recent Posts"
 msgstr ""
 
-#: core/actions/footer-actions.php:46
+#: core/actions/footer-actions.php:52
 #: sidebar.php:26
 #@ ifeature
+#@ iFeature
 msgid "Archives"
 msgstr ""
 
-#: core/actions/footer-actions.php:53
-#@ ifeature
-msgid "Links"
-msgstr ""
-
-#: core/actions/footer-actions.php:60
-#: core/actions/footer-actions.php:64
+#: core/actions/footer-actions.php:59
+#: core/actions/footer-actions.php:63
 #: sidebar.php:40
 #: sidebar.php:44
 #@ ifeature
+#@ iFeature
 msgid "WordPress"
 msgstr ""
 
-#: core/actions/footer-actions.php:64
+#: core/actions/footer-actions.php:63
 #: sidebar.php:44
 #@ ifeature
+#@ iFeature
 msgid "http://wordpress.org/"
 msgstr ""
 
-#: core/actions/footer-actions.php:64
+#: core/actions/footer-actions.php:63
 #: sidebar.php:44
 #@ ifeature
+#@ iFeature
 msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
 msgstr ""
 
-#: core/actions/global-actions.php:43
+#: core/actions/global-actions.php:162
 #@ ifeature
 msgid "Published on"
 msgstr ""
 
-#: core/actions/global-actions.php:44
+#: core/actions/global-actions.php:163
 #@ ifeature
 msgid "by"
 msgstr ""
 
-#: core/actions/global-actions.php:45
+#: core/actions/global-actions.php:164
 #@ ifeature
 msgid "in"
 msgstr ""
 
-#: core/actions/global-actions.php:70
-#@ ifeature
-msgid "No Comments &#187;"
-msgstr ""
-
-#: core/actions/global-actions.php:70
-#@ ifeature
-msgid "1 Comment &#187;"
-msgstr ""
-
-#: core/actions/global-actions.php:70
-#@ ifeature
-msgid "% Comments &#187;"
-msgstr ""
-
-#: core/actions/global-actions.php:86
+#: core/actions/global-actions.php:95
 #@ ifeature
 msgid "Read more…"
 msgstr ""
 
-#: core/actions/global-actions.php:187
+#: core/actions/global-actions.php:196
 #@ ifeature
 msgid "Tags: "
 msgstr ""
 
 #: searchform.php:15
-#@ ifeature
+#@ iFeature
 msgid "Search"
 msgstr ""
 
 #: sidebar.php:19
-#@ ifeature
+#@ iFeature
 msgid "Pages"
 msgstr ""
 
 #: sidebar.php:33
-#@ ifeature
+#@ iFeature
 msgid "Categories"
 msgstr ""
 
@@ -185,11 +172,105 @@ msgid "Subscribe"
 msgstr ""
 
 #: sidebar.php:52
-#@ ifeature
+#@ iFeature
 msgid "Entries (RSS)"
 msgstr ""
 
-#: sidebar.php:53
+#: core/actions/footer-actions.php:38
 #@ ifeature
+msgid "Footer Widgets"
+msgstr ""
+
+#: core/actions/global-actions.php:137
+#@ ifeature
+msgid "No Comments"
+msgstr ""
+
+#: core/actions/global-actions.php:137
+#: core/widgets/tabbed-widget.php:75
+#: core/widgets/tabbed-widget.php:102
+#@ ifeature
+msgid "1 Comment"
+msgstr ""
+
+#: core/actions/global-actions.php:137
+#: core/widgets/tabbed-widget.php:75
+#: core/widgets/tabbed-widget.php:102
+#@ ifeature
+msgid "% Comments"
+msgstr ""
+
+#: core/core-functions.php:131
+#, php-format
+#@ ifeature
+msgid "<cite class=\"fn\">%s</cite> <span class=\"says\"></span>"
+msgstr ""
+
+#: core/core-functions.php:134
+#@ iFeature
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: core/core-functions.php:138
+#, php-format
+#@ iFeature
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: core/core-functions.php:138
+#@ iFeature
+msgid "(Edit)"
+msgstr ""
+
+#: core/core-functions.php:247
+#@ ifeature
+msgid "Page"
+msgstr ""
+
+#: core/widgets/tabbed-widget.php:14
+#@ ifeature
+msgid "A tabbed widget that display popular posts, recent posts, comments and tags."
+msgstr ""
+
+#: core/widgets/tabbed-widget.php:25
+#@ ifeature
+msgid "iFeature Tabbed Widget"
+msgstr ""
+
+#: core/widgets/tabbed-widget.php:75
+#: core/widgets/tabbed-widget.php:102
+#@ ifeature
+msgid "No comments"
+msgstr ""
+
+#: core/widgets/tabbed-widget.php:118
+#: core/widgets/tabbed-widget.php:122
+#@ ifeature
+msgid "on "
+msgstr ""
+
+#: core/widgets/tabbed-widget.php:166
+#@ ifeature
+msgid "Popular Title:"
+msgstr ""
+
+#: core/widgets/tabbed-widget.php:171
+#@ ifeature
+msgid "Recent Title:"
+msgstr ""
+
+#: core/widgets/tabbed-widget.php:176
+#@ ifeture
+msgid "Comment Title:"
+msgstr ""
+
+#: core/widgets/tabbed-widget.php:181
+#@ ifeature
+msgid "Tag Title:"
+msgstr ""
+
+#: sidebar.php:53
+#@ iFeature
 msgid "Comments (RSS)"
 msgstr ""
+
