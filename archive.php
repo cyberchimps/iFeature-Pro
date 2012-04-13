@@ -33,6 +33,8 @@
 			<?php synapse_before_archive(); ?>
 		<!--End @synapse before_archive hook-->
 		
+		<?php if ($options->get($themeslug.'_archive_title') == "1") { synapse_archive_title();} ?>
+		
 		<?php while (have_posts()) : the_post(); ?>
 		
 		<div class="post_container">

@@ -284,6 +284,7 @@ TEMPLATE_URL . '/images/social/thumbs/icons-default.png' ), 'default' => 'defaul
 		->subsection_end()	
 		->subsection("Archive")
 			->images($themeslug."_archive_sidebar", "Sidebar Options", array( 'options' => array("left" => TEMPLATE_URL . '/images/options/left.png', "two-right" => TEMPLATE_URL . '/images/options/tworight.png', "right-left" => TEMPLATE_URL . '/images/options/rightleft.png', "none" => TEMPLATE_URL . '/images/options/none.png', "right" => TEMPLATE_URL . '/images/options/right.png'), 'default' => 'right'))
+			->checkbox($themeslug."_archive_title", "Archive Title")
 			->checkbox($themeslug."_archive_breadcrumbs", "Breadcrumbs", array('default' => true))
 			->checkbox($themeslug."_archive_show_excerpts", "Post Excerpts", array('default' => true))
 			->checkbox($themeslug."_archive_show_featured_images", "Featured Images")
