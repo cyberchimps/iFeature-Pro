@@ -33,11 +33,19 @@ function synapse_index_content() {
 	<!--Begin @ifeature sidebar init-->
 		<?php synapse_sidebar_init(); ?>
 	<!--End @ifeature sidebar init-->
+	
 	<div class="row">
+		<div id="magazine" >
+		
+		Test
+		</div>
+	</div>
+	
+	<div class="row">
+	
 <!--Begin @ifeature before content sidebar hook-->
 		<?php synapse_before_content_sidebar(); ?>
 	<!--End @ifeature before content sidebar hook-->
-
 		<div id="content" class="<?php echo $content_grid; ?>">
 		
 		<!--Begin @ifeature index entry hook-->
