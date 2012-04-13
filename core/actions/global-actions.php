@@ -28,10 +28,10 @@ add_action( 'synapse_post_bar', 'synapse_post_bar_content' );
 add_action( 'synapse_fb_like_plus_one', 'synapse_fb_like_plus_one_content' );
 
 function synapse_magazine_loop_content() { ?>
-
-	<h2 class="posts_title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-	<?php the_excerpt() ; ?>
-
+	<div class="magazine_content_wrap">
+		<h2 class="posts_title"><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+		<?php the_excerpt() ; ?>
+	</div>
 <?php
 }
 

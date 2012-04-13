@@ -1,7 +1,9 @@
-#magazine_wrap {background: pink; margin-bottom:20px;}
+#magazine_wrap {margin-bottom:20px;}
 #magazine0.six.columns {margin-left: 0%;}
-#magazine0, #magazine1 {height:200px; background: white;}
+#magazine1.six.columns {margin-left: 4.15%;}
+#magazine0, #magazine1 {height:230px; background: white; margin-bottom: 20px; border: 1px solid #ccc;}
 #magazine:last-child {float: left;}
+.magazine_content_wrap {padding: 15px;}
 
 
 /* iFeature Pro 4 Style.css */
