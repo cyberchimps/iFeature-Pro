@@ -122,6 +122,7 @@ function initialize_the_meta_boxes() {
 					'twitterbar_section' => 'Twitter Bar',
 					'portfolio_element' => 'Portfolio',
 					'page_section' => 'Page',
+					'custom_html_element' => 'Custom HTML',
 					'box_section' => 'Boxes',
 					'product_element' => 'Product',
 					'carousel_section' => 'Carousel',
@@ -204,6 +205,8 @@ function initialize_the_meta_boxes() {
 		->tab("Twitter Options")
 			->text('twitter_handle', 'Twitter Handle', '')
 			->checkbox('twitter_reply', 'Show @ Replies', '')
+		->tab("Custom HTML")
+			->textarea('custom_html', 'Enter your custom HTML', '')
 		->tab("SEO Options")
 			->text('seo_title', 'SEO Title', '')
 			->textarea('seo_description', 'SEO Description', '')

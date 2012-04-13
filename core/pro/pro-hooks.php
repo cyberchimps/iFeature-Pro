@@ -41,6 +41,14 @@ function synapse_carousel_section() {
 }
 
 /** 
+* Custom HTML element
+*/
+function synapse_custom_html_element() {
+	do_action ('synapse_custom_html_element');
+}
+
+
+/** 
 * Entry 
 */
 function synapse_pro_before_entry() {
