@@ -1,6 +1,6 @@
 #magazine_wrap {background: pink; margin-bottom:20px;}
-#magazine.six.columns {margin-left: 0%;}
-#magazine {height:200px;}
+#magazine0.six.columns {margin-left: 0%;}
+#magazine0, #magazine1 {height:200px; background: white;}
 #magazine:last-child {float: left;}
 
 

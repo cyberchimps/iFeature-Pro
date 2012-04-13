@@ -39,7 +39,7 @@ function synapse_index_content() {
 			<?php query_posts('showposts=6'); ?>
 			
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			<div id="magazine" class="six columns">
+			<div id="magazine<?php echo ($xyz++%2); ?>" class="six columns">
 			<?php synapse_magazine_loop(); ?>
 			
 			</div>
