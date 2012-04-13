@@ -163,22 +163,22 @@ class iFeature_Tabbed_Widget extends WP_Widget {
 			
 
 			<p>
-				<label for="<?php echo $this->get_field_id( 'tab1' ); ?>"><?php _e('Popular Title:') ?></label>
+				<label for="<?php echo $this->get_field_id( 'tab1' ); ?>"><?php _e('Popular Title:', 'ifeature') ?></label>
 				<input class="widefat" id="<?php echo $this->get_field_id( 'tab1' ); ?>" name="<?php echo $this->get_field_name( 'tab1' ); ?>" value="<?php echo $instance['tab1']; ?>" />
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id( 'tab2' ); ?>"><?php _e('Recent Title:') ?></label>
+				<label for="<?php echo $this->get_field_id( 'tab2' ); ?>"><?php _e('Recent Title:', 'ifeature') ?></label>
 				<input class="widefat" id="<?php echo $this->get_field_id( 'tab2' ); ?>" name="<?php echo $this->get_field_name( 'tab2' ); ?>" value="<?php echo $instance['tab2']; ?>" />
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id( 'tab3' ); ?>"><?php _e('Comment Title:') ?></label>
+				<label for="<?php echo $this->get_field_id( 'tab3' ); ?>"><?php _e('Comment Title:', 'ifeture') ?></label>
 				<input class="widefat" id="<?php echo $this->get_field_id( 'tab3' ); ?>" name="<?php echo $this->get_field_name( 'tab3' ); ?>" value="<?php echo $instance['tab3']; ?>" />
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id( 'tab4' ); ?>"><?php _e('Tag Title:') ?></label>
+				<label for="<?php echo $this->get_field_id( 'tab4' ); ?>"><?php _e('Tag Title:', 'ifeature') ?></label>
 				<input class="widefat" id="<?php echo $this->get_field_id( 'tab4' ); ?>" name="<?php echo $this->get_field_name( 'tab4' ); ?>" value="<?php echo $instance['tab4']; ?>" />
 			</p>
 		<?php

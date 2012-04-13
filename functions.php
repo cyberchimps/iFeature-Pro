@@ -197,8 +197,8 @@ function create_post_type() {
 	register_post_type( $themeslug.'_content_slides',
 		array(
 			'labels' => array(
-				'name' => __( 'Content Slides' ),
-				'singular_name' => __( 'Slides' )
+				'name' => 'Content Slides',
+				'singular_name' => 'Slides' 
 			),
 			'public' => true,
 			'show_ui' => true, 
@@ -213,8 +213,8 @@ function create_post_type() {
 	register_post_type( $themeslug.'_custom_slides',
 		array(
 			'labels' => array(
-				'name' => __( 'iFeature Slides' ),
-				'singular_name' => __( 'Slides' )
+				'name' => 'iFeature Slides',
+				'singular_name' => 'Slides' 
 			),
 			'public' => true,
 			'show_ui' => true, 
@@ -229,8 +229,8 @@ function create_post_type() {
 	register_post_type( $themeslug.'_featured_posts',
 		array(
 			'labels' => array(
-				'name' => __( 'Carousel' ),
-				'singular_name' => __( 'Posts' )
+				'name' => 'Carousel',
+				'singular_name' => 'Posts'
 			),
 			'public' => true,
 			'show_ui' => true, 
@@ -245,8 +245,8 @@ function create_post_type() {
 	register_post_type( $themeslug.'_portfolio_images',
 		array(
 			'labels' => array(
-				'name' => __( 'Portfolio' ),
-				'singular_name' => __( 'Images' )
+				'name' => 'Portfolio',
+				'singular_name' => 'Images' 
 			),
 			'public' => true,
 			'show_ui' => true, 
@@ -353,11 +353,11 @@ add_action('manage_if_content_slides_posts_custom_column',  'slides_columns_disp
 function slider_edit_columns($portfolio_columns){
     $portfolio_columns = array(
         "cb" => "<input type=\"checkbox\" />",
-        "title" => _x('Title', 'column name'),
-        "image" => __('Image'),
-        "category" => __('Categories'),
-        "author" => __('Author'),
-        "date" => __('Date'),
+        "title" => 'Title',
+        "image" => 'Image',
+        "category" => 'Categories',
+        "author" => 'Author',
+        "date" => 'Date',
     );
    
     return $portfolio_columns;
@@ -384,7 +384,7 @@ function slides_columns_display($portfolio_columns, $post_id){
                     $out[] = "<a href='edit.php?slide_categories=$c->slug'> " . esc_html(sanitize_term_field('name', $c->name, $c->term_id, 'content_slide_categories', 'display')) . "</a>";
                 echo join( ', ', $out );
             } else {
-                _e('No Category.');  //No Taxonomy term defined
+                'No Category.';  //No Taxonomy term defined
             }
         break;
 	}
@@ -399,11 +399,11 @@ add_action('manage_if_portfolio_images_posts_custom_column',  'portfolio_columns
 function portfolio_edit_columns($portfolio_columns){
     $portfolio_columns = array(
         "cb" => "<input type=\"checkbox\" />",
-        "title" => _x('Title', 'column name'),
-        "image" => __('Image'),
-        "category" => __('Categories'),
-        "author" => __('Author'),
-        "date" => __('Date'),
+        "title" => 'Title',
+        "image" => 'Image',
+        "category" => 'Categories',
+        "author" => 'Author',
+        "date" => 'Date',
     );
    
     return $portfolio_columns;
@@ -428,7 +428,7 @@ function portfolio_columns_display($portfolio_columns, $post_id){
                     $out[] = "<a href='edit.php?portfolio_categories=$c->slug'> " . esc_html(sanitize_term_field('name', $c->name, $c->term_id, 'portfolio_categories', 'display')) . "</a>";
                 echo join( ', ', $out );
             } else {
-                _e('No Category.');  //No Taxonomy term defined
+                'No Category.';  //No Taxonomy term defined
             }
         break;
 	}
@@ -490,7 +490,7 @@ add_action('wp_head', 'ifeature_lazy_load');
 */ 
 function register_menus() {
 	register_nav_menus(
-	array( 'header-menu' => __( 'Header Menu' ), 'footer-menu' => __( 'Footer Menu' ), 'sub-menu' => __( 'Sub Menu' ))
+	array( 'header-menu' => 'Header Menu', 'footer-menu' => 'Footer Menu', 'sub-menu' => 'Sub Menu' )
   );
 }
 add_action( 'init', 'register_menus' );

@@ -16,32 +16,32 @@
     	</div>
 		
 		<div class="widget-container">    
-		<h2 class="widget-title"><?php printf( __('Pages', 'core' )); ?></h2>
+		<h2 class="widget-title"><?php printf( __('Pages', 'iFeature' )); ?></h2>
 		<ul>
     	<?php wp_list_pages('title_li=' ); ?>
     	</ul>
     	</div>
     
 		<div class="widget-container">    
-    	<h2 class="widget-title"><?php printf( __( 'Archives', 'core' )); ?></h2>
+    	<h2 class="widget-title"><?php printf( __( 'Archives', 'iFeature' )); ?></h2>
     	<ul>
     		<?php wp_get_archives('type=monthly'); ?>
     	</ul>
     	</div>
         
 		<div class="widget-container">    
-       <h2 class="widget-title"><?php printf( __('Categories', 'core' )); ?></h2>
+       <h2 class="widget-title"><?php printf( __('Categories', 'iFeature' )); ?></h2>
         <ul>
     	   <?php wp_list_categories('show_count=1&title_li='); ?>
         </ul>
         </div>
         
 		<div class="widget-container">    
-    	<h2 class="widget-title"><?php printf( __('WordPress', 'core' )); ?></h2>
+    	<h2 class="widget-title"><?php printf( __('WordPress', 'iFeature' )); ?></h2>
     	<ul>
     		<?php wp_register(); ?>
     		<li><?php wp_loginout(); ?></li>
-    		<li><a href="<?php echo esc_url( __('http://wordpress.org/', 'core' )); ?>" target="_blank" title="<?php esc_attr_e('Powered by WordPress, state-of-the-art semantic personal publishing platform.', 'core'); ?>"> <?php printf( __('WordPress', 'ifeature' )); ?></a></li>
+    		<li><a href="<?php echo esc_url( __('http://wordpress.org/', 'iFeature' )); ?>" target="_blank" title="<?php esc_attr_e('Powered by WordPress, state-of-the-art semantic personal publishing platform.', 'iFeature'); ?>"> <?php printf( __('WordPress', 'ifeature' )); ?></a></li>
     		<?php wp_meta(); ?>
     	</ul>
     	</div>
@@ -49,8 +49,8 @@
     	<div class="widget-container">
     	<h2 class="widget-title"><?php printf( __('Subscribe', 'ifeature' )); ?></h2>
     	<ul>
-    		<li><a href="<?php bloginfo('rss2_url'); ?>"><?php printf( __('Entries (RSS)', 'core' )); ?></a></li>
-    		<li><a href="<?php bloginfo('comments_rss2_url'); ?>"><?php printf( __('Comments (RSS)', 'core' )); ?></a></li>
+    		<li><a href="<?php bloginfo('rss2_url'); ?>"><?php printf( __('Entries (RSS)', 'iFeature' )); ?></a></li>
+    		<li><a href="<?php bloginfo('comments_rss2_url'); ?>"><?php printf( __('Comments (RSS)', 'iFeature' )); ?></a></li>
     	</ul>
     	</div>
 	

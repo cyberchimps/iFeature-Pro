@@ -98,7 +98,7 @@ msgstr ""
 #: core/actions/footer-actions.php:52
 #: sidebar.php:26
 #@ ifeature
-#@ core
+#@ iFeature
 msgid "Archives"
 msgstr ""
 
@@ -107,21 +107,21 @@ msgstr ""
 #: sidebar.php:40
 #: sidebar.php:44
 #@ ifeature
-#@ core
+#@ iFeature
 msgid "WordPress"
 msgstr ""
 
 #: core/actions/footer-actions.php:63
 #: sidebar.php:44
 #@ ifeature
-#@ core
+#@ iFeature
 msgid "http://wordpress.org/"
 msgstr ""
 
 #: core/actions/footer-actions.php:63
 #: sidebar.php:44
 #@ ifeature
-#@ core
+#@ iFeature
 msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
 msgstr ""
 
@@ -151,20 +151,17 @@ msgid "Tags: "
 msgstr ""
 
 #: searchform.php:15
-#@ core
+#@ iFeature
 msgid "Search"
 msgstr ""
 
 #: sidebar.php:19
-#@ core
+#@ iFeature
 msgid "Pages"
 msgstr ""
 
-#: functions.php:358
-#: functions.php:404
 #: sidebar.php:33
-#@ default
-#@ core
+#@ iFeature
 msgid "Categories"
 msgstr ""
 
@@ -174,7 +171,7 @@ msgid "Subscribe"
 msgstr ""
 
 #: sidebar.php:52
-#@ core
+#@ iFeature
 msgid "Entries (RSS)"
 msgstr ""
 
@@ -204,28 +201,28 @@ msgstr ""
 
 #: core/core-functions.php:131
 #, php-format
-#@ default
+#@ ifeature
 msgid "<cite class=\"fn\">%s</cite> <span class=\"says\"></span>"
 msgstr ""
 
 #: core/core-functions.php:134
-#@ core
+#@ iFeature
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
 #: core/core-functions.php:138
 #, php-format
-#@ core
+#@ iFeature
 msgid "%1$s at %2$s"
 msgstr ""
 
 #: core/core-functions.php:138
-#@ core
+#@ iFeature
 msgid "(Edit)"
 msgstr ""
 
 #: core/core-functions.php:247
-#@ default
+#@ ifeature
 msgid "Page"
 msgstr ""
 
@@ -252,109 +249,27 @@ msgid "on "
 msgstr ""
 
 #: core/widgets/tabbed-widget.php:166
-#@ default
+#@ ifeature
 msgid "Popular Title:"
 msgstr ""
 
 #: core/widgets/tabbed-widget.php:171
-#@ default
+#@ ifeature
 msgid "Recent Title:"
 msgstr ""
 
 #: core/widgets/tabbed-widget.php:176
-#@ default
+#@ ifeture
 msgid "Comment Title:"
 msgstr ""
 
 #: core/widgets/tabbed-widget.php:181
-#@ default
+#@ ifeature
 msgid "Tag Title:"
 msgstr ""
 
-#: functions.php:200
-#@ default
-msgid "Content Slides"
-msgstr ""
-
-#: functions.php:201
-#: functions.php:217
-#@ default
-msgid "Slides"
-msgstr ""
-
-#: functions.php:216
-#@ default
-msgid "iFeature Slides"
-msgstr ""
-
-#: functions.php:232
-#@ default
-msgid "Carousel"
-msgstr ""
-
-#: functions.php:233
-#@ default
-msgid "Posts"
-msgstr ""
-
-#: functions.php:248
-#@ default
-msgid "Portfolio"
-msgstr ""
-
-#: functions.php:249
-#@ default
-msgid "Images"
-msgstr ""
-
-#: functions.php:356
-#: functions.php:402
-#@ default
-msgctxt "column name"
-msgid "Title"
-msgstr ""
-
-#: functions.php:357
-#: functions.php:403
-#@ default
-msgid "Image"
-msgstr ""
-
-#: functions.php:359
-#: functions.php:405
-#@ default
-msgid "Author"
-msgstr ""
-
-#: functions.php:360
-#: functions.php:406
-#@ default
-msgid "Date"
-msgstr ""
-
-#: functions.php:387
-#: functions.php:431
-#@ default
-msgid "No Category."
-msgstr ""
-
-#: functions.php:493
-#@ default
-msgid "Header Menu"
-msgstr ""
-
-#: functions.php:493
-#@ default
-msgid "Footer Menu"
-msgstr ""
-
-#: functions.php:493
-#@ default
-msgid "Sub Menu"
-msgstr ""
-
 #: sidebar.php:53
-#@ core
+#@ iFeature
 msgid "Comments (RSS)"
 msgstr ""
 

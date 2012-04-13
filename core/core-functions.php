@@ -128,14 +128,14 @@ function synapse_comment($comment, $args, $depth) {
       <div class="comment-author vcard">
          <?php echo get_avatar( $comment, 48 ); ?>
 
-         <?php printf(__('<cite class="fn">%s</cite> <span class="says"></span>'), get_comment_author_link()) ?>
+         <?php printf(__('<cite class="fn">%s</cite> <span class="says"></span>', 'ifeature'), get_comment_author_link()) ?>
       </div>
       <?php if ($comment->comment_approved == '0') : ?>
-         <em><?php _e('Your comment is awaiting moderation.', 'core' ) ?></em>
+         <em><?php _e('Your comment is awaiting moderation.', 'iFeature' ) ?></em>
          <br />
       <?php endif; ?>
 
-      <div class="comment-meta commentmetadata"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf(__('%1$s at %2$s', 'core' ), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)', 'core' ),'  ','') ?></div>
+      <div class="comment-meta commentmetadata"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf(__('%1$s at %2$s', 'iFeature' ), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)', 'iFeature' ),'  ','') ?></div>
 
       <?php comment_text() ?>
 
@@ -244,7 +244,7 @@ function synapse_breadcrumbs() {
  
     if ( get_query_var('paged') ) {
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
-      echo __('Page') . ' ' . get_query_var('paged');
+      echo __('Page', 'ifeature') . ' ' . get_query_var('paged');
       if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
     }
  
