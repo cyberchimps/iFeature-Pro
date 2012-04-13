@@ -15,6 +15,11 @@
 * @since 1.0
 */
 
+
+function ifeature_custom_header_element() {
+	do_action('ifeature_custom_header_element');
+}
+
 /** 
 * Box Section
 */

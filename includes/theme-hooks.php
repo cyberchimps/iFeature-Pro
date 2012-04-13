@@ -62,6 +62,3 @@ function ifeature_icons() {
 	do_action('ifeature_icons');
 }
 
-function ifeature_custom_header_element() {
-	do_action('ifeature_custom_header_element');
-}

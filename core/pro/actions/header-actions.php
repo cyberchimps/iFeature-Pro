@@ -18,6 +18,31 @@
 remove_action( 'synapse_after_head_tag', 'synapse_font' );
 add_action( 'synapse_after_head_tag', 'synapse_pro_font' );
 
+add_action( 'ifeature_custom_header_element', 'ifeature_custom_header_element_content');
+
+
+/**
+* Custom header content element
+*
+* @since 5.0
+*/
+function ifeature_custom_header_element_content() { 
+	global $themeslug, $options; ?>
+	
+	<div class="container">
+		<div class="row">
+		
+			<div class="twelve columns">
+				
+				<?php echo stripslashes ($options->get($themeslug.'_custom_header_element')); 	?>
+						
+			</div>	
+		</div><!--end row-->
+	</div>	
+
+<?php	
+}
+
 /**
 * Establishes the Pro theme font family.
 *

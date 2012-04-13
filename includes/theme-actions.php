@@ -37,27 +37,7 @@ remove_action( 'synapse_box_section', 'synapse_box_section_content' );
 add_action( 'synapse_box_section', 'ifeature_box_section_content' );
 
 
-/**
-* Sets up the header contact area
-*
-* @since 1.0
-*/
-function ifeature_custom_header_element_content() { 
-	global $themeslug, $options; ?>
-	
-	<div class="container">
-		<div class="row">
-		
-			<div class="twelve columns">
-				
-				<?php echo stripslashes ($options->get($themeslug.'_custom_header_element')); 	?>
-						
-			</div>	
-		</div><!--end row-->
-	</div>	
 
-<?php	
-}
 
 
 /**
