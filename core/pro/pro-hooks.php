@@ -16,8 +16,20 @@
 */
 
 
+function ifeature_logo_menu() {
+	do_action('ifeature_logo_menu');
+}
+
 function ifeature_custom_header_element() {
 	do_action('ifeature_custom_header_element');
+}
+
+function ifeature_banner() {
+	do_action('ifeature_banner');
+}
+
+function ifeature_sitename_register() {
+	do_action('ifeature_sitename_register');
 }
 
 /** 

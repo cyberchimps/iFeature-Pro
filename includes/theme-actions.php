@@ -21,14 +21,14 @@
 
 add_action( 'ifeature_header_content', 'ifeature_header_standard_content');
 add_action( 'ifeature_header_contact_area', 'ifeature_header_contact_area_content' );
-add_action( 'ifeature_sitename_register', 'ifeature_sitename_register_content');
+
 add_action( 'ifeature_sitename_contact', 'ifeature_sitename_contact_content');
 add_action( 'ifeature_description_icons', 'ifeature_description_icons_content');
-add_action( 'ifeature_logo_menu', 'ifeature_logo_menu_content');
+
 add_action( 'ifeature_logo_description', 'ifeature_logo_description_content');
-add_action( 'ifeature_banner', 'ifeature_banner_content');
+
 add_action( 'ifeature_icons', 'ifeature_icons_content');
-add_action( 'ifeature_custom_header_element', 'ifeature_custom_header_element_content');
+
 
 remove_action( 'synapse_head_tag', 'synapse_link_rel' );
 add_action( 'synapse_head_tag', 'ifeature_link_rel' );
@@ -158,45 +158,6 @@ function ifeature_link_rel() {
 <link href='//fonts.googleapis.com/css?family=<?php echo $font ; ?>' rel='stylesheet' type='text/css' /> <?php
 }
 
-/**
-* Sitename/Register
-*
-* @since 3.0
-*/
-function ifeature_sitename_register_content() {
-global $current_user;
-?>
-
-	<div class="container">
-		<div class="row">
-		
-			<div class="seven columns">
-				
-				<!-- Begin @Core header sitename hook -->
-					<?php synapse_header_sitename(); ?> 
-				<!-- End @Core header sitename hook -->
-			
-				
-			</div>	
-			
-			<div id="register" class="five columns">
-			
-			<?php if(!is_user_logged_in()) :?>
-
-		<li><?php wp_loginout(); ?></li> <?php wp_meta(); ?><li> |<?php wp_register(); ?>  </li>
-
-			<?php else :?>
-
-			Welcome back <strong><?php global $current_user; get_currentuserinfo(); echo ($current_user->user_login); ?></strong> | <?php wp_loginout(); ?>
-
-		<?php endif;?>
-				
-			</div>	
-		</div><!--end row-->
-	</div>
-
-<?php
-}
 
 /**
 * Sitename/Contact
@@ -230,39 +191,6 @@ function ifeature_sitename_contact_content() {
 <?php
 }
 
-/**
-* Full-Width Logo
-*
-* @since 3.0
-*/
-function ifeature_banner_content() {
-global $themeslug, $options, $root; //Call global variables
-$banner = $options->get($themeslug.'_banner'); //Calls the logo URL from the theme options
-$url = $options->get($themeslug.'_banner_url');
-$default = "$root/images/pro/banner.jpg";
-
-?>
-	<div class="container">
-		<div class="row">
-		
-			<div class="twelve columns">
-			<div id="banner">
-			
-			<?php if ($banner != ""):?>
-				<a href="<?php echo $url; ?>/"><img src="<?php echo stripslashes($banner['url']); ?>" alt="logo"></a>		
-			<?php endif; ?>
-			
-			<?php if ($banner == ""):?>
-				<a href="<?php echo $url; ?>/"><img src="<?php echo $default; ?>" alt="logo"></a>		
-			<?php endif; ?>
-			
-			</div>		
-			</div>	
-		</div><!--end row-->
-	</div>	
-
-<?php
-}
 
 /**
 * Full-Width Icons
@@ -356,39 +284,6 @@ function ifeature_description_icons_content() {
 <?php
 }
 
-/**
-* Description/Icons
-*
-* @since 3.0
-*/
-function ifeature_logo_menu_content() {
-?>
-	
-	<div class="container">
-		<div class="row">	
-			
-			<div class="five columns">
-				
-				<!-- Begin @Core header sitename hook -->
-					<?php synapse_header_sitename(); ?> 
-				<!-- End @Core header sitename hook -->
-			
-			</div>	
-			
-			<div class="seven columns">
-			<div id="halfnav">
-			<?php wp_nav_menu( array(
-		    'theme_location' => 'sub-menu' // Setting up the location for the main-menu, Main Navigation.
-			    )
-			);
-	    	?>
-			</div>					
-			</div>	
-		
-		</div><!--end row-->
-	</div>
-<?php
-}
 
 /**
 * Header content standard
