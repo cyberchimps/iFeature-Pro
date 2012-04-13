@@ -4,6 +4,17 @@ iFeature Pro Changelog
 
 Version 5.0
 
+Version 4.1.3 (04-11-12)
+-Box element fix for FireFox and IE.
+
+Version 4.1.2 (04-10-12)
+-Added Twitter Bar @replies option. 
+-Re-added IE Quirks fix. 
+-Adjusted full-width callout text wrapper to fix slight blowout issue.
+-Added Hebrew translation files.
+-CSS fix for box element when viewed on an iPad.
+-Removed ereg_replace from Google Font code for PHP 5.3 compatibility. 
+
 Version 4.1.1 (04-03-12)
 -Twitter Bar no longer requires Twitter for WordPress plugin.
 -Fixed bug in meta-box-class.php causing unidentified index errors.

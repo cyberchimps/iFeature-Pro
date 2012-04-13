@@ -417,6 +417,8 @@ a.nivo-prevNav {
 	padding: 10px 15px 10px 15px;
 }
 
+#callout_text.twelve.columns {width: 98% !important;}
+
 .callout_title {
 	font-size: 24px;
 	font-weight: bold;
@@ -482,6 +484,10 @@ a.nivo-prevNav {
 #box3.four.columns { margin-left:2.1%;}
 
 #box1.four.columns, #box2.four.columns, #box3.four.columns {width: 31.7%;}
+
+@-moz-document url-prefix() {
+#box2.four.columns, #box3.four.columns {margin-left: 2.1%;}
+}
 
 .box_wrap {padding: 10px;}
 
