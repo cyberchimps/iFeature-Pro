@@ -95,17 +95,17 @@ class ClassyOptions {
 				</div>
 				<div class="clear"></div>
 					<p class="submit">
-						<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options' ); ?>" />
+						<input type="submit" class="button-primary" name="update" value="Save Options" />
 					</p>
 				<div class="menu">
 					<ul class="buttons">
-						<li><a href="http://cyberchimps.com/store/" target="_blank"><?php printf( __( 'CyberChimps Store', 'ifeature' )); ?></a></li>
-						<li><a href="http://cyberchimps.com/support" target="_blank"><?php printf( __( 'Support', 'ifeature' )); ?></a></li>
-						<li><a href="http://cyberchimps.com/ifeaturepro/docs/" target="_blank"> <?php printf( __( 'Documentation', 'ifeature' )); ?></a></li>
-						<li><a href="http://cyberchimps.com/forum/" target="_blank"><?php printf( __( 'Forum', 'ifeature' )); ?></a></li>
-						<li><a href="http://twitter.com/#!/cyberchimps" target="_blank"><?php printf( __( 'Twitter', 'ifeature' ));?></a></li>
-						<li><a href="http://facebook.com/cyberchimps/" target="_blank"><?php printf( __( 'Facebook', 'ifeature' ));?></a></li>
-						<li><a href="http://cyberchimpspro.com/" target="_blank"><?php printf( __( 'CyberChimps Pro', 'ifeature' )); ?></a></li>
+						<li><a href="http://cyberchimps.com/store/" target="_blank">CyberChimps Store</a></li>
+						<li><a href="http://cyberchimps.com/support" target="_blank">Support</a></li>
+						<li><a href="http://cyberchimps.com/ifeaturepro/docs/" target="_blank">Documentation</a></li>
+						<li><a href="http://cyberchimps.com/forum/" target="_blank">Forum</a></li>
+						<li><a href="http://twitter.com/#!/cyberchimps" target="_blank">Twitter</a></li>
+						<li><a href="http://facebook.com/cyberchimps/" target="_blank">Facebook</a></li>
+						<li><a href="http://cyberchimpspro.com/" target="_blank">CyberChimps Pro</a></li>
 					</ul>
 				</div>
 
@@ -124,7 +124,7 @@ class ClassyOptions {
 			</div>
 			<div class="of_admin_bar">
 			    <div id="top"><a href='#TOP'><img src="<?php echo get_template_directory_uri() ;?>/images/options/top.png" /></a></div>
-				<input type="submit" class="reset-button button-secondary" name="reset" value="<?php esc_attr_e( 'Restore Defaults' ); ?>" onclick="return confirm( '<?php print esc_js( __( 'Click OK to reset. Any theme settings will be lost!' ) ); ?>' );" />
+				<input type="submit" class="reset-button button-secondary" name="reset" value="Restore Defaults" onclick="return confirm( 'Click OK to reset. Any theme settings will be lost!' );" />
 				<div class="chimps"><a href="http://cyberchimps.com/" target="_blank"><img src="<?php echo get_template_directory_uri() ;?>/images/options/cyberchimpsmini.png" /></a></div>
 			</div>
 			<div class="clear"></div>
@@ -154,7 +154,7 @@ class ClassyOptions {
 		 */
 
 		if ( isset( $_POST['reset'] ) || ! isset( $_POST['update'] ) ) {
-			add_settings_error( $this->id, 'restore_defaults', __( 'Default options restored.', 'optionsframework' ), 'updated fade' );
+			add_settings_error( $this->id, 'restore_defaults',  'Default options restored.', 'updated fade' );
 			return $this->default_data();
 		}
 
@@ -163,10 +163,10 @@ class ClassyOptions {
 				$string = stripslashes( trim( $_POST['import'] ) );
 				$try = unserialize( $string );
 				if($try) {
-					add_settings_error( $this->id, 'import', __( 'Options Imported', 'optionsframework' ), 'updated fade' );
+					add_settings_error( $this->id, 'import', 'Options Imported', 'updated fade' );
 					return $try;
 				} else {
-					add_settings_error( $this->id, 'import', __( 'Invalid Data for Import', 'optionsframework' ), 'updated fade' );
+					add_settings_error( $this->id, 'import', 'Invalid Data for Import', 'updated fade' );
 				}
 			}
 		}
@@ -223,7 +223,7 @@ class ClassyOptions {
 
 			}
 
-			add_settings_error( $this->id, 'save_options', __( 'Options saved.', 'optionsframework' ), 'updated fade' );
+			add_settings_error( $this->id, 'save_options', 'Options saved.', 'updated fade' );
 			return $clean;
 		}
 	}

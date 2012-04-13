@@ -23,7 +23,7 @@ if ( ! function_exists( 'optionsframework_mlu_init' ) ) {
 	function optionsframework_mlu_init () {
 		register_post_type( 'optionsframework', array(
 			'labels' => array(
-				'name' => __( 'Options Framework Internal Container' ),
+				'name' => 'Options Framework Internal Container',
 			),
 			'public' => true,
 			'show_ui' => false,
@@ -125,7 +125,7 @@ if ( ! function_exists( 'optionsframework_medialibrary_uploader' ) ) {
 		
 		if ( $value ) { $class = ' has-file'; }
 		$output .= '<input id="' . $id . '" class="upload' . $class . '" type="text" name="'.$name.'" value="' . $value . '" />' . "\n";
-		$output .= '<input id="upload_' . $id . '" class="upload_button button" type="button" value="' . __( 'Upload' ) . '" rel="' . $int . '" />' . "\n";
+		$output .= '<input id="upload_' . $id . '" class="upload_button button" type="button" value="' .  'Upload'  . '" rel="' . $int . '" />' . "\n";
 		
 		if ( $_desc != '' ) {
 			$output .= '<span class="of_metabox_desc">' . $_desc . '</span>' . "\n";
@@ -148,7 +148,7 @@ if ( ! function_exists( 'optionsframework_medialibrary_uploader' ) ) {
 				$output .= '';
 			
 				// Standard generic output if it's not an image.	
-				$title = __( 'View File', 'optionsframework' );
+				$title = 'View File';
 				$output .= '<div class="no_image"><span class="file_link"><a href="' . $value . '" target="_blank" rel="external">'.$title.'</a></span>' . $remove . '</div>';
 			}	
 		}
@@ -285,7 +285,7 @@ if ( ! function_exists( 'optionsframework_mlu_js_popup' ) ) {
 if ( ! function_exists( 'optionsframework_mlu_modify_tabs' ) ) {
 
 	function optionsframework_mlu_modify_tabs ( $tabs ) {
-		$tabs['gallery'] = str_replace( __( 'Gallery', 'optionsframework' ), __( 'Previously Uploaded', 'optionsframework' ), $tabs['gallery'] );
+		$tabs['gallery'] = str_replace(  'Gallery', 'Previously Uploaded', $tabs['gallery'] );
 		return $tabs;
 	}
 }

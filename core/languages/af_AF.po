@@ -1,0 +1,360 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Core 1.0\n"
+"Report-Msgid-Bugs-To: http://cyberchimps.com/forum\n"
+"POT-Creation-Date: 10-17-11\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: \n"
+"X-Poedit-Country: \n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: \n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: core/actions/archive-actions.php:32
+#@ ifeature
+msgid "Archive for the &#8216;"
+msgstr ""
+
+#: core/actions/archive-actions.php:32
+#@ ifeature
+msgid "&#8217; Category:"
+msgstr ""
+
+#: core/actions/archive-actions.php:35
+#@ ifeature
+msgid "Posts Tagged &#8216;"
+msgstr ""
+
+#: core/actions/archive-actions.php:35
+#@ ifeature
+msgid "&#8217;:"
+msgstr ""
+
+#: core/actions/archive-actions.php:38
+#: core/actions/archive-actions.php:41
+#@ ifeature
+msgid "Archive for"
+msgstr ""
+
+#: core/actions/archive-actions.php:44
+#@ ifeature
+msgid "Archive for:"
+msgstr ""
+
+#: core/actions/archive-actions.php:47
+#@ ifeature
+msgid "Author Archive:"
+msgstr ""
+
+#: core/actions/archive-actions.php:50
+#@ ifeature
+msgid "Blog Archives:"
+msgstr ""
+
+#: core/actions/comments-actions.php:49
+#@ ifeature
+msgid "No Responses"
+msgstr ""
+
+#: core/actions/comments-actions.php:49
+#@ ifeature
+msgid "One Response"
+msgstr ""
+
+#: core/actions/comments-actions.php:49
+#@ ifeature
+msgid "% Responses"
+msgstr ""
+
+#: core/actions/comments-actions.php:89
+#@ ifeature
+msgid "You must be"
+msgstr ""
+
+#: core/actions/comments-actions.php:89
+#@ ifeature
+msgid "logged in"
+msgstr ""
+
+#: core/actions/comments-actions.php:89
+#@ ifeature
+msgid "to post a comment."
+msgstr ""
+
+#: core/actions/footer-actions.php:45
+#@ ifeature
+msgid "Recent Posts"
+msgstr ""
+
+#: core/actions/footer-actions.php:52
+#: sidebar.php:26
+#@ ifeature
+#@ core
+msgid "Archives"
+msgstr ""
+
+#: core/actions/footer-actions.php:59
+#: core/actions/footer-actions.php:63
+#: sidebar.php:40
+#: sidebar.php:44
+#@ ifeature
+#@ core
+msgid "WordPress"
+msgstr ""
+
+#: core/actions/footer-actions.php:63
+#: sidebar.php:44
+#@ ifeature
+#@ core
+msgid "http://wordpress.org/"
+msgstr ""
+
+#: core/actions/footer-actions.php:63
+#: sidebar.php:44
+#@ ifeature
+#@ core
+msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
+msgstr ""
+
+#: core/actions/global-actions.php:162
+#@ ifeature
+msgid "Published on"
+msgstr ""
+
+#: core/actions/global-actions.php:163
+#@ ifeature
+msgid "by"
+msgstr ""
+
+#: core/actions/global-actions.php:164
+#@ ifeature
+msgid "in"
+msgstr ""
+
+#: core/actions/global-actions.php:95
+#@ ifeature
+msgid "Read more…"
+msgstr ""
+
+#: core/actions/global-actions.php:196
+#@ ifeature
+msgid "Tags: "
+msgstr ""
+
+#: searchform.php:15
+#@ core
+msgid "Search"
+msgstr ""
+
+#: sidebar.php:19
+#@ core
+msgid "Pages"
+msgstr ""
+
+#: functions.php:358
+#: functions.php:404
+#: sidebar.php:33
+#@ default
+#@ core
+msgid "Categories"
+msgstr ""
+
+#: sidebar.php:50
+#@ ifeature
+msgid "Subscribe"
+msgstr ""
+
+#: sidebar.php:52
+#@ core
+msgid "Entries (RSS)"
+msgstr ""
+
+#: core/actions/footer-actions.php:38
+#@ ifeature
+msgid "Footer Widgets"
+msgstr ""
+
+#: core/actions/global-actions.php:137
+#@ ifeature
+msgid "No Comments"
+msgstr ""
+
+#: core/actions/global-actions.php:137
+#: core/widgets/tabbed-widget.php:75
+#: core/widgets/tabbed-widget.php:102
+#@ ifeature
+msgid "1 Comment"
+msgstr ""
+
+#: core/actions/global-actions.php:137
+#: core/widgets/tabbed-widget.php:75
+#: core/widgets/tabbed-widget.php:102
+#@ ifeature
+msgid "% Comments"
+msgstr ""
+
+#: core/core-functions.php:131
+#, php-format
+#@ default
+msgid "<cite class=\"fn\">%s</cite> <span class=\"says\"></span>"
+msgstr ""
+
+#: core/core-functions.php:134
+#@ core
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: core/core-functions.php:138
+#, php-format
+#@ core
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: core/core-functions.php:138
+#@ core
+msgid "(Edit)"
+msgstr ""
+
+#: core/core-functions.php:247
+#@ default
+msgid "Page"
+msgstr ""
+
+#: core/widgets/tabbed-widget.php:14
+#@ ifeature
+msgid "A tabbed widget that display popular posts, recent posts, comments and tags."
+msgstr ""
+
+#: core/widgets/tabbed-widget.php:25
+#@ ifeature
+msgid "iFeature Tabbed Widget"
+msgstr ""
+
+#: core/widgets/tabbed-widget.php:75
+#: core/widgets/tabbed-widget.php:102
+#@ ifeature
+msgid "No comments"
+msgstr ""
+
+#: core/widgets/tabbed-widget.php:118
+#: core/widgets/tabbed-widget.php:122
+#@ ifeature
+msgid "on "
+msgstr ""
+
+#: core/widgets/tabbed-widget.php:166
+#@ default
+msgid "Popular Title:"
+msgstr ""
+
+#: core/widgets/tabbed-widget.php:171
+#@ default
+msgid "Recent Title:"
+msgstr ""
+
+#: core/widgets/tabbed-widget.php:176
+#@ default
+msgid "Comment Title:"
+msgstr ""
+
+#: core/widgets/tabbed-widget.php:181
+#@ default
+msgid "Tag Title:"
+msgstr ""
+
+#: functions.php:200
+#@ default
+msgid "Content Slides"
+msgstr ""
+
+#: functions.php:201
+#: functions.php:217
+#@ default
+msgid "Slides"
+msgstr ""
+
+#: functions.php:216
+#@ default
+msgid "iFeature Slides"
+msgstr ""
+
+#: functions.php:232
+#@ default
+msgid "Carousel"
+msgstr ""
+
+#: functions.php:233
+#@ default
+msgid "Posts"
+msgstr ""
+
+#: functions.php:248
+#@ default
+msgid "Portfolio"
+msgstr ""
+
+#: functions.php:249
+#@ default
+msgid "Images"
+msgstr ""
+
+#: functions.php:356
+#: functions.php:402
+#@ default
+msgctxt "column name"
+msgid "Title"
+msgstr ""
+
+#: functions.php:357
+#: functions.php:403
+#@ default
+msgid "Image"
+msgstr ""
+
+#: functions.php:359
+#: functions.php:405
+#@ default
+msgid "Author"
+msgstr ""
+
+#: functions.php:360
+#: functions.php:406
+#@ default
+msgid "Date"
+msgstr ""
+
+#: functions.php:387
+#: functions.php:431
+#@ default
+msgid "No Category."
+msgstr ""
+
+#: functions.php:493
+#@ default
+msgid "Header Menu"
+msgstr ""
+
+#: functions.php:493
+#@ default
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:493
+#@ default
+msgid "Sub Menu"
+msgstr ""
+
+#: sidebar.php:53
+#@ core
+msgid "Comments (RSS)"
+msgstr ""
+
