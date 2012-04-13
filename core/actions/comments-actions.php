@@ -30,7 +30,7 @@ function synapse_comments_password_required() {
 	
 	global $post;
 	
-	$password_text = apply_filters( 'synapse_password_required_text', 'This post is password protected. Enter the password to view comments.');
+	$password_text = apply_filters( 'synapse_password_required_text', __( 'This post is password protected. Enter the password to view comments.', 'ifeature' ));
 	if ( post_password_required() ) { 
 		printf( __( $password_text, 'ifeature' )); 
 		return;
