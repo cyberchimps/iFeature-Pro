@@ -2,7 +2,7 @@ iFeature Pro Changelog
 
 ****************************
 
-Version 4.1.4 (04-25-12)
+Version 4.1.4 (04-26-12)
 -Removed slight margin-left on box elements in mobile view.
 -Fixed strange quotes around HTML elements in Google +1 button code.
 -Added Pinterest social icon.
