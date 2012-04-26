@@ -6,6 +6,10 @@ Version 4.1.4 (04-25-12)
 -Removed slight margin-left on box elements in mobile view.
 -Fixed strange quotes around HTML elements in Google +1 button code.
 -Added Pinterest social icon.
+-Added missing $content_width global to theme setup function.
+-Added missing tags hook to archive template.
+-Updated pagination function with missing translation functions.
+-Updated core.pot.
 
 Version 4.1.3 (04-11-12)
 -Box element fix for FireFox and IE.
