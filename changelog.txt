@@ -319,7 +319,7 @@ Version 1.0.3 (4-22-2011)
 
 Version 1.0.2 (4-9-2011)
 -Fixed parse errors related to older PHP builds.
--updated depreciated WordPress calls.
+-updated deprecated WordPress calls.
 -general bug fixes.
 
 Version 1.0.1 (4-6-2011)
