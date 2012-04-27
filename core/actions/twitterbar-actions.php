@@ -53,7 +53,7 @@ function synapse_twitterbar_section_content() {
 function synapse_display_latest_tweets( $username, $show_replies = 0 ) {
 	$latest_tweet = synapse_get_latest_tweets( $username, $show_replies );
 ?>
-	<div class="row">
+	<div class="row-fluid">
 		<div id="twitterbar" class="twelve columns"><!--id="twitterbar"-->
 			<div id="twittertext">
 				<?php

@@ -35,7 +35,7 @@ function synapse_page_section_content() {
 
 
 ?>
-<div class="row">
+<div class="row-fluid">
 	<!--Begin @ifeature before content sidebar hook-->
 		<?php synapse_before_content_sidebar(); ?>
 	<!--End @ifeature before content sidebar hook-->

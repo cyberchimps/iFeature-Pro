@@ -75,10 +75,10 @@ function ifeature_box_section_content() {
 	$enableboxes = get_post_meta($post->ID, 'enable_box_section' , true);
 	$root = get_template_directory_uri(); ?>
 	
-<div class="row">
+<div class="row-fluid">
 	<div id="box_container" class="span12"> <!--box container-->
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box Left") ) : ?>
-			<div id="box1" class="four columns">
+			<div id="box1" class="span4">
 				<div class="box_wrap">
 				<h2 class="box-widget-title">Responsive iFeature Pro Slider</h2>
 					<img src="<?php echo $root ; ?>/images/icons/slidericon.png" height="100" alt="slider" class="aligncenter" />
@@ -87,7 +87,7 @@ function ifeature_box_section_content() {
 			</div><!--end box1-->
 			<?php endif; ?>
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box Middle") ) : ?>
-			<div id="box2" class="four columns">
+			<div id="box2" class="span4">
 				<div class="box_wrap">
 				<h2 class="box-widget-title">Responsive Design</h2>
 					<img src="<?php echo $root ; ?>/images/icons/blueprint.png" height="100" alt="blueprint" class="aligncenter" />
@@ -96,7 +96,7 @@ function ifeature_box_section_content() {
 			</div><!--end box2-->
 			<?php endif; ?>
 			<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box Right") ) : ?>
-			<div id="box3" class="four columns">
+			<div id="box3" class="span4">
 				<div class="box_wrap">
 				<h2 class="box-widget-title">Excellent Support</h2>
 				<img src="<?php echo $root ; ?>/images/icons/docs.png" height="100" alt="docs" class="aligncenter" />

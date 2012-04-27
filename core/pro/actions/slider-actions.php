@@ -547,7 +547,7 @@ function synapse_slider_content() {
 	
 /* Row div variable. */	
 if ($size == 'key2' OR $size == '0' ) {
-	$openrow = '<div class="row">';
+	$openrow = '<div class="row-fluid">';
 	$closerow = '</div>';
 }
 

@@ -40,8 +40,10 @@ if (preg_match("/page_nivoslider/", $page_section_order ) && $nivosize == "1" ) 
 /* End set slider hook*/
 ?>
 
-<div class="container">
-	<div class="row"> 
+<div id="main_wrap">
+	<div class="container-fluid">
+		<div class="row-fluid"> 
+
 		<?php
 			foreach(explode(",", $page_section_order) as $key) {
 				$fn = 'synapse_' . $key;
@@ -50,6 +52,7 @@ if (preg_match("/page_nivoslider/", $page_section_order ) && $nivosize == "1" ) 
 				}
 			}
 		?>	
-	</div><!--end row-->
-</div><!--end container-->
+		</div><!--end row-->
+	</div><!--end container-->
+</div>
 <?php get_footer(); ?>
