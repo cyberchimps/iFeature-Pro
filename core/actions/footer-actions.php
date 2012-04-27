@@ -34,28 +34,28 @@ function synapse_footer_widgets() {
 
    	if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Footer") ) { ?>
 		
-		<div class="three columns footer-widgets">
+		<div class="span3 footer-widgets">
 			<h3 class="footer-widget-title"><?php printf( __( 'Footer Widgets', 'ifeature' )); ?></h3>
 			<ul>
 				<li>To customize this widget area login to your admin account, go to Appearance, then Widgets and drag new widgets into Footer Widgets</li>
 			</ul>
 		</div>
 
-		<div class="three columns footer-widgets">
+		<div class="span3 footer-widgets">
 			<h3 class="footer-widget-title"><?php printf( __( 'Recent Posts', 'ifeature' )); ?></h3>
 			<ul>
 				<?php wp_get_archives('type=postbypost&limit=4'); ?>
 			</ul>
 		</div>
 		
-		<div class="three columns footer-widgets">
+		<div class="span3 footer-widgets">
 			<h3 class="footer-widget-title"><?php printf( __( 'Archives', 'ifeature' )); ?></h3>
 			<ul>
 				<?php wp_get_archives('type=monthly&limit=16'); ?>
 			</ul>
 		</div>
 
-		<div class="three columns footer-widgets">
+		<div class="span3 footer-widgets">
 			<h3 class="footer-widget-title"><?php printf( __( 'WordPress', 'ifeature' )); ?></h3>
 			<ul>
     		<?php wp_register(); ?>

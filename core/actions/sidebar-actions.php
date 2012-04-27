@@ -77,7 +77,7 @@ function synapse_before_content_sidebar_markup() {
 	<?php endif; ?>
 	
 	<?php if ($sidebar == 'left' OR $sidebar == "4"): ?>
-	<div id="sidebar_left" class="span4">
+	<div id="sidebar_left" class="span3">
 		<?php get_sidebar(); ?>
 	</div>
 	<?php endif;
