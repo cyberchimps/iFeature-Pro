@@ -18,6 +18,7 @@ global $options, $themeslug;
 </div><!--end container wrap-->
 
 	<div id="footer">
+		<div id="main_wrap">
      	<div class="container-fluid">
      		<div class="row-fluid">
     	
@@ -30,7 +31,7 @@ global $options, $themeslug;
 
 		</div><!--end footer_wrap-->
 	</div><!--end footer-->
-</div> 
+</div> </div>
 
 <?php if ($options->get($themeslug.'_disable_afterfooter') != "0"):?>
 
