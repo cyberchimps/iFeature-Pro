@@ -54,7 +54,7 @@ function synapse_index_content() {
 		</div>
 	</div>-->
 	
-	<div class="row">
+	<div class="row-fluid">
 	
 <!--Begin @ifeature before content sidebar hook-->
 		<?php synapse_before_content_sidebar(); ?>

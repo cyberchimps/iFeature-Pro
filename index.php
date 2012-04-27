@@ -31,9 +31,9 @@
 ?>
 
 <?php get_header(); ?>
-
-<div class="container-fluid">
-	<div class="row-fluid">
+<div id="main_wrap">
+	<div class="container-fluid">
+		<div class="row-fluid">
 		<?php
 			foreach(explode(",", $options->get($themeslug.'_blog_section_order')) as $fn) {
 				if(function_exists($fn)) {
@@ -41,6 +41,7 @@
 				}
 			}
 		?>
+		</div>
 	</div>
-</div><!--end container-->
+</div><!--end main_wrap-->
 <?php get_footer(); ?>

@@ -288,8 +288,8 @@ function ifeature_description_icons_content() {
 */
 function ifeature_header_standard_content() {
 ?>
-	<div class="container">
-		<div class="row">
+	<div class="container-fluid">
+		<div class="row-fluid">
 		
 			<div class="span7">
 				
