@@ -16,7 +16,7 @@ get_header();
 ?>
 
 <div class="container">
-	<div class="row">
+	<div class="row-fluid">
 		<!--Begin @synapse before content sidebar hook-->
 			<?php synapse_before_content_sidebar(); ?>
 		<!--End @synapse before content sidebar hook-->
