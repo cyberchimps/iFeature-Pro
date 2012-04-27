@@ -34,25 +34,25 @@ function synapse_index_content() {
 		<?php synapse_sidebar_init(); ?>
 	<!--End @ifeature sidebar init-->
 	
-	<div class="row-fluid">
+	<!--<div class="row-fluid">
 		<div id="magazine_wrap" >
-			<?php query_posts('showposts=6'); ?>
+			<?//php query_posts('showposts=6'); ?>
 			
-			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			<div id="magazine<?php echo ($xyz++%2); ?>" class="span6">
-			<?php synapse_magazine_loop(); ?>
+			<?//php if (have_posts()) : while (have_posts()) : the_post(); ?>
+			<div id="magazine<?//php echo ($xyz++%2); ?>" class="span6">
+			<?//php synapse_magazine_loop(); ?>
 			
 			</div>
-			<?php endwhile; ?>
+			<?//php endwhile; ?>
 		
-			<?php else : ?>
+			<?//php else : ?>
 
 				<h2>Not Found</h2>
 
-			<?php endif; ?>
+			<?//php endif; ?>
 		
 		</div>
-	</div>
+	</div>-->
 	
 	<div class="row">
 	

@@ -123,21 +123,27 @@ function synapse_post_bar_content() {
 	else {
 		$hidden = $options->get($themeslug.'_hide_byline'); 
 	}?>
-	
+		<div class="container-fluid">
+		<div class="row-fluid">
+		<div class="span12">
 		<div id="postbar">
-				<div class="six columns" id="share">
+			
+				<div id="share">
 					<?php if (($hidden[$themeslug.'_hide_share']) != '0'):?>
 					&nbsp;<a href="http://www.facebook.com/share.php?u=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/facebook.png" alt="Share on Facebook" height="16px" width="16px" /></a> 
 					<a href="http://twitter.com/home?status=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/twitter.png" alt="Share on Twitter" height="16px" width="16px" /></a> 
 					<a href="http://reddit.com/submit?url=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/reddit.png" alt="Share on Reddit" height="16px" width="16px" /></a> <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php the_permalink() ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/share/linkedin.png" alt="Share on LinkedIn" height="16px" width="16px" /></a>	
 					<?php endif;?>
 				</div><!--end share-->
-				<div class="six columns" id="comments">
+				<div id="comments">
 					<?php if (($hidden[$themeslug.'_hide_comments']) != '0'):?>
 					<?php comments_popup_link( __('No Comments', 'ifeature' ), __('1 Comment', 'ifeature' ), __('% Comments' , 'ifeature' )); //need a filer here ?>&nbsp;&nbsp;<img src="<?php echo get_template_directory_uri(); ?>/images/Commentsgrey.png" alt="comments"/>&nbsp;
 					<?php endif;?>
 				</div><!--end comments-->
+			</div>
 		</div><!--end postbar--> 
+		</div>
+</div>
 	<?php
 }
 

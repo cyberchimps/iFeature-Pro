@@ -76,7 +76,7 @@ function ifeature_box_section_content() {
 	$root = get_template_directory_uri(); ?>
 	
 <div class="row">
-	<div id="box_container" class="twelve columns"> <!--box container-->
+	<div id="box_container" class="span12"> <!--box container-->
 		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Box Left") ) : ?>
 			<div id="box1" class="four columns">
 				<div class="box_wrap">
@@ -165,7 +165,7 @@ function ifeature_sitename_contact_content() {
 	<div class="container">
 		<div class="row">
 		
-			<div class="seven columns">
+			<div class="span7">
 				
 				<!-- Begin @Core header sitename hook -->
 					<?php synapse_header_sitename(); ?> 
@@ -174,7 +174,7 @@ function ifeature_sitename_contact_content() {
 				
 			</div>	
 			
-			<div class="five columns">
+			<div class="span5">
 			
 			<!-- Begin @Core header contact area hook -->
 			<?php ifeature_header_contact_area(); ?>
@@ -202,7 +202,7 @@ $default = "$root/images/pro/banner.jpg";
 	<div class="container">
 		<div class="row">
 		
-			<div class="twelve columns">
+			<div class="span12">
 			
 			<!-- Begin @Core header social icon hook -->
 				<?php synapse_header_social_icons(); ?> 
@@ -227,7 +227,7 @@ function ifeature_logo_description_content() {
 	<div class="container">
 		<div class="row">
 		
-			<div class="seven columns">
+			<div class="span7">
 				
 			<!-- Begin @Core header sitename hook -->
 					<?php synapse_header_sitename(); ?> 
@@ -236,7 +236,7 @@ function ifeature_logo_description_content() {
 				
 			</div>	
 			
-			<div class="five columns" style="text-align: right;">
+			<div class="span5" style="text-align: right;">
 			
 			<!-- Begin @Core header description hook -->
 				<?php synapse_header_site_description(); ?> 
@@ -259,7 +259,7 @@ function ifeature_description_icons_content() {
 		<div class="container">
 			<div class="row">
 		
-			<div class="five columns">
+			<div class="span5">
 				
 			<!-- Begin @Core header description hook -->
 				<?php synapse_header_site_description(); ?> 
@@ -268,7 +268,7 @@ function ifeature_description_icons_content() {
 				
 			</div>	
 			
-			<div class="seven columns">
+			<div class="span7">
 			
 			<!-- Begin @Core header social icon hook -->
 				<?php synapse_header_social_icons(); ?> 
@@ -291,7 +291,7 @@ function ifeature_header_standard_content() {
 	<div class="container">
 		<div class="row">
 		
-			<div class="seven columns">
+			<div class="span7">
 				
 				<!-- Begin @Core header sitename hook -->
 					<?php synapse_header_sitename(); ?> 
@@ -300,7 +300,7 @@ function ifeature_header_standard_content() {
 				
 			</div>	
 			
-			<div id ="register" class="five columns">
+			<div id ="register" class="span5">
 				
 			<!-- Begin @Core header social icon hook -->
 				<?php synapse_header_social_icons(); ?> 
