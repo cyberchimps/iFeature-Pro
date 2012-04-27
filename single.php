@@ -16,9 +16,9 @@
 
 get_header(); ?>
 
-<div class="container">
+<div class="container-fluid">
 	<?php if ($options->get($themeslug.'_single_breadcrumbs') == "1") { synapse_breadcrumbs();}?>
-	<div class="row">
+	<div class="row-fluid">
 	<!--Begin @Core post area-->
 		<?php synapse_index(); ?>
 	<!--End @Core post area-->
