@@ -85,7 +85,7 @@ function synapse_secondary_footer_copyright() {
 		$copyright = $options->get($themeslug.'_footer_text');
 	}
 	
-	echo "<div id='afterfootercopyright' class='four columns'>";
+	echo "<div id='afterfootercopyright' class='span4'>";
 		echo "&copy; $copyright";
 	echo "</div>";
 }
@@ -96,7 +96,7 @@ function synapse_secondary_footer_copyright() {
 * @since 1.0
 */
 function synapse_secondary_footer_menu() {
-	echo "<div id='afterfootermenu' class='four columns'>";
+	echo "<div id='afterfootermenu' class='span4'>";
 	wp_nav_menu( array(
 		'theme_location' => 'footer-menu', 
 	)); 
@@ -110,7 +110,7 @@ function synapse_secondary_footer_menu() {
 */
 function synapse_secondary_footer_credit() { ?>
 		
-	<div class="four columns credit">
+	<div class="span4 credit">
 		<a href="http://cyberchimps.com/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/achimps.png" alt="credit" /></a>
 	</div> <?php 
 }

@@ -18,8 +18,8 @@ global $options, $themeslug;
 </div><!--end container wrap-->
 
 	<div id="footer">
-     	<div class="container">
-     		<div class="row">
+     	<div class="container-fluid">
+     		<div class="row-fluid">
     	
 	<!-- Begin @synapse footer hook content-->
 		<?php synapse_footer(); ?>
@@ -36,13 +36,15 @@ global $options, $themeslug;
 
 	<div id="afterfooter">
 		<div id="afterfooterwrap">
-		<div class="row">	
+		<div class="container-fluid">
+		<div class="row-fluid">	
 		<!-- Begin @synapse afterfooter hook content-->
 			<?php synapse_secondary_footer(); ?>
 		<!-- End @synapse afterfooter hook content-->
 				
 		</div>  <!--end afterfooterwrap-->	
 	</div> <!--end afterfooter-->	
+		</div> 	
 		</div> 	
 	<?php endif;?>
 	
