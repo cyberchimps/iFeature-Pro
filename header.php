@@ -30,6 +30,7 @@
 <!-- End @synapse before_header hook content -->
 			
 <header>	
+<div id="main_wrap">
 	<div class="container-fluid">
 	<?php
 		foreach(explode(",", $options->get('header_section_order')) as $fn) {
@@ -38,7 +39,8 @@
 			}
 		}
 	?>
-	</div>	
+	</div>
+</div>		
 </header>
 
 <!-- Begin @synapse after_header hook -->

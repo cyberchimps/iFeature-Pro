@@ -1,13 +1,13 @@
 /* PUT IN YOUR SLIDER ID AND SIZE TO MAKE LOAD BEAUTIFULLY
    ================================================== */
    
-#content_slider { background: url(orbit/spinner.gif) no-repeat center center #3c3c3c; height: 300px !important;  }
+#content_slider { background: url(images/spinner.gif) no-repeat center center #3c3c3c; height: 300px !important;  }
 #content_slider.orbit { height: 300px; }
 #content_slider img, #content_slider div { display: none; }
 #content_slider.orbit img, #content_slider.orbit div { display: block;}
 
 
-#orbitDemo { background: url(orbit/spinner.gif) no-repeat center center #000; height: 330px; margin-bottom: 45px; }
+#orbitDemo { background: url(images/spinner.gif) no-repeat center center #000; height: 330px; margin-bottom: 45px; }
 #orbitDemo.orbit { height: auto; }
 #orbitDemo img, #orbitDemo div { display: none; }
 #orbitDemo.orbit img, #orbitDemo.orbit div { display: block;}
@@ -89,7 +89,7 @@ span.rotator {
     position: absolute;
     top: 0;
     left: -20px;
-    background: url(orbit/rotator-black.png) no-repeat;
+    background: url(images/rotator-black.png) no-repeat;
     z-index: 3; }
 
 span.mask {
@@ -108,7 +108,7 @@ span.rotator.move {
 span.mask.move {
     width: 40px;
     left: 0;
-    background: url(orbit/timer-black.png) repeat 0 0; }
+    background: url(images/timer-black.png) repeat 0 0; }
 
 span.pause {
     display: block;
@@ -117,12 +117,12 @@ span.pause {
     position: absolute;
     top: 0;
     left: 0;
-    background: url(orbit/pause-black.png) no-repeat;
+    background: url(images/pause-black.png) no-repeat;
     z-index: 4;
     opacity: 0; }
 
 span.pause.active {
-    background: url(/orbit/pause-black.png) no-repeat 0 -40px }
+    background: url(images/pause-black.png) no-repeat 0 -40px }
 
 div.timer:hover span.pause,
 span.pause.active {
@@ -167,11 +167,11 @@ div.slider-nav span {
     cursor: pointer; }
 
 div.slider-nav span.right {
-    background: url(orbit/right-arrow.png) no-repeat;
+    background: url(images/right-arrow.png) no-repeat;
     right: 0; }
 
 div.slider-nav span.left {
-    background: url(orbit/left-arrow.png) no-repeat;
+    background: url(images/left-arrow.png) no-repeat;
     left: 0; }
 
 
@@ -193,7 +193,7 @@ div.slider-nav span.left {
     cursor: pointer;
     color: #999;
     text-indent: -9999px;
-    background: url(orbit/bullets.jpg) no-repeat 4px 0;
+    background: url(images/bullets.jpg) no-repeat 4px 0;
     width: 13px;
     height: 12px;
     overflow: hidden; }
@@ -236,7 +236,7 @@ div.slider-nav span.left {
     cursor: pointer;
     color: #999;
     text-indent: -9999px;
-    background: url(orbit/bullets2.png) no-repeat 0px 0;
+    background: url(images/bullets2.png) no-repeat 0px 0;
     width: 13px;
     height: 12px;
     overflow: hidden; }
