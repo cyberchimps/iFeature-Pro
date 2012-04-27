@@ -29,7 +29,8 @@
 	<?php synapse_before_header(); ?> 
 <!-- End @synapse before_header hook content -->
 			
-<header>		
+<header>	
+	<div class="container-fluid">
 	<?php
 		foreach(explode(",", $options->get('header_section_order')) as $fn) {
 			if(function_exists($fn)) {
@@ -37,6 +38,7 @@
 			}
 		}
 	?>
+	</div>	
 </header>
 
 <!-- Begin @synapse after_header hook -->

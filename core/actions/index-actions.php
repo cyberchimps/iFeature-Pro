@@ -34,12 +34,12 @@ function synapse_index_content() {
 		<?php synapse_sidebar_init(); ?>
 	<!--End @ifeature sidebar init-->
 	
-	<div class="row">
+	<div class="row-fluid">
 		<div id="magazine_wrap" >
 			<?php query_posts('showposts=6'); ?>
 			
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			<div id="magazine<?php echo ($xyz++%2); ?>" class="six columns">
+			<div id="magazine<?php echo ($xyz++%2); ?>" class="span6">
 			<?php synapse_magazine_loop(); ?>
 			
 			</div>

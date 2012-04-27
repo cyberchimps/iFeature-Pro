@@ -345,19 +345,19 @@ function synapse_nav() {
 	global $options, $themeslug; //call globals 
 	
 	if ($options->get($themeslug.'_hide_home_icon') == "0" && $options->get($themeslug.'_hide_search') == "0" OR $options->get($themeslug.'_hide_home_icon') == "1" && $options->get($themeslug.'_hide_search') == "0" ) {
-		$grid = 'twelve columns';
+		$grid = 'span12';
 	}
 	
 	else {
-		$grid = 'nine columns';
+		$grid = 'span9';
 	}
 	
 	?>
 		
-	<div class="container">
-		<div class="row">
+	<div class="container-fluid">
+		<div class="row-fluid">
 
-			<div class="twelve columns" id="imenu">
+			<div class="span12" id="imenu">
 
 			<div id="nav" class="<?php echo $grid; ?>">
 			<?php if ($options->get($themeslug.'_hide_home_icon') != "0"):?><div id="home"><a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri() ;?>/images/home.png" alt="home" /></a></div><?php endif;?>
@@ -373,7 +373,7 @@ function synapse_nav() {
 	    	?>
    			</div>
    			<?php if ($options->get($themeslug.'_hide_search') != "0"):?>
-			<div class="three columns">
+			<div class="span3">
 				<?php get_search_form(); ?>
 			</div>
 			<?php endif;?>

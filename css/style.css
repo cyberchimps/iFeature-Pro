@@ -24,6 +24,9 @@ input[type=reset]{font-size: 12px;padding: 2px;margin-top: 5px;border: 1px solid
 a img{border:none}
 a{outline:none}
 
+
+.container-fluid {max-width: 980px; margin-left: auto; margin-right: auto;}
+
 /* Misc  */
 
 .pagination {
