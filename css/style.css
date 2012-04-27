@@ -264,7 +264,9 @@ header {margin-top: 15px;}
 
 #comments {text-align:right;float:right;padding-top: 3px;font-size: 12px;}
 
-#share {text-align:left;float:left;padding-top: 3px;}
+#comments img {margin-top: -5px;}
+
+#share {text-align:left;float:left;margin-top: -2px;}
 
 .share a img {opacity:.8;}
 
