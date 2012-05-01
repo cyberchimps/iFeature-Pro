@@ -70,7 +70,7 @@ function synapse_pagination_content($pages = '', $range = 4)
 * @since 1.0
 */
 function synapse_link_pages_content() {
-	 wp_link_pages(array('before' => 'Pages: ', 'next_or_number' => 'number'));
+	 wp_link_pages(array('before' =>  __('Pages:', 'core' ) , 'next_or_number' => 'number'));
 }
 
 /**
