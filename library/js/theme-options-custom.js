@@ -29,7 +29,7 @@ jQuery(document).ready(function($) {
     }
   }).change();
   $("#if_show_featured_images").change(function() {
-    var toShow = $("#section-if_featured_image_align, #section-if_featured_image_height, #section-if_featured_image_width");
+    var toShow = $("#section-if_featured_image_align, #section-if_featured_image_height, #section-if_featured_image_width, #section-if_featured_image_crop");
     if($(this).is(':checked')) {
       toShow.show();
     } else {

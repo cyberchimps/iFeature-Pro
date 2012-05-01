@@ -166,7 +166,13 @@ function init_featured_image() {
 	else {
 		$featurewidth = $options->get($themeslug.'_featured_image_width'); 
 	} 
-	set_post_thumbnail_size( $featurewidth, $featureheight, true );
+	if ($options->get($themeslug.'_featured_image_crop') == "1") {
+			$crop = 'true';
+	}		
+	else {
+		$crop = 'false';
+	} 
+	set_post_thumbnail_size( $featurewidth, $featureheight, $crop );
 	}	
 }
 add_action( 'init', 'init_featured_image', 11);	

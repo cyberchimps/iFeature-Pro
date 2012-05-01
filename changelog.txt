@@ -10,6 +10,7 @@ Version 4.1.5 (05-01-12)
 -Fixed bug with broken "next" link in pagination.
 -Added French, Swedish and Russian language files.
 -Updated jquery.easing for better third-party plugin compatibility.
+-Option to crop featured images.
 
 Version 4.1.4 (04-26-12)
 -Removed slight margin-left on box elements in mobile view.
