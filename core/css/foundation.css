@@ -974,6 +974,11 @@ div.slider-nav span.left {
 	#box2.four.columns, #box3.four.columns {margin-left: 0% !important;}
 }
 
+@media handheld, only screen and (max-width: 500px) {
+	#mobileMenu_nav_menu {float: right; margin-top: 10px; margin-right: 10px;}
+	#imenu {height: 35px !important;}
+}
+
 @media handheld, only screen and (max-width: 400px) {
 	#orbitDemo {height: 90px;}
 	.carousel_caption {font-size: 6px !important;}
