@@ -2,6 +2,9 @@ iFeature Pro Changelog
 
 ****************************
 
+Version 4.1.5 (05-01-12)
+-Missing translation wrapper on post pagination.
+
 Version 4.1.4 (04-26-12)
 -Removed slight margin-left on box elements in mobile view.
 -Fixed strange quotes around HTML elements in Google +1 button code.
