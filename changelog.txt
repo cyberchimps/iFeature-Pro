@@ -8,6 +8,7 @@ Version 4.1.5 (05-01-12)
 -Removed some additional unused images.
 -Mobile Menu now works in phone landscape mode. 
 -Fixed bug with broken "next" link in pagination.
+-Added French, Swedish and Russian language files.
 
 Version 4.1.4 (04-26-12)
 -Removed slight margin-left on box elements in mobile view.
