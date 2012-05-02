@@ -972,6 +972,7 @@ div.slider-nav span.left {
 	#box2 {margin-top:20px !important; margin-bottom:20px !important;}
 	#box3 {margin-top:10px !important; margin-bottom:0px !important;}
 	#box2.four.columns, #box3.four.columns {margin-left: 0% !important;}
+	#button_wrap.three.columns {float: none !important;}
 }
 
 @media handheld, only screen and (max-width: 500px) {
