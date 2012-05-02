@@ -338,6 +338,53 @@ function portfolio_columns_display($portfolio_columns, $post_id){
 	}
 }
 
+/**
+* Edit columns for carousel post type.
+*/ 
+add_filter('manage_edit-if_featured_posts_columns', 'carousel_edit_columns');
+add_action('manage_if_featured_posts_posts_custom_column',  'carousel_columns_display', 10, 2);
+
+function carousel_edit_columns($carousel_columns){
+    $carousel_columns = array(
+        "cb" => "<input type=\"checkbox\" />",
+        "title" => _x('Title', 'column name'),
+        "image" => __('Image'),
+        "category" => __('Categories'),
+        "author" => __('Author'),
+        "date" => __('Date'),
+    );
+   
+    return $carousel_columns;
+}
+function carousel_columns_display($carousel_columns, $post_id){
+	global $post;
+	$cat = get_the_terms($post->ID, 'carousel_categories');
+	$images = get_post_meta($post->ID, 'post_image' , true);
+	
+    switch ($carousel_columns)
+    {
+        case "image":
+        	if ( !empty( $images ) ) {
+        		echo '<img src="';
+        		echo $images;
+        		echo '"style="height: 50px; width: 50px;">';
+        	}
+        break;
+        
+        case "category":
+        	if ( !empty( $cat ) ) {
+                $out = array();
+                foreach ( $cat as $c )
+                    $out[] = "<a href='edit.php?carousel_categories=$c->slug'> " . esc_html(sanitize_term_field('name', $c->name, $c->term_id, 'carousel_categories', 'display')) . "</a>";
+                echo join( ', ', $out );
+            } else {
+                _e('No Category.');  //No Taxonomy term defined
+            }
+        break;
+	}
+}
+
+
 
 /**
 * Assign default category for Slider, Carousel posts.
