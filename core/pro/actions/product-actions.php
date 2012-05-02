@@ -85,13 +85,11 @@ function synapse_product_element_content(){
 	}
 ?>
 
-<div id="productbg">
-	<div class="container">
+	<div id="productbg" class="container">
 		<div class="row">
 			<?php echo $output; ?>
 		</div>
 	</div>
-</div>
 
 <?php
 }
