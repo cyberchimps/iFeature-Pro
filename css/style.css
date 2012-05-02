@@ -18,6 +18,9 @@ a{outline:none}
 
 /* Misc  */
 
+#subheader_icons img {height: 16px;}
+#subheader h1.description {margin-top: 0px; color: #fff;}
+
 .pagination {
 clear:both;
 padding:2px 0;
