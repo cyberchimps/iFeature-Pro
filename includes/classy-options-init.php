@@ -164,7 +164,7 @@ TEMPLATE_URL . '/images/social/thumbs/icons-default.png' ), 'default' => 'defaul
 		->subsection_end()
 	->section("Blog")
 		->open_outersection()
-			->section_order($themeslug."_blog_section_order", "Drag & Drop Blog Elements", array('options' => array("synapse_index" => "Post Page", "synapse_blog_slider" => "iFeature Slider",  "synapse_callout_section" => "Callout Section", "synapse_twitterbar_section" => "Twitter Bar", "synapse_index_carousel_section" => "Carousel", "synapse_portfolio_element" => "Portfolio", "synapse_box_section" => "Boxes", "synapse_blog_nivoslider" => "NivoSlider"), "default" => 'synapse_blog_slider,synapse_index'))
+			->section_order($themeslug."_blog_section_order", "Drag & Drop Blog Elements", array('options' => array("synapse_index" => "Post Page", "synapse_blog_slider" => "iFeature Slider",  "synapse_callout_section" => "Callout Section", "synapse_twitterbar_section" => "Twitter Bar", "synapse_index_carousel_section" => "Carousel", "synapse_portfolio_element" => "Portfolio","synapse_custom_html_element" => "Custom HTML", "synapse_product_element" => "Product", "synapse_box_section" => "Boxes", "synapse_blog_nivoslider" => "NivoSlider"), "default" => 'synapse_blog_slider,synapse_index'))
 		->close_outersection()
 		->subsection("Blog Options")
 			->images($themeslug."_blog_sidebar", "Sidebar Options", array( 'options' => array("left" => TEMPLATE_URL . '/images/options/left.png', "two-right" => TEMPLATE_URL . '/images/options/tworight.png', "right-left" => TEMPLATE_URL . '/images/options/rightleft.png', "none" => TEMPLATE_URL . '/images/options/none.png', "right" => TEMPLATE_URL . '/images/options/right.png'), 'default' => 'right'))
