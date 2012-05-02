@@ -44,8 +44,6 @@ function synapse_product_element_content(){
 		$link_text = $options->get($themeslug.'_blog_product_link_text');
 	}
 	
-	
-	
 	if ($link_enable == "on" or $link_enable == "1" OR $link_enable == '') {
 		$button = "<a href='$link' class='nice medium radius white button'>$link_text</a>";
 	}

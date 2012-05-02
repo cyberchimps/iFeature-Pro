@@ -649,7 +649,7 @@ div.timer {display: none !important;}
 #product_text {color: #222; padding: 0px 0 20px 0;}
 .product_text_wrap {}
 #product_text.six.columns {margin-left: 1%;}
-#product_media.six.columns {margin-left: 0%; float: right;}
+#product_media.six.columns {margin-left: 0%;}
 .product_text_title {font-size: 24px;color: #000;font-weight:bold;}
 .product_text_text {font-size: 14px;}
 
