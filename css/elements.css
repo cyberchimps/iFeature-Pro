@@ -1,13 +1,3 @@
-#product_text {color: white; padding: 20px 0 20px 0;}
-.product_text_wrap {}
-#product_text.six.columns {margin-left: 1%;}
-#product_media.six.columns {margin-left: 0%; float: right;}
-.product_text_title {font-size: 24px;}
-.product_text_text {font-size: 14px;}
-
-#product_media {padding: 20px 0 20px 0;}
-
-
 /* Page Elements */
 
 #orbitDemo {border: 1px solid #ccc;}
@@ -582,6 +572,25 @@ li.ui-state-default  {
 .tabbed-date {font-size: 12px; font-style: italic;}
 
 div.timer {display: none !important;}
+
+/*============================*/
+/*====== Product Element =====*/
+/*============================*/
+
+
+#product_text {color: white; padding: 20px 0 20px 0;}
+.product_text_wrap {}
+#product_text.six.columns {margin-left: 1%;}
+#product_media.six.columns {margin-left: 0%; float: right;}
+.product_text_title {font-size: 24px;}
+.product_text_text {font-size: 14px;}
+
+#product_media {padding: 20px 0 20px 0;}
+
+
+/*============================*/
+/*====== Portfolio Element =====*/
+/*============================*/
 
 #gallery {
 	margin-top: 20px;
