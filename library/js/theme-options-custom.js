@@ -96,7 +96,15 @@ jQuery(document).ready(function($) {
       toShow.hide();
     }
   }).change();
-     $("#if_blog_product_link_toggle").change(function() {
+   $("#if_portfolio_title_toggle").change(function() {
+    var toShow = $("#section-if_portfolio_title");
+    if($(this).is(':checked')) {
+      toShow.show();
+    } else {
+      toShow.hide();
+    }
+  }).change();
+    $("#if_blog_product_link_toggle").change(function() {
     var toShow = $("#section-if_blog_product_link_url, #section-if_blog_product_link_text");
     if($(this).is(':checked')) {
       toShow.show();
