@@ -560,17 +560,19 @@ if ($size == 'key2' OR $size == '0' ) {
 	$closerow = '</div>';
 }
 
-if ($size == 'key1' OR $size == '1' ) {
+else {
+	$openrow = '';
+	$closerow = '';
+}
+
+if ($size == 'key1' OR $size == '1' OR $size == '' ) {
 	echo '<style type="text/css">';
 	echo "div.orbit-wrapper {margin-top: 0px !important;}";
 	echo '</style>';
 
 }
 
-else {
-	$openrow = '';
-	$closerow = '';
-}?>	
+?>	
 
 <?php echo $openrow; 
 	

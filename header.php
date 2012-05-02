@@ -29,8 +29,9 @@
 <!-- Begin @synapse before_header hook  content-->
 	<?php synapse_before_header(); ?> 
 <!-- End @synapse before_header hook content -->
-			
-<header>		
+	<?php if ($options->get($themeslug.'_subheader') == '1') { ifeature_subheader();} ?>			
+<header>	
+
 	<?php
 		foreach(explode(",", $options->get('header_section_order')) as $fn) {
 			if(function_exists($fn)) {

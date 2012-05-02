@@ -358,7 +358,7 @@ function ifeature_subheader_content() {
 	<div class="container">
 		<div class="row">
 		
-			<div class="five columns">
+			<div id="subheader_description" class="five columns">
 				
 			<!-- Begin @Core header description hook -->
 				<?php synapse_header_site_description(); ?> 
