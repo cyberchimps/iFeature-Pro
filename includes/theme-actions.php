@@ -29,6 +29,7 @@ add_action( 'ifeature_logo_description', 'ifeature_logo_description_content');
 add_action( 'ifeature_banner', 'ifeature_banner_content');
 add_action( 'ifeature_icons', 'ifeature_icons_content');
 add_action( 'ifeature_custom_header_element', 'ifeature_custom_header_element_content');
+add_action( 'ifeature_subheader', 'ifeature_subheader_content');
 
 remove_action( 'synapse_head_tag', 'synapse_link_rel' );
 add_action( 'synapse_head_tag', 'ifeature_link_rel' );
@@ -346,12 +347,46 @@ function ifeature_logo_description_content() {
 }
 
 /**
-* Description/Icons
+* Logo/Description
 *
 * @since 3.0
 */
-function ifeature_description_icons_content() {
+function ifeature_logo_description_content() {
 ?>
+	<div class="container">
+		<div class="row">
+		
+			<div class="seven columns">
+				
+			<!-- Begin @Core header sitename hook -->
+					<?php synapse_header_sitename(); ?> 
+			<!-- End @Core header sitename hook -->
+			
+				
+			</div>	
+			
+			<div class="five columns" style="text-align: right;">
+			
+			<!-- Begin @Core header description hook -->
+				<?php synapse_header_site_description(); ?> 
+			<!-- End @Core header description hook -->
+						
+			</div>	
+		</div><!--end row-->
+	</div>	
+
+<?php
+}
+
+
+/**
+* Subheader
+*
+* @since 3.0
+*/
+function ifeature_subheader_content() {
+?>
+<div id="subheader">
 	<div class="container">
 		<div class="row">
 		
@@ -364,7 +399,7 @@ function ifeature_description_icons_content() {
 				
 			</div>	
 			
-			<div class="seven columns">
+			<div id="subheader_icons" class="seven columns">
 			
 			<!-- Begin @Core header social icon hook -->
 				<?php synapse_header_social_icons(); ?> 
@@ -372,7 +407,8 @@ function ifeature_description_icons_content() {
 						
 			</div>	
 		</div><!--end row-->
-	</div>	
+	</div>
+</div>	
 
 <?php
 }
