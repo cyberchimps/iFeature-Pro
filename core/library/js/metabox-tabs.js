@@ -136,4 +136,22 @@ jQuery(document).ready(function($) {
 			items.hide();
 		}
     }).trigger('change');
+    $('#checkbox-portfolio_title_toggle').change(function(){
+	    var items = $("tr.portfolio_title,");
+		if($(this).is(':checked')) {
+			items.show();
+		} else {
+			items.hide();
+		}
+    }).trigger('change');
+    
+        $('#checkbox-product_link_toggle').change(function(){
+	    var items = $("tr.product_link_url, tr.product_link_text");
+		if($(this).is(':checked')) {
+			items.show();
+		} else {
+			items.hide();
+		}
+    }).trigger('change');
+
 });
