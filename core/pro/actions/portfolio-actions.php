@@ -72,7 +72,7 @@ function synapse_portfolio_element_content() {
 	<?php query_posts( array ('post_type' => $themeslug.'_portfolio_images', 'showposts' => 50, 'portfolio_categories' => $category ));
 			
 	if (have_posts()) :
-	  	 $out = " <div id='gallery' class='twelve columns'>$title_output<ul>"; 
+	  	 $out = " <div id='gallery'>$title_output<ul>"; 
 
 	  	$i = 0;
 		$no = '50';
@@ -105,7 +105,7 @@ function synapse_portfolio_element_content() {
 	      	else:
 	      
 	      	$out .= "	
-	    		<div id='gallery' class='twelve columns'><ul>
+	    		<div id='gallery'><ul>
 	      			<li id='portfolio_wrap' class='four columns'>
 	    				<a href='$root/images/pro/portfolio.jpg' title='Image 1'><img src='$root/images/pro/portfolio.jpg'  alt='Image 1'/>
 	    					<div class='portfolio_caption'>Image 1</div>
