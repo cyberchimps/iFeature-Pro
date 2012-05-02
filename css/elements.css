@@ -659,6 +659,8 @@ div.timer {display: none !important;}
 	padding: 10px;
 }
 
+#portfoliowrap {padding-left:20px; padding-right:20px;}
+
 #portfolio_wrap.three.columns:last-child, #portfolio_wrap.four.columns:last-child, #portfolio_wrap.six.columns:last-child {float:left;}
 
 .portfolio_title {color: #222; padding-left: 20px;}
@@ -666,7 +668,7 @@ div.timer {display: none !important;}
 .portfolio_caption {text-align: center; bottom: 50%; left: 5px; color: white; width: 100%; position: absolute; z-index: 2; font-size: 18px;}
 
 #gallery li.three.columns {margin-left:0px; margin-right: 3.3%;}
-#gallery li.four.columns {margin-left:0px; margin-right: 2.3%;}
+#gallery li.four.columns {margin-left:0px; margin-right: 3%;}
 #gallery li.six.columns {margin-left:0px; margin-right: 2.3%;}
 
 #gallery ul { list-style: none; margin: 0px; }

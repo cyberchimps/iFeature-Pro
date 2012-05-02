@@ -68,6 +68,7 @@ function synapse_portfolio_element_content() {
 <div class="row">
 
 	<div id="portfolio_container" class="twelve columns">
+		<div id="portfoliowrap">
 		
 	<?php query_posts( array ('post_type' => $themeslug.'_portfolio_images', 'showposts' => 50, 'portfolio_categories' => $category ));
 			
@@ -158,7 +159,7 @@ echo $out;
 
 /* END */ 
 ?>
-		
+		</div>
 	</div>
 </div>
 
