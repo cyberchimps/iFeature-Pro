@@ -22,6 +22,12 @@ function initialize_the_meta_boxes() {
 	
 	// Call taxonomies for select options
 	
+	$portfolioterms = get_terms('portfolio_categories', 'hide_empty=0');
+	$portfoliooptions = array();
+
+		foreach($portfolioterms as $term) {
+			$portfoliooptions[$term->slug] = $term->name;
+		}
 	$carouselterms = get_terms('carousel_categories', 'hide_empty=0');
 	$carouseloptions = array();
 
@@ -47,6 +53,12 @@ function initialize_the_meta_boxes() {
 	// End taxonomy call
 	
 	$meta_boxes = array();
+	
+	$mb = new Chimps_Metabox('Portfolio', 'Portfolio Element', array('pages' => array($themeslug.'_portfolio_images')));
+	$mb
+		->tab("Portfolio Element")
+			->single_image('portfolio_image', 'Portfolio Image', '')
+		->end();
 
 	$mb = new Chimps_Metabox('post_slide_options', $themenamefull.' Slider Options', array('pages' => array('post')));
 	$mb
@@ -89,6 +101,9 @@ function initialize_the_meta_boxes() {
 					'page_slider' => 'iFeature Slider',
 					'callout_section' => 'Callout',
 					'twitterbar_section' => 'Twitter Bar',
+					'portfolio_element' => 'Portfolio',
+					'custom_html_element' => 'Custom HTML',
+					'product_element' => 'Product',
 					'page_section' => 'Page',
 					'box_section' => 'Boxes',
 					'carousel_section' => 'Carousel',
@@ -127,6 +142,16 @@ function initialize_the_meta_boxes() {
 			->checkbox('nivo_nav_autohide', 'Navigation Arrows Autohide', '', array('std' => 'on'))
 			->checkbox('nivo_enable_wordthumb', 'WordThumb Image Resizing', '', array('std' => 'off'))
 			->sliderhelp('', 'Need Help?', '')
+		->tab("Product Options")
+			->select('product_text_align', 'Text Align', '', array('options' => array('Left', 'Right')) )
+			->text('product_title', 'Product Title', '', array('std' => 'Product'))
+			->textarea('product_text', 'Proudct Text', '', array('std' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. '))
+			->select('product_type', 'Media Type', '', array('options' => array('Image', 'Video')) )
+			->single_image('product_image', 'Product Image', '', array('std' =>  TEMPLATE_URL . '/images/pro/product.jpg'))
+			->textarea('product_video', 'Video Embed', '')
+			->checkbox('product_link_toggle', 'Product Link', '', array('std' => 'on'))
+			->text('product_link_url', 'Link URL', '', array('std' => home_url()))
+			->text('product_link_text', 'Link Text', '', array('std' => 'Buy Now'))
 		->tab("Callout Options")
 			->text('callout_title', 'Callout Title', '')
 			->textarea('callout_text', 'Callout Text', '')
@@ -141,9 +166,16 @@ function initialize_the_meta_boxes() {
 			->color('custom_callout_button_color', 'Custom Button Color', '')
 			->color('custom_callout_button_text_color', 'Custom Button Text Color', '')
 			->pagehelp('', 'Need help?', '')
+		->tab("Portfolio Options")
+			->select('portfolio_row_number', 'Images per row', '', array('options' => array('Three (default)', 'Two', 'Four')) )
+			->select('portfolio_category', 'Portfolio Category', '', array('options' => $portfoliooptions) )
+			->checkbox('portfolio_title_toggle', 'Portfolio Title', '')
+			->text('portfolio_title', 'Title', '', array('std' => 'Portfolio'))
 		->tab("Carousel Options")
 			->select('carousel_category', 'Carousel Category', '', array('options' => $carouseloptions) )
 			->text('carousel_speed', 'Carousel Animation Speed (ms)', '', array('std' => '750'))
+		->tab("Custom HTML")
+			->textarea('custom_html', 'Enter your custom HTML', '')
 		->tab("Twitter Options")
 			->text('twitter_handle', 'Twitter Handle', 'Enter your Twitter handle if using the Twitter bar')
 			->checkbox('twitter_reply', 'Show @ Replies', '')
