@@ -568,6 +568,7 @@ else {
 if ($size == 'key1' OR $size == '1' OR $size == '' ) {
 	echo '<style type="text/css">';
 	echo "div.orbit-wrapper {margin-top: 0px !important;}";
+	echo ".slider_nav {margin-bottom: 20px !important;}";
 	echo '</style>';
 
 }
