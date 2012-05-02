@@ -289,9 +289,9 @@ a.nivo-prevNav {
 	background: -ms-linear-gradient(top,  #ffffff 0%,#f9f9f9 75%,#f4f4f4 100%);
 	background: linear-gradient(top,  #ffffff 0%,#f9f9f9 75%,#f4f4f4 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f4f4f4',GradientType=0 );	padding:10px 37px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
 	position:relative;
 	margin-bottom: 7px;
 	margin-bottom: 7px;
