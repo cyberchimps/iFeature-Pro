@@ -663,7 +663,7 @@ div.timer {display: none !important;}
 
 #portfolio_wrap.three.columns:last-child, #portfolio_wrap.four.columns:last-child, #portfolio_wrap.six.columns:last-child {float:left;}
 
-.portfolio_title {color: #222; padding-left: 20px;}
+.portfolio_title {color: #222;}
 
 .portfolio_caption {text-align: center; bottom: 50%; left: 5px; color: white; width: 100%; position: absolute; z-index: 2; font-size: 18px;}
 
