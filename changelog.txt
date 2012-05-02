@@ -2,6 +2,8 @@ iFeature Pro Changelog
 
 ****************************
 
+Version 4.5 (05-02-12)
+
 Version 4.1.5 (05-01-12)
 -Missing translation wrapper on post pagination.
 -Fixed blowout when all social icons are enabled.
