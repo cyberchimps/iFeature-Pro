@@ -7,9 +7,9 @@ Version 4.5 (05-02-12)
 -Added Product Element.
 -Added Custom HTML Element.
 -Customized columns for Slider and Carousel custom post types.
+-Added Subheader Element. 
 -Updated styling of Box, Twitter Bar and Callout Elements.
-
-Version 4.1.5 (05-01-12)
+-General CSS cleanup. 
 -Missing translation wrapper on post pagination.
 -Fixed blowout when all social icons are enabled.
 -Removed some additional unused images.
