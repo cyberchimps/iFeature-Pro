@@ -732,7 +732,8 @@ div.orbit-wrapper {
     width: 1px;
     height: 1px;
     position: relative; 
-    margin-bottom: 20px;}
+    margin-bottom: 10px;
+    margin-top:10px;}
 
 div.orbit {
     width: 1px;
