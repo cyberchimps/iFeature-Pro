@@ -379,6 +379,8 @@ a.nivo-prevNav {
 	margin: auto;
 	margin-top: 7px;
 	margin-bottom: 7px;
+	border-radius: 4px;
+	-moz-border-radius: 4px;
 	box-shadow:none;
 	background: #ffffff;
 	background: -moz-linear-gradient(top,  #ffffff 0%, #f9f9f9 75%, #f4f4f4 100%);
