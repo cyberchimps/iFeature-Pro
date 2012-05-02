@@ -96,6 +96,29 @@ jQuery(document).ready(function($) {
       toShow.hide();
     }
   }).change();
+     $("#if_blog_product_link_toggle").change(function() {
+    var toShow = $("#section-if_blog_product_link_url, #section-if_blog_product_link_text");
+    if($(this).is(':checked')) {
+      toShow.show();
+    } else {
+      toShow.hide();
+    }
+  }).change();
+   $("#section-if_blog_product_type").change(function() {
+    if($(this).find(":selected").val() == 'key1') {
+      $('#section-if_blog_product_image').fadeIn();
+    } else {
+      $('#section-if_blog_product_image').hide();
+    }
+  }).change();
+     $("#section-if_blog_product_type").change(function() {
+    if($(this).find(":selected").val() == 'key2') {
+      $('#section-if_blog_product_video').fadeIn();
+    } else {
+      $('#section-if_blog_product_video').hide();
+    }
+  }).change();
+
 
 
 
