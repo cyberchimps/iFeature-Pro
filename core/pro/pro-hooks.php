@@ -41,6 +41,13 @@ function synapse_carousel_section() {
 }
 
 /** 
+* Custom HTML element
+*/
+function synapse_custom_html_element() {
+	do_action ('synapse_custom_html_element');
+}
+
+/** 
 * Entry 
 */
 function synapse_pro_before_entry() {
@@ -49,6 +56,20 @@ function synapse_pro_before_entry() {
 
 function synapse_pro_entry() {
 	do_action('synapse_pro_entry');
+}
+
+/** 
+* Product
+*/
+function synapse_product_element() {
+	do_action ('synapse_product_element');
+}
+
+/** 
+* Portfolio
+*/
+function synapse_portfolio_element() {
+	do_action ('synapse_portfolio_element');
 }
 
 /** 

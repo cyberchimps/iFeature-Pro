@@ -24,9 +24,12 @@ require_once ( get_template_directory() . '/core/pro/pro-hooks.php' );
 //Call actions
 require_once ( get_template_directory() . '/core/pro/actions/box-actions.php' );
 require_once ( get_template_directory() . '/core/pro/actions/callout-actions.php' );
+require_once ( get_template_directory() . '/core/pro/actions/carousel-actions.php' );
+require_once ( get_template_directory() . '/core/pro/actions/custom-html-actions.php' );
 require_once ( get_template_directory() . '/core/pro/actions/header-actions.php' );
 require_once ( get_template_directory() . '/core/pro/actions/footer-actions.php' );
-require_once ( get_template_directory() . '/core/pro/actions/carousel-actions.php' );
+require_once ( get_template_directory() . '/core/pro/actions/portfolio-actions.php' );
+require_once ( get_template_directory() . '/core/pro/actions/product-actions.php' );
 require_once ( get_template_directory() . '/core/pro/actions/slider-actions.php' );
 
 //Call Extras
