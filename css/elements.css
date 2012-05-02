@@ -348,8 +348,8 @@ a.nivo-prevNav {
 #twitterbar {
 	overflow: hidden;
 	margin: auto;
-	margin-bottom: 7px;
-	margin-top: 7px;
+	margin-bottom: 10px;
+	margin-top: 10px;
 	box-shadow:none;
 	border: 1px solid #CCC;
     background: #ffffff;
@@ -377,8 +377,8 @@ a.nivo-prevNav {
 	position:relative;
 	display: block;
 	margin: auto;
-	margin-top: 7px;
-	margin-bottom: 7px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 	border-radius: 4px;
 	-moz-border-radius: 4px;
 	box-shadow:none;
@@ -443,8 +443,8 @@ a.nivo-prevNav {
 
 #box_container {
 	min-height: 240px;
-	margin-top: 7px;
-	margin-bottom: 7px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 #box_container ul {
@@ -599,7 +599,6 @@ div.timer {display: none !important;}
 /*====== Product Element =====*/
 /*============================*/
 
-
 #product_text {color: #222; padding: 20px 0 20px 0;}
 .product_text_wrap {}
 #product_text.six.columns {margin-left: 1%;}
@@ -612,7 +611,8 @@ div.timer {display: none !important;}
 #productbg {
 	border: 1px solid #ccc;
 	background: #bbb url(../images/sliderbg.png);
-	margin-bottom: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 	border-radius: 4px;
 	-moz-border-radius: 4px;
 	box-shadow:none;
@@ -639,6 +639,7 @@ div.timer {display: none !important;}
 }
 
 #portfolio {
+	margin-top: 10px;
 	margin-bottom: 10px;
 	border: 1px solid #ccc;
 	border-radius: 4px;
