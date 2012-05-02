@@ -6,6 +6,7 @@ Version 4.5 (05-02-12)
 -Added Portfolio Element.
 -Added Product Element.
 -Added Custom HTML Element.
+-Customized columns for Slider and Carousel custom post types.
 -Updated styling of Box, Twitter Bar and Callout Elements.
 
 Version 4.1.5 (05-01-12)
