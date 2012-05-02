@@ -18,8 +18,8 @@ a{outline:none}
 
 /* Misc  */
 
-#subheader_icons img {height: 16px;}
-#subheader h1.description {margin-top: 0px; color: #fff;}
+#subheader_icons img {height: 16px; margin-bottom: 5px;}
+#subheader h1.description {margin-top: 10px; color: #fff; font-size: 12px;}
 
 .pagination {
 clear:both;
