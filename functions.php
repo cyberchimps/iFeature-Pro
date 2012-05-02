@@ -297,6 +297,51 @@ add_action('init', 'custom_taxonomies', 0);
 /**
 * Edit columns for portfolio post type.
 */ 
+add_filter('manage_edit-if_custom_slides_columns', 'slides_edit_columns');
+add_action('manage_if_custom_slides_posts_custom_column',  'slides_columns_display', 10, 2);
+
+function slides_edit_columns($sides_columns){
+    $slides_columns = array(
+        "cb" => "<input type=\"checkbox\" />",
+        "title" => 'Title',
+        "image" => 'Image',
+        "category" => 'Categories',
+        "author" => 'Author',
+        "date" => 'Date',
+    );
+   
+    return $slides_columns;
+}
+function slides_columns_display($slides_columns, $post_id){
+	global $post;
+	$cat = get_the_terms($post->ID, 'slide_categories');
+	
+    switch ($portfolio_columns)
+    {
+        case "image":
+        	$images = get_post_meta($post->ID, 'slider_image' , true);
+        	echo '<img src="';
+        	echo $images;
+        	echo '"style="height: 50px; width: 50px;">';
+        break;
+        
+        case "category":
+        	if ( !empty( $cat ) ) {
+                $out = array();
+                foreach ( $cat as $c )
+                    $out[] = "<a href='edit.php?slide_categories=$c->slug'> " . esc_html(sanitize_term_field('name', $c->name, $c->term_id, 'portfolio_categories', 'display')) . "</a>";
+                echo join( ', ', $out );
+            } else {
+                'No Category.';  //No Taxonomy term defined
+            }
+        break;
+	}
+}
+
+
+/**
+* Edit columns for portfolio post type.
+*/ 
 add_filter('manage_edit-if_portfolio_images_columns', 'portfolio_edit_columns');
 add_action('manage_if_portfolio_images_posts_custom_column',  'portfolio_columns_display', 10, 2);
 

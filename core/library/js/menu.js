@@ -12,7 +12,7 @@ jQuery(document).ready(function($){
 	$("#portfolio_wrap .portfolio_caption").css("opacity", 0);
 	
 	$("#portfolio_wrap a").hover(function(){
-		$(this).children("img").fadeTo("fast", 0.3);
+		$(this).children("img").fadeTo("fast", 0.6);
 		
 		$(this).children(".portfolio_caption").fadeTo("fast", 1.0);
 		
