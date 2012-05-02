@@ -316,7 +316,7 @@ function slides_columns_display($slides_columns, $post_id){
 	global $post;
 	$cat = get_the_terms($post->ID, 'slide_categories');
 	
-    switch ($portfolio_columns)
+    switch ($slides_columns)
     {
         case "image":
         	$images = get_post_meta($post->ID, 'slider_image' , true);
