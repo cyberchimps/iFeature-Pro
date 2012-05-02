@@ -109,7 +109,7 @@ $options
 			->close_outersection()
 	->section("Header")
 		->open_outersection()
-			->section_order("header_section_order", "Drag & Drop Header Elements", array('options' => array("ifeature_header_content" => "Logo + Icons", "ifeature_sitename_contact" => "Logo + Contact", "ifeature_description_icons" => "Description + Icons", "ifeature_logo_menu" => "Logo + Menu", "ifeature_logo_Description" => "Logo + Description", "ifeature_banner" => "Banner", "ifeature_icons" => "Icons", "ifeature_custom_header_element" => "Custom", "synapse_navigation" => "iMenu", "ifeature_sitename_register" => "Logo + Login"), 'default' => 'ifeature_header_content,synapse_navigation'))
+			->section_order("header_section_order", "Drag & Drop Header Elements", array('options' => array("ifeature_header_content" => "Logo + Icons", "ifeature_sitename_contact" => "Logo + Contact", "ifeature_description_icons" => "Description + Icons", "ifeature_logo_menu" => "Logo + Menu", "ifeature_logo_Description" => "Logo + Description", "ifeature_banner" => "Banner", "ifeature_subheader" => "Subheader", "ifeature_icons" => "Icons", "ifeature_custom_header_element" => "Custom", "synapse_navigation" => "iMenu", "ifeature_sitename_register" => "Logo + Login"), 'default' => 'ifeature_header_content,synapse_navigation'))
 			->textarea($themeslug."_header_contact", "Contact Information")
 			->textarea($themeslug."_custom_header_element", "Custom HTML")
 		->close_outersection()

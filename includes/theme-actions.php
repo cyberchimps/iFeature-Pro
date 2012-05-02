@@ -346,38 +346,6 @@ function ifeature_logo_description_content() {
 <?php
 }
 
-/**
-* Logo/Description
-*
-* @since 3.0
-*/
-function ifeature_logo_description_content() {
-?>
-	<div class="container">
-		<div class="row">
-		
-			<div class="seven columns">
-				
-			<!-- Begin @Core header sitename hook -->
-					<?php synapse_header_sitename(); ?> 
-			<!-- End @Core header sitename hook -->
-			
-				
-			</div>	
-			
-			<div class="five columns" style="text-align: right;">
-			
-			<!-- Begin @Core header description hook -->
-				<?php synapse_header_site_description(); ?> 
-			<!-- End @Core header description hook -->
-						
-			</div>	
-		</div><!--end row-->
-	</div>	
-
-<?php
-}
-
 
 /**
 * Subheader
