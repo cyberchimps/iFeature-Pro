@@ -25,36 +25,28 @@ global $options, $themeslug, $themename, $themenamefull;
 $options = new ClassyOptions($themename, $themenamefull." Options");
 
 $carouselterms2 = get_terms('carousel_categories', 'hide_empty=0');
-
-	$customcarousel = array();
-                                    
+	$customcarousel = array();                          
     	foreach($carouselterms2 as $carouselterm) {
-
         	$customcarousel[$carouselterm->slug] = $carouselterm->name;
-
+        }
+        
+$portfolioterms2 = get_terms('portfolio_categories', 'hide_empty=0');
+	$customportfolio = array();                                   
+    	foreach($portfolioterms2 as $portfolioterm) {
+        	$customportfolio[$portfolioterm->slug] = $portfolioterm->name;
         }
 
 $customterms2 = get_terms('slide_categories', 'hide_empty=0');
-
-	$customslider = array();
-                                    
+	$customslider = array();                                    
     	foreach($customterms2 as $customterm) {
-
         	$customslider[$customterm->slug] = $customterm->name;
-
         }
-
 $terms2 = get_terms('category', 'hide_empty=0');
-
-	$blogoptions = array();
-                                    
+	$blogoptions = array();                                  
 	$blogoptions['all'] = "All";
-
     	foreach($terms2 as $term) {
-
         	$blogoptions[$term->slug] = $term->name;
-
-        }
+		}
 
 
 $options
@@ -172,7 +164,7 @@ TEMPLATE_URL . '/images/social/thumbs/icons-default.png' ), 'default' => 'defaul
 		->subsection_end()
 	->section("Blog")
 		->open_outersection()
-			->section_order($themeslug."_blog_section_order", "Drag & Drop Blog Elements", array('options' => array("synapse_index" => "Post Page", "synapse_blog_slider" => "iFeature Slider",  "synapse_callout_section" => "Callout Section", "synapse_twitterbar_section" => "Twitter Bar", "synapse_index_carousel_section" => "Carousel", "synapse_box_section" => "Boxes", "synapse_blog_nivoslider" => "NivoSlider"), "default" => 'synapse_blog_slider,synapse_index'))
+			->section_order($themeslug."_blog_section_order", "Drag & Drop Blog Elements", array('options' => array("synapse_index" => "Post Page", "synapse_blog_slider" => "iFeature Slider",  "synapse_callout_section" => "Callout Section", "synapse_twitterbar_section" => "Twitter Bar", "synapse_index_carousel_section" => "Carousel", "synapse_portfolio_element" => "Portfolio", "synapse_box_section" => "Boxes", "synapse_blog_nivoslider" => "NivoSlider"), "default" => 'synapse_blog_slider,synapse_index'))
 		->close_outersection()
 		->subsection("Blog Options")
 			->images($themeslug."_blog_sidebar", "Sidebar Options", array( 'options' => array("left" => TEMPLATE_URL . '/images/options/left.png', "two-right" => TEMPLATE_URL . '/images/options/tworight.png', "right-left" => TEMPLATE_URL . '/images/options/rightleft.png', "none" => TEMPLATE_URL . '/images/options/none.png', "right" => TEMPLATE_URL . '/images/options/right.png'), 'default' => 'right'))
@@ -236,6 +228,26 @@ TEMPLATE_URL . '/images/social/thumbs/icons-default.png' ), 'default' => 'defaul
 		->subsection("Twtterbar Options")
 			->text($themeslug."_blog_twitter", "Enter your Twitter handle")
 			->checkbox($themeslug."_blog_twitter_reply", "Show @ Replies")
+		->subsection_end()
+		->subsection("Portfolio Options")
+			->select($themeslug."_portfolio_number", "Images Per Row", array( 'options' => array("key1" => "Three (default)", "key2" => "Two", "key3" => "Four")))
+			->select($themeslug.'_portfolio_category', 'Carousel Category', array( 'options' => $customportfolio ))
+			->checkbox($themeslug."_portfolio_title_toggle", "Portfolio Title")
+			->text($themeslug."_portfolio_title", "Title", array('default' => 'Portfolio'))
+		->subsection_end()
+		->subsection("Product Options")
+			->select($themeslug."_blog_product_text_align", "Product Layout", array( 'options' => array("key1" => "Text Left - Image Right", "key2" => "Text Right - Image Left")))
+			->text($themeslug."_blog_product_title", "Product Title", array('default' =>'Product'))
+			->textarea($themeslug."_blog_product_text", "Product Text", array('default' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. '))
+			->select($themeslug."_blog_product_type", "Media Type", array( 'options' => array("key1" => "Image", "key2" => "Video")))
+			->upload($themeslug."_blog_product_image", "Product Image", array('default' => array('url' => TEMPLATE_URL . '/images/pro/product.jpg')))
+			->textarea($themeslug."_blog_product_video", "Video Embed")
+			->checkbox($themeslug."_blog_product_link_toggle", "Product Link", array('default' => true))
+			->text($themeslug."_blog_product_link_url", "Link", array('default' => home_url()))
+			->text($themeslug."_blog_product_link_text", "Text", array('default' => 'Buy Now'))
+		->subsection_end()
+		->subsection("Custom HTML")
+			->textarea($themeslug."_blog_custom_html", "Enter your Custom HTML")
 		->subsection_end()
 		->subsection("Carousel Options")
 			->select($themeslug.'_carousel_category', 'Select the carousel category', array( 'options' => $customcarousel ))
