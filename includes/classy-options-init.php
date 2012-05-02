@@ -118,7 +118,7 @@ $options
 				->text($themeslug."_banner_url", "Banner URL", array('default' => home_url()))
 			->subsection_end()
 			->subsection("Header Options")
-			->checkbox($themeslug."_subheader", "Subheader")
+			->checkbox($themeslug."_subheader", "Header Bar")
 			->upload($themeslug."_logo", "Custom Logo")
 			->upload($themeslug."_favicon", "Custom Favicon")
 			->upload($themeslug."_apple_touch", "Apple Touch Icon", array('default' => array('url' => TEMPLATE_URL . '/images/apple-icon.png')))
