@@ -208,7 +208,7 @@ header {margin-top: 15px;}
 	-moz-border-radius: 4px;
 	box-shadow: none;
 	background: #fff;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	margin-left: 0px;
 }
 
@@ -227,11 +227,11 @@ header {margin-top: 15px;}
 }
 
 #postbar {
-	margin: -34px 0px 0px 0px;
+	margin: -44px 0px 0px 0px;
 	width: 99.7%;
 	border-top: 1px #e5e5e5 solid;
-	border-left: 1px solid #CCC;
-	border-right: 1px solid #BBB;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
 	border-radius: 0px 0px 4px 4px;
 	-moz-border-radius: 0px 0px 4px 4px;
 	position: absolute;
@@ -273,7 +273,6 @@ header {margin-top: 15px;}
 
 .prev-posts { float: right;padding: 5px 0 5px 0; }
 
-
 .pagnext-posts {float: left;padding: 5px;margin-bottom: 10px;}
 
 .pagprev-posts { float: right;padding: 5px;margin-bottom: 10px; }
@@ -301,7 +300,7 @@ ol, ul {list-style-position: inside;margin-left: 21px;}
 
 .widget-container {
 	color: #222;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	padding: 0px 10px 10px 10px;
 	border: 1px solid #ccc;
 	border-radius: 4px;
