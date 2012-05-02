@@ -346,6 +346,7 @@ ol, ul {list-style-position: inside;margin-left: 21px;}
 #footer {
 	background: #222;
 	border-top: 2px solid #ccc;
+	margin-top: 10px;
 }
 
 .footer-widgets {

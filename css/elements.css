@@ -262,7 +262,7 @@ a.nivo-prevNav {
 	border-radius: 0px 0px 4px 4px;
 	-moz-border-radius: 0px 0px 4px 4px;
 	margin: auto;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	background: #f8f8f8; /* Old browsers */
 	background: -moz-linear-gradient(top,  #f8f8f8 0%, #ededed 40%, #dddddd 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f8f8f8), color-stop(40%,#ededed), color-stop(100%,#dddddd)); /* Chrome,Safari4+ */
@@ -277,6 +277,8 @@ a.nivo-prevNav {
 /*============================*/
 /*===== Carousel Styles ======*/
 /*============================*/
+
+
 /* Elastislide Style */
 .es-carousel-wrapper{
 	box-shadow:none;
@@ -293,7 +295,7 @@ a.nivo-prevNav {
 	-webkit-border-radius: 4px;
 	border-radius: 4px;
 	position:relative;
-	margin-bottom: 10px;
+	margin-top: 10px;
 	margin-bottom: 10px;
 }
 .es-carousel{
@@ -350,7 +352,8 @@ a.nivo-prevNav {
 	border-radius: 4px;
 	-moz-border-radius: 4px;
 	box-shadow: none;
-	margin-bottom: 15px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 	background: #ffffff;
 	background: -moz-linear-gradient(top,  #ffffff 0%, #f9f9f9 75%, #f4f4f4 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(75%,#f9f9f9), color-stop(100%,#f4f4f4));
