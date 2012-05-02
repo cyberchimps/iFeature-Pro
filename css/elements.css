@@ -609,6 +609,13 @@ div.timer {display: none !important;}
 
 #product_media {padding: 20px 0 20px 0;}
 
+#productbg {
+		border-bottom: 1px solid #E1E1E1;
+		background: #bbb url(../images/sliderbg.png);
+		margin-bottom: 20px;
+}
+
+
 
 /*============================*/
 /*====== Portfolio Element =====*/
