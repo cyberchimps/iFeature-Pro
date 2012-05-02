@@ -15,7 +15,7 @@ Version 4.5 (05-02-12)
 -Removed some additional unused images.
 -Mobile Menu now works in phone landscape mode. 
 -Fixed bug with broken "next" link in pagination.
--Added French, Swedish and Russian language files.
+-Added French, Swedish, Spanish, Persian and Russian language files.
 -Updated jquery.easing for better third-party plugin compatibility.
 -Option to crop featured images.
 
