@@ -49,6 +49,11 @@ background: #3279BB;
 color:#fff;
 }
 
+#subheader {
+	background:url(../images/subheaderdark.png);
+
+}
+
 
 #register {text-align: right; list-style: none;}
 
