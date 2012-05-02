@@ -75,6 +75,7 @@ function synapse_nivoslider_content() {
 		$navautohide = $options->get($themeslug.'_nivo_disable_nav_autohide');
 	}
 		
+
 echo "<div id='slider-wrapper'>";
 
 /* End row riv variables. */	
@@ -552,11 +553,18 @@ function synapse_slider_content() {
 		$navigationstyle = $options->get($themeslug.'_slider_nav');
 	}
 
-	
+		
 /* Row div variable. */	
 if ($size == 'key2' OR $size == '0' ) {
 	$openrow = '<div class="row">';
 	$closerow = '</div>';
+}
+
+if ($size == 'key1' OR $size == '1' ) {
+	echo '<style type="text/css">';
+	echo "div.orbit-wrapper {margin-top: 0px !important;}";
+	echo '</style>';
+
 }
 
 else {
