@@ -346,6 +346,40 @@ function ifeature_logo_description_content() {
 <?php
 }
 
+/**
+* Subheader
+*
+* @since 3.0
+*/
+function ifeature_description_icons_content() {
+?>
+	<div class="container">
+		<div class="row">
+		
+			<div class="five columns">
+				
+			<!-- Begin @Core header description hook -->
+				<?php synapse_header_site_description(); ?> 
+			<!-- End @Core header description hook -->
+			
+				
+			</div>	
+			
+			<div class="seven columns">
+			
+			<!-- Begin @Core header social icon hook -->
+				<?php synapse_header_social_icons(); ?> 
+			<!-- End @Core header contact social icon hook -->	
+						
+			</div>	
+		</div><!--end row-->
+	</div>
+</div>	
+
+<?php
+}
+
+
 
 /**
 * Subheader

@@ -2,6 +2,10 @@ iFeature Pro Changelog
 
 ****************************
 
+Version 4.5.1 (05-03-12)
+-Fixed fatal error related to Description + Icons header element. 
+-Responsive videos now an option.
+
 Version 4.5 (05-02-12)
 -Added Portfolio Element.
 -Added Product Element.
