@@ -1,234 +1,187 @@
+#Copyright (C) 2011 
 msgid ""
 msgstr ""
 "Project-Id-Version: Core 1.0\n"
 "Report-Msgid-Bugs-To: http://cyberchimps.com/forum\n"
 "POT-Creation-Date: 10-17-11\n"
-"PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Poedit-Language: \n"
-"X-Poedit-Country: \n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
-"X-Poedit-Basepath: \n"
-"X-Poedit-Bookmarks: \n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Textdomain-Support: yes\n"
+"PO-Revision-Date: \n"
+"Last-Translator: max noviello <maxnoviello@gmail.com>\n"
+"Language-Team: \n"
+"X-Poedit-Language: Italian\n"
+"X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: .\n"
-"X-Textdomain-Support: yes"
 
+# @ core
 #: core/actions/archive-actions.php:36
-#@ core
 msgid "Archive for the &#8216;"
-msgstr "Arkiv för &#8216;"
+msgstr "Archivi per &#8216;"
 
+# @ core
 #: core/actions/archive-actions.php:36
-#@ core
 msgid "&#8217; Category:"
-msgstr "Arkiv för &#8216;"
+msgstr "&#8217; Categorie:"
 
+# @ core
 #: core/actions/archive-actions.php:39
-#@ core
 msgid "Posts Tagged &#8216;"
-msgstr "Inlägg taggade med &#8216;"
+msgstr "Post Taggati &#8216;"
 
+# @ core
 #: core/actions/archive-actions.php:39
-#@ core
 msgid "&#8217;:"
-msgstr "&#8217;:"
-
-#: core/actions/archive-actions.php:42
-#: core/actions/archive-actions.php:45
-#@ core
-msgid "Archive for"
-msgstr "Arkiv för"
-
-#: core/actions/archive-actions.php:48
-#@ core
-msgid "Archive for:"
-msgstr "Arkiv för"
-
-#: core/actions/archive-actions.php:51
-#@ core
-msgid "Author Archive:"
-msgstr "Författararkiv:"
-
-#: core/actions/archive-actions.php:54
-#@ core
-msgid "Blog Archives:"
-msgstr "Författararkiv:"
-
-#: core/actions/comments-actions.php:49
-#@ core
-msgid "No Responses"
-msgstr "Inga kommentarer"
-
-#: core/actions/comments-actions.php:49
-#@ core
-msgid "One Response"
-msgstr "En kommentar"
-
-#: core/actions/comments-actions.php:49
-#@ core
-msgid "% Responses"
 msgstr ""
 
+# @ core
+#: core/actions/archive-actions.php:42
+#: core/actions/archive-actions.php:45
+msgid "Archive for"
+msgstr "Archivio per"
+
+# @ core
+#: core/actions/archive-actions.php:48
+msgid "Archive for:"
+msgstr "Archivio per:"
+
+# @ core
+#: core/actions/archive-actions.php:51
+msgid "Author Archive:"
+msgstr "Archivio dell'autore:"
+
+# @ core
+#: core/actions/archive-actions.php:54
+msgid "Blog Archives:"
+msgstr "Archivio del blog:"
+
+# @ core
+#: core/actions/comments-actions.php:49
+msgid "No Responses"
+msgstr "Nessuna Risposta"
+
+# @ core
+#: core/actions/comments-actions.php:49
+msgid "One Response"
+msgstr "Una risposta"
+
+# @ core
+#: core/actions/comments-actions.php:49
+msgid "% Responses"
+msgstr "% Risposte"
+
+# @ core
 #: core/actions/comments-actions.php:88
-#@ core
 msgid "You must be"
-msgstr "Du måste vara"
+msgstr "Tu devi essere"
 
+# @ core
 #: core/actions/comments-actions.php:88
-#@ core
 msgid "logged in"
-msgstr "inloggad"
+msgstr "loggato"
 
+# @ core
 #: core/actions/comments-actions.php:88
-#@ ifeture
 msgid "to post a comment."
-msgstr "för att kommentera."
+msgstr "per scrivere un commento"
 
+# @ core
 #: core/actions/footer-actions.php:39
-#@ core
 msgid "Recent Posts"
-msgstr "Nya inlägg"
+msgstr "Articoli Recenti"
 
+# @ core
+# @ core
 #: core/actions/footer-actions.php:46
 #: sidebar.php:26
-#@ core
 msgid "Archives"
-msgstr "Arkiv"
+msgstr "Archivi"
 
+# @ core
 #: core/actions/footer-actions.php:53
-#@ core
 msgid "Links"
-msgstr "Länkar"
+msgstr "Links"
 
+# @ core
 #: core/actions/footer-actions.php:60
 #: core/actions/footer-actions.php:64
 #: sidebar.php:40
 #: sidebar.php:44
-#@ core
 msgid "WordPress"
-msgstr "WordPress"
+msgstr ""
 
+# @ core
 #: core/actions/footer-actions.php:64
 #: sidebar.php:44
-#@ core
 msgid "http://wordpress.org/"
-msgstr "http://wordpress.org/"
+msgstr ""
 
+# @ core
 #: core/actions/footer-actions.php:64
 #: sidebar.php:44
-#@ core
 msgid "Powered by WordPress, state-of-the-art semantic personal publishing platform."
-msgstr "Powered by WordPress, state-of-the-art semantic personal publishing platform."
+msgstr "Powered by Wordpress"
 
+# @ core
 #: core/actions/global-actions.php:43
-#@ core
 msgid "Published on"
-msgstr "Publicerad den"
+msgstr "Pubblicato il"
 
+# @ core
 #: core/actions/global-actions.php:44
-#@ core
 msgid "by"
-msgstr "av"
+msgstr "da"
 
+# @ core
 #: core/actions/global-actions.php:45
-#@ core
 msgid "in"
-msgstr "i"
+msgstr "in"
 
+# @ core
 #: core/actions/global-actions.php:70
-#@ core
 msgid "No Comments &#187;"
-msgstr "Inga kommentarer &#187;"
+msgstr "Nessun Commento &#187;"
 
+# @ core
 #: core/actions/global-actions.php:70
-#@ core
 msgid "1 Comment &#187;"
-msgstr "En kommentar &#187;"
+msgstr "Un commento &#187;"
 
+# @ core
 #: core/actions/global-actions.php:70
-#@ core
 msgid "% Comments &#187;"
-msgstr "% kommentarer &#187;"
+msgstr "% commenti &#187;"
 
-#: core/actions/global-actions.php:86
-#@ core
-msgid "Read more…"
-msgstr "Läs mer…"
-
-#: core/actions/global-actions.php:187
-#@ core
-msgid "Tags: "
-msgstr "Taggar: "
-
-#: core/actions/pagination-actions.php:49
-#: core/core-functions.php:241
-#@ core
-#@ default
+# @ core
+#: core/actions/index-actions.php:276
 msgid "Page"
-msgstr "Sida"
+msgstr "Pagina"
 
-#: core/actions/pagination-actions.php:49
-#@ core
-msgid "of" 
-msgstr "av"
-
-#: core/actions/pagination-actions.php:50
-#@ core
-msgid "&laquo; First"
-msgstr "&laquo; Första"
-
-#: core/actions/pagination-actions.php:51
-#@ core
-msgid "&lsaquo; Previous"
-msgstr "&lsaquo; Föregående"
-
-#: core/actions/pagination-actions.php:61
-#@ core
-msgid "Next &rsaquo;"
-msgstr "Nästa &rsaquo;"
-
-#: core/actions/pagination-actions.php:62
-#@ core
-msgid "Last &raquo;"
-msgstr "Sista &raquo;"
-
-#: core/actions/pagination-actions.php:99
-#@ core
-msgid "Pages:"
-msgstr "Sidor:"
-
-#: searchform.php:15
-#@ core
-msgid "Search"
-msgstr "Sök"
-
+# @ core
 #: sidebar.php:19
-#@ core
 msgid "Pages"
-msgstr "Sidor:"
+msgstr "Pagine"
 
+# @ core
 #: sidebar.php:33
-#@ core
 msgid "Categories"
-msgstr "Kategorier"
+msgstr "Categorie"
 
+# @ core
 #: sidebar.php:50
-#@ core
 msgid "Subscribe"
-msgstr "Prenumerera"
+msgstr "Iscriviti"
 
+# @ core
 #: sidebar.php:52
-#@ core
 msgid "Entries (RSS)"
-msgstr "RSS-flöde"
+msgstr "Flusso RSS delle pubblicazioni"
 
+# @ core
 #: sidebar.php:53
-#@ core
 msgid "Comments (RSS)"
-msgstr "Kommentarer (RSS)"
+msgstr "Commenti (RSS)"
