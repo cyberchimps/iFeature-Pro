@@ -2,10 +2,11 @@ iFeature Pro Changelog
 
 ****************************
 
-Version 4.5.2 (05-08-12)
+Version 4.5.2 (05-11-12)
 -Added missing translation wrapper to pagination function.
 -Added Turkish amd Italian language files.
 -Updated Croatian and Swedish language files. 
+-Fix for responsive video option. 
 
 Version 4.5.1 (05-03-12)
 -Fixed fatal error related to Description + Icons header element. 
