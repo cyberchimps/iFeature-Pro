@@ -68,6 +68,8 @@ color:#fff;
 
 #sidebar {*margin-top: 15px;margin-top:10px;}
 
+#sidebar_left.four.columns{margin-top:10px !important}
+
 #container {
 	margin-left: auto;
 	margin-right: auto;

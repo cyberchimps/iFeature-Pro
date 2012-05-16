@@ -8,6 +8,7 @@ Version 4.5.2 (05-15-12)
 -Updated Croatian and Swedish language files. 
 -Fix for responsive video option. 
 -Removed unecessary JS and CSS references. 
+-General CSS tweaks.
 
 Version 4.5.1 (05-03-12)
 -Fixed fatal error related to Description + Icons header element. 
