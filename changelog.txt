@@ -2,6 +2,9 @@ iFeature Pro Changelog
 
 ****************************
 
+Version 4.5.3 (05-22-12)
+-Added Polish language files.
+
 Version 4.5.2 (05-15-12)
 -Added missing translation wrapper to pagination function.
 -Added Turkish amd Italian language files.
