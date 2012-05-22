@@ -63,8 +63,8 @@ function initialize_the_meta_boxes() {
 	$mb = new Chimps_Metabox('post_slide_options', $themenamefull.' Slider Options', array('pages' => array('post')));
 	$mb
 		->tab("Slider Options")
-			->single_image('slider_image', 'Slider Image', '')
-			->text('slider_text', 'Slider Text', 'Enter your slider text here')
+			->single_image($themeslug.'_slider_image', 'Slider Image', '')
+			->text($themeslug.'_slider_text', 'Slider Text', 'Enter your slider text here')			
 			->checkbox('slider_hidetitle', 'Title Bar', '', array('std' => 'on'))
 			->single_image('slider_custom_thumb', 'Custom Thumbnail', 'Use the image uploader to upload a custom navigation thumbnail')
 			->sliderhelp('', 'Need Help?', '')
@@ -94,9 +94,9 @@ function initialize_the_meta_boxes() {
 	$mb = new Chimps_Metabox('pages', $themenamefull.' Page Options', array('pages' => array('page')));
 	$mb
 		->tab("Page Options")
-			->image_select('page_sidebar', 'Select Page Layout', '',  array('options' => array(TEMPLATE_URL . '/images/options/right.png', TEMPLATE_URL . '/images/options/tworight.png', TEMPLATE_URL . '/images/options/rightleft.png', TEMPLATE_URL . '/images/options/none.png', TEMPLATE_URL . '/images/options/left.png')))
-			->checkbox('hide_page_title', 'Page Title', '', array('std' => 'on'))
-			->section_order('page_section_order', 'Page Elements', '', array('options' => array(
+			->image_select($themeslug.'_page_sidebar', 'Select Page Layout', '',  array('options' => array(TEMPLATE_URL . '/images/options/right.png', TEMPLATE_URL . '/images/options/tworight.png', TEMPLATE_URL . '/images/options/rightleft.png', TEMPLATE_URL . '/images/options/none.png', TEMPLATE_URL . '/images/options/left.png')))
+			->checkbox($themeslug.'_hide_page_title', 'Page Title', '', array('std' => 'on'))
+			->section_order($themeslug.'_page_section_order', 'Page Elements', '', array('options' => array(
 					'breadcrumbs' => 'Breadcrumbs',
 					'page_slider' => 'iFeature Slider',
 					'callout_section' => 'Callout',
@@ -143,15 +143,15 @@ function initialize_the_meta_boxes() {
 			->checkbox('nivo_enable_wordthumb', 'WordThumb Image Resizing', '', array('std' => 'off'))
 			->sliderhelp('', 'Need Help?', '')
 		->tab("Product Options")
-			->select('product_text_align', 'Text Align', '', array('options' => array('Left', 'Right')) )
-			->text('product_title', 'Product Title', '', array('std' => 'Product'))
-			->textarea('product_text', 'Proudct Text', '', array('std' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. '))
-			->select('product_type', 'Media Type', '', array('options' => array('Image', 'Video')) )
-			->single_image('product_image', 'Product Image', '', array('std' =>  TEMPLATE_URL . '/images/pro/product.jpg'))
-			->textarea('product_video', 'Video Embed', '')
-			->checkbox('product_link_toggle', 'Product Link', '', array('std' => 'on'))
-			->text('product_link_url', 'Link URL', '', array('std' => home_url()))
-			->text('product_link_text', 'Link Text', '', array('std' => 'Buy Now'))
+			->select($themeslug.'_product_text_align', 'Text Align', '', array('options' => array('Left', 'Right')) )
+			->text($themeslug.'_product_title', 'Product Title', '', array('std' => 'Product'))
+			->textarea($themeslug.'_product_text', 'Proudct Text', '', array('std' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. '))
+			->select($themeslug.'_product_type', 'Media Type', '', array('options' => array('Image', 'Video')) )
+			->single_image($themeslug.'_product_image', 'Product Image', '', array('std' =>  TEMPLATE_URL . '/images/pro/product.jpg'))
+			->textarea($themeslug.'_product_video', 'Video Embed', '')
+			->checkbox($themeslug.'_product_link_toggle', 'Product Link', '', array('std' => 'on'))
+			->text($themeslug.'_product_link_url', 'Link URL', '', array('std' => home_url()))
+			->text($themeslug.'_product_link_text', 'Link Text', '', array('std' => 'Buy Now'))
 		->tab("Callout Options")
 			->text('callout_title', 'Callout Title', '')
 			->textarea('callout_text', 'Callout Text', '')
@@ -177,12 +177,12 @@ function initialize_the_meta_boxes() {
 		->tab("Custom HTML")
 			->textarea('custom_html', 'Enter your custom HTML', '')
 		->tab("Twitter Options")
-			->text('twitter_handle', 'Twitter Handle', 'Enter your Twitter handle if using the Twitter bar')
-			->checkbox('twitter_reply', 'Show @ Replies', '')
+			->text($themeslug.'_twitter_handle', 'Twitter Handle', 'Enter your Twitter handle if using the Twitter bar')
+			->checkbox($themeslug.'_twitter_reply', 'Show @ Replies', '')
 		->tab("SEO Options")
-			->text('seo_title', 'SEO Title', '')
-			->textarea('seo_description', 'SEO Description', '')
-			->textarea('seo_keywords', 'SEO Keywords', '')
+			->text($themeslug.'_seo_title', 'SEO Title', '')
+			->textarea($themeslug.'_seo_description', 'SEO Description', '')
+			->textarea($themeslug.'_seo_keywords', 'SEO Keywords', '')
 			->pagehelp('', 'Need help?', '')
 		->end();
 
