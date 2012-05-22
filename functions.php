@@ -22,7 +22,7 @@
 * Basic theme setup.
 */ 
 function if_theme_setup() {
-	global $content_width, $theme_version;
+	global $content_width;
 	if ( ! isset( $content_width ) ) $content_width = 608; //Set content width
 	
 	add_theme_support(
@@ -33,10 +33,9 @@ function if_theme_setup() {
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support('automatic-feed-links');
 	add_editor_style();
+			
+	ifeature_meta_update();
 	
-	if ($theme_version == '' OR $theme_version < '4.5.3' ) {
-		ifeature_meta_update();
-	}
 }
 add_action( 'after_setup_theme', 'if_theme_setup' );
 
