@@ -3,7 +3,9 @@ iFeature Pro Changelog
 ****************************
 
 Version 4.5.3 (05-22-12)
--Added Polish language files.
+-Added prefixes for custom post meta data options found in iFeature (free).
+-Added function to convert previous custom post meta values to new ones.
+-Added Polish and Danish language files.
 
 Version 4.5.2 (05-15-12)
 -Added missing translation wrapper to pagination function.
