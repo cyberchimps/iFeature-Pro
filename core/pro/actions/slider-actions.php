@@ -730,12 +730,12 @@ if ($size == 'key1' OR $size == '1' OR $size == '' ) {
 
 	    	/* Post-specific variables */	
 
-	    	$customimage 		= get_post_meta($post->ID, 'slider_image' , true);  /* Gets slide custom image from page/post meta option */
+	    	$customimage 		= get_post_meta($post->ID, $themeslug.'_slider_image' , true);  /* Gets slide custom image from page/post meta option */
 	    	$customtext 		=  $post->post_content; /* Gets slide caption from custom slide meta option */
 	    	$customcaption      = get_post_meta($post->ID, 'slider_caption' , true);
 	    	$customlink 		= get_post_meta($post->ID, 'slider_url' , true); /* Gets link from custom slide meta option */
 	    	$permalink 			= get_permalink(); /* Gets post URL for blog post slides */
-	   		$blogtext 			= get_post_meta($post->ID, 'slider_text' , true); /* Gets slide caption from post meta option */  		
+	   		$blogtext 			= get_post_meta($post->ID, $themeslug.'_slider_text' , true); /* Gets slide caption from post meta option */  		
 	   		$title				= get_the_title() ; /* Gets slide title from post/custom slide title */
 	   		$hidetitlebar       = get_post_meta($post->ID, 'slider_hidetitle' , true); /* Gets page/post meta option for disabling slide title bar */
 	   		$customsized        = "$root/core/pro/library/wt/wordthumb.php?src=$customimage&a=c&$wordthumb"; /* Gets custom image from page/post meta option, applies wordthumb code  */
