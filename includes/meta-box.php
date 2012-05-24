@@ -84,7 +84,7 @@ function initialize_the_meta_boxes() {
 		->tab("Custom Slide Options")
 			->text('slider_caption', 'Custom Slide Caption', '')
 			->text('slider_url', 'Custom Slide Link', '')
-			->single_image('slider_image', 'Custom Slide Image', '')
+			->single_image($themeslug.'_slider_image', 'Custom Slide Image', '')
 			->checkbox('slider_hidetitle', 'Slide Title Bar', '', array('std' => 'on'))
 			->single_image('slider_custom_thumb', 'Custom Thumbnail', '')
 			->sliderhelp('', 'Need Help?', '')

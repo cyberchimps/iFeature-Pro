@@ -316,13 +316,13 @@ function slides_edit_columns($sides_columns){
     return $slides_columns;
 }
 function slides_columns_display($slides_columns, $post_id){
-	global $post;
+	global $post, $themeslug;
 	$cat = get_the_terms($post->ID, 'slide_categories');
 	
     switch ($slides_columns)
     {
         case "image":
-        	$images = get_post_meta($post->ID, 'slider_image' , true);
+        	$images = get_post_meta($post->ID, $themeslug.'_slider_image' , true);
         	echo '<img src="';
         	echo $images;
         	echo '"style="height: 50px; width: 50px;">';
