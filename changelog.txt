@@ -2,6 +2,10 @@ iFeature Pro Changelog
 
 ****************************
 
+Version 4.5.5 (05-31-12)
+-Added Hindi language files. 
+-Updated Croatian language files.
+
 Version 4.5.4 (05-23-12)
 -Fix for custom slides related to 4.5.3 update.
 -Fixed PHP error with meta description.
