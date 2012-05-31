@@ -3,6 +3,7 @@ iFeature Pro Changelog
 ****************************
 
 Version 4.5.5 (05-31-12)
+-JS fix for Page Options.
 -Added Hindi language files. 
 -Updated Croatian language files.
 
