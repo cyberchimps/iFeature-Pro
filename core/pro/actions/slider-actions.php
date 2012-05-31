@@ -642,7 +642,7 @@ if ($size == 'key1' OR $size == '1' OR $size == '' ) {
 	}
 	elseif ($captionstyle == 'key3' OR $captionstyle == '2') { ?>
 		<style type="text/css">
-		.orbit-caption {position: relative !important; float: left; height: <?php echo $height ?>px; width: 30% !important; top: -375px;}
+		.orbit-caption {position: relative !important; float: left; height: <?php echo $height ?>px; width: 30% !important; top: -375px; margin-bottom:-<?php echo $height ?>px;}
 		</style><?php
 	}    
 	elseif ($captionstyle == '0') { ?>

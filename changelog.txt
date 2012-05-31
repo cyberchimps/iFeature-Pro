@@ -6,6 +6,7 @@ Version 4.5.5 (05-31-12)
 -JS fix for Page Options.
 -Added Hindi language files. 
 -Updated Croatian language files.
+-Fix for left/right slider captions.
 
 Version 4.5.4 (05-23-12)
 -Fix for custom slides related to 4.5.3 update.
