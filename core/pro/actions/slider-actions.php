@@ -374,7 +374,7 @@ echo "<div id='slider-wrapper'>";
 	    $out .= "<a href='$link'>	
 	    				<img src='$image' height='$height' width='$csWidth' title='$titlevar' rel='$thumbnail' alt='Slider' class='nivoimg' />
 	    					<span id='caption$i' class='nivo-html-caption'>
-                				<span class='caption_title'>$title</span> <br /> <span class='caption_text'>$text</span>                			
+                				<div class='caption_title'>$title</div> <br /> <div class='caption_text'>$text</div>                			
                 			</span>
 	    				</a>
 	    			";
@@ -637,7 +637,7 @@ if ($size == 'key1' OR $size == '1' OR $size == '' ) {
 
 	if ($captionstyle == 'key2' OR $captionstyle == '3') { ?>
 		<style type="text/css">
-		.orbit-caption {height: <?php echo $height ?>px; width: 30% !important;}
+		.orbit-caption {height: <?php echo $height ?>px; width: 30% !important; margin-bottom: 1px; right: -1px !important;}
 		</style> <?php
 	}
 	elseif ($captionstyle == 'key3' OR $captionstyle == '2') { ?>
@@ -830,7 +830,7 @@ if ($size == 'key1' OR $size == '1' OR $size == '' ) {
 	    $out .= "
 	    	<a href='$link' $caption data-thumb='$thumbnail'>
 	    				<img src='$image'  alt='Slider' />
-	    						<span class='orbit-caption' id='htmlCaption$i'><span class='caption_title'>$title</span> <br /> <span class='caption_text'>$text</span></span>
+	    						<span class='orbit-caption' id='htmlCaption$i'><div class='caption_title'>$title</div> <br /> <div class='caption_text'>$text</div></span>
 	    				</a>
 	  	    	";
 
