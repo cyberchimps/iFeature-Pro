@@ -142,7 +142,7 @@ msgstr "u"
 msgid "Pages"
 msgstr "Stranice"
 
-#: functions.php:397
+#: functions.php:400
 #: sidebar.php:33
 #@ default
 #@ core
@@ -193,7 +193,7 @@ msgstr "% komentara"
 #: core/actions/global-actions.php:187
 #@ core
 msgid "Tags: "
-msgstr ""
+msgstr "Oznake: "
 
 #: core/actions/pagination-actions.php:49
 #: core/core-functions.php:244
@@ -342,7 +342,7 @@ msgstr "%1$s u %2$s"
 #: core/core-functions.php:135
 #@ core
 msgid "(Edit)"
-msgstr ""
+msgstr "(Uredi)"
 
 #: core/widgets/tabbed-widget.php:14
 #@ ifeature
@@ -386,63 +386,63 @@ msgstr ""
 msgid "Tag Title:"
 msgstr ""
 
-#: functions.php:207
+#: functions.php:210
 #@ default
 msgid "iFeature Slides"
 msgstr ""
 
-#: functions.php:208
+#: functions.php:211
 #@ default
 msgid "Slides"
 msgstr ""
 
-#: functions.php:223
+#: functions.php:226
 #@ default
 msgid "Carousel"
 msgstr ""
 
-#: functions.php:224
+#: functions.php:227
 #@ default
 msgid "Posts"
 msgstr ""
 
-#: functions.php:395
+#: functions.php:398
 #@ default
 msgctxt "column name"
 msgid "Title"
 msgstr ""
 
-#: functions.php:396
+#: functions.php:399
 #@ default
 msgid "Image"
 msgstr ""
 
-#: functions.php:398
+#: functions.php:401
 #@ default
 msgid "Author"
 msgstr ""
 
-#: functions.php:399
+#: functions.php:402
 #@ default
 msgid "Date"
 msgstr ""
 
-#: functions.php:426
+#: functions.php:429
 #@ default
 msgid "No Category."
 msgstr ""
 
-#: functions.php:507
+#: functions.php:510
 #@ default
 msgid "Header Menu"
 msgstr ""
 
-#: functions.php:507
+#: functions.php:510
 #@ default
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:507
+#: functions.php:510
 #@ default
 msgid "Sub Menu"
 msgstr ""
@@ -456,4 +456,9 @@ msgstr "Traži..."
 #@ core
 msgid "Comments (RSS)"
 msgstr ""
+
+#: core/actions/pagination-actions.php:49
+#@ core
+msgid "of"
+msgstr "od"
 
