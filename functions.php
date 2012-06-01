@@ -654,10 +654,12 @@ add_action('admin_init', 'presstrends');
 
 function ifeature_meta_update() {
 	global $theme_version;
-	// Get last used theme version
-	$theme_version = (get_option('if_theme_version')) ? get_option('if_theme_version') : '0';
 	
-	if ( $theme_version < '4.5.3') {
+	// Get last used theme version
+	$prev_theme_version = (get_option('if_theme_version')) ? get_option('if_theme_version') : 0;
+	
+	if ( $prev_theme_version < '4.5.3') {
+
 		// Update post meta_key values
 		$prev_post_meta_keys = array(
 			'slider_image' => 'if_slider_image',
@@ -692,9 +694,11 @@ function ifeature_meta_update() {
 		foreach ($prev_page_meta_keys as $prev_key => $updated_key) {
 			ifeature_update_meta_key('post', $updated_key, $prev_key);
 		}
-
+	}
+	
+	if ( $prev_theme_version < $theme_version) {
 		// Set new theme version
-		update_option('if_theme_version', '4.5.5');
+		update_option('if_theme_version', $theme_version);
 	}
 }
 
