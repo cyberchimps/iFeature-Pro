@@ -21,11 +21,6 @@
 add_action( 'synapse_twitterbar_section', 'synapse_twitterbar_section_content' );
 
 /**
-* Synapse Twitterbar actions
-*/
-add_action( 'synapse_twitterbar_section', 'synapse_twitterbar_section_content' );
-
-/**
 * Retrieves the Twitterbar options
 */
 function synapse_twitterbar_section_content() {
