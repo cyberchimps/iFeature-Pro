@@ -13,6 +13,7 @@
 	$reorder = $options->get($themeslug.'_blog_section_order');
 	$slidersize = $options->get($themeslug.'_slider_size');
 	$nivoslidersize = $options->get($themeslug.'_nivo_slider_size');
+	
 			
 /* Set slider hook based on page option */
 

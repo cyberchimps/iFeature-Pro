@@ -2,7 +2,10 @@ iFeature Pro Changelog
 
 ****************************
 
-Version 4.5.6 (-05-31-12)
+Version 4.5.7 (06-15-12)
+-Replaced wp_theme_data() with wp_get_theme().
+
+Version 4.5.6 (05-31-12)
 -Fix for Update API bug. 
 
 Version 4.5.5 (05-31-12)
