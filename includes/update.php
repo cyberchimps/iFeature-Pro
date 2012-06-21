@@ -8,15 +8,14 @@
 
 add_filter('pre_set_site_transient_update_themes', 'chimps_check_for_update');
 
-if ( function_exists('get_custom_header')) {
-	$theme_data = wp_get_theme();
-	} 
-else {
-	$theme_data = get_theme_data(get_stylesheet_directory() . '/style.css');	
+if(function_exists('wp_get_theme')){
+    $theme_data = wp_get_theme(get_option('template'));
+    $theme_version = $theme_data->Version;
+} else {
+    $theme_data = get_theme_data( TEMPLATEPATH . '/style.css');
+    $theme_version = $theme_data['Version'];
 }
-
-$theme_version = $theme_data['Version'];
-$theme_base = get_option('stylesheet');
+$theme_base = get_option('template');
 
 /******************Change this*******************/
 $api_url = 'http://cyberchimps.com/api/';
@@ -30,7 +29,7 @@ function chimps_check_for_update($checked_data)
 		'slug' => $theme_base,
 		'version' => $theme_version 
 	);
-	// Start checking for an update
+        // Start checking for an update
 	$send_for_check = array(
 		'body' => array(
 			'action' => 'theme_update', 
