@@ -126,8 +126,8 @@ function new_excerpt_more($more) {
     	else {
     		$linktext = $options->get($themeslug.'_excerpt_link_text');
    		}
-
-	return '<a href="'. get_permalink($post->ID) . '"> <br /><br /> '.$linktext.'</a>';
+		
+	return '</p><p><a href="'. get_permalink($post->ID) . '">'.$linktext.'</a></p>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
 
