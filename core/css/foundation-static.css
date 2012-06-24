@@ -816,7 +816,7 @@ div.slider-nav span.left {
   width: 100%;
 }
 
-.orbit, .orbit-wrapper { width: 100% !important; }
+.orbit, .orbit-wrapper { width: 99.9% !important; }
 
 .orbit-bullets {
     position: absolute;
