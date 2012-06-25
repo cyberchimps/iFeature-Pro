@@ -388,7 +388,7 @@ function synapse_nav() {
 <div class="show-on-phones">
 	<div class="container">
 		<div class="row">
-			<div class="twelve columns">
+			<div class="pull-one-phone phone-two columns">
 					<?php get_search_form(); ?>
       </div>
     </div>
