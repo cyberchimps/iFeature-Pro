@@ -135,6 +135,7 @@ $options
 			->checkbox($themeslug."_menu_corners", "Menu Rounded Corners", array('default' => true))
 			->checkbox($themeslug."_hide_home_icon", "Home Icon", array('default' => true))
 			->checkbox($themeslug."_hide_search", "Searchbar", array('default' => true))
+			->checkbox($themeslug."_hide_mobile_search", "Mobile Searchbar", array('default' => true))
 		->subsection_end()
 		->subsection("Social")
 			->images($themeslug."_icon_style", "Icon set", array( 'options' => array( 'round' => TEMPLATE_URL . '/images/social/thumbs/icons-round.png', 'legacy' => TEMPLATE_URL . '/images/social/thumbs/icons-classic.png', 'default' =>
