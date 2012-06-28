@@ -488,7 +488,7 @@ a.nivo-prevNav {
 }
 
 #box2.four.columns { margin-left:2.3%;}
-#box3.four.columns { margin-left:2.1%;}
+#box3.four.columns { margin-left:2%;}
 
 @-moz-document url-prefix() {
 #box2.four.columns {margin-left: 2.2%;}
@@ -496,7 +496,8 @@ a.nivo-prevNav {
 #box3 {right: -1px;}
 }
 
-#box1.four.columns, #box2.four.columns, #box3.four.columns {width: 31.7%;}
+#box1.four.columns, #box2.four.columns {width: 31.7%;}
+#box3.four.columns {width: 31%;}
 
 .box_wrap {padding: 10px;}
 
