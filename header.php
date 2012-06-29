@@ -29,7 +29,11 @@
 <!-- Begin @synapse before_header hook  content-->
 	<?php synapse_before_header(); ?> 
 <!-- End @synapse before_header hook content -->
-	<?php if ($options->get($themeslug.'_subheader') == '1') { ifeature_subheader();} ?>			
+	<?php if ($options->get($themeslug.'_subheader') == '1') { ifeature_subheader();} ?>	
+
+<!-- Adding wrapper class for sticky footer -->
+<div class="wrapper">
+	
 <header>	
 
 	<?php

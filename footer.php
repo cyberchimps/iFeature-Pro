@@ -17,6 +17,7 @@ global $options, $themeslug;
 
 </div><!--end container wrap-->
 
+<div class="footer"> <!-- Footer class for sticky footer -->
 	<div id="footer">
      	<div class="container">
      		<div class="row">
@@ -46,7 +47,9 @@ global $options, $themeslug;
 		</div> 	
 	<?php endif;?>
 	
-	<?php wp_footer(); ?>	
+	<?php wp_footer(); ?>
+	
+</div>  <!--End of footer class for sticky footer -->	
 </body>
 
 </html>
