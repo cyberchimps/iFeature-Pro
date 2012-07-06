@@ -2,6 +2,13 @@ iFeature Pro Changelog
 
 ****************************
 
+Version 4.5.9 (07-06-12)
+-Fine print added to background image uploader.
+-Twitter embed fix.
+-z-index nav fix.
+-Callout row fix.
+-Sticky footer + push div fix.
+
 Version 4.5.8 (06-21-12)
 -Fix for 3.4 Update API bug.
 -Removed .searchform{display:none;} from foundation.css added hide-on-phones for original search and created new search just for phones in header-actions.php
