@@ -394,6 +394,7 @@ class ClassyOptions {
 				}
 				$output .= " &nbsp;&nbsp;&nbsp;&nbsp; URL <input type='text' name='{$value['id']}_text' size='72' value='" . (isset($val['url']) ? $val['url'] : "") . "'/>";
 				$output .= " or upload File: <input type='file' id='{$value['id']}' name='{$value['id']}'>";
+				$output .= "<br/><label class='fine_print'><i>Image uploads begin upon saving settings.</i></label>";
 			break;
 			
 			// Typography

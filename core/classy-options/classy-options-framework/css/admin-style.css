@@ -706,3 +706,9 @@ tr {border-top: 1px solid #E7E7E7;}
 #of_container #content .section-section_order .controls {
 	width: 400px;
 }
+
+.fine_print {
+	font-size: 10px;
+	float: left;
+	cursor: auto;
+}
