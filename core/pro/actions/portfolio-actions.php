@@ -63,6 +63,18 @@ function synapse_portfolio_element_content() {
 		$title_output = '';
 	}
 	
+	switch($number){
+		case 'four':
+				$columns = 3;
+				break;
+		case 'three':
+				$columns = 4;
+				break;
+		case 'six':
+				$columns = 2;
+				break;
+	}
+	
 	?>
 
 <div class="row">
@@ -75,8 +87,8 @@ function synapse_portfolio_element_content() {
 	if (have_posts()) :
 	  	 $out = " <div id='gallery' class='twelve columns'>$title_output<ul>"; 
 
-	  	$i = 0;
-		$no = '50';
+	  	$i = 1;
+		$no = '51';
 
 		while (have_posts() && $i<$no) : 
 
@@ -110,7 +122,12 @@ function synapse_portfolio_element_content() {
 	    			</a>	
 	  	    	</li>
 	    			";
-
+						
+				if( $i %$columns == 0 )
+					{
+						$out .= "<div class='clear'></div>";
+					}
+					
 	    	/* End slide markup */	
 
 	      	$i++;
