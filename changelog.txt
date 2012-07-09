@@ -2,12 +2,14 @@ iFeature Pro Changelog
 
 ****************************
 
-Version 4.5.9 (07-06-12)
+Version 4.5.9 (07-09-12)
+-Portfolio items out of line fix.
+-Added custom URL for Portfolio
+-Push div in footer fix.
 -Fine print added to background image uploader.
 -Twitter embed fix.
 -z-index nav fix.
 -Callout row fix.
--Sticky footer + push div fix.
 
 Version 4.5.8 (06-21-12)
 -Fix for 3.4 Update API bug.
