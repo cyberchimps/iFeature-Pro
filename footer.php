@@ -12,7 +12,11 @@
 global $options, $themeslug;
 
 ?>
-	
+
+<!-- For sticky footer -->
+<div class="push"></div>  
+</div>	<!-- End of wrapper -->
+
 <?php if ($options->get($themeslug.'_disable_footer') != "0"):?>	
 
 </div><!--end container wrap-->
