@@ -42,6 +42,17 @@ function synapse_product_element_content(){
 		$link_enable = $options->get($themeslug.'_blog_proudct_link_toggle');
 		$link = $options->get($themeslug.'_blog_product_link_url');
 		$link_text = $options->get($themeslug.'_blog_product_link_text');
+		
+		//set value of product title according to toggle
+		$opt = get_option('ifeature');
+		$title_toggle = $opt['if_blog_product_title_toggle'];
+		if($title_toggle == "0") {
+			$title = "";
+		}
+		
+		//set value of custom URL
+		$url_toggle = $opt['if_blog_product_custom_url_toggle'];
+		$custom_url = $opt['if_blog_product_custom_url'];
 	}
 	
 	if ($link_enable == "on" or $link_enable == "1" OR $link_enable == '') {
@@ -52,7 +63,12 @@ function synapse_product_element_content(){
 	}
 	
 	if ($type == "0" OR $type == "key1") {
-		$media = "<img src='$image'>";
+		if($url_toggle == "1") {
+			$media = "<a href='$custom_url'><img src='$image'></a>";
+		}
+		else {
+			$media = "<img src='$image'>";
+		}
 	}
 	else {
 		$media ="<div class='flex-video'>$video</div>";

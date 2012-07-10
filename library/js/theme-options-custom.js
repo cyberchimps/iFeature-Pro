@@ -127,9 +127,26 @@ jQuery(document).ready(function($) {
     }
   }).change();
 
-
-
-
+  // To toggle product title
+	$("#if_blog_product_title_toggle").change(function() {
+    var toShow = $("#section-if_blog_product_title, #section-if_blog_product_title");
+    if($(this).is(':checked')) {
+      toShow.show();
+    } else {
+      toShow.hide();
+    }
+  }).change();
+  
+  // To toggle custom url of product image
+	$("#if_blog_product_custom_url_toggle").change(function() {
+    var toShow = $("#section-if_blog_product_custom_url, #section-if_blog_product_custom_url");
+    if($(this).is(':checked')) {
+      toShow.show();
+    } else {
+      toShow.hide();
+    }
+  }).change();
+  
   $.each(['twitter', 'facebook', 'gplus', 'flickr', 'linkedin', 'pinterest', 'youtube', 'googlemaps', 'email', 'rsslink'], function(i, val) {
 	  $("#section-if_" + val).each(function(){
 		  var $this = $(this), $next = $(this).next();
@@ -231,5 +248,4 @@ jQuery(function($) {
 			});
 		});
 	}).trigger('change');
-
 });
