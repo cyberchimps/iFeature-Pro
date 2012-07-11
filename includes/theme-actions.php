@@ -361,8 +361,7 @@ function ifeature_description_icons_content() {
 			<!-- Begin @Core header description hook -->
 				<?php synapse_header_site_description(); ?> 
 			<!-- End @Core header description hook -->
-			
-				
+					
 			</div>	
 			
 			<div class="seven columns">
@@ -374,8 +373,6 @@ function ifeature_description_icons_content() {
 			</div>	
 		</div><!--end row-->
 	</div>
-</div>	
-
 <?php
 }
 
