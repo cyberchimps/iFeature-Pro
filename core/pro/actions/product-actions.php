@@ -53,6 +53,8 @@ function synapse_product_element_content(){
 		//set value of custom URL
 		$url_toggle = $opt['if_blog_product_custom_url_toggle'];
 		$custom_url = $opt['if_blog_product_custom_url'];
+		
+		$link_enable = $opt['if_blog_product_link_toggle'];
 	}
 	
 	if ($link_enable == "on" or $link_enable == "1" OR $link_enable == '') {

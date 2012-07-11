@@ -3,9 +3,38 @@
  * the tabs in the panel.
  */
 
+// validating options
+function validate_options() {
+	jQuery("#section-if_blog_product_custom_url").append("<lable class='validation_error' id='url_validation_msg'></lable>");
+	var reg_url = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+	var custom_url = jQuery("#if_blog_product_custom_url").val();
+	if((custom_url.search(reg_url)) == -1 || custom_url == "") {
+		jQuery("#url_validation_msg").html("Please enter a valid URL");
+		return false;
+	}
+	else {
+		jQuery("#url_validation_msg").html("");
+	}
+	return true;
+}
+
 jQuery(document).ready(function($) {
 
-	
+	jQuery("#if_blog_product_custom_url").blur(function(){
+		jQuery("#section-if_blog_product_custom_url").append("<lable class='validation_error' id='url_validation_msg'></lable>");
+		var reg_url = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+		var custom_url = $("#if_blog_product_custom_url").val();
+		alert(custom_url);
+		if((custom_url.search(reg_url)) == -1 || custom_url == "") {
+			jQuery("#url_validation_msg").html("Please enter a valid URL");
+			return false;
+		}
+		else {
+			jQuery("#url_validation_msg").html("");
+		}
+		return true;
+	});
+
   $("#section-if_font").change(function() {
     if($(this).find(":selected").val() == 'custom') {
       $('#section-if_custom_font').fadeIn();
@@ -146,6 +175,8 @@ jQuery(document).ready(function($) {
       toShow.hide();
     }
   }).change();
+  
+
   
   $.each(['twitter', 'facebook', 'gplus', 'flickr', 'linkedin', 'pinterest', 'youtube', 'googlemaps', 'email', 'rsslink'], function(i, val) {
 	  $("#section-if_" + val).each(function(){

@@ -43,8 +43,10 @@ class ClassyOptions {
 		wp_enqueue_script('thickbox');
 		wp_enqueue_script('color-picker', CLASSY_OPTIONS_FRAMEWORK_URL.'js/colorpicker.js', array('jquery'));
 		wp_enqueue_script('options-custom', CLASSY_OPTIONS_FRAMEWORK_URL.'js/options-custom.js', array('jquery'));
+		wp_enqueue_script('validator', get_template_directory_uri().'/core/library/js/jquery.validate.js', array('jquery'));
 		wp_enqueue_script('theme-options-custom', get_template_directory_uri().'/library/js/theme-options-custom.js', array('jquery'));
 		wp_enqueue_script('media-uploader', CLASSY_OPTIONS_FRAMEWORK_URL.'js/of-medialibrary-uploader.js', array('jquery'));
+		
 	}
 
 	function add_admin_bar() {
@@ -86,7 +88,7 @@ class ClassyOptions {
 <div class="wrap">
 
 	<div id="of_container">
-		<form action="options.php" method="post" enctype="multipart/form-data">
+		<form action="options.php" method="post" enctype="multipart/form-data" id="theme_options" name="theme_options">
 			<?php settings_fields($this->id); ?>
 
 			<div id="header">
@@ -95,7 +97,7 @@ class ClassyOptions {
 				</div>
 				<div class="clear"></div>
 					<p class="submit">
-						<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options' ); ?>" />
+						<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options' ); ?>" onclick="return validate_options();"/>
 					</p>
 				<div class="menu">
 					<ul class="buttons">

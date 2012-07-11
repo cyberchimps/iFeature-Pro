@@ -712,3 +712,9 @@ tr {border-top: 1px solid #E7E7E7;}
 	float: left;
 	cursor: auto;
 }
+
+.validation_error {
+	color: red;
+	float: right;
+    margin-right: 16px;
+}
