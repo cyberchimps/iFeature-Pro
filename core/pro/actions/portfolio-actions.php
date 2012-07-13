@@ -37,6 +37,9 @@ function synapse_portfolio_element_content() {
 		$num = $options->get($themeslug.'_portfolio_number');
 		$title_enable = $options->get($themeslug.'_portfolio_title_toggle');
 		$title = $num = $options->get($themeslug.'_portfolio_title');
+		
+		$opt = get_option("ifeature");
+		$num = $opt['if_portfolio_number'];
 	}
 	
 	if ($num == '1' OR $num == 'key2') {
