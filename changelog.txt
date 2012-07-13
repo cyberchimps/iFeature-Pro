@@ -2,6 +2,11 @@ iFeature Pro Changelog
 
 ****************************
 
+Version 4.5.11 (07-11-12)
+-Theme option save fix.
+-URL validation fix. 
+
+
 Version 4.5.10 (07-11-12)
 -Product link option fix.
 -Header element fix.
