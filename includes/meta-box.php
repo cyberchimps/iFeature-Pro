@@ -147,7 +147,7 @@ function initialize_the_meta_boxes() {
 		->tab("Product Options")
 			->select($themeslug.'_product_text_align', 'Text Align', '', array('options' => array('Left', 'Right')) )
 			->text($themeslug.'_product_title', 'Product Title', '', array('std' => 'Product'))
-			->textarea($themeslug.'_product_text', 'Proudct Text', '', array('std' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. '))
+			->textarea($themeslug.'_product_text', 'Product Text', '', array('std' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. '))
 			->select($themeslug.'_product_type', 'Media Type', '', array('options' => array('Image', 'Video')) )
 			->single_image($themeslug.'_product_image', 'Product Image', '', array('std' =>  TEMPLATE_URL . '/images/pro/product.jpg'))
 			->textarea($themeslug.'_product_video', 'Video Embed', '')
