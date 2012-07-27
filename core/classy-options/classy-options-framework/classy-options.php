@@ -97,7 +97,7 @@ class ClassyOptions {
 				</div>
 				<div class="clear"></div>
 					<p class="submit">
-						<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options' ); ?>" />
+						<input type="submit" class="button-primary" name="update" value="<?php esc_attr_e( 'Save Options' ); ?>" onclick="return validate_options();" />
 					</p>
 				<div class="menu">
 					<ul class="buttons">
