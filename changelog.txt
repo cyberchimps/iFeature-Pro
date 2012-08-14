@@ -2,6 +2,14 @@ iFeature Pro Changelog
 
 ****************************
 
+Version 4.5.12 (08-13-12)
+-Plugin__name function fix.
+-Fixed lightbox issue in the carousel.
+-Added validation call theme options save.
+-Removed liming on carousel.
+-Fixed product element spelling.
+-Apple touch icon fixed.
+
 Version 4.5.11 (07-11-12)
 -Theme option save fix.
 -URL validation fix. 
