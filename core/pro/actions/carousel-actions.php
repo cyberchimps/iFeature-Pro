@@ -28,7 +28,8 @@ function synapse_carousel_section_content() {
 
 /* Define variables. */	
 
-    $tmp_query = $wp_query; 
+    $tmp_query = $wp_query;
+		$out =''; 
 	$root = get_template_directory_uri(); 
 	$default = "$root/images/pro/carousel.jpg";
 	
@@ -78,26 +79,26 @@ query_posts( array ('post_type' => $themeslug.'_featured_posts', 'showposts' => 
 
 	    	$image 		= get_post_meta($post->ID, 'post_image' , true);  
 	    	$realtitle 		= get_the_title();  
-	    	$link 		= get_post_meta($post->ID, 'post_url' , true);
+	    	$link 		= ( get_post_meta($post->ID, 'post_url' , true) == '' ? $image : get_post_meta($post->ID, 'post_url' , true) );
 	    	
 	    	if ($realtitle != "Untitled") {
 				$title = get_the_title();
-			}
-			else {
-				$title =  '';
-			}
-			
-			if ($image == '') {
-				$image = $default;
-			}
-			/* End variables */	
-
-	     	/* Markup for carousel */
+				}
+				else {
+					$title =  '';
+				}
+				
+				if ($image == '') {
+					$image = $default;
+				}
+				/* End variables */	
+	
+					/* Markup for carousel */
 
 	    	$out .= "
 	    	
 				<li>
-	    			<a href='$image'>	
+	    			<a href='$link'>	
 	    				<img src='$image' alt='$title'/>
 	    			</a>
 	    			<div class='carousel_caption'>$title</div>
@@ -167,8 +168,8 @@ query_posts( array ('post_type' => $themeslug.'_featured_posts', 'showposts' => 
 
 /* Begin Carousel javascript */ 
     
-    $out .= <<<OUT
-	<script type="text/javascript">
+    $out .= "
+	<script type='text/javascript'>
 		jQuery(document).ready(function ($) {
 		$('#carousel').elastislide({
 			imageW 		: 140,
@@ -179,24 +180,23 @@ query_posts( array ('post_type' => $themeslug.'_featured_posts', 'showposts' => 
 		});
 		
 		jQuery(document).ready(function ($) {
-			$(function() {
-				$('.es-carousel a').lightBox({
+			$('.es-carousel li').each(function() {
+			if( $(this).children('a').attr('href') == $(this).children('a').children('img').attr('src') ) {
+				$(this).children('a').lightBox({
 					imageLoading:			'$root/images/portfolio/lightbox-ico-loading.gif',		
 					imageBtnPrev:			'$root/images/portfolio/lightbox-btn-prev.gif',			
 					imageBtnNext:			'$root/images/portfolio/lightbox-btn-next.gif',			
 					imageBtnClose:			'$root/images/portfolio/lightbox-btn-close.gif',		
-					imageBlank:				'$root/images/portfolio/lightbox-blank.gif',			
-				});
+					imageBlank:				'$root/images/portfolio/lightbox-blank.gif'
+			});
+			}
 			});
 		});
-	</script>
-OUT;
+	</script>";
 
 /* End Carousel javascript */ 
 
 echo $out;
-
-/* END */ 
 ?>
 
 		</div>
