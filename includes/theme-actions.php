@@ -272,11 +272,11 @@ $default = "$root/images/pro/banner.jpg";
 			<div id="banner">
 			
 			<?php if ($banner != ""):?>
-				<a href="<?php echo $url; ?>/"><img src="<?php echo stripslashes($banner['url']); ?>" alt="logo"></a>		
+				<a href="<?php echo $url; ?>"><img src="<?php echo stripslashes($banner['url']); ?>" alt="logo"></a>		
 			<?php endif; ?>
 			
 			<?php if ($banner == ""):?>
-				<a href="<?php echo $url; ?>/"><img src="<?php echo $default; ?>" alt="logo"></a>		
+				<a href="<?php echo $url; ?>"><img src="<?php echo $default; ?>" alt="logo"></a>		
 			<?php endif; ?>
 			
 			</div>		
