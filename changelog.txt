@@ -2,6 +2,15 @@ iFeature Pro Changelog
 
 ****************************
 
+Version 4.5.13 (08-21-12)
+-Added custom URL to logo.
+-Removed trailing slash from banner links.
+-Updated read me.
+-Renamed Logo + Submenu.
+-Fixed carousel custom url.
+-Twitter bar border radius fix.
+-Made meta tag language dynamic.
+
 Version 4.5.12 (08-13-12)
 -Plugin__name function fix.
 -Fixed lightbox issue in the carousel.
