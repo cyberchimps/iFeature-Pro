@@ -2,6 +2,10 @@
 
 #orbitDemo {border: 1px solid #ccc;}
 
+#orbitDemo.orbit > a {
+  width: 100%;
+}
+
 .caption_title {margin-top: 10px; margin-bottom: -5px;}
 
 /*============================*/
