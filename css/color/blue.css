@@ -12,6 +12,7 @@ a:hover {color: #5ca9d6;}
 	background: -o-linear-gradient(top,  #6cafd8 0%,#2593ce 44%,#0085cf 100%); /* Opera 11.10+ */
 	background: -ms-linear-gradient(top,  #6cafd8 0%,#2593ce 44%,#0085cf 100%); /* IE10+ */
 	background: linear-gradient(top,  #6cafd8 0%,#2593ce 44%,#0085cf 100%); /* W3C */
+	-pie-background: linear-gradient(top,  #6cafd8 0%,#2593ce 44%,#0085cf 100%); /*PIE*/
 	-moz-border-radius: 4px; 
 	-webkit-border-radius: 4px;
 	border-radius: 4px;
@@ -48,7 +49,8 @@ a:hover {color: #5ca9d6;}
 	background: -webkit-linear-gradient(top,  #6cafd8 0%,#2593ce 44%,#0085cf 100%); /* Chrome10+,Safari5.1+ */
 	background: -o-linear-gradient(top,  #6cafd8 0%,#2593ce 44%,#0085cf 100%); /* Opera 11.10+ */
 	background: -ms-linear-gradient(top,  #6cafd8 0%,#2593ce 44%,#0085cf 100%); /* IE10+ */
-	background: linear-gradient(top,  #6cafd8 0%,#2593ce 44%,#0085cf 100%); /* W3C */	
+	background: linear-gradient(top,  #6cafd8 0%,#2593ce 44%,#0085cf 100%); /* W3C */
+	-pie-background: linear-gradient(top,  #6cafd8 0%,#2593ce 44%,#0085cf 100%); /*PIE*/
 	-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.5);
 	-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.5);
 	text-shadow: 0 -1px 1px rgba(0,0,0,0.28);
