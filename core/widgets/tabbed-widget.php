@@ -64,9 +64,11 @@ class iFeature_Tabbed_Widget extends WP_Widget {
 
 					?>
 						<li>
+            <?php if( has_post_thumbnail() ): ?>
 							<div class="tab-image">
 								<a href="<?php the_permalink() ?>"><?php the_post_thumbnail("ifeature-tabbed") ?>
 							</div>
+              <?php endif; ?>
 
 							<div class="details">
 								<h5 class="tabbed-title"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h5>
@@ -91,9 +93,11 @@ class iFeature_Tabbed_Widget extends WP_Widget {
 
 					?>
 						<li>
+            <?php if( has_post_thumbnail() ): ?>
 							<div class="tab-image" >
 								<a href="<?php the_permalink() ?>"><?php the_post_thumbnail("ifeature-tabbed") ?>
 							</div>
+             <?php endif; ?>
 
 							<div class="details">
 								<h5 class="tabbed-title"><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h5>
