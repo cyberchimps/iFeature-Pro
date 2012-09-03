@@ -2,6 +2,11 @@ iFeature Pro Changelog
 
 ****************************
 
+Version 4.5.14 (08-30-12)
+-Fixed list style error.
+-Fixed PIE implementation.
+-Fixed responsive slider in IE and Firefox.
+
 Version 4.5.13 (08-21-12)
 -Added custom URL to logo.
 -Removed trailing slash from banner links.
