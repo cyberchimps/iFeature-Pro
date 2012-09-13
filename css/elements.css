@@ -421,7 +421,6 @@ a.nivo-prevNav {
 	background: -o-linear-gradient(top,  #ffffff 0%,#f9f9f9 75%,#f4f4f4 100%);
 	background: -ms-linear-gradient(top,  #ffffff 0%,#f9f9f9 75%,#f4f4f4 100%);
 	background: linear-gradient(top,  #ffffff 0%,#f9f9f9 75%,#f4f4f4 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f4f4f4',GradientType=0 );
 	border: 1px solid #CCC;}
 
 #callout_text {
