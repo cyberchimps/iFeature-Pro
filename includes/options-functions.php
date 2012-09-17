@@ -307,7 +307,7 @@ function add_menu_color() {
 	
 
 		echo '<style type="text/css">';
-		echo "#imenu {background: $color;}";
+		echo "#imenu {-pie-background:none;background: $color;}";
 		echo '</style>';
 	}
 }
