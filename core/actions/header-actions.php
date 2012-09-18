@@ -157,7 +157,7 @@ function synapse_title_tag() {
 	elseif (is_page() AND is_front_page() AND $blogtitle == '') { /*Title if blog page with no custom title */
 		bloginfo('name'); echo ' - '; wp_title(''); 
 	}
-	elseif ($blogtitle != '') { /*Title if blog page with custom title */ 
+	elseif ( is_page() AND $blogtitle != '') { /*Title if blog page with custom title */ 
 		bloginfo('name'); echo ' - '; echo $blogtitle ; 
 	}
 	else { /*Title if blog page without custom title */
