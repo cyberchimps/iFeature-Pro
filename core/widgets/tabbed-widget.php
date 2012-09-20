@@ -30,6 +30,8 @@ class iFeature_Tabbed_Widget extends WP_Widget {
 
 	function widget($args, $instance) {
 		global $wpdb;
+		
+		wp_enqueue_script('jquery-ui-tabs');
 
 		$tab1 = $instance['tab1'];
 		$tab2 = $instance['tab2'];
