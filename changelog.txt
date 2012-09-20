@@ -2,6 +2,14 @@ iFeature Pro Changelog
 
 ****************************
 
+Version 4.5.16 (09-18-12)
+-Portfolio light box stops on mobile devices.
+-Post titles display issue fixed.
+-IE8-9 fixes for iMenu.
+-PIE put back.
+-Moved callout styles.
+-WooCommerce fix.
+
 Version 4.5.15 (09-04-12)
 -Comments error fix.
 
