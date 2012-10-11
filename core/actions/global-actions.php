@@ -201,17 +201,25 @@ function synapse_fb_like_plus_one_content() {
 	if (is_single()) {
 		 $fb = $options->get($themeslug.'_single_show_fb_like');
 		 $gplus = $options->get($themeslug.'_single_show_gplus');
+		 $twitter = $options->get($themeslug.'_single_show_twitter');
 	}
 	elseif (is_archive()) {
 		 $fb = $options->get($themeslug.'_archive_show_fb_like');
 		 $gplus = $options->get($themeslug.'_archive_show_gplus');
+		 $twitter = $options->get($themeslug.'_single_show_twitter');
 	}
 	else {
 		 $fb = $options->get($themeslug.'_show_fb_like');
 		 $gplus = $options->get($themeslug.'_show_gplus');
-	}?>
-
-	<?php if ($gplus == "1"):?>
+		 $twitter = $options->get($themeslug.'_show_twitter');
+	}
+  if ($twitter == "1"):?>
+  	<div class="twitter">
+  		<a href="https://twitter.com/share" class="twitter-share-button" data-size="large">Tweet</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		</div>
+	<?php endif; 
+	if ($gplus == "1"):?>
 		<div class="gplusone">	
 			<g:plusone size="standard" count="true" href="<?php the_permalink() ?>"></g:plusone>
 		</div>
@@ -222,6 +230,11 @@ function synapse_fb_like_plus_one_content() {
 			<iframe src="http://www.facebook.com/plugins/like.php?href=<?php the_permalink() ?>&layout=standard&show_faces=true&width=450&action=like&colorscheme=light" scrolling="no" frameborder="0"  allowTransparency="true" style="border:none; overflow:hidden; width:330px; height:28px"></iframe>
 		</div>
 	<?php endif;
+	
+	if ( $gplus == "1" || $fb == "1" || $twitter == "1" ): ?>
+  	<div class="clear"></div>
+  
+  <?php endif;
 }
 
 /**

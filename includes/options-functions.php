@@ -167,24 +167,6 @@ function background_option() {
 }
 add_action( 'wp_head', 'background_option');
 
-/* Plus 1 Allignment */
-
-function plusone_alignment() {
-
-	global $themename, $themeslug, $options;
-	
-	if ($options->get($themeslug.'_show_fb_like') == "1" AND $options->get($themeslug.'_show_gplus') == "1" OR $options->get($themeslug.'_single_show_fb_like') == "1" AND $options->get($themeslug.'_single_show_gplus') == "1" ) {
-
-		echo '<style type="text/css">';
-		echo ".gplusone {float: right; margin-right: -38px;}";
-		echo '</style>';
-		
-	}
-	
-}
-add_action( 'wp_head', 'plusone_alignment');
-
-
 /* Featured Image Alignment */
 
 function featured_image_alignment() {
