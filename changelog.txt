@@ -2,6 +2,13 @@ iFeature Pro Changelog
 
 ****************************
 
+Version 4.5.17 (10-12-12)
+-Twitter share link added.
+-Fixed Feature Sliders to work with posts. 
+-Metabox condition changed.
+-Quick editor error fixed.
+
+
 Version 4.5.16 (09-18-12)
 -Portfolio light box stops on mobile devices.
 -Post titles display issue fixed.
