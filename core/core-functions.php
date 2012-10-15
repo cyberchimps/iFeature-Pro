@@ -39,6 +39,7 @@ function synapse_scripts() {
 	global $options, $themeslug;
 	if ( !is_admin() ) {
 	wp_enqueue_script('jquery');
+	wp_enqueue_script('jquery-ui-tabs');
 	}
 	
 	$path =  get_template_directory_uri() ."/core/library";
