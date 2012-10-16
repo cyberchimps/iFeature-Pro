@@ -2,9 +2,13 @@ iFeature Pro Changelog
 
 ****************************
 
+Version 4.5.19 (10-16-12)
+-Allowed \ in custom CSS.
+-Comments - password protected pages.
+-Another iFeature Slider fix.
+
 Version 4.5.18 (10-15-12)
 -iFeature Slider fix.
-
 
 Version 4.5.17 (10-12-12)
 -Twitter share link added.
