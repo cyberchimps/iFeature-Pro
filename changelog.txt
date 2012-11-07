@@ -2,6 +2,12 @@ iFeature Pro Changelog
 
 ****************************
 
+Version 4.5.20 (11-07-12)
+-French language added.
+-Updated German translation.
+-Fixed Google font issue.
+-Added password protection for elements.
+
 Version 4.5.19 (10-16-12)
 -Allowed \ in custom CSS.
 -Comments - password protected pages.
