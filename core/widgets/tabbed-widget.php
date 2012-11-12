@@ -115,7 +115,7 @@ class iFeature_Tabbed_Widget extends WP_Widget {
 
 		<div class="ifeature-tabbed-tab" id="tab-3">
 			<ul class="ifeature-tabbed-comments"> 
-				<?php foreach(get_comments(array('number' => 5)) as $comment): ?>
+				<?php foreach(get_comments(array('number' => 5, 'status' => 'approve')) as $comment): ?>
 					<?php $post = get_post($comment->comment_post_ID); ?>
 					<li>
 						<div class="tab-image">
