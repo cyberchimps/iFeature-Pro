@@ -264,9 +264,9 @@ header {padding-top: 15px;}
 
 .share a:hover img {opacity:1;}
 
-.next-posts-single {text-align:right;padding:5px; margin-top:-35px;}
+.next-posts-single {float:right;padding:5px;}
 
-.prev-posts-single {text-align:left;padding:5px; margin-top: -10px; margin-bottom: 5px; margin-left: -5px; max-width:300px;}
+.prev-posts-single {float:left;padding:5px;}
 
 .tags {margin-bottom: 15px;font-size: 12px;}
 

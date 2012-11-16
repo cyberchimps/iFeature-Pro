@@ -83,6 +83,7 @@ function synapse_post_pagination_content() {
 	
 	<?php if ($options->get($themeslug.'_post_pagination') != "0"):?>
 	<div class="prev-posts-single"><?php previous_post_link(); ?></div> <div class="next-posts-single"><?php next_post_link(); ?></div>
+  <div class="clear"></div>
 	<?php endif; 
 }
 
