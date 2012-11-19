@@ -2,6 +2,14 @@ iFeature Pro Changelog
 
 ****************************
 
+Version 4.5.21 (11-19-12)
+-Custom Post Types removed from search.
+-Style for RSS meta changed.
+-Post pagination fix.
+-Feed title fix.
+-Twitter link fix.
+-Hid unapproved comments in widget.
+
 Version 4.5.20 (11-07-12)
 -French language added.
 -Updated German translation.
