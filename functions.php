@@ -211,7 +211,8 @@ function create_post_type() {
 				'singular_name' => __( 'Slides' )
 			),
 			'public' => true,
-			'show_ui' => true, 
+			'show_ui' => true,
+			'exclude_from_search' => true,
 			'supports' => array('custom-fields', 'title'),
 			'taxonomies' => array( 'slide_categories'),
 			'has_archive' => true,
@@ -228,6 +229,7 @@ function create_post_type() {
 			),
 			'public' => true,
 			'show_ui' => true, 
+			'exclude_from_search' => true,
 			'supports' => array('custom-fields'),
 			'taxonomies' => array( 'carousel_categories'),
 			'has_archive' => true,
@@ -243,7 +245,8 @@ function create_post_type() {
 				'singular_name' => 'Images' 
 			),
 			'public' => true,
-			'show_ui' => true, 
+			'show_ui' => true,
+			'exclude_from_search' => true, 
 			'supports' => array('custom-fields', 'title'),
 			'taxonomies' => array( 'portfolio_categories'),
 			'has_archive' => true,
