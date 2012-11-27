@@ -522,7 +522,7 @@ function menu_fallback() {
 	global $post; ?>
 	
 	<ul id="nav_menu">
-		<?php wp_list_pages( 'title_li=&sort_column=post_title&depth=3'); ?>
+		<?php wp_list_pages( 'title_li=&sort_column=menu_order&depth=3'); ?>
 	</ul><?php
 }
 /**
