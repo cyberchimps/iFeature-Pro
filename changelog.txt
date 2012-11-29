@@ -1,6 +1,10 @@
-iFeature Pro Changelog
+﻿iFeature Pro Changelog
 
 ****************************
+
+Version 4.5.22 (11-29-12)
+
+-New updater installed
 
 Version 4.5.21 (11-19-12)
 -Custom Post Types removed from search.
