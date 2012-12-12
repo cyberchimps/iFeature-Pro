@@ -2,8 +2,10 @@
 
 ****************************
 
-Version 4.5.22 (11-29-12)
+Version 4.5.23 (12-12-12)
+-Fix for page drag and drop in WP3.5
 
+Version 4.5.22 (11-29-12)
 -New updater installed
 
 Version 4.5.21 (11-19-12)
