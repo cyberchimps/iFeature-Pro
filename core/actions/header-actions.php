@@ -202,9 +202,13 @@ function synapse_link_rel() {
 
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
 
-<link href='//fonts.googleapis.com/css?family=<?php echo $font ; ?>' rel='stylesheet' type='text/css' /> <?php
-}
+<?php
+// Check if SSL is present, if so then use https othereise use http
+$protocol = is_ssl() ? 'https' : 'http';
+?>
 
+<link href='<?php echo $protocol; ?>://fonts.googleapis.com/css?family=<?php echo $font ; ?>' rel='stylesheet' type='text/css' /> <?php
+}
 
 /**
 * Header left content (sitename or logo)
