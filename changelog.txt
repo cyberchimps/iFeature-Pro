@@ -1,6 +1,10 @@
 ﻿iFeature Pro Changelog
 
 ****************************
+Version 4.5.24 (01-23-13)
+-Fix SSL
+-Fix Menu bug
+-Fix Meta page options not saving
 
 Version 4.5.23 (12-12-12)
 -Fix for page drag and drop in WP3.5
