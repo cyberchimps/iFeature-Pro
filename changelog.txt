@@ -1,6 +1,10 @@
 ﻿iFeature Pro Changelog
 
 ****************************
+
+Version 4.5.25 (1-25-13)
+-Fix image upload
+
 Version 4.5.24 (01-23-13)
 -Fix SSL
 -Fix Menu bug
