@@ -120,16 +120,33 @@ function new_excerpt_more($more) {
 
 	global $themename, $themeslug, $options, $post;
     
-    	if ($options->get($themeslug.'_excerpt_link_text') == '') {
-    		$linktext = 'Read More...';
-   		}
-    	else {
-    		$linktext = $options->get($themeslug.'_excerpt_link_text');
-   		}
+	if ($options->get($themeslug.'_excerpt_link_text') == '') {
+		$linktext = 'Read More...';
+	}
+	else {
+		$linktext = $options->get($themeslug.'_excerpt_link_text');
+	}
 		
 	return '</p><p class="more-link"><a href="'. get_permalink($post->ID) . '">'.$linktext.'</a></p>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
+
+/**
+* Set custom post excerpt link if excerpt is supplied manually.
+*/ 
+function manual_excerpt_read_more_link($output) {
+
+	global $themeslug, $options, $post;
+
+	$linktext = $options->get($themeslug.'_excerpt_link_text');
+	$linktext = $linktext == '' ? 'Continue Reading...' : $linktext;
+	
+	if(!empty($post->post_excerpt))
+		return $output . '</p><p class="more-link"><a href="'. get_permalink($post->ID) . '">'.$linktext.'</a></p>';
+	else
+		return $output;
+}
+add_filter('the_excerpt', 'manual_excerpt_read_more_link');
 
 /**
 * Set custom post excerpt length based on theme option.
