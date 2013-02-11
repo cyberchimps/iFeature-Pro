@@ -2,6 +2,12 @@
 
 ****************************
 
+Version 4.5.26 (2-11-13)
+-Added media uploader for blog and page options
+-Fix drag and drop issue
+-Fix excerpt link
+-Bug fixes
+
 Version 4.5.25 (1-25-13)
 -Fix image upload
 
