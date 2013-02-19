@@ -49,11 +49,11 @@ global $options, $themeslug;
 		</div>  <!--end afterfooterwrap-->	
 	</div> <!--end afterfooter-->	
 		</div> 	
-	<?php endif;?>
-	
-	<?php wp_footer(); ?>
-	
-</div>  <!--End of footer class for sticky footer -->	
+	<?php endif;?>	
+</div>  <!--End of footer class for sticky footer -->
+
+<?php wp_footer(); ?>
+
 </body>
 
 </html>
