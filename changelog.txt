@@ -2,6 +2,10 @@
 
 ****************************
 
+Version 4.5.27 (3-14-13)
+-Re-positioned wp_footer()
+-Added widget class placeholder
+
 Version 4.5.26 (2-11-13)
 -Added media uploader for blog and page options
 -Fix drag and drop issue
